@@ -1,24 +1,11 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import AnimatedLogo from "./AnimatedLogo";
+import mykeiLogo from "@/assets/mykei-logo-navy.png";
 
 const HeroSection = () => {
-  const [showText, setShowText] = useState(false);
-
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     element?.scrollIntoView({ behavior: "smooth" });
   };
-
-  // Trigger text animation at 80% of logo animation (1.8s * 0.8 = 1.44s)
-  const handleLogoProgress = () => {
-    setShowText(true);
-  };
-
-  // Start showing text after 80% of logo animation
-  setTimeout(() => {
-    if (!showText) setShowText(true);
-  }, 1440);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -34,37 +21,35 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container relative z-10 px-6 py-24">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Animated Logo */}
+          {/* Animated Logo with clip-path reveal */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="mb-8"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="mb-12 relative"
           >
-            <AnimatedLogo onAnimationComplete={handleLogoProgress} />
-          </motion.div>
-
-          {/* Company Name - fades in after logo is 80% complete */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={showText ? { opacity: 1, y: 0 } : {}}
-            transition={{ 
-              type: "spring",
-              duration: 0.5,
-              bounce: 0.3
-            }}
-            className="mb-12"
-          >
-            <span className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
-              Mykei Securities Ltd.
-            </span>
+            <motion.div
+              initial={{ clipPath: "inset(0 100% 0 0)" }}
+              animate={{ clipPath: "inset(0 0% 0 0)" }}
+              transition={{ 
+                duration: 1.8, 
+                ease: [0.16, 1, 0.3, 1],
+                delay: 0.2
+              }}
+            >
+              <img 
+                src={mykeiLogo} 
+                alt="Mykei Securities Ltd." 
+                className="h-48 md:h-64 mx-auto object-contain"
+              />
+            </motion.div>
           </motion.div>
 
           {/* Status indicator */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={showText ? { opacity: 1 } : {}}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.6, duration: 0.6 }}
             className="flex items-center justify-center gap-2 mb-8"
           >
             <span className="relative flex h-2 w-2">
@@ -79,8 +64,8 @@ const HeroSection = () => {
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
-            animate={showText ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.8, duration: 0.8 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight"
           >
             <span className="text-foreground">ECONOMIC STERILIZATION</span>
@@ -91,8 +76,8 @@ const HeroSection = () => {
           {/* Sub-headline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={showText ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2, duration: 0.8 }}
             className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
           >
             CCTV watches. <span className="text-foreground font-medium">Mykei Acts.</span> We make stolen goods 
@@ -102,8 +87,8 @@ const HeroSection = () => {
           {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={showText ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.7, duration: 0.8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.2, duration: 0.8 }}
           >
             <button
               onClick={scrollToContact}
@@ -124,8 +109,8 @@ const HeroSection = () => {
           {/* Tech indicators */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={showText ? { opacity: 1 } : {}}
-            transition={{ delay: 1, duration: 0.8 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.6, duration: 0.8 }}
             className="mt-24 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
           >
             {[
