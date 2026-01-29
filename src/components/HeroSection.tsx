@@ -40,7 +40,7 @@ const HeroSection = () => {
               <img 
                 src={mykeiLogo} 
                 alt="Mykei Securities Ltd." 
-                className="h-48 md:h-64 mx-auto object-contain"
+                className="h-48 md:h-64 mx-auto object-contain mix-blend-multiply"
               />
             </motion.div>
           </motion.div>
