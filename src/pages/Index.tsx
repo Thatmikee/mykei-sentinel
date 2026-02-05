@@ -8,19 +8,24 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Navigation header */}
+      {/* Navigation header: Clinical & Minimalist */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="container px-6">
           <div className="flex items-center justify-between h-16">
-            <span className="font-mono text-xs tracking-[0.15em] text-muted-foreground">
-              MYKEI SECURITIES
-            </span>
+            <div className="flex flex-col">
+              <span className="font-mono text-[10px] tracking-[0.2em] text-blue-500 font-bold">
+                MYKEI SECURITIES LTD
+              </span>
+              <span className="font-mono text-[8px] tracking-[0.1em] text-muted-foreground">
+                FORENSIC INFRASTRUCTURE
+              </span>
+            </div>
             <nav className="hidden md:flex items-center gap-8">
               {[
-                { label: "TECHNOLOGY", href: "#technology" },
-                { label: "LEADERSHIP", href: "#leadership" },
-                { label: "SPECS", href: "#specs" },
-                { label: "CONTACT", href: "#contact" },
+                { label: "ADN-1 SYSTEM", href: "#technology" },
+                { label: "EXECUTIVE PROFILE", href: "#leadership" },
+                { label: "AWS SPECS", href: "#specs" },
+                { label: "PROTOCOL", href: "#contact" },
               ].map((item) => (
                 <a
                   key={item.href}
@@ -31,11 +36,11 @@ const Index = () => {
                 </a>
               ))}
             </nav>
-           
+          </div>
         </div>
       </header>
 
-      {/* Main content */}
+      {/* Main content: The ADN Coupling */}
       <main>
         <HeroSection />
         <TechnologySection />
