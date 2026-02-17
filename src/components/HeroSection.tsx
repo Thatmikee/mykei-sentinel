@@ -1,20 +1,30 @@
-const HeroSection = () => {
+export const Hero = () => {
   return (
-    <section className="pt-32 pb-20 px-6 min-h-[80vh] flex items-center">
-      <div className="container max-w-5xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-          Sterilizing the <span className="text-blue-500">Shadow Market.</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl">
-          The black market thrives in retail blind spots. We don't just watch—we neutralize. 
-          Introducing the <strong>ADN-1 (Active Deterrent Node)</strong>: Forensic-grade 
-          infrastructure backed by AWS predictive telemetry. 
-          <span className="block mt-4 text-foreground font-semibold">
-            Because you can't sell what the system never let go of.
-          </span>
-        </p>
+    <section className="bg-royal-blue text-white py-24 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+              Sterilizing the Shadow Market.
+            </h1>
+            <p className="text-xl text-blue-100 mb-8 max-w-xl">
+              The black market thrives in retail blind spots. We don't just watch—we neutralize. 
+              Introducing the ADN-1: Forensic-grade infrastructure backed by AWS predictive telemetry.
+            </p>
+            <div className="flex gap-4">
+              <button className="bg-white text-royal-blue font-bold py-3 px-8 rounded shadow-lg hover:bg-blue-50">
+                Defense Architecture
+              </button>
+              <button className="border border-white text-white font-bold py-3 px-8 rounded hover:bg-white/10">
+                The Technology
+              </button>
+            </div>
+          </div>
+          <div className="hidden md:block">
+             {/*  */}
+          </div>
+        </div>
       </div>
     </section>
   );
 };
-export default HeroSection;
