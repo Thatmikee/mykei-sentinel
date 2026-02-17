@@ -1,19 +1,16 @@
-// src/lib/gemini.ts
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Secure this in an .env file later, but for now, let's get it working.
-const API_KEY = "AIzaSyBXReBPmN61CmTtfi-ao9_lwmoXwjkZwrU";
-const genAI = new GoogleGenerativeAI(API_KEY);
+const genAI = new GoogleGenerativeAI("AIzaSyBXReBPmN61CmTtfi-ao9_lwmoXwjkZwrU");
 
-export const analyzeRetailPain = async (userInput: string) => {
+export const startSentinelAssessment = async (storeContext: string) => {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
   
   const prompt = `
-    You are a Security Consultant for Mykei Securities. 
-    A user said: "${userInput}". 
-    Summarize their pain point and ask ONE targeted question about their annual shrinkage cost (£) 
-    or the 'Evidence Gap' in their current CCTV setup. 
-    Be professional, direct, and authoritative.
+    You are the Intelligence Core of Mykei Securities. 
+    Managing Director Michael Esema has tasked you with assessing a new retail site.
+    Context: "${storeContext}". 
+    Task: Provide a clinical security analysis. Highlight the 'Evidence Gap' risks. 
+    Final Question: Ask for their estimated annual loss to bulk-sweeping to qualify them for our pilot.
   `;
 
   const result = await model.generateContent(prompt);
