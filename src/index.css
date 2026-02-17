@@ -1,160 +1,36 @@
-@import "@fontsource/space-grotesk/400.css";
-@import "@fontsource/space-grotesk/500.css";
-@import "@fontsource/space-grotesk/600.css";
-@import "@fontsource/space-grotesk/700.css";
-@import "@fontsource/jetbrains-mono/400.css";
-@import "@fontsource/jetbrains-mono/500.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 7%;
-
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 7%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
-
-    --primary: 220 70% 18%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 7%;
-
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 40%;
-
-    --accent: 220 70% 18%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 220 70% 18%;
-
-    --radius: 0.25rem;
-
-    /* Custom tokens */
-    --glow-primary: 0 0 40px hsl(220 70% 18% / 0.15);
-    --glow-subtle: 0 0 20px hsl(220 70% 18% / 0.08);
-    --gradient-grid: linear-gradient(hsl(0 0% 0% / 0.03) 1px, transparent 1px),
-                     linear-gradient(90deg, hsl(0 0% 0% / 0.03) 1px, transparent 1px);
-    --gradient-radial: radial-gradient(ellipse at center, hsl(220 70% 18% / 0.05) 0%, transparent 70%);
-    --gradient-border: linear-gradient(135deg, hsl(220 70% 18% / 0.3), hsl(220 70% 18% / 0.05));
-
-    --font-sans: "Space Grotesk", system-ui, sans-serif;
-    --font-mono: "JetBrains Mono", monospace;
-  }
-
-  .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-  }
+:root {
+  --royal-blue: #002366;
+  --institutional-gray: #f8fafc;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply bg-background text-foreground antialiased;
-    font-family: var(--font-sans);
-  }
-
-  ::selection {
-    background: hsl(var(--primary) / 0.3);
-    color: hsl(var(--foreground));
-  }
+body {
+  background-color: #ffffff;
+  color: #1e293b;
+  font-family: 'Inter', sans-serif;
 }
 
-@layer components {
-  .font-mono {
-    font-family: var(--font-mono);
-  }
-
-  .glow-border {
-    position: relative;
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
-  }
-
-  .glow-border::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    background: var(--gradient-border);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-    filter: blur(8px);
-  }
-
-  .glow-border:hover::before {
-    opacity: 1;
-  }
-
-  .grid-pattern {
-    background-image: var(--gradient-grid);
-    background-size: 60px 60px;
-  }
-
-  .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--muted-foreground)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-accent {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(220 60% 35%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+.bg-royal-blue {
+  background-color: var(--royal-blue);
 }
 
-@layer utilities {
-  .animate-pulse-slow {
-    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
+.text-royal-blue {
+  color: var(--royal-blue);
+}
 
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
+/* Sharp Shadow Shelves for Product Cards */
+.shadow-shelf {
+  box-shadow: 0 10px 15px -3px rgba(0, 35, 102, 0.1), 0 4px 6px -4px rgba(0, 35, 102, 0.1);
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  background: #ffffff;
+}
 
-  @keyframes glow {
-    from {
-      box-shadow: 0 0 20px hsl(220 70% 18% / 0.1);
-    }
-    to {
-      box-shadow: 0 0 40px hsl(220 70% 18% / 0.2);
-    }
-  }
-
-  .scanline::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      hsl(0 0% 100% / 0.02) 2px,
-      hsl(0 0% 100% / 0.02) 4px
-    );
-    pointer-events: none;
-  }
+.shadow-shelf:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 35, 102, 0.15);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
 }
