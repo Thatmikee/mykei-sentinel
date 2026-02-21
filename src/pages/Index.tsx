@@ -223,7 +223,7 @@ export default function Index() {
                 {["#ff5f57","#febc2e","#28c840"].map(c => <div key={c} style={{ width: 11, height: 11, borderRadius: "50%", background: c }} />)}
                 <span style={{ marginLeft: "0.5rem", color: "#64748b", fontSize: "0.68rem" }}>ADN-1_SPEC_SHEET.cfg</span>
               </div>
-              <div style={{ color: GOLD, marginBottom: "1rem" }}>$ cat /sys/device/specs</div>
+              <div style={{ color: GOLD, marginBottom: "1rem", fontSize: "0.75rem" }}>ADN-1 ACTIVE DETERRENT NODE — SYSTEM CONFIGURATION</div>
               {[["PROCESSOR","Dual-core ESP32"],["SENSOR","VL53L0X ToF"],["LASER","940nm VCSEL"],["RESPONSE TIME","<200ms"],["CONNECTIVITY","Encrypted Wi-Fi / LTE"],["ENCRYPTION","AES-256-GCM"],["CLOUD PROTOCOL","TLS 1.3"],["POWER","PoE / 12V DC"],["CLOUD INFRA","AWS IoT Core + MQTT"],["COMPLIANCE","UK Retail Security Standards"]].map(([k, v]) => (
                 <div key={k} style={{ display: "grid", gridTemplateColumns: "170px 20px 1fr", marginBottom: "0.4rem" }}>
                   <span style={{ color: "#94a3b8" }}>{k}</span>
