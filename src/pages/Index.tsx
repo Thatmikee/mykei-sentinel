@@ -148,13 +148,14 @@ export default function Index() {
           </h1>
           <p style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)", fontWeight: 600, color: NAVY, marginBottom: "1.5rem", maxWidth: "560px", lineHeight: 1.4 }}>
             Turning stolen goods into <span style={{ color: GOLD }}>toxic liabilities,</span> AUTOMATICALLY ! 
+            
             At the point of theft.
           </p>
           <p style={{ fontSize: "1.05rem", color: "#475569", maxWidth: "600px", lineHeight: 1.8, marginBottom: "2rem", fontWeight: 400 }}>
-            Organised retail crime costs UK businesses <strong style={{ color: NAVY }}>£4.2 billion every year</strong> — not because retailers aren't spending on security, but because no system has ever attacked the one thing that makes theft rational: <strong style={{ color: NAVY }}>the ability to resell stolen goods.</strong>
+            Organised retail crime costs UK businesses <strong style={{ color: NAVY }}>£4.2 billion every year</strong> ; not because retailers aren't spending on security, but because no system has ever attacked the one thing that makes theft rational: <strong style={{ color: NAVY }}>the ability to resell stolen goods.</strong>
           </p>
           <p style={{ fontSize: "1rem", color: "#475569", maxWidth: "580px", lineHeight: 1.8, marginBottom: "2.5rem" }}>
-            The ADN-1 changes that. The moment theft occurs, our system applies an invisible forensic marker and registers the item as <strong style={{ color: NAVY }}>Toxic Inventory</strong> — commercially worthless, legally traceable, and blocked from resale platforms automatically.
+            The ADN-1 changes that. The moment theft occurs, our system applies an invisible forensic marker and registers the item as <strong style={{ color: NAVY }}>Toxic Inventory</strong> making it commercially worthless, legally traceable, and blocked from resale platforms automatically.
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <a href="/survey" style={{ background: NAVY, color: WHITE, padding: "0.9rem 2rem", borderRadius: "4px", fontWeight: 700, fontSize: "0.85rem", border: `1px solid ${GOLD}`, boxShadow: `0 0 16px rgba(201,168,76,0.25)`, letterSpacing: "0.05em" }}>
@@ -199,7 +200,7 @@ export default function Index() {
             <h2 style={{ fontSize: "2rem", fontWeight: 800, color: NAVY, marginBottom: "0.5rem" }}>The Technology</h2>
             <p style={{ color: "#475569", marginBottom: "3rem", maxWidth: "560px", lineHeight: 1.7 }}>
               Integrated hardware and cloud infrastructure designed for one purpose:{" "}
-              <strong>Economic Sterilization</strong> — marking high-value stock with forensic DNA mist to eliminate resale value.
+              <strong>Economic Sterilization</strong> - marking high-value stock with forensic DNA mist to eliminate resale value.
             </p>
             <div className="tech-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginBottom: "2rem" }}>
               {[
