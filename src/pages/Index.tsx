@@ -219,9 +219,9 @@ export default function Index() {
             <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", color: GOLD, marginBottom: "0.5rem", fontWeight: 600 }}>SYSTEM SPECIFICATIONS</p>
             <h2 style={{ fontSize: "2rem", fontWeight: 800, color: NAVY, marginBottom: "2rem" }}>Technical Specs</h2>
             <div style={{ background: NAVY, color: "#e0e0e0", padding: "2rem", borderRadius: "8px", maxWidth: "560px", fontSize: "0.85rem", border: `1px solid rgba(201,168,76,0.3)`, fontFamily: "'Courier New', monospace" }}>
-              <div style={{ marginBottom: "1rem", display: "flex", gap: "6px", alignItems: "center" }}>
-                {["#ff5f57","#febc2e","#28c840"].map(c => <div key={c} style={{ width: 11, height: 11, borderRadius: "50%", background: c }} />)}
-                <span style={{ marginLeft: "0.5rem", color: "#64748b", fontSize: "0.68rem" }}>ADN-1_SPEC_SHEET.cfg</span>
+              <div style={{ marginBottom: "1.2rem", paddingBottom: "0.8rem", borderBottom: "1px solid rgba(201,168,76,0.2)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ fontSize: "0.68rem", color: "#64748b", letterSpacing: "0.1em" }}>ADN-1_SPEC_SHEET.cfg</span>
+                <span style={{ fontSize: "0.6rem", color: GOLD, letterSpacing: "0.08em" }}>VERIFIED</span>
               </div>
               <div style={{ color: GOLD, marginBottom: "1rem", fontSize: "0.75rem" }}>ADN-1 ACTIVE DETERRENT NODE — SYSTEM CONFIGURATION</div>
               {[["PROCESSOR","Dual-core ESP32"],["SENSOR","VL53L0X ToF"],["LASER","940nm VCSEL"],["RESPONSE TIME","<200ms"],["CONNECTIVITY","Encrypted Wi-Fi / LTE"],["ENCRYPTION","AES-256-GCM"],["CLOUD PROTOCOL","TLS 1.3"],["POWER","PoE / 12V DC"],["CLOUD INFRA","AWS IoT Core + MQTT"],["COMPLIANCE","UK Retail Security Standards"]].map(([k, v]) => (
