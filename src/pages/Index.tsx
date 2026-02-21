@@ -1,3 +1,17 @@
+// At the top of Index.tsx, with your other imports:
+import { GoldShelfBackground } from "@/components/GoldShelfBackground";
+
+// Inside your return(), before everything else:
+return (
+  <>
+    <GoldShelfBackground />   {/* ← ADD THIS */}
+    <div style={{ position: "relative", zIndex: 1 }}>
+      {/* all your existing sections stay exactly as they are */}
+      <Hero />
+      {/* ... rest of your page ... */}
+    </div>
+  </>
+);
 import { useState } from "react";
 
 const NAVY = "#0f1f3d";
