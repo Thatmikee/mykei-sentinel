@@ -14,10 +14,9 @@ export const Mission = () => {
             <h3 className="text-2xl font-bold text-slate-900 mb-2">Michael Esema, MBA, MSc</h3>
             <p className="text-royal-blue font-semibold mb-4 underline">Managing Director & Strategic Architect</p>
             <ul className="text-slate-600 space-y-2 text-sm">
-              <li>• MBA, Nigerian Defense Academy</li>
-              <li>• MSc, International Business Management (MMU)</li>
+              <li>• MBA, Nigerian Defence Academy</li>
+              <li>• MSc, International Business Management — Manchester Metropolitan University</li>
               <li>• Specialist in Tactical Strategy & Forensic Audit Protocols</li>
-              <li>• President, Nigerian University Accounting Students Association (2017/2018)</li>
             </ul>
           </div>
         </div>
