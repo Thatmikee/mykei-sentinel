@@ -52,7 +52,7 @@ export default function Index() {
     ["ADN-1 SYSTEM", "#adn-1-system"],
     ["MARKET CASE", "#market-case"],
     ["FOUNDER", "#founder"],
-    ["SURVEY", "/survey"],
+    ["SURVEY", "#pilot-survey"],
   ];
 
   return (
@@ -92,7 +92,7 @@ export default function Index() {
                 }}
               >{label}</a>
             ))}
-            <a href="/survey" style={{
+            <a href="#pilot-survey" style={{
               fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.08em",
               color: WHITE, padding: "0.45rem 1.1rem", borderRadius: "4px",
               background: NAVY, border: `1px solid ${GOLD}`,
@@ -122,7 +122,7 @@ export default function Index() {
                 {label}
               </a>
             ))}
-            <a href="/survey" style={{ fontSize: "0.85rem", fontWeight: 700, color: WHITE, background: NAVY, padding: "0.7rem 1rem", borderRadius: "4px", border: `1px solid ${GOLD}`, textAlign: "center" }}>
+            <a href="#pilot-survey" style={{ fontSize: "0.85rem", fontWeight: 700, color: WHITE, background: NAVY, padding: "0.7rem 1rem", borderRadius: "4px", border: `1px solid ${GOLD}`, textAlign: "center" }}>
               REQUEST PILOT →
             </a>
           </div>
@@ -147,8 +147,8 @@ export default function Index() {
             <span style={{ color: BLUE, textShadow: `0 0 30px rgba(37,99,235,0.3)` }}>Worthless.</span>
           </h1>
           <p style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)", fontWeight: 600, color: NAVY, marginBottom: "1.5rem", maxWidth: "560px", lineHeight: 1.4 }}>
-            Turning stolen goods into <span style={{ color: GOLD }}>toxic liabilities,</span> AUTOMATICALLY ! 
-            
+            Turning stolen goods into <span style={{ color: GOLD }}>toxic liabilities,</span> AUTOMATICALLY !
+
             At the point of theft.
           </p>
           <p style={{ fontSize: "1.05rem", color: "#475569", maxWidth: "600px", lineHeight: 1.8, marginBottom: "2rem", fontWeight: 400 }}>
@@ -158,7 +158,7 @@ export default function Index() {
             The ADN-1 changes that. The moment theft occurs, our system applies an invisible forensic marker and registers the item as <strong style={{ color: NAVY }}>Toxic Inventory</strong> making it commercially worthless, legally traceable, and blocked from resale platforms automatically.
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <a href="/survey" style={{ background: NAVY, color: WHITE, padding: "0.9rem 2rem", borderRadius: "4px", fontWeight: 700, fontSize: "0.85rem", border: `1px solid ${GOLD}`, boxShadow: `0 0 16px rgba(201,168,76,0.25)`, letterSpacing: "0.05em" }}>
+            <a href="#pilot-survey" style={{ background: NAVY, color: WHITE, padding: "0.9rem 2rem", borderRadius: "4px", fontWeight: 700, fontSize: "0.85rem", border: `1px solid ${GOLD}`, boxShadow: `0 0 16px rgba(201,168,76,0.25)`, letterSpacing: "0.05em" }}>
               REQUEST PILOT ACCESS →
             </a>
             <a href="#adn-1-system" style={{ color: NAVY, padding: "0.9rem 2rem", borderRadius: "4px", fontWeight: 600, fontSize: "0.85rem", border: `1px solid ${BORDER}`, letterSpacing: "0.05em" }}>
@@ -225,7 +225,7 @@ export default function Index() {
             </div>
             <div style={{ background: LIGHT, border: `1px solid ${BORDER}`, borderLeft: `4px solid ${GOLD}`, padding: "1rem 1.5rem", fontSize: "0.85rem", borderRadius: "2px" }}>
               <span style={{ color: GOLD, fontWeight: 700 }}>KEY OUTCOME: </span>
-              <span style={{ color: "#475569" }}>Forensic DNA marking eliminates resale value at point of theft. Privacy-by-Design — no facial recognition, no personal data captured.</span>
+              <span style={{ color: "#475569" }}>Forensic DNA marking eliminates resale value at point of theft. Privacy-by-Design: no facial recognition, no personal data captured.</span>
             </div>
           </div>
         </section>
