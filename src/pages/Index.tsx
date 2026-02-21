@@ -1,18 +1,5 @@
-// At the top of Index.tsx, with your other imports:
-import { GoldShelfBackground } from "@/components/GoldShelfBackground";
-
-// Inside your return(), before everything else:
-return (
-  <>
-    <GoldShelfBackground />   {/* ← ADD THIS */}
-    <div style={{ position: "relative", zIndex: 1 }}>
-      {/* all your existing sections stay exactly as they are */}
-      <Hero />
-      {/* ... rest of your page ... */}
-    </div>
-  </>
-);
 import { useState } from "react";
+import { GoldShelfBackground } from "@/components/GoldShelfBackground";
 
 const NAVY = "#0f1f3d";
 const BLUE = "#2563eb";
@@ -70,8 +57,9 @@ export default function Index() {
 
   return (
     <>
+      <GoldShelfBackground />
       <style>{globalStyles}</style>
-      <div style={{ fontFamily: "'Inter', sans-serif", background: WHITE, color: NAVY, minHeight: "100vh" }}>
+      <div style={{ position: "relative", zIndex: 1, fontFamily: "'Inter', sans-serif", background: "transparent", color: NAVY, minHeight: "100vh" }}>
 
         {/* NAV */}
         <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1rem 2.5rem", borderBottom: `1px solid ${BORDER}`, position: "sticky", top: 0, background: WHITE, zIndex: 100, boxShadow: "0 1px 8px rgba(0,0,0,0.06)" }}>
@@ -284,10 +272,10 @@ export default function Index() {
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "1.4rem" }}>
                 {[
-                  { label: "FINANCIAL GOVERNANCE & AUDIT", text: "Managed budgets up to £1.5M annually. Processed 500+ monthly financial transactions and provided audit support at NEMA (National Emergency Management Agency, Nigeria)." },
+                  { label: "FINANCIAL GOVERNANCE & AUDIT", text: "Managed budgets up to £1.5M annually, generating strategic financial reports and maintaining strict regulatory compliance. Provided critical data support across multiple internal and external audit cycles at NEMA (National Emergency Management Agency, Nigeria)." },
                   { label: "OPERATIONAL IMPROVEMENT", text: "Delivered a quantifiable 75% enhancement in workflow efficiency following a structured operational audit. Lean Six Sigma certified (2025). PMP in progress." },
                   { label: "RETAIL & COMMERCIAL INTELLIGENCE", text: "Scaled high-volume retail environments in Abuja, generating 45% more revenue than projected through asset protection and operational integrity improvements." },
-                  { label: "ACADEMIC FOUNDATION", text: "MSc International Business Management — Manchester Met (2024). MBA — Nigerian Defence Academy (2022). BSc Accounting — Benson Idahosa University (2018)." },
+                  { label: "ACADEMIC FOUNDATION", text: "MSc International Business Management — Manchester Metropolitan University. MBA — Nigerian Defence Academy. BSc Accounting — Benson Idahosa University." },
                 ].map(({ label, text }) => (
                   <div key={label} style={{ borderLeft: `3px solid ${GOLD}`, paddingLeft: "1rem" }}>
                     <div style={{ fontSize: "0.6rem", letterSpacing: "0.12em", color: GOLD, fontWeight: 700, marginBottom: "0.3rem" }}>{label}</div>
