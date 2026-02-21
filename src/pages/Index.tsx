@@ -129,11 +129,24 @@ export default function Index() {
         {/* HERO */}
         <section className="hero-section" style={{ padding: "6rem 2.5rem 5rem", maxWidth: "960px", margin: "0 auto" }}>
           <img src="/logo.png" alt="Mykei" style={{ height: "64px", marginBottom: "2rem", display: "block" }} />
-          <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", color: GOLD, marginBottom: "1rem", fontWeight: 600 }}>ACTIVE FORENSIC DEFENCE · MANCHESTER, UK</p>
-          <h1 style={{ fontSize: "clamp(2.2rem, 5.5vw, 3.8rem)", fontWeight: 900, lineHeight: 1.1, marginBottom: "1.5rem", color: NAVY }}>
-            Stolen goods used to have value.<br />
-            <span style={{ color: BLUE }}>We ended that.</span>
+          <p style={{ fontSize: "0.7rem", letterSpacing: "0.2em", color: GOLD, marginBottom: "1.2rem", fontWeight: 600 }}>ACTIVE FORENSIC DEFENCE · MANCHESTER, UK</p>
+          <h1 style={{
+            fontSize: "clamp(2.8rem, 7vw, 5rem)",
+            fontWeight: 900,
+            lineHeight: 1.05,
+            marginBottom: "1.2rem",
+            fontFamily: "'Inter', sans-serif",
+            letterSpacing: "-0.02em",
+            color: NAVY,
+            textShadow: `2px 2px 0px rgba(201,168,76,0.15), 0 0 40px rgba(201,168,76,0.08)`,
+          }}>
+            <span style={{ color: GOLD, textShadow: `0 0 30px rgba(201,168,76,0.5), 2px 2px 0px rgba(201,168,76,0.3)` }}>Stolen.</span>{" "}
+            <span style={{ color: NAVY, textShadow: `0 0 30px rgba(37,99,235,0.2)` }}>Marked.</span>{" "}
+            <span style={{ color: BLUE, textShadow: `0 0 30px rgba(37,99,235,0.3)` }}>Worthless.</span>
           </h1>
+          <p style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)", fontWeight: 600, color: NAVY, marginBottom: "1.5rem", maxWidth: "560px", lineHeight: 1.4 }}>
+            Turning stolen goods into <span style={{ color: GOLD }}>toxic liabilities</span> — automatically, at the point of theft.
+          </p>
           <p style={{ fontSize: "1.05rem", color: "#475569", maxWidth: "600px", lineHeight: 1.8, marginBottom: "2rem", fontWeight: 400 }}>
             Organised retail crime costs UK businesses <strong style={{ color: NAVY }}>£4.2 billion every year</strong> — not because retailers aren't spending on security, but because no system has ever attacked the one thing that makes theft rational: <strong style={{ color: NAVY }}>the ability to resell stolen goods.</strong>
           </p>
