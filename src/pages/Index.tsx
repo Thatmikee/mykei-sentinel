@@ -147,7 +147,7 @@ export default function Index() {
             <span style={{ color: BLUE, textShadow: `0 0 30px rgba(37,99,235,0.3)` }}>Worthless.</span>
           </h1>
           <p style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)", fontWeight: 600, color: NAVY, marginBottom: "1.5rem", maxWidth: "560px", lineHeight: 1.4 }}>
-            Turning stolen goods into <span style={{ color: GOLD }}>toxic liabilities</span> — automatically, at the point of theft.
+            Turning stolen goods into <span style={{ color: GOLD }}>toxic liabilities,</span> automatically, at the point of theft.
           </p>
           <p style={{ fontSize: "1.05rem", color: "#475569", maxWidth: "600px", lineHeight: 1.8, marginBottom: "2rem", fontWeight: 400 }}>
             Organised retail crime costs UK businesses <strong style={{ color: NAVY }}>£4.2 billion every year</strong> — not because retailers aren't spending on security, but because no system has ever attacked the one thing that makes theft rational: <strong style={{ color: NAVY }}>the ability to resell stolen goods.</strong>
@@ -175,7 +175,7 @@ export default function Index() {
                 { stat: "£4.2B", label: "Total UK retail crime cost (2025/26)" },
                 { stat: "£2.2B", label: "Direct customer theft losses" },
                 { stat: "20M+", label: "Theft incidents recorded last year" },
-                { stat: "£1.8B", label: "Spent on passive security — losses still rising" },
+                { stat: "£1.8B", label: "Spent on passive security, yet losses continue to rise" },
               ].map(({ stat, label }) => (
                 <div key={stat} style={{ background: "rgba(255,255,255,0.05)", border: `1px solid rgba(201,168,76,0.3)`, borderTop: `3px solid ${GOLD}`, padding: "1.2rem", borderRadius: "4px" }}>
                   <div style={{ fontSize: "1.8rem", fontWeight: 900, color: GOLD }}>{stat}</div>
@@ -184,7 +184,7 @@ export default function Index() {
               ))}
             </div>
             <p style={{ color: "#94a3b8", maxWidth: "680px", lineHeight: 1.8, fontSize: "0.95rem" }}>
-              Existing tools — CCTV, guards, EAS tags — observe crime but leave the incentive structure untouched.{" "}
+              Existing tools like CCTV, guards and EAS tags observe crime but leave the incentive structure untouched.{" "}
               <strong style={{ color: WHITE }}>As long as stolen goods retain resale value, theft remains rational.</strong>{" "}
               Mykei removes that value at the point of theft.
             </p>
@@ -203,7 +203,7 @@ export default function Index() {
             <div className="tech-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginBottom: "2rem" }}>
               {[
                 { tag: "ADN-1", title: "Active Deterrence Node", desc: "Shelf-integrated unit using 940nm VCSEL Time-of-Flight sensors to detect bulk sweep behaviour with sub-200ms response. On trigger: piezoelectric atomization deploys invisible synthetic DNA forensic mist.", specs: [["SENSOR","VL53L0X ToF"],["LASER","940nm VCSEL"],["RESPONSE","<200ms"],["PROCESSOR","Dual-core ESP32"]] },
-                { tag: "ATS", title: "Alarm Transmission System", desc: "Encrypted cloud layer transmitting real-time theft alerts to the management dashboard. TLS 1.3 secured forensic event packages — admissible as UK legal evidence.", specs: [["PROTOCOL","TLS 1.3"],["LATENCY","<50ms"],["UPTIME","99.99%"],["ENCRYPTION","AES-256-GCM"]] },
+                { tag: "ATS", title: "Alarm Transmission System", desc: "Encrypted cloud layer transmitting real-time theft alerts to the management dashboard. TLS 1.3 secured forensic event packages, fully admissible as UK legal evidence.", specs: [["PROTOCOL","TLS 1.3"],["LATENCY","<50ms"],["UPTIME","99.99%"],["ENCRYPTION","AES-256-GCM"]] },
                 { tag: "FDT", title: "Forensic Digital Twin", desc: "Every marked item is cryptographically logged as Toxic Inventory. API hooks to resale platforms flag or remove listings matching theft events in our registry.", specs: [["REGISTRY","AWS IoT Core"],["STANDARD","ISO 27001"],["GDPR","Privacy-by-Design"],["LOG","Immutable Audit Trail"]] },
               ].map(({ tag, title, desc, specs }) => (
                 <div key={tag} style={{ border: `1px solid ${BORDER}`, borderTop: `3px solid ${GOLD}`, padding: "1.5rem", background: WHITE, borderRadius: "4px" }}>
