@@ -1,9 +1,6 @@
-// src/components/GoldShelfBackground.tsx
-// Fixed background — 3D perspective retail gondola in gold sketch style.
-// Matches founder's hand sketch: wide shelf unit viewed from above-left,
-// 3 shelf levels, 3 bays, ADN-1 units on front edge of each shelf per bay,
-// left end panel with diagonal hatching showing depth.
-// Opacity 0.07 — texture only, never competes with content.
+// src/components/GoldShelfBackground.tsx — v6
+// More visible (opacity 0.15), gondola zoomed out so full unit sits in viewport.
+// 3D perspective retail gondola, gold sketch style, matching founder sketch.
 
 export const GoldShelfBackground = () => (
   <div
@@ -20,202 +17,169 @@ export const GoldShelfBackground = () => (
     aria-hidden="true"
   >
     <svg
-      viewBox="0 0 1200 800"
+      viewBox="0 0 1400 900"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
-      style={{ width: "100%", height: "100%", opacity: 0.08 }}
+      style={{ width: "100%", height: "100%", opacity: 0.15 }}
     >
       <defs>
-        <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%"   stopColor="#8B6914" />
-          <stop offset="40%"  stopColor="#D4A017" />
-          <stop offset="70%"  stopColor="#FFD700" />
-          <stop offset="100%" stopColor="#92720A" />
-        </linearGradient>
         <linearGradient id="goldH" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%"   stopColor="#C9980A" />
-          <stop offset="50%"  stopColor="#FFD700" />
-          <stop offset="100%" stopColor="#C9980A" />
+          <stop offset="0%"   stopColor="#A07820" />
+          <stop offset="40%"  stopColor="#E8B824" />
+          <stop offset="70%"  stopColor="#FFD700" />
+          <stop offset="100%" stopColor="#A07820" />
         </linearGradient>
-        <linearGradient id="goldDark" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%"   stopColor="#6B5010" />
-          <stop offset="100%" stopColor="#9A7A1A" />
+        <linearGradient id="goldV" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stopColor="#FFD700" />
+          <stop offset="100%" stopColor="#7A5C0A" />
         </linearGradient>
-        {/* Sketch wobble filter */}
         <filter id="sk" x="-2%" y="-2%" width="104%" height="104%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="7" result="n"/>
-          <feDisplacementMap in="SourceGraphic" in2="n" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+          <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="5" result="n"/>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="1.2"
+            xChannelSelector="R" yChannelSelector="G"/>
         </filter>
       </defs>
 
       {/*
-        PERSPECTIVE MAPPING (matching sketch):
-        The gondola sits centre-screen, wide.
-        Vanishing point implied top-right.
-        
-        Front face coordinates (the shelf face you see):
-          Top-left front:     (130, 220)
-          Top-right front:    (1070, 220)
-          Bottom-left front:  (130, 680)
-          Bottom-right front: (1070, 680)
-        
-        Top surface recedes to upper-left (perspective top):
-          Top-left back:      (60, 170)
-          Top-right back:     (1000, 170)
-        
-        Left end panel (depth face):
-          Goes from front-left corner back to back-left corner
+        GONDOLA COORDINATES — zoomed out, centred in viewport
+        Front face:
+          Top-left:     (80,  180)
+          Top-right:    (1320, 180)
+          Bottom-left:  (80,  820)
+          Bottom-right: (1320, 820)
+        Top surface recedes up-left:
+          Rear-left:    (20,  120)
+          Rear-right:   (1260, 120)
+        Left end panel: front-left to rear-left, full height
       */}
 
-      {/* ── TOP SURFACE (perspective top, receding) ── */}
+      {/* ── TOP SURFACE ── */}
       <polygon
-        points="130,220 1070,220 1000,170 60,170"
-        stroke="#D4A017" strokeWidth="2" fill="none"
+        points="80,180 1320,180 1260,120 20,120"
+        stroke="#D4A017" strokeWidth="2.5" fill="none"
         filter="url(#sk)"
       />
-      {/* Top surface fill lines (subtle) */}
-      {[0.2, 0.4, 0.6, 0.8].map((t, i) => (
+      {/* Top surface depth lines */}
+      {[0.25, 0.5, 0.75].map((t, i) => (
         <line key={i}
-          x1={130 + t*(1070-130)} y1={220}
-          x2={60 + t*(1000-60)}   y2={170}
-          stroke="#C9980A" strokeWidth="0.8" opacity="0.5"
+          x1={80  + t * (1320 - 80)}  y1={180}
+          x2={20  + t * (1260 - 20)}  y2={120}
+          stroke="#B8860B" strokeWidth="0.9" opacity="0.5"
           filter="url(#sk)"
         />
       ))}
 
-      {/* ── LEFT END PANEL (depth face with hatching) ── */}
+      {/* ── LEFT END PANEL with hatching ── */}
       <polygon
-        points="130,220 60,170 60,630 130,680"
-        stroke="#D4A017" strokeWidth="2" fill="none"
+        points="80,180 20,120 20,760 80,820"
+        stroke="#D4A017" strokeWidth="2.5" fill="none"
         filter="url(#sk)"
       />
-      {/* Diagonal hatching on end panel — matches sketch */}
-      {[-60,-40,-20,0,20,40,60,80,100,120,140,160,180,200,220,240,260,280,300].map((offset, i) => {
-        // Lines going top-right to bottom-left within the end panel trapezoid
-        const x1 = 60, y1 = 170 + offset;
-        const x2 = 130, y2 = 220 + offset;
-        // Clip to panel bounds roughly
-        if (y1 > 630 || y2 > 680) return null;
+      {/* Diagonal hatch lines */}
+      {Array.from({ length: 22 }, (_, i) => {
+        const offset = i * 32 - 60;
+        const x1 = 20, y1 = Math.min(Math.max(120 + offset, 120), 760);
+        const x2 = 80, y2 = Math.min(Math.max(180 + offset, 180), 820);
+        if (y1 >= 760 || y2 >= 820) return null;
         return (
           <line key={i}
-            x1={Math.max(x1, 60)} y1={Math.min(Math.max(y1, 170), 630)}
-            x2={Math.min(x2, 130)} y2={Math.min(Math.max(y2, 220), 680)}
-            stroke="#92720A" strokeWidth="1" opacity="0.6"
+            x1={x1} y1={y1} x2={x2} y2={y2}
+            stroke="#92720A" strokeWidth="1.2" opacity="0.65"
             filter="url(#sk)"
           />
         );
       })}
 
       {/* ── OUTER FRAME — front face ── */}
-      {/* Left vertical */}
-      <line x1="130" y1="220" x2="130" y2="680" stroke="url(#goldH)" strokeWidth="3" filter="url(#sk)"/>
-      {/* Right vertical */}
-      <line x1="1070" y1="220" x2="1070" y2="680" stroke="url(#goldH)" strokeWidth="3" filter="url(#sk)"/>
-      {/* Top horizontal */}
-      <line x1="130" y1="220" x2="1070" y2="220" stroke="url(#goldH)" strokeWidth="3" filter="url(#sk)"/>
-      {/* Bottom horizontal */}
-      <line x1="130" y1="680" x2="1070" y2="680" stroke="url(#goldH)" strokeWidth="3" filter="url(#sk)"/>
-      {/* Back verticals (top surface rear edge) */}
-      <line x1="60" y1="170" x2="60" y2="630" stroke="#92720A" strokeWidth="2" filter="url(#sk)"/>
-      <line x1="1000" y1="170" x2="1070" y2="220" stroke="#92720A" strokeWidth="2" filter="url(#sk)"/>
-      {/* Bottom rear edge */}
-      <line x1="60" y1="630" x2="130" y2="680" stroke="#92720A" strokeWidth="2" filter="url(#sk)"/>
-      <line x1="1000" y1="630" x2="1070" y2="680" stroke="#92720A" strokeWidth="2" filter="url(#sk)"/>
-      <line x1="60" y1="630" x2="1000" y2="630" stroke="#92720A" strokeWidth="1.5" filter="url(#sk)"/>
+      <line x1="80"   y1="180" x2="80"   y2="820" stroke="url(#goldV)" strokeWidth="3.5" filter="url(#sk)"/>
+      <line x1="1320" y1="180" x2="1320" y2="820" stroke="url(#goldV)" strokeWidth="3.5" filter="url(#sk)"/>
+      <line x1="80"   y1="180" x2="1320" y2="180" stroke="url(#goldH)" strokeWidth="3.5" filter="url(#sk)"/>
+      <line x1="80"   y1="820" x2="1320" y2="820" stroke="url(#goldH)" strokeWidth="3.5" filter="url(#sk)"/>
+      {/* Back verticals */}
+      <line x1="20"  y1="120" x2="20"   y2="760" stroke="#92720A" strokeWidth="2" filter="url(#sk)"/>
+      <line x1="1260" y1="120" x2="1320" y2="180" stroke="#92720A" strokeWidth="2" filter="url(#sk)"/>
+      {/* Bottom rear */}
+      <line x1="20"   y1="760" x2="80"   y2="820" stroke="#92720A" strokeWidth="2" filter="url(#sk)"/>
+      <line x1="1260" y1="760" x2="1320" y2="820" stroke="#92720A" strokeWidth="2" filter="url(#sk)"/>
+      <line x1="20"   y1="760" x2="1260" y2="760" stroke="#92720A" strokeWidth="1.8" filter="url(#sk)" strokeDasharray="6,4"/>
 
-      {/* ── SHELF LEVELS — 3 horizontal shelves across front face ── */}
-      {/* Shelf 1 at y=340, Shelf 2 at y=460, Shelf 3 at y=580 */}
-      {[340, 460, 580].map((y, si) => {
-        // Each shelf has a front edge and a receding top surface line
-        const recessY = y - 12; // top surface of shelf board
-        const recessXOffset = -14; // perspective recede left
-        return (
-          <g key={si} filter="url(#sk)">
-            {/* Shelf front edge — full width */}
-            <line x1="130" y1={y} x2="1070" y2={y} stroke="url(#goldH)" strokeWidth="2.5"/>
-            {/* Shelf top surface line (receding) */}
-            <line x1="130" y1={recessY} x2="1070" y2={recessY} stroke="#B8860B" strokeWidth="1.2" opacity="0.7"/>
-            {/* Shelf depth — left side */}
-            <line x1="130" y1={y} x2={130+recessXOffset} y2={recessY} stroke="#B8860B" strokeWidth="1.2" opacity="0.7"/>
-            {/* Shelf depth — right side */}
-            <line x1="1070" y1={y} x2={1070+recessXOffset} y2={recessY} stroke="#B8860B" strokeWidth="1.2" opacity="0.7"/>
-            {/* Shelf underside shadow line */}
-            <line x1="130" y1={y+5} x2="1070" y2={y+5} stroke="#6B5010" strokeWidth="1.5" opacity="0.5"/>
-          </g>
-        );
-      })}
+      {/* ── 3 SHELF LEVELS ── */}
+      {[370, 530, 690].map((y, si) => (
+        <g key={si} filter="url(#sk)">
+          {/* Shelf front face (thick board edge) */}
+          <line x1="80"   y1={y} x2="1320" y2={y}   stroke="url(#goldH)" strokeWidth="3"/>
+          {/* Shelf board top */}
+          <line x1="80"   y1={y-14} x2="1320" y2={y-14} stroke="#C9980A" strokeWidth="1.5" opacity="0.7"/>
+          {/* Recede depth lines at ends */}
+          <line x1="80"   y1={y} x2="20"   y2={y-14} stroke="#B8860B" strokeWidth="1.5" opacity="0.7"/>
+          <line x1="1320" y1={y} x2="1260" y2={y-14} stroke="#B8860B" strokeWidth="1.5" opacity="0.7"/>
+          {/* Shadow under shelf */}
+          <line x1="80"   y1={y+6} x2="1320" y2={y+6} stroke="#6B5010" strokeWidth="2" opacity="0.45"/>
+        </g>
+      ))}
 
-      {/* ── VERTICAL BAY DIVIDERS — 2 dividers creating 3 bays ── */}
-      {/* Bay dividers at x≈430 and x≈730 */}
-      {[430, 730].map((x, di) => {
-        // Divider recedes to perspective
-        const rearX = x - 14;
-        return (
-          <g key={di} filter="url(#sk)">
-            {/* Front vertical divider */}
-            <line x1={x} y1="220" x2={x} y2="680" stroke="#C9980A" strokeWidth="2"/>
-            {/* Top receding line */}
-            <line x1={x} y1="220" x2={rearX} y2="170" stroke="#92720A" strokeWidth="1.2" opacity="0.7"/>
-          </g>
-        );
-      })}
+      {/* ── 2 VERTICAL BAY DIVIDERS → 3 bays ── */}
+      {[540, 900].map((x, di) => (
+        <g key={di} filter="url(#sk)">
+          <line x1={x} y1="180" x2={x} y2="820" stroke="#C9980A" strokeWidth="2.2"/>
+          {/* Receding top edge */}
+          <line x1={x} y1="180" x2={x - 15} y2="120" stroke="#92720A" strokeWidth="1.4" opacity="0.7"/>
+        </g>
+      ))}
 
-      {/* ── ADN-1 UNITS — front edge of every shelf, every bay ── */}
       {/*
-        3 bays: x ranges [130–430], [430–730], [730–1070]
-        Bay centres: ~280, ~580, ~900
-        3 shelf levels: y = 220 (top), 340, 460  (unit sits on shelf below it)
-        Plus bottom shelf: 580
-        Matching sketch: unit on top of each shelf board front edge
+        ── ADN-1 UNITS ──
+        3 bays × 4 shelf positions (top rail + 3 shelves)
+        Bay centres: ~310, ~720, ~1110
+        Shelf y positions: 180 (top rail), 370, 530, 690
+        Unit sits just above the shelf line it's mounted on
       */}
       {[
-        // [bayCenter, shelfY] — unit sits just above each shelf line
-        // Top shelf (220 = top of gondola) — 3 units
-        [280, 220], [580, 220], [900, 220],
-        // Shelf 1 at 340
-        [280, 340], [580, 340], [900, 340],
-        // Shelf 2 at 460
-        [280, 460], [580, 460], [900, 460],
-        // Shelf 3 at 580
-        [280, 580], [580, 580], [900, 580],
+        [310, 180], [720, 180], [1110, 180],
+        [310, 370], [720, 370], [1110, 370],
+        [310, 530], [720, 530], [1110, 530],
+        [310, 690], [720, 690], [1110, 690],
       ].map(([cx, sy], i) => {
-        const w = 72, h = 22;
-        const x = cx - w/2;
-        const y = sy - h - 2; // sit just above shelf line
+        const w = 90, h = 28;
+        const x = cx - w / 2;
+        const y = sy - h - 3;
         return (
           <g key={i} filter="url(#sk)">
             {/* Unit body */}
-            <rect x={x} y={y} width={w} height={h} rx="2"
-              stroke="#FFD700" strokeWidth="1.8" fill="none"/>
-            {/* "ADN-1" label line */}
-            <line x1={x+6} y1={y+8} x2={x+w-6} y2={y+8}
-              stroke="#C9980A" strokeWidth="1.2"/>
-            {/* Two sensor dots */}
-            <circle cx={x+10} cy={y+15} r="2.5"
-              stroke="#FFD700" strokeWidth="1.2" fill="none"/>
-            <circle cx={x+20} cy={y+15} r="2.5"
-              stroke="#FFD700" strokeWidth="1.2" fill="none"/>
-            {/* Label text placeholder lines */}
-            <line x1={x+28} y1={y+14} x2={x+w-6} y2={y+14}
-              stroke="#B8860B" strokeWidth="1" opacity="0.8"/>
-            {/* Mount clip at bottom */}
-            <line x1={cx-8} y1={y+h} x2={cx-8} y2={sy+3}
-              stroke="#92720A" strokeWidth="1.2"/>
-            <line x1={cx+8} y1={y+h} x2={cx+8} y2={sy+3}
+            <rect x={x} y={y} width={w} height={h} rx="3"
+              stroke="#FFD700" strokeWidth="2" fill="none"/>
+            {/* Top label line */}
+            <line x1={x+8} y1={y+9} x2={x+w-8} y2={y+9}
+              stroke="#C9980A" strokeWidth="1.4"/>
+            {/* Sensor circles */}
+            <circle cx={x+14} cy={y+19} r="3.5"
+              stroke="#FFD700" strokeWidth="1.5" fill="none"/>
+            <circle cx={x+26} cy={y+19} r="3.5"
+              stroke="#FFD700" strokeWidth="1.5" fill="none"/>
+            {/* Text placeholder lines */}
+            <line x1={x+36} y1={y+17} x2={x+w-8} y2={y+17}
+              stroke="#B8860B" strokeWidth="1.2" opacity="0.9"/>
+            <line x1={x+36} y1={y+22} x2={x+w-18} y2={y+22}
+              stroke="#B8860B" strokeWidth="0.9" opacity="0.6"/>
+            {/* Mount clip */}
+            <line x1={cx-10} y1={y+h} x2={cx-10} y2={sy+4}
+              stroke="#92720A" strokeWidth="1.4"/>
+            <line x1={cx+10} y1={y+h} x2={cx+10} y2={sy+4}
+              stroke="#92720A" strokeWidth="1.4"/>
+            <line x1={cx-10} y1={sy+4} x2={cx+10} y2={sy+4}
               stroke="#92720A" strokeWidth="1.2"/>
           </g>
         );
       })}
 
-      {/* ── FLOOR BASE / FEET ── */}
-      <ellipse cx="130" cy="685" rx="18" ry="6"
-        stroke="#8B6914" strokeWidth="1.5" fill="none" filter="url(#sk)"/>
-      <ellipse cx="1070" cy="685" rx="18" ry="6"
-        stroke="#8B6914" strokeWidth="1.5" fill="none" filter="url(#sk)"/>
-      <line x1="130" y1="680" x2="130" y2="692"
-        stroke="#8B6914" strokeWidth="2" filter="url(#sk)"/>
-      <line x1="1070" y1="680" x2="1070" y2="692"
-        stroke="#8B6914" strokeWidth="2" filter="url(#sk)"/>
+      {/* ── BASE FEET ── */}
+      {[80, 1320].map((x, i) => (
+        <g key={i} filter="url(#sk)">
+          <line x1={x} y1="820" x2={x} y2="840" stroke="#8B6914" strokeWidth="3"/>
+          <ellipse cx={x} cy="843" rx="22" ry="7"
+            stroke="#8B6914" strokeWidth="1.8" fill="none"/>
+        </g>
+      ))}
     </svg>
   </div>
 );
