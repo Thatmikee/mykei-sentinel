@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font preconnect, eliminates 600-900ms critical path latency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+
+    <!-- Inline critical CSS: palette vars + above-the-fold defaults -->
+    <style>
+      :root {
+        --bg-page: #F9F8F6;
+        --bg-surface: #FFFFFF;
+        --text-primary: #1E1E1E;
+        --text-secondary: #6E6E6E;
+        --accent: #D4AF37;
+        --border: #E0DED9;
+        --highlight: #F2EFE8;
+        --success: #2D7D46;
+      }
+      html { box-sizing: border-box; }
+      *, *::before, *::after { box-sizing: inherit; }
+      body {
+        margin: 0;
+        background: #F9F8F6;
+        color: #1E1E1E;
+        font-family: 'Sora', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      #root { min-height: 100vh; }
+    </style>
+
+    <!-- Primary SEO -->
+    <title>ADN-1 Forensic Retail Defence | Mykei Securities</title>
+    <meta name="description" content="Mykei Securities builds ADN-1 for retail theft prevention: shelf-level event detection, controlled marker deployment, and Mykei Registry event records." />
+    <meta name="keywords" content="Mykei Securities, ADN-1, retail theft prevention, forensic retail defence, shelf-level retail security, controlled marker deployment, Mykei Registry, Economic Sterilisation, shoplifting prevention, organised retail crime, no-camera retail security" />
+    <meta name="author" content="Michael Esema, Mykei Securities Ltd" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mykei.io" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mykei Securities" />
+    <meta property="og:title" content="Mykei Securities | ADN-1 Forensic Retail Defence System" />
+    <meta property="og:description" content="ADN-1 is a shelf-level retail defence device for high-loss categories. It links event detection, controlled marker deployment, and Mykei Registry records." />
+    <meta property="og:url" content="https://mykei.io" />
+    <meta property="og:image" content="https://mykei.io/social-share.png" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@MykeisecLtd" />
+    <meta name="twitter:title" content="Mykei Securities | ADN-1 Forensic Retail Defence" />
+    <meta name="twitter:description" content="ADN-1 helps retailers protect high-loss shelves with event detection, controlled marker deployment, and Mykei Registry records. No cameras." />
+    <meta name="twitter:image" content="https://mykei.io/social-share.png" />
+
+    <!-- JSON-LD Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Mykei Securities Ltd",
+      "alternateName": "Mykei Securities",
+      "url": "https://mykei.io",
+      "logo": "https://mykei.io/favicon.ico",
+      "description": "Mykei Securities develops ADN-1, a shelf-level forensic retail defence device for retail theft prevention, controlled marker deployment, and Mykei Registry event records.",
+      "foundingDate": "2026-01",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://michaelesema.com/#person",
+        "name": "Michael Esema",
+        "alternateName": ["Michael Essien Esema", "Mike Esema", "M. Esema", "M Esema", "Mickey Esema", "Michael E", "Mike E."],
+        "jobTitle": "Founder & CEO",
+        "url": "https://michaelesema.com",
+        "nationality": { "@type": "Country", "name": "Nigeria" },
+        "homeLocation": { "@type": "Place", "name": "Manchester, Greater Manchester, United Kingdom" },
+        "description": "Michael Esema (full name: Michael Essien Esema) is a Nigerian-born entrepreneur based in Manchester, UK. Originator of Economic Sterilisation (2025). MSc Manchester Metropolitan University. MBA Nigerian Defence Academy. BSc Benson Idahosa University."
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Manchester",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://mykei.io/pilot"
+      },
+      "knowsAbout": [
+        "Retail theft prevention",
+        "Forensic retail defence",
+        "Shelf-level retail security",
+        "Controlled marker deployment",
+        "Mykei Registry",
+        "Economic Sterilisation",
+        "Shoplifting prevention",
+        "Organised retail crime",
+        "Bulk sweep theft",
+        "Retail shrinkage",
+        "No-camera retail security",
+        "Independent retail pilots",
+        "Enterprise loss prevention"
+      ],
+      "sameAs": [
+        "https://michaelesema.com",
+        "https://www.linkedin.com/in/michaelesema",
+        "https://github.com/Thatmikee",
+        "https://x.com/MykeiSecurities"
+      ]
+    }
+    </script>
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Mykei Securities Ltd",
+      "description": "Mykei Securities builds ADN-1, a shelf-level retail defence device that links theft-event detection, controlled marker deployment, and Mykei Registry records. No cameras.",
+      "url": "https://mykei.io",
+      "logo": "https://mykei.io/mykei-logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Manchester",
+        "addressRegion": "Greater Manchester",
+        "postalCode": "M1",
+        "addressCountry": "GB"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 53.4808, "longitude": -2.2426 },
+      "areaServed": { "@type": "Country", "name": "United Kingdom" },
+      "founder": { "@type": "Person", "name": "Michael Esema" },
+      "legalName": "Mykei Securities Ltd",
+      "identifier": { "@type": "PropertyValue", "propertyID": "Companies House company number", "value": "16984969" },
+      "keywords": "retail security, bulk sweep theft, ADN-1, economic sterilisation, forensic retail defence, retail theft prevention Manchester, batch-linked event record, registry-linked marker",
+      "knowsAbout": ["Economic Sterilisation", "Bulk Sweep Theft", "Forensic Retail Defence", "Retail Security Hardware", "Shelf-Level Retail Security", "Organised Retail Crime", "Shoplifting Prevention", "Retail Shrinkage", "Controlled Marker Deployment", "Anti-Theft Device Retail", "IoT Security Hardware", "Mykei Registry", "Enterprise Loss Prevention"],
+      "sameAs": ["https://mykei.io", "https://michaelesema.com"]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema for ADN-1 system -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Mykei Registry",
+      "description": "Registry layer by Mykei Securities that records batch-linked ADN-1 marker deployment events with device identifier, store reference, timestamp, and cartridge batch reference.",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Cloud (secure cloud registry)",
+      "url": "https://mykei.io",
+      "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd" }
+    }
+    </script>
+
+    <!-- WebSite Schema, enables Google sitelinks search box -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Mykei Securities",
+      "alternateName": "Mykei Securities Ltd",
+      "url": "https://mykei.io",
+      "description": "Mykei Securities develops ADN-1, a shelf-level forensic retail defence device for retail theft prevention, controlled marker deployment, and Mykei Registry records.",
+      "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd" },
+      "inLanguage": "en-GB"
+    }
+    </script>
+
+    <!-- ProfilePage Schema, makes /founder a crawlable person profile -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "name": "Michael Esema, Founder & CEO, Mykei Securities Ltd",
+      "url": "https://mykei.io/founder",
+      "description": "Profile of Michael Esema (Michael Essien Esema), Nigerian-born entrepreneur based in Manchester, UK. Founder of Mykei Securities Ltd and originator of Economic Sterilisation (coined 2025).",
+      "dateModified": "2026-03-30T00:00:00Z",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://michaelesema.com/#person",
+        "name": "Michael Esema",
+        "additionalName": "Essien",
+        "alternateName": ["Michael Essien Esema","Mike Esema","M. Esema","M Esema","Mickey Esema","Michael E","Mike E."],
+        "jobTitle": "Founder & CEO",
+        "nationality": { "@type": "Country", "name": "Nigeria" },
+        "homeLocation": { "@type": "Place", "name": "Manchester, Greater Manchester, United Kingdom" },
+        "url": "https://michaelesema.com",
+        "sameAs": ["https://michaelesema.com","https://mykei.io","https://www.linkedin.com/in/michaelesema","https://github.com/Thatmikee"]
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Mykei Securities", "item": "https://mykei.io" },
+          { "@type": "ListItem", "position": 2, "name": "Founder", "item": "https://mykei.io/founder" }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Article Schema for /economic-sterilisation doctrine page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Economic Sterilisation, The Retail Security Doctrine Coined by Michael Esema",
+      "description": "Economic Sterilisation is the doctrine of disrupting the resale incentive behind retail theft through forensic marking and registry event records. Coined by Michael Esema, Mykei Securities Ltd, Manchester, 2025.",
+      "url": "https://mykei.io/economic-sterilisation",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-03-30T00:00:00Z",
+      "author": {
+        "@type": "Person",
+        "@id": "https://michaelesema.com/#person",
+        "name": "Michael Esema",
+        "alternateName": ["Michael Essien Esema","Mike Esema","M. Esema"],
+        "url": "https://michaelesema.com"
+      },
+      "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io" },
+      "mainEntityOfPage": "https://mykei.io/economic-sterilisation",
+      "about": { "@type": "DefinedTerm", "name": "Economic Sterilisation" },
+      "keywords": "economic sterilisation, theft economic sterilisation system, TESS, retail theft doctrine, Michael Esema, Mykei Securities, resale incentive, forensic retail defence, batch-linked event record"
+    }
+    </script>
+
+    <!-- DefinedTerm Schema: Economic Sterilisation, canonical definition -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTerm",
+      "name": "Economic Sterilisation",
+      "alternateName": ["Theft Economic Sterilisation System", "TESS", "Economic Sterilization"],
+      "description": "The systematic disruption of the resale incentive behind retail theft through forensic marking and registry event records, linking theft-related events to a device, location, time, and cartridge reference. Where conventional security deters or detects, Economic Sterilisation removes the commercial outcome that makes theft worthwhile.",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Mykei Securities Retail Security Glossary",
+        "url": "https://mykei.io",
+        "description": "Terms coined and defined by Mykei Securities Ltd in the field of forensic retail defence"
+      },
+      "url": "https://mykei.io/economic-sterilisation",
+      "sameAs": "https://mykei.io/economic-sterilisation",
+      "dateCreated": "2025",
+      "author": {
+        "@type": "Person",
+        "name": "Michael Esema",
+        "url": "https://michaelesema.com",
+        "jobTitle": "Founder & CEO, Mykei Securities Ltd"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Mykei Securities Ltd",
+        "url": "https://mykei.io"
+      },
+      "subjectOf": {
+        "@type": "TechArticle",
+        "name": "ADN-1 Active Forensic Defence Node",
+        "url": "https://mykei.io/adn-1"
+      }
+    }
+    </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GCJY8N89S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7GCJY8N89S');
+  </script>
+  <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/3827feeaf5b6081f66aa049a/script.js"></script>
+  </head>
+  <body>
+    <div id="root"><h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Mykei Securities. ADN-1 Forensic Retail Defence. Economic Sterilisation by Michael Esema.</h1></div>
+
+    <!--
+      Hidden form for Netlify Forms bot detection.
+      Netlify's build bot cannot see JS-rendered forms in a React SPA.
+      This static copy teaches Netlify what fields to expect.
+      It is never shown to users. The actual submission is done
+      via fetch() inside Pilot.tsx using FormData.
+      Field names here must exactly match those in Pilot.tsx.
+    -->
+    <!-- LOI enquiry form, detected by Netlify build bot -->
+    <form name="loi-enquiry" netlify netlify-honeypot="bot-field" hidden aria-hidden="true">
+      <input name="bot-field" />
+      <input name="ownerName"   type="text"  />
+      <input name="storeName"   type="text"  />
+      <input name="address"     type="text"  />
+      <input name="email"       type="email" />
+      <input name="phone"       type="tel"   />
+      <input name="storeType"   type="text"  />
+      <input name="theftLoss"   type="text"  />
+      <input name="theftLevel"  type="text"  />
+      <textarea name="message"></textarea>
+    </form>
+
+    <!-- ADN-1 pilot claim form, detected by Netlify build bot -->
+    <form name="adn1-claim" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true">
+      <input name="bot-field" />
+      <input name="name"     type="text"  />
+      <input name="shopName" type="text"  />
+      <input name="email"    type="email" />
+      <input name="phone"    type="tel"   />
+    </form>
+
+    <!-- Enterprise enquiry form, detected by Netlify build bot -->
+    <form name="enterprise-enquiry" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true">
+      <input name="bot-field"   />
+      <input name="name"        type="text"  />
+      <input name="company"     type="text"  />
+      <input name="title"       type="text"  />
+      <input name="email"       type="email" />
+      <input name="storeCount"  type="text"  />
+    </form>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

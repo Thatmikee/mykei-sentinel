@@ -1,0 +1,47 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables — never commit secrets
+.env
+.env.local
+.env.*.local
+
+# Local Netlify folder
+.netlify
+
+# internal/ CompanyOS is tracked in git but excluded from Netlify deploy
+# (Vite only builds src/ into dist/ — internal/ is never published)
+#
+# 2026-05-21: Company operating material moved out of the public website repo.
+# Keep business strategy, legal, financial, supplier, claim-safety and agent notes
+# in the private Mykei Knowledge Vault, not in GitHub.
+internal/
+tasks/
+content/
+CLAUDE.md
+CLAIM_SAFETY_BRIEF.md
+
+.claude/
+.playwright-mcp/

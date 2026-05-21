@@ -1,0 +1,161 @@
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', monospace">
+
+  <!-- Background -->
+  <rect width="900" height="480" fill="#F9F8F3"/>
+
+  <!-- Eyebrow -->
+  <text x="450" y="36" text-anchor="middle" font-size="9.5" fill="#B8962E" letter-spacing="2.5" text-transform="uppercase">ADN-1 ACTIVE FORENSIC DEFENCE NODE — PRICE RAIL DEPLOYMENT (FRONT ELEVATION)</text>
+
+  <!-- ═══ GONDOLA SHELF UNIT ═══ -->
+
+  <!-- Back panel -->
+  <rect x="100" y="72" width="700" height="280" fill="#EDE8DF" stroke="#CEC5B6" stroke-width="1.5" rx="2"/>
+
+  <!-- Upper shelf board -->
+  <rect x="100" y="72" width="700" height="14" fill="#D5C9B6" stroke="#B8A990" stroke-width="1"/>
+  <!-- Lower shelf board (products sit on this) -->
+  <rect x="100" y="268" width="700" height="14" fill="#D5C9B6" stroke="#B8A990" stroke-width="1"/>
+
+  <!-- Products on lower shelf (a row of items) -->
+  <!-- Product 1 -->
+  <rect x="125" y="220" width="36" height="48" fill="#E8E0D0" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <rect x="126" y="221" width="34" height="8" fill="#D4AF37" opacity="0.4" rx="1"/>
+  <!-- Product 2 -->
+  <rect x="170" y="214" width="32" height="54" fill="#E5DDD0" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <rect x="171" y="215" width="30" height="8" fill="#B8962E" opacity="0.35" rx="1"/>
+  <!-- Product 3 -->
+  <rect x="211" y="222" width="28" height="46" fill="#EAE4D8" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <!-- Product 4 -->
+  <rect x="248" y="216" width="34" height="52" fill="#E2DAC8" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <rect x="249" y="217" width="32" height="8" fill="#D4AF37" opacity="0.3" rx="1"/>
+  <!-- Product 5 -->
+  <rect x="291" y="220" width="30" height="48" fill="#E8E0D0" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <!-- Product 6 -->
+  <rect x="330" y="214" width="36" height="54" fill="#E5DDD0" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <rect x="331" y="215" width="34" height="8" fill="#B8962E" opacity="0.3" rx="1"/>
+  <!-- Product 7 -->
+  <rect x="375" y="222" width="28" height="46" fill="#EAE4D8" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <!-- Product 8 -->
+  <rect x="412" y="217" width="32" height="51" fill="#E2DAC8" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <!-- Product 9 -->
+  <rect x="453" y="220" width="34" height="48" fill="#E8E0D0" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <!-- Product 10 -->
+  <rect x="496" y="214" width="30" height="54" fill="#E5DDD0" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <rect x="497" y="215" width="28" height="8" fill="#D4AF37" opacity="0.35" rx="1"/>
+  <!-- Product 11 -->
+  <rect x="535" y="222" width="32" height="46" fill="#EAE4D8" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <!-- Product 12 -->
+  <rect x="576" y="216" width="28" height="52" fill="#E2DAC8" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <!-- Product 13 -->
+  <rect x="613" y="220" width="34" height="48" fill="#E8E0D0" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <!-- Product 14 -->
+  <rect x="656" y="214" width="32" height="54" fill="#E5DDD0" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <rect x="657" y="215" width="30" height="8" fill="#B8962E" opacity="0.3" rx="1"/>
+  <!-- Product 15 -->
+  <rect x="697" y="222" width="28" height="46" fill="#EAE4D8" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+  <!-- Product 16 -->
+  <rect x="734" y="218" width="30" height="50" fill="#E2DAC8" stroke="#BDB4A6" stroke-width="1" rx="2"/>
+
+  <!-- ═══ PRICE RAIL ═══ -->
+  <!-- The metal channel at the front bottom edge of the shelf -->
+  <rect x="100" y="282" width="700" height="11" fill="#C8C0B0" stroke="#A89880" stroke-width="1.2"/>
+  <!-- Price label slots (subtle tick marks) -->
+  <line x1="130" y1="282" x2="130" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="175" y1="282" x2="175" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="220" y1="282" x2="220" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="265" y1="282" x2="265" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="310" y1="282" x2="310" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="355" y1="282" x2="355" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="400" y1="282" x2="400" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="445" y1="282" x2="445" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="490" y1="282" x2="490" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="535" y1="282" x2="535" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="580" y1="282" x2="580" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="625" y1="282" x2="625" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="670" y1="282" x2="670" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="715" y1="282" x2="715" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+  <line x1="760" y1="282" x2="760" y2="293" stroke="#A89880" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Price rail label -->
+  <text x="450" y="308" text-anchor="middle" font-size="8.5" fill="#8A7A6A" letter-spacing="1.5">STANDARD GONDOLA PRICE RAIL</text>
+
+  <!-- ═══ ADN-1 DEVICE ═══ -->
+  <!-- Main enclosure on price rail — centred -->
+  <rect x="270" y="293" width="360" height="28" fill="#0A0B0A" stroke="#D4AF37" stroke-width="1.5" rx="4"/>
+
+  <!-- Device label -->
+  <text x="450" y="311" text-anchor="middle" font-size="9" fill="#D4AF37" letter-spacing="2" font-weight="bold">ADN-1</text>
+
+  <!-- Magnetic mount indicator (bottom strip) -->
+  <rect x="310" y="319" width="280" height="4" fill="#444" rx="2"/>
+  <text x="450" y="333" text-anchor="middle" font-size="7.5" fill="#8A7A6A" letter-spacing="1">NEODYMIUM MAGNETIC MOUNT</text>
+
+  <!-- Left sensor (ToF) — left end of device -->
+  <circle cx="285" cy="307" r="7" fill="#1A1A18" stroke="#D4AF37" stroke-width="1.5"/>
+  <circle cx="285" cy="307" r="3.5" fill="#D4AF37" opacity="0.8"/>
+  <circle cx="285" cy="307" r="1.5" fill="#FFF" opacity="0.9"/>
+
+  <!-- Right sensor (ToF) — right end of device -->
+  <circle cx="615" cy="307" r="7" fill="#1A1A18" stroke="#D4AF37" stroke-width="1.5"/>
+  <circle cx="615" cy="307" r="3.5" fill="#D4AF37" opacity="0.8"/>
+  <circle cx="615" cy="307" r="1.5" fill="#FFF" opacity="0.9"/>
+
+  <!-- ═══ DETECTION ZONES ═══ -->
+  <!-- Left sensor detection fan — covers left half of shelf face -->
+  <polygon points="285,300 140,200 450,200 285,300" fill="#D4AF37" opacity="0.07"/>
+  <line x1="285" y1="300" x2="140" y2="200" stroke="#D4AF37" stroke-width="1" stroke-dasharray="5,4" opacity="0.5"/>
+  <line x1="285" y1="300" x2="450" y2="200" stroke="#D4AF37" stroke-width="1" stroke-dasharray="5,4" opacity="0.5"/>
+
+  <!-- Right sensor detection fan — covers right half of shelf face -->
+  <polygon points="615,300 450,200 760,200 615,300" fill="#D4AF37" opacity="0.07"/>
+  <line x1="615" y1="300" x2="450" y2="200" stroke="#D4AF37" stroke-width="1" stroke-dasharray="5,4" opacity="0.5"/>
+  <line x1="615" y1="300" x2="760" y2="200" stroke="#D4AF37" stroke-width="1" stroke-dasharray="5,4" opacity="0.5"/>
+
+  <!-- Detection zone coverage line -->
+  <line x1="140" y1="200" x2="760" y2="200" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.6"/>
+
+  <!-- Detection zone label -->
+  <text x="450" y="192" text-anchor="middle" font-size="8.5" fill="#B8962E" letter-spacing="1.5">BILATERAL DETECTION ZONE — FULL SHELF FACE — 940nm ToF — 30 READINGS/SEC</text>
+
+  <!-- ═══ ANNOTATIONS ═══ -->
+
+  <!-- Left sensor label -->
+  <line x1="270" y1="307" x2="180" y2="356" stroke="#8A7A6A" stroke-width="0.8"/>
+  <text x="172" y="367" text-anchor="middle" font-size="8" fill="#4A4A48" letter-spacing="0.5">VL53L1X</text>
+  <text x="172" y="378" text-anchor="middle" font-size="8" fill="#4A4A48" letter-spacing="0.5">ToF sensor L</text>
+
+  <!-- Right sensor label -->
+  <line x1="630" y1="307" x2="720" y2="356" stroke="#8A7A6A" stroke-width="0.8"/>
+  <text x="728" y="367" text-anchor="middle" font-size="8" fill="#4A4A48" letter-spacing="0.5">VL53L1X</text>
+  <text x="728" y="378" text-anchor="middle" font-size="8" fill="#4A4A48" letter-spacing="0.5">ToF sensor R</text>
+
+  <!-- Magnetic mount label -->
+  <line x1="450" y1="323" x2="450" y2="395" stroke="#8A7A6A" stroke-width="0.8"/>
+  <text x="450" y="406" text-anchor="middle" font-size="8" fill="#4A4A48">No drilling. No wiring. 5-minute install.</text>
+
+  <!-- ADN-1 spec callout top right -->
+  <rect x="680" y="60" width="200" height="80" fill="#F2EFE8" stroke="#CEC5B6" stroke-width="1" rx="4"/>
+  <text x="695" y="76" font-size="7.5" fill="#B8962E" letter-spacing="1.5">ENCLOSURE</text>
+  <text x="695" y="90" font-size="9" fill="#0A0B0A">150 × 40 × 32mm</text>
+  <text x="695" y="104" font-size="7.5" fill="#B8962E" letter-spacing="1.5">CONNECTIVITY</text>
+  <text x="695" y="118" font-size="9" fill="#0A0B0A">WiFi → AWS IoT / BLE</text>
+  <text x="695" y="130" font-size="7.5" fill="#B8962E" letter-spacing="1.5">TRIGGER LATENCY</text>
+
+  <!-- ADN-1 spec callout continued - too narrow, repositioned -->
+  <text x="695" y="144" font-size="9" fill="#0A0B0A"> &lt; 50ms</text>
+
+  <!-- Bottom legend -->
+  <rect x="100" y="420" width="700" height="46" fill="#F2EFE8" stroke="#CEC5B6" stroke-width="1" rx="4"/>
+  <circle cx="130" cy="443" r="5" fill="#D4AF37" opacity="0.8"/>
+  <text x="142" y="447" font-size="8.5" fill="#4A4A48">ToF sensor (×2)</text>
+  <rect x="230" y="438" width="18" height="10" fill="#0A0B0A" rx="2"/>
+  <text x="254" y="447" font-size="8.5" fill="#4A4A48">ADN-1 enclosure</text>
+  <line x1="350" y1="443" x2="375" y2="443" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="382" y="447" font-size="8.5" fill="#4A4A48">Detection zone boundary</text>
+  <rect x="520" y="438" width="18" height="10" fill="#C8C0B0" rx="1"/>
+  <text x="544" y="447" font-size="8.5" fill="#4A4A48">Price rail (gondola standard)</text>
+
+  <!-- Patent / credit note -->
+  <text x="450" y="472" text-anchor="middle" font-size="7.5" fill="#A09888" letter-spacing="0.8">UK application No. 2606630.8 · UK Intellectual Property Office · Mykei Securities Ltd · Co. 16984969</text>
+
+</svg>

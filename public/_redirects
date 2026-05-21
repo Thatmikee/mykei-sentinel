@@ -1,0 +1,23 @@
+# www → non-www: handled by Cloudflare Pages custom domain settings (absolute URLs not supported here)
+
+# Blog rename: /brief → /signal (GSC canonical fix)
+/brief                    /signal                    301
+/brief/*                  /signal/:splat             301
+
+# Legacy page merged — ADN-1 in Action is now ADN-1
+/adn-1-in-action          /adn-1                     301
+
+# Blog redirects to The Signal
+/blog                     /signal                    301
+/blog/*                   /signal                    301
+
+# SEO redirects — US/alternate spellings
+/economic-sterilization            /economic-sterilisation            301
+/glossary/economic-sterilization   /glossary/economic-sterilisation   301
+/how-it-works                      /howitworks                        301
+
+# Founder alias
+/michael-esema            /founder                   301
+
+# SPA catch-all — must be last
+/*    /index.html   200

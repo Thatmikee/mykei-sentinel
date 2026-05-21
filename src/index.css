@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Mykei palette, pure white base */
+  --background:  0 0% 100%;           /* #FFFFFF */
+  --foreground:  0 0% 10%;            /* #1A1A1A – ink */
+  --card:        0 0% 100%;           /* #FFFFFF */
+  --card-foreground: 0 0% 10%;
+  --popover:     0 0% 100%;
+  --popover-foreground: 0 0% 10%;
+  --primary:     43 64% 47%;          /* #C9A227 – Bullion Gold */
+  --primary-foreground: 0 0% 100%;
+  --secondary:   0 0% 97%;            /* #F8F8F8 – clean near-white */
+  --secondary-foreground: 0 0% 10%;
+  --muted:       0 0% 97%;
+  --muted-foreground: 0 0% 42%;       /* #6B6B6B */
+  --accent:      43 64% 47%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border:      0 0% 91%;            /* #E8E8E8 – neutral cool */
+  --input:       0 0% 91%;
+  --ring:        43 64% 47%;
+  --radius:      0.5rem;              /* 8px */
+  --success:     146 47% 33%;         /* #2D7D46 */
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+  font-family: 'Sora', system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Grid pattern for section decoration */
+.grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glow border, forensic gallery version */
+.glow-border {
+  border: 1px solid #E8E8E8;
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* Shelf card */
+.shadow-shelf {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border: 1px solid #E8E8E8;
+  border-radius: 0.5rem;
+  background: #FFFFFF;
+}
+
+.shadow-shelf:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Tablet stat strip, homepage only */
+@media (max-width: 1024px) {
+  .mk-tablet-stats { display: flex !important; }
+}
