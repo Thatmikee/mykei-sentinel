@@ -97,7 +97,7 @@ export default function SignalDMRGMBPage() {
           </Reveal>
           <Reveal delay={0.2}>
             <p style={{ fontSize: 19, lineHeight: 1.75, color: MID, margin: "0 0 32px", fontStyle: "italic" }}>
-              He called it security theatre. The industry bristled. But nobody answered the actual question: if not cameras, then what? The ADN-1 is the answer.
+              He called it security theatre. The industry bristled. But nobody answered the actual question: if not cameras, then what? The <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>ADN-1</a> is the answer.
             </p>
           </Reveal>
           <Reveal delay={0.25}>
@@ -177,7 +177,7 @@ export default function SignalDMRGMBPage() {
               The ADN-1 started on a breadboard in a workshop in Prestwich, Greater Manchester. An Encrypted Logic Core microcontroller. Two Tactical Multi-zone Sensor Array Time-of-Flight sensors on GPIO 4 and GPIO 5, addressed separately via XSHUT pins to avoid I2C conflicts. A 113kHz Forensic Mist Deployment System mounted on the shelf edge. I wrote the detection algorithm, the kinetic signature classifier, and the cloud registry integration. UK Patent application No. GB2606630.8 covers 17 claims. None of this came from a whiteboard in a Soho office.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The doctrine behind it is Economic Sterilisation. I coined the term in 2025 because I could not find an existing word for the specific act of removing commercial value from stolen goods at the point of theft. Not deterrence, which relies on the thief making a rational risk calculation and deciding against it. Not detection, which happens after the loss. The systematic removal of commercial value from stolen goods, so that whether the thief succeeds in taking the goods or not, the goods are a forensic liability rather than a resaleable asset.
+              The doctrine behind it is <a href="/economic-sterilisation" style={{ color: GOLD, textDecoration: "underline" }}>Economic Sterilisation</a>. I coined the term in 2025 because I could not find an existing word for the specific act of removing commercial value from stolen goods at the point of theft. Not deterrence, which relies on the thief making a rational risk calculation and deciding against it. Not detection, which happens after the loss. The systematic removal of commercial value from stolen goods, so that whether the thief succeeds in taking the goods or not, the goods are a forensic liability rather than a resaleable asset.
             </p>
           </Reveal>
 

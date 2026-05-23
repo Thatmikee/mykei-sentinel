@@ -281,7 +281,7 @@ export default function SignalCoopCrimeWarPage() {
             <blockquote style={{ margin: "52px 0", padding: "0", textAlign: "center" }}>
               <div style={{ height: 1, background: INK, marginBottom: 28 }} />
               <p style={{ fontFamily: "'Georgia', serif", fontSize: "clamp(19px, 2.4vw, 24px)", lineHeight: 1.5, fontStyle: "italic", color: INK, margin: "0 0 10px", fontWeight: 400 }}>
-                Deterrence assumes the thief is weighing risk against reward. Economic Sterilisation removes the reward. The calculation doesn't happen because the conclusion is already written into the goods.
+                Deterrence assumes the thief is weighing risk against reward. <a href="/economic-sterilisation" style={{ color: GOLD, textDecoration: "underline" }}>Economic Sterilisation</a> removes the reward. The calculation doesn't happen because the conclusion is already written into the goods.
               </p>
               <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: MID, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 28 }}>Economic Sterilisation doctrine — Mykei Securities</div>
               <div style={{ height: 1, background: INK }} />

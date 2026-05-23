@@ -175,7 +175,7 @@ export default function SignalPoliceThresholdPage() {
 
           <Reveal>
             <p style={{ fontSize: 17, lineHeight: 1.85, marginBottom: 40, color: INK }}>
-              The police threshold does not change. What changes is whether the theft was worth doing in the first place. That is a different problem with a different solution. The ADN-1 is that solution.
+              The police threshold does not change. What changes is whether the theft was worth doing in the first place. That is a different problem with a different solution. The <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>ADN-1</a> is that solution.
             </p>
           </Reveal>
 

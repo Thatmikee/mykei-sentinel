@@ -158,7 +158,7 @@ sensor_b = Tactical Multi-zone Sensor Array(i2c, address=0x29)  # Sensor B stays
 
           <Reveal>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              This matters for one reason beyond the technical: it means the ADN-1 gets bilateral sweep data. A single sensor cannot distinguish between a normal single-item pick and a bulk sweep. Two sensors watching the same zone from different positions, firing simultaneously and comparing trajectory vectors, can. The kinetic signature of a bulk sweep is specific: bilateral displacement, high velocity, short dwell time, multiple simultaneous zone changes. A shopper picking up a product has a completely different signature.
+              This matters for one reason beyond the technical: it means the <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>ADN-1</a> gets bilateral sweep data. A single sensor cannot distinguish between a normal single-item pick and a bulk sweep. Two sensors watching the same zone from different positions, firing simultaneously and comparing trajectory vectors, can. The kinetic signature of a bulk sweep is specific: bilateral displacement, high velocity, short dwell time, multiple simultaneous zone changes. A shopper picking up a product has a completely different signature.
             </p>
           </Reveal>
 

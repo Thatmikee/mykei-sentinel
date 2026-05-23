@@ -120,7 +120,7 @@ export default function SignalShopkeeperMathsPage() {
 
           <Reveal>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              I built the ADN-1 for her. For the jeweller on Deansgate. For the off-licence owner in Salford who told me he'd been hit three times in four months and had genuinely run out of options. BIRA members. Independent operators. The people the enterprise security industry consistently prices out and then ignores.
+              I built the <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>ADN-1</a> for her. For the jeweller on Deansgate. For the off-licence owner in Salford who told me he'd been hit three times in four months and had genuinely run out of options. BIRA members. Independent operators. The people the enterprise security industry consistently prices out and then ignores.
             </p>
           </Reveal>
 

@@ -164,7 +164,7 @@ export default function SignalFogSecurityPage() {
           <Reveal>
             <blockquote style={{ borderLeft: `3px solid ${GOLD}`, margin: "0 0 36px", padding: "16px 24px", background: WARM, borderRadius: "0 8px 8px 0" }}>
               <p style={{ fontSize: 18, lineHeight: 1.7, fontStyle: "italic", color: INK, margin: 0 }}>
-                "Deterrence assumes the criminal weighs risk against reward and chooses differently. Economic Sterilisation removes the reward. There is nothing to weigh."
+                "Deterrence assumes the criminal weighs risk against reward and chooses differently. <a href="/economic-sterilisation" style={{ color: GOLD, textDecoration: "underline" }}>Economic Sterilisation</a> removes the reward. There is nothing to weigh."
               </p>
             </blockquote>
           </Reveal>

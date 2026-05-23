@@ -200,7 +200,7 @@ export default function SignalShopliftingSystemPage() {
 
           <Reveal>
             <p style={{ fontSize: 17, lineHeight: 1.85, marginBottom: 24, color: INK }}>
-              Economic Sterilisation is the doctrine that addresses it directly. Not: improve detection rates. Not: make CCTV footage cleaner. The question is: what happens to the stolen goods after they leave the store? If they can be sold, they have value. If they cannot, the theft did not produce the outcome the thief needed.
+              <a href="/economic-sterilisation" style={{ color: GOLD, textDecoration: "underline" }}>Economic Sterilisation</a> is the doctrine that addresses it directly. Not: improve detection rates. Not: make CCTV footage cleaner. The question is: what happens to the stolen goods after they leave the store? If they can be sold, they have value. If they cannot, the theft did not produce the outcome the thief needed.
             </p>
           </Reveal>
 

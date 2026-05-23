@@ -243,7 +243,7 @@ export default function SignalSaferGemsPage() {
                 </ul>
               </div>
               <div style={{ border: `1px solid ${GOLD}`, borderRadius: 8, padding: "24px 22px", background: WARM }}>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Economic Sterilisation</div>
+                <a href="/economic-sterilisation" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, textDecoration: "underline", marginBottom: 14, display: "block" }}>Economic Sterilisation</a>
                 <ul style={{ padding: 0, margin: 0, listStyle: "none" }}>
                   {[
                     "Marks goods forensically at the point of ownership",
