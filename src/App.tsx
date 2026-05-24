@@ -39,6 +39,8 @@ const SignalCoopCrimeWarPage   = lazy(() => import("./pages/SignalCoopCrimeWarPa
 const BlogPostPage             = lazy(() => import("./pages/BlogPostPage"));
 const ThesisPage               = lazy(() => import("./pages/ThesisPage"));
 const ProtocolPage             = lazy(() => import("./pages/ProtocolPage"));
+const DoctrinePage             = lazy(() => import("./pages/DoctrinePage"));
+const PressPageFull            = lazy(() => import("./pages/PressPage"));
 
 const queryClient = new QueryClient();
 
@@ -76,7 +78,8 @@ const App = () => (
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/certification" element={<CertificationPage />} />
             <Route path="/state-of-theft" element={<StateOfTheftPage />} />
-            <Route path="/press" element={<Navigate to="/founder" replace />} />
+            <Route path="/press" element={<PressPageFull />} />
+            <Route path="/doctrine" element={<DoctrinePage />} />
             <Route path="/investors" element={<InvestorsPage />} />
             <Route path="/enterprise" element={<EnterprisePage />} />
             <Route path="/signal" element={<BriefIndex />} />

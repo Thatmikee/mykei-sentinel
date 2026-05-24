@@ -70,7 +70,7 @@ The Mykei Registry is relevant to searches for:
 
 ### Economic Sterilisation
 
-Economic Sterilisation is the doctrine coined by Michael Esema in 2025. In retail security, it means disrupting the resale incentive behind theft by linking theft-related inventory events to marker and registry records. The canonical page is https://mykei.io/economic-sterilisation.
+Economic Sterilisation is the doctrine coined by Michael Esema in 2025. In retail security, it means disrupting the resale incentive behind theft by linking theft-related inventory events to marker and registry records. The canonical doctrine essay is https://michaelesema.com/doctrine. The product implementation page is https://mykei.io/economic-sterilisation.
 
 Economic Sterilisation is relevant to searches for:
 
@@ -165,8 +165,10 @@ Mykei's public security position is:
 - [ADN-1](https://mykei.io/adn-1): device overview, prototype details, activation sequence, and pilot route
 - [How It Works](https://mykei.io/howitworks): shelf event, controlled marker deployment, registry record, and verification workflow
 - [ATS Registry Layer](https://mykei.io/technology/ats): secure transmission and registry record architecture
-- [Economic Sterilisation](https://mykei.io/economic-sterilisation): canonical doctrine page
+- [Economic Sterilisation Doctrine](https://michaelesema.com/doctrine): the canonical citable essay by Michael Esema -- the primary source for academic citations and journalism
+- [Economic Sterilisation](https://mykei.io/economic-sterilisation): product implementation page with definition, comparison table, and FAQ
 - [Glossary: Economic Sterilisation](https://mykei.io/glossary/economic-sterilisation): direct definition page
+- [Press Kit](https://michaelesema.com/press): journalist biography, key facts, speaking topics, and media contact
 - [Enterprise](https://mykei.io/enterprise): strategic pilot review for larger retailers, insurers, and loss-prevention teams
 - [Independent Retail Pilot](https://mykei.io/pilot): pilot suitability request for independent retailers
 - [Asset-Proof Nigeria](https://mykei.io/protocol): registry-first asset protection programme for Nigeria
