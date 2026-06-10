@@ -40,7 +40,7 @@ const RELATED = [
   { term: "Mykei Registry", short: "MR", desc: "Mykei's cloud platform that registers cartridge-linked event records for marked items, supporting verification and investigation workflows." },
   { term: "Kinetic Signature Analysis", short: "KSA", desc: "The detection method used by the ADN-1. Dual Time-of-Flight sensors classify the motion pattern of a bulk-sweep event in under 50ms. No camera. No biometrics." },
   { term: "Market Reduction Approach", short: "MRA", desc: "An evidence-based strategy from academic criminology, adopted by UK policing. Focuses on disrupting the markets that receive stolen goods. Economic Sterilisation applies MRA logic proactively and automatically at the shelf." },
-  { term: "ADN-1 Active Forensic Defence Node", short: "ADN-1", desc: "The first commercial implementation of Economic Sterilisation. A shelf-mounted device that detects bulk-sweep theft events, triggers controlled marker deployment, and registers cartridge-linked event records in the Mykei Registry." },
+  { term: "ADN-1 Active Forensic Defence Node", short: "ADN-1", desc: "An early implementation of Economic Sterilisation, currently at controlled prototype stage. A shelf-mounted device that detects bulk-sweep theft events, triggers controlled marker deployment, and registers cartridge-linked event records in the Mykei Registry." },
 ];
 
 const FAQS = [
@@ -297,7 +297,7 @@ export default function GlossaryESPage() {
             The term is used in two ways. As a doctrine: the overall principle that stolen
             goods should have their resale incentive disrupted through forensic marking and registry
             event records. As a category name: the class of technology that implements this doctrine,
-            of which the ADN-1 is currently the only commercial example.
+            of which the ADN-1 is one early example.
           </p>
           <p>
             The American spelling variant, Economic Sterilization, is treated as equivalent

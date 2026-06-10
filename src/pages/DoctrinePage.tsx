@@ -391,10 +391,10 @@ export default function DoctrinePage() {
           <Fade delay={0.08}>
             <p style={bodyStyle}>
               Sterilisation, because it is permanent, not deterrent. The goal is not to make
-              theft harder. The goal is to make the outcome worthless. When goods are marked at
+              theft harder. The goal is to make the outcome harder to resell. When goods are marked at
               the moment of theft with a batch code registered to a specific event, location, and
-              timestamp, they carry that record permanently. The mark cannot be reversed. The
-              record cannot be altered. When those goods reach the resale market, they are already
+              timestamp, they carry that record. The mark is designed to be durable. The
+              record is cryptographically signed and tamper-aware. When those goods reach the resale market, they are already
               evidence. The buyer, the platform, the market: all of them become impossible terrain
               for those goods.
             </p>

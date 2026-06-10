@@ -51,7 +51,7 @@ export default function ProtectedByMykei() {
       </p>
       <p>
         A thief who encounters the Mykei decal and investigates what it means will find a
-        registered patent (2606630.8, filed 23 March 2026, 17 claims), a publicly documented
+        patent application (2606630.8, filed 23 March 2026, 17 claims, patent pending), a publicly documented
         technology, and a clear explanation of what economic sterilisation means for the goods
         they are considering stealing. They will understand that the forensic mark on those goods
         reduces the item's resale value to near zero. That understanding changes the expected

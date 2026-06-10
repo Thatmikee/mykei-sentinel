@@ -204,7 +204,7 @@ export default function SignalShopkeeperMathsPage() {
               The five pilot partners in Greater Manchester receive the full production ADN-1 hardware, not a development prototype. They get cloud dashboard access showing every detected event, every inhibit window logged, every forensic event package transmitted. They get direct contact with me and the founding team for every question. They get founders pricing locked permanently, regardless of what the retail rate becomes post-pilot.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              There is no lock-in after the pilot period. If it doesn't perform, you return the hardware and we owe you nothing further. The confidence in that offer comes from the same place the product does: seventeen patent claims, a forensic doctrine with no prior competitor, and the knowledge that the 11p crime tax is real, the resale market is real, and the only thing that has been missing is a device that addresses the actual economic incentive.
+              There is no lock-in after the pilot period. If it doesn't perform, you return the hardware and we owe you nothing further. The confidence in that offer comes from the same place the product does: seventeen patent claims, a forensic doctrine, and the knowledge that the 11p crime tax is real, the resale market is real, and the only thing that has been missing is a device that addresses the actual economic incentive.
             </p>
           </Reveal>
 

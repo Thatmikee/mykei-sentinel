@@ -53,7 +53,7 @@ export default function CertificationPage() {
   useEffect(() => {
     document.title = "Mykei Protected Certification | Mykei Securities";
     const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", "The Mykei Protected badge signals to customers, insurers, and resale platforms that a retail location runs ADN-1 forensic marking. Become a certified Mykei Protected partner.");
+    if (desc) desc.setAttribute("content", "The Mykei Protected badge signals to customers that a retail location runs ADN-1 forensic marking. Become a certified Mykei Protected partner.");
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.href = "https://mykei.io/certification";
     const schema = document.createElement("script");
@@ -63,7 +63,7 @@ export default function CertificationPage() {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Mykei Protected Certification",
-      "description": "Certification programme for retail locations deploying ADN-1 forensic security. The Mykei Protected badge is recognised by insurers and resale platforms.",
+      "description": "Certification programme for retail locations deploying ADN-1 forensic security. The Mykei Protected badge is designed to support insurer review and resale-channel verification.",
       "provider": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io" },
       "url": "https://mykei.io/certification",
       "serviceType": "Retail Security Certification",
@@ -138,8 +138,8 @@ export default function CertificationPage() {
                 body: "Certified locations have at least one active ADN-1 unit with verified sensor calibration and registry-linked marker deployment capability. The badge reflects a real deployment, not a purchased membership.",
               },
               {
-                title: "Insurer recognition",
-                body: "We are in active discussions with UK insurance underwriters to have Mykei Protected status recognised as a risk-reduction factor for retail crime premiums. Details will be published as agreements are finalised.",
+                title: "Insurer review",
+                body: "Mykei Protected status is designed to support insurer review as a possible risk-reduction signal for retail crime premiums. No insurer agreement is in place yet.",
               },
               {
                 title: "Registry event records",

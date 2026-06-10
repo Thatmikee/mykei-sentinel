@@ -343,7 +343,7 @@ export default function SignalCoopCrimeWarPage() {
               What the Co-op actually needs.
             </h2>
             <p style={{ fontSize: 18, lineHeight: 1.9, marginBottom: 28, color: INK }}>
-              The Co-op operates 2,600 food stores. It is not a boutique. Loss at that scale is a structural problem, not a disciplinary one. The Retail Crime Action Plan gives them better vocabulary for briefing politicians. It does not give them a mechanism for making stolen goods commercially inert before they leave the shelf.
+              The Co-op operates 2,600 food stores. It is not a boutique. Loss at that scale is a structural problem, not a disciplinary one. The Retail Crime Action Plan gives them better vocabulary for briefing politicians. It does not give them a mechanism for reducing the resale value of stolen goods before they leave the shelf.
             </p>
             <p style={{ fontSize: 18, lineHeight: 1.9, marginBottom: 28, color: INK }}>
               That mechanism is forensic marking at the shelf, combined with a batch-linked registry that follows the goods rather than the person. The person may not be caught. The goods are marked permanently. The event record exists from the moment of activation, not weeks later in a court file.

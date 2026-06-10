@@ -79,13 +79,13 @@ export default function IndependentRetailerEconomics() {
 
       <p>
         The relevant comparison is not to doing nothing. Most retailers already spend something on
-        security. The question is whether that spend is producing forensic-grade output at a cost
+        security. The question is whether that spend is producing marker-based evidence at a cost
         that makes commercial sense.
       </p>
       <p>
         A staffed security guard costs between GBP 25,000 and GBP 35,000 per year when employment
         costs are included. Guards provide presence and deterrence during their shift, but they
-        cannot be everywhere simultaneously, they cannot mark stolen goods with forensic identifiers,
+        cannot be everywhere simultaneously, they cannot mark stolen goods with marker identifiers,
         and their effectiveness varies with experience and attention. Electronic article surveillance
         systems for a small independent store typically cost between GBP 3,000 and GBP 8,000 to
         install, plus ongoing expenditure on tags for every item of stock. EAS generates an alarm
@@ -97,7 +97,7 @@ export default function IndependentRetailerEconomics() {
       </p>
       <p>
         ADN-1 is autonomous, requiring no staff time beyond the initial onboarding. It produces
-        forensic-grade output: a unique DNA code on the goods, timestamped to a specific activation
+        marker-based evidence, subject to supplier qualification: a unique marker code on the goods, timestamped to a specific activation
         event, registered in a cloud database linked to the store. It is lower cost than most
         alternatives and produces a category of evidence that cameras and tags cannot.
       </p>

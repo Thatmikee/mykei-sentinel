@@ -25,7 +25,7 @@ const LAYERS = [
   {
     n: "03",
     title: "REGISTRY, Forensic Digital Twin Platform",
-    body: "The Mykei secure cloud registry receives and stores the event with cryptographic signing. The tamper-aware audit trail means the record cannot be altered, deleted, or backdated. Row-level security ensures each retailer sees only their own data.",
+    body: "The Mykei secure cloud registry receives and stores the event with cryptographic signing. The tamper-aware audit trail is designed so that alteration, deletion, or backdating can be detected. Row-level security ensures each retailer sees only their own data.",
   },
   {
     n: "04",

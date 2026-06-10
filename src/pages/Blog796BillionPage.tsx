@@ -355,7 +355,7 @@ export default function Blog796BillionPage() {
         <Reveal>
           <h2>What the technology makes possible</h2>
           <p>
-            The ADN-1 is the first commercial implementation of Economic Sterilisation.
+            The ADN-1 is an early implementation of Economic Sterilisation.
             It mounts under a retail shelf, detects bulk-sweep theft events using kinetic
             signature analysis (no cameras, no facial recognition, no biometric data),
             and triggers controlled marker deployment onto goods and the individual carrying them.

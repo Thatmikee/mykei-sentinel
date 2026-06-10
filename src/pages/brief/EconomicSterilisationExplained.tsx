@@ -89,7 +89,7 @@ export default function EconomicSterilisationExplained() {
       <p>
         The Theft Economic Sterilisation System, or TESS, is the category name for systems
         that implement this doctrine. The ADN-1, developed by Mykei Securities Ltd and covered
-        by Patent-pending (UK application No. 2606630.8, filed March 2026, 17 claims), is the first commercial
+        by a UK patent application (No. 2606630.8, filed March 2026, 17 claims, patent pending), is an early
         implementation of the TESS category. It brings the Economic Sterilisation doctrine
         into a shelf-mounted device accessible to independent retailers at a scale that
         previously required enterprise retail budgets. The underlying principle, however, is

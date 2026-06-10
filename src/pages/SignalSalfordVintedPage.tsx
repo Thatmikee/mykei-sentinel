@@ -156,7 +156,7 @@ export default function SignalSalfordVintedPage() {
               The BRC 2026 report flags the resale gap explicitly. eBay, Vinted, and Facebook Marketplace have volume, and volume creates noise. In that noise a stolen razor looks like a second-hand one, especially when the seller has five months of positive feedback and a plausible story about clearing out a bathroom cabinet. Platform compliance teams are reactive by design. By the time a report gets investigated, the item is sold, the buyer has it, and the account has been refreshed.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 14 }}>
-              The <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>Mykei Registry</a> doesn't wait for a report. When the <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>ADN-1</a> fires and registers a batch code, that batch code is the bridge between the shelf and the resale channel. The intended pipeline: the registry cross-references listings, no human required. Mykei holds seventeen patent claims covering this architecture. What it means practically: the moment of marking is also the moment the goods become traceable across every channel they move through.
+              The <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>Mykei Registry</a> doesn't wait for a report. When the <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>ADN-1</a> fires and registers a batch code, that batch code is the bridge between the shelf and the resale channel. The intended pipeline, still in development: the registry is designed to support resale-channel verification. Mykei has filed seventeen patent claims covering this architecture (patent pending). What it means practically: the moment of marking is also the moment the goods become traceable across every channel they move through.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
               That's the part the security industry hasn't built in forty years of trying.
@@ -194,7 +194,7 @@ export default function SignalSalfordVintedPage() {
               <ul style={{ padding: 0, margin: 0, listStyle: "none" }}>
                 {[
                   "The BRC 2026 report confirms OCGs operate retail theft as a structured supply chain, not random opportunism.",
-                  "The resale market, not the shelf, is where the crime is profitable. Block the resale and you block the crime.",
+                  "The resale market, not the shelf, is where the crime is profitable. Reduce the resale value and the crime follows.",
                   "The Mykei Registry creates a traceable batch record. The designed pathway connects to resale platform verification workflows.",
                   "ADN-1 controlled markers make stolen goods harder to sell without a traceable record and commercially difficult to move.",
                   "The Independent Retail Pilot is a forensic field deployment, not a product demo.",

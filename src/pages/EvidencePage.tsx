@@ -165,7 +165,7 @@ export default function EvidencePage() {
             </p>
             <div style={{ display: "flex", gap: 24, flexWrap: "wrap" as const }}>
               {[
-                { label: "Pilot Status", value: "Active — Q2 2026" },
+                { label: "Pilot Status", value: "Controlled prototype stage" },
                 { label: "Retail Partners", value: "5 signed LOIs" },
                 { label: "Patent", value: "No. 2606630.8 (UK)" },
                 { label: "Company", value: "No. 16984969 E&W" },
@@ -399,7 +399,7 @@ export default function EvidencePage() {
                 The Mykei Registry is active. Events are logged, encrypted, and timestamped. The detection cycle — from sweep to compound deployment — completes in under 200 milliseconds in bench testing.
               </p>
               <p style={{ fontSize: 16, lineHeight: 1.85, color: "#2D1204", marginBottom: 28 }}>
-                Five independent retailers in Greater Manchester have reviewed the system, agreed to the pilot terms, and signed Letters of Intent. Pilot installation begins Q2 2026. This is not a concept seeking validation. It is a system seeking to scale.
+                Five independent retailers in Greater Manchester have reviewed the system, agreed to the pilot terms, and signed Letters of Intent. Field validation has not yet begun. The system is at controlled prototype stage.
               </p>
               <div style={{ display: "flex", alignItems: "center", gap: 16, paddingTop: 20, borderTop: "1px solid #E8E8E8" }}>
                 <div>

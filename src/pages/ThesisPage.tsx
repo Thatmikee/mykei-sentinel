@@ -242,7 +242,7 @@ export default function ThesisPage() {
           <section style={{ marginBottom: 64 }}>
             <h2 style={sectionHeading}>2. The Doctrine Defined</h2>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              Economic Sterilisation is a doctrine, not a device. It is a principle governing how security infrastructure should be designed: not to prevent theft at the point of occurrence alone, but to destroy the commercial value of stolen goods permanently and automatically. The ADN-1 system is its first commercial implementation.
+              Economic Sterilisation is a doctrine, not a device. It is a principle governing how security infrastructure should be designed: not to prevent theft at the point of occurrence alone, but to reduce the resale value and resale confidence of stolen goods. It builds on Mike Sutton's Market Reduction Approach in criminology. The ADN-1 is an early implementation of the doctrine.
             </p>
 
             <PullQuote text="I am not building a security company. I am building the argument that theft should not pay." />
@@ -369,7 +369,7 @@ export default function ThesisPage() {
               Patent-pending: UK application No. 2606630.8, filed 23 March 2026 by Michael Esema, covering 17 claims relating to the system and method of economic sterilisation as embodied in the ADN-1 device. The application covers the integration of dual time-of-flight sensor detection, controlled marker deployment triggered by theft events, and real-time event registration in a cloud-based registry.
             </p>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              The ADN-1 is the first commercial implementation of the Economic Sterilisation doctrine. The Independent Retail Pilot, scheduled for Q2 2026 across selected retailers in Greater Manchester, will generate the first real-world efficacy data. Results from the pilot will be published in summary form on this site.
+              The ADN-1 is an early implementation of the Economic Sterilisation doctrine, currently at controlled prototype stage. It has been demonstrated in controlled prototype and registry proof-of-concept tests. Field efficacy data has not yet been gathered. Any results will be published in summary form on this site once a pilot has been completed.
             </p>
             <p style={{ ...bodyText, color: MUTED, lineHeight: 1.8 }}>
               Mykei Securities Ltd. Company No. 16984969.

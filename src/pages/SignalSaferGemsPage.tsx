@@ -304,7 +304,7 @@ export default function SignalSaferGemsPage() {
                   "Gold at £4,000+/oz means high-street jewellery stock has the economics of cash. The incentive will persist regardless of police visibility.",
                   "The UK Government's £4M AI crime mapping system targets operational deployment in 2030. The surge is happening now.",
                   "SaferGems recommends fog machines. Fog systems do not affect the resale value of stolen goods. The incentive is unchanged.",
-                  "Economic Sterilisation removes the incentive by making stolen goods commercially inert. The ADN-1 marks stock forensically at the point of activation, in 200ms, permanently.",
+                  "Economic Sterilisation removes the incentive by making stolen goods harder to resell. The ADN-1 marks stock forensically at the point of activation, in 200ms.",
                 ].map((t, i) => (
                   <li key={i} style={{ display: "flex", gap: 12, padding: "9px 0", borderBottom: i < 4 ? `1px solid ${RULE}` : "none", fontSize: 14, lineHeight: 1.65, color: INK }}>
                     <span style={{ color: GOLD, fontWeight: 700, flexShrink: 0, fontFamily: "'JetBrains Mono',monospace", fontSize: 12 }}>0{i + 1}</span>

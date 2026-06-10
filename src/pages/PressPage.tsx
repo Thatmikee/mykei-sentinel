@@ -185,14 +185,14 @@ Michael Esema was born in October 1996 in Nigeria. He graduated with a BSc in Ac
 
 He completed an MSc in International Business Management with Merit from Manchester Metropolitan University in 2024 and holds a Level 7 Advanced Diploma in Project Management and Lean Six Sigma certification. He built the ADN-1 personally, on £10,000, while employed full-time.
 
-On 23 March 2026, he filed UK Patent Application No. GB2606630.8 -- a 17-claim patent for the system he had named Economic Sterilisation: the systematic disruption of the resale incentive behind retail theft through forensic marking and event registry records. In April 2026, he demonstrated the ADN-1 publicly at NEC Birmingham. He met the Managing Director of the UK's leading forensic DNA supplier and secured five signed Letters of Intent from independent Manchester retailers. Mykei Securities Ltd (Company No. 16984969) was incorporated on 24 January 2026.
+On 23 March 2026, he filed UK Patent Application No. GB2606630.8 -- a 17-claim patent application (patent pending) for the system he had named Economic Sterilisation: the systematic disruption of the resale incentive behind retail theft through forensic marking and event registry records. In April 2026, he demonstrated the ADN-1 publicly at NEC Birmingham and secured five signed Letters of Intent from independent Manchester retailers. Mykei Securities Ltd (Company No. 16984969) was incorporated on 24 January 2026.
 
 The doctrine: make theft economically irrational. Close the market that theft sells into. The idea did not come from a lab or an accelerator. It came from watching institutions absorb loss, deciding that was not an acceptable answer, and building something that addressed the actual cause.`;
 
 const FACTS = [
   { label: "Patent", value: "Application No. GB2606630.8 (UK IPO), 17 claims, filed 23 March 2026, receipt issued 26 March 2026" },
   { label: "Company", value: "Mykei Securities Ltd, Company No. 16984969, incorporated 24 January 2026, Manchester" },
-  { label: "Doctrine", value: "Economic Sterilisation -- coined 2025. First use in retail security literature." },
+  { label: "Doctrine", value: "Economic Sterilisation, coined 2025." },
   { label: "Pilot LOIs", value: "5 signed Letters of Intent, independent Manchester retailers, 2026" },
   { label: "Public demo", value: "ADN-1 demonstrated publicly at NEC Birmingham, April 2026" },
   { label: "Education", value: "MSc International Business Management, Merit (MMU, 2024); MBA (Nigerian Defence Academy, 2023); BSc Accounting (Benson Idahosa University, 2018)" },

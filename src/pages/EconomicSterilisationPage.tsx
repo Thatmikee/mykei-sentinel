@@ -52,7 +52,7 @@ const FAQS = [
   },
   {
     q: "What is the Theft Economic Sterilisation System (TESS)?",
-    a: "TESS is the alternate name for the complete doctrine and product category. It stands for Theft Economic Sterilisation System. The ADN-1 is the first commercial implementation of TESS."
+    a: "TESS is the alternate name for the complete doctrine and product category. It stands for Theft Economic Sterilisation System. The ADN-1 is an early implementation of TESS, currently at prototype stage."
   },
   {
     q: "How is this different from existing security systems?",
@@ -334,12 +334,13 @@ export default function EconomicSterilisationPage() {
           <Reveal>
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#D4AF37", display: "block", marginBottom: 12 }}>Implementation</span>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16, lineHeight: 1.2 }}>
-              The ADN-1 is the first commercial Theft Economic Sterilisation System.
+              The ADN-1 is an early Theft Economic Sterilisation System.
             </h2>
             <p style={{ fontSize: 15.5, color: "#555", maxWidth: 640, lineHeight: 1.8, marginBottom: 52 }}>
-              Designed, built, and patented by Michael Esema from first principles. Firmware,
-              detection algorithm, cloud architecture, and 17-claim patent, all by one founder
-              who refused to wait for someone else to solve it.
+              Designed and built by Michael Esema from first principles. Firmware,
+              detection algorithm, cloud architecture, and a 17-claim UK patent application
+              (GB2606630.8, patent pending), all by one founder who refused to wait for
+              someone else to solve it.
             </p>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 20 }}>
