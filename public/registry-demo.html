@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mykei Registry Demo</title>
+<style>
+  :root{--gold:#C8A96E;--gold-d:#9a7b3f;--ink:#1C120A;--warm:#F6F2EA;--rule:#E3D8C4;--ok:#1f7a3d;--bad:#b3261e;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--warm);color:var(--ink);line-height:1.5}
+  header{background:var(--ink);color:var(--warm);padding:22px 18px}
+  header .brand{font-weight:700;letter-spacing:.04em}
+  header .tag{font-size:13px;color:var(--gold);margin-top:4px}
+  main{max-width:680px;margin:0 auto;padding:18px}
+  h1{font-size:18px;margin:0}
+  h2{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d);margin:26px 0 10px;border-bottom:1px solid var(--rule);padding-bottom:6px}
+  label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+  input,select{width:100%;padding:11px;border:1px solid var(--rule);border-radius:9px;font-size:16px;background:#fff;color:var(--ink)}
+  button{margin-top:14px;width:100%;padding:13px;border:0;border-radius:9px;background:var(--ink);color:var(--warm);font-size:16px;font-weight:600;cursor:pointer}
+  button.secondary{background:var(--gold);color:var(--ink)}
+  .card{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:14px;margin-top:12px}
+  .row{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:3px 0}
+  .row span:first-child{color:#7a6a52}
+  .badge{display:inline-block;padding:5px 12px;border-radius:999px;font-weight:700;font-size:13px}
+  .badge.ok{background:#e7f3ea;color:var(--ok)}
+  .badge.bad{background:#fbe9e7;color:var(--bad)}
+  .id{font-family:ui-monospace,Menlo,monospace;font-weight:700}
+  .muted{color:#7a6a52;font-size:13px}
+  .result{margin-top:12px}
+  img.thumb{max-width:100%;border-radius:9px;margin-top:8px}
+  .pill{font-size:12px;color:var(--gold-d);font-family:ui-monospace,monospace;letter-spacing:.1em}
+  footer{max-width:680px;margin:24px auto;padding:0 18px 40px;color:#7a6a52;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">MYKEI REGISTRY</div>
+  <div class="tag">Can it prove its history?</div>
+</header>
+<main>
+  <p class="muted">A demonstration of the Mykei verification layer. Register an asset, then verify it the way a buyer or insurer would. Data stays on this device only. This is a prototype for illustration, not a live service.</p>
+
+  <h2>Register an asset</h2>
+  <form id="regForm" aria-label="Register an asset">
+    <label for="type">Asset type</label>
+    <select id="type" required>
+      <option value="">Choose...</option>
+      <option>Power tool</option><option>Generator</option><option>Solar inverter</option>
+      <option>Battery</option><option>E-bike</option><option>Vehicle</option>
+      <option>Motorcycle</option><option>Phone</option><option>Other</option>
+    </select>
+    <label for="serial">Manufacturer serial number</label>
+    <input id="serial" placeholder="e.g. DW3245-90871" required>
+    <label for="owner">Owner or company</label>
+    <input id="owner" placeholder="e.g. J. Smith Electrical Ltd" required>
+    <label for="value">Value band</label>
+    <select id="value"><option>Under £100</option><option>£100 to £500</option><option>£500 to £2,000</option><option>Over £2,000</option></select>
+    <label for="photo">Photo (optional)</label>
+    <input id="photo" type="file" accept="image/*">
+    <button type="submit">Register and issue Mykei ID</button>
+  </form>
+  <div id="regResult" class="result" role="status" aria-live="polite"></div>
+
+  <h2>Verify before you buy</h2>
+  <form id="verForm" aria-label="Verify an asset">
+    <label for="q">Enter a Mykei ID or serial number</label>
+    <input id="q" placeholder="MYK-XXXXXX or serial">
+    <button type="submit" class="secondary">Check this asset</button>
+  </form>
+  <div id="verResult" class="result" role="status" aria-live="polite"></div>
+
+  <h2>Registered assets</h2>
+  <div id="list"></div>
+</main>
+<footer>
+  Mykei Securities Ltd prototype. Economic deterrence: making stolen goods harder to sell. Records here are stored only in this browser for demonstration.
+</footer>
+<script>
+  var KEY="mykei_registry_demo";
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
+  function save(a){localStorage.setItem(KEY,JSON.stringify(a))}
+  function newId(){return "MYK-"+Math.random().toString(36).slice(2,8).toUpperCase()}
+  function esc(s){return String(s||"").replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+
+  function render(){
+    var a=load(), el=document.getElementById("list");
+    if(!a.length){el.innerHTML='<p class="muted">No assets registered yet.</p>';return}
+    el.innerHTML=a.map(function(x){
+      var b=x.stolen?'<span class="badge bad">Reported stolen</span>':'<span class="badge ok">Clean</span>';
+      return '<div class="card"><div class="row"><span class="id">'+esc(x.id)+'</span>'+b+'</div>'+
+      '<div class="row"><span>Type</span><span>'+esc(x.type)+'</span></div>'+
+      '<div class="row"><span>Serial</span><span>'+esc(x.serial)+'</span></div>'+
+      '<div class="row"><span>Owner</span><span>'+esc(x.owner)+'</span></div>'+
+      '<div class="row"><span>Registered</span><span>'+esc(x.date)+'</span></div>'+
+      (x.photo?'<img class="thumb" alt="Photo of '+esc(x.type)+'" src="'+x.photo+'">':'')+
+      '<button class="secondary" onclick="toggle(\''+x.id+'\')">'+(x.stolen?'Mark as recovered (clean)':'Report this asset stolen')+'</button></div>';
+    }).join("");
+  }
+  window.toggle=function(id){var a=load();a.forEach(function(x){if(x.id===id)x.stolen=!x.stolen});save(a);render()}
+
+  document.getElementById("regForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    var photo="", f=document.getElementById("photo").files[0];
+    function finish(){
+      var rec={id:newId(),type:type.value,serial:serial.value.trim(),owner:owner.value.trim(),value:value.value,date:new Date().toLocaleDateString("en-GB"),stolen:false,photo:photo};
+      var a=load();a.unshift(rec);save(a);render();
+      document.getElementById("regResult").innerHTML='<div class="card"><div class="row"><span class="id">'+esc(rec.id)+'</span><span class="badge ok">Registered</span></div><p class="muted">Asset enrolled. Anyone can now check this ID before buying. Mark it stolen below to see what a buyer would see.</p></div>';
+      e.target.reset();
+    }
+    if(f){var r=new FileReader();r.onload=function(){photo=r.result;finish()};r.readAsDataURL(f)}else{finish()}
+  });
+
+  document.getElementById("verForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    var q=document.getElementById("q").value.trim().toUpperCase(), a=load();
+    var hit=a.find(function(x){return x.id.toUpperCase()===q||x.serial.toUpperCase()===q});
+    var el=document.getElementById("verResult");
+    if(!hit){el.innerHTML='<div class="card"><span class="badge bad">Not registered</span><p class="muted">No Mykei record for this asset. It cannot prove its history. Treat with caution.</p></div>';return}
+    if(hit.stolen){el.innerHTML='<div class="card"><span class="badge bad">STOLEN. DO NOT BUY</span><div class="row"><span>Type</span><span>'+esc(hit.type)+'</span></div><div class="row"><span>Registered owner</span><span>'+esc(hit.owner)+'</span></div><p class="muted">This asset is reported stolen on the Mykei Registry. Buying it funds theft.</p></div>';return}
+    el.innerHTML='<div class="card"><span class="badge ok">Clean and registered</span><div class="row"><span class="id">'+esc(hit.id)+'</span></div><div class="row"><span>Type</span><span>'+esc(hit.type)+'</span></div><div class="row"><span>Owner of record</span><span>'+esc(hit.owner)+'</span></div><div class="row"><span>Registered</span><span>'+esc(hit.date)+'</span></div><p class="muted">This asset can prove its history. Ask the seller to confirm they are the owner of record.</p></div>';
+  });
+  render();
+</script>
+</body>
+</html>
