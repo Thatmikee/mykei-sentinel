@@ -85,11 +85,11 @@ export default function Index() {
   return (
     <>
       <PageSEO
-        title="Mykei Securities | ADN-1 Forensic Retail Defence"
-        description="Mykei Securities builds ADN-1 for retail theft prevention: shelf-level event detection, controlled marker deployment, and Mykei Registry event records."
+        title="Mykei Securities | Anti-Resale Crime and Asset Integrity"
+        description="Mykei Securities develops anti-resale crime and asset-integrity systems for marking, registry records, evidence workflows and resale-confidence reduction."
         canonical="https://mykei.io"
-        ogImageAlt="Mykei Securities ADN-1 retail defence system"
-        keywords="Mykei Securities, ADN-1, retail theft prevention, forensic retail defence, shelf-level retail security, controlled marker deployment, Mykei Registry, Economic Sterilisation, shoplifting prevention, organised retail crime, no-camera retail security"
+        ogImageAlt="Mykei Securities anti-resale crime and asset integrity system"
+        keywords="Mykei Securities, Michael Esema, Economic Sterilisation, anti-resale crime, asset integrity, Market Reduction Approach, Mike Sutton, stolen goods markets, resale confidence reduction, Mykei Protocol, Mykei Registry, ADN-1 R&D, construction theft, solar theft, tool theft"
         ldJson={JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
@@ -114,12 +114,12 @@ export default function Index() {
                   "https://www.linkedin.com/in/michaelesema",
                   "https://mykei.io"
                 ],
-                "description": "Michael Esema is the founder of Mykei Securities Ltd and the originator of Economic Sterilisation, a retail crime prevention doctrine based on disrupting the resale incentive behind retail theft. UK patent application No. 2606630.8.",
-                "knowsAbout": ["Economic Sterilisation", "retail crime prevention", "forensic marking", "IoT retail security", "independent retail", "organised retail crime", "controlled marker deployment"]
+                "description": "Michael Esema is the founder of Mykei Securities Ltd and proposer of Economic Sterilisation as a modern operational extension of Market Reduction theory. UK patent application No. 2606630.8.",
+                "knowsAbout": ["Economic Sterilisation", "Market Reduction Approach", "anti-resale crime", "asset integrity", "asset marking", "evidence workflows", "organised retail crime", "ADN-1 R&D"]
               },
-              "description": "Mykei Securities Ltd is a forensic retail defence company. ADN-1 links shelf level theft event detection, controlled marker deployment, and Mykei Registry event records to support verification workflows.",
+              "description": "Mykei Securities Ltd is an anti-resale crime and asset-integrity company. It links asset marking, registry records, evidence workflows and resale-confidence reduction.",
               "address": { "@type": "PostalAddress", "addressLocality": "Manchester", "addressCountry": "GB" },
-              "knowsAbout": ["Retail theft prevention", "Forensic retail defence", "Shelf level retail security", "Controlled marker deployment", "Mykei Registry", "Economic Sterilisation", "Shoplifting prevention", "Organised retail crime", "Bulk sweep theft", "Retail shrinkage", "No camera retail security", "Independent retail pilots", "Enterprise loss prevention"],
+              "knowsAbout": ["Economic Sterilisation", "Market Reduction Approach", "Mike Sutton", "Anti-resale crime", "Asset integrity", "Stolen goods markets", "Resale confidence reduction", "Asset marking", "Evidence workflows", "Mykei Registry", "Mykei Protocol", "Construction theft", "Solar theft", "Tool theft", "Retail theft economics", "ADN-1 R&D"],
               "sameAs": ["https://mykei.io"]
             },
             {
@@ -127,7 +127,7 @@ export default function Index() {
               "@id": "https://mykei.io/#website",
               "url": "https://mykei.io",
               "name": "Mykei Securities",
-              "description": "Forensic retail defence for high-loss shelves. ADN-1 links shelf events, controlled marker deployment, and registry records.",
+              "description": "Anti-resale crime and asset-integrity systems for marking, registry records, evidence workflows and resale-confidence reduction.",
               "publisher": { "@id": "https://mykei.io/#org" },
               "inLanguage": "en-GB"
             },
@@ -135,7 +135,7 @@ export default function Index() {
               "@type": "LocalBusiness",
               "@id": "https://mykei.io/#localbusiness",
               "name": "Mykei Securities Ltd",
-              "description": "Forensic retail security company developing ADN-1 and the Economic Sterilisation doctrine. Serving independent retailers across Greater Manchester.",
+              "description": "Anti-resale crime and asset-integrity company developing Economic Sterilisation, the Mykei Protocol, registry records and ADN-1 R&D.",
               "url": "https://mykei.io",
               "email": "protocol@mykei.io",
               "address": {
@@ -567,7 +567,7 @@ export default function Index() {
             <li key={label}><a href={href}>{label}</a></li>
           ))}
         </ul>
-        <a href="/pilot" className="mk-nav-cta">Join the Pilot</a>
+        <a href="/enterprise" className="mk-nav-cta">Discuss the Pilot</a>
         <div className="mk-more-wrap">
           <button className="mk-more-btn" onClick={() => setMoreOpen(v => !v)} aria-label="More pages">
             More <span style={{ fontSize: 10, lineHeight: 1 }}>▾</span>
@@ -600,7 +600,7 @@ export default function Index() {
           <a href="/signal" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Signal</a>
           <a href="/certification" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Certification</a>
           <a href="/contact" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Contact</a>
-          <a href="/pilot" className="mk-mobile-cta" onClick={() => setMenuOpen(false)}>Join the Pilot</a>
+          <a href="/enterprise" className="mk-mobile-cta" onClick={() => setMenuOpen(false)}>Discuss the Pilot</a>
         </div>
       )}
 
@@ -628,11 +628,11 @@ export default function Index() {
             </div>
 
             <p className="mk-hero-body">
-              ADN-1 helps retailers turn shelf theft into a marker and registry record. No cameras. No chasing. No biometric data. Just a cleaner way to make stolen stock harder to move.
+              ADN-1 helps retailers turn shelf theft into a marker and registry record. No cameras. No chasing. No biometric data. Just a cleaner way to make stolen stock harder to move. And since the Crime and Policing Act 2026, shop theft of any value can be prosecuted. The bottleneck is evidence. Evidence is what we build.
             </p>
 
             <div className="mk-hero-actions">
-              <a href="/pilot" className="mk-btn-primary">Check Store Fit</a>
+              <a href="/enterprise" className="mk-btn-primary">Check Store Fit</a>
               <a href="#adn-1-system" className="mk-btn-secondary">See the 3 Step Loop</a>
             </div>
 
@@ -650,7 +650,7 @@ export default function Index() {
                 { num: "£2.2B", label: "UK retail theft\nannually" },
                 { num: "20M+", label: "Theft incidents\nper year" },
                 { num: "< 200ms", label: "ADN-1 response\ntime" },
-                { num: "5", label: "Signed LOIs\nManchester pilot" },
+                { num: "1", label: "Enterprise pilot\nproof target" },
               ].map(s => (
                 <div className="mk-tablet-stat" key={s.num}>
                   <div className="mk-tablet-stat-num">{s.num}</div>
@@ -669,15 +669,15 @@ export default function Index() {
           <div className="mk-proof-bar-label">
             <div className="mk-proof-bar-dot" />
             <div>
-              <div className="mk-proof-bar-status">Pilot Fit Reviews Open</div>
-              <div className="mk-proof-bar-sub">Independent Retail Pilot · Manchester</div>
+              <div className="mk-proof-bar-status">Enterprise Pilot Reviews Open</div>
+              <div className="mk-proof-bar-sub">Asset Integrity Pilot · Network/Enterprise</div>
             </div>
           </div>
           <div className="mk-proof-bar-items">
             {[
-              { icon: "01", strong: "5 Signed LOIs", text: "Independent retailers" },
+              { icon: "01", strong: "Controlled Evidence", text: "Prototype and registry demos" },
               { icon: "02", strong: "Patent Application", text: "UK application No. 2606630.8" },
-              { icon: "03", strong: "Pilot Route", text: "Independent and strategic reviews" },
+              { icon: "03", strong: "Enterprise Route", text: "Network and enterprise pilot review" },
               { icon: "04", strong: "Privacy Posture", text: "No cameras or biometric data" },
             ].map(({ icon, strong, text }) => (
               <div className="mk-proof-bar-item" key={strong}>
@@ -696,7 +696,7 @@ export default function Index() {
       <section id="why" style={{ background: "#FFFFFF", padding: "72px 52px", position: "relative" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <div className="mk-section-eyebrow">Why your shop needs this</div>
+            <div className="mk-section-eyebrow">Why asset-heavy organisations need this</div>
             <h2 className="mk-h2-dark" style={{ marginBottom: 40 }}>The old answer was a camera. The right answer is forensic science.</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 24, marginBottom: 40 }}>
               {[
@@ -730,15 +730,15 @@ export default function Index() {
           <Reveal>
             <div>
               <div className="mk-section-eyebrow">In-Store Deployment</div>
-              <h2 className="mk-h2-dark" style={{ marginBottom: 20 }}>Independent Retail Pilot, Greater Manchester.</h2>
+              <h2 className="mk-h2-dark" style={{ marginBottom: 20 }}>Enterprise Asset Integrity Pilot.</h2>
               <p style={{ fontSize: 15, color: "#64748b", lineHeight: 1.75, marginBottom: 24, maxWidth: 480 }}>
-                The ADN-1 Independent Retail Pilot is recruiting stores across Greater Manchester. Five signed LOIs. Pilot units in preparation. Founders pricing available.
+                Mykei is seeking one enterprise or network pilot with 50 to 500 valuable assets to test registration, marking readiness, evidence workflows and resale-confidence reduction.
               </p>
               <div style={{ display: "flex", gap: 32, flexWrap: "wrap" as const }}>
                 {[
-                  { n: "5", l: "Signed retail partners" },
-                  { n: "Open", l: "Independent Retail Pilot" },
-                  { n: "< 1 hr", l: "Installation time" },
+                  { n: "50-500", l: "Target assets" },
+                  { n: "Open", l: "Pilot partner search" },
+                  { n: "Evidence", l: "Readiness audit" },
                 ].map(({ n, l }) => (
                   <div key={n}>
                     <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 22, fontWeight: 700, color: "#2D1204" }}>{n}</div>
@@ -752,6 +752,29 @@ export default function Index() {
       </section>
 
       {/* MARKET CASE */}
+      {/* PROOF TODAY: only true, verifiable numbers */}
+      <section id="proof-today" className="mk-market" style={{ paddingTop: 64, paddingBottom: 64 }}>
+        <div className="mk-market-inner">
+          <Reveal>
+            <div className="mk-section-eyebrow">What Exists Today</div>
+            <h2 className="mk-h2-dark">No inflated claims. These numbers are real.</h2>
+          </Reveal>
+          <div className="mk-stats-grid" style={{ marginBottom: 0 }}>
+            {[
+              { num: "17", label: "Patent claims filed. UK application 2606630.8, pending" },
+              { num: "3", label: "Firmware generations built and demonstrated" },
+              { num: "2", label: "Filmed prototype demonstrations, 2026" },
+              { num: "1995", label: "The research lineage we extend. Sutton's Market Reduction Approach" },
+            ].map(({ num, label }) => (
+              <div className="mk-stat-card" key={label}>
+                <div className="mk-stat-num">{num}</div>
+                <div className="mk-stat-label">{label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="market-case" className="mk-market">
         <div className="mk-market-inner">
           <Reveal>
@@ -882,7 +905,7 @@ export default function Index() {
           </Reveal>
           <div className="mk-designed-grid">
             {[
-              "Independent retailers facing repeat theft",
+              "Prototype and registry demos facing repeat theft",
               "High-footfall convenience stores",
               "Urban retail environments with organised crime exposure",
               "Multi-site operators seeking scalable protection",
@@ -957,7 +980,7 @@ export default function Index() {
                   Mykei Securities builds forensic hardware for the shops that keep the high street alive. Not the big chains with entire loss-prevention departments. The butcher, the pharmacy, the corner shop, the specialist retailer. The people who built something and do not deserve to have it slowly taken from them.
                 </p>
                 <div style={{ display: "flex", gap: 40, flexWrap: "wrap" as const }}>
-                  {[["3s","from detection to marker deployment"],["No camera","shelf-level retail defence without biometric monitoring"],["Registry","event record linked to device, store, time, and cartridge batch"]].map(([n, l]) => (
+                  {[["Register","asset identity and evidence baseline"],["Mark","physical deterrence without biometric tracking"],["Evidence","records linked to owner, site, asset and incident"]].map(([n, l]) => (
                     <div key={n}>
                       <div style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 700, color: "#1E1E1E", lineHeight: 1 }}>{n}</div>
                       <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 11, color: "#7A6A52", marginTop: 6, maxWidth: 140, lineHeight: 1.4 }}>{l}</div>
@@ -977,32 +1000,32 @@ export default function Index() {
             <div className="mk-section-eyebrow" style={{ marginBottom: 10 }}>Built for pilots. Designed for scale.</div>
             <h2 className="mk-h2-dark" style={{ marginBottom: 20 }}>Two routes. One doctrine.</h2>
             <p style={{ fontFamily: "'Sora',sans-serif", fontSize: "clamp(14px,1.4vw,16px)", lineHeight: 1.8, color: "#374151", maxWidth: 640, marginBottom: 56 }}>
-              Mykei's first validation route is independent retail, where theft pressure is immediate and staff confrontation risk is high. The same forensic event architecture is also relevant to larger retailers, insurers, and loss-prevention teams exploring evidence-led approaches to organised retail crime.
+              Mykei.s first commercial proof route is an enterprise or network asset-integrity pilot where asset records, marking readiness and evidence workflows can be tested with measurable before-and-after evidence.
             </p>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }} className="two-track-grid">
             <Reveal delay={0.05}>
               <div style={{ border: "1px solid rgba(212,175,55,0.3)", borderRadius: 8, padding: "clamp(28px,4vw,44px)", background: "#FFFFFF" }}>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#765C14", marginBottom: 16 }}>Independent Retail Validation</div>
-                <h3 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(18px,2vw,24px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16, lineHeight: 1.3 }}>For independent retailers facing repeat theft.</h3>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#765C14", marginBottom: 16 }}>Asset Integrity Validation</div>
+                <h3 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(18px,2vw,24px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16, lineHeight: 1.3 }}>For asset-heavy operators facing theft, resale and evidence risk.</h3>
                 <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, lineHeight: 1.8, color: "#374151", marginBottom: 28 }}>
-                  Used to validate detection, registry logging, and non-confrontational deterrence in real shop environments. Staff confrontation risk is reduced. Marker selection remains subject to supplier specification, SDS/COSHH review, and site fit.
+                  Used to validate asset records, marking readiness, incident evidence workflows and resale-confidence reduction in a controlled enterprise or network pilot. Marker selection remains subject to supplier specification, SDS/COSHH review and site fit.
                 </p>
                 <div style={{ borderTop: "1px solid rgba(212,175,55,0.2)", paddingTop: 20, marginBottom: 24 }}>
-                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.15em", textTransform: "uppercase", color: "#555555", marginBottom: 10 }}>Independent Retail Pilot Pricing</div>
-                  <div style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: 22, fontWeight: 700, color: "#1E1E1E" }}>£149 <span style={{ fontSize: 13, fontWeight: 400, color: "#7A6A52" }}>setup</span></div>
-                  <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, color: "#374151", marginTop: 4 }}>£40/month registry and monitoring subscription</div>
-                  <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 11, color: "#555555", marginTop: 8, lineHeight: 1.6 }}>Selected independent retailers only. Independent Retail Pilot route. Does not represent strategic or enterprise pilot pricing.</div>
+                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.15em", textTransform: "uppercase", color: "#555555", marginBottom: 10 }}>Pilot Scope</div>
+                  <div style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: 22, fontWeight: 700, color: "#1E1E1E" }}>Scoped pilot</div>
+                  <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, color: "#374151", marginTop: 4 }}>No public retail pricing is active; pilot scope is set after review</div>
+                  <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 11, color: "#555555", marginTop: 8, lineHeight: 1.6 }}>One pilot partner should involve approximately 50 to 500 assets and produce a credible case study.</div>
                 </div>
-                <a href="/pilot" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#1E1E1E", color: "#fff", padding: "12px 24px", fontSize: 12, fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", textDecoration: "none", borderRadius: 4 }}>Join Independent Pilot</a>
+                <a href="/enterprise" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#1E1E1E", color: "#fff", padding: "12px 24px", fontSize: 12, fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", textDecoration: "none", borderRadius: 4 }}>Discuss Pilot</a>
               </div>
             </Reveal>
             <Reveal delay={0.12}>
               <div style={{ border: "1px solid rgba(212,175,55,0.3)", borderRadius: 8, padding: "clamp(28px,4vw,44px)", background: "#FFFFFF" }}>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#765C14", marginBottom: 16 }}>Strategic Retail Pilots</div>
-                <h3 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(18px,2vw,24px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16, lineHeight: 1.3 }}>For larger retailers, insurers, and multi-site operators.</h3>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#765C14", marginBottom: 16 }}>Enterprise and Network Pilots</div>
+                <h3 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(18px,2vw,24px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16, lineHeight: 1.3 }}>For insurers, brokers, contractors, hire firms, solar operators and infrastructure networks.</h3>
                 <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, lineHeight: 1.8, color: "#374151", marginBottom: 28 }}>
-                  For supermarkets, pharmacies, health and beauty, and multi-site loss-prevention teams exploring batch-linked forensic evidence records and structured pilots around category-level loss reduction.
+                  For organisations that own, insure, finance, maintain or move valuable assets and need cleaner records, better evidence and lower resale confidence after theft.
                 </p>
                 <div style={{ borderTop: "1px solid rgba(212,175,55,0.2)", paddingTop: 20, marginBottom: 24 }}>
                   <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.15em", textTransform: "uppercase", color: "#555555", marginBottom: 10 }}>Strategic / Enterprise Pricing</div>
@@ -1022,11 +1045,11 @@ export default function Index() {
       <section id="pilot-survey" className="mk-survey">
         <div className="mk-survey-inner" style={{ textAlign: "center" }}>
           <Reveal>
-            <div className="mk-section-eyebrow">Independent Retail Pilot · Now open</div>
-            <h2 className="mk-h2-dark">Be one of the first.</h2>
-            <p className="mk-sub-dark" style={{ marginBottom: 36 }}>We are recruiting independent retailers for the ADN-1 pilot across Greater Manchester. Registry event logging from day one. Founders pricing. Direct access. No lock-in.</p>
-            <a href="/pilot" className="mk-submit-btn" style={{ display: "inline-block", textDecoration: "none" }}>Join the Pilot</a>
-            <p className="mk-form-note" style={{ marginTop: 20 }}>Founders pricing available · No obligation to continue after pilot · Company No. 16984969</p>
+            <div className="mk-section-eyebrow">Enterprise Pilot Review</div>
+            <h2 className="mk-h2-dark">Build the first credible pilot.</h2>
+            <p className="mk-sub-dark" style={{ marginBottom: 36 }}>Mykei is looking for one serious network or enterprise pilot to test asset registration, marking readiness and evidence workflows across 50 to 500 assets.</p>
+            <a href="/enterprise" className="mk-submit-btn" style={{ display: "inline-block", textDecoration: "none" }}>Discuss the Pilot</a>
+            <p className="mk-form-note" style={{ marginTop: 20 }}>Claim-safe pilot review · Legal and operational scope required · Company No. 16984969</p>
             <div style={{ marginTop: 36, display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
               <a href="/howitworks" className="mk-learn-btn">See How It Works →</a>
               <a href="/howitworks#demo" style={{

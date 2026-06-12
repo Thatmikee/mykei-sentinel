@@ -70,7 +70,7 @@ export default function FounderPage() {
           "Michael Essien Esema", "Mike Esema", "M. Esema",
           "M Esema", "Mickey Esema", "Michael E", "Mike E."
         ],
-        "description": "Michael Esema (Michael Essien Esema) is a Nigerian-born entrepreneur and security innovator based in Manchester, UK. Founder & CEO of Mykei Securities Ltd and originator of Economic Sterilisation, the doctrine that disrupts the resale incentive behind retail theft.",
+        "description": "Michael Esema (Michael Essien Esema) is a Nigerian-born entrepreneur and security innovator based in Manchester, UK. Founder & CEO of Mykei Securities Ltd and proposer of Economic Sterilisation, an operational extension of Market Reduction theory for modern resale-driven theft.",
         "jobTitle": "Founder & CEO",
         "nationality": { "@type": "Country", "name": "Nigeria" },
         "homeLocation": { "@type": "Place", "name": "Manchester, Greater Manchester, United Kingdom" },
@@ -98,10 +98,10 @@ export default function FounderPage() {
     });
     document.head.appendChild(schema);
 
-    document.title = "Michael Esema, Founder & CEO, Mykei Securities Ltd | Originator of Economic Sterilisation";
+    document.title = "Michael Esema, Founder & CEO, Mykei Securities Ltd | Economic Sterilisation";
 
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Michael Esema (Michael Essien Esema), Nigerian-born entrepreneur in Manchester. Founder of Mykei Securities Ltd, inventor of the ADN-1, and originator of Economic Sterilisation. MBA, MSc, BSc. Patent pending. Q2 2026 pilot.");
+    if (meta) meta.setAttribute("content", "Michael Esema (Michael Essien Esema), Nigerian-born entrepreneur in Manchester. Founder of Mykei Securities Ltd and proposer of Economic Sterilisation as an operational extension of Market Reduction theory. MBA, MSc, BSc. ADN-1 remains patent-pending R&D.");
 
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -115,9 +115,9 @@ export default function FounderPage() {
     <>
       <PageSEO
         title="Michael Esema — Founder & CEO, Mykei Securities Ltd | Manchester"
-        description="Michael Esema (Michael Essien Esema) is a Nigerian-born entrepreneur based in Manchester, UK. Founder of Mykei Securities Ltd, inventor of the ADN-1, and originator of Economic Sterilisation. MBA, MSc. Patent application No. 2606630.8."
+        description="Michael Esema (Michael Essien Esema) is a Nigerian-born entrepreneur based in Manchester, UK. Founder of Mykei Securities Ltd and proposer of Economic Sterilisation as an operational extension of Market Reduction theory. MBA, MSc. UK patent application No. 2606630.8."
         canonical="https://mykei.io/founder"
-        keywords="Michael Esema, Michael Essien Esema, Mykei Securities founder, economic sterilisation inventor, ADN-1 inventor, Manchester entrepreneur, retail security founder"
+        keywords="Michael Esema, Michael Essien Esema, Mykei Securities founder, economic sterilisation framework, ADN-1 R&D, Manchester entrepreneur, retail security founder"
       />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
@@ -150,7 +150,7 @@ export default function FounderPage() {
           <span style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 700, color: "#1E1E1E", letterSpacing: 0.5 }}>MYKEI SECURITIES LTD</span>
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: 2.5, textTransform: "uppercase", color: "#8a7a5a" }}>Back to site</span>
         </a>
-        <a href="/pilot" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "8px 20px", borderRadius: 8 }}>Join the Pilot</a>
+        <a href="/enterprise" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "8px 20px", borderRadius: 8 }}>Discuss the Pilot</a>
       </nav>
 
       {/* HERO */}
@@ -306,14 +306,12 @@ export default function FounderPage() {
 
             <Reveal delay={0.2}>
               <div style={{ background: "#FFFFFF", border: "1px solid #E8E8E8", borderLeft: "3px solid #D4AF37", borderRadius: 8, padding: 32 }}>
-                <p style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: 11, fontStyle: "italic", color: "#8a7a5a", letterSpacing: 1, textTransform: "uppercase", marginBottom: 20 }}>Definition · coined 2025</p>
+                <p style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: 11, fontStyle: "italic", color: "#8a7a5a", letterSpacing: 1, textTransform: "uppercase", marginBottom: 20 }}>Definition · claim-safe framing</p>
                 <p style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: 20, fontStyle: "italic", color: "#1E1E1E", lineHeight: 1.65, marginBottom: 20 }}>
-                  "The systematic disruption of the resale incentive behind retail theft through
-                  forensic marking and registry event records, removing the commercial
-                  rationale for theft at the point it occurs."
+                  "A framework for reducing the resale confidence and economic acceptability of stolen goods through marking, registry records, evidence workflows and lawful verification."
                 </p>
                 <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#555", letterSpacing: 0.8 }}>
-                  Michael Esema, Mykei Securities Ltd, Manchester, 2025
+                  Economic Sterilisation, Mykei Securities Ltd
                 </p>
               </div>
             </Reveal>
@@ -349,11 +347,11 @@ export default function FounderPage() {
       <section style={{ background: "#FFFFFF", padding: "72px 52px", borderTop: "2px solid #D4AF37", textAlign: "center" }}>
         <Reveal>
           <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16 }}>
-            The Independent Retail Pilot is open.
+            Enterprise pilot review is open.
           </h2>
-          <p style={{ fontSize: 15, color: "#666", marginBottom: 36 }}>Greater Manchester · 2026 · Pilot pricing available</p>
+          <p style={{ fontSize: 15, color: "#666", marginBottom: 36 }}>Network or enterprise pilot · 50 to 500 asset proof target</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/pilot" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D4AF37", padding: "14px 32px", borderRadius: 8 }}>Join the Pilot</a>
+            <a href="/enterprise" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D4AF37", padding: "14px 32px", borderRadius: 8 }}>Discuss the Pilot</a>
             <a href="https://michaelesema.com" target="_blank" rel="noreferrer" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "14px 32px", borderRadius: 8 }}>Visit michaelesema.com</a>
           </div>
         </Reveal>

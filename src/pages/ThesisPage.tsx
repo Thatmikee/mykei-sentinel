@@ -360,7 +360,7 @@ export default function ThesisPage() {
           <section style={{ marginBottom: 48 }}>
             <h2 style={sectionHeading}>5. Patent and Attribution</h2>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              The term "Economic Sterilisation" was coined by Michael Esema in 2025. No prior use of the term in the context of retail security has been identified in published academic or commercial literature. It represents a novel framing of the relationship between forensic asset marking, digital registry systems, and commercial incentive removal.
+              Economic Sterilisation is Michael Esema's term for Mykei's modern operational framework around resale-confidence reduction. The underlying stolen-goods-market principle is not new: it sits within a criminology lineage that includes Market Reduction theory. Mykei's contribution is the commercial and technical packaging around asset marking, registry records, evidence workflows and lawful verification.
             </p>
 
             <PullQuote text="The patent is 17 claims. The doctrine is one sentence." />
@@ -414,7 +414,7 @@ export default function ThesisPage() {
             fontFamily: "'Arial', sans-serif",
           }}
         >
-          Independent Retail Pilot, Q2 2026
+          Enterprise Pilot Review
         </p>
         <h2
           style={{
@@ -426,13 +426,13 @@ export default function ThesisPage() {
             lineHeight: 1.3,
           }}
         >
-          Founders pricing available.
+          Build the first credible pilot.
         </h2>
         <p style={{ color: "#C9BFB4", fontSize: 16, marginBottom: 36, lineHeight: 1.7 }}>
-          Join the Independent Retail Pilot and be among the first retailers to deploy Economic Sterilisation in Greater Manchester.
+          Discuss a network or enterprise pilot to test asset registration, marking readiness, evidence workflows and resale-confidence reduction.
         </p>
         <Link
-          to="/pilot"
+          to="/enterprise"
           style={{
             display: "inline-block",
             background: GOLD,
@@ -445,7 +445,7 @@ export default function ThesisPage() {
             fontFamily: "'Arial', sans-serif",
           }}
         >
-          Apply for the Pilot
+          Discuss the Pilot
         </Link>
       </section>
 
@@ -466,7 +466,7 @@ export default function ThesisPage() {
           {" · "}
           <Link to="/signal" style={{ color: MUTED, textDecoration: "underline" }}>The Brief</Link>
           {" · "}
-          <Link to="/pilot" style={{ color: MUTED, textDecoration: "underline" }}>Pilot</Link>
+          <Link to="/enterprise" style={{ color: MUTED, textDecoration: "underline" }}>Enterprise</Link>
         </p>
       </footer>
     </div>

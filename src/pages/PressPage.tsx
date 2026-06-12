@@ -138,7 +138,7 @@ const SCHEMA = {
     "name": "Michael Esema",
     "additionalName": "Essien",
     "alternateName": ["Michael Essien Esema", "Mike Esema"],
-    "description": "Michael Esema (Michael Essien Esema) is a Nigerian-born entrepreneur based in Manchester, UK. Founder and CEO of Mykei Securities Ltd, originator of Economic Sterilisation, and inventor of the ADN-1.",
+    "description": "Michael Esema (Michael Essien Esema) is a Nigerian-born entrepreneur based in Manchester, UK. Founder and CEO of Mykei Securities Ltd and proposer of Economic Sterilisation as an operational extension of Market Reduction theory.",
     "jobTitle": "Founder & CEO",
     "worksFor": {
       "@type": "Organization",
@@ -171,11 +171,11 @@ const SCHEMA = {
   }
 };
 
-const ONE_LINER = "Michael Esema is the Manchester-based Founder and CEO of Mykei Securities Ltd and originator of Economic Sterilisation, the doctrine that makes retail theft economically irrational.";
+const ONE_LINER = "Michael Esema is the Manchester-based Founder and CEO of Mykei Securities Ltd and proposer of Economic Sterilisation, a modern operational extension of Market Reduction theory for resale-driven theft.";
 
-const SHORT_BIO = `Michael Esema is the Founder and CEO of Mykei Securities Ltd (Company No. 16984969, Manchester). He coined the doctrine of Economic Sterilisation in 2025 and filed UK Patent Application No. GB2606630.8 on 23 March 2026. He built the ADN-1 -- a shelf-mounted IoT device that detects bulk-sweep theft events, deploys a batch-coded forensic marker, and writes encrypted event records to a tamper-aware registry -- from first principles on £10,000 while employed full-time.
+const SHORT_BIO = `Michael Esema is the Founder and CEO of Mykei Securities Ltd (Company No. 16984969, Manchester). He proposes Economic Sterilisation as a modern operational extension of Market Reduction theory and filed UK Patent Application No. GB2606630.8 on 23 March 2026. He built ADN-1 as a patent-pending R&D pathway for event-triggered marking and registry-linked evidence while employed full-time.
 
-He holds an MSc in International Business Management with Merit (Manchester Metropolitan University, 2024), an MBA (Nigerian Defence Academy, 2023), and a BSc in Accounting (Benson Idahosa University, 2018). He demonstrated the ADN-1 publicly at NEC Birmingham in April 2026 and secured five signed Letters of Intent from independent Manchester retailers.`;
+He holds an MSc in International Business Management with Merit (Manchester Metropolitan University, 2024), an MBA (Nigerian Defence Academy, 2023), and a BSc in Accounting (Benson Idahosa University, 2018). Mykei has controlled prototype and registry evidence, but field validation and commercial proof remain separate gates.`;
 
 const LONG_BIO = `His father, Obong Barr. Essien Joseph Esema, was born in 1959 into the royal family of Esema, Akai-Ubium, Nsit Ubium, Akwa Ibom State, Nigeria. He became the first Local Government Chairman of Nsit Ubium, a practicing lawyer and Principal Partner of Essien Esema and Associates, and Special Adviser to the Secretary to the Government of the Federation on legal matters. He co-authored "Power and Functions of Local Government and Area Councils in Nigeria." His life's work was building institutions to protect public resources from exploitation. He died in 2019. He did not live to see his son file a UK patent.
 
@@ -185,15 +185,15 @@ Michael Esema was born in October 1996 in Nigeria. He graduated with a BSc in Ac
 
 He completed an MSc in International Business Management with Merit from Manchester Metropolitan University in 2024 and holds a Level 7 Advanced Diploma in Project Management and Lean Six Sigma certification. He built the ADN-1 personally, on £10,000, while employed full-time.
 
-On 23 March 2026, he filed UK Patent Application No. GB2606630.8 -- a 17-claim patent application (patent pending) for the system he had named Economic Sterilisation: the systematic disruption of the resale incentive behind retail theft through forensic marking and event registry records. In April 2026, he demonstrated the ADN-1 publicly at NEC Birmingham and secured five signed Letters of Intent from independent Manchester retailers. Mykei Securities Ltd (Company No. 16984969) was incorporated on 24 January 2026.
+On 23 March 2026, he filed UK Patent Application No. GB2606630.8 -- a 17-claim patent application (patent pending) connected to event-triggered marking and registry-linked evidence. Mykei now frames ADN-1 as one R&D pathway inside the wider Economic Sterilisation and Mykei Protocol architecture. Mykei Securities Ltd (Company No. 16984969) was incorporated on 24 January 2026.
 
 The doctrine: make theft economically irrational. Close the market that theft sells into. The idea did not come from a lab or an accelerator. It came from watching institutions absorb loss, deciding that was not an acceptable answer, and building something that addressed the actual cause.`;
 
 const FACTS = [
   { label: "Patent", value: "Application No. GB2606630.8 (UK IPO), 17 claims, filed 23 March 2026, receipt issued 26 March 2026" },
   { label: "Company", value: "Mykei Securities Ltd, Company No. 16984969, incorporated 24 January 2026, Manchester" },
-  { label: "Doctrine", value: "Economic Sterilisation, coined 2025." },
-  { label: "Pilot LOIs", value: "5 signed Letters of Intent, independent Manchester retailers, 2026" },
+  { label: "Doctrine", value: "Economic Sterilisation, operational extension of Market Reduction theory." },
+  { label: "Commercial proof", value: "Enterprise or network pilot still required; LOIs are interest signals, not revenue." },
   { label: "Public demo", value: "ADN-1 demonstrated publicly at NEC Birmingham, April 2026" },
   { label: "Education", value: "MSc International Business Management, Merit (MMU, 2024); MBA (Nigerian Defence Academy, 2023); BSc Accounting (Benson Idahosa University, 2018)" },
   { label: "Certifications", value: "Lean Six Sigma; Level 7 Advanced Diploma in Project Management" },
@@ -634,16 +634,16 @@ export default function PressPage() {
                 fontStyle: "italic", lineHeight: 1.65,
                 color: INK, marginBottom: 12,
               }}>
-                "The systematic disruption of the resale incentive behind retail theft through
-                forensic marking and registry event records, removing the commercial rationale
-                for theft at the point it occurs."
+                "A framework for reducing the resale confidence and economic acceptability of
+                stolen goods through marking, registry records, evidence workflows and lawful
+                verification."
               </p>
               <cite style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: 9, color: MUTED, letterSpacing: "0.1em",
                 fontStyle: "normal", display: "block",
               }}>
-                Michael Esema, Mykei Securities Ltd, Manchester, 2025
+                Economic Sterilisation, Mykei Securities Ltd
               </cite>
             </blockquote>
             <a

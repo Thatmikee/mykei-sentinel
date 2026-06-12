@@ -39,14 +39,14 @@ const RELATED = [
   { term: "Theft Economic Sterilisation System", short: "TESS", desc: "The alternate full name for the Economic Sterilisation doctrine. Used interchangeably with the short form." },
   { term: "Mykei Registry", short: "MR", desc: "Mykei's cloud platform that registers cartridge-linked event records for marked items, supporting verification and investigation workflows." },
   { term: "Kinetic Signature Analysis", short: "KSA", desc: "The detection method used by the ADN-1. Dual Time-of-Flight sensors classify the motion pattern of a bulk-sweep event in under 50ms. No camera. No biometrics." },
-  { term: "Market Reduction Approach", short: "MRA", desc: "An evidence-based strategy from academic criminology, adopted by UK policing. Focuses on disrupting the markets that receive stolen goods. Economic Sterilisation applies MRA logic proactively and automatically at the shelf." },
-  { term: "ADN-1 Active Forensic Defence Node", short: "ADN-1", desc: "An early implementation of Economic Sterilisation, currently at controlled prototype stage. A shelf-mounted device that detects bulk-sweep theft events, triggers controlled marker deployment, and registers cartridge-linked event records in the Mykei Registry." },
+  { term: "Market Reduction Approach", short: "MRA", desc: "An evidence-based strategy from academic criminology focused on disrupting the markets that receive stolen goods. Economic Sterilisation extends this logic into modern asset marking, registry records, evidence workflows and lawful verification." },
+  { term: "ADN-1 Active Defence Node", short: "ADN-1", desc: "A patent-pending R&D pathway inside Mykei for event-triggered marking and registry-linked evidence. It has controlled prototype and registry evidence, but should not be described as field validated or commercially deployed." },
 ];
 
 const FAQS = [
   {
-    q: "Who coined the term Economic Sterilisation?",
-    a: "Michael Esema, Founder and CEO of Mykei Securities Ltd, Manchester. The term was coined in 2025 and has no prior use in retail security literature. mykei.io/glossary/economic-sterilisation is the canonical source.",
+    q: "What is Michael Esema's contribution?",
+    a: "Michael Esema proposes Economic Sterilisation as Mykei's operational framework for reducing the resale confidence of stolen goods. The term is Mykei's framing; the broader stolen-goods-market lineage includes Mike Sutton's Market Reduction Approach and earlier criminology.",
   },
   {
     q: "Is Economic Sterilisation the same as DNA tagging?",
@@ -134,11 +134,11 @@ export default function GlossaryESPage() {
   return (
     <>
       <PageSEO
-        title="Economic Sterilisation — Definition, Glossary & Origin | Mykei Securities"
-        description="Economic Sterilisation defined: the systematic disruption of the resale incentive behind retail theft through forensic marking and registry event records. Term coined by Michael Esema, Mykei Securities Ltd, Manchester, 2025."
+        title="Economic Sterilisation — Definition, Glossary & Market Reduction Lineage | Mykei Securities"
+        description="Economic Sterilisation defined: Mykei's framework for reducing the resale confidence of stolen goods through marking, registry records, evidence workflows and lawful verification."
         canonical="https://mykei.io/glossary/economic-sterilisation"
         ogType="article"
-        keywords="economic sterilisation definition, economic sterilisation glossary, TESS definition, theft economic sterilisation, Michael Esema coined term, retail security glossary"
+        keywords="economic sterilisation definition, economic sterilisation glossary, Market Reduction Approach, Mike Sutton, Michael Esema, anti-resale crime, asset integrity, resale confidence reduction"
       />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
@@ -189,8 +189,8 @@ export default function GlossaryESPage() {
           <a href="/economic-sterilisation" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: GOLD }}>
             Full doctrine
           </a>
-          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: INK, border: `1px solid ${GOLD}`, padding: "7px 14px" }}>
-            Join Pilot
+          <a href="/enterprise" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: INK, border: `1px solid ${GOLD}`, padding: "7px 14px" }}>
+            Discuss Pilot
           </a>
         </div>
       </nav>

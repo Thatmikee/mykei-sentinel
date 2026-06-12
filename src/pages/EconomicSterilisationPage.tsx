@@ -43,8 +43,8 @@ const COMPARISON = [
 
 const FAQS = [
   {
-    q: "Who coined the term Economic Sterilisation?",
-    a: "The term was coined by Michael Esema (Michael Essien Esema), Founder of Mykei Securities Ltd, Manchester, in 2025. It has no prior use in retail security literature. mykei.io is the canonical source."
+    q: "What is Michael Esema's contribution?",
+    a: "Michael Esema proposes Economic Sterilisation as a modern operational framework for applying Market Reduction theory to asset marking, registry records, evidence workflows and resale-confidence reduction. The term is Mykei's framing; the wider stolen-goods-market lineage predates Mykei."
   },
   {
     q: "Is Economic Sterilisation the same as DNA tagging?",
@@ -115,8 +115,8 @@ export default function EconomicSterilisationPage() {
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Economic Sterilisation, Definition, Doctrine, and Origin",
-        "description": "Economic Sterilisation is a retail security doctrine coined by Michael Esema in 2025. It describes the systematic disruption of resale incentive through forensic marking and registry event records.",
+        "headline": "Economic Sterilisation, Definition, Doctrine, and Market Reduction Lineage",
+        "description": "Economic Sterilisation is Mykei's operational framework for reducing the resale confidence of stolen goods through marking, registry records, evidence workflows and lawful verification. It builds on Market Reduction theory.",
         "author": {
           "@type": "Person",
           "name": "Michael Esema",
@@ -202,7 +202,7 @@ export default function EconomicSterilisationPage() {
           <span style={{ fontSize: 13, fontWeight: 700, color: "#2D1204", letterSpacing: 0.5 }}>MYKEI SECURITIES LTD</span>
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: 2.5, textTransform: "uppercase", color: "#c9a84c" }}>← Back to site</span>
         </a>
-        <a href="/pilot" style={{ fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "8px 20px", borderRadius: 6 }}>Join the Pilot →</a>
+        <a href="/enterprise" style={{ fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "8px 20px", borderRadius: 6 }}>Discuss Pilot →</a>
       </nav>
 
       {/* HERO */}
@@ -423,13 +423,13 @@ export default function EconomicSterilisationPage() {
       <section style={{ background: "#FFFFFF", padding: "72px 52px", textAlign: "center", borderTop: "2px solid #D4AF37" }}>
         <Reveal>
           <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16 }}>
-            The Independent Retail Pilot is open.
+            Enterprise pilot review is open.
           </h2>
           <p style={{ fontSize: 15, color: "#666", marginBottom: 36, maxWidth: 500, margin: "0 auto 36px" }}>
-            Apply for the Independent Retail Pilot and evaluate Economic Sterilisation in Greater Manchester retail conditions.
+            Discuss a network or enterprise pilot to evaluate asset registration, marking readiness, evidence workflows and resale-confidence reduction.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/pilot" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D4AF37", padding: "14px 32px", borderRadius: 8 }}>Join the Pilot →</a>
+            <a href="/enterprise" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D4AF37", padding: "14px 32px", borderRadius: 8 }}>Discuss the Pilot →</a>
             <a href="/adn-1" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "14px 32px", borderRadius: 8 }}>View ADN-1 Specs</a>
           </div>
         </Reveal>

@@ -74,8 +74,8 @@ export default function EvidencePage() {
   return (
     <>
       <PageSEO
-        title="Evidence & Deployment | Mykei Securities ADN-1"
-        description="Mykei Securities ADN-1 evidence overview: Independent Retail Pilot status, system architecture, UK patent application summary, and founder statement."
+        title="Evidence & Proof Boundaries | Mykei Securities"
+        description="Mykei Securities evidence overview: controlled ADN-1 prototype evidence, registry demonstrations, UK patent application summary, and the remaining field-validation boundary."
         canonical="https://mykei.io/evidence"
         breadcrumbs={[["Home", "https://mykei.io"], ["Evidence", "/evidence"]]}
       />
@@ -147,8 +147,8 @@ export default function EvidencePage() {
           <img src="/mykei-logo.png" alt="Mykei Securities" style={{ height: 28, width: "auto" }} />
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase", color: "#2D1204" }}>MYKEI SECURITIES</span>
         </a>
-        <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase", background: "#D4AF37", color: "#1E1E1E", padding: "8px 20px", borderRadius: 6 }}>
-          Request Pilot Evaluation
+        <a href="/enterprise" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase", background: "#D4AF37", color: "#1E1E1E", padding: "8px 20px", borderRadius: 6 }}>
+          Discuss Pilot Evaluation
         </a>
       </nav>
 
@@ -184,10 +184,10 @@ export default function EvidencePage() {
       <section className="ev-section" style={{ background: "#FFFFFF" }}>
         <div className="ev-inner">
           <Reveal>
-            <span className="ev-eyebrow">01 · Pilot Overview</span>
-            <h2 className="ev-h2">Independent Retail Pilot</h2>
+            <span className="ev-eyebrow">01 · Proof Boundary</span>
+            <h2 className="ev-h2">Controlled Evidence, Not Field Validation</h2>
             <p className="ev-body" style={{ marginBottom: 40 }}>
-              The Independent Retail Pilot is Mykei's validation route for ADN-1 in independent retail environments across Greater Manchester. Five retail partners have signed Letters of Intent. Installation criteria, marker selection, and site suitability are reviewed before any deployment.
+              Mykei has controlled prototype and registry evidence for ADN-1 and the wider Mykei Protocol. Field validation, commercial deployment, insurer acceptance and enterprise proof still require a properly scoped pilot.
             </p>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
@@ -420,11 +420,11 @@ export default function EvidencePage() {
               Ready to evaluate the system?
             </h2>
             <p style={{ fontSize: 15, color: "#555", lineHeight: 1.75, marginBottom: 32 }}>
-              Independent Retail Pilot places are limited. Request a pilot evaluation or view the full system specification.
+              Mykei is seeking one serious network or enterprise pilot to evaluate asset registration, marking readiness, evidence workflows and resale-confidence reduction.
             </p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" as const }}>
-              <a href="/pilot" style={{ background: "#D4AF37", color: "#1E1E1E", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6 }}>
-                Request Pilot Evaluation
+              <a href="/enterprise" style={{ background: "#D4AF37", color: "#1E1E1E", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6 }}>
+                Discuss Pilot Evaluation
               </a>
               <a href="/adn-1" style={{ background: "transparent", color: "#2D1204", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6, border: "1px solid #E8E8E8" }}>
                 ADN-1 Technical Spec
