@@ -53,18 +53,21 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
    MAIN PAGE
 ══════════════════════════════════════════ */
 export default function Index() {
-  const [submitting, setSubmitting] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const statsReveal = useReveal(0.3);
+  const [vote, setVote] = useState<"yes"|"no"|null>(() => localStorage.getItem("mykei_vote") as "yes"|"no"|null);
+  const [voteCounts, setVoteCounts] = useState<{yes:number,no:number}>(() => {
+    try { return JSON.parse(localStorage.getItem("mykei_vote_counts") || "null") || {yes:0,no:0}; } catch { return {yes:0,no:0}; }
+  });
 
-  const b42 = useCounter(22, 2200, statsReveal.visible);
-  const m20 = useCounter(20, 2000, statsReveal.visible);
-  const b18 = useCounter(18, 1800, statsReveal.visible);
-
-  // suppress unused warning
-  void submitting; void setSubmitting;
+  const castVote = (v: "yes"|"no") => {
+    if (vote) return;
+    const next = { ...voteCounts, [v]: voteCounts[v] + 1 };
+    localStorage.setItem("mykei_vote", v);
+    localStorage.setItem("mykei_vote_counts", JSON.stringify(next));
+    setVote(v); setVoteCounts(next);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -86,7 +89,7 @@ export default function Index() {
     <>
       <PageSEO
         title="Mykei Securities | Anti-Resale Crime and Asset Integrity"
-        description="Mykei Securities develops anti-resale crime and asset-integrity systems for marking, registry records, evidence workflows and resale-confidence reduction."
+        description="Mykei Securities helps shops make stolen goods harder to sell. Security hardware that marks stock, creates a record, and makes resale the risky part. Manchester, UK."
         canonical="https://mykei.io"
         ogImageAlt="Mykei Securities anti-resale crime and asset integrity system"
         keywords="Mykei Securities, Michael Esema, Economic Sterilisation, anti-resale crime, asset integrity, Market Reduction Approach, Mike Sutton, stolen goods markets, resale confidence reduction, Mykei Protocol, Mykei Registry, ADN-1 R&D, construction theft, solar theft, tool theft"
@@ -99,7 +102,7 @@ export default function Index() {
               "name": "Mykei Securities Ltd",
               "url": "https://mykei.io",
               "logo": "https://mykei.io/mykei-logo.png",
-              "foundingDate": "2025",
+              "foundingDate": "2026",
               "founder": {
                 "@type": "Person",
                 "@id": "https://michaelesema.com/#person",
@@ -220,7 +223,7 @@ export default function Index() {
         /* Identity headline */
         .mk-hero-identity {
           font-size: clamp(38px, 5vw, 64px);
-          font-weight: 800; line-height: 1.08; letter-spacing: -2px; color: #2D1204; margin-bottom: 10px;
+          font-weight: 800; line-height: 1.08; letter-spacing: -2px; color: #111111; margin-bottom: 10px;
         }
         .mk-identity-accent { color: #765C14; }
         .mk-identity-rule { display: block; width: 44px; height: 3px; background: #c9a84c; border-radius: 2px; margin: 20px 0 22px; }
@@ -580,7 +583,6 @@ export default function Index() {
               <a href="/enterprise" onClick={() => setMoreOpen(false)}>Enterprise</a>
               <div className="mk-more-divider" />
               <a href="/signal" onClick={() => setMoreOpen(false)}>Signal</a>
-              <a href="/certification" onClick={() => setMoreOpen(false)}>Certification</a>
               <a href="/contact" onClick={() => setMoreOpen(false)}>Contact</a>
             </div>
           )}
@@ -598,7 +600,6 @@ export default function Index() {
           <div style={{ height: 1, background: "#E8E8E8", margin: "6px 0" }} />
           <a href="/enterprise" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Enterprise</a>
           <a href="/signal" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Signal</a>
-          <a href="/certification" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Certification</a>
           <a href="/contact" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Contact</a>
           <a href="/enterprise" className="mk-mobile-cta" onClick={() => setMenuOpen(false)}>Discuss the Pilot</a>
         </div>
@@ -609,10 +610,10 @@ export default function Index() {
         <div className="mk-hero-inner">
           <div>
             <div className="mk-company-badge">
-              <span className="mk-badge-label">Mykei Securities Ltd</span>
+              <span className="mk-badge-label">Mykei Securities</span>
               <div className="mk-badge-sep" />
               <span className="mk-badge-status">
-                <div className="mk-badge-dot" />Pilot fit reviews open
+                <div className="mk-badge-dot" />Accepting pilot enquiries
               </span>
             </div>
 
@@ -624,11 +625,11 @@ export default function Index() {
             </h1>
 
             <div className="mk-hero-descriptor">
-              Shelf level retail defence for stores hit by repeat theft.
+              We help shops make stolen goods harder to sell.
             </div>
 
             <p className="mk-hero-body">
-              ADN-1 helps retailers turn shelf theft into a marker and registry record. No cameras. No chasing. No biometric data. Just a cleaner way to make stolen stock harder to move. And since the Crime and Policing Act 2026, shop theft of any value can be prosecuted. The bottleneck is evidence. Evidence is what we build.
+              Stolen goods have value because they can be sold. We poison that market.
             </p>
 
             <div className="mk-hero-actions">
@@ -644,309 +645,13 @@ export default function Index() {
               ))}
             </div>
 
-            {/* Compact stats retained for narrow fallback layouts */}
-            <div className="mk-tablet-stats">
-              {[
-                { num: "£2.2B", label: "UK retail theft\nannually" },
-                { num: "20M+", label: "Theft incidents\nper year" },
-                { num: "< 200ms", label: "ADN-1 response\ntime" },
-                { num: "1", label: "Enterprise pilot\nproof target" },
-              ].map(s => (
-                <div className="mk-tablet-stat" key={s.num}>
-                  <div className="mk-tablet-stat-num">{s.num}</div>
-                  <div className="mk-tablet-stat-label">{s.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
 
         </div>
       </section>
 
-      {/* PROOF BAR */}
-      <div className="mk-proof-bar">
-        <div className="mk-proof-bar-inner">
-          <div className="mk-proof-bar-label">
-            <div className="mk-proof-bar-dot" />
-            <div>
-              <div className="mk-proof-bar-status">Enterprise Pilot Reviews Open</div>
-              <div className="mk-proof-bar-sub">Asset Integrity Pilot · Network/Enterprise</div>
-            </div>
-          </div>
-          <div className="mk-proof-bar-items">
-            {[
-              { icon: "01", strong: "Controlled Evidence", text: "Prototype and registry demos" },
-              { icon: "02", strong: "Patent Application", text: "UK application No. 2606630.8" },
-              { icon: "03", strong: "Enterprise Route", text: "Network and enterprise pilot review" },
-              { icon: "04", strong: "Privacy Posture", text: "No cameras or biometric data" },
-            ].map(({ icon, strong, text }) => (
-              <div className="mk-proof-bar-item" key={strong}>
-                <span className="mk-proof-icon">{icon}</span>
-                <div className="mk-proof-text">
-                  <strong>{strong}</strong>
-                  {text}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* WHY YOUR SHOP NEEDS THIS */}
-      <section id="why" style={{ background: "#FFFFFF", padding: "72px 52px", position: "relative" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <Reveal>
-            <div className="mk-section-eyebrow">Why asset-heavy organisations need this</div>
-            <h2 className="mk-h2-dark" style={{ marginBottom: 40 }}>The old answer was a camera. The right answer is forensic science.</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 24, marginBottom: 40 }}>
-              {[
-                { icon: "◉", point: "CCTV shows you what happened.", sub: "It does not prevent the next one. Footage without outcomes is not security." },
-                { icon: "◎", point: "Stolen goods still find buyers.", sub: "Mykei reduces resale confidence by linking shelf events to marker and registry records." },
-                { icon: "◈", point: "Staff confrontation is dangerous.", sub: "ADN-1 is designed for non-confrontational shelf defence without cameras, facial recognition, or biometric data." },
-              ].map(({ icon, point, sub }) => (
-                <div key={point} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono',monospace", color: "#765C14", fontSize: 13, flexShrink: 0, marginTop: 2 }}>{icon}</span>
-                  <div>
-                    <div style={{ fontFamily: "'Sora',sans-serif", fontWeight: 600, fontSize: 14, color: "#2D1204", marginBottom: 6 }}>{point}</div>
-                    <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, color: "#64748b", lineHeight: 1.65 }}>{sub}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <a href="/howitworks#faq" style={{
-              fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: 2,
-              color: "#B07820", textDecoration: "none", textTransform: "uppercase" as const,
-              borderBottom: "1px solid rgba(176,120,32,0.4)", paddingBottom: 2,
-            }}>
-              Frequently Asked Questions →
-            </a>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* IN-STORE REALITY */}
-      <section className="mk-reality">
-        <div className="mk-reality-inner">
-          <Reveal>
-            <div>
-              <div className="mk-section-eyebrow">In-Store Deployment</div>
-              <h2 className="mk-h2-dark" style={{ marginBottom: 20 }}>Enterprise Asset Integrity Pilot.</h2>
-              <p style={{ fontSize: 15, color: "#64748b", lineHeight: 1.75, marginBottom: 24, maxWidth: 480 }}>
-                Mykei is seeking one enterprise or network pilot with 50 to 500 valuable assets to test registration, marking readiness, evidence workflows and resale-confidence reduction.
-              </p>
-              <div style={{ display: "flex", gap: 32, flexWrap: "wrap" as const }}>
-                {[
-                  { n: "50-500", l: "Target assets" },
-                  { n: "Open", l: "Pilot partner search" },
-                  { n: "Evidence", l: "Readiness audit" },
-                ].map(({ n, l }) => (
-                  <div key={n}>
-                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 22, fontWeight: 700, color: "#2D1204" }}>{n}</div>
-                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#555555", letterSpacing: "1px", textTransform: "uppercase" as const, marginTop: 4 }}>{l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* MARKET CASE */}
-      {/* PROOF TODAY: only true, verifiable numbers */}
-      <section id="proof-today" className="mk-market" style={{ paddingTop: 64, paddingBottom: 64 }}>
-        <div className="mk-market-inner">
-          <Reveal>
-            <div className="mk-section-eyebrow">What Exists Today</div>
-            <h2 className="mk-h2-dark">No inflated claims. These numbers are real.</h2>
-          </Reveal>
-          <div className="mk-stats-grid" style={{ marginBottom: 0 }}>
-            {[
-              { num: "17", label: "Patent claims filed. UK application 2606630.8, pending" },
-              { num: "3", label: "Firmware generations built and demonstrated" },
-              { num: "2", label: "Filmed prototype demonstrations, 2026" },
-              { num: "1995", label: "The research lineage we extend. Sutton's Market Reduction Approach" },
-            ].map(({ num, label }) => (
-              <div className="mk-stat-card" key={label}>
-                <div className="mk-stat-num">{num}</div>
-                <div className="mk-stat-label">{label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="market-case" className="mk-market">
-        <div className="mk-market-inner">
-          <Reveal>
-            <div className="mk-section-eyebrow">The Enemy</div>
-            <h2 className="mk-h2-dark">Organised retail crime is not impulsive. It is a supply chain. And your shop is in it.</h2>
-            <p className="mk-sub-dark">Professional crews treat your shelves as a warehouse. They sweep the stock, move it through resale channels, and come back next week. CCTV records it. Tags slow honest customers. Guards get hurt. None of it touches the economics. The resale market is the engine Mykei targets.</p>
-          </Reveal>
-          <div ref={statsReveal.ref} className="mk-stats-grid">
-            {[
-              { num: `£${(b42/10).toFixed(1)}B`, label: "UK retail crime cost annually" },
-              { num: `${m20}M+`, label: "Theft incidents recorded last year" },
-              { num: `£${(b18/10).toFixed(1)}B`, label: "Spent on security. Losses still rising." },
-              { num: "Resale", label: "Where stolen stock becomes cash" },
-            ].map(({ num, label }) => (
-              <div className="mk-stat-card" key={label}>
-                <div className="mk-stat-num">{num}</div>
-                <div className="mk-stat-label">{label}</div>
-              </div>
-            ))}
-          </div>
-          <Reveal delay={0.2}>
-            <div className="mk-market-note">
-              Existing security watches crime happen but leaves the incentive untouched.{" "}
-              <strong>As long as stolen goods can be sold, theft is worth the risk.</strong>{" "}
-              Mykei reduces resale confidence by linking the shelf event to marker and registry records.
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* TECHNOLOGY */}
-      <section id="adn-1-system" className="mk-tech">
-        <div className="mk-tech-inner">
-          <Reveal>
-            <div className="mk-section-eyebrow">How It Works</div>
-            <h2 className="mk-h2-dark">Three parts. One outcome.</h2>
-            <p className="mk-sub-dark">Detect the shelf event. Mark the goods. Create the record. Reduce resale confidence without staff confrontation.</p>
-          </Reveal>
-          <div className="mk-tech-grid">
-            {[
-              {
-                tag: "ADN-1",
-                title: "The detection node",
-                desc: "A compact shelf-mounted device that silently detects sweep theft in under 50 milliseconds. No cameras, no confrontation, no biometric data of any kind. Fully automatic.",
-                specs: [["PHYSICS","ToF laser 940nm"],["DECISION","< 50ms"],["PRIVACY","No camera / biometric"],["PATENT","UK application"]],
-                link: "/howitworks", linkLabel: "See How It Works →",
-              },
-              {
-                tag: "ATS",
-                title: "The alert system",
-                desc: "The moment a sweep is confirmed, a cartridge-linked event record is created and transmitted to the Mykei secure cloud registry in real time. Tamper-aware audit trail. Designed to support evidential workflows.",
-                specs: [["ALERT","Real-time"],["LATENCY","Under 50ms"],["AUDIT","Tamper-aware"],["EVIDENTIAL","Designed for workflows"]],
-                link: "/technology/ats", linkLabel: "View ATS →",
-              },
-              {
-                tag: "FDT",
-                title: "Economic Sterilisation",
-                desc: "Every activation is logged to the Mykei Registry, linking the event to a device, location, timestamp, and cartridge batch reference. The batch-linked event record supports verification, insurer review, and investigation workflows.",
-                specs: [["REGISTRY","Mykei Registry"],["BATCH","Linked event record"],["EVIDENCE","Verification workflow"],["LOG","Timestamped record"]],
-                link: "/technology/ats", linkLabel: "View Registry →",
-              },
-            ].map(({ tag, title, desc, specs, link, linkLabel }, i) => (
-              <Reveal key={tag} delay={i * 0.12}>
-                <div className="mk-tech-card">
-                  <span className="mk-tech-tag">{tag}</span>
-                  <h3 className="mk-tech-title">{title}</h3>
-                  <p className="mk-tech-desc">{desc}</p>
-                  <div className="mk-tech-specs">
-                    {specs.map(([k, v]) => (
-                      <div key={k}><div className="mk-spec-key">{k}</div><div className="mk-spec-val">{v}</div></div>
-                    ))}
-                  </div>
-                  {link && (
-                    <a href={link} style={{
-                      display: "inline-flex", alignItems: "center", marginTop: 20,
-                      fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: 1.5,
-                      color: "#765C14", textDecoration: "none",
-                      borderBottom: "1px solid rgba(212,168,67,0.3)", paddingBottom: 2,
-                    }}>{linkLabel}</a>
-                  )}
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal delay={0.2}>
-            <div className="mk-tech-note">
-              <strong>The point:</strong> Controlled marker deployment and a batch-linked registry record make stolen goods harder to sell without a traceable record. No cameras. No facial recognition. No biometric or suspect identity data.
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-
-      {/* COMMERCIAL READINESS */}
-      <section className="mk-commercial">
-        <div className="mk-commercial-inner">
-          <Reveal>
-            <div className="mk-section-eyebrow">Commercial Model</div>
-            <h2 className="mk-h2-dark">Designed for pilots. Built to scale.</h2>
-            <p className="mk-sub-dark">ADN-1 is built for practical retail environments: shelf-level event detection, controlled marker deployment, and registry event records without camera-based monitoring.</p>
-          </Reveal>
-          <div className="mk-commercial-grid">
-            {[
-              { icon: "01", label: "Installation", sub: "Under 1 hour" },
-              { icon: "02", label: "Staff Training", sub: "Simple handover" },
-              { icon: "03", label: "Monitoring", sub: "No behavioural monitoring" },
-              { icon: "04", label: "Billing", sub: "Subscription-based service" },
-              { icon: "05", label: "Scalability", sub: "Independent to multi-site" },
-            ].map(({ icon, label, sub }) => (
-              <Reveal key={label}>
-                <div className="mk-commercial-item">
-                  <div className="mk-commercial-icon">{icon}</div>
-                  <div className="mk-commercial-label">{label}</div>
-                  <div className="mk-commercial-sub">{sub}</div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DESIGNED FOR */}
-      <section className="mk-designed">
-        <div className="mk-designed-inner">
-          <Reveal>
-            <div className="mk-section-eyebrow">Designed For</div>
-            <h2 className="mk-h2-dark">Built for the retailers security has failed.</h2>
-          </Reveal>
-          <div className="mk-designed-grid">
-            {[
-              "Prototype and registry demos facing repeat theft",
-              "High-footfall convenience stores",
-              "Urban retail environments with organised crime exposure",
-              "Multi-site operators seeking scalable protection",
-            ].map((text) => (
-              <Reveal key={text}>
-                <div className="mk-designed-item">
-                  <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(201,168,76,0.15)", border: "1px solid rgba(201,168,76,0.4)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, color: "#555555", flexShrink: 0, marginTop: 2 }}>✓</div>
-                  <div className="mk-designed-text">{text}</div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY NOW */}
-      <section className="mk-why-now">
-        <div className="mk-why-now-inner">
-          <Reveal>
-            <div className="mk-section-eyebrow">Why Now</div>
-            <h2 className="mk-h2-dark">The conditions for Economic Sterilisation have arrived.</h2>
-            <p className="mk-sub-dark">Four converging pressures are making the legacy security model obsolete. Mykei addresses all four simultaneously.</p>
-          </Reveal>
-          <div className="mk-why-now-grid">
-            {[
-              "Organised retail crime is increasing across the UK, outpacing investment in conventional deterrence.",
-              "Online resale platforms are accelerating theft liquidity, turning stolen goods into cash within hours.",
-              "Rising costs of guards and surveillance are pricing independent retailers out of adequate protection.",
-              "Growing regulatory pressure on biometric monitoring is closing off the CCTV-based approach entirely.",
-            ].map((text) => (
-              <Reveal key={text}>
-                <div className="mk-why-now-item">
-                  <div className="mk-why-now-text">{text}</div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why we exist, moved below proof sections */}
+      {/* WHY WE EXIST */}
       <section style={{ background: "#fff", padding: "100px clamp(24px,6vw,96px)", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: "repeating-linear-gradient(transparent, transparent 47px, #2D1204 47px, #2D1204 48px)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative" }}>
@@ -963,10 +668,10 @@ export default function Index() {
               <div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#765C14", marginBottom: 20 }}>Vision</div>
                 <p style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(18px,2vw,26px)", fontWeight: 400, lineHeight: 1.55, color: "#1E1E1E", margin: "0 0 24px" }}>
-                  A high street where independent shops do not have to choose between confronting thieves and watching their stock walk out. Where organised retail crime has less resale confidence. Where stolen goods are harder to move.
+                  A high street where a shop owner does not have to choose between confronting a thief and watching their stock walk out. Where stolen goods are harder to sell because the buyers know the risk.
                 </p>
                 <p style={{ fontFamily: "'Sora',sans-serif", fontSize: "clamp(14px,1.4vw,16px)", lineHeight: 1.8, color: "#374151", margin: 0 }}>
-                  This is not optimism. It is mathematics. Reduce the resale reward and theft becomes less rational. Every professional crew, every opportunist, every repeat offender runs the same calculation. Change the answer and you change the behaviour.
+                  This is not optimism. It is mathematics. Theft pays because stolen goods can be sold. Make them harder to sell and the maths stops working. That is the whole idea.
                 </p>
               </div>
             </Reveal>
@@ -977,10 +682,10 @@ export default function Index() {
                   Give independent retailers the one thing security has rarely offered: a way to make stolen goods harder to cash out.
                 </p>
                 <p style={{ fontFamily: "'Sora',sans-serif", fontSize: "clamp(14px,1.4vw,16px)", lineHeight: 1.8, color: "#374151", margin: "0 0 32px" }}>
-                  Mykei Securities builds forensic hardware for the shops that keep the high street alive. Not the big chains with entire loss-prevention departments. The butcher, the pharmacy, the corner shop, the specialist retailer. The people who built something and do not deserve to have it slowly taken from them.
+                  Mykei Securities builds security hardware for independent shops. Not the big chains with entire security teams. The butcher, the pharmacy, the corner shop. The people who built something and do not deserve to watch it slowly disappear.
                 </p>
                 <div style={{ display: "flex", gap: 40, flexWrap: "wrap" as const }}>
-                  {[["Register","asset identity and evidence baseline"],["Mark","physical deterrence without biometric tracking"],["Evidence","records linked to owner, site, asset and incident"]].map(([n, l]) => (
+                  {[["Register","proves what you own, before anything goes wrong"],["Mark","goods are marked, not people"],["Evidence","a record tied to your shop, not to a suspect"]].map(([n, l]) => (
                     <div key={n}>
                       <div style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 700, color: "#1E1E1E", lineHeight: 1 }}>{n}</div>
                       <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 11, color: "#7A6A52", marginTop: 6, maxWidth: 140, lineHeight: 1.4 }}>{l}</div>
@@ -993,63 +698,94 @@ export default function Index() {
         </div>
       </section>
 
-      {/* TWO-TRACK SECTION */}
-      <section style={{ background: "#fff", padding: "96px clamp(24px,6vw,80px)", borderTop: "1px solid rgba(212,175,55,0.18)" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+
+      {/* TECHNOLOGY */}
+      <section id="adn-1-system" className="mk-tech">
+        <div className="mk-tech-inner">
           <Reveal>
-            <div className="mk-section-eyebrow" style={{ marginBottom: 10 }}>Built for pilots. Designed for scale.</div>
-            <h2 className="mk-h2-dark" style={{ marginBottom: 20 }}>Two routes. One doctrine.</h2>
-            <p style={{ fontFamily: "'Sora',sans-serif", fontSize: "clamp(14px,1.4vw,16px)", lineHeight: 1.8, color: "#374151", maxWidth: 640, marginBottom: 56 }}>
-              Mykei.s first commercial proof route is an enterprise or network asset-integrity pilot where asset records, marking readiness and evidence workflows can be tested with measurable before-and-after evidence.
-            </p>
+            <div className="mk-section-eyebrow">How It Works</div>
+            <h2 className="mk-h2-dark">The shelf fights back.</h2>
+            <p className="mk-sub-dark">Sweep happens. ADN fires. Goods are marked. Record is created. All before anyone gets to the door.</p>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }} className="two-track-grid">
-            <Reveal delay={0.05}>
-              <div style={{ border: "1px solid rgba(212,175,55,0.3)", borderRadius: 8, padding: "clamp(28px,4vw,44px)", background: "#FFFFFF" }}>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#765C14", marginBottom: 16 }}>Asset Integrity Validation</div>
-                <h3 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(18px,2vw,24px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16, lineHeight: 1.3 }}>For asset-heavy operators facing theft, resale and evidence risk.</h3>
-                <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, lineHeight: 1.8, color: "#374151", marginBottom: 28 }}>
-                  Used to validate asset records, marking readiness, incident evidence workflows and resale-confidence reduction in a controlled enterprise or network pilot. Marker selection remains subject to supplier specification, SDS/COSHH review and site fit.
-                </p>
-                <div style={{ borderTop: "1px solid rgba(212,175,55,0.2)", paddingTop: 20, marginBottom: 24 }}>
-                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.15em", textTransform: "uppercase", color: "#555555", marginBottom: 10 }}>Pilot Scope</div>
-                  <div style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: 22, fontWeight: 700, color: "#1E1E1E" }}>Scoped pilot</div>
-                  <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, color: "#374151", marginTop: 4 }}>No public retail pricing is active; pilot scope is set after review</div>
-                  <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 11, color: "#555555", marginTop: 8, lineHeight: 1.6 }}>One pilot partner should involve approximately 50 to 500 assets and produce a credible case study.</div>
+          <div className="mk-tech-grid">
+            {[
+              {
+                step: "01",
+                title: "It detects the sweep",
+                desc: "A small device sits on the shelf. The moment stock is taken in bulk, it knows. No cameras. No staff involvement. No alarm that embarrasses honest customers.",
+              },
+              {
+                step: "02",
+                title: "It marks the goods",
+                desc: "The taken stock is marked automatically. The mark is not visible to the thief. It is linked to your shop, the date, and the incident.",
+              },
+              {
+                step: "03",
+                title: "It creates a record",
+                desc: "Every incident is logged to the Mykei Registry. If the goods surface online or at a market, the record exists. Stolen stock becomes harder to move.",
+              },
+            ].map(({ step, title, desc }, i) => (
+              <Reveal key={step} delay={i * 0.12}>
+                <div className="mk-tech-card">
+                  <span className="mk-tech-tag">{step}</span>
+                  <h3 className="mk-tech-title">{title}</h3>
+                  <p className="mk-tech-desc">{desc}</p>
                 </div>
-                <a href="/enterprise" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#1E1E1E", color: "#fff", padding: "12px 24px", fontSize: 12, fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", textDecoration: "none", borderRadius: 4 }}>Discuss Pilot</a>
-              </div>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <div style={{ border: "1px solid rgba(212,175,55,0.3)", borderRadius: 8, padding: "clamp(28px,4vw,44px)", background: "#FFFFFF" }}>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#765C14", marginBottom: 16 }}>Enterprise and Network Pilots</div>
-                <h3 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(18px,2vw,24px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16, lineHeight: 1.3 }}>For insurers, brokers, contractors, hire firms, solar operators and infrastructure networks.</h3>
-                <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, lineHeight: 1.8, color: "#374151", marginBottom: 28 }}>
-                  For organisations that own, insure, finance, maintain or move valuable assets and need cleaner records, better evidence and lower resale confidence after theft.
-                </p>
-                <div style={{ borderTop: "1px solid rgba(212,175,55,0.2)", paddingTop: 20, marginBottom: 24 }}>
-                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.15em", textTransform: "uppercase", color: "#555555", marginBottom: 10 }}>Strategic / Enterprise Pricing</div>
-                  <div style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: 22, fontWeight: 700, color: "#1E1E1E" }}>Scoped per pilot</div>
-                  <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, color: "#374151", marginTop: 4 }}>Based on deployment size, forensic chemistry requirements, and batch-control architecture.</div>
-                  <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 11, color: "#555555", marginTop: 8, lineHeight: 1.6 }}>Strategic pilot pricing is set case by case. Contact us to discuss suitability and scope.</div>
-                </div>
-                <a href="/enterprise" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "transparent", color: "#1E1E1E", padding: "12px 24px", fontSize: 12, fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", textDecoration: "none", borderRadius: 4, border: "1px solid rgba(30,30,30,0.3)" }}>Discuss Strategic Pilot</a>
-              </div>
-            </Reveal>
+              </Reveal>
+            ))}
           </div>
+          <Reveal delay={0.2}>
+            <div className="mk-tech-note">
+              <strong>No cameras. No confrontation. No biometric data.</strong> Your staff do not need to do anything. The shelf handles it.
+            </div>
+          </Reveal>
         </div>
-        <style>{`@media (max-width: 760px) { .two-track-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
+
+      {/* PUBLIC VOTE */}
+      <section style={{ background: "#F8F8F8", borderTop: "1px solid #E8E8E8", padding: "72px clamp(24px,6vw,80px)" }}>
+        <div style={{ maxWidth: 560, margin: "0 auto", textAlign: "center" }}>
+          <Reveal>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", color: "#765C14", marginBottom: 20 }}>Quick verdict</div>
+            <h2 style={{ fontFamily: "'Sora',system-ui,sans-serif", fontSize: "clamp(22px,3vw,34px)", fontWeight: 700, color: "#1E1E1E", marginBottom: 12, lineHeight: 1.2 }}>
+              Does this make sense to you?
+            </h2>
+            <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, color: "#64748b", marginBottom: 36, lineHeight: 1.7 }}>
+              One question. No email. No sign-up. Just a vote.
+            </p>
+            {!vote ? (
+              <div style={{ display: "flex", gap: 16, justifyContent: "center" }}>
+                {(["yes","no"] as const).map(v => (
+                  <button key={v} onClick={() => castVote(v)} style={{
+                    fontFamily: "'JetBrains Mono',monospace", fontSize: 13, fontWeight: 700,
+                    letterSpacing: 2, textTransform: "uppercase",
+                    padding: "16px 44px", borderRadius: 6, cursor: "pointer", border: "none",
+                    background: v === "yes" ? "#1E1E1E" : "#fff",
+                    color: v === "yes" ? "#fff" : "#1E1E1E",
+                    boxShadow: v === "no" ? "inset 0 0 0 1.5px #E8E8E8" : "none",
+                    transition: "all 0.18s",
+                  }}>{v === "yes" ? "Yes" : "No"}</button>
+                ))}
+              </div>
+            ) : (
+              <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 18, fontWeight: 700, color: vote === "yes" ? "#2D7D46" : "#C0392B" }}>
+                {vote === "yes" ? "Thanks. That means a lot." : "Fair enough. We'll keep working."}
+              </div>
+            )}
+          </Reveal>
+        </div>
       </section>
 
       {/* PILOT CTA */}
       <section id="pilot-survey" className="mk-survey">
         <div className="mk-survey-inner" style={{ textAlign: "center" }}>
           <Reveal>
-            <div className="mk-section-eyebrow">Enterprise Pilot Review</div>
-            <h2 className="mk-h2-dark">Build the first credible pilot.</h2>
-            <p className="mk-sub-dark" style={{ marginBottom: 36 }}>Mykei is looking for one serious network or enterprise pilot to test asset registration, marking readiness and evidence workflows across 50 to 500 assets.</p>
+            <div className="mk-section-eyebrow">Work With Us</div>
+            <h2 className="mk-h2-dark">Your cameras recorded it. Your stock still walked. What now?</h2>
+            <p className="mk-sub-dark" style={{ marginBottom: 36 }}>We do not take every case. Tell us about yours.</p>
             <a href="/enterprise" className="mk-submit-btn" style={{ display: "inline-block", textDecoration: "none" }}>Discuss the Pilot</a>
-            <p className="mk-form-note" style={{ marginTop: 20 }}>Claim-safe pilot review · Legal and operational scope required · Company No. 16984969</p>
+            <p className="mk-form-note" style={{ marginTop: 20 }}>No pressure. Just a conversation. Company No. 16984969</p>
             <div style={{ marginTop: 36, display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
               <a href="/howitworks" className="mk-learn-btn">See How It Works →</a>
               <a href="/howitworks#demo" style={{
@@ -1062,7 +798,7 @@ export default function Index() {
                 boxShadow: "0 8px 40px rgba(212,168,67,0.35)",
                 transition: "all 0.3s ease",
               }}>
-                ▶ ADN-1 in Action
+                ▶ ADN in Action
               </a>
             </div>
           </Reveal>
@@ -1073,13 +809,13 @@ export default function Index() {
       <footer className="mk-footer">
         <div>
           <img src="/mykei-logo.png" alt="Mykei Securities" style={{ height: 36, width: "auto", objectFit: "contain", marginBottom: 10 }} />
-          <div className="mk-footer-name">MYKEI SECURITIES LTD</div>
+          <div className="mk-footer-name">MYKEI SECURITIES</div>
           <div className="mk-footer-meta">Co. No: 16984969 · Registered in England & Wales · Manchester · Patent application No. 2606630.8 (UK)</div>
           <div className="mk-footer-meta" style={{ marginTop: 6 }}>
             Enterprise &amp; multi-site enquiries: <a href="mailto:protocol@mykei.io" style={{ color: "inherit", textDecoration: "underline" }}>protocol@mykei.io</a>
           </div>
         </div>
-        <div className="mk-footer-copy">© 2026 MYKEI SECURITIES LTD. ALL RIGHTS RESERVED.</div>
+        <div className="mk-footer-copy">© 2026 MYKEI SECURITIES. ALL RIGHTS RESERVED.</div>
       </footer>
     </>
   );

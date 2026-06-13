@@ -25,7 +25,7 @@ interface PageSEOProps {
 }
 
 const DEFAULT_IMAGE = "https://mykei.io/social-share.png";
-const DEFAULT_IMAGE_ALT = "Mykei Securities, ADN-1 Forensic Retail Defence";
+const DEFAULT_IMAGE_ALT = "Mykei Securities, anti-resale crime and asset integrity";
 const TWITTER_HANDLE = "@MykeisecLtd";
 
 export default function PageSEO({
