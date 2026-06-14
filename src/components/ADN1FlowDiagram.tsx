@@ -2,7 +2,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
   const nodes = [
     { id: "detect",   label: "DETECTION",  sub: "ToF array threshold exceeded",          x: 80,  y: 80  },
     { id: "mark",     label: "MARKING",    sub: "Forensic DNA compound deployed",         x: 280, y: 80  },
-    { id: "registry", label: "REGISTRY",   sub: "Batch code logged — Toxic Inventory",    x: 480, y: 80  },
+    { id: "registry", label: "REGISTRY",   sub: "Batch code logged, Toxic Inventory",    x: 480, y: 80  },
     { id: "resale",   label: "RESALE RISK", sub: "Item commercially & legally traceable", x: 680, y: 80  },
   ];
 
@@ -18,7 +18,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
       width={width}
       style={{ display: "block", fontFamily: "'Sora', sans-serif", maxWidth: "100%" }}
       role="img"
-      aria-label="ADN-1 system flow: Detection → Marking → Registry → Resale Risk"
+      aria-label="ADN system flow: Detection → Marking → Registry → Resale Risk"
     >
       <defs>
         <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
@@ -102,7 +102,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
 
       {/* Caption */}
       <text x="430" y="178" textAnchor="middle" fontSize="9" fill="#aaa" fontStyle="italic">
-        ADN-1 system flow — engineering documentation (April 2026)
+        ADN system flow. Engineering documentation (April 2026)
       </text>
     </svg>
   );

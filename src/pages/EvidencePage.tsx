@@ -48,7 +48,7 @@ const ARCH_LAYERS = [
   {
     layer: "02 — MARKING",
     title: "Forensic Deploy Module",
-    items: ["Forensic Mist Deployment System", "Proprietary compound", "Irreversible bond < 3s", "UV-detectable, permanent"],
+    items: ["Forensic Mist Deployment System", "Proprietary compound", "Designed to bond within 3s (design target)", "UV-detectable, permanent"],
   },
   {
     layer: "03 — REGISTRY",
@@ -75,7 +75,7 @@ export default function EvidencePage() {
     <>
       <PageSEO
         title="Evidence & Proof Boundaries | Mykei Securities"
-        description="Mykei Securities evidence overview: controlled ADN-1 prototype evidence, registry demonstrations, UK patent application summary, and the remaining field-validation boundary."
+        description="Mykei Securities evidence overview: controlled ADN prototype evidence, registry demonstrations, UK patent application summary, and the remaining field-validation boundary."
         canonical="https://mykei.io/evidence"
         breadcrumbs={[["Home", "https://mykei.io"], ["Evidence", "/evidence"]]}
       />
@@ -147,8 +147,8 @@ export default function EvidencePage() {
           <img src="/mykei-logo.png" alt="Mykei Securities" style={{ height: 28, width: "auto" }} />
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase", color: "#2D1204" }}>MYKEI SECURITIES</span>
         </a>
-        <a href="/enterprise" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase", background: "#D4AF37", color: "#1E1E1E", padding: "8px 20px", borderRadius: 6 }}>
-          Discuss Pilot Evaluation
+        <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase", background: "#D4AF37", color: "#1E1E1E", padding: "8px 20px", borderRadius: 6 }}>
+          Follow the Research
         </a>
       </nav>
 
@@ -161,12 +161,12 @@ export default function EvidencePage() {
               What has been built,<br />tested, and filed.
             </h1>
             <p style={{ fontSize: 17, color: "#555", lineHeight: 1.78, maxWidth: 600, marginBottom: 36 }}>
-              This page documents the operational state of the Mykei Securities ADN-1 system as of April 2026. It is provided for assessors, endorsers, and institutional partners requiring evidence of commercial readiness.
+              This page documents the controlled prototype state of the Mykei Securities ADN system as of April 2026. It is provided for assessors, endorsers, and institutional partners requiring evidence of research progress.
             </p>
             <div style={{ display: "flex", gap: 24, flexWrap: "wrap" as const }}>
               {[
-                { label: "Pilot Status", value: "Controlled prototype stage" },
-                { label: "Retail Partners", value: "5 signed LOIs" },
+                { label: "Research Stage", value: "Controlled prototype" },
+                { label: "Retail Contacts", value: "5 signed LOIs" },
                 { label: "Patent", value: "No. 2606630.8 (UK)" },
                 { label: "Company", value: "No. 16984969 E&W" },
               ].map(({ label, value }) => (
@@ -187,7 +187,7 @@ export default function EvidencePage() {
             <span className="ev-eyebrow">01 · Proof Boundary</span>
             <h2 className="ev-h2">Controlled Evidence, Not Field Validation</h2>
             <p className="ev-body" style={{ marginBottom: 40 }}>
-              Mykei has controlled prototype and registry evidence for ADN-1 and the wider Mykei Protocol. Field validation, commercial deployment, insurer acceptance and enterprise proof still require a properly scoped pilot.
+              Mykei has controlled prototype and registry evidence for the ADN and the wider Mykei Protocol. Field validation, commercial deployment, insurer acceptance and enterprise proof still require a properly scoped pilot.
             </p>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
@@ -198,8 +198,8 @@ export default function EvidencePage() {
                   ["Geography", "Greater Manchester, UK"],
                   ["Phase", "Independent retail validation"],
                   ["Partners", "5 independent retailers"],
-                  ["Timeline", "2026 pilot recruitment"],
-                  ["Pricing", "Founders pricing, no lock-in"],
+                  ["Timeline", "Pilot recruitment in progress"],
+                  ["Pricing", "Pricing under development"],
                   ["Data", "Registry event records reviewed"],
                 ].map(([k, v]) => (
                   <div key={k} style={{ display: "flex", justifyContent: "space-between", padding: "10px 0", borderBottom: "1px solid #F8F8F8", fontFamily: "'JetBrains Mono',monospace", fontSize: 11 }}>
@@ -213,7 +213,7 @@ export default function EvidencePage() {
               <div className="ev-card">
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase" as const, color: "#8a6a1a", marginBottom: 16 }}>What Each Partner Receives</div>
                 {[
-                  "ADN-1 unit installed in under 1 hour",
+                  "ADN unit designed for installation in under 1 hour",
                   "Controlled marker workflow subject to site review",
                   "Access to Mykei Registry",
                   "Registry event record access",
@@ -236,9 +236,9 @@ export default function EvidencePage() {
         <div className="ev-inner">
           <Reveal>
             <span className="ev-eyebrow">02 · Hardware in Situ</span>
-            <h2 className="ev-h2">ADN-1 Installation</h2>
+            <h2 className="ev-h2">ADN Installation</h2>
             <p className="ev-body" style={{ marginBottom: 32 }}>
-              Photographs of ADN-1 in a retail environment will be published after pilot installation and site approval. Retailer identity is withheld under pilot confidentiality agreement.
+              Photographs of the ADN in a retail environment will be published after pilot installation and site approval. Retailer identity is withheld under pilot confidentiality agreement.
             </p>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
@@ -246,11 +246,11 @@ export default function EvidencePage() {
               <div>
                 <img
                   src="/assets/adn1-prototype-render.png"
-                  alt="ADN-1 V2.1 prototype render based on current enclosure design"
+                  alt="ADN V2.1 prototype render based on current enclosure design"
                   style={{ width: "100%", borderRadius: 8, border: "1px solid #E8E8E8", display: "block" }}
                 />
                 <div style={{ marginTop: 10 }}>
-                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1, textTransform: "uppercase" as const, color: "#8a6a1a", marginBottom: 4 }}>ADN-1 V2.2 prototype render</div>
+                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1, textTransform: "uppercase" as const, color: "#8a6a1a", marginBottom: 4 }}>ADN V2.2 prototype render</div>
                   <div style={{ fontSize: 12, color: "#6E6E6E", lineHeight: 1.55, fontStyle: "italic" }}>Based on current enclosure design (April 2026). Pre-production visualisation.</div>
                 </div>
               </div>
@@ -259,12 +259,12 @@ export default function EvidencePage() {
               <div>
                 <img
                   src="/assets/adn1-price-rail-diagram.svg"
-                  alt="ADN-1 price rail deployment architecture — bilateral ToF detection zone, front elevation"
+                  alt="ADN price rail deployment architecture. Bilateral ToF detection zone, front elevation."
                   style={{ width: "100%", borderRadius: 8, border: "1px solid #E8E8E8", display: "block" }}
                 />
                 <div style={{ marginTop: 10 }}>
-                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1, textTransform: "uppercase" as const, color: "#8a6a1a", marginBottom: 4 }}>Price rail deployment — front elevation</div>
-                  <div style={{ fontSize: 12, color: "#6E6E6E", lineHeight: 1.55, fontStyle: "italic" }}>ADN-1 mounts on the gondola price rail. Dual ToF sensors at each end create a detection zone spanning the full shelf face.</div>
+                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1, textTransform: "uppercase" as const, color: "#8a6a1a", marginBottom: 4 }}>Price rail deployment. Front elevation.</div>
+                  <div style={{ fontSize: 12, color: "#6E6E6E", lineHeight: 1.55, fontStyle: "italic" }}>ADN is designed to mount on the gondola price rail. Dual ToF sensors at each end are intended to create a detection zone spanning the full shelf face.</div>
                 </div>
               </div>
             </Reveal>
@@ -283,10 +283,10 @@ export default function EvidencePage() {
       <section className="ev-section" style={{ background: "#FFFFFF" }}>
         <div className="ev-inner">
           <Reveal>
-            <span className="ev-eyebrow">03 — Event Logs</span>
+            <span className="ev-eyebrow">03 · Event Logs</span>
             <h2 className="ev-h2">Sanitised Forensic Event Records</h2>
             <p className="ev-body" style={{ marginBottom: 32 }}>
-              The following are representative sanitised records from the ADN-1 test and alpha deployment phase. Retailer identities, precise locations, and full compound batch data are withheld under operational security protocol.
+              The following are representative sanitised records from the ADN test and controlled prototype phase. Retailer identities, precise locations, and full compound batch data are withheld under operational security protocol.
             </p>
           </Reveal>
           <Reveal>
@@ -328,7 +328,7 @@ export default function EvidencePage() {
       <section className="ev-section" style={{ background: "#fff" }}>
         <div className="ev-inner">
           <Reveal>
-            <span className="ev-eyebrow">04 — System Architecture</span>
+            <span className="ev-eyebrow">04 · System Architecture</span>
             <h2 className="ev-h2">Four-layer forensic infrastructure</h2>
             <p className="ev-body">Each layer is independently functional, independently verifiable, and purpose-built for retail deployment without specialist installation.</p>
           </Reveal>
@@ -360,7 +360,7 @@ export default function EvidencePage() {
             <span className="ev-eyebrow">05 — Patent Filing</span>
             <h2 className="ev-h2">Patent-pending: UK Application No. 2606630.8</h2>
             <p className="ev-body" style={{ marginBottom: 32 }}>
-              The ADN-1 system is protected by a UK patent with 17 claims covering the detection methodology, forensic deployment mechanism, and registry integration. Filed via the UK Intellectual Property Office.
+              The ADN system is the subject of a UK patent application with 17 claims covering the detection methodology, forensic deployment mechanism, and registry integration. Filed via the UK Intellectual Property Office.
             </p>
           </Reveal>
           <div className="ev-patent-grid">
@@ -393,10 +393,10 @@ export default function EvidencePage() {
           <Reveal delay={0.08}>
             <div className="ev-statement" style={{ marginTop: 32 }}>
               <p style={{ fontSize: 16, lineHeight: 1.85, color: "#2D1204", marginBottom: 20 }}>
-                The ADN-1 prototype is a working physical device. The V2 enclosure — manufactured to correct dimensions at 150 × 40 × 32mm — is currently in production. The firmware is operational in dual-mode: Wi-Fi for live deployments, BLE for demonstration environments without network access.
+                The ADN prototype is a working physical device. The V2 enclosure, manufactured to correct dimensions at 150 x 40 x 32mm, is currently in production. The firmware is operational in dual-mode: Wi-Fi for live deployments, BLE for demonstration environments without network access.
               </p>
               <p style={{ fontSize: 16, lineHeight: 1.85, color: "#2D1204", marginBottom: 20 }}>
-                The Mykei Registry is active. Events are logged, encrypted, and timestamped. The detection cycle — from sweep to compound deployment — completes in under 200 milliseconds in bench testing.
+                The Mykei Registry is active. Events are logged, encrypted, and timestamped. The detection cycle from sweep to compound deployment has a design target of under 200 milliseconds based on bench testing.
               </p>
               <p style={{ fontSize: 16, lineHeight: 1.85, color: "#2D1204", marginBottom: 28 }}>
                 Five independent retailers in Greater Manchester have reviewed the system, agreed to the pilot terms, and signed Letters of Intent. Field validation has not yet begun. The system is at controlled prototype stage.
@@ -423,11 +423,11 @@ export default function EvidencePage() {
               Mykei is seeking one serious network or enterprise pilot to evaluate asset registration, marking readiness, evidence workflows and resale-confidence reduction.
             </p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" as const }}>
-              <a href="/enterprise" style={{ background: "#D4AF37", color: "#1E1E1E", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6 }}>
-                Discuss Pilot Evaluation
+              <a href="/signal" style={{ background: "#D4AF37", color: "#1E1E1E", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6 }}>
+                Follow the Research
               </a>
               <a href="/adn-1" style={{ background: "transparent", color: "#2D1204", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6, border: "1px solid #E8E8E8" }}>
-                ADN-1 Technical Spec
+                ADN Technical Spec
               </a>
             </div>
           </Reveal>

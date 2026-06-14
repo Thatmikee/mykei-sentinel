@@ -25,7 +25,7 @@ export default function ProtectedByMykei() {
       <p>
         The "Protected by Mykei Securities" decal is a physical sticker placed at the entrance or
         primary shopfront of a participating store. It signals three things simultaneously. First,
-        that the store uses ADN-1 shelf-level retail defence if a defined theft event is detected.
+        that the store uses ADN shelf-level retail defence if a defined theft event is detected.
         Second, that marker deployment events are designed to be logged with a timestamp to the
         Mykei Registry. Third, that theft-linked items can be connected to a traceable marker and
         registry record during verification workflows.
@@ -34,7 +34,7 @@ export default function ProtectedByMykei() {
         This is a materially different signal from a standard CCTV warning sign. A CCTV sign
         communicates a probability: you may be recorded, footage may be retained, it may be reviewed
         after an incident. The Mykei decal communicates a different kind of risk. The forensic
-        marking is not probabilistic. ADN-1 activates on kinetic signature detection. If a theft
+        marking is not probabilistic. ADN activates on kinetic signature detection. If a theft
         event occurs in front of the unit, the mist deploys. The code is registered. The goods are
         marked. These are certainties, not possibilities.
       </p>
@@ -85,11 +85,11 @@ export default function ProtectedByMykei() {
         are significant. A high street association or a business improvement district where every
         member store carries the decal is not just a collection of individually protected retailers.
         It is a forensically hostile operating environment for organised retail crime. The decal
-        is the visible layer of that infrastructure. The ADN-1 unit, the Mykei Registry,
+        is the visible layer of that infrastructure. The ADN unit, the Mykei Registry,
         and the cloud logging are the architecture beneath it.
       </p>
       <p>
-        Founders pricing is available for retailers joining the pilot. Apply at mykei.io/pilot.
+        Pricing is under development. Follow the research at mykei.io/signal.
       </p>
     </article>
   );

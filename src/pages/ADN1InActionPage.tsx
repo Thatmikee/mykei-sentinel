@@ -620,7 +620,7 @@ export const SCENES = [
   {
     phase: "01",
     label: "Standby",
-    title: "The ADN-1 sits on your shelf.\nSilent. Always watching.",
+    title: "The ADN sits on your shelf.\nSilent. Always watching.",
     body: "Dual Tactical Multi-zone Sensor Array units fire 940nm laser pulses at 30Hz. They read depth velocity across the entire shelf face, around the clock. Not watching people. Watching physics.",
     tech: [
       ["SENSOR",    "Tactical Multi-zone Sensor Array"],
@@ -632,24 +632,24 @@ export const SCENES = [
   {
     phase: "02",
     label: "Theft Detected",
-    title: "A bulk sweep event.\nClassified in under 50ms.",
-    body: "The Encrypted Logic Core kinetic signature classifier detects an arm clearing multiple items in a single lateral motion. That physics pattern does not occur in normal shopping. The algorithm fires. No cloud round-trip. On-device. Immediate.",
+    title: "A bulk sweep event.\nClassified on-device.",
+    body: "The Encrypted Logic Core kinetic signature classifier detects an arm clearing multiple items in a single lateral motion. That physics pattern does not occur in normal shopping. The algorithm fires. No cloud round-trip. On-device. Immediate. Design target: under 50ms.",
     tech: [
       ["PROCESSOR",  "Encrypted Logic Core"],
       ["ALGORITHM",  "Kinetic signature classifier"],
-      ["DECISION",   "< 50ms · fully on-device"],
+      ["DECISION",   "Design target: < 50ms · fully on-device"],
       ["PATENT",     "No. 2606630.8 (UK)"],
     ],
   },
   {
     phase: "03",
     label: "DNA Deployed",
-    title: "An invisible cloud.\nMolecularly bonded to the evidence.",
-    body: "The Ultrasonic Deployment Module fires a cloud of Proprietary Forensic Marking Compound, unique to this retailer's batch. The formula bonds to skin, clothing, and merchandise at a molecular level. It does not wash off. It fluoresces under UV. It is the evidence.",
+    title: "An invisible cloud.\nDesigned to adhere to the evidence.",
+    body: "The Ultrasonic Deployment Module is designed to deploy a cloud of Proprietary Forensic Marking Compound, unique to this retailer's batch. Subject to supplier SDS and COSHH review, the formulation is intended to adhere to skin, clothing, and merchandise, remain UV-detectable, and support evidential workflows.",
     tech: [
       ["MARKER",    "Proprietary Forensic Marking Compound"],
       ["ACTUATOR",  "Ultrasonic Deployment Module"],
-      ["DEPLOY",    "< 200ms from trigger"],
+      ["DEPLOY",    "Design target: < 200ms from trigger"],
       ["BOND",      "Permanent · UV verifiable · evidential workflow ready"],
     ],
   },
@@ -830,7 +830,7 @@ export default function ADN1InActionPage() {
 
         /* Scene panel label */
         .adn-split-right::before {
-          content: 'ADN·1 LIVE SIM';
+          content: 'ADN LIVE SIM';
           position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
           font-family: 'JetBrains Mono', monospace;
           font-size: 8px; letter-spacing: 3px; color: #2A2A2A;
@@ -984,15 +984,15 @@ export default function ADN1InActionPage() {
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 11, letterSpacing: "2.5px", textTransform: "uppercase" as const }}>MYKEI</span>
             Home
           </a>
-          <div className="adn-nav-logo">ADN-1 IN ACTION</div>
+          <div className="adn-nav-logo">ADN IN ACTION</div>
           <button className="adn-nav-back" onClick={() => navigate("/howitworks")}>← How It Works</button>
         </nav>
 
         {/* HERO */}
         <section className="adn-hero">
-          <div className="adn-hero-overline">Mykei Securities · ADN-1 · Live Simulation</div>
+          <div className="adn-hero-overline">Mykei Securities · ADN · Prototype Simulation</div>
           <h1 className="adn-hero-h1">
-            ADN-1<br />in Action.
+            ADN<br />in Action.
           </h1>
           <p className="adn-hero-sub">
             From the moment a thief sweeps your shelf, to the moment<br />
@@ -1011,9 +1011,9 @@ export default function ADN1InActionPage() {
         {/* STATS BAR */}
         <div className="adn-stats">
           {[
-            { n: "200ms", l: "Detection to deployment" },
-            { n: "50ms",  l: "On-device decision time"  },
-            { n: "5",     l: "Signed LOIs — pilot cohort" },
+            { n: "200ms", l: "Detection to deployment (design target)" },
+            { n: "50ms",  l: "On-device decision time (design target)"  },
+            { n: "R&D",   l: "Prototype stage. The research continues." },
             { n: "0",     l: "Biometric or suspect data" },
           ].map(({ n, l }) => (
             <div className="adn-stat" key={l}>
@@ -1059,15 +1059,15 @@ export default function ADN1InActionPage() {
 
         {/* CTA */}
         <section className="adn-cta">
-          <div className="adn-cta-overline">Independent Retail Pilot · Q2 2026</div>
+          <div className="adn-cta-overline">Research continues · Follow the ADN</div>
           <h2 className="adn-cta-h2">
-            You have seen what it does.<br />
-            <em>Your shop deserves this.</em>
+            You have seen what it is designed to do.<br />
+            <em>The research continues.</em>
           </h2>
           <p className="adn-cta-sub">
-            Apply for the Independent Retail Pilot. Prototype-stage registry-linked marker workflow, direct access to the founder. Sign a Letter of Intent to secure your place.
+            The ADN is at prototype stage. If you run a retail store and want to be kept informed as development progresses, register your interest and get direct access to the founder.
           </p>
-          <a href="/pilot" className="adn-cta-btn">Join the Pilot</a>
+          <a href="/signal" className="adn-cta-btn">Follow the Research</a>
         </section>
 
         {/* FOOTER */}

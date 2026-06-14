@@ -20,8 +20,8 @@ function SimpleNav() {
       <a href="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: INK, textDecoration: "none" }}>
         Mykei Securities
       </a>
-      <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
-        Apply for Pilot
+      <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
+        Follow the Research
       </a>
     </nav>
   );
@@ -31,7 +31,7 @@ export default function ContactPage() {
   useEffect(() => {
     document.title = "Contact | Mykei Securities Ltd";
     const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", "Contact Mykei Securities Ltd. Reach Michael Esema directly for pilot enquiries, press, investment, and enterprise deployments of the ADN-1 forensic retail security system.");
+    if (desc) desc.setAttribute("content", "Contact Mykei Securities Ltd. Reach Michael Esema directly for research enquiries, press, investment, and enterprise enquiries about the ADN forensic retail security system.");
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.href = "https://mykei.io/contact";
     const ogUrl = document.querySelector('meta[property="og:url"]');
@@ -42,10 +42,10 @@ export default function ContactPage() {
 
   const contacts = [
     {
-      label: "Pilot enquiries",
-      desc: "Independent retailers interested in the Mykei Independent Retail Pilot.",
-      cta: "Apply via the pilot form",
-      href: "/pilot",
+      label: "Research enquiries",
+      desc: "Independent retailers interested in following the ADN research programme.",
+      cta: "Follow the Research",
+      href: "/signal",
       external: false,
     },
     {
@@ -58,7 +58,7 @@ export default function ContactPage() {
     },
     {
       label: "Enterprise",
-      desc: "Multi-site retail groups evaluating the ADN-1 at scale.",
+      desc: "Multi-site retail groups evaluating the ADN at scale.",
       cta: "Enterprise enquiry form",
       href: "/enterprise",
       external: false,

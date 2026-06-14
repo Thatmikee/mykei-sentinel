@@ -223,7 +223,7 @@ export default function BlogPostLayout({ meta, children }: BlogPostLayoutProps) 
           color: GOLD,
           marginBottom: "16px",
         }}>
-          Independent Retail Pilot
+          Research Updates
         </p>
         <p style={{
           fontFamily: "'Playfair Display', Georgia, serif",
@@ -233,10 +233,10 @@ export default function BlogPostLayout({ meta, children }: BlogPostLayoutProps) 
           marginBottom: "28px",
           lineHeight: 1.35,
         }}>
-          Founders pricing available. Join the Manchester pilot.
+          Mykei publishes its findings through The Signal as the ADN development programme continues.
         </p>
         <a
-          href="/pilot"
+          href="/signal"
           style={{
             display: "inline-block",
             backgroundColor: GOLD,
@@ -251,7 +251,7 @@ export default function BlogPostLayout({ meta, children }: BlogPostLayoutProps) 
             borderRadius: "3px",
           }}
         >
-          Apply Now
+          Follow the Research
         </a>
       </section>
 

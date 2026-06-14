@@ -52,7 +52,7 @@ const FAQS = [
   },
   {
     q: "What is the Theft Economic Sterilisation System (TESS)?",
-    a: "TESS is the alternate name for the complete doctrine and product category. It stands for Theft Economic Sterilisation System. The ADN-1 is an early implementation of TESS, currently at prototype stage."
+    a: "TESS is the alternate name for the complete doctrine and product category. It stands for Theft Economic Sterilisation System. The ADN is an early implementation of TESS, currently at prototype stage."
   },
   {
     q: "How is this different from existing security systems?",
@@ -67,7 +67,7 @@ const FAQS = [
     a: "The physical marker creates a traceable link between goods and a registry event record regardless of where the goods appear. If marked items are recovered, the registry-linked event record identifies the source store, shelf, and timestamp. UV detection is a core selection criterion for Mykei's marker sourcing. Receiving stolen goods is a criminal offence under the Theft Act 1968. The forensic link supports investigation workflows without requiring confrontation."
   },
   {
-    q: "Where can I read more about the ADN-1 implementation?",
+    q: "Where can I read more about the ADN implementation?",
     a: "Full technical specifications are at mykei.io/adn-1. The cloud registry (Mykei Registry) is documented at mykei.io/technology/ats."
   },
 ];
@@ -151,12 +151,12 @@ export default function EconomicSterilisationPage() {
   return (
     <>
       <PageSEO
-        title="Economic Sterilisation — The Doctrine Coined by Michael Esema | Mykei Securities"
-        description="Economic Sterilisation: the systematic disruption of resale incentive through forensic marking and registry event records. Coined by Michael Esema, Mykei Securities Ltd, 2025. The doctrine behind the ADN-1."
+        title="Economic Sterilisation: The Doctrine Coined by Michael Esema | Mykei Securities"
+        description="Economic Sterilisation: the systematic disruption of resale incentive through forensic marking and registry event records. Coined by Michael Esema, Mykei Securities Ltd, 2025. The doctrine behind the ADN."
         canonical="https://mykei.io/economic-sterilisation"
         ogType="article"
         keywords="economic sterilisation, TESS, theft economic sterilisation system, Michael Esema, retail theft doctrine, forensic deterrence, resale blocking, economic sterilisation for small businesses, economic sterilisation for retailers, economic sterilisation for accountants, economic sterilisation for lawyers, economic sterilisation for startups, economic sterilisation for nonprofits, economic sterilisation for universities, economic sterilisation for government employees, economic sterilisation for enterprise companies, economic sterilization for teams"
-        ogImageAlt="Economic Sterilisation — the doctrine that disrupts the resale incentive behind retail theft"
+        ogImageAlt="Economic Sterilisation: the doctrine that disrupts the resale incentive behind retail theft"
         breadcrumbs={[["Home","https://mykei.io"],["Economic Sterilisation","/economic-sterilisation"]]}
       />
       <style>{`
@@ -202,7 +202,7 @@ export default function EconomicSterilisationPage() {
           <span style={{ fontSize: 13, fontWeight: 700, color: "#2D1204", letterSpacing: 0.5 }}>MYKEI SECURITIES LTD</span>
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: 2.5, textTransform: "uppercase", color: "#c9a84c" }}>← Back to site</span>
         </a>
-        <a href="/enterprise" style={{ fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "8px 20px", borderRadius: 6 }}>Discuss Pilot →</a>
+        <a href="/signal" style={{ fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "8px 20px", borderRadius: 6 }}>Follow the Research →</a>
       </nav>
 
       {/* HERO */}
@@ -241,7 +241,7 @@ export default function EconomicSterilisationPage() {
             <div style={{ height: 28, width: 1, background: "rgba(45,18,4,0.1)" }} />
             <div>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: 1.5, textTransform: "uppercase", color: "rgba(45,18,4,0.3)", marginBottom: 4 }}>First implementation</div>
-              <a href="/adn-1" style={{ fontSize: 14, fontWeight: 600, color: "#2D1204" }}>ADN-1 Active Forensic Defence Node</a>
+              <a href="/adn-1" style={{ fontSize: 14, fontWeight: 600, color: "#2D1204" }}>ADN Active Forensic Defence Node</a>
             </div>
           </div>
         </div>
@@ -272,7 +272,7 @@ export default function EconomicSterilisationPage() {
               {
                 num: "03",
                 title: "Sterilisation happens at the moment of contact",
-                body: "The ADN-1 triggers controlled marker deployment the moment a bulk-sweep event is detected. From that moment, every marked item carries a unique forensic batch code registered in the Mykei Registry. The batch-linked event record links the activation to a device, location, timestamp, and cartridge reference — supporting verification and investigation workflows."
+                body: "The ADN is designed to trigger controlled marker deployment the moment a bulk-sweep event is detected. From that moment, every marked item is intended to carry a unique forensic batch code registered in the Mykei Registry. The batch-linked event record is designed to link the activation to a device, location, timestamp, and cartridge reference, supporting verification and investigation workflows."
               },
               {
                 num: "04",
@@ -334,7 +334,7 @@ export default function EconomicSterilisationPage() {
           <Reveal>
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#D4AF37", display: "block", marginBottom: 12 }}>Implementation</span>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16, lineHeight: 1.2 }}>
-              The ADN-1 is an early Theft Economic Sterilisation System.
+              The ADN is an early Theft Economic Sterilisation System.
             </h2>
             <p style={{ fontSize: 15.5, color: "#555", maxWidth: 640, lineHeight: 1.8, marginBottom: 52 }}>
               Designed and built by Michael Esema from first principles. Firmware,
@@ -361,7 +361,7 @@ export default function EconomicSterilisationPage() {
           </div>
           <Reveal delay={0.2}>
             <div style={{ marginTop: 40, display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <a href="/adn-1" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "12px 24px", borderRadius: 8 }}>ADN-1 Technical Specs →</a>
+              <a href="/adn-1" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "12px 24px", borderRadius: 8 }}>ADN Technical Specs →</a>
               <a href="/technology/ats" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "12px 24px", borderRadius: 8 }}>Mykei Registry →</a>
             </div>
           </Reveal>
@@ -375,7 +375,7 @@ export default function EconomicSterilisationPage() {
             <div>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#D4AF37", marginBottom: 16 }}>Doctrine versus implementation</div>
               <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, lineHeight: 1.8, color: "#374151" }}>
-                Economic Sterilisation is the doctrine. ADN-1 is the first implementation. The doctrine can be deployed at different market tiers: independent retail validation, strategic retail pilots, insurer-backed pilots, and future evidence-system alignment. The objective remains unchanged at every tier: remove the commercial incentive behind organised retail theft without increasing confrontation risk for staff.
+                Economic Sterilisation is the doctrine. ADN is the first implementation. The doctrine can be deployed at different market tiers: independent retail validation, strategic retail pilots, insurer-backed pilots, and future evidence-system alignment. The objective remains unchanged at every tier: remove the commercial incentive behind organised retail theft without increasing confrontation risk for staff.
               </p>
             </div>
           </Reveal>
@@ -423,14 +423,14 @@ export default function EconomicSterilisationPage() {
       <section style={{ background: "#FFFFFF", padding: "72px 52px", textAlign: "center", borderTop: "2px solid #D4AF37" }}>
         <Reveal>
           <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16 }}>
-            Enterprise pilot review is open.
+            Follow the research.
           </h2>
           <p style={{ fontSize: 15, color: "#666", marginBottom: 36, maxWidth: 500, margin: "0 auto 36px" }}>
-            Discuss a network or enterprise pilot to evaluate asset registration, marking readiness, evidence workflows and resale-confidence reduction.
+            The research continues. Register your interest to follow development of asset registration, marking readiness, evidence workflows, and resale-confidence reduction.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/enterprise" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D4AF37", padding: "14px 32px", borderRadius: 8 }}>Discuss the Pilot →</a>
-            <a href="/adn-1" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "14px 32px", borderRadius: 8 }}>View ADN-1 Specs</a>
+            <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D4AF37", padding: "14px 32px", borderRadius: 8 }}>Follow the Research →</a>
+            <a href="/adn-1" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "14px 32px", borderRadius: 8 }}>View ADN Specs</a>
           </div>
         </Reveal>
       </section>

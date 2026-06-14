@@ -526,12 +526,12 @@ export const HeroSection = () => {
             <span className="mk-nav-brand-sub">Forensic Infrastructure</span>
           </a>
           <ul className="mk-nav-links">
-            <li><a href="#technology">ADN-1 System</a></li>
+            <li><a href="#technology">ADN System</a></li>
             <li><a href="#mission">Market Case</a></li>
             <li><a href="#specs">Technology</a></li>
             <li><a href="/roadmap">Roadmap</a></li>
           </ul>
-          <a href="#pilot-survey" className="mk-nav-cta">Request Pilot →</a>
+          <a href="/signal" className="mk-nav-cta">Follow the Research →</a>
         </nav>
 
         {/* Trust bar */}
@@ -560,14 +560,14 @@ export const HeroSection = () => {
             </h1>
 
             <p className={`mk-body ${visible ? "vis" : ""}`}>
-              The ADN-1 doesn't try to stop the thief. It triggers controlled marker deployment, registers a cartridge-linked event, and makes those goods harder to sell anonymously the moment they leave the shelf.
+              The ADN doesn't try to stop the thief. It triggers controlled marker deployment, registers a cartridge-linked event, and is designed to make those goods harder to sell anonymously the moment they leave the shelf.
               Batch-identifiable marker. Secure registry. The resale incentive is disrupted.{" "}
               <strong style={{ color: "#0D1B4B", fontWeight: 600 }}>Economic Sterilisation.</strong>
             </p>
 
             <div className={`mk-actions ${visible ? "vis" : ""}`}>
               <a href="#specs" className="mk-btn-primary">See the Technology →</a>
-              <a href="#pilot-survey" className="mk-btn-secondary">Request Pilot Access</a>
+              <a href="/signal" className="mk-btn-secondary">Follow the Research</a>
             </div>
 
             <div className={`mk-proof ${visible ? "vis" : ""}`}>

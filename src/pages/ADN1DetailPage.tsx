@@ -63,7 +63,7 @@ const MODES = [
 ];
 
 const SEQUENCE = [
-  { n: "01", title: "DETECT",      body: "Dual ToF sensors map a 3D velocity vector across both detection zones. When the kinetic signature matches the configured bulk-sweep threshold, the trigger fires in under 200ms." },
+  { n: "01", title: "DETECT",      body: "Dual ToF sensors map a 3D velocity vector across both detection zones. When the kinetic signature matches the configured bulk-sweep threshold, the trigger fires. Design target: under 200ms." },
   { n: "02", title: "MARK",        body: "The Ultrasonic Deployment Module deploys a burst of invisible batch-identifiable marker compound onto the stolen goods and the individual carrying them. Subject to marker supplier specification, SDS/COSHH review, and deployment environment review." },
   { n: "03", title: "LOG",         body: "An AES-256-GCM encrypted marker deployment event record is transmitted to the Mykei secure cloud registry via MQTT over TLS 1.3. The record contains timestamp, node ID, zone, ToF vector data, and the cartridge batch reference." },
   { n: "04", title: "DISRUPT",     body: "The cartridge batch reference is registered in the Mykei Registry, linked to the device, store, and timestamp. The event record is designed to support verification and investigation workflows, making theft-linked goods harder to sell anonymously." },
@@ -74,7 +74,7 @@ export default function ADN1DetailPage() {
   useEffect(() => {
     window.scrollTo({ top: 0 });
     // Page-level SEO
-    document.title = "ADN-1 Retail Security Device · Bulk Sweep Theft Detection | Mykei";
+    document.title = "ADN Retail Security Device · Bulk Sweep Theft Detection | Mykei";
     // Product Schema JSON-LD
     const script = document.createElement("script");
     script.type = "application/ld+json";
@@ -82,9 +82,9 @@ export default function ADN1DetailPage() {
     script.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "name": "ADN-1 Active Forensic Defence Node",
-      "headline": "ADN-1 Active Forensic Defence Node, Technical Specification",
-      "description": "The ADN-1 is a shelf-mounted retail security device using kinetic signature analysis to detect bulk sweep retail theft. It triggers controlled marker deployment and logs a cartridge-linked event record to the Mykei Registry. No cameras. No biometrics. No biometric or suspect identity data captured.",
+      "name": "ADN Active Forensic Defence Node",
+      "headline": "ADN Active Forensic Defence Node, Technical Specification",
+      "description": "The ADN is a shelf-mounted retail security device using kinetic signature analysis to detect bulk sweep retail theft. It triggers controlled marker deployment and logs a cartridge-linked event record to the Mykei Registry. No cameras. No biometrics. No biometric or suspect identity data captured.",
       "author": { "@type": "Person", "@id": "https://michaelesema.com/#person", "name": "Michael Esema" },
       "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io" },
       "url": "https://mykei.io/adn-1",
@@ -115,7 +115,7 @@ export default function ADN1DetailPage() {
           className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider transition-all rounded"
           style={{ background: "#D4A843", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
         >
-          ▶ ADN-1 in Action
+          ▶ ADN in Action
         </a>
       </div>
 
@@ -132,7 +132,7 @@ export default function ADN1DetailPage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
               </span>
-              <span className="font-mono text-xs text-primary tracking-wider">ADN-1 · ACTIVE FORENSIC DEFENCE</span>
+              <span className="font-mono text-xs text-primary tracking-wider">ADN · ACTIVE FORENSIC DEFENCE</span>
             </div>
           </motion.div>
 
@@ -142,9 +142,9 @@ export default function ADN1DetailPage() {
           </motion.h1>
 
           <motion.p {...fade(0.2)} className="text-muted-foreground text-lg max-w-2xl leading-relaxed mb-10">
-            A shelf-mounted autonomous hardware node that detects bulk retail theft in real time,
-            triggers controlled marker deployment, and registers a cartridge-linked event record,
-            all within 200 milliseconds, with no human intervention.
+            A shelf-mounted autonomous hardware node designed to detect bulk retail theft in real time,
+            trigger controlled marker deployment, and register a cartridge-linked event record,
+            with no human intervention. Response time is a design target of under 200 milliseconds.
           </motion.p>
 
           <motion.div {...fade(0.3)} className="flex flex-wrap gap-3">
@@ -167,7 +167,7 @@ export default function ADN1DetailPage() {
               <span className="text-primary">If they can't sell it, there's no point stealing it.</span>
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              The ADN-1 does not try to physically prevent theft or identify criminals. It disrupts
+              The ADN does not try to physically prevent theft or identify criminals. It is designed to disrupt
               the resale incentive at the moment of the crime, making theft-linked goods harder to
               sell anonymously and removing the economic rationale behind organised retail theft.
             </p>
@@ -180,7 +180,7 @@ export default function ADN1DetailPage() {
         <div className="container px-6 max-w-5xl">
           <motion.div {...fade(0)} className="mb-12">
             <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Activation Sequence</span>
-            <h2 className="text-2xl md:text-3xl font-bold mt-2">Four steps. Under two seconds.</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mt-2">Four steps. Designed for under two seconds.</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -306,7 +306,7 @@ export default function ADN1DetailPage() {
             {[
               { stat: "3,000+", label: "UK prosecutions supported by forensic marking compound evidence across the industry (industry data)" },
               { stat: "CPS", label: "Crown Prosecution Service guidance references forensic marking evidence in retail theft cases" },
-              { stat: "Batch-linked", label: "Every ADN-1 activation is cartridge-linked, timestamped, and recorded in the Mykei Registry for verification workflows" },
+              { stat: "Batch-linked", label: "Every ADN activation is designed to be cartridge-linked, timestamped, and recorded in the Mykei Registry for verification workflows" },
             ].map((item, i) => (
               <motion.div key={i} {...fade(i * 0.15)} className="glow-border rounded-lg p-6">
                 <div className="text-3xl font-bold text-primary mb-2">{item.stat}</div>
@@ -315,7 +315,7 @@ export default function ADN1DetailPage() {
             ))}
           </div>
           <motion.p {...fade(0.5)} className="mt-8 font-mono text-xs text-muted-foreground max-w-2xl">
-            The ADN-1 uses a batch-identifiable marker compound, uniquely cartridge-linked per activation event.
+            The ADN is designed to use a batch-identifiable marker compound, uniquely cartridge-linked per activation event.
             Each deployment event record is designed to support evidential and investigation workflows. Marker specification subject to supplier SDS/COSHH review.
           </motion.p>
         </div>
@@ -327,16 +327,16 @@ export default function ADN1DetailPage() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }} className="adn-family-grid">
             <motion.div {...fade(0)}>
               <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">ADN platform</span>
-              <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4">ADN platform. ADN-1 device.</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4">ADN platform. ADN device.</h2>
               <p className="text-muted-foreground leading-relaxed">
-                ADN is Mykei's Active Defence Node platform. ADN-1 is the first deployment model, built for pilot use in retail environments. It combines non-visual detection, controlled forensic marking, and secure event registration in one system.
+                ADN is Mykei's Active Defence Node platform. The first ADN model is designed for retail environments, combining non-visual detection, controlled forensic marking, and secure event registration in one system.
               </p>
             </motion.div>
             <motion.div {...fade(0.1)}>
               <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Batch-linked evidence record</span>
               <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4">Every event, fully traceable.</h2>
               <p className="text-muted-foreground leading-relaxed">
-                ADN-1 is built around a batch-linked evidence model. Each event record is designed to connect device ID, timestamp, store reference, event type, and forensic batch reference. This creates a traceable bridge between the physical marker and the digital registry entry.
+                The ADN is designed around a batch-linked evidence model. Each event record is intended to connect device ID, timestamp, store reference, event type, and forensic batch reference. This creates a traceable bridge between the physical marker and the digital registry entry.
               </p>
             </motion.div>
           </div>
@@ -365,7 +365,7 @@ export default function ADN1DetailPage() {
             ))}
           </div>
           <motion.p {...fade(0.4)} className="font-mono text-xs text-muted-foreground max-w-2xl">
-            At 10% market penetration across UK independent convenience retail, the ADN-1 represents an addressable recurring revenue base of approximately £24M per year at current pricing. The market has no existing solution that removes resale value from stolen goods. Economic Sterilisation is a new category.
+            At 10% market penetration across UK independent convenience retail, the ADN represents a significant addressable recurring revenue opportunity. Pricing is under development. The market has no existing solution that removes resale value from stolen goods. Economic Sterilisation is a new category.
           </motion.p>
         </div>
       </section>
@@ -377,18 +377,16 @@ export default function ADN1DetailPage() {
             <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Commercial Model</span>
             <h2 className="text-2xl md:text-3xl font-bold mt-2">Unit economics built for the shopkeeper.</h2>
             <p className="text-muted-foreground mt-2 max-w-xl">
-              Priced against the cash position of an independent retailer, not an enterprise procurement cycle.
+              Designed for the cash position of an independent retailer, not an enterprise procurement cycle. Pricing is under development.
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <motion.div {...fade(0.1)}>
               {[
-                { label: "Hardware fee (one-time)",        value: "£149" },
-                { label: "Monthly subscription",           value: "£40 / month" },
-                { label: "12-month total cost",            value: "£629" },
-                { label: "24-month LTV per retailer",      value: "£1,109" },
-                { label: "Break-even (one bulk sweep stopped)", value: "Month 1" },
-                { label: "Pilot commitment",               value: "3 months · no lock-in" },
+                { label: "Installation",                   value: "Under 1 hour, no retrofit required" },
+                { label: "Staffing",                       value: "Zero additional staff needed" },
+                { label: "Revenue model",                  value: "Subscription per device (recurring)" },
+                { label: "Pricing",                        value: "Under development" },
               ].map((r, i) => (
                 <motion.div key={i} {...fade(i * 0.06)} className="flex justify-between items-center py-3 border-b border-border/50 font-mono text-xs">
                   <span className="text-muted-foreground">{r.label}</span>
@@ -400,13 +398,13 @@ export default function ADN1DetailPage() {
               <div className="border border-border rounded-lg p-5">
                 <div className="font-mono text-[10px] text-muted-foreground tracking-wider uppercase mb-3">Break-even scenario</div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A single bulk sweep of premium goods (cigarettes, spirits, cosmetics) typically represents £150 to £400 in stock loss. One prevented event in Month 1 covers the hardware fee in full. Every month thereafter, the subscription cost is lower than the expected loss from a single unchallenged sweep event.
+                  A single bulk sweep of premium goods (cigarettes, spirits, cosmetics) typically represents £150 to £400 in stock loss. One prevented event in Month 1 would cover a hardware fee in that range. The recurring subscription is intended to remain lower than the expected loss from a single unchallenged sweep event.
                 </p>
               </div>
               <div className="border border-border rounded-lg p-5">
                 <div className="font-mono text-[10px] text-muted-foreground tracking-wider uppercase mb-3">Revenue model</div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Hardware is sold at near-cost during the pilot phase. Recurring revenue comes from the monthly subscription: cloud registry access, Mykei Registry event writes, and cartridge replenishment. LTV compounds with multi-unit deployments in larger retail locations.
+                  Recurring revenue is intended to come from the monthly subscription: cloud registry access, Mykei Registry event writes, and cartridge replenishment. LTV compounds with multi-unit deployments in larger retail locations.
                 </p>
               </div>
             </motion.div>
@@ -426,17 +424,17 @@ export default function ADN1DetailPage() {
               {
                 badge: "UKCA",
                 title: "UKCA Certification: in progress",
-                body: "The ADN-1 is an electronic device placed on the UK market and is subject to UKCA marking under the Electrical Equipment (Safety) Regulations 2016 and the Electromagnetic Compatibility Regulations 2016. Mykei Securities is working toward conformity assessment with a UK Approved Body. Commercial deployment at scale is planned for Q3 2027 pending certification.",
+                body: "The ADN is an electronic device placed on the UK market and is subject to UKCA marking under the Electrical Equipment (Safety) Regulations 2016 and the Electromagnetic Compatibility Regulations 2016. Mykei Securities is working toward conformity assessment with a UK Approved Body. Commercial deployment at scale is planned for Q3 2027 pending certification.",
               },
               {
                 badge: "IP42",
                 title: "IP42 Ingress Protection",
-                body: "The ADN-1 prototype is rated IP42: protected against solid objects greater than 1mm and against water dripping at an angle up to 15 degrees. Production units will target IP54 for full retail environment compatibility.",
+                body: "The ADN prototype is rated IP42: protected against solid objects greater than 1mm and against water dripping at an angle up to 15 degrees. Production units will target IP54 for full retail environment compatibility.",
               },
               {
                 badge: "Privacy",
                 title: "Designed with privacy-by-design principles",
-                body: "The ADN-1 stores no camera data, no facial recognition data, and no biometric or suspect identity data. The event record contains sensor vectors, timestamps, and cartridge batch references, none of which are personal data under UK GDPR. No DPA registration is required for standard deployment.",
+                body: "The ADN stores no camera data, no facial recognition data, and no biometric or suspect identity data. The event record contains sensor vectors, timestamps, and cartridge batch references, none of which are personal data under UK GDPR. No DPA registration is required for standard deployment.",
               },
               {
                 badge: "GB2606630.8",
@@ -460,17 +458,16 @@ export default function ADN1DetailPage() {
       <section className="py-20 border-t border-border">
         <div className="container px-6 max-w-3xl text-center">
           <motion.div {...fade(0)}>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Deploy the ADN-1 at your store</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Follow the ADN research</h2>
             <p className="text-muted-foreground mb-8">
-              Alpha pilot places are open to independent retailers in Greater Manchester.
-              <a href="/adn-1" style={{ color: "inherit" }}>Founders pricing available.</a> 3-month minimum commitment.
+              The research continues. If you run a retail store and want to be informed as the ADN moves toward deployment, register your interest.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <button
-                onClick={() => navigate("/#contact")}
+                onClick={() => navigate("/signal")}
                 className="px-8 py-4 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors rounded"
               >
-                Request Pilot Access →
+                Follow the Research →
               </button>
               <button
                 onClick={() => navigate("/technology/ats")}

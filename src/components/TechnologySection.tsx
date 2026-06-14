@@ -10,14 +10,14 @@ const TechnologySection = () => {
 
   const technologies = [
     {
-      id: "ADN-1",
+      id: "ADN",
       title: "Active Deterrence Node",
       description:
-        "A shelf-integrated unit utilizing 940nm VCSEL laser-ranging sensors (Time-of-Flight) with sub-200ms detection-to-trigger response time. The ADN-1 monitors high-value merchandise in real-time and activates deterrence protocols upon unauthorized removal.",
+        "A shelf-integrated unit utilizing 940nm VCSEL laser-ranging sensors (Time-of-Flight) with a design target of under 200ms detection-to-trigger response time. The ADN monitors high-value merchandise and is designed to activate deterrence protocols upon unauthorized removal.",
       specs: [
         { label: "SENSOR TYPE", value: "Tactical Multi-zone Sensor Array" },
         { label: "WAVELENGTH", value: "940nm VCSEL" },
-        { label: "RESPONSE", value: "<200ms" },
+        { label: "RESPONSE", value: "Target <200ms" },
       ],
       href: "/adn-1",
     },
@@ -25,10 +25,10 @@ const TechnologySection = () => {
       id: "ATS",
       title: "Alarm Transmission System",
       description:
-        "A secure, encrypted cloud layer that transmits real-time theft alerts from shelf sensors to the management dashboard. The ATS ensures instant notification and evidence capture across your entire retail infrastructure.",
+        "A secure, encrypted cloud layer designed to transmit theft alerts from shelf sensors to the management dashboard in real time. The ATS is designed to enable rapid notification and evidence capture across retail infrastructure.",
       specs: [
         { label: "PROTOCOL", value: "TLS 1.3" },
-        { label: "LATENCY", value: "<50ms" },
+        { label: "LATENCY", value: "Target <50ms" },
         { label: "UPTIME", value: "99.99%" },
       ],
       href: "/technology/ats",

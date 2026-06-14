@@ -55,7 +55,7 @@ export default function PrivacyPage() {
           {[
             {
               heading: "Who we are",
-              body: `Mykei Securities Ltd is a company registered in England & Wales (Company Number: 16984969), with a registered address in Manchester, United Kingdom. We develop the ADN-1 retail security device and operate the mykei.io website. For any data-related enquiries, contact us at protocol@mykei.io.`,
+              body: `Mykei Securities Ltd is a company registered in England & Wales (Company Number: 16984969), with a registered address in Manchester, United Kingdom. We develop the ADN retail security device and operate the mykei.io website. For any data-related enquiries, contact us at protocol@mykei.io.`,
             },
             {
               heading: "What data we collect",
@@ -63,11 +63,11 @@ export default function PrivacyPage() {
             },
             {
               heading: "Lawful basis",
-              body: `We process form submission data on the basis of legitimate interest (UK GDPR Art. 6(1)(f)) to respond to your enquiry and evaluate your suitability for the ADN-1 pilot programme. We process analytics data on the basis of consent (UK GDPR Art. 6(1)(a)). You may withdraw consent for analytics at any time by adjusting your browser settings or using the opt-out mechanism provided by Google Analytics.`,
+              body: `We process form submission data on the basis of legitimate interest (UK GDPR Art. 6(1)(f)) to respond to your enquiry and evaluate your suitability for the ADN research and validation programme. We process analytics data on the basis of consent (UK GDPR Art. 6(1)(a)). You may withdraw consent for analytics at any time by adjusting your browser settings or using the opt-out mechanism provided by Google Analytics.`,
             },
             {
               heading: "How long we keep it",
-              body: `ADN-1 forensic event records (device ID, timestamp, sensor data) are retained for 7 years from the date of the event to support potential criminal or civil proceedings. Retailer account data is retained for 6 years from the date of account closure, in line with the UK Limitation Act 1980. Enquiry and pilot application data is retained for up to 24 months from the date of submission, or until you request erasure. Server logs are retained by Cloudflare for up to 30 days. Analytics data is retained for 14 months in line with Google Analytics default settings.`,
+              body: `ADN forensic event records (device ID, timestamp, sensor data) are retained for 7 years from the date of the event to support potential criminal or civil proceedings. Retailer account data is retained for 6 years from the date of account closure, in line with the UK Limitation Act 1980. Enquiry and pilot application data is retained for up to 24 months from the date of submission, or until you request erasure. Server logs are retained by Cloudflare for up to 30 days. Analytics data is retained for 14 months in line with Google Analytics default settings.`,
             },
             {
               heading: "Your rights",
@@ -78,12 +78,12 @@ export default function PrivacyPage() {
               body: `This site uses strictly necessary cookies set by Cloudflare to handle form submissions and deliver the service. If you have opted in to analytics, Google Analytics places additional cookies (_ga, _gid) to measure anonymised usage. You can manage or delete cookies through your browser settings. We do not use advertising cookies or track you across other websites.`,
             },
             {
-              heading: "ADN-1 forensic event data",
-              body: `The ADN-1 device does not collect personal data. It records: device ID, timestamp, and sensor distance readings. This event data is transmitted encrypted (TLS 1.3) to our cloud infrastructure hosted on Amazon Web Services (eu-north-1 region, Stockholm) and stored encrypted at rest (AES-256). No images, audio, biometric data, or names are recorded. ADN-1 is designed with data minimisation and privacy-by-design principles. Mykei acts as sole data controller for ADN-1 event records.`,
+              heading: "ADN forensic event data",
+              body: `The ADN device does not collect personal data. It records: device ID, timestamp, and sensor distance readings. This event data is transmitted encrypted (TLS 1.3) to our cloud infrastructure hosted on Amazon Web Services (eu-north-1 region, Stockholm) and stored encrypted at rest (AES-256). No images, audio, biometric data, or names are recorded. The ADN is designed with data minimisation and privacy-by-design principles. Mykei acts as sole data controller for ADN forensic event records.`,
             },
             {
               heading: "Third-party services",
-              body: `We use Cloudflare for website hosting and DNS (cloudflare.com/privacypolicy). ADN-1 event data is hosted on AWS eu-north-1, which is ISO 27001 certified. If analytics is enabled, usage data is processed by Google Analytics under Google's standard data processing terms. Transactional emails are delivered via Resend (SOC 2 Type II).`,
+              body: `We use Cloudflare for website hosting and DNS (cloudflare.com/privacypolicy). ADN event data is hosted on AWS eu-north-1, which is ISO 27001 certified. If analytics is enabled, usage data is processed by Google Analytics under Google's standard data processing terms. Transactional emails are delivered via Resend (SOC 2 Type II).`,
             },
             {
               heading: "Changes to this policy",

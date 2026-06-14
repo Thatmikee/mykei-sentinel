@@ -1,13 +1,13 @@
 export const commercialTerms = {
-  setupFee: 149,
-  monthlyFee: 40,
+  setupFee: null,
+  monthlyFee: null,
   minimumMonths: 3,
-  totalMinimum: 269,
-  displayLine: "\u00a3149 setup + \u00a340/month (\u00a3269 minimum, 3 months)",
+  totalMinimum: null,
+  displayLine: "Pricing under development. Terms confirmed before any deployment.",
   pdfRows: [
-    { label: "Setup fee",      value: "\u00a3149 (one-time, on pilot start)" },
-    { label: "Monthly fee",    value: "\u00a340 per month"                   },
-    { label: "Minimum term",   value: "3 months"                             },
-    { label: "Total minimum",  value: "\u00a3269"                            },
+    { label: "Setup fee",      value: "To be confirmed"   },
+    { label: "Monthly fee",    value: "To be confirmed"   },
+    { label: "Minimum term",   value: "3 months (indicative)" },
+    { label: "Total minimum",  value: "To be confirmed"   },
   ],
 } as const;

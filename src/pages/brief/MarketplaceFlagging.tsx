@@ -52,7 +52,7 @@ export default function MarketplaceFlagging() {
         precisely the point where connecting them would matter most.
       </p>
       <p>
-        The Mykei Registry is designed to close that gap. Every ADN-1 activation
+        The Mykei Registry is designed to close that gap. Every ADN activation
         generates a unique forensic reference code linked to a store record and item category.
         This code is registered in the Mykei Registry at the moment of deployment. If a thief takes the
         marked goods and lists them online, the code on those goods is now the bridge between
@@ -87,8 +87,7 @@ export default function MarketplaceFlagging() {
       </p>
       <p>
         The "Protected by Mykei Securities" decal communicates this at the point of entry. The
-        TIR is the infrastructure that makes that communication credible. Founders pricing is
-        available. See mykei.io/pilot.
+        TIR is the infrastructure that makes that communication credible. Pricing is under development. Follow the research at mykei.io/signal.
       </p>
     </article>
   );

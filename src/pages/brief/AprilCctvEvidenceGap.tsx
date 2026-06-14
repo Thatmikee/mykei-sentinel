@@ -39,7 +39,7 @@ export default function AprilCctvEvidenceGap() {
       </p>
 
       <p>
-        ADN-1 is built to connect detection, controlled marker deployment, cartridge identity, and
+        ADN is built to connect detection, controlled marker deployment, cartridge identity, and
         Mykei Registry event records. Not to watch better. To make the inventory event legible
         from the moment it happens, without someone having to reconstruct it afterwards.
       </p>
@@ -73,8 +73,8 @@ export default function AprilCctvEvidenceGap() {
       <h2>Read next</h2>
 
       <p>
-        Read <a href="/howitworks">how ADN-1 works</a>, then see the <a href="/adn-1">ADN-1 system page</a>.
-        If your store has a shelf that keeps getting hit, request a <a href="/pilot">pilot fit check</a>.
+        Read <a href="/howitworks">how the ADN works</a>, then see the <a href="/adn-1">ADN system page</a>.
+        To follow the research, visit <a href="/signal">mykei.io/signal</a>.
       </p>
 
       <h2>Sources</h2>

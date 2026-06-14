@@ -68,7 +68,7 @@ export default function WaitroseSmartCabinetsResaleProblem() {
 
       <p>
         Mykei is built around a different question. Not only how do you stop someone reaching the
-        shelf, but what happens to the goods if they do? ADN-1 is designed to detect a defined shelf
+        shelf, but what happens to the goods if they do? The ADN is designed to detect a defined shelf
         event, deploy a controlled marker, and create a cartridge linked record in the Mykei Registry.
         The marker is the physical link. The registry is the event story.
       </p>

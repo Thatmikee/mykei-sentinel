@@ -38,9 +38,9 @@ const FAINT = "#f5f1eb";
 const RELATED = [
   { term: "Theft Economic Sterilisation System", short: "TESS", desc: "The alternate full name for the Economic Sterilisation doctrine. Used interchangeably with the short form." },
   { term: "Mykei Registry", short: "MR", desc: "Mykei's cloud platform that registers cartridge-linked event records for marked items, supporting verification and investigation workflows." },
-  { term: "Kinetic Signature Analysis", short: "KSA", desc: "The detection method used by the ADN-1. Dual Time-of-Flight sensors classify the motion pattern of a bulk-sweep event in under 50ms. No camera. No biometrics." },
+  { term: "Kinetic Signature Analysis", short: "KSA", desc: "The detection method used by the ADN. Dual Time-of-Flight sensors classify the motion pattern of a bulk-sweep event in under 50ms. No camera. No biometrics." },
   { term: "Market Reduction Approach", short: "MRA", desc: "An evidence-based strategy from academic criminology focused on disrupting the markets that receive stolen goods. Economic Sterilisation extends this logic into modern asset marking, registry records, evidence workflows and lawful verification." },
-  { term: "ADN-1 Active Defence Node", short: "ADN-1", desc: "A patent-pending R&D pathway inside Mykei for event-triggered marking and registry-linked evidence. It has controlled prototype and registry evidence, but should not be described as field validated or commercially deployed." },
+  { term: "ADN Active Defence Node", short: "ADN", desc: "A patent-pending R&D pathway inside Mykei for event-triggered marking and registry-linked evidence. It has controlled prototype and registry evidence, but should not be described as field validated or commercially deployed." },
 ];
 
 const FAQS = [
@@ -189,8 +189,8 @@ export default function GlossaryESPage() {
           <a href="/economic-sterilisation" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: GOLD }}>
             Full doctrine
           </a>
-          <a href="/enterprise" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: INK, border: `1px solid ${GOLD}`, padding: "7px 14px" }}>
-            Discuss Pilot
+          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: INK, border: `1px solid ${GOLD}`, padding: "7px 14px" }}>
+            Follow the Research
           </a>
         </div>
       </nav>
@@ -287,7 +287,7 @@ export default function GlossaryESPage() {
             Economic Sterilisation requires both components to work together autonomously:
             controlled marker deployment at the moment of the detection event, and
             automatic registration of the cartridge-linked batch in a real-time cloud registry.
-            The ADN-1 is the first device designed to deliver both.
+            The ADN is the first device designed to deliver both.
           </p>
         </Reveal>
 
@@ -297,7 +297,7 @@ export default function GlossaryESPage() {
             The term is used in two ways. As a doctrine: the overall principle that stolen
             goods should have their resale incentive disrupted through forensic marking and registry
             event records. As a category name: the class of technology that implements this doctrine,
-            of which the ADN-1 is one early example.
+            of which the ADN is one early example.
           </p>
           <p>
             The American spelling variant, Economic Sterilization, is treated as equivalent
@@ -366,11 +366,11 @@ export default function GlossaryESPage() {
                 },
                 {
                   term: "Bulk Sweep Theft",
-                  def: "A theft method in which all or most stock is cleared from a display fixture in a single rapid motion. Associated with ORC. The ADN-1 is designed specifically to detect and respond to the kinetic signature of a bulk sweep event.",
+                  def: "A theft method in which all or most stock is cleared from a display fixture in a single rapid motion. Associated with ORC. The ADN is designed specifically to detect and respond to the kinetic signature of a bulk sweep event.",
                 },
                 {
                   term: "Kinetic Signature Analysis (KSA)",
-                  def: "The detection method used by the ADN-1. Dual Time-of-Flight laser sensors sample the motion field above a retail fixture at 30Hz. A classification algorithm on the Encrypted Logic Core microcontroller distinguishes between normal browsing and bulk-sweep motion patterns in under 50ms.",
+                  def: "The detection method used by the ADN. Dual Time-of-Flight laser sensors sample the motion field above a retail fixture at 30Hz. A classification algorithm on the Encrypted Logic Core microcontroller distinguishes between normal browsing and bulk-sweep motion patterns in under 50ms.",
                 },
                 {
                   term: "Forensic Marking",
@@ -399,14 +399,14 @@ export default function GlossaryESPage() {
             <p style={{ fontFamily: "'Playfair Display',serif", fontSize: 17, color: INK, lineHeight: 1.6, marginBottom: 24, fontWeight: 400 }}>
               The full doctrine page covers the four pillars of Economic Sterilisation, a
               comparison with conventional security approaches, and the four-step implementation
-              sequence of the ADN-1.
+              sequence of the ADN.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <a href="/economic-sterilisation" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#fff", background: INK, padding: "11px 24px", display: "inline-block" }}>
                 Read the full doctrine
               </a>
               <a href="/adn-1" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 500, color: INK, border: `1px solid rgba(26,17,8,0.2)`, padding: "11px 24px", display: "inline-block" }}>
-                See ADN-1
+                See ADN
               </a>
             </div>
           </div>

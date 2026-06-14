@@ -49,7 +49,7 @@ export default function SignalCCTVScamPage() {
           "headline": "CCTV is a £313 Million Movie Ticket for a Crime You Already Lost",
           "description": "UK retailers spent £313m on security in 2025 and suffered 5.8 million thefts. The camera records the crime. It does not stop it. Michael Esema on why deterrence without resale removal is security theatre.",
           "url": "https://mykei.io/signal/cctv-313-million-movie-ticket",
-          "datePublished": "2026-04-15T08:00:00Z",
+          "datePublished": "2026-04-04T08:00:00Z",
           "author": { "@type": "Person", "name": "Michael Esema", "url": "https://mykei.io/founder" },
           "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io", "logo": { "@type": "ImageObject", "url": "https://mykei.io/mykei-logo.png" } },
           "image": "https://mykei.io/social-share.png",
@@ -67,7 +67,7 @@ export default function SignalCCTVScamPage() {
           { name: "CCTV: £313 Million Movie Ticket", url: "https://mykei.io/signal/cctv-313-million-movie-ticket" },
         ]}
         articleMeta={{
-          publishedTime: "2026-04-15T08:00:00Z",
+          publishedTime: "2026-04-04T08:00:00Z",
           author: "Michael Esema",
           section: "Retail Security",
           tags: ["CCTV", "retail theft", "ACS 2026", "economic sterilisation", "forensic security"],
@@ -79,7 +79,7 @@ export default function SignalCCTVScamPage() {
         {/* Nav */}
         <nav style={{ borderBottom: `1px solid ${RULE}`, padding: "0 40px", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "rgba(255,255,255,0.97)", backdropFilter: "blur(12px)", zIndex: 100 }}>
           <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", color: GOLD, textDecoration: "none", textTransform: "uppercase" }}>The Signal</a>
-          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "1.5px", color: INK, textDecoration: "none", textTransform: "uppercase", border: `1px solid ${RULE}`, padding: "6px 16px", borderRadius: 4 }}>Join the Pilot</a>
+          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "1.5px", color: INK, textDecoration: "none", textTransform: "uppercase", border: `1px solid ${RULE}`, padding: "6px 16px", borderRadius: 4 }}>Follow the Research</a>
         </nav>
 
         {/* Header */}
@@ -104,11 +104,26 @@ export default function SignalCCTVScamPage() {
               <div style={{ width: 40, height: 40, borderRadius: "50%", background: GOLD, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, color: "#fff", fontSize: 14 }}>ME</div>
               <div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: INK }}>Michael Esema</div>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: MID }}>Founder, Mykei Securities · 15 April 2026 · 6 min read</div>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: MID }}>Founder, Mykei Securities · 4 April 2026 · 6 min read</div>
               </div>
             </div>
           </Reveal>
         </header>
+
+        {/* Hero Image */}
+        <div style={{ maxWidth: 900, margin: "0 auto 48px", padding: "0 32px" }}>
+          <figure style={{ margin: 0 }}>
+            <img
+              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&q=80&auto=format&fit=crop"
+              alt="Security cameras mounted on a building wall"
+              style={{ width: "100%", borderRadius: 6, display: "block", maxHeight: 480, objectFit: "cover" }}
+              loading="lazy"
+            />
+            <figcaption style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", marginTop: 8, letterSpacing: "0.5px" }}>
+              Photo: Unsplash / security surveillance
+            </figcaption>
+          </figure>
+        </div>
 
         {/* Article */}
         <article style={{ maxWidth: 760, margin: "0 auto", padding: "0 32px 80px" }}>
@@ -189,7 +204,7 @@ export default function SignalCCTVScamPage() {
               If you remove the ability to profit from stolen goods, does the theft still happen? I coined the term <a href="/economic-sterilisation" style={{ color: GOLD, textDecoration: "underline" }}>Economic Sterilisation</a> in 2025 because I couldn't find an existing word for that specific act. Not deterrence. Not prevention. The removal of commercial value at the point of theft. Cameras don't do this. Guards don't do this. EAS tags leave the goods fully sellable once someone peels the tag off in a car park. None of the £313 million the industry spent last year does this.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 14 }}>
-              The ADN-1 does. Two Time-of-Flight sensors fire 30 times a second. An Encrypted Logic Core classifies a bulk-sweep event in under 50ms. A 113kHz ultrasonic deployment module disc deploys a forensic marker compound designed to bond to whatever it touches. The batch code hits the Mykei Registry, creating a tamper-aware event record. The goods become commercially difficult to move.
+              The ADN is designed to address this. Two Time-of-Flight sensors fire 30 times a second. An Encrypted Logic Core classifies a bulk-sweep event in under 50ms. A 113kHz ultrasonic deployment module disc deploys a forensic marker compound designed to bond to whatever it touches. The batch code hits the Mykei Registry, creating a tamper-aware event record. The goods become commercially difficult to move.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
               Not a movie ticket. The end of the film before it starts.
@@ -205,7 +220,7 @@ export default function SignalCCTVScamPage() {
                   "CCTV records theft. It does not remove the financial incentive for it.",
                   "Organised crime groups treat cameras as a routing problem, not a deterrent.",
                   "Economic Sterilisation addresses the actual decision calculus: can I sell this? If the answer is no, the theft is irrational.",
-                  "The ADN-1 Independent Retail Pilot validates this forensic doctrine at shelf level, with pilot pricing from £40/month.",
+                  "The Active Defence Node (ADN) is designed to address this directly: make the goods harder to sell anonymously, and the financial case for stealing them weakens before the act.",
                 ].map((t, i) => (
                   <li key={i} style={{ display: "flex", gap: 12, padding: "9px 0", borderBottom: i < 4 ? `1px solid ${RULE}` : "none", fontSize: 14, lineHeight: 1.65, color: INK }}>
                     <span style={{ color: GOLD, fontWeight: 700, flexShrink: 0, fontFamily: "'JetBrains Mono',monospace", fontSize: 12 }}>0{i + 1}</span>
@@ -220,9 +235,9 @@ export default function SignalCCTVScamPage() {
           <Reveal>
             <div style={{ textAlign: "center", border: `1px solid ${RULE}`, borderRadius: 10, padding: "40px 32px", marginBottom: 48 }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Independent Retail Pilot · 2026</div>
-              <h3 style={{ fontSize: 22, fontWeight: 700, color: INK, margin: "0 0 12px" }}>Five slots. Five independent retailers. One forensic blockade.</h3>
-              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 auto 28px" }}>Founders pricing. £149 setup + £40/month. No lock-in after the pilot. Direct founding team support.</p>
-              <a href="/pilot" style={{ display: "inline-block", background: GOLD, color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 700, padding: "14px 36px", borderRadius: 6, textDecoration: "none" }}>Apply for the Pilot</a>
+              <h3 style={{ fontSize: 22, fontWeight: 700, color: INK, margin: "0 0 12px" }}>The research continues.</h3>
+              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 auto 28px" }}>Mykei publishes findings through The Signal as the ADN development programme continues.</p>
+              <a href="/signal" style={{ display: "inline-block", background: GOLD, color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 700, padding: "14px 36px", borderRadius: 6, textDecoration: "none" }}>Read the Archive</a>
             </div>
           </Reveal>
 
@@ -239,7 +254,7 @@ export default function SignalCCTVScamPage() {
               <div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: INK, marginBottom: 8 }}>About the Author</div>
                 <p style={{ fontSize: 14, lineHeight: 1.75, color: MID, margin: "0 0 10px" }}>
-                  <strong style={{ color: INK }}>Michael Esema, MBA, MSc.</strong> Nigerian-born entrepreneur. Audit background, defence academy MBA, MSc from MMU. I came to retail security sideways, through a shop floor and a spreadsheet, and built the ADN-1 on a breadboard in Prestwich because the industry wasn't asking the right question. Founder of Mykei Securities. Patent-pending: UK application No. 2606630.8.
+                  <strong style={{ color: INK }}>Michael Esema, MBA, MSc.</strong> Nigerian-born entrepreneur. Audit background, defence academy MBA, MSc from MMU. I came to retail security sideways, through a shop floor and a spreadsheet, and built the ADN on a breadboard in Prestwich because the industry wasn't asking the right question. Founder of Mykei Securities. Patent-pending: UK application No. 2606630.8.
                 </p>
                 <a href="https://michaelesema.com" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: GOLD, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none" }}>Full background at michaelesema.com</a>
               </div>

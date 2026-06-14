@@ -43,10 +43,10 @@ export default function FebruaryBrcRetailCrimeNoise() {
         with them.
       </p>
 
-      <h2>What ADN-1 adds to this conversation.</h2>
+      <h2>What ADN adds to this conversation.</h2>
 
       <p>
-        ADN-1 is designed to create a shelf event record at the moment the defined theft pattern is
+        ADN is designed to create a shelf event record at the moment the defined theft pattern is
         detected. The controlled marker creates a physical link. The Mykei Registry creates the
         structured record. Together, they give the retailer something more useful than "it happened
         again".
@@ -72,8 +72,8 @@ export default function FebruaryBrcRetailCrimeNoise() {
       <h2>Read next</h2>
 
       <p>
-        Read <a href="/howitworks">how ADN-1 works</a>, then see the <a href="/adn-1">ADN-1 product page</a>.
-        For repeat theft at a specific shelf, request a <a href="/pilot">pilot fit check</a>.
+        Read <a href="/howitworks">how the ADN works</a>, then see the <a href="/adn-1">ADN system page</a>.
+        To follow the research, visit <a href="/signal">mykei.io/signal</a>.
       </p>
 
       <h2>Sources</h2>

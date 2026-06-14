@@ -51,7 +51,7 @@ export default function TermsPage() {
   useEffect(() => {
     document.title = "Terms of Service | Mykei Securities Ltd";
     const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", "Terms of Service for Mykei Securities Ltd. Governing the use of mykei.io and the ADN-1 Independent Retail Pilot programme.");
+    if (desc) desc.setAttribute("content", "Terms of Service for Mykei Securities Ltd. Governing the use of mykei.io and the ADN validation programme.");
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.href = "https://mykei.io/terms";
     let noindex = document.querySelector('meta[name="robots"]');
@@ -92,7 +92,7 @@ export default function TermsPage() {
 
             <h2 style={h2}>2. What these terms cover</h2>
             <p style={p}>
-              These terms apply to all visitors to mykei.io, to organisations completing a Letter of Intent (LOI) for the Independent Retail Pilot, and to any party evaluating the ADN-1 Active Forensic Defence Node for commercial deployment.
+              These terms apply to all visitors to mykei.io, to organisations completing a Letter of Intent (LOI) for the Independent Retail Pilot, and to any party evaluating the ADN Active Forensic Defence Node for commercial deployment.
             </p>
 
             <h2 style={h2}>3. Website use</h2>
@@ -105,10 +105,10 @@ export default function TermsPage() {
 
             <h2 style={h2}>4. Independent Retail Pilot</h2>
             <p style={p}>
-              Submission of a Letter of Intent via the pilot form at mykei.io/pilot does not constitute a binding contract. It expresses an intention to discuss participation in the Independent Retail Pilot programme and initiates a conversation with Michael Esema, Founder.
+              Submission of a Letter of Intent via the pilot form at mykei.io/signal does not constitute a binding contract. It expresses an intention to discuss participation in the ADN validation programme and initiates a conversation with Michael Esema, Founder.
             </p>
             <p style={p}>
-              Pilot pricing is £149 one-time setup fee plus £40 per month. The minimum pilot term is three months. No lock-in applies after the initial three-month period. Pricing is subject to a written agreement confirmed before device installation.
+              Pilot and validation programme pricing is under development and will be confirmed in a written agreement before any device installation takes place. No pricing commitment is made by submitting a Letter of Intent.
             </p>
             <p style={p}>
               Mykei Securities reserves the right to refuse or withdraw pilot participation at any time if a retailer's premises are found to be unsuitable for safe device deployment or if the retailer is in breach of applicable law.
@@ -116,12 +116,12 @@ export default function TermsPage() {
 
             <h2 style={h2}>5. Intellectual property</h2>
             <p style={p}>
-              UK patent application No. 2606630.8, the "Economic Sterilisation" doctrine, the "Theft Economic Sterilisation System (TESS)" terminology, the "Mykei Registry" terminology, and the ADN-1 product name are the intellectual property of Mykei Securities Ltd and/or Michael Esema. Unauthorised use, reproduction, or commercial exploitation of these terms or the underlying technology is prohibited.
+              UK patent application No. 2606630.8, the "Economic Sterilisation" doctrine, the "Theft Economic Sterilisation System (TESS)" terminology, the "Mykei Registry" terminology, and the ADN product name are the intellectual property of Mykei Securities Ltd and/or Michael Esema. Unauthorised use, reproduction, or commercial exploitation of these terms or the underlying technology is prohibited.
             </p>
 
             <h2 style={h2}>6. Limitation of liability</h2>
             <p style={p}>
-              The ADN-1 is a detection and forensic marking device. It is not a substitute for a complete security strategy. Mykei Securities does not guarantee that use of the ADN-1 will eliminate retail theft losses. To the maximum extent permitted by law, Mykei Securities Ltd excludes all liability for indirect or consequential losses arising from reliance on information on this site.
+              The ADN is a detection and forensic marking device. It is not a substitute for a complete security strategy. Mykei Securities does not guarantee that use of the ADN will eliminate retail theft losses. To the maximum extent permitted by law, Mykei Securities Ltd excludes all liability for indirect or consequential losses arising from reliance on information on this site.
             </p>
 
             <h2 style={h2}>7. Governing law</h2>

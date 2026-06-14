@@ -26,8 +26,8 @@ function SimpleNav() {
       <a href="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: INK, textDecoration: "none" }}>
         Mykei Securities
       </a>
-      <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
-        Apply for Pilot
+      <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
+        Follow the Research
       </a>
     </nav>
   );
@@ -119,14 +119,14 @@ export default function StateOfTheftPage() {
                 The quarterly edition tracks four areas.
               </h2>
               <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8 }}>
-                Each report combines published crime surveys (ACS, BRC, ONS) with data from Mykei-deployed ADN-1 units: incident detection rates, controlled marker deployment frequency, and Mykei Registry event records.
+                Each report combines published crime surveys (ACS, BRC, ONS) with data from Mykei-deployed ADN units: incident detection rates, controlled marker deployment frequency, and Mykei Registry event records.
               </p>
             </div>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {[
                 "Incident volume: UK and global figures by sector",
                 "Economic cost: loaded cost per incident, insurance adjustment data",
-                "Forensic outcomes: Proprietary Forensic Marking Compound and ADN-1 deployment results",
+                "Forensic outcomes: Proprietary Forensic Marking Compound and ADN deployment results",
                 "Resale intelligence: platform-level stolen goods flagging rates",
               ].map(item => (
                 <li key={item} style={{ display: "flex", gap: 12, padding: "12px 0", borderBottom: `1px solid ${RULE}`, fontSize: 14, color: MUTED, lineHeight: 1.6 }}>
@@ -142,16 +142,16 @@ export default function StateOfTheftPage() {
         <section style={{ maxWidth: 880, margin: "0 auto", padding: "72px 40px 96px" }}>
           <div style={{ maxWidth: 520 }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, fontWeight: 400, color: INK, marginBottom: 16, lineHeight: 1.25 }}>
-              The first edition publishes Q3 2026.
+              The first edition is in preparation.
             </h2>
             <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, marginBottom: 28 }}>
-              If you are a retailer and want early access to the data and the ADN-1 pilot, request a place in the Manchester cohort.
+              If you are a retailer and want early access to the data and the ADN research programme, follow the research updates.
             </p>
             <a
-              href="/pilot"
+              href="/signal"
               style={{ display: "inline-block", padding: "12px 24px", background: INK, color: "#fff", borderRadius: 4, fontFamily: "'JetBrains Mono', monospace", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}
             >
-              Apply for ADN-1 pilot
+              Follow the Research
             </a>
           </div>
         </section>

@@ -41,7 +41,7 @@ export default function SignalFogSecurityPage() {
         description="Security fog machines obscure visibility during a break-in. Retailers are being sold this as a deterrent. It isn't. The goods are gone before the fog clears, and the stolen items are just as sellable as they were before. Michael Esema on why fog is the new camera."
         canonical="https://mykei.io/signal/fog-security-systems-debunked"
         ogImage="https://mykei.io/og/signal-fog-security-systems-debunked.png"
-        keywords="fog security systems retail, security fog machine shoplifting, smoke deterrent security, retail security theatre, economic sterilisation, ADN-1 forensic, fog machine vs DNA marking, independent retailer security UK"
+        keywords="fog security systems retail, security fog machine shoplifting, smoke deterrent security, retail security theatre, economic sterilisation, ADN forensic, fog machine vs DNA marking, independent retailer security UK"
         breadcrumbs={[
           { name: "Home", url: "https://mykei.io" },
           { name: "The Signal", url: "https://mykei.io/signal" },
@@ -54,7 +54,7 @@ export default function SignalFogSecurityPage() {
           "headline": "Fog Security Systems Are CCTV Theatre With Smoke",
           "description": "Security fog machines obscure visibility during a break-in but do nothing to remove resale value from stolen goods. The economics of theft are unchanged.",
           "url": "https://mykei.io/signal/fog-security-systems-debunked",
-          "datePublished": "2026-04-15T10:00:00Z",
+          "datePublished": "2026-05-14T10:00:00Z",
           "author": { "@type": "Person", "name": "Sarah Aboladale" },
           "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io", "logo": { "@type": "ImageObject", "url": "https://mykei.io/mykei-logo.png" } },
           "image": "https://mykei.io/social-share.png",
@@ -66,7 +66,7 @@ export default function SignalFogSecurityPage() {
           ]
         })}
         articleMeta={{
-          publishedTime: "2026-04-15T10:00:00Z",
+          publishedTime: "2026-05-14T10:00:00Z",
           author: "Sarah Aboladale",
           section: "Retail Security",
           tags: ["fog security", "security theatre", "retail theft", "forensic DNA", "economic sterilisation"],
@@ -78,14 +78,14 @@ export default function SignalFogSecurityPage() {
         {/* Nav */}
         <nav style={{ borderBottom: `1px solid ${RULE}`, padding: "0 40px", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "rgba(255,255,255,0.97)", backdropFilter: "blur(12px)", zIndex: 100 }}>
           <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", color: GOLD, textDecoration: "none", textTransform: "uppercase" }}>The Signal</a>
-          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "1.5px", color: INK, textDecoration: "none", textTransform: "uppercase", border: `1px solid ${RULE}`, padding: "6px 16px", borderRadius: 4 }}>Join the Pilot</a>
+          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "1.5px", color: INK, textDecoration: "none", textTransform: "uppercase", border: `1px solid ${RULE}`, padding: "6px 16px", borderRadius: 4 }}>Follow the Research</a>
         </nav>
 
         {/* Header */}
         <header style={{ maxWidth: 760, margin: "0 auto", padding: "72px 32px 48px" }}>
           <Reveal>
             <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "2.5px", textTransform: "uppercase", color: GOLD, marginBottom: 20 }}>
-              The Signal · Issue 12 · April 2026
+              The Signal · Issue 12 · May 2026
             </div>
           </Reveal>
           <Reveal delay={0.1}>
@@ -103,11 +103,26 @@ export default function SignalFogSecurityPage() {
               <div style={{ width: 40, height: 40, borderRadius: "50%", background: GOLD, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, color: "#fff", fontSize: 14 }}>SA</div>
               <div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: INK }}>Sarah Aboladale</div>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: MID }}>Creative Strategist, Mykei Securities · 15 April 2026 · 6 min read</div>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: MID }}>Creative Strategist, Mykei Securities · 14 May 2026 · 6 min read</div>
               </div>
             </div>
           </Reveal>
         </header>
+
+        {/* Hero Image */}
+        <div style={{ maxWidth: 900, margin: "0 auto 48px", padding: "0 32px" }}>
+          <figure style={{ margin: 0 }}>
+            <img
+              src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=80&auto=format&fit=crop"
+              alt="Dense fog filling a dark corridor. The visual equivalent of a security fog machine."
+              style={{ width: "100%", borderRadius: 6, display: "block", maxHeight: 480, objectFit: "cover" }}
+              loading="lazy"
+            />
+            <figcaption style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", marginTop: 8, letterSpacing: "0.5px" }}>
+              Photo: Unsplash / fog obscuration
+            </figcaption>
+          </figure>
+        </div>
 
         {/* Article */}
         <article style={{ maxWidth: 760, margin: "0 auto", padding: "0 32px 80px" }}>
@@ -181,7 +196,7 @@ export default function SignalFogSecurityPage() {
               Fog system answer: yes, fully sellable. If the goods were taken, they are clean. If they weren't taken this time, they will be taken when the crew adjusts their approach.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              ADN-1 answer: no. The forensic marker compound bonds to every item the deployment module reaches. The batch code is in the Mykei Registry within 200 milliseconds. The goods become commercially difficult to move. Listing them on eBay or Vinted does not erase the batch record. Presenting them to a buyer exposes the marker under UV. The resale confidence is gone.
+              Active Defence Node (ADN) answer: designed not to be. The intended marker compound is designed to bond to items within the deployment range. In the proposed workflow, the batch code would be written to the Mykei Registry in real time. The design goal is to make the goods harder to sell anonymously. A registry-linked batch record cannot be erased by listing on eBay or Vinted. The marker is designed to be UV-detectable at inspection.
             </p>
           </Reveal>
 
@@ -204,7 +219,7 @@ export default function SignalFogSecurityPage() {
                   "Fog security systems reduce visibility during a theft event. They do not reduce the resale value of stolen goods.",
                   "If the goods are still sellable after your system fires, the economics of the crime are unchanged.",
                   "Deterrence-based security (cameras, guards, fog) adds friction. Economic Sterilisation removes the incentive.",
-                  "The ADN-1 links theft-related shelf events to controlled marker deployment and a registry record.",
+                  "The ADN is designed to link theft-related shelf events to controlled marker deployment and a registry record.",
                   "Fog is the latest product in a long line of security theatre. The question to ask every vendor: after this fires, are the goods still sellable?",
                 ].map((t, i) => (
                   <li key={i} style={{ display: "flex", gap: 12, padding: "9px 0", borderBottom: i < 4 ? `1px solid ${RULE}` : "none", fontSize: 14, lineHeight: 1.65, color: INK }}>
@@ -220,9 +235,9 @@ export default function SignalFogSecurityPage() {
           <Reveal>
             <div style={{ textAlign: "center", border: `1px solid ${RULE}`, borderRadius: 10, padding: "40px 32px", marginBottom: 48 }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Independent Retail Pilot · 2026</div>
-              <h3 style={{ fontSize: 22, fontWeight: 700, color: INK, margin: "0 0 12px" }}>Five slots. Five independent retailers. One forensic blockade.</h3>
-              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 auto 28px" }}>Founders pricing. £149 setup + £40/month. No lock-in after the pilot. Direct founding team support.</p>
-              <a href="/pilot" style={{ display: "inline-block", background: GOLD, color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 700, padding: "14px 36px", borderRadius: 6, textDecoration: "none" }}>Apply for the Pilot</a>
+              <h3 style={{ fontSize: 22, fontWeight: 700, color: INK, margin: "0 0 12px" }}>The research continues.</h3>
+              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 auto 28px" }}>Mykei publishes findings through The Signal as the ADN development programme continues.</p>
+              <a href="/signal" style={{ display: "inline-block", background: GOLD, color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 700, padding: "14px 36px", borderRadius: 6, textDecoration: "none" }}>Read the Archive</a>
             </div>
           </Reveal>
 

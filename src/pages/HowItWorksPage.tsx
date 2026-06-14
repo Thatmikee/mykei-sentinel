@@ -4,7 +4,7 @@ const STEPS = [
   {
     number: "01",
     title: "The shelf event is detected",
-    text: "ADN-1 watches the shelf zone for a defined theft pattern. It is looking for rapid movement across a group of products, not a face, a body, or a customer profile.",
+    text: "The ADN watches the shelf zone for a defined theft pattern. It is looking for rapid movement across a group of products, not a face, a body, or a customer profile.",
     detail: "Input: shelf movement pattern",
   },
   {
@@ -16,7 +16,7 @@ const STEPS = [
   {
     number: "03",
     title: "A controlled marker is deployed",
-    text: "If the trigger condition is met, ADN-1 deploys a controlled marker through the front outlet. Marker selection is subject to supplier specification, SDS review, COSHH review, and store suitability.",
+    text: "If the trigger condition is met, the ADN deploys a controlled marker through the front outlet. Marker selection is subject to supplier specification, SDS review, COSHH review, and store suitability.",
     detail: "Output: marker deployment",
   },
   {
@@ -34,7 +34,7 @@ const STEPS = [
 ];
 
 const RECORD_FIELDS = [
-  ["Device", "Which ADN-1 unit fired"],
+  ["Device", "Which ADN unit fired"],
   ["Store", "Which retail site it belongs to"],
   ["Shelf", "Which product zone was protected"],
   ["Cartridge", "Which cartridge session was active"],
@@ -59,8 +59,8 @@ const FAQS = [
     answer: "Most retail security records theft after it happens. Mykei creates a theft related inventory event: marker deployed, cartridge session logged, registry record created. That record is what changes the resale problem.",
   },
   {
-    question: "Does ADN-1 identify people?",
-    answer: "No. ADN-1 is designed around shelf events, not suspect identity. It does not use facial recognition, biometric identification, or a suspect database.",
+    question: "Does the ADN identify people?",
+    answer: "No. The ADN is designed around shelf events, not suspect identity. It does not use facial recognition, biometric identification, or a suspect database.",
   },
   {
     question: "What does the marker prove?",
@@ -76,7 +76,7 @@ const FAQS = [
   },
   {
     question: "What should a retailer do next?",
-    answer: "If repeat theft is hitting a specific shelf or category, request a pilot fit check. Mykei can review the store type, product category, staff risk, and deployment suitability before any installation is discussed.",
+    answer: "If repeat theft is hitting a specific shelf or category, get in touch. Mykei can review the store type, product category, staff risk, and deployment suitability before any installation is discussed.",
   },
 ];
 
@@ -86,8 +86,8 @@ function JsonLd() {
     "@graph": [
       {
         "@type": "TechArticle",
-        headline: "How ADN-1 works",
-        description: "A plain language explanation of ADN-1, controlled marker deployment, and Mykei Registry event records.",
+        headline: "How the ADN works",
+        description: "A plain language explanation of the ADN, controlled marker deployment, and Mykei Registry event records.",
         about: ["Retail theft prevention", "Forensic retail defence", "Mykei Registry", "Controlled marker deployment"],
         author: { "@type": "Person", name: "Michael Esema" },
         publisher: { "@type": "Organization", name: "Mykei Securities Ltd", url: "https://mykei.io" },
@@ -111,16 +111,16 @@ export default function HowItWorksPage() {
   return (
     <>
       <PageSEO
-        title="How ADN-1 Works | Mykei Securities"
-        description="A plain explanation of ADN-1: shelf event detection, controlled marker deployment, cartridge linked records, and the Mykei Registry."
+        title="How the ADN Works | Mykei Securities"
+        description="A plain explanation of the ADN: shelf event detection, controlled marker deployment, cartridge linked records, and the Mykei Registry."
         canonical="https://mykei.io/howitworks"
-        keywords="how ADN-1 works, Mykei Registry, retail theft prevention, forensic retail defence, controlled marker deployment, shelf level retail security, shoplifting prevention, organised retail crime, retail loss prevention, no camera retail security"
+        keywords="how the ADN works, Mykei Registry, retail theft prevention, forensic retail defence, controlled marker deployment, shelf level retail security, shoplifting prevention, organised retail crime, retail loss prevention, no camera retail security"
         breadcrumbs={[
           { name: "Home", url: "https://mykei.io" },
           { name: "How It Works", url: "https://mykei.io/howitworks" },
         ]}
         ogImage="https://mykei.io/social-share.png"
-        ogImageAlt="Mykei ADN-1 system explanation"
+        ogImageAlt="Mykei ADN system explanation"
       />
       <JsonLd />
       <style>{`
@@ -393,12 +393,12 @@ export default function HowItWorksPage() {
       <main className="hiw-page">
         <section className="hiw-section hiw-hero">
           <div className="hiw-inner">
-            <div className="hiw-badge"><span>Mykei Securities Ltd</span><i className="hiw-dot" /><span>How ADN-1 works</span></div>
+            <div className="hiw-badge"><span>Mykei Securities Ltd</span><i className="hiw-dot" /><span>How the ADN works</span></div>
             <h1 className="hiw-h1">Theft is one event. <span>Resale is the system.</span></h1>
-            <p className="hiw-lead">ADN-1 is built for the moment a shelf loss becomes more than missing stock. It detects a defined theft pattern, deploys a controlled marker, and creates a Mykei Registry record that can support verification later.</p>
+            <p className="hiw-lead">The ADN is designed for the moment a shelf loss becomes more than missing stock. It is intended to detect a defined theft pattern, deploy a controlled marker, and create a Mykei Registry record that can support verification later.</p>
             <div className="hiw-actions">
-              <a className="hiw-btn primary" href="/pilot">Check store fit</a>
-              <a className="hiw-btn secondary" href="/adn-1">View ADN-1 details</a>
+              <a className="hiw-btn primary" href="/signal">Follow the Research</a>
+              <a className="hiw-btn secondary" href="/adn-1">View ADN details</a>
             </div>
           </div>
         </section>
@@ -415,9 +415,9 @@ export default function HowItWorksPage() {
 
         <section className="hiw-section">
           <div className="hiw-inner">
-            <div className="hiw-eyebrow">The ADN-1 loop</div>
+            <div className="hiw-eyebrow">The ADN loop</div>
             <h2 className="hiw-h2">Five things happen. Each one has a job.</h2>
-            <p className="hiw-copy">A first time visitor should understand the loop in a few seconds. ADN-1 is a shelf level event system. It turns a defined theft pattern into a physical marker and a structured record.</p>
+            <p className="hiw-copy">A first time visitor should understand the loop in a few seconds. The ADN is designed as a shelf level event system. It is intended to turn a defined theft pattern into a physical marker and a structured record.</p>
             <div className="hiw-loop">
               {STEPS.map((step) => (
                 <article className="hiw-step" key={step.number}>
@@ -438,7 +438,7 @@ export default function HowItWorksPage() {
             <article className="hiw-card">
               <div className="hiw-eyebrow">Marker</div>
               <h2 className="hiw-h2">The marker says: this item was touched by a deployment event.</h2>
-              <p className="hiw-card-text">The marker is the physical link. It is selected for the pilot environment and subject to supplier specification, SDS review, COSHH review, and deployment suitability. The claim must match the supplier documents.</p>
+              <p className="hiw-card-text">The marker is the physical link. It is intended to be selected for the research environment and subject to supplier specification, SDS review, COSHH review, and deployment suitability. The claim must match the supplier documents.</p>
             </article>
             <article className="hiw-card dark">
               <div className="hiw-eyebrow">Registry</div>
@@ -484,7 +484,7 @@ export default function HowItWorksPage() {
             <p className="hiw-copy">A thief wants stock that can move cleanly. Mykei creates a record that makes the story harder. What shelf did it come from? Which store? Which cartridge session? Which marker batch? That is the point.</p>
             <div className="hiw-mini-flow">
               <div><strong>Start</strong><span>Goods are swept from a protected shelf</span></div>
-              <div><strong>Detect</strong><span>ADN-1 recognises the defined shelf event</span></div>
+              <div><strong>Detect</strong><span>The ADN is designed to recognise the defined shelf event</span></div>
               <div><strong>Mark</strong><span>A controlled marker is deployed</span></div>
               <div><strong>Record</strong><span>The Mykei Registry creates the event record</span></div>
               <div><strong>Verify</strong><span>Recovered goods can be checked against the record</span></div>
@@ -512,10 +512,10 @@ export default function HowItWorksPage() {
             <div className="hiw-cta">
               <div>
                 <h2>Does your store have a shelf that keeps getting hit?</h2>
-                <p>Start with a pilot fit check. Mykei reviews store type, product category, theft pattern, staff risk, and deployment suitability before any pilot is discussed.</p>
+                <p>The research continues. Mykei reviews store type, product category, theft pattern, staff risk, and deployment suitability before any installation is discussed.</p>
               </div>
               <div className="hiw-cta-actions">
-                <a className="hiw-btn primary" href="/pilot">Check store fit</a>
+                <a className="hiw-btn primary" href="/signal">Follow the Research</a>
                 <a className="hiw-btn secondary" href="/enterprise">Strategic review</a>
               </div>
             </div>

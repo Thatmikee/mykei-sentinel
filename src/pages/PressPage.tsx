@@ -173,7 +173,7 @@ const SCHEMA = {
 
 const ONE_LINER = "Michael Esema is the Manchester-based Founder and CEO of Mykei Securities Ltd and proposer of Economic Sterilisation, a modern operational extension of Market Reduction theory for resale-driven theft.";
 
-const SHORT_BIO = `Michael Esema is the Founder and CEO of Mykei Securities Ltd (Company No. 16984969, Manchester). He proposes Economic Sterilisation as a modern operational extension of Market Reduction theory and filed UK Patent Application No. GB2606630.8 on 23 March 2026. He built ADN-1 as a patent-pending R&D pathway for event-triggered marking and registry-linked evidence while employed full-time.
+const SHORT_BIO = `Michael Esema is the Founder and CEO of Mykei Securities Ltd (Company No. 16984969, Manchester). He proposes Economic Sterilisation as a modern operational extension of Market Reduction theory and filed UK Patent Application No. GB2606630.8 on 23 March 2026. He built the ADN as a patent-pending R&D pathway for event-triggered marking and registry-linked evidence while employed full-time.
 
 He holds an MSc in International Business Management with Merit (Manchester Metropolitan University, 2024), an MBA (Nigerian Defence Academy, 2023), and a BSc in Accounting (Benson Idahosa University, 2018). Mykei has controlled prototype and registry evidence, but field validation and commercial proof remain separate gates.`;
 
@@ -181,11 +181,11 @@ const LONG_BIO = `His father, Obong Barr. Essien Joseph Esema, was born in 1959 
 
 His mother, Mrs Mary Esema, is Deputy Director of Nigeria's National Malaria Elimination Programme and former Assistant Director at the Federal Ministry of Health. She holds a BSc in Virology from the University of Calabar. She does not treat patients one at a time. She dismantles the conditions that allow disease to spread. Her son applied the same logic to retail theft.
 
-Michael Esema was born in October 1996 in Nigeria. He graduated with a BSc in Accounting from Benson Idahosa University in 2018, completed his National Youth Service Corps year, and spent four years in hospitality finance -- moving from Head Accountant to Assistant Manager at B's Hive Hotel and Suites. He arrived in Manchester in 2023 and found UK retail doing what institutions had always done: recording failure, absorbing loss, calling it normal.
+Michael Esema was born in October 1996 in Nigeria. He graduated with a BSc in Accounting from Benson Idahosa University in 2018, completed his National Youth Service Corps year, and spent four years in hospitality finance, moving from Head Accountant to Assistant Manager at B's Hive Hotel and Suites. He arrived in Manchester in 2023 and found UK retail doing what institutions had always done: recording failure, absorbing loss, calling it normal.
 
-He completed an MSc in International Business Management with Merit from Manchester Metropolitan University in 2024 and holds a Level 7 Advanced Diploma in Project Management and Lean Six Sigma certification. He built the ADN-1 personally, on £10,000, while employed full-time.
+He completed an MSc in International Business Management with Merit from Manchester Metropolitan University in 2024 and holds a Level 7 Advanced Diploma in Project Management and Lean Six Sigma certification. He built the ADN personally, on £10,000, while employed full-time.
 
-On 23 March 2026, he filed UK Patent Application No. GB2606630.8 -- a 17-claim patent application (patent pending) connected to event-triggered marking and registry-linked evidence. Mykei now frames ADN-1 as one R&D pathway inside the wider Economic Sterilisation and Mykei Protocol architecture. Mykei Securities Ltd (Company No. 16984969) was incorporated on 24 January 2026.
+On 23 March 2026, he filed UK Patent Application No. GB2606630.8, a 17-claim patent application (patent pending) connected to event-triggered marking and registry-linked evidence. Mykei now frames the ADN as one R&D pathway inside the wider Economic Sterilisation and Mykei Protocol architecture. Mykei Securities Ltd (Company No. 16984969) was incorporated on 24 January 2026.
 
 The doctrine: make theft economically irrational. Close the market that theft sells into. The idea did not come from a lab or an accelerator. It came from watching institutions absorb loss, deciding that was not an acceptable answer, and building something that addressed the actual cause.`;
 
@@ -194,13 +194,13 @@ const FACTS = [
   { label: "Company", value: "Mykei Securities Ltd, Company No. 16984969, incorporated 24 January 2026, Manchester" },
   { label: "Doctrine", value: "Economic Sterilisation, operational extension of Market Reduction theory." },
   { label: "Commercial proof", value: "Enterprise or network pilot still required; LOIs are interest signals, not revenue." },
-  { label: "Public demo", value: "ADN-1 demonstrated publicly at NEC Birmingham, April 2026" },
+  { label: "Public demo", value: "ADN demonstrated publicly at NEC Birmingham, April 2026" },
   { label: "Education", value: "MSc International Business Management, Merit (MMU, 2024); MBA (Nigerian Defence Academy, 2023); BSc Accounting (Benson Idahosa University, 2018)" },
   { label: "Certifications", value: "Lean Six Sigma; Level 7 Advanced Diploma in Project Management" },
   { label: "Social", value: "1,435 LinkedIn followers; 5,682 Twitter followers" },
   { label: "Sites", value: "michaelesema.com; mykei.io" },
   { label: "Industry context", value: "UK retail theft cost £2.2 billion in 2025, highest ever recorded. 20 million+ incidents. Industry spent £1.8 billion on security." },
-  { label: "ADN-1 spec", value: "Shelf-mounted IoT device. Dual Time-of-Flight sensors. Forensic marker deployment. Encrypted event record to Mykei Registry (AWS IoT Core). No camera. No biometric data." },
+  { label: "ADN spec (R&D)", value: "Shelf-mounted IoT device. Dual Time-of-Flight sensors. Forensic marker deployment. Encrypted event record to Mykei Registry (AWS IoT Core). No camera. No biometric data. Patent pending. Field validation not yet begun." },
 ];
 
 const SPEAKING_TOPICS = [
@@ -225,9 +225,9 @@ export default function PressPage() {
     <>
       <PageSEO
         title="Press Kit -- Michael Esema, Founder of Mykei Securities Ltd"
-        description="Press resources for Michael Esema, Founder and CEO of Mykei Securities Ltd. Three bio lengths, key facts, press photo, ADN-1 product image, speaking topics, and direct media contact. michaelesema.com/press"
+        description="Press resources for Michael Esema, Founder and CEO of Mykei Securities Ltd. Three bio lengths, key facts, press photo, ADN product image, speaking topics, and direct media contact. michaelesema.com/press"
         canonical="https://michaelesema.com/press"
-        keywords="Michael Esema press kit, Michael Esema biography, Mykei Securities press, economic sterilisation journalist, retail theft founder Manchester, ADN-1 press"
+        keywords="Michael Esema press kit, Michael Esema biography, Mykei Securities press, economic sterilisation journalist, retail theft founder Manchester, ADN press"
         breadcrumbs={[["Michael Esema", "https://michaelesema.com"], ["Press", "/press"]]}
       />
 
@@ -372,7 +372,7 @@ export default function PressPage() {
                 }}>
                   <img
                     src="/images/adn1-press.jpg"
-                    alt="ADN-1 Active Forensic Defence Node -- shelf-mounted IoT device by Mykei Securities Ltd"
+                    alt="ADN Active Forensic Defence Node -- shelf-mounted IoT device by Mykei Securities Ltd"
                     width={400} height={280}
                     style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                     onError={e => {
@@ -386,13 +386,13 @@ export default function PressPage() {
                     fontSize: 9, letterSpacing: "0.12em",
                     textTransform: "uppercase", color: MUTED, marginBottom: 8,
                   }}>
-                    ADN-1 product image
+                    ADN product image
                   </p>
                   <p style={{ fontSize: 12, color: MUTED, marginBottom: 10 }}>
-                    ADN-1 Active Forensic Defence Node &middot; High-resolution available on request
+                    ADN Active Forensic Defence Node &middot; High-resolution available on request
                   </p>
                   <a
-                    href="mailto:michael.e@mykei.io?subject=ADN-1 product image request"
+                    href="mailto:michael.e@mykei.io?subject=ADN product image request"
                     style={{
                       fontFamily: "'JetBrains Mono', monospace",
                       fontSize: 9, letterSpacing: "0.12em",
@@ -690,7 +690,7 @@ export default function PressPage() {
               Get in touch.
             </p>
             <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.75, maxWidth: 480, marginBottom: 32 }}>
-              Interview requests, comment on retail crime data, access to the ADN-1 technical
+              Interview requests, comment on retail crime data, access to the ADN technical
               specification, or background briefing on Economic Sterilisation. We respond to
               media enquiries within 24 hours.
             </p>

@@ -38,7 +38,7 @@ export default function SyntheticDnaForensics() {
       <p>
         In UK enforcement and recovery workflows, forensic markers can support item provenance when
         chain-of-custody and supplier documentation are properly maintained. The chain of custody
-        that ADN-1 is designed to support links a cloud-logged event record to the physical marker
+        that ADN is designed to support links a cloud-logged event record to the physical marker
         on the item, forming an evidence-supporting structure. The cloud record establishes when
         and where the item was marked.
         The physical marker establishes that the specific item was present at that event.
@@ -98,22 +98,22 @@ export default function SyntheticDnaForensics() {
         commercial trail. By linking the reference code generated at the point of theft to a
         permanent cloud record describing the store, shelf, item category, and event time, the
         registry creates the conditions under which the marker's evidentiary value can be
-        realised at the resale layer. This is the architectural insight that the ADN-1 and the
+        realised at the resale layer. This is the architectural insight that the ADN and the
         Economic Sterilisation doctrine bring to the existing forensic marking technology: the
         marker alone was always sufficient for evidence; what was missing was the systematic
         connection between the mark and the marketplace.
       </p>
 
       <p>
-        The ADN-1 brings the full stack of forensic marking, cloud logging, and registry
+        The ADN brings the full stack of forensic marking, cloud logging, and registry
         connectivity to single-unit independent retailers for the first time, at a price point
         that reflects the scale at which those retailers operate.
       </p>
 
       <p style={{ marginTop: "2rem", fontStyle: "italic" }}>
-        Founders pricing is available. See{" "}
-        <a href="/pilot" style={{ textDecoration: "underline" }}>
-          mykei.io/pilot
+        Pricing is under development. Follow the research at{" "}
+        <a href="/signal" style={{ textDecoration: "underline" }}>
+          mykei.io/signal
         </a>
         .
       </p>

@@ -58,7 +58,7 @@ export default function Blog796BillionPage() {
         "datePublished": "2026-04-10",
         "url": "https://mykei.io/blog/the-796-billion-problem",
         "mainEntityOfPage": "https://mykei.io/blog/the-796-billion-problem",
-        "keywords": ["Economic Sterilisation", "retail theft prevention", "organised retail crime", "ADN-1"],
+        "keywords": ["Economic Sterilisation", "retail theft prevention", "organised retail crime", "ADN"],
       },
       {
         "@context": "https://schema.org",
@@ -86,7 +86,7 @@ export default function Blog796BillionPage() {
         ogType="article"
         keywords="retail theft $796 billion, organised retail crime prevention, economic sterilisation, retail theft for small businesses, retail crime for accountants, shoplifting for enterprise, theft economics for retailers"
         ogImageAlt="The $796 Billion Problem — retail theft economics analysis by Mykei Securities"
-        articleMeta={{ publishedTime: "2026-04-10T00:00:00Z", author: "Michael Esema", section: "Retail Security", tags: ["Economic Sterilisation","Retail Theft","Organised Retail Crime","ADN-1"] }}
+        articleMeta={{ publishedTime: "2026-04-10T00:00:00Z", author: "Michael Esema", section: "Retail Security", tags: ["Economic Sterilisation","Retail Theft","Organised Retail Crime","ADN"] }}
         breadcrumbs={[["Home","https://mykei.io"],["Blog","/blog"],["The $796 Billion Problem",""]]}
       />
       <style>{`
@@ -180,8 +180,8 @@ export default function Blog796BillionPage() {
           <a href="/economic-sterilisation" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: GOLD }}>
             Economic Sterilisation
           </a>
-          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: scrolled ? INK : "#fff", border: `1px solid ${GOLD}`, padding: "7px 14px", transition: "color 0.25s" }}>
-            Join Pilot
+          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: scrolled ? INK : "#fff", border: `1px solid ${GOLD}`, padding: "7px 14px", transition: "color 0.25s" }}>
+            Follow the Research
           </a>
         </div>
       </nav>
@@ -355,7 +355,7 @@ export default function Blog796BillionPage() {
         <Reveal>
           <h2>What the technology makes possible</h2>
           <p>
-            The ADN-1 is an early implementation of Economic Sterilisation.
+            The ADN is an early implementation of Economic Sterilisation.
             It mounts under a retail shelf, detects bulk-sweep theft events using kinetic
             signature analysis (no cameras, no facial recognition, no biometric data),
             and triggers controlled marker deployment onto goods and the individual carrying them.
@@ -369,8 +369,8 @@ export default function Blog796BillionPage() {
             Forensic marking is not new. Proprietary Forensic Marking Compound has demonstrated up to 83% reductions
             in burglaries and theft in police projects. A recent operation saw 5,000 tagged
             items lead to 15 arrests and the recovery of £150,000 in stolen goods. Homebase
-            cut stock loss by 20% using SmartWater. What the ADN-1 adds is autonomous
-            deployment, real-time registry integration, and delivery at retail shelf scale.
+            cut stock loss by 20% using SmartWater. What the ADN is designed to add is autonomous
+            deployment, registry integration, and delivery at retail shelf scale.
           </p>
         </Reveal>
 
@@ -402,7 +402,7 @@ export default function Blog796BillionPage() {
                 "Professional theft networks operate at scale because stolen goods have a commercial aftermarket.",
                 "Forensic marking changes the commercial calculus: batch-linked goods are harder to sell anonymously, reducing the theft value.",
                 "Proprietary Forensic Marking Compound trials showed up to 83% reductions in repeat theft at marked locations.",
-                "The ADN-1 automates deployment at the point of theft, without cameras, biometrics, or human intervention.",
+                "The ADN is designed to automate deployment at the point of theft, without cameras, biometrics, or human intervention. It is patent-pending R&D; field validation has not yet begun.",
               ].map(item => (
                 <li key={item} style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, color: INK, lineHeight: 1.7, marginBottom: 8 }}>{item}</li>
               ))}
@@ -432,12 +432,12 @@ export default function Blog796BillionPage() {
         {/* PILOT CTA, inline, not a full-bleed block */}
         <Reveal>
           <div style={{ marginTop: 48, padding: "36px 32px", background: FAINT, borderLeft: `3px solid ${GOLD}` }}>
-            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Independent Retail Pilot · 2026 · Greater Manchester</div>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Research Updates · Mykei Securities</div>
             <p style={{ fontFamily: "'Playfair Display',serif", fontSize: 18, color: INK, lineHeight: 1.5, marginBottom: 20, fontWeight: 400 }}>
-              Independent Retail Pilot. Retail validation route for Economic Sterilisation.
+              ADN is patent-pending R&D. Field validation has not yet begun. Follow the research to stay informed.
             </p>
-            <a href="/pilot" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#fff", background: INK, padding: "11px 24px", display: "inline-block" }}>
-              Join the Pilot
+            <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#fff", background: INK, padding: "11px 24px", display: "inline-block" }}>
+              Follow the Research
             </a>
           </div>
         </Reveal>

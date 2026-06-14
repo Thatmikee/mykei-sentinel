@@ -2,7 +2,7 @@ export default function Adn1HowItWorks() {
   return (
     <article>
       <p>
-        The ADN-1 completes its full response sequence in under three seconds. From the moment
+        The ADN completes its full response sequence in under three seconds. From the moment
         both sensors register a qualifying event to the moment a forensic reference code is
         logged to AWS IoT Core and recorded in the Mykei Registry, the system operates
         without human intervention, without cameras, and without collecting any personal data.
@@ -23,7 +23,7 @@ export default function Adn1HowItWorks() {
       <h2>Detection, Deployment, and Logging</h2>
 
       <p>
-        <strong>Detection.</strong> The ADN-1 uses dual Tactical Multi-zone Sensor Array time-of-flight sensors,
+        <strong>Detection.</strong> The ADN uses dual Tactical Multi-zone Sensor Array time-of-flight sensors,
         positioned to monitor the shelf plane continuously. These sensors emit infrared pulses
         and measure the time taken for the reflection to return, producing precise distance
         readings across the monitored zone. When both sensors register simultaneous clearance,
@@ -49,7 +49,7 @@ export default function Adn1HowItWorks() {
         <strong>Logging.</strong> Simultaneously with deployment, the Encrypted Logic Core Feather V2
         microcontroller publishes a signed event payload to AWS IoT Core, hosted in the
         eu-north-1 region, over a TLS 1.3 MQTT connection. The payload contains a UTC
-        timestamp, the device ID unique to that ADN-1 unit, and a forensic reference code
+        timestamp, the device ID unique to that ADN unit, and a forensic reference code
         generated for that specific event. This creates a tamper-evident, timestamped record
         in cloud infrastructure that is independent of the physical device and cannot be
         altered or deleted by anyone with access to the retail premises.
@@ -78,10 +78,10 @@ export default function Adn1HowItWorks() {
         of attempted conversion to cash.
       </p>
 
-      <h2>What the ADN-1 Does Not Do</h2>
+      <h2>What the ADN Does Not Do</h2>
 
       <p>
-        The ADN-1 does not capture images or video. It does not use facial recognition or any
+        The ADN does not capture images or video. It does not use facial recognition or any
         form of biometric processing. It does not collect or store personal data about
         individuals in the retail environment. The event payload logged to AWS IoT Core contains
         no information that identifies or could be used to identify any person. No personal data
@@ -102,9 +102,9 @@ export default function Adn1HowItWorks() {
       </p>
 
       <p style={{ marginTop: "2rem", fontStyle: "italic" }}>
-        Founders pricing is available for pilot retailers. See{" "}
-        <a href="/pilot" style={{ textDecoration: "underline" }}>
-          mykei.io/pilot
+        Pricing is under development. Follow the research at{" "}
+        <a href="/signal" style={{ textDecoration: "underline" }}>
+          mykei.io/signal
         </a>
         .
       </p>

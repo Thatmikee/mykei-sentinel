@@ -70,7 +70,7 @@ export default function StopCallingItShopliftingLostStock() {
       <h2>Mykei starts at the shelf.</h2>
 
       <p>
-        ADN-1 is built around a simple operating question: what should exist the moment a defined
+        ADN is built around a simple operating question: what should exist the moment a defined
         shelf theft event occurs?
       </p>
 
@@ -121,9 +121,9 @@ export default function StopCallingItShopliftingLostStock() {
       <h2>Read next</h2>
 
       <p>
-        Read <a href="/howitworks">how ADN-1 works</a>, then see the{" "}
-        <a href="/technology/ats">registry layer</a>. Retailers can request a{" "}
-        <a href="/pilot">pilot fit check</a>.
+        Read <a href="/howitworks">how the ADN works</a>, then see the{" "}
+        <a href="/technology/ats">registry layer</a>. To follow the research, visit{" "}
+        <a href="/signal">mykei.io/signal</a>.
       </p>
 
       <h2>Sources</h2>

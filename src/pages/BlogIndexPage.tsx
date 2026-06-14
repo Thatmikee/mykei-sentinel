@@ -64,7 +64,7 @@ export default function BlogIndexPage() {
           Mykei Securities
         </a>
         <a href="/adn-1" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
-          ADN-1
+          ADN
         </a>
       </nav>
 

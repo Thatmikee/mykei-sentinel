@@ -74,7 +74,7 @@ export default function SignalCoopCrimeWarPage() {
         description="Co-op reported over 300,000 incidents of retail crime in 2024-25 and publicly named organised gangs. The government responded with the Retail Crime Action Plan. Charges are still rare. Stolen goods are still sellable. Michael Esema on why the economics of theft have not moved."
         canonical="https://mykei.io/signal/coop-named-the-enemy-economics-unchanged"
         ogImage="https://mykei.io/og/signal-coop-named-the-enemy-economics-unchanged.png"
-        keywords="Co-op retail crime 2025, Co-op shoplifting statistics UK, Retail Crime Action Plan Home Office, organised retail crime UK gangs, BRC crime survey 2025, shoplifting charges UK, retail theft prosecution rate, economic sterilisation retail, ADN-1 forensic marking, Shirine Khoury-Haq Co-op CEO"
+        keywords="Co-op retail crime 2025, Co-op shoplifting statistics UK, Retail Crime Action Plan Home Office, organised retail crime UK gangs, BRC crime survey 2025, shoplifting charges UK, retail theft prosecution rate, economic sterilisation retail, ADN forensic marking, Shirine Khoury-Haq Co-op CEO"
         ogType="article"
         ldJson={JSON.stringify({
           "@context": "https://schema.org",
@@ -82,13 +82,13 @@ export default function SignalCoopCrimeWarPage() {
           "headline": "Co-op Named the Enemy. Nobody Changed the Economics.",
           "description": "Co-op reported over 300,000 incidents of retail crime in 2024-25. The government launched the Retail Crime Action Plan. Charge rates remain low and stolen goods remain sellable. Michael Esema on why naming the problem is not the same as solving it.",
           "url": "https://mykei.io/signal/coop-named-the-enemy-economics-unchanged",
-          "datePublished": "2026-05-07T09:00:00Z",
-          "dateModified": "2026-05-07T09:00:00Z",
+          "datePublished": "2026-06-05T09:00:00Z",
+          "dateModified": "2026-06-05T09:00:00Z",
           "author": { "@type": "Person", "name": "Michael Esema", "url": "https://mykei.io/founder" },
           "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io", "logo": { "@type": "ImageObject", "url": "https://mykei.io/mykei-logo.png" } },
           "image": "https://mykei.io/social-share.png",
           "articleSection": "Retail Security",
-          "keywords": "Co-op, retail crime, organised retail crime, Retail Crime Action Plan, economic sterilisation, ADN-1",
+          "keywords": "Co-op, retail crime, organised retail crime, Retail Crime Action Plan, economic sterilisation, ADN",
           "mentions": [
             { "@type": "Organization", "name": "Co-operative Group", "alternateName": "Co-op", "sameAs": "https://www.co-operativegroup.coop" },
             { "@type": "Organization", "name": "British Retail Consortium", "alternateName": "BRC", "sameAs": "https://www.brc.org.uk" },
@@ -106,10 +106,10 @@ export default function SignalCoopCrimeWarPage() {
           { name: "Co-op Named the Enemy. Nobody Changed the Economics.", url: "https://mykei.io/signal/coop-named-the-enemy-economics-unchanged" },
         ]}
         articleMeta={{
-          publishedTime: "2026-05-07T09:00:00Z",
+          publishedTime: "2026-06-05T09:00:00Z",
           author: "Michael Esema",
           section: "Retail Security",
-          tags: ["Co-op", "retail crime", "organised retail crime", "Retail Crime Action Plan", "BRC", "economic sterilisation", "ADN-1"],
+          tags: ["Co-op", "retail crime", "organised retail crime", "Retail Crime Action Plan", "BRC", "economic sterilisation", "ADN"],
         }}
       />
 
@@ -123,9 +123,9 @@ export default function SignalCoopCrimeWarPage() {
             The Signal
           </a>
           <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.16em", textTransform: "uppercase", color: MID }}>Issue 16 · May 2026</span>
-            <a href="/pilot" className="signal-nav-cta" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.14em", color: "#fff", background: INK, textDecoration: "none", textTransform: "uppercase", padding: "8px 18px", borderRadius: 3 }}>
-              Join the Pilot
+            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.16em", textTransform: "uppercase", color: MID }}>Issue 16 · June 2026</span>
+            <a href="/signal" className="signal-nav-cta" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.14em", color: "#fff", background: INK, textDecoration: "none", textTransform: "uppercase", padding: "8px 18px", borderRadius: 3 }}>
+              Follow the Research
             </a>
           </div>
         </nav>
@@ -159,7 +159,7 @@ export default function SignalCoopCrimeWarPage() {
                 <div>
                   <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, fontWeight: 700, color: "#fff" }}>Michael Esema</div>
                   <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: "rgba(245,241,235,0.55)", letterSpacing: "0.1em" }}>
-                    Founder, Mykei Securities · 7 May 2026 · 7 min read
+                    Founder, Mykei Securities · 5 June 2026 · 7 min read
                   </div>
                 </div>
               </div>
@@ -182,6 +182,21 @@ export default function SignalCoopCrimeWarPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Hero Image */}
+        <div style={{ maxWidth: 900, margin: "0 auto 56px", padding: "0 40px" }}>
+          <figure style={{ margin: 0 }}>
+            <img
+              src="https://images.unsplash.com/photo-1603204077779-bed963ea7d0e?w=1200&q=80&auto=format&fit=crop"
+              alt="Supermarket shelves stripped of stock. The scale of organised retail crime."
+              style={{ width: "100%", borderRadius: 6, display: "block", maxHeight: 480, objectFit: "cover" }}
+              loading="lazy"
+            />
+            <figcaption style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", marginTop: 8, letterSpacing: "0.5px" }}>
+              Photo: Unsplash / retail theft
+            </figcaption>
+          </figure>
         </div>
 
         {/* ── Article body ── */}
@@ -283,7 +298,7 @@ export default function SignalCoopCrimeWarPage() {
               <p style={{ fontFamily: "'Georgia', serif", fontSize: "clamp(19px, 2.4vw, 24px)", lineHeight: 1.5, fontStyle: "italic", color: INK, margin: "0 0 10px", fontWeight: 400 }}>
                 Deterrence assumes the thief is weighing risk against reward. <a href="/economic-sterilisation" style={{ color: GOLD, textDecoration: "underline" }}>Economic Sterilisation</a> removes the reward. The calculation doesn't happen because the conclusion is already written into the goods.
               </p>
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: MID, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 28 }}>Economic Sterilisation doctrine — Mykei Securities</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: MID, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 28 }}>Economic Sterilisation doctrine · Mykei Securities</div>
               <div style={{ height: 1, background: INK }} />
             </blockquote>
           </Reveal>
@@ -296,9 +311,9 @@ export default function SignalCoopCrimeWarPage() {
 
           {/* ── ADN-1 vs CCTV comparison table (fully accessible) ── */}
           <Reveal>
-            <SectionLabel>ADN-1 versus the status quo</SectionLabel>
+            <SectionLabel>ADN versus the status quo</SectionLabel>
             <h2 style={{ fontFamily: "'Georgia', serif", fontSize: "clamp(20px, 2.8vw, 28px)", fontWeight: 700, letterSpacing: "-0.01em", color: INK, margin: "0 0 20px", lineHeight: 1.25 }}>
-              Why ADN-1 changes the calculation.
+              Why the Active Defence Node (ADN) changes the calculation.
             </h2>
             <p style={{ fontSize: 18, lineHeight: 1.9, marginBottom: 32, color: INK }}>
               The table below is not a marketing comparison. It is a description of where in the crime sequence each system operates, and whether that position can affect the economics of organised retail theft.
@@ -306,24 +321,24 @@ export default function SignalCoopCrimeWarPage() {
             <div style={{ overflowX: "auto", margin: "0 0 44px" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14, fontFamily: "'Georgia', serif" }}>
                 <caption style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: GOLD_DARK, textAlign: "left", padding: "0 0 16px", captionSide: "top" }}>
-                  Deterrence model vs. Economic Sterilisation — operational comparison
+                  Deterrence model vs. Economic Sterilisation: operational comparison
                 </caption>
                 <thead>
                   <tr style={{ borderBottom: `2px solid ${INK}` }}>
                     <th scope="col" style={{ padding: "12px 16px 12px 0", textAlign: "left", fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.12em", color: MID, fontWeight: 600, textTransform: "uppercase" }}>Dimension</th>
                     <th scope="col" style={{ padding: "12px 16px", textAlign: "left", fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.12em", color: MID, fontWeight: 600, textTransform: "uppercase", width: "35%" }}>CCTV / Deterrence</th>
-                    <th scope="col" style={{ padding: "12px 0 12px 16px", textAlign: "left", fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.12em", color: INK, fontWeight: 700, textTransform: "uppercase", width: "35%" }}>ADN-1 / Economic Sterilisation</th>
+                    <th scope="col" style={{ padding: "12px 0 12px 16px", textAlign: "left", fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.12em", color: INK, fontWeight: 700, textTransform: "uppercase", width: "35%" }}>ADN / Economic Sterilisation</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ["When it acts", "After the crime is complete", "At the moment of theft — under 200ms"],
-                    ["What it targets", "The person — who may never be caught", "The commercial value of the goods"],
+                    ["When it acts", "After the crime is complete", "At the moment of theft (under 200ms)"],
+                    ["What it targets", "The person (who may never be caught)", "The commercial value of the goods"],
                     ["Depends on", "Police capacity, court time, charge rate", "The forensic event record already existing"],
-                    ["Effect on gang margin", "Raises risk slightly — costs absorbed", "Removes the resale value from marked goods"],
+                    ["Effect on gang margin", "Raises risk slightly (costs absorbed)", "Removes the resale value from marked goods"],
                     ["Secondary market impact", "None. Goods sell at full rate.", "Batch-linked goods are a liability to hold and sell"],
-                    ["Requires arrest to work", "Yes — no arrest, no consequence", "No. The goods are marked regardless of outcome."],
-                    ["Works on organised crime", "Weakly — they plan around camera angles", "Yes — the economics collapse before the sale"],
+                    ["Requires arrest to work", "Yes. No arrest, no consequence.", "No. The goods are marked regardless of outcome."],
+                    ["Works on organised crime", "Weakly. They plan around camera angles.", "Yes. The economics collapse before the sale."],
                   ].map(([dim, cctv, adn], i) => (
                     <tr key={dim as string} style={{ borderBottom: `1px solid ${RULE}`, background: i % 2 === 0 ? "#fff" : PALE }}>
                       <th scope="row" style={{ padding: "16px 16px 16px 0", fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: MID, fontWeight: 500, verticalAlign: "top", whiteSpace: "nowrap" }}>{dim}</th>
@@ -352,7 +367,7 @@ export default function SignalCoopCrimeWarPage() {
               Not surveillance. Not detection after the fact. A forensic record created at the shelf, batch-linked to a registry, designed to make the goods a liability to whoever holds them. The resale market does not want forensically marked, registry-logged stock. That breaks the business model. Not the charging rate. The goods.
             </p>
             <p style={{ fontSize: 18, lineHeight: 1.9, marginBottom: 28, color: INK }}>
-              The Co-op has the scale to test this properly. Pharmacies. Health and beauty. Alcohol. High-loss lines where gangs return repeatedly because the maths keeps working. A live pilot, documented outcomes, a forensic record built for investigation and insurer review. Three years of action plans have not moved the charge rate. Time to try something that does not need an arrest to work.
+              The Co-op has the scale to test this properly. Pharmacies. Health and beauty. Alcohol. High-loss lines where gangs return repeatedly because the maths keeps working. A properly scoped pilot would generate documented outcomes, with evidence records designed for later investigation or insurer review. Three years of action plans have not moved the charge rate. Time to try something that does not need an arrest to work.
             </p>
           </Reveal>
 
@@ -388,20 +403,20 @@ export default function SignalCoopCrimeWarPage() {
             hashtags={["RetailCrime", "OrganisedRetailCrime", "EconomicSterilisation", "ADN1", "Coop"]}
           />
 
-          {/* Pilot CTA — editorial box */}
+          {/* Research note */}
           <Reveal>
             <div style={{ border: `1px solid ${RULE}`, borderTop: `3px solid ${GOLD}`, padding: "40px 44px", margin: "52px 0", background: PALE }}>
               <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.22em", textTransform: "uppercase", color: GOLD_DARK, marginBottom: 16 }}>
-                Manchester Pilot Cohort — Limited Places
+                The Signal · Mykei Research
               </div>
               <p style={{ fontFamily: "'Georgia', serif", fontSize: 20, fontWeight: 700, color: INK, marginBottom: 12, lineHeight: 1.35 }}>
-                The first cohort is limited. Applications are reviewed directly by the founder.
+                Mykei publishes its findings as the ADN research programme develops.
               </p>
               <p style={{ fontSize: 15, color: MID, lineHeight: 1.75, marginBottom: 28, maxWidth: 520 }}>
-                Independent retailers, pharmacies, and convenience stores in Greater Manchester. No cameras. No confrontation. Forensic marking begins on day one of deployment.
+                The Signal covers organised retail crime, forensic deterrence, and the economics of theft. New issues publish as the research progresses.
               </p>
-              <a href="/pilot" className="signal-nav-cta" style={{ display: "inline-block", background: INK, color: "#fff", fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", padding: "14px 32px", borderRadius: 2, textDecoration: "none", fontWeight: 700 }}>
-                Apply for the Pilot
+              <a href="/signal" style={{ display: "inline-block", background: INK, color: "#fff", fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", padding: "14px 32px", borderRadius: 2, textDecoration: "none", fontWeight: 700 }}>
+                Read the Archive
               </a>
             </div>
           </Reveal>
@@ -416,7 +431,7 @@ export default function SignalCoopCrimeWarPage() {
                   Founder, Mykei Securities Ltd · Manchester · MBA, Nigerian Defence Academy
                 </div>
                 <p style={{ fontSize: 14, color: MID, lineHeight: 1.8, margin: 0, maxWidth: 520 }}>
-                  Michael Esema is the founder of Mykei Securities Ltd (Co. 16984969) and inventor of ADN-1, a forensic defence system for retail environments. ADN-1 is covered by UK patent application GB2606630.8, 17 claims, filed 23 March 2026.
+                  Michael Esema is the founder of Mykei Securities Ltd (Co. 16984969) and inventor of the ADN, a forensic defence system for retail environments (patent pending). The ADN is covered by UK patent application GB2606630.8, 17 claims, filed 23 March 2026.
                 </p>
               </div>
             </div>

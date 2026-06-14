@@ -3,9 +3,9 @@ export default function PilotProgrammeManchester() {
     <article>
       <p>
         Every technology that eventually becomes infrastructure passes through a moment where real
-        businesses, in a real geography, test it under real conditions. For ADN-1, that moment is the
-        Independent Retail Pilot, running through 2026. Five independent retailers across Greater Manchester
-        have signed Letters of Intent. The pilot is not framed as a proof of concept for the hardware alone.
+        businesses, in a real geography, test it under real conditions. For the ADN, that moment is the
+        validation programme, planned for 2026. A number of independent retailers across Greater Manchester
+        have signed Letters of Intent. The validation is not framed as a proof of concept for the hardware alone.
         It is a proof of doctrine, establishing whether Economic Sterilisation deployed at
         street level produces measurable behavioural change in a concentrated urban area.
       </p>
@@ -34,15 +34,15 @@ export default function PilotProgrammeManchester() {
         insurance adjustment, and operational disruption.
       </p>
       <p>
-        The geography also matters for the network effect. Economic sterilisation achieves its maximum
+        The geography also matters for the network effect. Economic sterilisation is designed to achieve its maximum
         deterrent power when multiple stores in a shared catchment carry the "Protected by Mykei
-        Securities" decal. A thief operating in Moston or Prestwich who encounters a marked store cannot
-        simply move to the adjacent premises if that premises is also marked. The pilot concentrates
-        five stores across a single metropolitan area deliberately, to begin generating that adjacency
-        effect from day one.
+        Securities" decal. A thief operating in Moston or Prestwich who encounters a marked store may not be able to
+        simply move to the adjacent premises if that premises is also marked. The validation programme concentrates
+        stores across a single metropolitan area deliberately, to begin generating that adjacency
+        effect.
       </p>
 
-      <h2>The Five Pilot Partners</h2>
+      <h2>The Validation Partners</h2>
 
       <p>
         The businesses that have signed Letters of Intent represent a cross-section of independent
@@ -50,20 +50,21 @@ export default function PilotProgrammeManchester() {
         goods sector. Shop9jaLtd is a community grocery retailer. Khawaja Food Store serves the
         convenience and food market. Moston Lane Poundstore is a value retail operator on one of the
         district's busiest commercial streets. Go Local Bobby's in Prestwich is a community convenience
-        store serving a dense residential catchment.
+        store serving a dense residential catchment. Letters of Intent are interest signals; field
+        validation has not yet begun.
       </p>
       <p>
         These are not corporate test accounts. They are owner-operated businesses absorbing real losses
         every week, making decisions about security spend with limited capital and no dedicated security
         function. Their participation is significant precisely because the economics have to work for
-        operators like them. If ADN-1 cannot demonstrate value to a convenience retailer on Moston Lane,
+        operators like them. If the ADN cannot demonstrate value to a convenience retailer on Moston Lane,
         it cannot claim to solve the problem it was built to address.
       </p>
 
-      <h2>What the Pilot Includes and What It Does Not</h2>
+      <h2>What the Validation Programme Includes and What It Does Not</h2>
 
       <p>
-        Each pilot partner receives a physical ADN-1 unit installed on their highest-risk shelf
+        Each validation partner is planned to receive a physical ADN unit installed on their highest-risk shelf
         position, identified during onboarding through a brief assessment of their store layout and
         theft history. They receive the "Protected by Mykei Securities" window decal, positioned at
         the entrance or on the primary shopfront glazing. They receive direct onboarding with the
@@ -89,7 +90,7 @@ export default function PilotProgrammeManchester() {
       </p>
       <p>
         Retailers carrying average theft losses of GBP 4,600 per year have clear economic justification
-        for participation. Founders pricing is available. Apply at mykei.io/pilot.
+        for participation. Pricing is under development. Follow the research at mykei.io/signal.
       </p>
     </article>
   );

@@ -33,7 +33,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 const TIMELINE = [
   { year: "2018", title: "BSc (Hons) Accounting", sub: "Benson Idahosa University · Benin City, Nigeria", type: "edu" },
   { year: "2018–19", title: "National Youth Service Corps (NYSC)", sub: "Federal Government of Nigeria · 1-year compulsory national service", type: "work" },
-  { year: "2019–23", title: "Hospitality Finance — Head Accountant → Assistant Manager", sub: "B's Hive Hotel & Suites · Nigeria · Four years watching institutions absorb loss", type: "work" },
+  { year: "2019–23", title: "Hospitality Finance. Head Accountant → Assistant Manager", sub: "B's Hive Hotel & Suites · Nigeria · Four years watching institutions absorb loss", type: "work" },
   { year: "2022", title: "Master of Business Administration (MBA)", sub: "Nigerian Defence Academy · Kaduna, Nigeria", type: "edu" },
   { year: "2023", title: "Relocates to Manchester, United Kingdom", sub: "Finds UK retail running the same playbook: record theft, absorb cost, call it normal", type: "pivot" },
   { year: "2024", title: "MSc International Business Management, Merit", sub: "Manchester Metropolitan University · Manchester, UK", type: "edu" },
@@ -76,13 +76,13 @@ export default function FounderPage() {
         "homeLocation": { "@type": "Place", "name": "Manchester, Greater Manchester, United Kingdom" },
         "url": "https://michaelesema.com",
         "award": [
-          "Most Influential Male — Nigerian Universities Accounting Students Association, 2018",
-          "Student Leader of the Year — Nigerian Universities Accounting Students Association, 2018",
-          "Most Assiduous Student Leader of the Year — Benson Idahosa University, 2018",
-          "Most Innovative Student Leader of the Year — Connex Award, 2018",
-          "Dedication to Service of Humanity — Eagles Wings Motivation Award, 2018",
-          "Most Innovative Leader of the Year — Clover Conglomerate Awards, 2017",
-          "Most Influential Male — Accounting Students Association Uniben Chapter, 2017"
+          "Most Influential Male, Nigerian Universities Accounting Students Association, 2018",
+          "Student Leader of the Year, Nigerian Universities Accounting Students Association, 2018",
+          "Most Assiduous Student Leader of the Year, Benson Idahosa University, 2018",
+          "Most Innovative Student Leader of the Year, Connex Award, 2018",
+          "Dedication to Service of Humanity, Eagles Wings Motivation Award, 2018",
+          "Most Innovative Leader of the Year, Clover Conglomerate Awards, 2017",
+          "Most Influential Male, Accounting Students Association Uniben Chapter, 2017"
         ],
         "sameAs": [
           "https://michaelesema.com",
@@ -101,7 +101,7 @@ export default function FounderPage() {
     document.title = "Michael Esema, Founder & CEO, Mykei Securities Ltd | Economic Sterilisation";
 
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Michael Esema (Michael Essien Esema), Nigerian-born entrepreneur in Manchester. Founder of Mykei Securities Ltd and proposer of Economic Sterilisation as an operational extension of Market Reduction theory. MBA, MSc, BSc. ADN-1 remains patent-pending R&D.");
+    if (meta) meta.setAttribute("content", "Michael Esema (Michael Essien Esema), Nigerian-born entrepreneur in Manchester. Founder of Mykei Securities Ltd and proposer of Economic Sterilisation as an operational extension of Market Reduction theory. MBA, MSc, BSc. ADN remains patent-pending R&D.");
 
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -114,10 +114,10 @@ export default function FounderPage() {
   return (
     <>
       <PageSEO
-        title="Michael Esema — Founder & CEO, Mykei Securities Ltd | Manchester"
+        title="Michael Esema, Founder & CEO, Mykei Securities Ltd | Manchester"
         description="Michael Esema (Michael Essien Esema) is a Nigerian-born entrepreneur based in Manchester, UK. Founder of Mykei Securities Ltd and proposer of Economic Sterilisation as an operational extension of Market Reduction theory. MBA, MSc. UK patent application No. 2606630.8."
         canonical="https://mykei.io/founder"
-        keywords="Michael Esema, Michael Essien Esema, Mykei Securities founder, economic sterilisation framework, ADN-1 R&D, Manchester entrepreneur, retail security founder"
+        keywords="Michael Esema, Michael Essien Esema, Mykei Securities founder, economic sterilisation framework, ADN R&D, Manchester entrepreneur, retail security founder"
       />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
@@ -150,7 +150,7 @@ export default function FounderPage() {
           <span style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 700, color: "#1E1E1E", letterSpacing: 0.5 }}>MYKEI SECURITIES LTD</span>
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: 2.5, textTransform: "uppercase", color: "#8a7a5a" }}>Back to site</span>
         </a>
-        <a href="/enterprise" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "8px 20px", borderRadius: 8 }}>Discuss the Pilot</a>
+        <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "8px 20px", borderRadius: 8 }}>Follow the Research</a>
       </nav>
 
       {/* HERO */}
@@ -225,7 +225,7 @@ export default function FounderPage() {
                   { label: "Former employer", val: "B's Hive Hotel & Suites · Nigeria" },
                   { label: "Patent", val: "No. 2606630.8 (UK) · 17 claims" },
                   { label: "Company", val: "Mykei Securities Ltd · Co. 16984969" },
-                  { label: "Pilot", val: "Manchester Alpha · Q2 2026" },
+                  { label: "Stage", val: "Prototype and registry proof of concept · field validation not yet begun" },
                 ].map(({ label, val }) => (
                   <div key={label} style={{ display: "flex", gap: 16, alignItems: "flex-start", padding: "16px 20px", background: "#FFFFFF", border: "1px solid #E8E8E8", borderRadius: 8 }}>
                     <div>
@@ -246,7 +246,7 @@ export default function FounderPage() {
           <Reveal>
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#765C14", display: "block", marginBottom: 12 }}>Career & education</span>
             <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(26px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", lineHeight: 1.2, marginBottom: 60 }}>
-              The path that led to ADN-1.
+              The path that led to the ADN.
             </h2>
           </Reveal>
 
@@ -347,11 +347,11 @@ export default function FounderPage() {
       <section style={{ background: "#FFFFFF", padding: "72px 52px", borderTop: "2px solid #D4AF37", textAlign: "center" }}>
         <Reveal>
           <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16 }}>
-            Enterprise pilot review is open.
+            Follow the research.
           </h2>
-          <p style={{ fontSize: 15, color: "#666", marginBottom: 36 }}>Network or enterprise pilot · 50 to 500 asset proof target</p>
+          <p style={{ fontSize: 15, color: "#666", marginBottom: 36 }}>ADN is patent-pending R&D. Field validation not yet begun.</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/enterprise" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D4AF37", padding: "14px 32px", borderRadius: 8 }}>Discuss the Pilot</a>
+            <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D4AF37", padding: "14px 32px", borderRadius: 8 }}>Follow the Research</a>
             <a href="https://michaelesema.com" target="_blank" rel="noreferrer" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "14px 32px", borderRadius: 8 }}>Visit michaelesema.com</a>
           </div>
         </Reveal>

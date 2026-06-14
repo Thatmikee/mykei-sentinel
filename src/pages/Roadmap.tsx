@@ -14,7 +14,7 @@ const PHASES = [
       { text: "Patent application filed, No. 2606630.8 (UK) (17 claims)", done: true },
       { text: "Technical Data Sheet published", done: true },
       { text: "mykei.io website launched with full tech documentation", done: true },
-      { text: "Pilot application system live, signed LOI PDF on submission", done: true },
+      { text: "Pilot application system launched, signed LOI PDF on submission", done: true },
       { text: "Business plan finalised, March 2026", done: true },
       { text: "Investor pitch deck published, v2", done: true },
       { text: "Innovation grant application submitted", done: true },
@@ -29,9 +29,9 @@ const PHASES = [
       { text: "Marker supplier confirmed and SDS/COSHH review complete", done: false },
       { text: "Batch-identifiable marker integrated and field-tested", done: false },
       { text: "Production enclosure (3D printed)", done: false },
-      { text: "Mykei Registry live, cartridge-linked event records logging", done: false },
-      { text: "End-to-end system demo (detection → marker deployment → registry event)", done: false },
-      { text: "5 pilot sites hardware-live in Greater Manchester", done: false },
+      { text: "Mykei Registry deployed, cartridge-linked event records logging", done: false },
+      { text: "End-to-end system demo (detection, marker deployment, registry event)", done: false },
+      { text: "5 pilot sites hardware-deployed in Greater Manchester (target)", done: false },
       { text: "First real theft event recorded on registry", done: false },
     ],
   },
@@ -42,7 +42,7 @@ const PHASES = [
     milestones: [
       { text: "First cartridge-linked event record submitted to support police investigation", done: false },
       { text: "First insurance claim supported by marker deployment event record", done: false },
-      { text: "Retailer management dashboard live", done: false },
+      { text: "Retailer management dashboard deployed", done: false },
       { text: "10+ active pilot sites", done: false },
       { text: "BIRA partnership introduction", done: false },
       { text: "Press coverage secured", done: false },
@@ -70,7 +70,7 @@ const PHASES = [
       { text: "100+ registry partners across the UK", done: false },
       { text: "Law enforcement read access, national rollout", done: false },
       { text: "Enterprise loss prevention partnerships", done: false },
-      { text: "First prosecution using ADN-1 registry evidence", done: false },
+      { text: "First prosecution using ADN registry evidence", done: false },
       { text: "Series A funding round", done: false },
       { text: "International market assessment, ROI, US", done: false },
     ],
@@ -101,7 +101,7 @@ export default function Roadmap() {
   const navLinks = [
     ["Home",         "/"],
     ["How It Works", "/howitworks"],
-    ["Pilot",        "/pilot"],
+    ["Research",     "/signal"],
     ["Roadmap",      "/roadmap"],
   ];
 
@@ -273,7 +273,7 @@ export default function Roadmap() {
           ))}
           <li><a href="https://michaelesema.com" target="_blank" rel="noreferrer">Founder</a></li>
         </ul>
-        <a href="/pilot" className="rm-nav-cta">Join the Pilot →</a>
+        <a href="/signal" className="rm-nav-cta">Follow the Research →</a>
         <button className="rm-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <span /><span /><span />
         </button>
@@ -285,7 +285,7 @@ export default function Roadmap() {
             <a key={label} href={href} className="rm-mobile-link" onClick={() => setMenuOpen(false)}>{label}</a>
           ))}
           <a href="https://michaelesema.com" target="_blank" rel="noreferrer" className="rm-mobile-link" onClick={() => setMenuOpen(false)}>Founder</a>
-          <a href="/pilot" className="rm-mobile-cta" onClick={() => setMenuOpen(false)}>Join the Pilot →</a>
+          <a href="/signal" className="rm-mobile-cta" onClick={() => setMenuOpen(false)}>Follow the Research →</a>
         </div>
       )}
 
@@ -294,10 +294,10 @@ export default function Roadmap() {
         <div className="rm-header-inner">
           <div>
             <div className="rm-eyebrow">Product Roadmap · Mykei Securities Ltd</div>
-            <h1 className="rm-h1">Q1 complete.<br />Hardware deploying Q2.</h1>
+            <h1 className="rm-h1">Q1 complete.<br />Hardware development in progress.</h1>
             <p className="rm-subline">
               Patent filed. 5+ retailers signed. Website live. Investor pitch out.<br />
-              Now we put the hardware on the shelf.
+              Hardware and marker qualification ongoing.
             </p>
           </div>
           <div className="rm-progress-widget">

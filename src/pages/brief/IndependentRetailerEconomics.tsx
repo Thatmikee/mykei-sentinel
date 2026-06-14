@@ -47,7 +47,7 @@ export default function IndependentRetailerEconomics() {
         should not need.
       </p>
       <p>
-        ADN-1 changes this calculus in one specific way. Because every activation is logged with a
+        ADN changes this calculus in one specific way. Because every activation is logged with a
         timestamp via AWS IoT Core, the unit produces a record of incidents that happened and were
         responded to forensically. Sweep counts and deployment counts are concrete outputs. A retailer
         can see that their unit activated on a Tuesday afternoon, that a forensic reference code was
@@ -60,7 +60,7 @@ export default function IndependentRetailerEconomics() {
       <h2>How the Pricing Structure Works</h2>
 
       <p>
-        ADN-1 is structured as Hardware-as-a-Service. There is a one-time setup fee covering the
+        ADN is structured as Hardware-as-a-Service. There is a one-time setup fee covering the
         unit, installation, and Mykei Registry onboarding. There is then a monthly
         subscription for continued service, event logging, registry access, and support. Specific
         amounts are not listed on this page. For pricing details and to discuss the structure in
@@ -96,7 +96,7 @@ export default function IndependentRetailerEconomics() {
         the goods, and footage quality and retention periods frequently limit its evidential utility.
       </p>
       <p>
-        ADN-1 is autonomous, requiring no staff time beyond the initial onboarding. It produces
+        ADN is autonomous, requiring no staff time beyond the initial onboarding. It produces
         marker-based evidence, subject to supplier qualification: a unique marker code on the goods, timestamped to a specific activation
         event, registered in a cloud database linked to the store. It is lower cost than most
         alternatives and produces a category of evidence that cameras and tags cannot.

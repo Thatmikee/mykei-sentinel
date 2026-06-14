@@ -79,7 +79,7 @@ export default function Index() {
   }, []);
 
   const navLinks = [
-    ["ADN-1", "/adn-1"],
+    ["ADN", "/adn-1"],
     ["How It Works", "/howitworks"],
     ["Economic Sterilisation", "/economic-sterilisation"],
     ["Signal", "/signal"],
@@ -92,7 +92,7 @@ export default function Index() {
         description="Mykei Securities helps shops make stolen goods harder to sell. Security hardware that marks stock, creates a record, and makes resale the risky part. Manchester, UK."
         canonical="https://mykei.io"
         ogImageAlt="Mykei Securities anti-resale crime and asset integrity system"
-        keywords="Mykei Securities, Michael Esema, Economic Sterilisation, anti-resale crime, asset integrity, Market Reduction Approach, Mike Sutton, stolen goods markets, resale confidence reduction, Mykei Protocol, Mykei Registry, ADN-1 R&D, construction theft, solar theft, tool theft"
+        keywords="Mykei Securities, Michael Esema, Economic Sterilisation, anti-resale crime, asset integrity, Market Reduction Approach, Mike Sutton, stolen goods markets, resale confidence reduction, Mykei Protocol, Mykei Registry, ADN R&D, construction theft, solar theft, tool theft"
         ldJson={JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
@@ -118,11 +118,11 @@ export default function Index() {
                   "https://mykei.io"
                 ],
                 "description": "Michael Esema is the founder of Mykei Securities Ltd and proposer of Economic Sterilisation as a modern operational extension of Market Reduction theory. UK patent application No. 2606630.8.",
-                "knowsAbout": ["Economic Sterilisation", "Market Reduction Approach", "anti-resale crime", "asset integrity", "asset marking", "evidence workflows", "organised retail crime", "ADN-1 R&D"]
+                "knowsAbout": ["Economic Sterilisation", "Market Reduction Approach", "anti-resale crime", "asset integrity", "asset marking", "evidence workflows", "organised retail crime", "ADN R&D"]
               },
               "description": "Mykei Securities Ltd is an anti-resale crime and asset-integrity company. It links asset marking, registry records, evidence workflows and resale-confidence reduction.",
               "address": { "@type": "PostalAddress", "addressLocality": "Manchester", "addressCountry": "GB" },
-              "knowsAbout": ["Economic Sterilisation", "Market Reduction Approach", "Mike Sutton", "Anti-resale crime", "Asset integrity", "Stolen goods markets", "Resale confidence reduction", "Asset marking", "Evidence workflows", "Mykei Registry", "Mykei Protocol", "Construction theft", "Solar theft", "Tool theft", "Retail theft economics", "ADN-1 R&D"],
+              "knowsAbout": ["Economic Sterilisation", "Market Reduction Approach", "Mike Sutton", "Anti-resale crime", "Asset integrity", "Stolen goods markets", "Resale confidence reduction", "Asset marking", "Evidence workflows", "Mykei Registry", "Mykei Protocol", "Construction theft", "Solar theft", "Tool theft", "Retail theft economics", "ADN R&D"],
               "sameAs": ["https://mykei.io"]
             },
             {
@@ -138,7 +138,7 @@ export default function Index() {
               "@type": "LocalBusiness",
               "@id": "https://mykei.io/#localbusiness",
               "name": "Mykei Securities Ltd",
-              "description": "Anti-resale crime and asset-integrity company developing Economic Sterilisation, the Mykei Protocol, registry records and ADN-1 R&D.",
+              "description": "Anti-resale crime and asset-integrity company developing Economic Sterilisation, the Mykei Protocol, registry records and ADN R&D.",
               "url": "https://mykei.io",
               "email": "protocol@mykei.io",
               "address": {
@@ -578,7 +578,7 @@ export default function Index() {
           {moreOpen && (
             <div className="mk-more-menu" onMouseLeave={() => setMoreOpen(false)}>
               <a href="/howitworks" onClick={() => setMoreOpen(false)}>How It Works</a>
-              <a href="/adn-1" onClick={() => setMoreOpen(false)}>ADN-1 Device</a>
+              <a href="/adn-1" onClick={() => setMoreOpen(false)}>ADN Device</a>
               <a href="/economic-sterilisation" onClick={() => setMoreOpen(false)}>Economic Sterilisation</a>
               <a href="/enterprise" onClick={() => setMoreOpen(false)}>Enterprise</a>
               <div className="mk-more-divider" />
@@ -594,7 +594,7 @@ export default function Index() {
 
       {menuOpen && (
         <div className="mk-mobile-menu" style={{ position: "fixed", top: 64, left: 0, right: 0, zIndex: 199, overflowY: "auto", maxHeight: "calc(100vh - 64px)" }}>
-          <a href="/adn-1" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>ADN-1 Device</a>
+          <a href="/adn-1" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>ADN Device</a>
           <a href="/howitworks" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>How It Works</a>
           <a href="/economic-sterilisation" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Economic Sterilisation</a>
           <div style={{ height: 1, background: "#E8E8E8", margin: "6px 0" }} />

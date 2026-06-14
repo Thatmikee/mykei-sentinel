@@ -93,9 +93,9 @@ export default function UkRetailCrimeCrisis() {
       </p>
 
       <p style={{ marginTop: "2rem", fontStyle: "italic" }}>
-        Founders pricing is available for pilot retailers. See{" "}
-        <a href="/pilot" style={{ textDecoration: "underline" }}>
-          mykei.io/pilot
+        Pricing is under development. Follow the research at{" "}
+        <a href="/signal" style={{ textDecoration: "underline" }}>
+          mykei.io/signal
         </a>
         .
       </p>

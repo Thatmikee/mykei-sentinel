@@ -116,7 +116,7 @@ export default function NotFound() {
         <div className={`nf-inner ${visible ? "vis" : ""}`}>
           <div className="nf-terminal-label">
             <div className="nf-dot" />
-            ADN-1 SYSTEM · PAGE NOT FOUND
+            ADN SYSTEM · PAGE NOT FOUND
             <div className="nf-dot" />
           </div>
 

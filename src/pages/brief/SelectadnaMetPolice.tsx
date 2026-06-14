@@ -83,8 +83,8 @@ export default function SelectadnaMetPolice() {
         Met-partnered London retailer might receive during a targeted operation.
       </p>
       <p>
-        What ADN-1 adds to this foundation is permanence and autonomy. Rather than a police officer
-        applying a solution during a scheduled intervention, ADN-1 deploys a controlled marker through
+        What ADN adds to this foundation is permanence and autonomy. Rather than a police officer
+        applying a solution during a scheduled intervention, ADN deploys a controlled marker through
         dual Tactical Multi-zone Sensor Array time-of-flight sensors that detect the kinetic signature of a grab-and-run theft
         event in real time. Every deployment is logged via AWS IoT Core to a timestamped event record.
         Every activation generates a forensic reference code entered into the Mykei Registry,
@@ -95,8 +95,7 @@ export default function SelectadnaMetPolice() {
       </p>
       <p>
         The police proved the concept. The question was always whether independent retailers would ever
-        gain continuous access to the same level of forensic protection. Founders pricing is available
-        for retailers joining the Manchester pilot.
+        gain continuous access to the same level of forensic protection. Pricing is under development. Follow the research at mykei.io/signal.
       </p>
     </article>
   );

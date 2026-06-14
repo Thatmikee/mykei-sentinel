@@ -14,8 +14,8 @@ const fade = (delay = 0) => ({
 const LAYERS = [
   {
     n: "01",
-    title: "EDGE, ADN-1 Node",
-    body: "AES-256-GCM encrypted local processing on the Encrypted Logic Core. The Forensic Event Package is assembled at the edge, timestamp, node ID, ToF vector data, forensic batch code, before transmission begins.",
+    title: "EDGE, ADN Node",
+    body: "AES-256-GCM encrypted local processing on the Encrypted Logic Core. The Forensic Event Package is designed to be assembled at the edge: timestamp, node ID, ToF vector data, forensic batch code, before transmission begins.",
   },
   {
     n: "02",
@@ -90,7 +90,7 @@ export default function ATSDetailPage() {
           className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider transition-all rounded"
           style={{ background: "#D4A843", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
         >
-          ▶ ADN-1 in Action
+          ▶ ADN in Action
         </a>
       </div>
 
@@ -118,7 +118,7 @@ export default function ATSDetailPage() {
 
           <motion.p {...fade(0.2)} className="text-muted-foreground text-lg max-w-2xl leading-relaxed mb-10">
             The ATS is the secure transmission and cloud enforcement layer of the Mykei system.
-            It takes the physical forensic event detected by the ADN-1 and converts it into a
+            It takes the physical forensic event detected by the ADN and converts it into a
             cryptographically protected, tamper-aware digital record that supports verification
             and investigation workflows.
           </motion.p>
@@ -275,21 +275,20 @@ export default function ATSDetailPage() {
           <motion.div {...fade(0)}>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">See the full system in action</h2>
             <p className="text-muted-foreground mb-8">
-              The ADN-1 and ATS operate as one integrated system. Request pilot access to deploy
-              both at your store as part of the Alpha cohort.
+              The ADN and ATS are designed to operate as one integrated system. Field validation has not yet begun. Follow the research to stay informed.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <button
-                onClick={() => navigate("/#contact")}
+                onClick={() => navigate("/signal")}
                 className="px-8 py-4 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors rounded"
               >
-                Request Pilot Access →
+                Follow the Research →
               </button>
               <button
                 onClick={() => navigate("/adn-1")}
                 className="px-8 py-4 border border-border font-mono text-sm uppercase tracking-wider hover:border-primary/40 transition-colors rounded text-muted-foreground hover:text-foreground"
               >
-                View ADN-1 →
+                View ADN →
               </button>
             </div>
           </motion.div>

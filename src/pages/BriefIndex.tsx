@@ -43,7 +43,7 @@ export default function BriefIndex() {
         title="The Signal | Retail Security Intelligence | Mykei Securities"
         description="Research and analysis on retail theft economics, forensic security, and Economic Sterilisation. Published for independent retailers, investors, policy-makers, and anyone fighting organised retail crime."
         canonical="https://mykei.io/signal"
-        keywords="retail theft intelligence, economic sterilisation, organised retail crime, ADN-1 forensic security, Manchester retail pilot, retail crime for small businesses, shoplifting for accountants, theft economics for investors, retail security for enterprise"
+        keywords="retail theft intelligence, economic sterilisation, organised retail crime, ADN forensic security, Manchester retail pilot, retail crime for small businesses, shoplifting for accountants, theft economics for investors, retail security for enterprise"
         ogImageAlt="The Signal: retail security intelligence by Mykei Securities"
         breadcrumbs={[["Home","https://mykei.io"],["The Signal","/signal"]]}
         ldJson={JSON.stringify({
@@ -51,7 +51,7 @@ export default function BriefIndex() {
           "@type": "Blog",
           "@id": "https://mykei.io/signal",
           "name": "The Signal",
-          "description": "Retail security intelligence. Research on Economic Sterilisation, organised retail crime, and the ADN-1 pilot.",
+          "description": "Retail security intelligence. Research on Economic Sterilisation, organised retail crime, and the ADN pilot.",
           "url": "https://mykei.io/signal",
           "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io" },
           "blogPost": sorted.slice(0, 6).map(p => ({
@@ -83,8 +83,8 @@ export default function BriefIndex() {
         </a>
         <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
           <a href="/howitworks" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>How It Works</a>
-          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
-            Apply for Pilot
+          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
+            Follow the Research
           </a>
         </div>
       </nav>
@@ -364,7 +364,7 @@ export default function BriefIndex() {
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 20 }}>Founder bio for publication</div>
               <blockquote style={{ borderLeft: `2px solid ${GOLD}`, paddingLeft: 20, margin: "0 0 24px" }}>
                 <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 15, fontStyle: "italic", color: INK, lineHeight: 1.75 }}>
-                  Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN-1, a patent-pending shelf-mounted retail defence device that detects bulk-sweep theft events, triggers controlled marker deployment, and records cartridge-linked activations in the Mykei Registry. He coined the doctrine of Economic Sterilisation in 2025 (UK patent application No. 2606630.8). A former Head Accountant at B's Hive, he holds an MSc from Manchester Metropolitan University, an MBA from the Nigerian Defence Academy, and a BSc from Benson Idahosa University. Five letters of intent are signed in Greater Manchester. The pilot has not yet begun; the system is at controlled prototype stage.
+                  Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN, a patent-pending shelf-mounted retail defence device that detects bulk-sweep theft events, triggers controlled marker deployment, and records cartridge-linked activations in the Mykei Registry. He coined the doctrine of Economic Sterilisation in 2025 (UK patent application No. 2606630.8). A former Head Accountant at B's Hive, he holds an MSc from Manchester Metropolitan University, an MBA from the Nigerian Defence Academy, and a BSc from Benson Idahosa University. Five letters of intent are signed in Greater Manchester. The pilot has not yet begun; the system is at controlled prototype stage.
                 </p>
               </blockquote>
               <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
@@ -383,7 +383,7 @@ export default function BriefIndex() {
                   "Global retail theft: $796 billion annually",
                   "UK retail crime incidents: 5.8 million (ACS 2026)",
                   "Patent application: GB2606630.8, 17 claims",
-                  "ADN-1 response time: under 3 seconds",
+                  "ADN response time: design target under 3 seconds",
                   "Independent Retail Pilot: 2026, 5 signed LOIs",
                   "Privacy-by-design: no camera, no biometric or suspect identity data",
                 ].map(fact => (
@@ -410,7 +410,7 @@ export default function BriefIndex() {
                   protocol@mykei.io
                 </a>
                 <p style={{ fontSize: 12, color: MUTED, marginTop: 6, lineHeight: 1.6 }}>
-                  Interviews, comment on retail crime data, ADN-1 technical spec. 24-hour response.
+                  Interviews, comment on retail crime data, ADN technical overview. 24-hour response.
                 </p>
               </div>
             </div>
@@ -424,18 +424,18 @@ export default function BriefIndex() {
           Independent Retail Pilot · 2026
         </div>
         <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: "clamp(22px,3vw,32px)", fontWeight: 700, color: INK, marginBottom: 12, lineHeight: 1.25, maxWidth: 560, margin: "0 auto 12px" }}>
-          Five retailers. Direct founder support. No middlemen.
+          Built for independent retailers. Direct founder involvement. No intermediaries.
         </p>
         <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, color: MUTED, marginBottom: 32, lineHeight: 1.7, maxWidth: 460, margin: "0 auto 32px" }}>
-          Michael visits every site personally before installation. Founders pricing. No automated sequences.
+          Mykei publishes its findings through The Signal as the ADN development programme continues.
         </p>
-        <a href="/pilot" style={{
+        <a href="/signal" style={{
           display: "inline-block", background: INK, color: WHITE,
           fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700,
           letterSpacing: "0.14em", textTransform: "uppercase",
           textDecoration: "none", padding: "14px 40px", borderRadius: 2,
         }}>
-          Apply Now
+          Read the Archive
         </a>
       </section>
 

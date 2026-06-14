@@ -100,7 +100,7 @@ export default function ThesisPage() {
   return (
     <div style={{ fontFamily: "Georgia, serif", color: DARK, background: "#fff", minHeight: "100vh" }}>
       <PageSEO
-        title="Economic Sterilisation: The Doctrine — Mykei Securities"
+        title="Economic Sterilisation: The Doctrine | Mykei Securities"
         description="The complete doctrine of Economic Sterilisation by Michael Esema. How removing resale confidence through forensic marking and registry event records attacks the economics of retail crime."
         canonical="https://mykei.io/thesis"
         ogType="article"
@@ -242,7 +242,7 @@ export default function ThesisPage() {
           <section style={{ marginBottom: 64 }}>
             <h2 style={sectionHeading}>2. The Doctrine Defined</h2>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              Economic Sterilisation is a doctrine, not a device. It is a principle governing how security infrastructure should be designed: not to prevent theft at the point of occurrence alone, but to reduce the resale value and resale confidence of stolen goods. It builds on Mike Sutton's Market Reduction Approach in criminology. The ADN-1 is an early implementation of the doctrine.
+              Economic Sterilisation is a doctrine, not a device. It is a principle governing how security infrastructure should be designed: not to prevent theft at the point of occurrence alone, but to reduce the resale value and resale confidence of stolen goods. It builds on Mike Sutton's Market Reduction Approach in criminology. The ADN is an early implementation of the doctrine.
             </p>
 
             <PullQuote text="I am not building a security company. I am building the argument that theft should not pay." />
@@ -366,10 +366,10 @@ export default function ThesisPage() {
             <PullQuote text="The patent is 17 claims. The doctrine is one sentence." />
 
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              Patent-pending: UK application No. 2606630.8, filed 23 March 2026 by Michael Esema, covering 17 claims relating to the system and method of economic sterilisation as embodied in the ADN-1 device. The application covers the integration of dual time-of-flight sensor detection, controlled marker deployment triggered by theft events, and real-time event registration in a cloud-based registry.
+              Patent-pending: UK application No. 2606630.8, filed 23 March 2026 by Michael Esema, covering 17 claims relating to the system and method of economic sterilisation as embodied in the ADN device. The application covers the integration of dual time-of-flight sensor detection, controlled marker deployment triggered by theft events, and real-time event registration in a cloud-based registry.
             </p>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              The ADN-1 is an early implementation of the Economic Sterilisation doctrine, currently at controlled prototype stage. It has been demonstrated in controlled prototype and registry proof-of-concept tests. Field efficacy data has not yet been gathered. Any results will be published in summary form on this site once a pilot has been completed.
+              The ADN is an early implementation of the Economic Sterilisation doctrine, currently at controlled prototype stage. It has been demonstrated in controlled prototype and registry proof-of-concept tests. Field efficacy data has not yet been gathered. Any results will be published in summary form on this site once a pilot has been completed.
             </p>
             <p style={{ ...bodyText, color: MUTED, lineHeight: 1.8 }}>
               Mykei Securities Ltd. Company No. 16984969.
@@ -382,7 +382,7 @@ export default function ThesisPage() {
           <section style={{ marginBottom: 64 }}>
             <h2 style={sectionHeading}>Founder's Note</h2>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              This paper is not a pitch. It is a position. Economic Sterilisation is not a security concept repurposed for retail. It is a doctrine built from first principles on the observation that theft is a commercial transaction, not a criminal impulse. Remove the commercial outcome and the transaction stops. The ADN-1 is the implementation. The patent is the record. This page is the argument.
+              This paper is not a pitch. It is a position. Economic Sterilisation is not a security concept repurposed for retail. It is a doctrine built from first principles on the observation that theft is a commercial transaction, not a criminal impulse. Remove the commercial outcome and the transaction stops. The ADN is the implementation. The patent is the record. This page is the argument.
             </p>
             <p style={{ ...bodyText, color: MUTED, fontSize: 14, marginBottom: 16, lineHeight: 1.8 }}>
               M.E., April 2026
@@ -414,7 +414,7 @@ export default function ThesisPage() {
             fontFamily: "'Arial', sans-serif",
           }}
         >
-          Enterprise Pilot Review
+          Research Updates
         </p>
         <h2
           style={{
@@ -432,7 +432,7 @@ export default function ThesisPage() {
           Discuss a network or enterprise pilot to test asset registration, marking readiness, evidence workflows and resale-confidence reduction.
         </p>
         <Link
-          to="/enterprise"
+          to="/signal"
           style={{
             display: "inline-block",
             background: GOLD,
@@ -445,7 +445,7 @@ export default function ThesisPage() {
             fontFamily: "'Arial', sans-serif",
           }}
         >
-          Discuss the Pilot
+          Follow the Research
         </Link>
       </section>
 

@@ -170,7 +170,7 @@ export default function Pilot() {
     doc.setFontSize(22); doc.setFont("helvetica", "bold");
     doc.text("LETTER OF INTENT", M, y);
     doc.setFontSize(10); doc.setFont("helvetica", "normal");
-    doc.text("Independent Retail Pilot  ·  2026", W - M, y, { align: "right" });
+    doc.text("ADN Independent Retail Pilot  ·  2026", W - M, y, { align: "right" });
     y += 7; doc.setLineWidth(0.4); doc.line(M, y, W - M, y); y += 8;
     doc.setFontSize(10); doc.setFont("helvetica", "bold");
     doc.text("RETAILER DETAILS", M, y); y += 7;
@@ -196,7 +196,7 @@ export default function Pilot() {
     doc.setFontSize(11); doc.setFont("helvetica", "bold"); doc.setTextColor(0);
     doc.text("DECLARATION OF INTENT", M, y); y += 6;
     doc.setFontSize(9.5); doc.setFont("helvetica", "normal");
-    const introLines = doc.splitTextToSize(`I, the undersigned, acting on behalf of the business named above, hereby confirm our intent to participate in the Mykei Securities Ltd ADN-1 Independent Retail Pilot. This constitutes a formal expression of commercial interest.`, W - M * 2);
+    const introLines = doc.splitTextToSize(`I, the undersigned, acting on behalf of the business named above, hereby confirm our intent to participate in the Mykei Securities Ltd ADN Independent Retail Pilot. This constitutes a formal expression of commercial interest.`, W - M * 2);
     doc.text(introLines, M, y); y += introLines.length * 5 + 6;
 
     // Commercial terms block
@@ -210,7 +210,7 @@ export default function Pilot() {
 
     for (const [label, text] of [
       ["Pilot Commitment:", "Not a legally binding letter of intent."],
-      ["The ADN-1 System:", "Non-visual Time-of-Flight sensors detect defined shelf events. Controlled marker deployment is subject to supplier specification, SDS/COSHH review, and deployment environment review."],
+      ["The ADN System:", "Non-visual Time-of-Flight sensors are designed to detect defined shelf events. Controlled marker deployment is subject to supplier specification, SDS/COSHH review, and deployment environment review."],
       ["Economic Sterilisation:", "Marker deployment events are linked to device, location, timestamp, and cartridge reference in the Mykei Registry to support verification workflows."],
       ["No Obligation:", "No obligation to continue after the 3-month pilot period."],
     ] as [string, string][]) {
@@ -322,7 +322,7 @@ export default function Pilot() {
         <div style={{ width: "68px", height: "68px", background: GOLD, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px", fontSize: "28px", color: DARK, fontWeight: 700 }}>✓</div>
         <h2 style={{ color: DARK, fontSize: "24px", fontWeight: 700, margin: "0 0 12px" }}>We have your pilot request.</h2>
         <p style={{ color: MUTED, fontSize: "15px", lineHeight: 1.65, margin: "0 0 24px" }}>
-          <strong style={{ color: DARK }}>{form.storeName}</strong> has submitted a signed Letter of Intent for the ADN-1 Independent Retail Pilot. A confirmation email with your signed copy is on its way.
+          <strong style={{ color: DARK }}>{form.storeName}</strong> has submitted a signed Letter of Intent for the ADN Independent Retail Pilot. A confirmation email with your signed copy is on its way.
         </p>
         <div style={{ background: CREAM, border: `1px solid ${SAND}`, borderRadius: "10px", padding: "16px 18px", marginBottom: "18px", textAlign: "left" }}>
           <p style={{ margin: "0 0 10px", fontSize: "11px", fontWeight: 700, color: DARK, textTransform: "uppercase", letterSpacing: "0.08em" }}>What happens next</p>
@@ -352,7 +352,7 @@ export default function Pilot() {
             </svg>
             <span style={{ color: GOLD, fontSize: "10px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" }}>Independent Retail Pilot 2026</span>
           </div>
-          <h1 style={{ color: DARK, fontSize: "22px", fontWeight: 700, margin: "0 0 8px", letterSpacing: "-0.01em" }}>ADN-1 Pilot Evaluation</h1>
+          <h1 style={{ color: DARK, fontSize: "22px", fontWeight: 700, margin: "0 0 8px", letterSpacing: "-0.01em" }}>ADN Pilot Evaluation</h1>
           <p style={{ color: MUTED, fontSize: "14px", margin: 0 }}>Letter of Intent, sign to secure your place</p>
         </div>
 
@@ -434,7 +434,7 @@ export default function Pilot() {
               <h2 style={{ color: DARK, fontSize: "19px", fontWeight: 700, margin: "0 0 4px" }}>Sign & Confirm</h2>
               <p style={{ color: MUTED, fontSize: "14px", margin: "0 0 20px" }}>Draw your signature to complete the LOI.</p>
               <div style={{ background: CREAM, border: `1px solid ${SAND}`, borderRadius: "10px", padding: "16px 18px", marginBottom: "20px", fontSize: "13px", color: MUTED, lineHeight: 1.75 }}>
-                I, <strong style={{ color: DARK }}>{form.fullName}</strong>, confirm that <strong style={{ color: DARK }}>{form.storeName}</strong> intends to participate in the Mykei Securities ADN-1 Independent Retail Pilot. {commercialTerms.displayLine}. No obligation after the pilot.
+                I, <strong style={{ color: DARK }}>{form.fullName}</strong>, confirm that <strong style={{ color: DARK }}>{form.storeName}</strong> intends to participate in the Mykei Securities ADN Independent Retail Pilot. {commercialTerms.displayLine}. No obligation after the pilot.
               </div>
               <div style={{ border: `2px dashed ${signed ? GOLD : SAND}`, borderRadius: "10px", overflow: "hidden", marginBottom: "8px", position: "relative", background: "#FFFDF9", transition: "border-color 0.2s" }}>
                 <canvas ref={canvasRef} width={460} height={120}

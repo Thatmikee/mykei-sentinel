@@ -41,10 +41,10 @@ export default function MarchChocolateCasePatternEvidence() {
         days later to piece it together from memory and till logs.
       </p>
 
-      <h2>Why this matters for ADN-1.</h2>
+      <h2>Why this matters for ADN.</h2>
 
       <p>
-        ADN-1 is not trying to replace the court process. It is designed for the earlier layer: the
+        ADN is not trying to replace the court process. It is designed for the earlier layer: the
         shelf event. The device watches a shelf zone for a defined theft pattern, deploys a controlled
         marker when the trigger condition is met, and logs a cartridge linked event in the Mykei
         Registry.
@@ -72,8 +72,8 @@ export default function MarchChocolateCasePatternEvidence() {
       <h2>Read next</h2>
 
       <p>
-        See <a href="/howitworks">how ADN-1 turns a shelf event into a record</a>, then review the
-        <a href="/adn-1"> ADN-1 system details</a>. Retailers can start with a <a href="/pilot">store fit check</a>.
+        See <a href="/howitworks">how the ADN turns a shelf event into a record</a>, then review the
+        <a href="/adn-1"> ADN system details</a>. To follow the research, visit <a href="/signal">mykei.io/signal</a>.
       </p>
 
       <h2>Source</h2>

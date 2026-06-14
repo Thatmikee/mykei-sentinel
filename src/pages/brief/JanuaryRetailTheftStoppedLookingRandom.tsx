@@ -32,7 +32,7 @@ export default function JanuaryRetailTheftStoppedLookingRandom() {
       <h2>Why this matters for Mykei.</h2>
 
       <p>
-        ADN-1 is built around this gap. The device detects a defined shelf event, deploys a
+        ADN is built around this gap. The device detects a defined shelf event, deploys a
         controlled marker, and creates a cartridge linked event record in the Mykei Registry.
         Not to make the store look more sophisticated. To give the retailer something concrete:
         device, store, shelf zone, timestamp, cartridge session, marker batch reference. The
@@ -50,7 +50,7 @@ export default function JanuaryRetailTheftStoppedLookingRandom() {
 
       <p>
         Forensic retail infrastructure fills the gap between what CCTV records and what a later
-        investigation can actually use. Police, guards, cameras, store policy — none of that
+        investigation can actually use. Police, guards, cameras, store policy. None of that
         changes. What changes is whether the shelf event itself creates a traceable record.
       </p>
 
@@ -62,8 +62,8 @@ export default function JanuaryRetailTheftStoppedLookingRandom() {
       <h2>Read next</h2>
 
       <p>
-        See <a href="/howitworks">how ADN-1 works</a> and the <a href="/adn-1">ADN-1 product page</a>.
-        For retailers with repeat shelf theft, start with a <a href="/pilot">store fit check</a>.
+        See <a href="/howitworks">how the ADN works</a> and the <a href="/adn-1">ADN system page</a>.
+        To follow the research, visit <a href="/signal">mykei.io/signal</a>.
       </p>
 
       <h2>Source</h2>

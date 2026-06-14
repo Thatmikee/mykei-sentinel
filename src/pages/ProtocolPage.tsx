@@ -40,7 +40,7 @@ function SimpleNav() {
         onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.7"; }}
         onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
       >
-        ADN-1
+        ADN
       </a>
     </nav>
   );
@@ -78,7 +78,7 @@ const sectors = [
 ];
 
 const notList = [
-  "ADN-1, a different product for UK retail shelves",
+  "ADN, a different product for UK retail shelves",
   "Forensic DNA at this stage",
   "Police approval or endorsement",
   "An insurance product or policy",
@@ -183,13 +183,13 @@ export default function ProtocolPage() {
             >
               <p style={{ fontSize: "clamp(1rem,2.4vw,1.125rem)", lineHeight: 1.75, color: INK, margin: 0, fontWeight: 500 }}>
                 Asset-Proof tests the registry-first side of Economic Sterilisation in Nigeria.
-                ADN-1 tests the active shelf-level side in UK retail.
+                ADN tests the active shelf-level side in UK retail.
               </p>
             </blockquote>
             <p style={{ fontSize: "clamp(0.9375rem,2.2vw,1rem)", lineHeight: 1.8, color: MUTED, margin: "20px 0 0" }}>
               Economic Sterilisation is the doctrine that theft becomes less rewarding when
               stolen goods cannot be sold without a traceable record. Asset-Proof applies that logic using
-              a registry and a mark. ADN-1 applies it using a shelf sensor and a controlled
+              a registry and a mark. ADN applies it using a shelf sensor and a controlled
               marker. Both operate on the same economic premise. Neither is the other product.
             </p>
           </section>
