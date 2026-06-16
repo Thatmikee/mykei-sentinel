@@ -194,68 +194,62 @@ export default function Index() {
 
         /* ── HERO ── */
         .mk-hero {
-          min-height: 78svh; display: flex; align-items: center;
-          padding: 96px 52px 56px; position: relative; overflow: hidden; background: #fff;
+          min-height: 100dvh; display: flex; align-items: center;
+          padding: 80px 52px 56px; position: relative; overflow: hidden; background: #fff;
+          border-bottom: 1px solid #E8E8E8;
         }
-        .mk-hero::before {
-          content: ''; position: absolute; inset: 0;
-          background-image: linear-gradient(rgba(45,18,4,0.022) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(45,18,4,0.022) 1px, transparent 1px);
-          background-size: 52px 52px; pointer-events: none;
-        }
-        .mk-hero::after { display: none; }
         .mk-hero-inner {
-          position: relative; z-index: 2; max-width: 900px; margin: 0 auto; width: 100%;
-          display: grid; grid-template-columns: 1fr; gap: 0; align-items: center;
+          position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; width: 100%;
+          display: grid; grid-template-columns: 1fr 340px; gap: 80px; align-items: center;
         }
-
-        /* Company badge */
-        .mk-company-badge {
-          display: inline-flex; align-items: center; gap: 10px;
-          background: #FFFFFF; border: 1px solid #E8E8E8; border-radius: 6px; padding: 7px 14px;
-          margin-bottom: 32px;
-        }
-        .mk-badge-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 500; color: #555555; letter-spacing: 1.2px; text-transform: uppercase; }
-        .mk-badge-sep { width: 1px; height: 12px; background: rgba(212,175,55,0.5); }
-        .mk-badge-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #555555; letter-spacing: 0.8px; display: flex; align-items: center; gap: 5px; }
-        .mk-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #c9a84c; animation: blink 2s ease-in-out infinite; }
 
         /* Identity headline */
         .mk-hero-identity {
-          font-size: clamp(38px, 5vw, 64px);
-          font-weight: 800; line-height: 1.08; letter-spacing: -2px; color: #111111; margin-bottom: 10px;
+          font-size: clamp(42px, 5.5vw, 72px);
+          font-weight: 800; line-height: 1.04; letter-spacing: -2.5px; color: #111111; margin-bottom: 28px;
         }
         .mk-identity-accent { color: #765C14; }
-        .mk-identity-rule { display: block; width: 44px; height: 3px; background: #c9a84c; border-radius: 2px; margin: 20px 0 22px; }
-
-        .mk-hero-descriptor {
-          font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 1.5px;
-          text-transform: uppercase; color: #475569; margin-bottom: 28px;
-        }
 
         .mk-hero-body {
-          font-size: 17px; line-height: 1.8; color: #475569; max-width: 650px; margin-bottom: 34px;
+          font-size: 18px; line-height: 1.75; color: #475569; max-width: 520px; margin-bottom: 36px;
         }
-        .mk-hero-body strong { color: #2D1204; font-weight: 600; }
 
         .mk-hero-actions {
           display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
         }
         .mk-btn-primary {
           font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600;
-          color: #fff; background: #4A2008; padding: 13px 28px; border-radius: 7px;
-          display: inline-flex; align-items: center; gap: 8px; transition: all 0.22s;
+          color: #fff; background: #2D1204; padding: 14px 32px; border-radius: 6px;
+          display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;
+          white-space: nowrap;
         }
-        .mk-btn-primary:hover { background: #D4AF37; }
+        .mk-btn-primary:hover { background: #765C14; transform: translateY(-1px); }
         .mk-btn-secondary {
           font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 500;
-          color: #2D1204; border: 1.5px solid #dde4ef; padding: 12px 28px; border-radius: 7px; transition: all 0.2s;
+          color: #2D1204; border: 1.5px solid #D8D0C8; padding: 13px 28px; border-radius: 6px; transition: all 0.2s;
+          white-space: nowrap;
         }
-        .mk-btn-secondary:hover { border-color: #4A2008; background: #f8f9fc; }
+        .mk-btn-secondary:hover { border-color: #2D1204; }
 
-        .mk-hero-proof {
-          display: flex; align-items: center; gap: 18px; margin-top: 24px; flex-wrap: wrap;
+        /* Hero right stats column */
+        .mk-hero-stats {
+          display: flex; flex-direction: column; gap: 0;
+          padding-left: 40px; border-left: 1px solid #E8E8E8;
         }
+        .mk-hero-stat {
+          padding: 28px 0; border-bottom: 1px solid #E8E8E8;
+        }
+        .mk-hero-stat:last-child { border-bottom: none; }
+        .mk-hero-stat-num {
+          font-family: 'Sora', sans-serif; font-size: 38px; font-weight: 800;
+          color: #2D1204; line-height: 1; letter-spacing: -1.5px; margin-bottom: 8px;
+        }
+        .mk-hero-stat-num span { color: #765C14; }
+        .mk-hero-stat-label {
+          font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.8px;
+          text-transform: uppercase; color: #64748b; line-height: 1.5;
+        }
+
         .mk-proof-item { display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #475569; }
         .mk-proof-check { width: 15px; height: 15px; border-radius: 50%; background: #f0faf4; border: 1px solid #86efac; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #16a34a; flex-shrink: 0; }
 
@@ -334,15 +328,12 @@ export default function Index() {
           display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 40px;
         }
         .mk-commercial-item {
-          border: 1px solid #E8E8E8; border-radius: 8px; padding: 24px 20px;
-          text-align: center; background: #FFFFFF;
+          padding: 24px 0;
+          text-align: left; border-top: 1px solid #E8E8E8;
         }
         .mk-commercial-icon {
-          width: 28px; height: 28px; margin: 0 auto 12px;
-          border-radius: 50%; border: 1px solid rgba(118,92,20,0.35);
-          display: flex; align-items: center; justify-content: center;
           font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700;
-          color: #765C14; background: #FFFFFF;
+          color: #765C14; margin-bottom: 12px; letter-spacing: 1px;
         }
         .mk-commercial-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.8px; text-transform: uppercase; color: #2D1204; font-weight: 600; margin-bottom: 4px; }
         .mk-commercial-sub { font-size: 11.5px; color: #64748b; line-height: 1.5; }
@@ -353,10 +344,9 @@ export default function Index() {
         .mk-designed-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
         .mk-designed-item {
           display: flex; align-items: flex-start; gap: 14px;
-          padding: 20px 24px; background: rgba(255,255,255,0.6);
-          border: 1px solid rgba(201,168,76,0.2); border-radius: 8px;
+          padding: 16px 0; border-top: 1px solid #E8E8E8;
         }
-        .mk-designed-check { width: 20px; height: 20px; border-radius: "50%"; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; color: #555555; flex-shrink: 0; margin-top: 2px; }
+        .mk-designed-check { font-size: 11px; color: #D4AF37; flex-shrink: 0; margin-top: 3px; font-weight: 700; }
         .mk-designed-text { font-size: 14px; color: #2D1204; line-height: 1.6; font-weight: 500; }
 
         /* ── WHY NOW ── */
@@ -367,8 +357,8 @@ export default function Index() {
         .mk-why-now-inner { max-width: 1100px; margin: 0 auto; }
         .mk-why-now-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
         .mk-why-now-item {
-          display: flex; align-items: flex-start; gap: 14px; padding: 20px 24px;
-          border-left: 3px solid #c9a84c; background: #FFFFFF; border-radius: 0 6px 6px 0;
+          display: flex; align-items: flex-start; gap: 14px; padding: 18px 0;
+          border-top: 1px solid #E8E8E8;
         }
         .mk-why-now-text { font-size: 14px; color: #2D1204; line-height: 1.65; }
 
@@ -384,43 +374,45 @@ export default function Index() {
         .mk-h2-light { font-family: 'Sora', system-ui, sans-serif; font-size: clamp(30px,3.8vw,50px); font-weight: 700; color: #fff; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.08; }
         .mk-sub-light { font-size: 16px; color: rgba(255,255,255,0.78); max-width: 520px; line-height: 1.7; margin-bottom: 52px; }
 
-        /* Stat cards */
-        .mk-stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 48px; }
+        /* Stat row */
+        .mk-stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-bottom: 64px; border-top: 1px solid #E8E8E8; border-bottom: 1px solid #E8E8E8; }
         .mk-stat-card {
-          background: #FFFFFF;
-          border: 1px solid #E8E8E8; border-radius: 8px; padding: 32px 24px;
+          padding: 40px 32px; border-right: 1px solid #E8E8E8;
         }
-        .mk-stat-card:hover { border-color: #765C14; }
+        .mk-stat-card:last-child { border-right: none; }
         .mk-stat-num { font-size: 38px; font-weight: 800; color: #765C14; letter-spacing: -1px; line-height: 1; }
         .mk-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; color: #64748b; margin-top: 10px; line-height: 1.6; }
-        .mk-market-note { background: #F8F8F8; border: 1px solid #E8E8E8; border-left: 4px solid #D4AF37; padding: 20px 24px; border-radius: 8px; font-size: 15px; color: #374151; line-height: 1.75; max-width: 760px; }
+        .mk-market-note { border-left: 2px solid #D4AF37; padding: 4px 0 4px 20px; font-size: 15px; color: #374151; line-height: 1.75; max-width: 760px; margin-top: 48px; }
         .mk-market-note strong { color: #1A1A1A; font-weight: 700; }
 
         /* ── TECH ── */
         .mk-tech {
           padding: 96px 52px;
-          background: #FFFFFF;
+          background: #FAFAF8;
           border-top: 1px solid #E8E8E8;
-          position: relative;
         }
-        .mk-tech-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-        .mk-tech-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 28px; }
-        .mk-tech-card {
-          border: 1px solid #E8E8E8; border-radius: 8px; padding: 28px;
-          background: #FFFFFF;
-          transition: border-color 0.2s ease;
+        .mk-tech-inner { max-width: 1100px; margin: 0 auto; }
+        .mk-tech-steps { display: flex; flex-direction: column; gap: 0; margin-top: 64px; }
+        .mk-tech-step {
+          display: grid; grid-template-columns: 120px 1fr;
+          gap: 48px; align-items: start;
+          padding: 40px 0; border-top: 1px solid #E8E8E8;
         }
-        .mk-tech-card:hover { border-color: #765C14; }
-        .mk-tech-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; color: #765C14; border: 1px solid rgba(201,168,76,0.4); padding: 3px 10px; border-radius: 100px; margin-bottom: 16px; }
-        .mk-tech-title { font-size: 15px; font-weight: 700; color: #2D1204; margin-bottom: 10px; }
-        .mk-tech-desc { font-size: 13px; color: #64748b; line-height: 1.65; margin-bottom: 20px; }
-        .mk-tech-specs { border-top: 1px solid #E8E8E8; padding-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .mk-spec-key { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.8px; text-transform: uppercase; color: #475569; }
-        .mk-spec-val { font-size: 12px; font-weight: 700; color: #1A1A1A; margin-top: 1px; }
-        .mk-tech-note { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.25); border-left: 3px solid #c9a84c; padding: 14px 18px; border-radius: 4px; font-size: 14px; color: #374151; line-height: 1.6; }
+        .mk-tech-step:first-child { border-top: none; padding-top: 0; }
+        .mk-tech-arrow { padding: 0 0 0 120px; color: #D4AF37; font-size: 20px; line-height: 1; opacity: 0.5; margin: -12px 0; }
+        .mk-tech-step-num {
+          font-family: 'Sora', sans-serif; font-size: 72px; font-weight: 800;
+          color: #E8E8E8; line-height: 1; letter-spacing: -3px;
+          transition: color 0.2s;
+        }
+        .mk-tech-step:hover .mk-tech-step-num { color: #D4AF37; }
+        .mk-tech-step-body {}
+        .mk-tech-step-title { font-size: 22px; font-weight: 700; color: #1E1E1E; margin-bottom: 12px; line-height: 1.2; }
+        .mk-tech-step-desc { font-size: 16px; color: #475569; line-height: 1.75; max-width: 580px; }
+        .mk-tech-note { border-left: 2px solid #c9a84c; padding: 4px 0 4px 20px; font-size: 14px; color: #374151; line-height: 1.6; margin-top: 48px; }
         .mk-tech-note strong { color: #2D1204; }
-        .mk-h2-dark  { font-family: 'Sora', system-ui, sans-serif; font-size: clamp(30px,3.8vw,50px); font-weight: 700; color: #1E1E1E; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.08; }
-        .mk-sub-dark  { font-size: 16px; color: #64748b; max-width: 520px; line-height: 1.7; margin-bottom: 52px; }
+        .mk-h2-dark { font-family: 'Sora', system-ui, sans-serif; font-size: clamp(30px,3.8vw,50px); font-weight: 700; color: #1E1E1E; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.08; }
+        .mk-sub-dark { font-size: 16px; color: #64748b; max-width: 520px; line-height: 1.7; margin-bottom: 0; }
 
         /* ── SPECS ── */
         .mk-specs {
@@ -609,44 +601,36 @@ export default function Index() {
       <section className="mk-hero">
         <div className="mk-hero-inner">
           <div>
-            <div className="mk-company-badge">
-              <span className="mk-badge-label">Mykei Securities</span>
-              <div className="mk-badge-sep" />
-              <span className="mk-badge-status">
-                <div className="mk-badge-dot" />Accepting pilot enquiries
-              </span>
-            </div>
-
             <h1 className="mk-hero-identity">
               The problem is not<br />
               the theft.<br />
               <span className="mk-identity-accent">It is the resale.</span>
-              <span className="mk-identity-rule" />
             </h1>
 
-            <div className="mk-hero-descriptor">
-              We help shops make stolen goods harder to sell.
-            </div>
-
             <p className="mk-hero-body">
-              Stolen goods have value because they can be sold. We poison that market.
+              Stolen goods have value because they can be sold. Mykei makes them harder to sell — by marking the goods, logging the incident, and poisoning the resale market before anyone gets to the door.
             </p>
 
             <div className="mk-hero-actions">
-              <a href="/enterprise" className="mk-btn-primary">Check Store Fit</a>
-              <a href="#adn-1-system" className="mk-btn-secondary">See the 3 Step Loop</a>
+              <a href="/enterprise" className="mk-btn-primary">Discuss the Pilot</a>
+              <a href="#how-it-works" className="mk-btn-secondary">How it works</a>
             </div>
-
-            <div className="mk-hero-proof">
-              {["No cameras", "No confrontation", "No biometric data", "UK registered"].map(p => (
-                <div className="mk-proof-item" key={p}>
-                  <div className="mk-proof-check">✓</div>{p}
-                </div>
-              ))}
-            </div>
-
           </div>
 
+          <div className="mk-hero-stats">
+            <div className="mk-hero-stat">
+              <div className="mk-hero-stat-num">£8.1<span>B</span></div>
+              <div className="mk-hero-stat-label">UK retail crime annually</div>
+            </div>
+            <div className="mk-hero-stat">
+              <div className="mk-hero-stat-num">0</div>
+              <div className="mk-hero-stat-label">Staff confrontations needed</div>
+            </div>
+            <div className="mk-hero-stat">
+              <div className="mk-hero-stat-num" style={{ fontSize: 28 }}>Patent<span> pending</span></div>
+              <div className="mk-hero-stat-label">UK application No. 2606630.8</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -656,9 +640,6 @@ export default function Index() {
         <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: "repeating-linear-gradient(transparent, transparent 47px, #2D1204 47px, #2D1204 48px)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative" }}>
           <Reveal>
-            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", color: "#765C14", marginBottom: 24 }}>
-              Why We Exist
-            </div>
             <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(38px,5.5vw,76px)", fontWeight: 700, lineHeight: 1.05, color: "#1E1E1E", margin: "0 0 clamp(40px,5vw,72px)", maxWidth: 820 }}>
               A world where stealing<br />simply stops making sense.
             </h2>
@@ -684,57 +665,72 @@ export default function Index() {
                 <p style={{ fontFamily: "'Sora',sans-serif", fontSize: "clamp(14px,1.4vw,16px)", lineHeight: 1.8, color: "#374151", margin: "0 0 32px" }}>
                   Mykei Securities builds security hardware for independent shops. Not the big chains with entire security teams. The butcher, the pharmacy, the corner shop. The people who built something and do not deserve to watch it slowly disappear.
                 </p>
-                <div style={{ display: "flex", gap: 40, flexWrap: "wrap" as const }}>
-                  {[["Register","proves what you own, before anything goes wrong"],["Mark","goods are marked, not people"],["Evidence","a record tied to your shop, not to a suspect"]].map(([n, l]) => (
-                    <div key={n}>
-                      <div style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 700, color: "#1E1E1E", lineHeight: 1 }}>{n}</div>
-                      <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 11, color: "#7A6A52", marginTop: 6, maxWidth: 140, lineHeight: 1.4 }}>{l}</div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
+      {/* REGISTER → MARK → EVIDENCE */}
+      <section style={{ background: "#0F0F0F", padding: "88px clamp(24px,6vw,80px)" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "flex-start", gap: 0 }}>
+          {[
+            { word: "Register", sub: "Your stock is on record before the incident. Not after." },
+            { word: "Mark", sub: "Goods are marked, not people." },
+            { word: "Evidence", sub: "Timestamped, hash-chained, already filed before anyone reaches the door." },
+          ].map(({ word, sub }, i) => (
+            <div key={word} style={{ display: "flex", alignItems: "flex-start", gap: 0, flex: i < 2 ? "0 0 auto" : "1" }}>
+              <div>
+                <div style={{ fontFamily: "'Sora',system-ui,sans-serif", fontSize: "clamp(48px,5.5vw,88px)", fontWeight: 800, color: "#FFFFFF", lineHeight: 1, letterSpacing: "-2.5px" }}>{word}</div>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10.5, color: "rgba(255,255,255,0.45)", marginTop: 12, maxWidth: 200, lineHeight: 1.6, letterSpacing: "0.2px" }}>{sub}</div>
+              </div>
+              {i < 2 && (
+                <div style={{ fontSize: 24, color: "#D4AF37", margin: "18px 32px 0", fontWeight: 300 }}>→</div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* TECHNOLOGY */}
-      <section id="adn-1-system" className="mk-tech">
+      {/* HOW IT WORKS */}
+      <section id="how-it-works" className="mk-tech">
         <div className="mk-tech-inner">
           <Reveal>
-            <div className="mk-section-eyebrow">How It Works</div>
             <h2 className="mk-h2-dark">The shelf fights back.</h2>
-            <p className="mk-sub-dark">Sweep happens. ADN fires. Goods are marked. Record is created. All before anyone gets to the door.</p>
+            <p className="mk-sub-dark">Sweep happens. ADN fires. Goods are marked. Record is created. All before anyone reaches the door.</p>
           </Reveal>
-          <div className="mk-tech-grid">
-            {[
-              {
-                step: "01",
-                title: "It detects the sweep",
-                desc: "A small device sits on the shelf. The moment stock is taken in bulk, it knows. No cameras. No staff involvement. No alarm that embarrasses honest customers.",
-              },
-              {
-                step: "02",
-                title: "It marks the goods",
-                desc: "The taken stock is marked automatically. The mark is not visible to the thief. It is linked to your shop, the date, and the incident.",
-              },
-              {
-                step: "03",
-                title: "It creates a record",
-                desc: "Every incident is logged to the Mykei Registry. If the goods surface online or at a market, the record exists. Stolen stock becomes harder to move.",
-              },
-            ].map(({ step, title, desc }, i) => (
-              <Reveal key={step} delay={i * 0.12}>
-                <div className="mk-tech-card">
-                  <span className="mk-tech-tag">{step}</span>
-                  <h3 className="mk-tech-title">{title}</h3>
-                  <p className="mk-tech-desc">{desc}</p>
+          <div className="mk-tech-steps">
+            <Reveal delay={0}>
+              <div className="mk-tech-step">
+                <div className="mk-tech-step-num">01</div>
+                <div className="mk-tech-step-body">
+                  <h3 className="mk-tech-step-title">The device detects the sweep</h3>
+                  <p className="mk-tech-step-desc">A small unit sits on the shelf. The moment stock is taken in bulk, it knows. No cameras. No staff involvement. No alarm that embarrasses honest customers.</p>
                 </div>
-              </Reveal>
-            ))}
+              </div>
+            </Reveal>
+            <div className="mk-tech-arrow">↓</div>
+            <Reveal delay={0.1}>
+              <div className="mk-tech-step">
+                <div className="mk-tech-step-num">02</div>
+                <div className="mk-tech-step-body">
+                  <h3 className="mk-tech-step-title">The goods are marked</h3>
+                  <p className="mk-tech-step-desc">The taken stock receives a forensic marker automatically. Not visible to the thief. Linked to your shop, the date, and the batch incident — permanently.</p>
+                </div>
+              </div>
+            </Reveal>
+            <div className="mk-tech-arrow">↓</div>
+            <Reveal delay={0.2}>
+              <div className="mk-tech-step">
+                <div className="mk-tech-step-num">03</div>
+                <div className="mk-tech-step-body">
+                  <h3 className="mk-tech-step-title">A tamper-proof record is created</h3>
+                  <p className="mk-tech-step-desc">Every incident is logged to the Mykei Registry — hash-chained and append-only. If the goods surface online or at a market, the record already exists. Stolen stock becomes harder to sell.</p>
+                </div>
+              </div>
+            </Reveal>
           </div>
-          <Reveal delay={0.2}>
+          <Reveal delay={0.3}>
             <div className="mk-tech-note">
               <strong>No cameras. No confrontation. No biometric data.</strong> Your staff do not need to do anything. The shelf handles it.
             </div>
@@ -747,7 +743,6 @@ export default function Index() {
       <section style={{ background: "#F8F8F8", borderTop: "1px solid #E8E8E8", padding: "72px clamp(24px,6vw,80px)" }}>
         <div style={{ maxWidth: 560, margin: "0 auto", textAlign: "center" }}>
           <Reveal>
-            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.3em", textTransform: "uppercase", color: "#765C14", marginBottom: 20 }}>Quick verdict</div>
             <h2 style={{ fontFamily: "'Sora',system-ui,sans-serif", fontSize: "clamp(22px,3vw,34px)", fontWeight: 700, color: "#1E1E1E", marginBottom: 12, lineHeight: 1.2 }}>
               Does this make sense to you?
             </h2>
@@ -781,7 +776,6 @@ export default function Index() {
       <section id="pilot-survey" className="mk-survey">
         <div className="mk-survey-inner" style={{ textAlign: "center" }}>
           <Reveal>
-            <div className="mk-section-eyebrow">Work With Us</div>
             <h2 className="mk-h2-dark">Your cameras recorded it. Your stock still walked. What now?</h2>
             <p className="mk-sub-dark" style={{ marginBottom: 36 }}>We do not take every case. Tell us about yours.</p>
             <a href="/enterprise" className="mk-submit-btn" style={{ display: "inline-block", textDecoration: "none" }}>Discuss the Pilot</a>
