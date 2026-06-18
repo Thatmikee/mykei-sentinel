@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#c9a84c";
+const GOLD = "#0D9488";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -38,7 +38,7 @@ export default function SignalSurgeonNotCameraPage() {
     <>
       <PageSEO
         title="A Surgeon, Not a Camera: The 200 Millisecond Rule | The Signal"
-        description="How do you tell a bulk-sweep theft from a shopper picking up a product? The Active Defence Node (ADN) does it in under 50ms using kinetic signature classification and a forensic deployment module. This is forensic infrastructure, not AI surveillance."
+        description="How do you tell a bulk-sweep theft from a shopper picking up a product? The Active Deterrent Node (ADN) does it in under 50ms using kinetic signature classification and a forensic deployment module. This is forensic infrastructure, not AI surveillance."
         canonical="https://mykei.io/signal/surgeon-not-camera-200ms"
         ogImage="https://mykei.io/og/signal-surgeon-not-camera-200ms.png"
         keywords="ADN technical how it works, Tactical Multi-zone Sensor Array dual sensor theft detection, Encrypted Logic Core retail security, kinetic signature analysis theft, Forensic Mist Deployment System anti-theft, bulk sweep detection algorithm, forensic retail security hardware, 200 milliseconds theft response, ADN firmware explained, Mykei technical blog"
@@ -133,7 +133,7 @@ export default function SignalSurgeonNotCameraPage() {
               The security industry loves "AI-powered." Every camera system with a motion filter, every EAS tag reader with a beep threshold, every app that sends push notifications, all of them are "AI-powered" now. It's not a lie, exactly. It's just a word that has been diluted to the point of describing nothing specific.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The Active Defence Node (ADN) is a forensic instrument with one specific diagnostic task: distinguish a bulk-sweep theft event from normal retail activity, in real time, on device, without a network, without a camera, without capturing any personal data. The design target for bench testing is a false positive rate below 0.3%. If you've ever written a real-time classifier for constrained hardware, you know that's a tighter spec than it sounds.
+              The Active Deterrent Node (ADN) is a forensic instrument with one specific diagnostic task: distinguish a bulk-sweep theft event from normal retail activity, in real time, on device, without a network, without a camera, without capturing any personal data. The design target for bench testing is a false positive rate below 0.3%. If you've ever written a real-time classifier for constrained hardware, you know that's a tighter spec than it sounds.
             </p>
           </Reveal>
 
@@ -173,7 +173,7 @@ sensor_b = Tactical Multi-zone Sensor Array(i2c, address=0x29)  # Sensor B stays
 
           <Reveal>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              This matters for one reason beyond the technical: it means the <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>ADN</a> gets bilateral sweep data. A single sensor cannot distinguish between a normal single-item pick and a bulk sweep. Two sensors watching the same zone from different positions, firing simultaneously and comparing trajectory vectors, can. The kinetic signature of a bulk sweep is specific: bilateral displacement, high velocity, short dwell time, multiple simultaneous zone changes. A shopper picking up a product has a completely different signature.
+              This matters for one reason beyond the technical: it means the <a href="/adn" style={{ color: GOLD, textDecoration: "underline" }}>ADN</a> gets bilateral sweep data. A single sensor cannot distinguish between a normal single-item pick and a bulk sweep. Two sensors watching the same zone from different positions, firing simultaneously and comparing trajectory vectors, can. The kinetic signature of a bulk sweep is specific: bilateral displacement, high velocity, short dwell time, multiple simultaneous zone changes. A shopper picking up a product has a completely different signature.
             </p>
           </Reveal>
 

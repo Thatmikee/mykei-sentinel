@@ -68,7 +68,7 @@ const FAQS = [
   },
   {
     q: "Where can I read more about the ADN implementation?",
-    a: "Full technical specifications are at mykei.io/adn-1. The cloud registry (Mykei Registry) is documented at mykei.io/technology/ats."
+    a: "Full technical specifications are at mykei.io/adn. The cloud registry (Mykei Registry) is documented at mykei.io/technology/ats."
   },
 ];
 
@@ -177,8 +177,8 @@ export default function EconomicSterilisationPage() {
           border-bottom: 1px solid #E8E8E8;
         }
 
-        .es-compare-row:nth-child(even) { background: rgba(201,168,76,0.04); }
-        .es-compare-row:hover { background: rgba(201,168,76,0.08); }
+        .es-compare-row:nth-child(even) { background: rgba(13,148,136,0.04); }
+        .es-compare-row:hover { background: rgba(13,148,136,0.08); }
 
         .es-faq-item { border-bottom: 1px solid #E8E8E8; }
         .es-faq-btn {
@@ -200,9 +200,9 @@ export default function EconomicSterilisationPage() {
       <nav className={`es-nav ${scrolled ? "scrolled" : ""}`}>
         <a href="/" style={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <span style={{ fontSize: 13, fontWeight: 700, color: "#2D1204", letterSpacing: 0.5 }}>MYKEI SECURITIES LTD</span>
-          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: 2.5, textTransform: "uppercase", color: "#c9a84c" }}>← Back to site</span>
+          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488" }}>← Back to site</span>
         </a>
-        <a href="/signal" style={{ fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "8px 20px", borderRadius: 6 }}>Follow the Research →</a>
+        <a href="/signal" style={{ fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#0D9488", padding: "8px 20px", borderRadius: 6 }}>Follow the Research →</a>
       </nav>
 
       {/* HERO */}
@@ -210,19 +210,19 @@ export default function EconomicSterilisationPage() {
 
         <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 2 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 28 }}>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "#c9a84c" }}>Coined · 2025 · Michael Esema</span>
-            <div style={{ height: 1, flex: 1, background: "rgba(201,168,76,0.25)" }} />
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "#0D9488" }}>Coined · 2025 · Michael Esema</span>
+            <div style={{ height: 1, flex: 1, background: "rgba(13,148,136,0.25)" }} />
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1, color: "rgba(45,18,4,0.3)" }}>mykei.io · canonical source</span>
           </div>
 
           <div id="es-definition">
             <h1 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(36px,5vw,68px)", fontWeight: 400, color: "#2D1204", lineHeight: 1.1, marginBottom: 16, letterSpacing: -1 }}>
-              <dfn style={{ fontStyle: "italic", color: "#c9a84c" }}>Economic<br />Sterilisation</dfn>
+              <dfn style={{ fontStyle: "italic", color: "#0D9488" }}>Economic<br />Sterilisation</dfn>
             </h1>
 
             <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 36 }}>
               <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10.5, color: "rgba(45,18,4,0.35)", fontStyle: "italic" }}>noun</span>
-              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#c9a84c", letterSpacing: 1 }}>· also: Theft Economic Sterilisation System · TESS</span>
+              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#0D9488", letterSpacing: 1 }}>· also: Theft Economic Sterilisation System · TESS</span>
             </div>
 
             <p style={{ fontSize: "clamp(17px,2.2vw,22px)", lineHeight: 1.75, color: "#475569", maxWidth: 700, fontWeight: 300 }}>
@@ -235,13 +235,13 @@ export default function EconomicSterilisationPage() {
           <div id="es-attribution" style={{ marginTop: 40, paddingTop: 28, borderTop: "1px solid #E8E8E8", display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
             <div>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: 1.5, textTransform: "uppercase", color: "rgba(45,18,4,0.3)", marginBottom: 4 }}>Coined by</div>
-              <a href="/founder" style={{ fontSize: 14, fontWeight: 600, color: "#c9a84c" }}>Michael Esema</a>
+              <a href="/founder" style={{ fontSize: 14, fontWeight: 600, color: "#0D9488" }}>Michael Esema</a>
               <span style={{ fontSize: 13, color: "rgba(45,18,4,0.4)", marginLeft: 8 }}>Mykei Securities Ltd, Manchester, 2025</span>
             </div>
             <div style={{ height: 28, width: 1, background: "rgba(45,18,4,0.1)" }} />
             <div>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: 1.5, textTransform: "uppercase", color: "rgba(45,18,4,0.3)", marginBottom: 4 }}>First implementation</div>
-              <a href="/adn-1" style={{ fontSize: 14, fontWeight: 600, color: "#2D1204" }}>ADN Active Forensic Defence Node</a>
+              <a href="/adn" style={{ fontSize: 14, fontWeight: 600, color: "#2D1204" }}>ADN Active Forensic Defence Node</a>
             </div>
           </div>
         </div>
@@ -251,7 +251,7 @@ export default function EconomicSterilisationPage() {
       <section id="es-doctrine" className="es-section" style={{ background: "#fff", padding: "96px 52px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Reveal>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#c9a84c", display: "block", marginBottom: 12 }}>The doctrine</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488", display: "block", marginBottom: 12 }}>The doctrine</span>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(26px,3vw,40px)", fontWeight: 400, color: "#2D1204", marginBottom: 40, lineHeight: 1.2 }}>
               Why every other approach gets it wrong.
             </h2>
@@ -298,7 +298,7 @@ export default function EconomicSterilisationPage() {
       <section className="es-compare es-section" style={{ background: "#F8F8F8", padding: "96px 52px", borderTop: "1px solid #E8E8E8" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Reveal>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#c9a84c", display: "block", marginBottom: 12 }}>Comparison</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488", display: "block", marginBottom: 12 }}>Comparison</span>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#2D1204", marginBottom: 44, lineHeight: 1.2 }}>
               Traditional security vs Economic Sterilisation.
             </h2>
@@ -307,7 +307,7 @@ export default function EconomicSterilisationPage() {
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "'Sora',sans-serif" }}>
                 <thead>
-                  <tr style={{ background: "#F8F8F8", borderBottom: "2px solid #D4AF37" }}>
+                  <tr style={{ background: "#F8F8F8", borderBottom: "2px solid #0D9488" }}>
                     <th style={{ padding: "14px 20px", textAlign: "left", fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#8a7a5a", fontWeight: 400 }}>Aspect</th>
                     <th style={{ padding: "14px 20px", textAlign: "left", fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#8a7a5a", fontWeight: 400 }}>Traditional security</th>
                     <th style={{ padding: "14px 20px", textAlign: "left", fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#8a6a1a", fontWeight: 400 }}>Economic Sterilisation</th>
@@ -332,7 +332,7 @@ export default function EconomicSterilisationPage() {
       <section className="es-section" style={{ background: "#FFFFFF", padding: "96px 52px", borderTop: "1px solid #E8E8E8" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Reveal>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#D4AF37", display: "block", marginBottom: 12 }}>Implementation</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488", display: "block", marginBottom: 12 }}>Implementation</span>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16, lineHeight: 1.2 }}>
               The ADN is an early Theft Economic Sterilisation System.
             </h2>
@@ -352,7 +352,7 @@ export default function EconomicSterilisationPage() {
             ].map(({ step, title, body }) => (
               <Reveal key={step}>
                 <div style={{ padding: "28px 24px", border: "1px solid #E8E8E8", borderRadius: 8, background: "#FFFFFF" }}>
-                  <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 32, color: "#D4AF37", opacity: 0.4, lineHeight: 1, marginBottom: 16 }}>{step}</div>
+                  <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 32, color: "#0D9488", opacity: 0.4, lineHeight: 1, marginBottom: 16 }}>{step}</div>
                   <div style={{ fontSize: 15, fontWeight: 700, color: "#1E1E1E", marginBottom: 10 }}>{title}</div>
                   <div style={{ fontSize: 13, color: "#666", lineHeight: 1.7 }}>{body}</div>
                 </div>
@@ -361,7 +361,7 @@ export default function EconomicSterilisationPage() {
           </div>
           <Reveal delay={0.2}>
             <div style={{ marginTop: 40, display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <a href="/adn-1" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "12px 24px", borderRadius: 8 }}>ADN Technical Specs →</a>
+              <a href="/adn" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#0D9488", padding: "12px 24px", borderRadius: 8 }}>ADN Technical Specs →</a>
               <a href="/technology/ats" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "12px 24px", borderRadius: 8 }}>Mykei Registry →</a>
             </div>
           </Reveal>
@@ -373,7 +373,7 @@ export default function EconomicSterilisationPage() {
         <div style={{ maxWidth: 900, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }} className="doctrine-grid">
           <Reveal>
             <div>
-              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#D4AF37", marginBottom: 16 }}>Doctrine versus implementation</div>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#0D9488", marginBottom: 16 }}>Doctrine versus implementation</div>
               <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, lineHeight: 1.8, color: "#374151" }}>
                 Economic Sterilisation is the doctrine. ADN is the first implementation. The doctrine can be deployed at different market tiers: independent retail validation, strategic retail pilots, insurer-backed pilots, and future evidence-system alignment. The objective remains unchanged at every tier: remove the commercial incentive behind organised retail theft without increasing confrontation risk for staff.
               </p>
@@ -381,7 +381,7 @@ export default function EconomicSterilisationPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <div>
-              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#D4AF37", marginBottom: 16 }}>Why the batch reference matters</div>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#0D9488", marginBottom: 16 }}>Why the batch reference matters</div>
               <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, lineHeight: 1.8, color: "#374151" }}>
                 Forensic marking only becomes infrastructure when the physical marker connects to a verifiable digital record. Mykei's registry model is designed to link each event to a device ID, timestamp, location reference, event type, and forensic batch reference. That link is the bridge between a marked item and a traceable event record that supports investigation, insurer review, and resale disruption workflows.
               </p>
@@ -395,7 +395,7 @@ export default function EconomicSterilisationPage() {
       <section className="es-section" style={{ background: "#fff", padding: "96px 52px", borderTop: "1px solid #E8E8E8" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <Reveal>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#c9a84c", display: "block", marginBottom: 12 }}>Questions</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488", display: "block", marginBottom: 12 }}>Questions</span>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,36px)", fontWeight: 400, color: "#2D1204", marginBottom: 44 }}>
               Frequently asked about Economic Sterilisation.
             </h2>
@@ -408,7 +408,7 @@ export default function EconomicSterilisationPage() {
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
                   <span>{q}</span>
-                  <span style={{ fontSize: 18, color: "#c9a84c", flexShrink: 0, marginLeft: 16, transition: "transform 0.2s", transform: openFaq === i ? "rotate(45deg)" : "rotate(0)" }}>+</span>
+                  <span style={{ fontSize: 18, color: "#0D9488", flexShrink: 0, marginLeft: 16, transition: "transform 0.2s", transform: openFaq === i ? "rotate(45deg)" : "rotate(0)" }}>+</span>
                 </button>
                 {openFaq === i && (
                   <div style={{ fontSize: 14.5, lineHeight: 1.85, color: "#64748b", paddingBottom: 24 }}>{a}</div>
@@ -420,7 +420,7 @@ export default function EconomicSterilisationPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: "#FFFFFF", padding: "72px 52px", textAlign: "center", borderTop: "2px solid #D4AF37" }}>
+      <section style={{ background: "#FFFFFF", padding: "72px 52px", textAlign: "center", borderTop: "2px solid #0D9488" }}>
         <Reveal>
           <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16 }}>
             Follow the research.
@@ -429,8 +429,8 @@ export default function EconomicSterilisationPage() {
             The research continues. Register your interest to follow development of asset registration, marking readiness, evidence workflows, and resale-confidence reduction.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D4AF37", padding: "14px 32px", borderRadius: 8 }}>Follow the Research →</a>
-            <a href="/adn-1" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "14px 32px", borderRadius: 8 }}>View ADN Specs</a>
+            <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#0D9488", padding: "14px 32px", borderRadius: 8 }}>Follow the Research →</a>
+            <a href="/adn" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "14px 32px", borderRadius: 8 }}>View ADN Specs</a>
           </div>
         </Reveal>
       </section>

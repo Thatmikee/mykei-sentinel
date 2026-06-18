@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#c9a84c";
+const GOLD = "#0D9488";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -196,7 +196,7 @@ export default function SignalFogSecurityPage() {
               Fog system answer: yes, fully sellable. If the goods were taken, they are clean. If they weren't taken this time, they will be taken when the crew adjusts their approach.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              Active Defence Node (ADN) answer: designed not to be. The intended marker compound is designed to bond to items within the deployment range. In the proposed workflow, the batch code would be written to the Mykei Registry in real time. The design goal is to make the goods harder to sell anonymously. A registry-linked batch record cannot be erased by listing on eBay or Vinted. The marker is designed to be UV-detectable at inspection.
+              Active Deterrent Node (ADN) answer: designed not to be. The intended marker compound is designed to bond to items within the deployment range. In the proposed workflow, the batch code would be written to the Mykei Registry in real time. The design goal is to make the goods harder to sell anonymously. A registry-linked batch record cannot be erased by listing on eBay or Vinted. The marker is designed to be UV-detectable at inspection.
             </p>
           </Reveal>
 

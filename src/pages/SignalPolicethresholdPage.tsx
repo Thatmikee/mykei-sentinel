@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#c9a84c";
+const GOLD = "#0D9488";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -175,7 +175,7 @@ export default function SignalPoliceThresholdPage() {
 
           <Reveal>
             <p style={{ fontSize: 17, lineHeight: 1.85, marginBottom: 40, color: INK }}>
-              The police threshold does not change. What changes is whether the theft was worth doing in the first place. That is a different problem with a different solution. The <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>ADN</a> is that solution.
+              The police threshold does not change. What changes is whether the theft was worth doing in the first place. That is a different problem with a different solution. The <a href="/adn" style={{ color: GOLD, textDecoration: "underline" }}>ADN</a> is that solution.
             </p>
           </Reveal>
 

@@ -10,7 +10,7 @@ const SIM_EVENTS = [
 const TYPE_COLOUR: Record<string, string> = {
   DETECTION: "#8a6a1a",
   CONFIRM:   "#2D7D46",
-  DEPLOY:    "#D4AF37",
+  DEPLOY:    "#0D9488",
   REGISTRY:  "#1E1E1E",
   VERIFY:    "#8a6a1a",
   COMPLETE:  "#2D7D46",

@@ -4,7 +4,7 @@ import { blogPosts } from "@/data/blogPosts";
 import PageSEO from "@/components/PageSEO";
 
 const INK    = "#0F0C08";
-const GOLD   = "#B8962E";
+const GOLD   = "#0D9488";
 const PAPER  = "#FAFAF6";
 const WARM   = "#F2EDE3";
 const MUTED  = "#6B5E4A";

@@ -78,7 +78,7 @@ export function SensorPod({ lit, ping }: { lit: boolean; ping: boolean }) {
     <div style={{
       width: 34, height: 34, borderRadius: "50%", flexShrink: 0,
       background: lit ? "rgba(212,168,67,0.15)" : "#0E0E0E",
-      border: `2px solid ${lit ? "#D4A843" : "#252525"}`,
+      border: `2px solid ${lit ? "#0D9488" : "#252525"}`,
       boxShadow: lit
         ? (ping ? "0 0 22px rgba(212,168,67,0.6), 0 0 44px rgba(212,168,67,0.2)" : "0 0 10px rgba(212,168,67,0.3)")
         : "none",
@@ -87,7 +87,7 @@ export function SensorPod({ lit, ping }: { lit: boolean; ping: boolean }) {
     }}>
       <div style={{
         width: 13, height: 13, borderRadius: "50%",
-        background: lit ? "#D4A843" : "#1A1A1A",
+        background: lit ? "#0D9488" : "#1A1A1A",
         boxShadow: lit ? "0 0 10px rgba(212,168,67,0.9)" : "none",
         transition: "all 0.5s",
       }} />
@@ -103,7 +103,7 @@ export function SensorPod({ lit, ping }: { lit: boolean; ping: boolean }) {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   ADN-1 SCENE, dark panel on gold page
+   ADN SCENE, dark panel on gold page
 ───────────────────────────────────────────────────────────── */
 export function ADN1Scene({ phase }: { phase: number }) {
   const [sprayTrig, setSprayTrig] = useState(0);
@@ -145,7 +145,7 @@ export function ADN1Scene({ phase }: { phase: number }) {
         ][phase] ?? "",
         transition: "background 1.1s ease",
       }} />
-      {/* Floor glow, light cast down from ADN-1 */}
+      {/* Floor glow, light cast down from ADN */}
       <div style={{
         position: "absolute", bottom: 120, left: "50%", transform: "translateX(-50%)",
         width: 300, height: 80, pointerEvents: "none",
@@ -156,7 +156,7 @@ export function ADN1Scene({ phase }: { phase: number }) {
         borderRadius: "50%",
       }} />
 
-      {/* ── CSS 3D ADN-1 UNIT ── */}
+      {/* ── CSS 3D ADN UNIT ── */}
       <div style={{ position: "absolute", top: 115, left: "50%", transform: "translateX(-50%)", perspective: 1400 }}>
         <div style={{
           width: 300, height: 96,
@@ -223,7 +223,7 @@ export function ADN1Scene({ phase }: { phase: number }) {
             {[0,1,2].map(i => (
               <div key={i} style={{
                 width: 10, height: 10, borderRadius: "50%",
-                background: marked ? "#D4A843" : "#1A1A1A",
+                background: marked ? "#0D9488" : "#1A1A1A",
                 boxShadow: marked ? "0 0 10px rgba(212,168,67,0.8)" : "none",
                 transition: `all 0.4s ease ${i*80}ms`,
               }} />
@@ -236,8 +236,8 @@ export function ADN1Scene({ phase }: { phase: number }) {
       <svg viewBox="0 0 600 600" style={{ position: "absolute", inset: 0, overflow: "visible", pointerEvents: "none" }}>
         <defs>
           <radialGradient id="laserCone" cx="50%" cy="0%" r="100%">
-            <stop offset="0%" stopColor="#D4A843" stopOpacity="0.25" />
-            <stop offset="100%" stopColor="#D4A843" stopOpacity="0" />
+            <stop offset="0%" stopColor="#0D9488" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="#0D9488" stopOpacity="0" />
           </radialGradient>
           {/* 3D sphere for thief head */}
           <radialGradient id="head3d" cx="32%" cy="28%" r="68%">
@@ -275,14 +275,14 @@ export function ADN1Scene({ phase }: { phase: number }) {
             <feGaussianBlur stdDeviation="2.5" result="blur"/>
             <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
           </filter>
-          {/* Spotlight from ADN-1 downward */}
+          {/* Spotlight from ADN downward */}
           <radialGradient id="spotlight" cx="50%" cy="0%" r="100%">
             <stop offset="0%" stopColor={phase >= 2 ? "rgba(255,120,30,0.18)" : "rgba(212,168,67,0.1)"} stopOpacity="1" />
             <stop offset="100%" stopColor="transparent" stopOpacity="0" />
           </radialGradient>
         </defs>
 
-        {/* Spotlight from ADN-1 unit downward, active when lit */}
+        {/* Spotlight from ADN unit downward, active when lit */}
         {lit && (
           <polygon
             points="220,210 380,210 480,295 120,295"
@@ -295,7 +295,7 @@ export function ADN1Scene({ phase }: { phase: number }) {
 
         {/* Shelf rail */}
         <rect x="48" y="290" width="504" height="5" rx="2.5" fill="#1A1A1A" />
-        <rect x="48" y="290" width="504" height="1.5" fill="#D4A843" opacity="0.25" />
+        <rect x="48" y="290" width="504" height="1.5" fill="#0D9488" opacity="0.25" />
         <rect x="90" y="264" width="8" height="30" rx="2" fill="#141414" />
         <rect x="502" y="264" width="8" height="30" rx="2" fill="#141414" />
 
@@ -310,14 +310,14 @@ export function ADN1Scene({ phase }: { phase: number }) {
               <rect
                 x={x} y={swept ? 255 : 298} width={62} height={swept ? 0 : 50} rx={5}
                 fill={tagged ? "rgba(212,168,67,0.07)" : "#0D0D0D"}
-                stroke={blk ? "#EF4444" : tagged ? "#D4A843" : "#1C1C1C"}
+                stroke={blk ? "#EF4444" : tagged ? "#0D9488" : "#1C1C1C"}
                 strokeWidth={tagged ? 1.5 : 0.8}
                 opacity={swept ? 0 : 1}
                 style={{ transition: "all 0.8s cubic-bezier(0.16,1,0.3,1)" }}
               />
               {tagged && !swept && (
                 <text x={x+31} y={323} textAnchor="middle" fontSize={7}
-                  fill="#D4A843" fontFamily="JetBrains Mono,monospace" opacity={0.65}>DNA</text>
+                  fill="#0D9488" fontFamily="JetBrains Mono,monospace" opacity={0.65}>DNA</text>
               )}
               {blk && !swept && (
                 <text x={x+31} y={316} textAnchor="middle" fontSize={16}
@@ -454,7 +454,7 @@ export function ADN1Scene({ phase }: { phase: number }) {
           {/* DNA tagged halo, phase 2+ */}
           {phase >= 2 && (
             <>
-              <circle cx={0} cy={-20} r={0} fill="none" stroke="#D4A843" strokeWidth={2} strokeOpacity={0.7}>
+              <circle cx={0} cy={-20} r={0} fill="none" stroke="#0D9488" strokeWidth={2} strokeOpacity={0.7}>
                 <animate attributeName="r" from="8" to="75" dur="1.1s" repeatCount="indefinite" />
                 <animate attributeName="stroke-opacity" from="0.8" to="0" dur="1.1s" repeatCount="indefinite" />
               </circle>
@@ -473,19 +473,19 @@ export function ADN1Scene({ phase }: { phase: number }) {
             <polygon points="192,248 80,295 240,295"
               fill="url(#laserCone)" opacity={phase === 1 ? 0.9 : 0.5} />
             <line x1="192" y1="248" x2="105" y2="293"
-              stroke={phase === 2 ? "#FF8C42" : "#D4A843"} strokeWidth="2" strokeOpacity="0.9" strokeDasharray="5 4">
+              stroke={phase === 2 ? "#FF8C42" : "#0D9488"} strokeWidth="2" strokeOpacity="0.9" strokeDasharray="5 4">
               <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="0.35s" repeatCount="indefinite" />
             </line>
             {/* Right cone + beam */}
             <polygon points="408,248 360,295 520,295"
               fill="url(#laserCone)" opacity={phase === 1 ? 0.9 : 0.5} />
             <line x1="408" y1="248" x2="495" y2="293"
-              stroke={phase === 2 ? "#FF8C42" : "#D4A843"} strokeWidth="2" strokeOpacity="0.9" strokeDasharray="5 4">
+              stroke={phase === 2 ? "#FF8C42" : "#0D9488"} strokeWidth="2" strokeOpacity="0.9" strokeDasharray="5 4">
               <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="0.35s" repeatCount="indefinite" />
             </line>
             {/* Scan sweep line */}
             <line x1="48" y1="268" x2="552" y2="268"
-              stroke={phase === 1 ? "#FF6B35" : "#D4A843"} strokeWidth="0.8" strokeOpacity={phase === 1 ? 0.25 : 0.1} strokeDasharray="3 14">
+              stroke={phase === 1 ? "#FF6B35" : "#0D9488"} strokeWidth="0.8" strokeOpacity={phase === 1 ? 0.25 : 0.1} strokeDasharray="3 14">
               <animateTransform attributeName="transform" type="translate"
                 from="0 -14" to="0 14" dur="1s" repeatCount="indefinite" additive="sum" />
             </line>
@@ -509,7 +509,7 @@ export function ADN1Scene({ phase }: { phase: number }) {
             {[0,1,2,3].map(i => (
               <circle key={i} cx={300} cy={260} r={0}
                 fill="none"
-                stroke={["#FFD060","#D4A843","#FF8C42","#FF6B35"][i]}
+                stroke={["#FFD060","#0D9488","#FF8C42","#FF6B35"][i]}
                 strokeWidth={2.5 - i * 0.4} strokeOpacity={0.75}>
                 <animate attributeName="r" from="6" to={90 + i * 26}
                   dur={`${0.8 + i * 0.25}s`} begin={`${i * 0.15}s`} repeatCount="indefinite" />
@@ -598,8 +598,8 @@ export function ADN1Scene({ phase }: { phase: number }) {
         {[0,1,2,3,4].map(i => (
           <g key={i}>
             <circle cx={28} cy={200+i*50} r={5}
-              fill={i <= phase ? "#D4A843" : "#141414"}
-              stroke={i === phase ? "#D4A843" : "#1E1E1E"}
+              fill={i <= phase ? "#0D9488" : "#141414"}
+              stroke={i === phase ? "#0D9488" : "#1E1E1E"}
               strokeWidth={i === phase ? 1.5 : 1}
             />
             {i < 4 && <line x1={28} y1={205+i*50} x2={28} y2={245+i*50}
@@ -809,7 +809,7 @@ export default function ADN1InActionPage() {
         .adn-stat-n {
           font-family: 'Sora', system-ui, sans-serif;
           font-size: 40px; font-style: italic; font-weight: 700;
-          color: #D4A843; letter-spacing: -1px;
+          color: #0D9488; letter-spacing: -1px;
         }
         .adn-stat-l {
           font-family: 'JetBrains Mono', monospace;
@@ -899,7 +899,7 @@ export default function ADN1InActionPage() {
         }
         .adn-cta-overline {
           font-family: 'JetBrains Mono', monospace;
-          font-size: 9px; letter-spacing: 3px; color: #D4AF37;
+          font-size: 9px; letter-spacing: 3px; color: #0D9488;
           text-transform: uppercase; margin-bottom: 28px;
         }
         .adn-cta-h2 {
@@ -909,14 +909,14 @@ export default function ADN1InActionPage() {
           line-height: 1.08; letter-spacing: -2px;
           color: #1E1E1E; margin-bottom: 24px;
         }
-        .adn-cta-h2 em { color: #D4A843; font-style: italic; }
+        .adn-cta-h2 em { color: #0D9488; font-style: italic; }
         .adn-cta-sub {
           font-size: 17px; line-height: 1.8; color: #555;
           max-width: 540px; margin: 0 auto 52px;
         }
         .adn-cta-btn {
           display: inline-block;
-          background: #D4A843; color: #050505;
+          background: #0D9488; color: #050505;
           font-family: 'JetBrains Mono', monospace;
           font-weight: 700; font-size: 12px; letter-spacing: 2px;
           text-transform: uppercase;

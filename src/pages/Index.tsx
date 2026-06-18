@@ -121,7 +121,7 @@ export default function Index() {
   }, []);
 
   const navLinks = [
-    ["ADN", "/adn-1"],
+    ["ADN", "/adn"],
     ["How It Works", "/howitworks"],
     ["Economic Sterilisation", "/economic-sterilisation"],
     ["Signal", "/signal"],
@@ -323,7 +323,7 @@ export default function Index() {
           font-size: clamp(42px, 5.5vw, 72px);
           font-weight: 800; line-height: 1.04; letter-spacing: -2.5px; color: #111111; margin-bottom: 28px;
         }
-        .mk-identity-accent { color: #b5892a; font-style: italic; }
+        .mk-identity-accent { color: #0D9488; font-style: italic; }
 
         .mk-hero-body {
           font-size: 18px; line-height: 1.75; color: #475569; max-width: 520px; margin-bottom: 36px;
@@ -685,7 +685,7 @@ export default function Index() {
           {moreOpen && (
             <div className="mk-more-menu" onMouseLeave={() => setMoreOpen(false)}>
               <a href="/howitworks" onClick={() => setMoreOpen(false)}>How It Works</a>
-              <a href="/adn-1" onClick={() => setMoreOpen(false)}>ADN Device</a>
+              <a href="/adn" onClick={() => setMoreOpen(false)}>ADN Device</a>
               <a href="/economic-sterilisation" onClick={() => setMoreOpen(false)}>Economic Sterilisation</a>
               <a href="/enterprise" onClick={() => setMoreOpen(false)}>Enterprise</a>
               <div className="mk-more-divider" />
@@ -701,7 +701,7 @@ export default function Index() {
 
       {menuOpen && (
         <div className="mk-mobile-menu" style={{ position: "fixed", top: 64, left: 0, right: 0, zIndex: 199, overflowY: "auto", maxHeight: "calc(100vh - 64px)" }}>
-          <a href="/adn-1" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>ADN Device</a>
+          <a href="/adn" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>ADN Device</a>
           <a href="/howitworks" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>How It Works</a>
           <a href="/economic-sterilisation" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Economic Sterilisation</a>
           <div style={{ height: 1, background: "#E8E8E8", margin: "6px 0" }} />

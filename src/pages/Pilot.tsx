@@ -15,7 +15,7 @@ import { commercialTerms } from "@/data/commercialTerms";
 const TURNSTILE_SITE_KEY = "0x4AAAAAADLhkxAX0ez1A7Za";
 
 const DARK   = "#1C120A";
-const GOLD   = "#C8A96E";
+const GOLD   = "#0D9488";
 const CREAM  = "#F8F3ED";
 const SAND   = "#EDE5D8";
 const MUTED  = "#8A7560";

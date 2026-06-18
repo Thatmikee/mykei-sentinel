@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#c9a84c";
+const GOLD = "#0D9488";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -171,7 +171,7 @@ export default function SignalSalfordVintedPage() {
               The BRC 2026 report flags the resale gap explicitly. eBay, Vinted, and Facebook Marketplace have volume, and volume creates noise. In that noise a stolen razor looks like a second-hand one, especially when the seller has five months of positive feedback and a plausible story about clearing out a bathroom cabinet. Platform compliance teams are reactive by design. By the time a report gets investigated, the item is sold, the buyer has it, and the account has been refreshed.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 14 }}>
-              The <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>Mykei Registry</a> doesn't wait for a report. When the <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>ADN</a> fires and registers a batch code, that batch code is the bridge between the shelf and the resale channel. The intended pipeline, still in development: the registry is designed to support resale-channel verification. Mykei has filed seventeen patent claims covering this architecture (patent pending). What it means practically: the moment of marking is also the moment the goods become traceable across every channel they move through.
+              The <a href="/adn" style={{ color: GOLD, textDecoration: "underline" }}>Mykei Registry</a> doesn't wait for a report. When the <a href="/adn" style={{ color: GOLD, textDecoration: "underline" }}>ADN</a> fires and registers a batch code, that batch code is the bridge between the shelf and the resale channel. The intended pipeline, still in development: the registry is designed to support resale-channel verification. Mykei has filed seventeen patent claims covering this architecture (patent pending). What it means practically: the moment of marking is also the moment the goods become traceable across every channel they move through.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
               That's the part the security industry hasn't built in forty years of trying.
@@ -199,7 +199,7 @@ export default function SignalSalfordVintedPage() {
           <Reveal>
             <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>The pilot stores in Manchester are not testing a gadget.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The five retailers in the Independent Retail Pilot are testing a forensic doctrine. The Active Defence Node (ADN) is the hardware layer. The Mykei Registry is the audit layer. Together they make a store's inventory a liability to steal rather than an asset. When the OCGs doing systematic targeting update their target selection criteria, a Mykei-protected shop should drop off the list. Not because it has better cameras. Because the goods inside are no longer worth the acquisition cost.
+              The five retailers in the Independent Retail Pilot are testing a forensic doctrine. The Active Deterrent Node (ADN) is the hardware layer. The Mykei Registry is the audit layer. Together they make a store's inventory a liability to steal rather than an asset. When the OCGs doing systematic targeting update their target selection criteria, a Mykei-protected shop should drop off the list. Not because it has better cameras. Because the goods inside are no longer worth the acquisition cost.
             </p>
           </Reveal>
 

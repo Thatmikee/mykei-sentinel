@@ -30,7 +30,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-const GOLD = "#c9a84c";
+const GOLD = "#0D9488";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
 const FAINT = "#f5f1eb";
@@ -220,7 +220,7 @@ export default function BlogBeyondBuzzerPage() {
 
         <Reveal delay={0.12}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, paddingTop: 24, borderTop: `1px solid rgba(26,17,8,0.1)` }}>
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: FAINT, border: `1px solid rgba(201,168,76,0.3)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: 36, height: 36, borderRadius: "50%", background: FAINT, border: `1px solid rgba(13,148,136,0.3)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
               <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: GOLD, fontWeight: 500 }}>ME</span>
             </div>
             <div>
@@ -425,7 +425,7 @@ export default function BlogBeyondBuzzerPage() {
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, color: GOLD, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 10 }}>Previous</div>
                 <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 16, color: INK, lineHeight: 1.4 }}>The $796 Billion Problem: Why Retailers Are Losing the War on Theft</div>
               </a>
-              <a href="/adn-1" style={{ padding: "24px", border: `1px solid rgba(26,17,8,0.1)`, display: "block" }}>
+              <a href="/adn" style={{ padding: "24px", border: `1px solid rgba(26,17,8,0.1)`, display: "block" }}>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, color: GOLD, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 10 }}>Technical specs</div>
                 <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 16, color: INK, lineHeight: 1.4 }}>ADN Active Forensic Defence Node: Technical Overview</div>
               </a>

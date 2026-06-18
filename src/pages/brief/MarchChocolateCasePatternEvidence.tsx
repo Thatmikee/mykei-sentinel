@@ -73,7 +73,7 @@ export default function MarchChocolateCasePatternEvidence() {
 
       <p>
         See <a href="/howitworks">how the ADN turns a shelf event into a record</a>, then review the
-        <a href="/adn-1"> ADN system details</a>. To follow the research, visit <a href="/signal">mykei.io/signal</a>.
+        <a href="/adn"> ADN system details</a>. To follow the research, visit <a href="/signal">mykei.io/signal</a>.
       </p>
 
       <h2>Source</h2>

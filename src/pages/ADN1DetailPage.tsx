@@ -87,7 +87,7 @@ export default function ADN1DetailPage() {
       "description": "The ADN is a shelf-mounted retail security device using kinetic signature analysis to detect bulk sweep retail theft. It triggers controlled marker deployment and logs a cartridge-linked event record to the Mykei Registry. No cameras. No biometrics. No biometric or suspect identity data captured.",
       "author": { "@type": "Person", "@id": "https://michaelesema.com/#person", "name": "Michael Esema" },
       "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io" },
-      "url": "https://mykei.io/adn-1",
+      "url": "https://mykei.io/adn",
       "about": { "@type": "DefinedTerm", "name": "Economic Sterilisation", "url": "https://mykei.io/economic-sterilisation" }
     });
     if (!document.getElementById("adn1-product-schema")) document.head.appendChild(script);
@@ -107,13 +107,13 @@ export default function ADN1DetailPage() {
           className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider uppercase"
           style={{ textDecoration: "none" }}
         >
-          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 11, letterSpacing: "2.5px", color: "#D4A843", textTransform: "uppercase" as const }}>MYKEI</span>
+          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 11, letterSpacing: "2.5px", color: "#0D9488", textTransform: "uppercase" as const }}>MYKEI</span>
           Home
         </a>
         <a
-          href="/adn-1"
+          href="/adn"
           className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider transition-all rounded"
-          style={{ background: "#D4A843", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
+          style={{ background: "#0D9488", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
         >
           ▶ ADN in Action
         </a>
@@ -329,7 +329,7 @@ export default function ADN1DetailPage() {
               <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">ADN platform</span>
               <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4">ADN platform. ADN device.</h2>
               <p className="text-muted-foreground leading-relaxed">
-                ADN is Mykei's Active Defence Node platform. The first ADN model is designed for retail environments, combining non-visual detection, controlled forensic marking, and secure event registration in one system.
+                ADN is Mykei's Active Deterrent Node platform. The first ADN model is designed for retail environments, combining non-visual detection, controlled forensic marking, and secure event registration in one system.
               </p>
             </motion.div>
             <motion.div {...fade(0.1)}>

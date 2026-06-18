@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#c9a84c";
+const GOLD = "#0D9488";
 const INK  = "#1E1E1E";
 const MID  = "#5c4a32";
 const RULE = "#DDD5C4";

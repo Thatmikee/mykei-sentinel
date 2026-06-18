@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 const FOREST = "#1A3A2A";
 const GROVE  = "#2D5C3F";
-const BRASS  = "#C9A84C";
+const BRASS  = "#0D9488";
 const IVORY  = "#F8F5EE";
 const INK    = "#1E1E16";
 const MUTED  = "#66665A";
@@ -35,7 +35,7 @@ function SimpleNav() {
         Mykei Securities
       </a>
       <a
-        href="/adn-1"
+        href="/adn"
         style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: BRASS, border: `1px solid ${BRASS}`, padding: "7px 14px", textDecoration: "none" }}
         onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.7"; }}
         onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#c9a84c";
+const GOLD = "#0D9488";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -135,7 +135,7 @@ export default function SignalShopkeeperMathsPage() {
 
           <Reveal>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              I built the <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>Active Defence Node (ADN)</a> for her. For the jeweller on Deansgate. For the off-licence owner in Salford who told me he'd been hit three times in four months and had genuinely run out of options. BIRA members. Independent operators. The people the enterprise security industry consistently prices out and then ignores.
+              I built the <a href="/adn" style={{ color: GOLD, textDecoration: "underline" }}>Active Deterrent Node (ADN)</a> for her. For the jeweller on Deansgate. For the off-licence owner in Salford who told me he'd been hit three times in four months and had genuinely run out of options. BIRA members. Independent operators. The people the enterprise security industry consistently prices out and then ignores.
             </p>
           </Reveal>
 
@@ -241,7 +241,7 @@ export default function SignalShopkeeperMathsPage() {
               <div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: INK, marginBottom: 8 }}>About the Author</div>
                 <p style={{ fontSize: 14, lineHeight: 1.75, color: MID, margin: "0 0 10px" }}>
-                  <strong style={{ color: INK }}>Michael Esema, MBA, MSc.</strong> I started Mykei Securities on £10,000 of my own money because I saw independent retailers being failed by an industry that priced them out and called it adequate. Founder, ADN-1 inventor, Patent-pending: UK application No. 2606630.8. NUASA Most Auspicious Male Award. Lean Six Sigma. Based in Manchester.
+                  <strong style={{ color: INK }}>Michael Esema, MBA, MSc.</strong> I started Mykei Securities on £10,000 of my own money because I saw independent retailers being failed by an industry that priced them out and called it adequate. Founder, ADN inventor, Patent-pending: UK application No. 2606630.8. NUASA Most Auspicious Male Award. Lean Six Sigma. Based in Manchester.
                 </p>
                 <a href="https://michaelesema.com" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: GOLD, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none" }}>Founder's background and research at michaelesema.com</a>
               </div>

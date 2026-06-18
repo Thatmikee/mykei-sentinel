@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import PageSEO from "@/components/PageSEO";
 
-const GOLD = "#C9A84C";
+const GOLD = "#0D9488";
 const INK = "#1A1A18";
 const PAPER = "#FAFAF8";
 const MUTED = "#6B6B65";
@@ -107,7 +107,7 @@ export default function CertificationPage() {
               border: `1px solid ${GOLD}`,
               borderRadius: 120,
               background: "#fff",
-              boxShadow: `0 0 0 5px ${PAPER}, 0 0 0 6px ${GOLD}22, 0 8px 32px rgba(201,168,76,0.12)`,
+              boxShadow: `0 0 0 5px ${PAPER}, 0 0 0 6px ${GOLD}22, 0 8px 32px rgba(13,148,136,0.12)`,
             }}>
               <MykeiLogo height={88} fill={GOLD} />
               <div style={{

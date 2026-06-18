@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const GOLD = "#D4AF37";
+const GOLD = "#0D9488";
 const INK = "#1E1E1E";
 const PAPER = "#FAF8F3";
 const RULE = "#E2D9C8";

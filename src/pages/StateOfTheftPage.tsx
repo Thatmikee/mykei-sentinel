@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 
-const GOLD = "#C9A84C";
+const GOLD = "#0D9488";
 const INK = "#1E1E1E";
 const PAPER = "#FAFAF8";
 const MUTED = "#6B6B65";

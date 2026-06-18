@@ -78,7 +78,7 @@ const PHASES = [
 ];
 
 const STATUS_CONFIG = {
-  active: { label: "IN PROGRESS", bg: "rgba(201,168,76,0.12)", border: "rgba(201,168,76,0.4)", color: "#c9a84c", dot: "#c9a84c" },
+  active: { label: "IN PROGRESS", bg: "rgba(13,148,136,0.12)", border: "rgba(13,148,136,0.4)", color: "#0D9488", dot: "#0D9488" },
   next:   { label: "UP NEXT",     bg: "rgba(15,31,61,0.08)",   border: "rgba(15,31,61,0.2)",   color: "#0f1f3d", dot: "#0f1f3d" },
   planned:{ label: "PLANNED",     bg: "rgba(148,163,184,0.08)", border: "rgba(148,163,184,0.25)", color: "#94a3b8", dot: "#94a3b8" },
 };
@@ -131,12 +131,12 @@ export default function Roadmap() {
         }
         .rm-nav-brand { display: flex; flex-direction: column; gap: 2px; }
         .rm-nav-brand-name { font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #0f1f3d; line-height: 1; }
-        .rm-nav-brand-sub  { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; }
+        .rm-nav-brand-sub  { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: #0D9488; }
         .rm-nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
         .rm-nav-links a { font-size: 13px; font-weight: 500; color: #475569; padding: 6px 14px; border-radius: 6px; transition: all 0.15s; }
         .rm-nav-links a:hover, .rm-nav-links a.active { color: #0f1f3d; background: rgba(15,31,61,0.04); }
         .rm-nav-cta { font-size: 13px; font-weight: 600; color: #fff; background: #4A2008; padding: 8px 20px; border-radius: 6px; transition: all 0.2s; }
-        .rm-nav-cta:hover { background: #c9a84c; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,168,76,0.3); }
+        .rm-nav-cta:hover { background: #0D9488; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(13,148,136,0.3); }
         .rm-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
         .rm-hamburger span { display: block; width: 22px; height: 2px; background: #0f1f3d; border-radius: 2px; }
         .rm-mobile-menu { background: #fff; border-bottom: 1px solid #e2e8f3; padding: 16px 24px; display: flex; flex-direction: column; gap: 4px; }
@@ -146,7 +146,7 @@ export default function Roadmap() {
         /* HERO HEADER */
         .rm-header {
           background: #FFFFFF;
-          background-image: radial-gradient(rgba(201,168,76,0.07) 1px, transparent 1px);
+          background-image: radial-gradient(rgba(13,148,136,0.07) 1px, transparent 1px);
           background-size: 28px 28px;
           padding: 120px 52px 64px;
           position: relative; overflow: hidden;
@@ -162,7 +162,7 @@ export default function Roadmap() {
           display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: end;
           animation: fadeUp 0.7s ease both;
         }
-        .rm-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: #D4AF37; margin-bottom: 14px; }
+        .rm-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: #0D9488; margin-bottom: 14px; }
         .rm-h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: #1E1E1E; letter-spacing: -1px; line-height: 1.1; margin-bottom: 12px; }
         .rm-subline { font-size: 15px; color: #6E6E6E; max-width: 480px; line-height: 1.7; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.3px; }
 
@@ -170,14 +170,14 @@ export default function Roadmap() {
         .rm-progress-widget {
           background: rgba(255,255,255,0.04);
           backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(201,168,76,0.2);
+          border: 1px solid rgba(13,148,136,0.2);
           border-radius: 12px; padding: 24px 28px;
           min-width: 200px; text-align: center;
         }
-        .rm-progress-pct { font-size: 42px; font-weight: 800; color: #c9a84c; letter-spacing: -2px; line-height: 1; }
+        .rm-progress-pct { font-size: 42px; font-weight: 800; color: #0D9488; letter-spacing: -2px; line-height: 1; }
         .rm-progress-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 6px; }
         .rm-progress-bar-bg { background: rgba(255,255,255,0.06); border-radius: 100px; height: 4px; margin-top: 14px; overflow: hidden; }
-        .rm-progress-bar-fill { background: linear-gradient(90deg, #c9a84c, #f0d080); border-radius: 100px; height: 4px; transition: width 1.2s ease; }
+        .rm-progress-bar-fill { background: linear-gradient(90deg, #0D9488, #5EEAD4); border-radius: 100px; height: 4px; transition: width 1.2s ease; }
         .rm-progress-counts { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.2); margin-top: 8px; }
 
         /* FLOW DIAGRAM */
@@ -201,8 +201,8 @@ export default function Roadmap() {
         }
         .rm-flow-line { height: 1.5px; flex: 1; background: #e2e8f3; }
         .rm-flow-arrow { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid #e2e8f3; flex-shrink: 0; }
-        .rm-flow-arrow.gold { border-left-color: #c9a84c; }
-        .rm-flow-line.gold { background: linear-gradient(90deg, #c9a84c, #e8d080); }
+        .rm-flow-arrow.gold { border-left-color: #0D9488; }
+        .rm-flow-line.gold { background: linear-gradient(90deg, #0D9488, #5EEAD4); }
 
         /* CARDS GRID */
         .rm-cards-section { padding: 48px 52px 80px; }
@@ -214,8 +214,8 @@ export default function Roadmap() {
           overflow: hidden; transition: all 0.25s ease; cursor: pointer;
         }
         .rm-card.rm-card-selected {
-          border-color: #c9a84c;
-          box-shadow: 0 8px 32px rgba(201,168,76,0.12), 0 0 0 1px rgba(201,168,76,0.15);
+          border-color: #0D9488;
+          box-shadow: 0 8px 32px rgba(13,148,136,0.12), 0 0 0 1px rgba(13,148,136,0.15);
         }
         .rm-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(15,31,61,0.08); }
         .rm-card-head { padding: 16px; border-bottom: 1px solid #f1f5f9; }
@@ -328,7 +328,7 @@ export default function Roadmap() {
                   <div
                     className="rm-flow-pill"
                     style={{
-                      background: isSelected ? cfg.color : (isActive ? "rgba(201,168,76,0.08)" : "#f8f9fc"),
+                      background: isSelected ? cfg.color : (isActive ? "rgba(13,148,136,0.08)" : "#f8f9fc"),
                       borderColor: isSelected ? cfg.color : cfg.border,
                       color: isSelected ? "#fff" : cfg.color,
                       fontWeight: isActive || isSelected ? 600 : 400,

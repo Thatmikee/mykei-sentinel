@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#c9a84c";
-const GOLD_DARK = "#B8922A";
+const GOLD = "#0D9488";
+const GOLD_DARK = "#0D9488";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -138,7 +138,7 @@ export default function SignalCoopCrimeWarPage() {
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.22em", textTransform: "uppercase", color: GOLD }}>
                   The Signal · Issue 16 · Organised Retail Crime
                 </span>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", border: `1px solid rgba(201,168,76,0.5)`, color: GOLD, padding: "2px 10px", borderRadius: 2 }}>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", border: `1px solid rgba(13,148,136,0.5)`, color: GOLD, padding: "2px 10px", borderRadius: 2 }}>
                   Industry Analysis
                 </span>
               </div>
@@ -252,7 +252,7 @@ export default function SignalCoopCrimeWarPage() {
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
                 <div>
-                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: GOLD, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14, paddingBottom: 10, borderBottom: "1px solid rgba(201,168,76,0.3)" }}>
+                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: GOLD, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14, paddingBottom: 10, borderBottom: "1px solid rgba(13,148,136,0.3)" }}>
                     What changed
                   </div>
                   <ul style={{ margin: 0, padding: "0 0 0 18px", fontSize: 14, lineHeight: 2.1, color: "rgba(245,241,235,0.82)" }}>
@@ -309,11 +309,11 @@ export default function SignalCoopCrimeWarPage() {
             </p>
           </Reveal>
 
-          {/* ── ADN-1 vs CCTV comparison table (fully accessible) ── */}
+          {/* ── ADN vs CCTV comparison table (fully accessible) ── */}
           <Reveal>
             <SectionLabel>ADN versus the status quo</SectionLabel>
             <h2 style={{ fontFamily: "'Georgia', serif", fontSize: "clamp(20px, 2.8vw, 28px)", fontWeight: 700, letterSpacing: "-0.01em", color: INK, margin: "0 0 20px", lineHeight: 1.25 }}>
-              Why the Active Defence Node (ADN) changes the calculation.
+              Why the Active Deterrent Node (ADN) changes the calculation.
             </h2>
             <p style={{ fontSize: 18, lineHeight: 1.9, marginBottom: 32, color: INK }}>
               The table below is not a marketing comparison. It is a description of where in the crime sequence each system operates, and whether that position can affect the economics of organised retail theft.

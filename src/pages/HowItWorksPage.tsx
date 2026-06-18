@@ -141,7 +141,7 @@ export default function HowItWorksPage() {
           font-size: 10px;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: #765c14;
+          color: #0D9488;
           margin-bottom: 18px;
         }
         .hiw-hero {
@@ -171,7 +171,7 @@ export default function HowItWorksPage() {
           background: #ffffff;
           margin-bottom: 34px;
         }
-        .hiw-dot { width: 6px; height: 6px; border-radius: 50%; background: #d4af37; }
+        .hiw-dot { width: 6px; height: 6px; border-radius: 50%; background: #0D9488; }
         .hiw-badge span {
           font-family: 'JetBrains Mono', monospace;
           font-size: 10px;
@@ -187,7 +187,7 @@ export default function HowItWorksPage() {
           letter-spacing: -0.045em;
           font-weight: 800;
         }
-        .hiw-h1 span { color: #765c14; }
+        .hiw-h1 span { color: #0D9488; }
         .hiw-lead {
           max-width: 680px;
           color: #475569;
@@ -218,7 +218,7 @@ export default function HowItWorksPage() {
           letter-spacing: -0.035em;
           font-weight: 800;
         }
-        .hiw-h2 span { color: #765c14; }
+        .hiw-h2 span { color: #0D9488; }
         .hiw-copy {
           max-width: 680px;
           color: #4b5563;
@@ -236,7 +236,7 @@ export default function HowItWorksPage() {
         .hiw-card.dark { background: #0a0b0a; border-color: #0a0b0a; color: #f5f5f0; }
         .hiw-card-title { margin: 0 0 12px; font-size: 18px; font-weight: 800; color: inherit; }
         .hiw-card-text { margin: 0; color: #4b5563; line-height: 1.72; font-size: 15px; }
-        .hiw-card.dark .hiw-eyebrow { color: #d4af37; }
+        .hiw-card.dark .hiw-eyebrow { color: #0D9488; }
         .hiw-card.dark .hiw-card-text { color: rgba(245,245,240,0.86); }
         .hiw-loop { display: grid; gap: 16px; margin-top: 42px; }
         .hiw-step {
@@ -254,7 +254,7 @@ export default function HowItWorksPage() {
           height: 44px;
           border-radius: 50%;
           border: 1px solid rgba(118,92,20,0.35);
-          color: #765c14;
+          color: #0D9488;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -270,7 +270,7 @@ export default function HowItWorksPage() {
           letter-spacing: 0.08em;
           text-transform: uppercase;
           line-height: 1.55;
-          color: #765c14;
+          color: #0D9488;
           background: #f8f8f6;
           border: 1px solid #e8e4dc;
           border-radius: 6px;
@@ -312,7 +312,7 @@ export default function HowItWorksPage() {
           border-radius: 50%;
           border: 1px solid rgba(118,92,20,0.35);
           flex: 0 0 auto;
-          color: #765c14;
+          color: #0D9488;
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -334,7 +334,7 @@ export default function HowItWorksPage() {
         }
         .hiw-mini-flow strong {
           display: block;
-          color: #765c14;
+          color: #0D9488;
           font-family: 'JetBrains Mono', monospace;
           font-size: 10px;
           letter-spacing: 0.12em;
@@ -369,7 +369,7 @@ export default function HowItWorksPage() {
         .hiw-cta h2 { color: #ffffff; margin: 0 0 12px; font-size: clamp(28px, 4vw, 46px); line-height: 1.08; letter-spacing: -0.035em; }
         .hiw-cta p { color: rgba(245,245,240,0.86); margin: 0; line-height: 1.7; max-width: 620px; }
         .hiw-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-        .hiw-cta .hiw-btn.primary { background: #d4af37; color: #1e1e1e; }
+        .hiw-cta .hiw-btn.primary { background: #0D9488; color: #1e1e1e; }
         .hiw-cta .hiw-btn.secondary { background: transparent; color: #ffffff; border-color: rgba(255,255,255,0.28); }
         @media (max-width: 900px) {
           .hiw-hero { min-height: auto; padding-top: 104px; }
@@ -398,7 +398,7 @@ export default function HowItWorksPage() {
             <p className="hiw-lead">The ADN is designed for the moment a shelf loss becomes more than missing stock. It is intended to detect a defined theft pattern, deploy a controlled marker, and create a Mykei Registry record that can support verification later.</p>
             <div className="hiw-actions">
               <a className="hiw-btn primary" href="/signal">Follow the Research</a>
-              <a className="hiw-btn secondary" href="/adn-1">View ADN details</a>
+              <a className="hiw-btn secondary" href="/adn">View ADN details</a>
             </div>
           </div>
         </section>

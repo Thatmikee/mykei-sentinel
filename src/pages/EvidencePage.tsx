@@ -95,7 +95,7 @@ export default function EvidencePage() {
         .ev-section:last-child { border-bottom: none; }
         .ev-inner { max-width: 1100px; margin: 0 auto; }
         .ev-inner-md { max-width: 860px; margin: 0 auto; }
-        .ev-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: #D4AF37; margin-bottom: 14px; display: block; }
+        .ev-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: #0D9488; margin-bottom: 14px; display: block; }
         .ev-h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 42px); font-weight: 700; color: #1E1E1E; line-height: 1.1; margin-bottom: 14px; }
         .ev-body { font-size: 16px; color: #555; line-height: 1.78; max-width: 680px; }
         .ev-card { background: #FFFFFF; border: 1px solid #E8E8E8; border-radius: 8px; padding: 28px; }
@@ -114,22 +114,22 @@ export default function EvidencePage() {
         .ev-log-row { display: grid; grid-template-columns: 180px 1fr 100px; gap: 16px; padding: 14px 20px; border-bottom: 1px solid #E8E8E8; font-family: 'JetBrains Mono', monospace; font-size: 11px; align-items: center; }
         .ev-log-row:last-child { border-bottom: none; }
         .ev-log-header { background: #F8F8F8; border-radius: 8px 8px 0 0; font-weight: 600; color: #8a6a1a; font-size: 9px; letter-spacing: 1px; }
-        .ev-log-id { color: #D4AF37; }
+        .ev-log-id { color: #0D9488; }
         .ev-log-data { color: #555; }
         .ev-log-status { color: #2D7D46; font-weight: 600; text-align: right; }
         .ev-arch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
         .ev-arch-card { background: #FFFFFF; border: 1px solid #E8E8E8; border-radius: 8px; padding: 24px; }
-        .ev-arch-layer { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #D4AF37; margin-bottom: 10px; }
+        .ev-arch-layer { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #0D9488; margin-bottom: 10px; }
         .ev-arch-title { font-size: 14px; font-weight: 700; color: #1E1E1E; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #E8E8E8; }
         .ev-arch-list { list-style: none; padding: 0; }
         .ev-arch-list li { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #555; padding: 5px 0; border-bottom: 1px solid #F8F8F8; display: flex; align-items: center; gap: 7px; }
         .ev-arch-list li:last-child { border-bottom: none; }
-        .ev-arch-list li::before { content: '·'; color: #D4AF37; font-weight: 700; flex-shrink: 0; }
+        .ev-arch-list li::before { content: '·'; color: #0D9488; font-weight: 700; flex-shrink: 0; }
         .ev-patent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
         .ev-patent-item { background: #FFFFFF; border: 1px solid #E8E8E8; border-radius: 8px; padding: 20px 24px; }
         .ev-patent-label { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: #8a6a1a; margin-bottom: 6px; }
         .ev-patent-value { font-size: 14px; font-weight: 600; color: #1E1E1E; }
-        .ev-statement { background: #F8F8F8; border: 1px solid #E8E8E8; border-left: 3px solid #D4AF37; border-radius: 0 8px 8px 0; padding: 28px 32px; }
+        .ev-statement { background: #F8F8F8; border: 1px solid #E8E8E8; border-left: 3px solid #0D9488; border-radius: 0 8px 8px 0; padding: 28px 32px; }
         @media (max-width: 1024px) { .ev-arch-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
           .ev-nav { padding: 0 24px; }
@@ -147,13 +147,13 @@ export default function EvidencePage() {
           <img src="/mykei-logo.png" alt="Mykei Securities" style={{ height: 28, width: "auto" }} />
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase", color: "#2D1204" }}>MYKEI SECURITIES</span>
         </a>
-        <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase", background: "#D4AF37", color: "#1E1E1E", padding: "8px 20px", borderRadius: 6 }}>
+        <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase", background: "#0D9488", color: "#1E1E1E", padding: "8px 20px", borderRadius: 6 }}>
           Follow the Research
         </a>
       </nav>
 
       {/* HERO */}
-      <section style={{ background: "#fff", padding: "120px 52px 72px", borderBottom: "2px solid #D4AF37" }}>
+      <section style={{ background: "#fff", padding: "120px 52px 72px", borderBottom: "2px solid #0D9488" }}>
         <div className="ev-inner-md">
           <Reveal>
             <span className="ev-eyebrow">Deployment Evidence</span>
@@ -170,7 +170,7 @@ export default function EvidencePage() {
                 { label: "Patent", value: "No. 2606630.8 (UK)" },
                 { label: "Company", value: "No. 16984969 E&W" },
               ].map(({ label, value }) => (
-                <div key={label} style={{ borderLeft: "2px solid #D4AF37", paddingLeft: 14 }}>
+                <div key={label} style={{ borderLeft: "2px solid #0D9488", paddingLeft: 14 }}>
                   <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: 1.5, textTransform: "uppercase" as const, color: "#8a6a1a", marginBottom: 4 }}>{label}</div>
                   <div style={{ fontSize: 14, fontWeight: 700, color: "#1E1E1E" }}>{value}</div>
                 </div>
@@ -221,7 +221,7 @@ export default function EvidencePage() {
                   "Zero obligation to continue post-pilot",
                 ].map((item) => (
                   <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, padding: "9px 0", borderBottom: "1px solid #F8F8F8" }}>
-                    <span style={{ color: "#D4AF37", fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>
+                    <span style={{ color: "#0D9488", fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>
                     <span style={{ fontSize: 13, color: "#555", lineHeight: 1.5 }}>{item}</span>
                   </div>
                 ))}
@@ -413,7 +413,7 @@ export default function EvidencePage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: "#F8F8F8", padding: "72px 52px", borderTop: "2px solid #D4AF37" }}>
+      <section style={{ background: "#F8F8F8", padding: "72px 52px", borderTop: "2px solid #0D9488" }}>
         <div className="ev-inner-md" style={{ textAlign: "center" }}>
           <Reveal>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3.5vw,40px)", fontWeight: 700, color: "#1E1E1E", marginBottom: 14 }}>
@@ -423,10 +423,10 @@ export default function EvidencePage() {
               Mykei is seeking one serious network or enterprise pilot to evaluate asset registration, marking readiness, evidence workflows and resale-confidence reduction.
             </p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" as const }}>
-              <a href="/signal" style={{ background: "#D4AF37", color: "#1E1E1E", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6 }}>
+              <a href="/signal" style={{ background: "#0D9488", color: "#1E1E1E", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6 }}>
                 Follow the Research
               </a>
-              <a href="/adn-1" style={{ background: "transparent", color: "#2D1204", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6, border: "1px solid #E8E8E8" }}>
+              <a href="/adn" style={{ background: "transparent", color: "#2D1204", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6, border: "1px solid #E8E8E8" }}>
                 ADN Technical Spec
               </a>
             </div>

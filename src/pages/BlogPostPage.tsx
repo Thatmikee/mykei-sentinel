@@ -39,7 +39,7 @@ const POST_COMPONENTS: Record<string, React.ComponentType> = {
 };
 
 const DARK = "#1C120A";
-const GOLD = "#C8A96E";
+const GOLD = "#0D9488";
 const MUTED = "#8A7560";
 
 export default function BlogPostPage() {

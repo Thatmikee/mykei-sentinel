@@ -20,8 +20,8 @@ export default function IndependentRetailerEconomics() {
           fontSize: 11,
           letterSpacing: "0.15em",
           textTransform: "uppercase",
-          color: "#D4AF37",
-          border: "1px solid #D4AF37",
+          color: "#0D9488",
+          border: "1px solid #0D9488",
           padding: "4px 10px",
           marginBottom: 12,
         }}>

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { BlogPostMeta } from "@/data/blogPosts";
 
 const DARK = "#1E1E1E";
-const GOLD = "#D4AF37";
+const GOLD = "#0D9488";
 const CREAM = "#F8F3ED";
 const MUTED = "#8A7560";
 

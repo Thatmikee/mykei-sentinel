@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#c9a84c";
+const GOLD = "#0D9488";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -220,7 +220,7 @@ export default function SignalCCTVScamPage() {
                   "CCTV records theft. It does not remove the financial incentive for it.",
                   "Organised crime groups treat cameras as a routing problem, not a deterrent.",
                   "Economic Sterilisation addresses the actual decision calculus: can I sell this? If the answer is no, the theft is irrational.",
-                  "The Active Defence Node (ADN) is designed to address this directly: make the goods harder to sell anonymously, and the financial case for stealing them weakens before the act.",
+                  "The Active Deterrent Node (ADN) is designed to address this directly: make the goods harder to sell anonymously, and the financial case for stealing them weakens before the act.",
                 ].map((t, i) => (
                   <li key={i} style={{ display: "flex", gap: 12, padding: "9px 0", borderBottom: i < 4 ? `1px solid ${RULE}` : "none", fontSize: 14, lineHeight: 1.65, color: INK }}>
                     <span style={{ color: GOLD, fontWeight: 700, flexShrink: 0, fontFamily: "'JetBrains Mono',monospace", fontSize: 12 }}>0{i + 1}</span>

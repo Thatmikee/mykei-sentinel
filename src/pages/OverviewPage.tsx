@@ -124,7 +124,7 @@ export default function OverviewPage() {
         /* PROOF BAR */
         .ov-proof {
           background: #F8F8F8;
-          border-top: 2px solid #D4AF37;
+          border-top: 2px solid #0D9488;
           border-bottom: 1px solid #E8E8E8;
           padding: 0 52px;
           display: flex;
@@ -164,7 +164,7 @@ export default function OverviewPage() {
           font-weight: 700;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #D4AF37;
+          color: #0D9488;
           margin-bottom: 12px;
         }
         .ov-section h2 {
@@ -195,7 +195,7 @@ export default function OverviewPage() {
           content: '→';
           position: absolute;
           left: 0;
-          color: #D4AF37;
+          color: #0D9488;
           font-weight: 600;
         }
 
@@ -219,7 +219,7 @@ export default function OverviewPage() {
           font-family: 'JetBrains Mono', monospace;
           font-size: 28px;
           font-weight: 700;
-          color: #D4AF37;
+          color: #0D9488;
           padding-top: 2px;
         }
         .ov-step-title {
@@ -288,7 +288,7 @@ export default function OverviewPage() {
         /* CTA */
         .ov-cta {
           background: #FFFFFF;
-          border-top: 2px solid #D4AF37;
+          border-top: 2px solid #0D9488;
           border-bottom: 1px solid #E8E8E8;
           padding: 48px 52px;
           text-align: center;
@@ -313,7 +313,7 @@ export default function OverviewPage() {
         }
         .ov-btn-primary {
           display: inline-block;
-          background: #D4AF37;
+          background: #0D9488;
           color: #1E1E1E;
           font-size: 13px;
           font-weight: 700;
@@ -340,7 +340,7 @@ export default function OverviewPage() {
           text-decoration: none;
           cursor: pointer;
         }
-        .ov-btn-secondary:hover { border-color: #D4AF37; }
+        .ov-btn-secondary:hover { border-color: #0D9488; }
 
         /* FOOTER NOTE */
         .ov-footnote {
@@ -470,7 +470,7 @@ export default function OverviewPage() {
           <div className="ov-cta-links">
             <a href="/evidence" className="ov-btn-primary">Full Evidence Package</a>
             <a href="/signal" className="ov-btn-secondary">Follow the Research</a>
-            <a href="/adn-1" className="ov-btn-secondary">ADN Technical Spec</a>
+            <a href="/adn" className="ov-btn-secondary">ADN Technical Spec</a>
           </div>
         </div>
 

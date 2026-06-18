@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#c9a84c";
+const GOLD = "#0D9488";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -97,7 +97,7 @@ export default function SignalDMRGMBPage() {
           </Reveal>
           <Reveal delay={0.2}>
             <p style={{ fontSize: 19, lineHeight: 1.75, color: MID, margin: "0 0 32px", fontStyle: "italic" }}>
-              He called it security theatre. The industry bristled. But nobody answered the actual question: if not cameras, then what? The <a href="/adn-1" style={{ color: GOLD, textDecoration: "underline" }}>Active Defence Node (ADN)</a> is the answer.
+              He called it security theatre. The industry bristled. But nobody answered the actual question: if not cameras, then what? The <a href="/adn" style={{ color: GOLD, textDecoration: "underline" }}>Active Deterrent Node (ADN)</a> is the answer.
             </p>
           </Reveal>
           <Reveal delay={0.25}>

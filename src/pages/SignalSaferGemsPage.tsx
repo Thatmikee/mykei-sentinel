@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#c9a84c";
+const GOLD = "#0D9488";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -299,7 +299,7 @@ export default function SignalSaferGemsPage() {
           <Reveal>
             <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>What actually changes the economics.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The Active Defence Node (ADN) deployment module marks every item in a display case with a forensic marker compound within 200 milliseconds of activation. The batch code registers in the Mykei Registry in real time. From that point, every piece of stock in the affected area carries a UV-visible marker tied to that specific retailer's registry entry.
+              The Active Deterrent Node (ADN) deployment module marks every item in a display case with a forensic marker compound within 200 milliseconds of activation. The batch code registers in the Mykei Registry in real time. From that point, every piece of stock in the affected area carries a UV-visible marker tied to that specific retailer's registry entry.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
               A crew that takes marked gold cannot sell it anonymously. Listing on eBay or Vinted leaves a batch record. Presenting it to a legitimate trade buyer exposes the UV marker. The item is commercially difficult to move. The robbery has not produced the outcome the crew planned for.

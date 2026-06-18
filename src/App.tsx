@@ -57,10 +57,11 @@ const App = () => (
             <Route path="/howitworks" element={<HowItWorks />} />
             <Route path="/how-it-works" element={<Navigate to="/howitworks" replace />} />
             <Route path="/roadmap" element={<Roadmap />} />
-            <Route path="/adn-1" element={<ADN1Detail />} />
-            <Route path="/technology/adn-1" element={<Navigate to="/adn-1" replace />} />
+            <Route path="/adn" element={<ADN1Detail />} />
+            <Route path="/adn-1" element={<Navigate to="/adn" replace />} />
+            <Route path="/technology/adn-1" element={<Navigate to="/adn" replace />} />
             <Route path="/technology/ats" element={<ATSDetail />} />
-            <Route path="/adn-1-in-action" element={<Navigate to="/adn-1" replace />} />
+            <Route path="/adn-1-in-action" element={<Navigate to="/adn" replace />} />
             <Route path="/founder" element={<FounderPage />} />
             <Route path="/michael-esema" element={<FounderPage />} />
             <Route path="/economic-sterilisation" element={<EconomicSterilisationPage />} />
@@ -71,7 +72,7 @@ const App = () => (
             <Route path="/glossary/economic-sterilisation" element={<GlossaryESPage />} />
             <Route path="/glossary/economic-sterilization" element={<GlossaryESPage />} />
             <Route path="/overview" element={<Navigate to="/howitworks" replace />} />
-            <Route path="/evidence" element={<Navigate to="/adn-1" replace />} />
+            <Route path="/evidence" element={<Navigate to="/adn" replace />} />
             <Route path="/thesis" element={<Navigate to="/economic-sterilisation" replace />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/contact" element={<ContactPage />} />

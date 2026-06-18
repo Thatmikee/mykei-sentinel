@@ -44,7 +44,7 @@ const TIMELINE = [
 
 const TYPE_COLORS: Record<string, string> = {
   edu: "#6366f1",
-  work: "#c9a84c",
+  work: "#0D9488",
   pivot: "#2dd4bf",
   invention: "#f59e0b",
   founding: "#22c55e",
@@ -150,7 +150,7 @@ export default function FounderPage() {
           <span style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 700, color: "#1E1E1E", letterSpacing: 0.5 }}>MYKEI SECURITIES LTD</span>
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: 2.5, textTransform: "uppercase", color: "#8a7a5a" }}>Back to site</span>
         </a>
-        <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "8px 20px", borderRadius: 8 }}>Follow the Research</a>
+        <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#0D9488", padding: "8px 20px", borderRadius: 8 }}>Follow the Research</a>
       </nav>
 
       {/* HERO */}
@@ -166,7 +166,7 @@ export default function FounderPage() {
 
             <h1 id="founder-name" style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(48px,7vw,96px)", fontWeight: 400, lineHeight: 1.05, color: "#1E1E1E", letterSpacing: -2, marginBottom: 8 }}>
               Michael<br />
-              <span style={{ color: "#765C14" }}>Esema</span>
+              <span style={{ color: "#0D9488" }}>Esema</span>
             </h1>
 
 
@@ -179,7 +179,7 @@ export default function FounderPage() {
             </p>
 
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <a href="/economic-sterilisation" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, background: "#D4AF37", padding: "12px 24px", borderRadius: 8, color: "#1E1E1E" }}>
+              <a href="/economic-sterilisation" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, background: "#0D9488", padding: "12px 24px", borderRadius: 8, color: "#1E1E1E" }}>
                 Read: Economic Sterilisation
               </a>
               <a href="https://michaelesema.com" target="_blank" rel="noreferrer" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "12px 24px", borderRadius: 8 }}>
@@ -195,7 +195,7 @@ export default function FounderPage() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="fn-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80 }}>
             <Reveal>
-              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#765C14", display: "block", marginBottom: 20 }}>
+              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488", display: "block", marginBottom: 20 }}>
                 The origin
               </span>
               <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(28px,3vw,42px)", fontWeight: 400, color: "#1E1E1E", lineHeight: 1.2, marginBottom: 32 }}>
@@ -244,7 +244,7 @@ export default function FounderPage() {
       <section style={{ background: "#FFFFFF", padding: "96px 52px", borderTop: "1px solid #E8E8E8" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <Reveal>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#765C14", display: "block", marginBottom: 12 }}>Career & education</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488", display: "block", marginBottom: 12 }}>Career & education</span>
             <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(26px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", lineHeight: 1.2, marginBottom: 60 }}>
               The path that led to the ADN.
             </h2>
@@ -260,12 +260,12 @@ export default function FounderPage() {
                   <div style={{
                     position: "absolute", left: -40, top: 4,
                     width: 10, height: 10, borderRadius: "50%",
-                    background: type === "founding" ? "#D4AF37" : type === "invention" ? "#D4AF37" : "#E8E8E8",
-                    border: `2px solid ${type === "founding" || type === "invention" ? "#D4AF37" : "#C8C5C0"}`,
+                    background: type === "founding" ? "#0D9488" : type === "invention" ? "#0D9488" : "#E8E8E8",
+                    border: `2px solid ${type === "founding" || type === "invention" ? "#0D9488" : "#C8C5C0"}`,
                     flexShrink: 0,
                   }} />
                   <div>
-                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, color: "#765C14", marginBottom: 4 }}>{year}</div>
+                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, color: "#0D9488", marginBottom: 4 }}>{year}</div>
                     <div style={{ fontSize: 14.5, fontWeight: 600, color: "#1E1E1E", marginBottom: 4, lineHeight: 1.4 }}>{title}</div>
                     <div style={{ fontSize: 13, color: "#555", lineHeight: 1.6 }}>{sub}</div>
                   </div>
@@ -280,7 +280,7 @@ export default function FounderPage() {
       <section id="coinage-section" style={{ background: "#FFFFFF", padding: "96px 52px", borderTop: "1px solid #E8E8E8" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#765C14", display: "block", marginBottom: 20 }}>Coined 2025</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488", display: "block", marginBottom: 20 }}>Coined 2025</span>
             <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(28px,3.5vw,48px)", fontWeight: 400, color: "#1E1E1E", lineHeight: 1.15, marginBottom: 32, maxWidth: 700 }}>
               He named the thing no one had named yet.
             </h2>
@@ -299,13 +299,13 @@ export default function FounderPage() {
                 for stolen goods and you remove the economic rationale for taking them.
                 He called this <em style={{ color: "#8a6a1a", fontStyle: "normal", fontWeight: 600 }}>Economic Sterilisation</em>.
               </p>
-              <a href="/economic-sterilisation" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "'JetBrains Mono',monospace", fontSize: 10.5, letterSpacing: 1.5, textTransform: "uppercase", color: "#765C14", borderBottom: "1px solid #D4AF37", paddingBottom: 3 }}>
+              <a href="/economic-sterilisation" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontFamily: "'JetBrains Mono',monospace", fontSize: 10.5, letterSpacing: 1.5, textTransform: "uppercase", color: "#0D9488", borderBottom: "1px solid #0D9488", paddingBottom: 3 }}>
                 Read the full doctrine
               </a>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <div style={{ background: "#FFFFFF", border: "1px solid #E8E8E8", borderLeft: "3px solid #D4AF37", borderRadius: 8, padding: 32 }}>
+              <div style={{ background: "#FFFFFF", border: "1px solid #E8E8E8", borderLeft: "3px solid #0D9488", borderRadius: 8, padding: 32 }}>
                 <p style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: 11, fontStyle: "italic", color: "#8a7a5a", letterSpacing: 1, textTransform: "uppercase", marginBottom: 20 }}>Definition · claim-safe framing</p>
                 <p style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: 20, fontStyle: "italic", color: "#1E1E1E", lineHeight: 1.65, marginBottom: 20 }}>
                   "A framework for reducing the resale confidence and economic acceptability of stolen goods through marking, registry records, evidence workflows and lawful verification."
@@ -333,7 +333,7 @@ export default function FounderPage() {
             ].map(({ label, sub, tag }) => (
               <Reveal key={label}>
                 <div style={{ padding: "22px 20px", border: "1px solid #E8E8E8", borderRadius: 8, background: "#FFFFFF" }}>
-                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: 1.5, color: "#765C14", marginBottom: 10 }}>{tag}</div>
+                  <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: 1.5, color: "#0D9488", marginBottom: 10 }}>{tag}</div>
                   <div style={{ fontSize: 13.5, fontWeight: 600, color: "#1E1E1E", lineHeight: 1.35, marginBottom: 6 }}>{label}</div>
                   <div style={{ fontSize: 11.5, color: "#555", lineHeight: 1.5 }}>{sub}</div>
                 </div>
@@ -344,14 +344,14 @@ export default function FounderPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: "#FFFFFF", padding: "72px 52px", borderTop: "2px solid #D4AF37", textAlign: "center" }}>
+      <section style={{ background: "#FFFFFF", padding: "72px 52px", borderTop: "2px solid #0D9488", textAlign: "center" }}>
         <Reveal>
           <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16 }}>
             Follow the research.
           </h2>
           <p style={{ fontSize: 15, color: "#666", marginBottom: 36 }}>ADN is patent-pending R&D. Field validation not yet begun.</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D4AF37", padding: "14px 32px", borderRadius: 8 }}>Follow the Research</a>
+            <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#0D9488", padding: "14px 32px", borderRadius: 8 }}>Follow the Research</a>
             <a href="https://michaelesema.com" target="_blank" rel="noreferrer" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "14px 32px", borderRadius: 8 }}>Visit michaelesema.com</a>
           </div>
         </Reveal>

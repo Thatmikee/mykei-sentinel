@@ -82,13 +82,13 @@ export default function ATSDetailPage() {
           className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider uppercase"
           style={{ textDecoration: "none" }}
         >
-          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 11, letterSpacing: "2.5px", color: "#D4A843", textTransform: "uppercase" as const }}>MYKEI</span>
+          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 11, letterSpacing: "2.5px", color: "#0D9488", textTransform: "uppercase" as const }}>MYKEI</span>
           Home
         </a>
         <a
-          href="/adn-1"
+          href="/adn"
           className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider transition-all rounded"
-          style={{ background: "#D4A843", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
+          style={{ background: "#0D9488", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
         >
           ▶ ADN in Action
         </a>
@@ -285,7 +285,7 @@ export default function ATSDetailPage() {
                 Follow the Research →
               </button>
               <button
-                onClick={() => navigate("/adn-1")}
+                onClick={() => navigate("/adn")}
                 className="px-8 py-4 border border-border font-mono text-sm uppercase tracking-wider hover:border-primary/40 transition-colors rounded text-muted-foreground hover:text-foreground"
               >
                 View ADN →

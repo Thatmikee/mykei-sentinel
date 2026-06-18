@@ -6,7 +6,7 @@
 import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 
-const GOLD = "#C9A84C";
+const GOLD = "#0D9488";
 const INK = "#1A1A18";
 const MUTED = "#5A5A54";
 const RULE = "#E4E4E0";
@@ -222,7 +222,7 @@ export default function DoctrinePage() {
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { background: ${PAPER}; color: ${INK}; font-family: 'Sora', sans-serif; }
-        ::selection { background: rgba(201,168,76,0.2); }
+        ::selection { background: rgba(13,148,136,0.2); }
         *:focus-visible { outline: 2px solid ${GOLD}; outline-offset: 3px; }
         @media (prefers-reduced-motion: reduce) {
           * { transition: none !important; animation: none !important; }

@@ -30,7 +30,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-const GOLD = "#c9a84c";
+const GOLD = "#0D9488";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
 const FAINT = "#f5f1eb";
@@ -40,7 +40,7 @@ const RELATED = [
   { term: "Mykei Registry", short: "MR", desc: "Mykei's cloud platform that registers cartridge-linked event records for marked items, supporting verification and investigation workflows." },
   { term: "Kinetic Signature Analysis", short: "KSA", desc: "The detection method used by the ADN. Dual Time-of-Flight sensors classify the motion pattern of a bulk-sweep event in under 50ms. No camera. No biometrics." },
   { term: "Market Reduction Approach", short: "MRA", desc: "An evidence-based strategy from academic criminology focused on disrupting the markets that receive stolen goods. Economic Sterilisation extends this logic into modern asset marking, registry records, evidence workflows and lawful verification." },
-  { term: "ADN Active Defence Node", short: "ADN", desc: "A patent-pending R&D pathway inside Mykei for event-triggered marking and registry-linked evidence. It has controlled prototype and registry evidence, but should not be described as field validated or commercially deployed." },
+  { term: "ADN Active Deterrent Node", short: "ADN", desc: "A patent-pending R&D pathway inside Mykei for event-triggered marking and registry-linked evidence. It has controlled prototype and registry evidence, but should not be described as field validated or commercially deployed." },
 ];
 
 const FAQS = [
@@ -62,7 +62,7 @@ const FAQS = [
   },
   {
     q: "Where can I read more?",
-    a: "The full doctrine is at mykei.io/economic-sterilisation. Technical implementation is at mykei.io/adn-1. The white paper is available for download at the bottom of this page.",
+    a: "The full doctrine is at mykei.io/economic-sterilisation. Technical implementation is at mykei.io/adn. The white paper is available for download at the bottom of this page.",
   },
 ];
 
@@ -405,7 +405,7 @@ export default function GlossaryESPage() {
               <a href="/economic-sterilisation" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#fff", background: INK, padding: "11px 24px", display: "inline-block" }}>
                 Read the full doctrine
               </a>
-              <a href="/adn-1" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 500, color: INK, border: `1px solid rgba(26,17,8,0.2)`, padding: "11px 24px", display: "inline-block" }}>
+              <a href="/adn" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 500, color: INK, border: `1px solid rgba(26,17,8,0.2)`, padding: "11px 24px", display: "inline-block" }}>
                 See ADN
               </a>
             </div>

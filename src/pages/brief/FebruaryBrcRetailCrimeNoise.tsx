@@ -72,7 +72,7 @@ export default function FebruaryBrcRetailCrimeNoise() {
       <h2>Read next</h2>
 
       <p>
-        Read <a href="/howitworks">how the ADN works</a>, then see the <a href="/adn-1">ADN system page</a>.
+        Read <a href="/howitworks">how the ADN works</a>, then see the <a href="/adn">ADN system page</a>.
         To follow the research, visit <a href="/signal">mykei.io/signal</a>.
       </p>
 

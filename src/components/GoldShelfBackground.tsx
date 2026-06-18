@@ -128,7 +128,7 @@ export const GoldShelfBackground = () => (
       ))}
 
       {/*
-        ── ADN-1 UNITS ──
+        ── ADN UNITS ──
         3 bays × 4 shelf positions (top rail + 3 shelves)
         Bay centres: ~310, ~720, ~1110
         Shelf y positions: 180 (top rail), 370, 530, 690

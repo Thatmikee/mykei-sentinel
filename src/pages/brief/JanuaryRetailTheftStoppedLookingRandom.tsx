@@ -62,7 +62,7 @@ export default function JanuaryRetailTheftStoppedLookingRandom() {
       <h2>Read next</h2>
 
       <p>
-        See <a href="/howitworks">how the ADN works</a> and the <a href="/adn-1">ADN system page</a>.
+        See <a href="/howitworks">how the ADN works</a> and the <a href="/adn">ADN system page</a>.
         To follow the research, visit <a href="/signal">mykei.io/signal</a>.
       </p>
 
