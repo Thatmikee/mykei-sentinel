@@ -791,7 +791,7 @@ export default function Index() {
         <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: "repeating-linear-gradient(transparent, transparent 47px, #111111 47px, #111111 48px)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative" }}>
           <Reveal>
-            <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(38px,5.5vw,76px)", fontWeight: 700, lineHeight: 1.22, color: "#1E1E1E", margin: "0 0 clamp(40px,5vw,72px)", maxWidth: 820 }}>
+            <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(28px,3.6vw,50px)", fontWeight: 700, lineHeight: 1.22, color: "#1E1E1E", margin: "0 0 clamp(40px,5vw,72px)", maxWidth: 820 }}>
               A world where stealing<br />simply <span className="mk-vision-accent">stops making sense.</span>
             </h2>
           </Reveal>
