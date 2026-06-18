@@ -50,18 +50,21 @@ function useReveal(threshold = 0.15) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    // Already in viewport at mount — show immediately (handles fast loads, screenshots, crawlers)
+    // Already in viewport (or close) at mount — show immediately
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight * 1.1 && rect.bottom > 0) {
       setVisible(true);
       return;
     }
+    // On mobile viewports, reveal everything after a short delay so content
+    // is never permanently invisible if the user doesn't scroll far enough
+    const fallback = setTimeout(() => setVisible(true), 1800);
     const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); clearTimeout(fallback); } },
       { threshold }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => { obs.disconnect(); clearTimeout(fallback); };
   }, [threshold]);
   return { ref, visible };
 }
@@ -649,10 +652,29 @@ export default function Index() {
         .mk-mobile-cta { font-size: 14px; font-weight: 700; color: #fff; background: #111111; padding: 12px; border-radius: 6px; text-align: center; margin-top: 8px; }
 
         @media (max-width: 1024px) {
-          .mk-hero-inner { grid-template-columns: 1fr; }
+          .mk-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+          .mk-hero-stats {
+            display: flex !important;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 12px;
+            border: none !important;
+            background: transparent !important;
+            padding: 0 !important;
+          }
+          .mk-hero-stat {
+            flex: 1 1 calc(33% - 8px);
+            border: 1px solid #E8E8E8 !important;
+            border-bottom: 1px solid #E8E8E8 !important;
+            border-radius: 8px;
+            padding: 14px 18px !important;
+            background: #FFFFFF;
+          }
           .mk-stats-grid { grid-template-columns: 1fr 1fr; }
           .mk-tech-grid { grid-template-columns: 1fr; }
-          .mk-specs-inner { grid-template-columns: 1fr; }
+          .mk-specs-inner { grid-template-columns: 1fr; gap: 40px; }
+          .mk-reality-inner { gap: 40px; }
+          .mk-hero { padding: 100px clamp(24px,5vw,60px) 64px; }
         }
         .mk-tablet-stats {
           display: none;
@@ -698,14 +720,62 @@ export default function Index() {
           .mk-nav { padding: 0 20px; }
           .mk-nav-links, .mk-nav-cta, .mk-more-wrap { display: none; }
           .mk-hamburger { display: flex; }
+
+          /* Hero: single column, tighter padding */
           .mk-hero { min-height: auto; padding: 88px 24px 48px; }
+          .mk-hero-inner { gap: 32px; }
           .mk-hero-identity { font-size: clamp(33px, 8.7vw, 38px); letter-spacing: -1.2px; }
+          .mk-hero-body { font-size: 16px; margin-bottom: 28px; }
+
+          /* Stats: horizontal chips below hero text on mobile */
+          .mk-hero-stats {
+            display: flex !important;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 12px;
+            border: none !important;
+            background: transparent !important;
+            padding: 0 !important;
+          }
+          .mk-hero-stat {
+            flex: 1 1 calc(50% - 6px);
+            max-width: calc(50% - 6px);
+            border: 1px solid #E8E8E8 !important;
+            border-bottom: 1px solid #E8E8E8 !important;
+            border-radius: 8px;
+            padding: 14px 16px !important;
+            background: #FFFFFF;
+          }
+          .mk-hero-stat-num { font-size: 26px !important; }
+
+          /* Section padding */
           .mk-market, .mk-tech, .mk-specs, .mk-survey { padding: 64px 24px; }
           .mk-reality, .mk-commercial, .mk-designed, .mk-why-now { padding: 48px 24px; }
           .mk-proof-bar { padding: 0 24px; }
           .mk-footer { padding: 12px 24px; }
+
+          /* How It Works steps: single column, remove fixed num width */
+          .mk-tech-grid { grid-template-columns: 1fr; }
+          .mk-tech-step { grid-template-columns: 48px 1fr; gap: 16px; }
+          .mk-tech-step-num { width: 48px; height: 48px; font-size: 18px; }
+          .mk-tech-step-title { font-size: 18px; }
+          .mk-tech-step-desc { font-size: 15px; }
+          .mk-tech-arrow { margin-left: 32px; }
+
+          /* Stats grid */
           .mk-stats-grid { grid-template-columns: 1fr 1fr; }
           .mk-commercial-grid { grid-template-columns: 1fr 1fr; }
+
+          /* Why we exist section inner padding */
+          .mk-reality-inner { gap: 32px; }
+          .mk-specs-inner { gap: 32px; }
+        }
+
+        /* RME row: stack on mobile */
+        @media (max-width: 640px) {
+          .mk-rme-row { flex-direction: column !important; gap: 32px !important; }
+          .mk-rme-arrow { display: none !important; }
+          .mk-rme-word { font-size: clamp(52px, 14vw, 72px) !important; letter-spacing: -1.5px !important; }
         }
       `}</style>
 
@@ -834,7 +904,7 @@ export default function Index() {
 
       {/* REGISTER → MARK → EVIDENCE */}
       <section style={{ padding: "88px clamp(24px,6vw,80px)", background: "rgba(255,255,255,0.72)" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "flex-start", gap: 0 }}>
+        <div className="mk-rme-row" style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "flex-start", gap: 0 }}>
           {[
             { word: "Register", sub: "Your stock is on record before the incident. Not after.", color: "#15803d" },
             { word: "Mark",     sub: "Goods are marked, not people.",                           color: "#c27803" },
@@ -842,11 +912,11 @@ export default function Index() {
           ].map(({ word, sub, color }, i) => (
             <div key={word} style={{ display: "flex", alignItems: "flex-start", gap: 0, flex: i < 2 ? "0 0 auto" : "1" }}>
               <div>
-                <div style={{ fontFamily: "'Sora',system-ui,sans-serif", fontSize: "clamp(48px,5.5vw,88px)", fontWeight: 800, color, lineHeight: 1, letterSpacing: "-2.5px" }}>{word}</div>
+                <div className="mk-rme-word" style={{ fontFamily: "'Sora',system-ui,sans-serif", fontSize: "clamp(48px,5.5vw,88px)", fontWeight: 800, color, lineHeight: 1, letterSpacing: "-2.5px" }}>{word}</div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10.5, color: "#6B7280", marginTop: 12, maxWidth: 200, lineHeight: 1.6, letterSpacing: "0.2px" }}>{sub}</div>
               </div>
               {i < 2 && (
-                <div style={{ fontSize: 24, color: "#111111", margin: "18px 32px 0", fontWeight: 300 }}>→</div>
+                <div className="mk-rme-arrow" style={{ fontSize: 24, color: "#111111", margin: "18px 32px 0", fontWeight: 300 }}>→</div>
               )}
             </div>
           ))}
