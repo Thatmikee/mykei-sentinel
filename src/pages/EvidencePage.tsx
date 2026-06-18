@@ -48,12 +48,12 @@ const ARCH_LAYERS = [
   {
     layer: "02 — MARKING",
     title: "Forensic Deploy Module",
-    items: ["Forensic Mist Deployment System", "Proprietary compound", "Designed to bond within 3s (design target)", "UV-detectable, permanent"],
+    items: ["Forensic marker deployment (patent pending)", "Proprietary compound", "Rapid bonding to goods", "UV-detectable, permanent"],
   },
   {
     layer: "03 — REGISTRY",
     title: "Mykei Registry",
-    items: ["AWS IoT Core + MQTT", "AES-256-GCM encrypted", "TLS 1.3 transport", "Tamper-aware audit log"],
+    items: ["Encrypted cloud registry", "AES-256-GCM at rest and in transit", "Append-only event log", "Tamper-aware audit trail"],
   },
   {
     layer: "04 — FLAGGING",
@@ -318,7 +318,7 @@ export default function EvidencePage() {
           </Reveal>
           <Reveal delay={0.1}>
             <p style={{ marginTop: 12, fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#6E6E6E", letterSpacing: 0.5 }}>
-              All records encrypted at rest (AES-256-GCM) and in transit (TLS 1.3). Registry: AWS IoT Core. Log integrity verified via cryptographic signature.
+              All records encrypted at rest and in transit. Log integrity verified via cryptographic signature.
             </p>
           </Reveal>
         </div>
@@ -360,7 +360,7 @@ export default function EvidencePage() {
             <span className="ev-eyebrow">05 — Patent Filing</span>
             <h2 className="ev-h2">Patent-pending: UK Application No. 2606630.8</h2>
             <p className="ev-body" style={{ marginBottom: 32 }}>
-              The ADN system is the subject of a UK patent application with 17 claims covering the detection methodology, forensic deployment mechanism, and registry integration. Filed via the UK Intellectual Property Office.
+              The ADN system is the subject of UK patent application No. 2606630.8, filed with the UK Intellectual Property Office. Patent pending.
             </p>
           </Reveal>
           <div className="ev-patent-grid">

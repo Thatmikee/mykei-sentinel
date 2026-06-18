@@ -12,18 +12,18 @@ const fade = (delay = 0) => ({
 });
 
 const SPECS = [
-  { label: "MICROCONTROLLER",     value: "Custom dual-core detection engine" },
-  { label: "SENSOR",              value: "Dual-zone ToF sensor array × 2" },
-  { label: "WAVELENGTH",          value: "940nm VCSEL" },
-  { label: "DETECTION RANGE",     value: "0 – 1,200mm" },
-  { label: "RESPONSE TIME",       value: "< 200ms" },
-  { label: "ATOMISATION",         value: "Ultrasonic Deployment Module" },
-  { label: "CONNECTIVITY",        value: "Wi-Fi 802.11 b/g/n" },
-  { label: "ENCRYPTION",          value: "AES-256-GCM (edge)" },
-  { label: "POWER",               value: "5V USB-C / 12V DC" },
-  { label: "IP RATING",           value: "IP42" },
-  { label: "OPERATING TEMP",      value: "0°C – 40°C" },
-  { label: "DIMENSIONS (PROTO)",  value: "160 × 65 × 40mm" },
+  { label: "MICROCONTROLLER",  value: "Custom dual-core detection engine" },
+  { label: "SENSOR",                value: "Dual-zone ToF sensor array" },
+  { label: "DETECTION TECHNOLOGY",  value: "Time-of-flight kinetic signature analysis" },
+  { label: "DETECTION RANGE",       value: "0 – 1,200mm" },
+  { label: "RESPONSE TIME",    value: "< 200ms" },
+  { label: "MARKER SYSTEM",    value: "Forensic marker deployment (patent pending)" },
+  { label: "CONNECTIVITY",     value: "Wi-Fi 802.11 b/g/n" },
+  { label: "ENCRYPTION",       value: "AES-256-GCM (edge)" },
+  { label: "POWER",            value: "5V USB-C / 12V DC" },
+  { label: "IP RATING",        value: "IP42" },
+  { label: "OPERATING TEMP",   value: "0°C – 40°C" },
+  { label: "FORM FACTOR",      value: "Shelf-mount · Standard bay compatible" },
 ];
 
 const MODES = [
@@ -64,8 +64,8 @@ const MODES = [
 
 const SEQUENCE = [
   { n: "01", title: "DETECT",      body: "Dual ToF sensors map a 3D velocity vector across both detection zones. When the kinetic signature matches the configured bulk-sweep threshold, the trigger fires. Design target: under 200ms." },
-  { n: "02", title: "MARK",        body: "The Ultrasonic Deployment Module deploys a burst of invisible batch-identifiable marker compound onto the stolen goods and the individual carrying them. Subject to marker supplier specification, SDS/COSHH review, and deployment environment review." },
-  { n: "03", title: "LOG",         body: "An AES-256-GCM encrypted marker deployment event record is transmitted to the Mykei secure cloud registry via MQTT over TLS 1.3. The record contains timestamp, node ID, zone, ToF vector data, and the cartridge batch reference." },
+  { n: "02", title: "MARK",        body: "A forensic marker deployment fires automatically, applying an invisible batch-identifiable compound directly to the taken goods. The marker is permanently bonded, shelf-coded, and linked to this specific incident. Subject to marker supplier specification and deployment environment review." },
+  { n: "03", title: "LOG",         body: "An encrypted marker deployment event record is transmitted to the Mykei secure cloud registry. The record contains timestamp, node ID, zone, kinetic vector data, and the cartridge batch reference." },
   { n: "04", title: "DISRUPT",     body: "The cartridge batch reference is registered in the Mykei Registry, linked to the device, store, and timestamp. The event record is designed to support verification and investigation workflows, making theft-linked goods harder to sell anonymously." },
 ];
 
@@ -439,7 +439,7 @@ export default function ADN1DetailPage() {
               {
                 badge: "GB2606630.8",
                 title: "UK Patent application: pending",
-                body: "Patent application GB2606630.8 contains 17 claims covering the detection algorithm, the kinetic signature classification method, the marker deployment trigger sequence, and the Mykei Registry integration. Filed with the UK Intellectual Property Office.",
+                body: "UK patent application No. 2606630.8, filed with the UK Intellectual Property Office. Patent pending.",
               },
             ].map((item, i) => (
               <motion.div key={i} {...fade(i * 0.1)} className="border border-border rounded-lg p-6">
