@@ -13,7 +13,7 @@ function SilverParticles() {
     const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
     resize();
     window.addEventListener("resize", resize);
-    const pts = Array.from({ length: 24 }, () => ({
+    const pts = Array.from({ length: 14 }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
       vx: (Math.random() - 0.5) * 0.35,
@@ -40,7 +40,7 @@ function SilverParticles() {
     draw();
     return () => { window.removeEventListener("resize", resize); cancelAnimationFrame(id); };
   }, []);
-  return <canvas ref={canvasRef} aria-hidden="true" style={{ position: "fixed", inset: 0, zIndex: -1, pointerEvents: "none" }} />;
+  return <canvas ref={canvasRef} aria-hidden="true" style={{ position: "fixed", inset: 0, zIndex: -1, pointerEvents: "none", willChange: "transform" }} />;
 }
 
 /* ── SCROLL REVEAL ── */
@@ -218,17 +218,16 @@ export default function Index() {
             #fafafd  82%,
             #ffffff 100%
           );
-          background-size: 600% 600%;
-          animation: silver-drift 12s linear infinite;
         }
-        /* depth blob — slow organic light mass drifting */
+        /* depth blob — slow organic light mass drifting — transform-only = GPU composited, no paint */
         .mk-silver-bg::before {
           content: '';
           position: absolute; inset: -20%;
           background: radial-gradient(ellipse 60% 50% at 30% 60%, rgba(200,200,220,0.22) 0%, transparent 70%);
           animation: silver-depth 14s linear infinite;
+          will-change: transform;
         }
-        /* primary chrome sheen — narrower beam, no dead zone reset */
+        /* primary chrome sheen — transform-only = GPU composited, no paint */
         .mk-silver-bg::after {
           content: '';
           position: absolute;
@@ -246,6 +245,7 @@ export default function Index() {
           );
           animation: silver-sweep 6s ease-in-out infinite;
           animation-delay: 0.8s;
+          will-change: transform, opacity;
         }
         /* grain overlay — breaks flat-gradient flatness, makes silver feel metallic */
         .mk-grain {
@@ -256,12 +256,6 @@ export default function Index() {
         a { text-decoration: none; }
 
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-        @keyframes silver-drift {
-          0%   { background-position: 0% 25%; }
-          33%  { background-position: 100% 75%; }
-          66%  { background-position: 55% 0%; }
-          100% { background-position: 0% 25%; }
-        }
         @keyframes silver-depth {
           0%   { transform: scale(1) translate(0%, 0%); }
           33%  { transform: scale(1.14) translate(6%, -4%); }
@@ -323,7 +317,8 @@ export default function Index() {
           font-size: clamp(42px, 5.5vw, 72px);
           font-weight: 800; line-height: 1.04; letter-spacing: -2.5px; color: #111111; margin-bottom: 28px;
         }
-        .mk-identity-accent { color: #0D9488; font-style: italic; }
+        .mk-identity-accent { color: #DC2626; font-style: italic; }
+        .mk-vision-accent { color: #0D9488; font-style: italic; }
 
         .mk-hero-body {
           font-size: 18px; line-height: 1.75; color: #475569; max-width: 520px; margin-bottom: 36px;
@@ -508,7 +503,7 @@ export default function Index() {
           padding: 40px 0; border-top: 1px solid #E8E8E8;
         }
         .mk-tech-step:first-child { border-top: none; padding-top: 0; }
-        .mk-tech-arrow { padding: 0 0 0 36px; color: #BFBFBF; font-size: 20px; line-height: 1; margin: -8px 0; }
+        .mk-tech-arrow { width: 120px; text-align: center; color: #BFBFBF; font-size: 20px; line-height: 1; margin: -6px 0; padding: 0; }
         .mk-tech-step-num {
           width: 72px; height: 72px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
@@ -756,7 +751,7 @@ export default function Index() {
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative" }}>
           <Reveal>
             <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(38px,5.5vw,76px)", fontWeight: 700, lineHeight: 1.05, color: "#1E1E1E", margin: "0 0 clamp(40px,5vw,72px)", maxWidth: 820 }}>
-              A world where stealing<br />simply stops making sense.
+              A world where stealing<br />simply <span className="mk-vision-accent">stops making sense.</span>
             </h2>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(32px,5vw,80px)", alignItems: "start" }}>
