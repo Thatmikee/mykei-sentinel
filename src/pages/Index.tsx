@@ -155,10 +155,19 @@ export default function Index() {
           ]
         })}
       />
+      <div className="mk-silver-bg" aria-hidden="true" />
       <style>{`
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Sora', system-ui, sans-serif; background: #fff; color: #1A1A1A; }
+        body { font-family: 'Sora', system-ui, sans-serif; background: transparent; color: #1A1A1A; }
+
+        /* ── GLOBAL SILVER LAYER (fixed, behind everything) ── */
+        .mk-silver-bg {
+          position: fixed; inset: 0; z-index: -1; pointer-events: none;
+          background: linear-gradient(135deg, #ffffff 0%, #f3f3f6 18%, #e6e6ef 38%, #ededf4 55%, #f5f5fa 75%, #ffffff 100%);
+          background-size: 350% 350%;
+          animation: silver-drift 14s ease-in-out infinite;
+        }
         a { text-decoration: none; }
 
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
@@ -175,7 +184,9 @@ export default function Index() {
           padding: 0 52px; height: 60px; transition: background 0.25s, border-color 0.25s;
         }
         .mk-nav.scrolled {
-          background: #FFFFFF;
+          background: rgba(255,255,255,0.88);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
           border-bottom: 1px solid #E8E8E8;
         }
         .mk-nav-brand { display: flex; flex-direction: row; align-items: center; gap: 10px; }
@@ -201,9 +212,7 @@ export default function Index() {
         .mk-hero {
           min-height: 100dvh; display: flex; align-items: center;
           padding: 80px 52px 56px; position: relative; overflow: hidden;
-          background: linear-gradient(135deg, #ffffff 0%, #f4f4f6 20%, #e8e8ed 40%, #f0f0f5 60%, #f7f7fa 80%, #ffffff 100%);
-          background-size: 300% 300%;
-          animation: silver-drift 10s ease-in-out infinite;
+          background: rgba(255,255,255,0.0);
           border-bottom: 1px solid #E8E8E8;
         }
         .mk-hero-inner {
@@ -216,7 +225,7 @@ export default function Index() {
           font-size: clamp(42px, 5.5vw, 72px);
           font-weight: 800; line-height: 1.04; letter-spacing: -2.5px; color: #111111; margin-bottom: 28px;
         }
-        .mk-identity-accent { color: #111111; font-style: italic; }
+        .mk-identity-accent { color: #1a365d; font-style: italic; }
 
         .mk-hero-body {
           font-size: 18px; line-height: 1.75; color: #475569; max-width: 520px; margin-bottom: 36px;
@@ -263,7 +272,7 @@ export default function Index() {
 
         /* ── PROOF BAR ── */
         .mk-proof-bar {
-          background: #F8F8F8;
+          background: rgba(248,248,248,0.82);
           border-top: 2px solid #111111;
           border-bottom: 1px solid #E8E8E8;
           padding: 0 52px;
@@ -305,7 +314,7 @@ export default function Index() {
 
         /* ── IN-STORE REALITY ── */
         .mk-reality {
-          background: #FFFFFF; padding: 72px 52px;
+          background: rgba(255,255,255,0.85); padding: 72px 52px;
           border-bottom: 1px solid rgba(17,17,17,0.15);
         }
         .mk-reality-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -328,7 +337,7 @@ export default function Index() {
 
         /* ── COMMERCIAL READINESS ── */
         .mk-commercial {
-          background: #fff; padding: 72px 52px;
+          background: rgba(255,255,255,0.85); padding: 72px 52px;
           border-top: 1px solid #E8E8E8;
         }
         .mk-commercial-inner { max-width: 1100px; margin: 0 auto; }
@@ -347,7 +356,7 @@ export default function Index() {
         .mk-commercial-sub { font-size: 11.5px; color: #64748b; line-height: 1.5; }
 
         /* ── DESIGNED FOR ── */
-        .mk-designed { background: #FFFFFF; padding: 72px 52px; }
+        .mk-designed { background: rgba(255,255,255,0.85); padding: 72px 52px; }
         .mk-designed-inner { max-width: 1100px; margin: 0 auto; }
         .mk-designed-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
         .mk-designed-item {
@@ -359,7 +368,7 @@ export default function Index() {
 
         /* ── WHY NOW ── */
         .mk-why-now {
-          background: #fff; padding: 72px 52px;
+          background: rgba(255,255,255,0.85); padding: 72px 52px;
           border-top: 1px solid #E8E8E8;
         }
         .mk-why-now-inner { max-width: 1100px; margin: 0 auto; }
@@ -376,7 +385,7 @@ export default function Index() {
         .mk-trust-sep { display: none; }
 
         /* ── MARKET ── */
-        .mk-market { background: #FFFFFF; padding: 96px 52px; position: relative; border-top: 1px solid #E8E8E8; }
+        .mk-market { background: rgba(255,255,255,0.85); padding: 96px 52px; position: relative; border-top: 1px solid #E8E8E8; }
         .mk-market-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
         .mk-section-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: #111111; margin-bottom: 14px; }
         .mk-h2-light { font-family: 'Sora', system-ui, sans-serif; font-size: clamp(30px,3.8vw,50px); font-weight: 700; color: #fff; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.08; }
@@ -396,7 +405,7 @@ export default function Index() {
         /* ── TECH ── */
         .mk-tech {
           padding: 96px 52px;
-          background: #FAFAF8;
+          background: rgba(250,250,248,0.82);
           border-top: 1px solid #E8E8E8;
         }
         .mk-tech-inner { max-width: 1100px; margin: 0 auto; }
@@ -432,7 +441,7 @@ export default function Index() {
         /* ── SPECS ── */
         .mk-specs {
           padding: 96px 52px;
-          background: #F8F8F8;
+          background: rgba(248,248,248,0.82);
           border-top: 1px solid #E8E8E8;
           position: relative; overflow: hidden;
         }
@@ -453,7 +462,7 @@ export default function Index() {
         /* ── SURVEY ── */
         .mk-survey {
           padding: 96px 52px;
-          background: #fff;
+          background: rgba(255,255,255,0.85);
           position: relative; overflow: hidden;
         }
         .mk-survey::before {
@@ -492,7 +501,7 @@ export default function Index() {
         .mk-learn-btn:hover { transform: translateY(-2px); }
 
         /* ── FOOTER ── */
-        .mk-footer { padding: 28px 52px; background: #fff; border-top: 1px solid #E8E8E8; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .mk-footer { padding: 28px 52px; background: rgba(255,255,255,0.92); border-top: 1px solid #E8E8E8; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
         .mk-footer-name { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; color: #111111; }
         .mk-footer-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #555555; letter-spacing: 0.5px; margin-top: 2px; }
         .mk-footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #475569; letter-spacing: 0.5px; }
@@ -651,7 +660,7 @@ export default function Index() {
 
 
       {/* WHY WE EXIST */}
-      <section style={{ background: "#fff", padding: "100px clamp(24px,6vw,96px)", position: "relative", overflow: "hidden" }}>
+      <section style={{ background: "rgba(255,255,255,0.85)", padding: "100px clamp(24px,6vw,96px)", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: "repeating-linear-gradient(transparent, transparent 47px, #111111 47px, #111111 48px)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative" }}>
           <Reveal>
@@ -687,7 +696,7 @@ export default function Index() {
       </section>
 
       {/* REGISTER → MARK → EVIDENCE */}
-      <section style={{ borderTop: "1px solid #E8E8E8", padding: "88px clamp(24px,6vw,80px)" }}>
+      <section style={{ borderTop: "1px solid #E8E8E8", padding: "88px clamp(24px,6vw,80px)", background: "rgba(255,255,255,0.0)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "flex-start", gap: 0 }}>
           {[
             { word: "Register", sub: "Your stock is on record before the incident. Not after." },
@@ -755,7 +764,7 @@ export default function Index() {
 
 
       {/* PUBLIC VOTE */}
-      <section style={{ background: "#F8F8F8", borderTop: "1px solid #E8E8E8", padding: "72px clamp(24px,6vw,80px)" }}>
+      <section style={{ background: "rgba(248,248,248,0.82)", borderTop: "1px solid #E8E8E8", padding: "72px clamp(24px,6vw,80px)" }}>
         <div style={{ maxWidth: 560, margin: "0 auto", textAlign: "center" }}>
           <Reveal>
             <h2 style={{ fontFamily: "'Sora',system-ui,sans-serif", fontSize: "clamp(22px,3vw,34px)", fontWeight: 700, color: "#1E1E1E", marginBottom: 12, lineHeight: 1.2 }}>
