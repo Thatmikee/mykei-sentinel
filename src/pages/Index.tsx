@@ -225,7 +225,7 @@ export default function Index() {
           font-size: clamp(42px, 5.5vw, 72px);
           font-weight: 800; line-height: 1.04; letter-spacing: -2.5px; color: #111111; margin-bottom: 28px;
         }
-        .mk-identity-accent { color: #1a365d; font-style: italic; }
+        .mk-identity-accent { color: #b5892a; font-style: italic; }
 
         .mk-hero-body {
           font-size: 18px; line-height: 1.75; color: #475569; max-width: 520px; margin-bottom: 36px;
@@ -699,13 +699,13 @@ export default function Index() {
       <section style={{ borderTop: "1px solid #E8E8E8", padding: "88px clamp(24px,6vw,80px)", background: "rgba(255,255,255,0.0)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "flex-start", gap: 0 }}>
           {[
-            { word: "Register", sub: "Your stock is on record before the incident. Not after." },
-            { word: "Mark", sub: "Goods are marked, not people." },
-            { word: "Evidence", sub: "Timestamped, hash-chained, already filed before anyone reaches the door." },
-          ].map(({ word, sub }, i) => (
+            { word: "Register", sub: "Your stock is on record before the incident. Not after.", color: "#15803d" },
+            { word: "Mark",     sub: "Goods are marked, not people.",                           color: "#c27803" },
+            { word: "Evidence", sub: "Timestamped, hash-chained, already filed before anyone reaches the door.", color: "#b91c1c" },
+          ].map(({ word, sub, color }, i) => (
             <div key={word} style={{ display: "flex", alignItems: "flex-start", gap: 0, flex: i < 2 ? "0 0 auto" : "1" }}>
               <div>
-                <div style={{ fontFamily: "'Sora',system-ui,sans-serif", fontSize: "clamp(48px,5.5vw,88px)", fontWeight: 800, color: "#1E1E1E", lineHeight: 1, letterSpacing: "-2.5px" }}>{word}</div>
+                <div style={{ fontFamily: "'Sora',system-ui,sans-serif", fontSize: "clamp(48px,5.5vw,88px)", fontWeight: 800, color, lineHeight: 1, letterSpacing: "-2.5px" }}>{word}</div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10.5, color: "#6B7280", marginTop: 12, maxWidth: 200, lineHeight: 1.6, letterSpacing: "0.2px" }}>{sub}</div>
               </div>
               {i < 2 && (
