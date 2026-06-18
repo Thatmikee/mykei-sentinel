@@ -45,7 +45,7 @@ function SilverParticles() {
 
 /* ── SCROLL REVEAL ── */
 function useReveal(threshold = 0.15) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const el = ref.current;
@@ -77,11 +77,24 @@ function useCounter(target: number, duration = 2000, start = false) {
   return count;
 }
 
+/* ── FIGHTS WORD: fires once on scroll entry, impact-shake + red flash ── */
+function FightsWord() {
+  const { ref, visible } = useReveal(0.3);
+  return (
+    <span
+      ref={ref as React.RefObject<HTMLSpanElement>}
+      className={visible ? "mk-fights mk-fights--go" : "mk-fights"}
+    >
+      fights
+    </span>
+  );
+}
+
 /* ── REVEAL WRAPPER ── */
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const { ref, visible } = useReveal();
   return (
-    <div ref={ref} style={{
+    <div ref={ref as React.RefObject<HTMLDivElement>} style={{
       opacity: visible ? 1 : 0,
       transform: visible ? "translateY(0)" : "translateY(24px)",
       transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
@@ -256,6 +269,26 @@ export default function Index() {
         a { text-decoration: none; }
 
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+        /* "fights" — impact shake + red flash, fires once on entry */
+        @keyframes mk-fights-impact {
+          0%   { transform: translateX(0) skewX(0deg);  color: inherit; }
+          7%   { transform: translateX(-4px) skewX(-4deg); color: #DC2626; }
+          15%  { transform: translateX(4px)  skewX(3deg);  color: #DC2626; }
+          23%  { transform: translateX(-3px) skewX(-2deg); }
+          31%  { transform: translateX(3px)  skewX(2deg);  color: #DC2626; }
+          42%  { transform: translateX(-1px); color: #DC2626; }
+          55%  { transform: translateX(0); color: #1E1E1E; }
+          100% { transform: translateX(0) skewX(0deg);  color: #1E1E1E; }
+        }
+        .mk-fights { display: inline; }
+        @media (prefers-reduced-motion: no-preference) {
+          .mk-fights--go {
+            animation: mk-fights-impact 0.7s cubic-bezier(0.16,1,0.3,1) both;
+            animation-delay: 0.45s;
+          }
+        }
+
         @keyframes silver-depth {
           0%   { transform: scale(1) translate(0%, 0%); }
           33%  { transform: scale(1.14) translate(6%, -4%); }
@@ -318,7 +351,15 @@ export default function Index() {
           font-weight: 800; line-height: 1.04; letter-spacing: -2.5px; color: #111111; margin-bottom: 28px;
         }
         .mk-identity-accent { color: #DC2626; font-style: italic; }
-        .mk-vision-accent { color: #0D9488; font-style: italic; }
+        .mk-vision-accent {
+          display: inline;
+          background: #111111;
+          color: #ffffff;
+          font-style: italic;
+          padding: 0 6px 2px;
+          box-decoration-break: clone;
+          -webkit-box-decoration-break: clone;
+        }
 
         .mk-hero-body {
           font-size: 18px; line-height: 1.75; color: #475569; max-width: 520px; margin-bottom: 36px;
@@ -806,7 +847,7 @@ export default function Index() {
       <section id="how-it-works" className="mk-tech">
         <div className="mk-tech-inner">
           <Reveal>
-            <h2 className="mk-h2-dark">The shelf fights back.</h2>
+            <h2 className="mk-h2-dark">The shelf <FightsWord /> back.</h2>
             <p className="mk-sub-dark">Sweep happens. ADN fires. Goods are marked. Record is created. All before anyone reaches the door.</p>
           </Reveal>
           <div className="mk-tech-steps">
