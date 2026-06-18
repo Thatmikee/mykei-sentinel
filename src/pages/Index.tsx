@@ -1,6 +1,48 @@
 import { useState, useEffect, useRef } from "react";
 import PageSEO from "@/components/PageSEO";
 
+/* ── SILVER PARTICLES (continuous data-drift, communicates active system) ── */
+function SilverParticles() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+    resize();
+    window.addEventListener("resize", resize);
+    const pts = Array.from({ length: 24 }, () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      r: Math.random() * 1.4 + 0.6,
+      o: Math.random() * 0.16 + 0.06,
+    }));
+    let id: number;
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pts.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(160,165,195,${p.o})`;
+        ctx.fill();
+      });
+      id = requestAnimationFrame(draw);
+    };
+    draw();
+    return () => { window.removeEventListener("resize", resize); cancelAnimationFrame(id); };
+  }, []);
+  return <canvas ref={canvasRef} aria-hidden="true" style={{ position: "fixed", inset: 0, zIndex: -1, pointerEvents: "none" }} />;
+}
+
 /* ── SCROLL REVEAL ── */
 function useReveal(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -156,6 +198,8 @@ export default function Index() {
         })}
       />
       <div className="mk-silver-bg" aria-hidden="true" />
+      <div className="mk-grain" aria-hidden="true" />
+      <SilverParticles />
       <style>{`
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
@@ -175,25 +219,39 @@ export default function Index() {
             #ffffff 100%
           );
           background-size: 600% 600%;
-          animation: silver-drift 20s ease-in-out infinite;
+          animation: silver-drift 12s linear infinite;
         }
+        /* depth blob — slow organic light mass drifting */
+        .mk-silver-bg::before {
+          content: '';
+          position: absolute; inset: -20%;
+          background: radial-gradient(ellipse 60% 50% at 30% 60%, rgba(200,200,220,0.22) 0%, transparent 70%);
+          animation: silver-depth 14s linear infinite;
+        }
+        /* primary chrome sheen — narrower beam, no dead zone reset */
         .mk-silver-bg::after {
           content: '';
           position: absolute;
           top: -100%; left: -80%;
-          width: 55%; height: 300%;
+          width: 35%; height: 300%;
           background: linear-gradient(
             90deg,
-            transparent            0%,
-            rgba(255,255,255,0)   33%,
-            rgba(210,218,255,0.5) 44%,
-            rgba(255,255,255,0.95) 50%,
-            rgba(210,218,255,0.5) 56%,
-            rgba(255,255,255,0)   67%,
-            transparent          100%
+            transparent             0%,
+            rgba(255,255,255,0)    33%,
+            rgba(210,218,255,0.45) 44%,
+            rgba(255,255,255,0.92) 50%,
+            rgba(210,218,255,0.45) 56%,
+            rgba(255,255,255,0)    67%,
+            transparent           100%
           );
-          animation: silver-sweep 9s ease-in-out infinite;
-          animation-delay: 2.5s;
+          animation: silver-sweep 6s ease-in-out infinite;
+          animation-delay: 0.8s;
+        }
+        /* grain overlay — breaks flat-gradient flatness, makes silver feel metallic */
+        .mk-grain {
+          position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.038;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C%2Fsvg%3E");
+          background-size: 180px 180px;
         }
         a { text-decoration: none; }
 
@@ -204,12 +262,18 @@ export default function Index() {
           66%  { background-position: 55% 0%; }
           100% { background-position: 0% 25%; }
         }
+        @keyframes silver-depth {
+          0%   { transform: scale(1) translate(0%, 0%); }
+          33%  { transform: scale(1.14) translate(6%, -4%); }
+          66%  { transform: scale(0.93) translate(-5%, 8%); }
+          100% { transform: scale(1) translate(0%, 0%); }
+        }
         @keyframes silver-sweep {
           0%   { transform: translateX(-10%) rotate(12deg); opacity: 0; }
-          7%   { opacity: 1; }
-          58%  { opacity: 0.85; }
-          70%  { opacity: 0; transform: translateX(290%) rotate(12deg); }
-          100% { opacity: 0; transform: translateX(290%) rotate(12deg); }
+          6%   { opacity: 1; }
+          55%  { opacity: 0.9; }
+          85%  { opacity: 0; transform: translateX(290%) rotate(12deg); }
+          100% { transform: translateX(-10%) rotate(12deg); opacity: 0; }
         }
 
         /* ── NAV ── */
