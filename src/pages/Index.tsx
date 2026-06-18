@@ -356,7 +356,7 @@ export default function Index() {
           background: #111111;
           color: #ffffff;
           font-style: italic;
-          padding: 0 6px 2px;
+          padding: 4px 12px 4px 12px;
           box-decoration-break: clone;
           -webkit-box-decoration-break: clone;
         }
@@ -544,7 +544,7 @@ export default function Index() {
           padding: 40px 0; border-top: 1px solid #E8E8E8;
         }
         .mk-tech-step:first-child { border-top: none; padding-top: 0; }
-        .mk-tech-arrow { width: 120px; text-align: center; color: #BFBFBF; font-size: 20px; line-height: 1; margin: -6px 0; padding: 0; }
+        .mk-tech-arrow { width: 72px; text-align: center; color: #BFBFBF; font-size: 20px; line-height: 1; margin: -6px 0; padding: 0; }
         .mk-tech-step-num {
           width: 72px; height: 72px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
@@ -791,7 +791,7 @@ export default function Index() {
         <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: "repeating-linear-gradient(transparent, transparent 47px, #111111 47px, #111111 48px)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative" }}>
           <Reveal>
-            <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(38px,5.5vw,76px)", fontWeight: 700, lineHeight: 1.05, color: "#1E1E1E", margin: "0 0 clamp(40px,5vw,72px)", maxWidth: 820 }}>
+            <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(38px,5.5vw,76px)", fontWeight: 700, lineHeight: 1.22, color: "#1E1E1E", margin: "0 0 clamp(40px,5vw,72px)", maxWidth: 820 }}>
               A world where stealing<br />simply <span className="mk-vision-accent">stops making sense.</span>
             </h2>
           </Reveal>
