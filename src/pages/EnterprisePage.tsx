@@ -109,7 +109,7 @@ ${form.title}, ${form.company}`
         </p>
         <div style={{ background: "#F7F6F2", border: "1px solid #E4E2DC", borderRadius: 6, padding: "20px 22px", marginBottom: 12 }}>
           <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, marginBottom: 12 }}>
-            Draft — forward to your team
+            Draft. Forward to your team.
           </div>
           <pre style={{ fontFamily: "inherit", fontSize: 13, color: INK, lineHeight: 1.75, whiteSpace: "pre-wrap", margin: 0 }}>{draft}</pre>
         </div>

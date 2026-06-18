@@ -100,7 +100,7 @@ export default function BlogBeyondBuzzerPage() {
         canonical="https://mykei.io/blog/beyond-the-buzzer"
         ogType="article"
         keywords="forensic marking retail, Proprietary Forensic Marking Compound retail, SmartWater retail, economic sterilisation, batch-identifiable marker retail security, retail theft for independent retailers, forensic marking for small businesses, shoplifting deterrent for accountants, theft prevention for enterprise"
-        ogImageAlt="Beyond the Buzzer — how forensic marking is shrinking the stolen goods market"
+        ogImageAlt="Beyond the Buzzer: how forensic marking is shrinking the stolen goods market"
         articleMeta={{ publishedTime: "2026-04-10T00:00:00Z", author: "Michael Esema", section: "Retail Security", tags: ["Forensic Marking","Proprietary Forensic Marking Compound","Economic Sterilisation","ADN","Retail Theft"] }}
         breadcrumbs={[["Home","https://mykei.io"],["Blog","/blog"],["Beyond the Buzzer",""]]}
       />

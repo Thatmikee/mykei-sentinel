@@ -41,22 +41,22 @@ const EVENT_LOGS = [
 
 const ARCH_LAYERS = [
   {
-    layer: "01 — SENSING",
+    layer: "01: SENSING",
     title: "Dual-Zone ToF Array",
     items: ["Tactical Multi-zone Sensor Array sensor × 2", "940nm VCSEL, 30Hz", "Kinetic classifier < 50ms", "Patent: No. 2606630.8"],
   },
   {
-    layer: "02 — MARKING",
+    layer: "02: MARKING",
     title: "Forensic Deploy Module",
     items: ["Forensic marker deployment (patent pending)", "Proprietary compound", "Rapid bonding to goods", "UV-detectable, permanent"],
   },
   {
-    layer: "03 — REGISTRY",
+    layer: "03: REGISTRY",
     title: "Mykei Registry",
     items: ["Encrypted cloud registry", "AES-256-GCM at rest and in transit", "Append-only event log", "Tamper-aware audit trail"],
   },
   {
-    layer: "04 — FLAGGING",
+    layer: "04: FLAGGING",
     title: "Marketplace Submission",
     items: ["Items registered in registry", "Submitted for verification", "Forensic traceability active", "Evidential linkage preserved"],
   },
@@ -357,7 +357,7 @@ export default function EvidencePage() {
       <section className="ev-section" style={{ background: "#FFFFFF" }}>
         <div className="ev-inner-md">
           <Reveal>
-            <span className="ev-eyebrow">05 — Patent Filing</span>
+            <span className="ev-eyebrow">05: Patent Filing</span>
             <h2 className="ev-h2">Patent-pending: UK Application No. 2606630.8</h2>
             <p className="ev-body" style={{ marginBottom: 32 }}>
               The ADN system is the subject of UK patent application No. 2606630.8, filed with the UK Intellectual Property Office. Patent pending.
@@ -366,7 +366,7 @@ export default function EvidencePage() {
           <div className="ev-patent-grid">
             {[
               { label: "Patent Number", value: "UK 2606630.8" },
-              { label: "Filing Status", value: "Filed — UK IPO" },
+              { label: "Filing Status", value: "Filed, UK IPO" },
               { label: "Claims", value: "17 independent claims" },
               { label: "Subject Matter", value: "Detection, marking, registry integration" },
               { label: "Jurisdiction", value: "United Kingdom" },
@@ -387,7 +387,7 @@ export default function EvidencePage() {
       <section className="ev-section" style={{ background: "#fff" }}>
         <div className="ev-inner-md">
           <Reveal>
-            <span className="ev-eyebrow">06 — Founder Statement</span>
+            <span className="ev-eyebrow">06: Founder Statement</span>
             <h2 className="ev-h2">What has been built and tested</h2>
           </Reveal>
           <Reveal delay={0.08}>

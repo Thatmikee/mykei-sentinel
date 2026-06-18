@@ -127,7 +127,7 @@ export default function SignalSaferGemsPage() {
           <figure style={{ margin: 0 }}>
             <img
               src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=80&auto=format&fit=crop"
-              alt="Diamond jewellery on dark velvet — the high-value goods driving armed robbery increases"
+              alt="Diamond jewellery on dark velvet, the high-value goods driving armed robbery increases"
               style={{ width: "100%", borderRadius: 6, display: "block", maxHeight: 480, objectFit: "cover" }}
               loading="lazy"
             />

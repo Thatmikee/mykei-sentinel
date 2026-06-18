@@ -142,7 +142,7 @@ export default function SignalShopkeeperMathsPage() {
           <Reveal>
             <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>The principle behind the pricing model.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              A bulk-sweep theft event in a convenience or specialist retail environment typically clears between £150 and £800 of stock in a single pass, depending on product type. The BRC's data on organised retail crime suggests higher-value targets — pharmacy goods, alcohol, electronics accessories, premium beauty — regularly see single events in the £300 to £500 range.
+              A bulk-sweep theft event in a convenience or specialist retail environment typically clears between £150 and £800 of stock in a single pass, depending on product type. The BRC's data on organised retail crime suggests higher-value targets: pharmacy goods, alcohol, electronics accessories, premium beauty. These regularly see single events in the £300 to £500 range.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
               The design intention is that the ADN's annual cost should be recoverable from a single prevented event. That is the model the pricing is being built around. Exact figures are under development as the hardware and deployment costs are confirmed.
@@ -206,7 +206,7 @@ export default function SignalShopkeeperMathsPage() {
                   "Independent retailers paying the 11p ACS crime tax are losing more to theft each month than a properly priced deterrence device should cost in a year.",
                   "A single prevented bulk-sweep event can represent £300 to £800 of recovered stock value. The pricing model is being designed around that figure.",
                   "The break-even design target: one prevented event covers the annual cost. That is the constraint the ADN pricing is being built to.",
-                  "Pricing is under development. The economic argument does not depend on the final number — it depends on the principle.",
+                  "Pricing is under development. The economic argument does not depend on the final number. It depends on the principle.",
                   "This is not security spend. It is a change to the resale economics of targeting your store.",
                 ].map((t, i) => (
                   <li key={i} style={{ display: "flex", gap: 12, padding: "9px 0", borderBottom: i < 4 ? `1px solid ${RULE}` : "none", fontSize: 14, lineHeight: 1.65, color: INK }}>

@@ -85,7 +85,7 @@ export default function Adn1HowItWorks() {
         form of biometric processing. It does not collect or store personal data about
         individuals in the retail environment. The event payload logged to AWS IoT Core contains
         no information that identifies or could be used to identify any person. No personal data
-        is collected at any stage of the sequence — there is nothing to protect because nothing
+        is collected at any stage of the sequence. There is nothing to protect because nothing
         identifying is captured by design.
       </p>
 

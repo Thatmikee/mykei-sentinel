@@ -134,7 +134,7 @@ export default function GlossaryESPage() {
   return (
     <>
       <PageSEO
-        title="Economic Sterilisation — Definition, Glossary & Market Reduction Lineage | Mykei Securities"
+        title="Economic Sterilisation: Definition, Glossary & Market Reduction Lineage | Mykei Securities"
         description="Economic Sterilisation defined: Mykei's framework for reducing the resale confidence of stolen goods through marking, registry records, evidence workflows and lawful verification."
         canonical="https://mykei.io/glossary/economic-sterilisation"
         ogType="article"

@@ -275,13 +275,13 @@ export default function Pilot() {
 
       const result = await res.json();
       if (!res.ok || !result.success) {
-        console.error('Worker returned error:', result);
+        if (import.meta.env.DEV) console.error('Worker returned error:', result);
         setErrors({ submit: 'Submission failed. Please email protocol@mykei.io directly or try again.' });
         setSubmitting(false);
         return;
       }
     } catch (err) {
-      console.error('Submit network error:', err);
+      if (import.meta.env.DEV) console.error('Submit network error:', err);
       setErrors({ submit: 'Network error. Please email protocol@mykei.io directly.' });
       setSubmitting(false);
       return;

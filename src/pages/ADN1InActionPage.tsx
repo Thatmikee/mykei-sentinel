@@ -489,7 +489,7 @@ export function ADN1Scene({ phase }: { phase: number }) {
               <animateTransform attributeName="transform" type="translate"
                 from="0 -14" to="0 14" dur="1s" repeatCount="indefinite" additive="sum" />
             </line>
-            {/* Warning pulse rings from ADN-1, phase 1 alert */}
+            {/* Warning pulse rings from ADN, phase 1 alert */}
             {phase === 1 && [0,1].map(i => (
               <circle key={i} cx={300} cy={210} r={0}
                 fill="none" stroke="#FF6B35" strokeWidth={1.5} strokeOpacity={0.6}>
@@ -621,11 +621,11 @@ export const SCENES = [
     phase: "01",
     label: "Standby",
     title: "The ADN sits on your shelf.\nSilent. Always watching.",
-    body: "Dual Tactical Multi-zone Sensor Array units fire 940nm laser pulses at 30Hz. They read depth velocity across the entire shelf face, around the clock. Not watching people. Watching physics.",
+    body: "Multi-zone sensor units read depth and velocity across the entire shelf face, around the clock. Not watching people. Watching physics.",
     tech: [
-      ["SENSOR",    "Tactical Multi-zone Sensor Array"],
-      ["FREQUENCY", "940nm VCSEL · 30Hz"],
-      ["COVERAGE",  "Full shelf face · 1,200mm range"],
+      ["SENSOR",    "Multi-zone Sensor Array"],
+      ["COVERAGE",  "Full shelf face"],
+      ["MODE",      "Passive. Always on."],
       ["GDPR",      "No camera. No biometric data."],
     ],
   },

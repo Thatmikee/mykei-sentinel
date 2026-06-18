@@ -85,7 +85,7 @@ export default function Blog796BillionPage() {
         canonical="https://mykei.io/blog/the-796-billion-problem"
         ogType="article"
         keywords="retail theft $796 billion, organised retail crime prevention, economic sterilisation, retail theft for small businesses, retail crime for accountants, shoplifting for enterprise, theft economics for retailers"
-        ogImageAlt="The $796 Billion Problem — retail theft economics analysis by Mykei Securities"
+        ogImageAlt="The $796 Billion Problem: retail theft economics analysis by Mykei Securities"
         articleMeta={{ publishedTime: "2026-04-10T00:00:00Z", author: "Michael Esema", section: "Retail Security", tags: ["Economic Sterilisation","Retail Theft","Organised Retail Crime","ADN"] }}
         breadcrumbs={[["Home","https://mykei.io"],["Blog","/blog"],["The $796 Billion Problem",""]]}
       />

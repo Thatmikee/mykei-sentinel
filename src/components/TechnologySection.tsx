@@ -15,11 +15,11 @@ const TechnologySection = () => {
       description:
         "A shelf-integrated unit utilizing 940nm VCSEL laser-ranging sensors (Time-of-Flight) with a design target of under 200ms detection-to-trigger response time. The ADN monitors high-value merchandise and is designed to activate deterrence protocols upon unauthorized removal.",
       specs: [
-        { label: "SENSOR TYPE", value: "Tactical Multi-zone Sensor Array" },
-        { label: "WAVELENGTH", value: "940nm VCSEL" },
+        { label: "SENSOR TYPE", value: "Multi-zone Sensor Array" },
         { label: "RESPONSE", value: "Target <200ms" },
+        { label: "CONFRONTATIONS", value: "Zero required" },
       ],
-      href: "/adn-1",
+      href: "/adn",
     },
     {
       id: "ATS",
@@ -29,7 +29,7 @@ const TechnologySection = () => {
       specs: [
         { label: "PROTOCOL", value: "TLS 1.3" },
         { label: "LATENCY", value: "Target <50ms" },
-        { label: "UPTIME", value: "99.99%" },
+        { label: "ENCRYPTION", value: "TLS 1.3" },
       ],
       href: "/technology/ats",
     },

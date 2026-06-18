@@ -410,6 +410,17 @@ export async function onRequest(context) {
   headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
   headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
   headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')
+  headers.set('Content-Security-Policy', [
+    "default-src 'self'",
+    "script-src 'self' https://www.googletagmanager.com https://cdn-cookieyes.com https://challenges.cloudflare.com 'unsafe-inline'",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    "font-src 'self' https://fonts.gstatic.com",
+    "img-src 'self' data: https:",
+    "connect-src 'self' https://send-loi.michaelesema.workers.dev https://generativelanguage.googleapis.com https://www.google-analytics.com",
+    "frame-src https://challenges.cloudflare.com",
+    "object-src 'none'",
+    "base-uri 'self'",
+  ].join('; '))
 
   return new Response(html, { headers })
 }

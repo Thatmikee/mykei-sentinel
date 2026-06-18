@@ -15,14 +15,14 @@ const SPECS = [
   { label: "MICROCONTROLLER",  value: "Custom dual-core detection engine" },
   { label: "SENSOR",                value: "Dual-zone ToF sensor array" },
   { label: "DETECTION TECHNOLOGY",  value: "Time-of-flight kinetic signature analysis" },
-  { label: "DETECTION RANGE",       value: "0 – 1,200mm" },
+  { label: "DETECTION RANGE",       value: "0 to 1,200mm" },
   { label: "RESPONSE TIME",    value: "< 200ms" },
   { label: "MARKER SYSTEM",    value: "Forensic marker deployment (patent pending)" },
   { label: "CONNECTIVITY",     value: "Wi-Fi 802.11 b/g/n" },
   { label: "ENCRYPTION",       value: "AES-256-GCM (edge)" },
   { label: "POWER",            value: "5V USB-C / 12V DC" },
   { label: "IP RATING",        value: "IP42" },
-  { label: "OPERATING TEMP",   value: "0°C – 40°C" },
+  { label: "OPERATING TEMP",   value: "0°C to 40°C" },
   { label: "FORM FACTOR",      value: "Shelf-mount · Standard bay compatible" },
 ];
 

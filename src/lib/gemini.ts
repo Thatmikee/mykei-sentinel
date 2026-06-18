@@ -1,14 +1,16 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+/**
+ * Calls /api/assess (Cloudflare Worker) — Gemini key stays server-side.
+ * VITE_GEMINI_KEY is no longer needed and should be removed from .env files.
+ */
+export const runIntakeAssessment = async (rawQuery: string): Promise<string> => {
+  const res = await fetch("/api/assess", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query: rawQuery }),
+  });
 
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_KEY ?? "");
-
-export const runIntakeAssessment = async (rawQuery: string) => {
-  const query = rawQuery.replace(/["`\\]/g, "").slice(0, 500);
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-  const prompt = `You are the Mykei Securities Technical Analyst. A user asks: "${query}".
-  Provide a clinical security analysis regarding bulk-sweeping and ask for their monthly shrinkage rate. 
-  Maintain a professional, institutional tone.`;
-
-  const result = await model.generateContent(prompt);
-  return result.response.text();
+  if (!res.ok) throw new Error("Assessment service unavailable");
+  const data = await res.json();
+  if (data.error) throw new Error(data.error);
+  return data.text ?? "";
 };

@@ -44,7 +44,7 @@ const Footer = () => {
           {/* Movement nav */}
           <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3">
             {[
-              { href: "/adn-1", label: "ADN" },
+              { href: "/adn", label: "ADN" },
               { href: "/signal", label: "Signal" },
               { href: "/certification", label: "Certification" },
               { href: "/state-of-theft", label: "State of Theft" },

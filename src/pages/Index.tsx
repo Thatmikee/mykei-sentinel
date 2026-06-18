@@ -50,6 +50,12 @@ function useReveal(threshold = 0.15) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Already in viewport at mount — show immediately (handles fast loads, screenshots, crawlers)
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 1.1 && rect.bottom > 0) {
+      setVisible(true);
+      return;
+    }
     const obs = new IntersectionObserver(
       ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
       { threshold }
@@ -287,6 +293,10 @@ export default function Index() {
             animation: mk-fights-impact 0.7s cubic-bezier(0.16,1,0.3,1) both;
             animation-delay: 0.45s;
           }
+        }
+
+        @media print, (prefers-reduced-motion: reduce) {
+          [data-reveal], .mk-reveal { opacity: 1 !important; transform: none !important; }
         }
 
         @keyframes silver-depth {
