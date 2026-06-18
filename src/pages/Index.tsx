@@ -163,18 +163,53 @@ export default function Index() {
 
         /* ── GLOBAL SILVER LAYER (fixed, behind everything) ── */
         .mk-silver-bg {
-          position: fixed; inset: 0; z-index: -1; pointer-events: none;
-          background: linear-gradient(135deg, #ffffff 0%, #f3f3f6 18%, #e6e6ef 38%, #ededf4 55%, #f5f5fa 75%, #ffffff 100%);
-          background-size: 350% 350%;
-          animation: silver-drift 14s ease-in-out infinite;
+          position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden;
+          background: linear-gradient(145deg,
+            #ffffff   0%,
+            #f4f4f8  11%,
+            #d8d8e4  24%,
+            #c0c0cc  38%,
+            #ccccda  52%,
+            #dcdce8  67%,
+            #f4f4f8  82%,
+            #ffffff 100%
+          );
+          background-size: 600% 600%;
+          animation: silver-drift 20s ease-in-out infinite;
+        }
+        .mk-silver-bg::after {
+          content: '';
+          position: absolute;
+          top: -100%; left: -80%;
+          width: 55%; height: 300%;
+          background: linear-gradient(
+            90deg,
+            transparent            0%,
+            rgba(255,255,255,0)   33%,
+            rgba(210,218,255,0.5) 44%,
+            rgba(255,255,255,0.95) 50%,
+            rgba(210,218,255,0.5) 56%,
+            rgba(255,255,255,0)   67%,
+            transparent          100%
+          );
+          animation: silver-sweep 9s ease-in-out infinite;
+          animation-delay: 2.5s;
         }
         a { text-decoration: none; }
 
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
         @keyframes silver-drift {
-          0%   { background-position: 0% 50%; }
-          50%  { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0%   { background-position: 0% 25%; }
+          33%  { background-position: 100% 75%; }
+          66%  { background-position: 55% 0%; }
+          100% { background-position: 0% 25%; }
+        }
+        @keyframes silver-sweep {
+          0%   { transform: translateX(-10%) rotate(12deg); opacity: 0; }
+          7%   { opacity: 1; }
+          58%  { opacity: 0.85; }
+          70%  { opacity: 0; transform: translateX(290%) rotate(12deg); }
+          100% { opacity: 0; transform: translateX(290%) rotate(12deg); }
         }
 
         /* ── NAV ── */
@@ -212,7 +247,7 @@ export default function Index() {
         .mk-hero {
           min-height: 100dvh; display: flex; align-items: center;
           padding: 80px 52px 56px; position: relative; overflow: hidden;
-          background: rgba(248,248,248,0.88);
+          background: rgba(255,255,255,0.2);
         }
         .mk-hero-inner {
           position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; width: 100%;
@@ -271,7 +306,7 @@ export default function Index() {
 
         /* ── PROOF BAR ── */
         .mk-proof-bar {
-          background: rgba(248,248,248,0.88);
+          background: rgba(255,255,255,0.2);
           padding: 0 52px;
         }
         .mk-proof-bar-inner {
@@ -311,7 +346,7 @@ export default function Index() {
 
         /* ── IN-STORE REALITY ── */
         .mk-reality {
-          background: rgba(248,248,248,0.88); padding: 72px 52px;
+          background: rgba(255,255,255,0.2); padding: 72px 52px;
         }
         .mk-reality-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .mk-reality-img {
@@ -333,7 +368,7 @@ export default function Index() {
 
         /* ── COMMERCIAL READINESS ── */
         .mk-commercial {
-          background: rgba(248,248,248,0.88); padding: 72px 52px;
+          background: rgba(255,255,255,0.2); padding: 72px 52px;
         }
         .mk-commercial-inner { max-width: 1100px; margin: 0 auto; }
         .mk-commercial-grid {
@@ -351,7 +386,7 @@ export default function Index() {
         .mk-commercial-sub { font-size: 11.5px; color: #64748b; line-height: 1.5; }
 
         /* ── DESIGNED FOR ── */
-        .mk-designed { background: rgba(248,248,248,0.88); padding: 72px 52px; }
+        .mk-designed { background: rgba(255,255,255,0.2); padding: 72px 52px; }
         .mk-designed-inner { max-width: 1100px; margin: 0 auto; }
         .mk-designed-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
         .mk-designed-item {
@@ -363,7 +398,7 @@ export default function Index() {
 
         /* ── WHY NOW ── */
         .mk-why-now {
-          background: rgba(248,248,248,0.88); padding: 72px 52px;
+          background: rgba(255,255,255,0.2); padding: 72px 52px;
         }
         .mk-why-now-inner { max-width: 1100px; margin: 0 auto; }
         .mk-why-now-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
@@ -379,7 +414,7 @@ export default function Index() {
         .mk-trust-sep { display: none; }
 
         /* ── MARKET ── */
-        .mk-market { background: rgba(248,248,248,0.88); padding: 96px 52px; position: relative; }
+        .mk-market { background: rgba(255,255,255,0.2); padding: 96px 52px; position: relative; }
         .mk-market-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
         .mk-section-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: #111111; margin-bottom: 14px; }
         .mk-h2-light { font-family: 'Sora', system-ui, sans-serif; font-size: clamp(30px,3.8vw,50px); font-weight: 700; color: #fff; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.08; }
@@ -399,7 +434,7 @@ export default function Index() {
         /* ── TECH ── */
         .mk-tech {
           padding: 96px 52px;
-          background: rgba(248,248,248,0.88);
+          background: rgba(255,255,255,0.2);
         }
         .mk-tech-inner { max-width: 1100px; margin: 0 auto; }
         .mk-tech-steps { display: flex; flex-direction: column; gap: 0; margin-top: 64px; }
@@ -434,7 +469,7 @@ export default function Index() {
         /* ── SPECS ── */
         .mk-specs {
           padding: 96px 52px;
-          background: rgba(248,248,248,0.88);
+          background: rgba(255,255,255,0.2);
           position: relative; overflow: hidden;
         }
         .mk-specs-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
@@ -454,7 +489,7 @@ export default function Index() {
         /* ── SURVEY ── */
         .mk-survey {
           padding: 96px 52px;
-          background: rgba(248,248,248,0.88);
+          background: rgba(255,255,255,0.2);
           position: relative; overflow: hidden;
         }
         .mk-survey::before {
@@ -493,7 +528,7 @@ export default function Index() {
         .mk-learn-btn:hover { transform: translateY(-2px); }
 
         /* ── FOOTER ── */
-        .mk-footer { padding: 28px 52px; background: rgba(248,248,248,0.88); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .mk-footer { padding: 28px 52px; background: rgba(255,255,255,0.2); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
         .mk-footer-name { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; color: #111111; }
         .mk-footer-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #555555; letter-spacing: 0.5px; margin-top: 2px; }
         .mk-footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #475569; letter-spacing: 0.5px; }
@@ -652,7 +687,7 @@ export default function Index() {
 
 
       {/* WHY WE EXIST */}
-      <section style={{ background: "rgba(248,248,248,0.88)", padding: "100px clamp(24px,6vw,96px)", position: "relative", overflow: "hidden" }}>
+      <section style={{ background: "rgba(255,255,255,0.2)", padding: "100px clamp(24px,6vw,96px)", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: "repeating-linear-gradient(transparent, transparent 47px, #111111 47px, #111111 48px)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative" }}>
           <Reveal>
@@ -688,7 +723,7 @@ export default function Index() {
       </section>
 
       {/* REGISTER → MARK → EVIDENCE */}
-      <section style={{ padding: "88px clamp(24px,6vw,80px)", background: "rgba(248,248,248,0.88)" }}>
+      <section style={{ padding: "88px clamp(24px,6vw,80px)", background: "rgba(255,255,255,0.2)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "flex-start", gap: 0 }}>
           {[
             { word: "Register", sub: "Your stock is on record before the incident. Not after.", color: "#15803d" },
@@ -756,7 +791,7 @@ export default function Index() {
 
 
       {/* PUBLIC VOTE */}
-      <section style={{ background: "rgba(248,248,248,0.88)", padding: "72px clamp(24px,6vw,80px)" }}>
+      <section style={{ background: "rgba(255,255,255,0.2)", padding: "72px clamp(24px,6vw,80px)" }}>
         <div style={{ maxWidth: 560, margin: "0 auto", textAlign: "center" }}>
           <Reveal>
             <h2 style={{ fontFamily: "'Sora',system-ui,sans-serif", fontSize: "clamp(22px,3vw,34px)", fontWeight: 700, color: "#1E1E1E", marginBottom: 12, lineHeight: 1.2 }}>
