@@ -41,6 +41,7 @@ const ThesisPage               = lazy(() => import("./pages/ThesisPage"));
 const ProtocolPage             = lazy(() => import("./pages/ProtocolPage"));
 const DoctrinePage             = lazy(() => import("./pages/DoctrinePage"));
 const PressPageFull            = lazy(() => import("./pages/PressPage"));
+const SimIntelPage             = lazy(() => import("./pages/SimIntelPage"));
 
 const queryClient = new QueryClient();
 
@@ -62,6 +63,7 @@ const App = () => (
             <Route path="/technology/adn-1" element={<Navigate to="/adn" replace />} />
             <Route path="/technology/ats" element={<ATSDetail />} />
             <Route path="/adn-1-in-action" element={<Navigate to="/adn" replace />} />
+            <Route path="/intel" element={<SimIntelPage />} />
             <Route path="/founder" element={<FounderPage />} />
             <Route path="/michael-esema" element={<FounderPage />} />
             <Route path="/economic-sterilisation" element={<EconomicSterilisationPage />} />
