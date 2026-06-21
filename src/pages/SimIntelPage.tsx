@@ -145,7 +145,7 @@ function AiPanel({ records }: { records: SimRecord[] }) {
       `E${r.pos} ${r.scenario} L${r.level} bulk=${r.scores.bulk_sweep.toFixed(2)} pick=${r.scores.repeated_pick.toFixed(2)} conceal=${r.scores.concealment.toFixed(2)} staff_anom=${r.scores.staff_anomaly.toFixed(2)} deploy=${r.deploy}`
     ).join('\n')
 
-    const prompt = `You are analysing ADN-1 simulation run data from Mykei Securities Ltd. ADN-1 is a retail theft deterrence node using radar, ToF sensors and acoustic sensors.
+    const prompt = `You are analysing Active Deterrence Node simulation run data from Mykei Securities Ltd. The Active Deterrence Node is a retail theft deterrence device using radar, ToF sensors and acoustic sensors.
 
 Ladder: L0=normal, L1=watch, L2=alert, L3=high-risk, L4=deploy-eligible, L5=override.
 Scores: bulk_sweep, repeated_pick, concealment, restock, staff_anomaly. Each 0–1.
@@ -336,32 +336,89 @@ function EventFeed({ records, playing }: { records: SimRecord[]; playing: boolea
   )
 }
 
+// ─── AI Scenario Generator ──────────────────────────────────────────────────
+
+async function generateSimRun(): Promise<SimRecord[]> {
+  const key = import.meta.env.VITE_GEMINI_API_KEY
+  if (!key) return SIM_RECORDS
+
+  const today = new Date().toISOString().slice(0, 10).replace(/-/g, '')
+  const prompt = `You are the ADN (Active Deterrence Node) simulation engine for Mykei Securities Ltd. Generate a realistic retail theft deterrence simulation run.
+
+Return ONLY a valid JSON array of 22-28 events. No markdown fences, no explanation, just the raw JSON array.
+
+Each event must exactly match this shape:
+{"id":"MYK-SIM-${today}-<6digit zero-padded>","pos":<int from 1>,"ts":"<ISO timestamp>","scenario":"<name>","class":"<class>","level":<0-5>,"eligible":<bool>,"reason":"<string>","scores":{"bulk_sweep":<0-1>,"repeated_pick":<0-1>,"concealment":<0-1>,"restock":<0-1>,"staff_anomaly":<0-1>},"deploy":<bool — only true when level==4 or 5>,"actual":false}
+
+Level rules:
+L0 normal: ~55% of events, low scores across all dimensions
+L1 watch: ~15%, mildly elevated repeated_pick or bulk_sweep
+L2 alert: ~12%, concealment >= 0.5 OR staff_anomaly >= 0.5
+L3 high risk: ~10%, repeated_pick >= 0.5 AND concealment >= 0.3
+L4 deploy: ~6%, bulk_sweep >= 0.78, deploy must be true, eligible must be true
+L5 override: 0-1 events maximum, bulk_sweep >= 0.95 AND another score >= 0.7
+
+Scenario names to use (mix freely, add variety): normal_pick, fast_multi_buy, messy_browsing, child_tap, staff_restock_on, staff_restock_off, classic_bulk_sweep, bag_drag, calm_repeated_pick, slow_basket_theft, two_person_block, coat_concealment, single_item_grab, staff_mode_abuse, trolley_load, return_visit, loitering, item_swap, decoy_group, shoulder_block, price_tag_swap, distraction_technique, pocket_concealment, group_sweep
+
+Make each run feel different. Vary scenario order, mix of events, and exact score values. Be realistic and technically precise.`
+
+  try {
+    const { GoogleGenerativeAI } = await import('@google/generative-ai')
+    const genAI = new GoogleGenerativeAI(key)
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' })
+    const result = await model.generateContent(prompt)
+    const raw = result.response.text().trim()
+    const jsonStr = raw.startsWith('[') ? raw : raw.slice(raw.indexOf('['), raw.lastIndexOf(']') + 1)
+    const parsed: SimRecord[] = JSON.parse(jsonStr)
+    return parsed.map((r, i) => ({ ...r, pos: i + 1 }))
+  } catch {
+    return SIM_RECORDS
+  }
+}
+
 // ─── Main Dashboard ─────────────────────────────────────────────────────────
 
 function Dashboard() {
-  const [playing, setPlaying] = useState(false)
-  const [tick, setTick]       = useState(0)
+  const [playing, setPlaying]   = useState(false)
+  const [generating, setGenerating] = useState(false)
+  const [records, setRecords]   = useState<SimRecord[]>(SIM_RECORDS)
+  const [tick, setTick]         = useState(0)
+  const [genError, setGenError] = useState(false)
 
-  const rerun = () => {
+  const rerun = async () => {
+    if (playing || generating) return
+    const hasKey = !!import.meta.env.VITE_GEMINI_API_KEY
+    if (hasKey) {
+      setGenerating(true)
+      setGenError(false)
+      try {
+        const generated = await generateSimRun()
+        setRecords(generated)
+      } catch {
+        setGenError(true)
+        setRecords(SIM_RECORDS)
+      }
+      setGenerating(false)
+    }
     setTick(t => t + 1)
     setPlaying(true)
-    setTimeout(() => setPlaying(false), SIM_RECORDS.length * 220 + 400)
+    setTimeout(() => setPlaying(false), (hasKey ? records.length : SIM_RECORDS.length) * 220 + 400)
   }
 
-  const ladderDist = SIM_RECORDS.reduce<Record<number, number>>((acc, r) => {
+  const ladderDist = records.reduce<Record<number, number>>((acc, r) => {
     acc[r.level] = (acc[r.level] || 0) + 1
     return acc
   }, {})
 
   const radarData = [
-    { subject: 'Bulk Sweep',    A: +(SIM_RECORDS.reduce((s, r) => s + r.scores.bulk_sweep, 0) / SIM_RECORDS.length * 100).toFixed(1) },
-    { subject: 'Repeated Pick', A: +(SIM_RECORDS.reduce((s, r) => s + r.scores.repeated_pick, 0) / SIM_RECORDS.length * 100).toFixed(1) },
-    { subject: 'Concealment',   A: +(SIM_RECORDS.reduce((s, r) => s + r.scores.concealment, 0) / SIM_RECORDS.length * 100).toFixed(1) },
-    { subject: 'Restock',       A: +(SIM_RECORDS.reduce((s, r) => s + r.scores.restock, 0) / SIM_RECORDS.length * 100).toFixed(1) },
-    { subject: 'Staff Anom.',   A: +(SIM_RECORDS.reduce((s, r) => s + r.scores.staff_anomaly, 0) / SIM_RECORDS.length * 100).toFixed(1) },
+    { subject: 'Bulk Sweep',    A: +(records.reduce((s, r) => s + r.scores.bulk_sweep, 0) / records.length * 100).toFixed(1) },
+    { subject: 'Repeated Pick', A: +(records.reduce((s, r) => s + r.scores.repeated_pick, 0) / records.length * 100).toFixed(1) },
+    { subject: 'Concealment',   A: +(records.reduce((s, r) => s + r.scores.concealment, 0) / records.length * 100).toFixed(1) },
+    { subject: 'Restock',       A: +(records.reduce((s, r) => s + r.scores.restock, 0) / records.length * 100).toFixed(1) },
+    { subject: 'Staff Anom.',   A: +(records.reduce((s, r) => s + r.scores.staff_anomaly, 0) / records.length * 100).toFixed(1) },
   ]
 
-  const highestRisk = [...SIM_RECORDS].sort((a, b) => b.level - a.level).slice(0, 3)
+  const highestRisk = [...records].sort((a, b) => b.level - a.level).slice(0, 3)
 
   const MONO: React.CSSProperties = { fontFamily: "'JetBrains Mono', monospace" }
 
@@ -398,25 +455,30 @@ function Dashboard() {
               width: 5, height: 5, borderRadius: '50%', background: '#4ADE80',
               animation: 'pulse-dot 2s ease-in-out infinite',
             }} />
-            SIM MODE ACTIVE
+            {generating ? 'AI GENERATING...' : 'SIM MODE ACTIVE'}
           </span>
+          {genError && (
+            <span style={{ fontSize: 9, color: '#EF4444', letterSpacing: '0.1em' }}>
+              FALLBACK · static records used
+            </span>
+          )}
           <button
             onClick={rerun}
-            disabled={playing}
+            disabled={playing || generating}
             style={{
-              background: playing ? '#111' : '#B8962E18',
+              background: (playing || generating) ? '#111' : '#B8962E18',
               border: '1px solid #B8962E44',
-              color: playing ? '#444' : '#B8962E',
+              color: (playing || generating) ? '#444' : '#B8962E',
               ...MONO,
               fontSize: 9,
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
               padding: '6px 14px',
-              cursor: playing ? 'default' : 'pointer',
+              cursor: (playing || generating) ? 'default' : 'pointer',
               transition: 'all 0.2s',
             }}
           >
-            {playing ? 'Running...' : 'Run Simulation'}
+            {generating ? 'Generating...' : playing ? 'Running...' : 'Run Simulation'}
           </button>
         </div>
       </div>
@@ -433,12 +495,12 @@ function Dashboard() {
           marginBottom: 20,
         }}>
           {[
-            { label: 'Total Events', val: SIM_RECORDS.length, color: '#ccc' },
+            { label: 'Total Events', val: records.length, color: '#ccc' },
             { label: 'L4 Deploy-Eligible', val: ladderDist[4] ?? 0, color: '#EF4444' },
             { label: 'L3 High Risk', val: ladderDist[3] ?? 0, color: '#F87171' },
             { label: 'L2 Alert', val: ladderDist[2] ?? 0, color: '#FB923C' },
             { label: 'L0 Normal', val: ladderDist[0] ?? 0, color: '#4ADE80' },
-            { label: 'Would Deploy', val: SIM_RECORDS.filter(r => r.deploy).length, color: '#EF4444' },
+            { label: 'Would Deploy', val: records.filter(r => r.deploy).length, color: '#EF4444' },
           ].map(s => (
             <div key={s.label} style={{
               background: '#080808',
@@ -460,8 +522,8 @@ function Dashboard() {
 
           {/* Left: event feed + AI */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            <EventFeed key={tick} records={SIM_RECORDS} playing={playing} />
-            <AiPanel records={SIM_RECORDS} />
+            <EventFeed key={tick} records={records} playing={playing} />
+            <AiPanel records={records} />
           </div>
 
           {/* Right: radar + ladder + score bars */}
@@ -492,7 +554,7 @@ function Dashboard() {
               </div>
               {[0,1,2,3,4,5].map(l => {
                 const count = ladderDist[l] ?? 0
-                const pct   = SIM_RECORDS.length > 0 ? count / SIM_RECORDS.length : 0
+                const pct   = records.length > 0 ? count / records.length : 0
                 return (
                   <div key={l} style={{ marginBottom: 8 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
