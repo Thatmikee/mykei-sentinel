@@ -271,8 +271,8 @@ export default function ADN1DetailPage() {
                 ToF sensors continue passive logging.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Every inhibit activation, its time, duration, staff code, and reason, is written as a
-                permanent, tamper-proof entry in the Forensic Event Log. The system reverts to active mode
+                Every inhibit activation, its time, duration, staff code, and reason, is designed to be written as a
+                tamper-evident entry in the Forensic Event Log, using append-only records and device signatures. The system is designed to revert to active mode
                 automatically when the window expires.
               </p>
             </motion.div>
