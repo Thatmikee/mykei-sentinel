@@ -18,7 +18,7 @@ const PHASES = [
       { text: "Business plan finalised, March 2026", done: true },
       { text: "Investor pitch deck published, v2", done: true },
       { text: "Innovation grant application submitted", done: true },
-      { text: "5+ Letters of Intent secured from pilot retailers", done: true },
+      { text: "5 non-binding letters of interest from discovery meetings, Mar 2026 (not procurement commitments)", done: true },
     ],
   },
   {

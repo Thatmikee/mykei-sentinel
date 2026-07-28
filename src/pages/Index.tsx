@@ -839,7 +839,7 @@ export default function Index() {
             </h1>
 
             <p className="mk-hero-body">
-              Stolen goods have value because they can be sold. Mykei makes them harder to sell. By marking the goods, logging the incident, and poisoning the resale market before anyone gets to the door.
+              Stolen goods have value because they can be sold. Mykei makes them harder to sell. By marking the goods and logging the incident, with the aim of making the resale market harder to move stolen stock through.
             </p>
 
             <div className="mk-hero-actions">
@@ -908,7 +908,7 @@ export default function Index() {
           {[
             { word: "Register", sub: "Your stock is on record before the incident. Not after.", color: "#15803d" },
             { word: "Mark",     sub: "Goods are marked, not people.",                           color: "#c27803" },
-            { word: "Evidence", sub: "Timestamped, hash-chained, already filed before anyone reaches the door.", color: "#b91c1c" },
+            { word: "Evidence", sub: "Designed to be timestamped and hash-chained, filed before anyone reaches the door.", color: "#b91c1c" },
           ].map(({ word, sub, color }, i) => (
             <div key={word} style={{ display: "flex", alignItems: "flex-start", gap: 0, flex: i < 2 ? "0 0 auto" : "1" }}>
               <div>
@@ -928,7 +928,7 @@ export default function Index() {
         <div className="mk-tech-inner">
           <Reveal>
             <h2 className="mk-h2-dark">The shelf <FightsWord /> back.</h2>
-            <p className="mk-sub-dark">Sweep happens. ADN fires. Goods are marked. Record is created. All before anyone reaches the door.</p>
+            <p className="mk-sub-dark">Sweep is detected. ADN is designed to trigger a marker payload and log the event to the registry. Detection, decision logic and event-logging are demonstrated in prototype; controlled marker deployment and reliable field detection are still in development.</p>
           </Reveal>
           <div className="mk-tech-steps">
             <Reveal delay={0}>
@@ -936,7 +936,7 @@ export default function Index() {
                 <div className="mk-tech-step-num">01</div>
                 <div className="mk-tech-step-body">
                   <h3 className="mk-tech-step-title">The device detects the sweep</h3>
-                  <p className="mk-tech-step-desc">A small unit sits on the shelf. The moment stock is taken in bulk, it knows. No cameras. No staff involvement. No alarm that embarrasses honest customers.</p>
+                  <p className="mk-tech-step-desc">A small unit sits on the shelf. It is designed to detect the moment stock is taken in bulk. No cameras. No staff involvement. No alarm that embarrasses honest customers.</p>
                 </div>
               </div>
             </Reveal>
@@ -946,7 +946,7 @@ export default function Index() {
                 <div className="mk-tech-step-num">02</div>
                 <div className="mk-tech-step-body">
                   <h3 className="mk-tech-step-title">The goods are marked</h3>
-                  <p className="mk-tech-step-desc">The taken stock receives a forensic marker automatically. Not visible to the thief. Linked to your shop, the date, and the batch incident. Permanently.</p>
+                  <p className="mk-tech-step-desc">The taken stock is intended to receive a forensic marker automatically. Not visible to the thief. Linked to your shop, the date, and the batch incident.</p>
                 </div>
               </div>
             </Reveal>
@@ -955,8 +955,8 @@ export default function Index() {
               <div className="mk-tech-step">
                 <div className="mk-tech-step-num">03</div>
                 <div className="mk-tech-step-body">
-                  <h3 className="mk-tech-step-title">A tamper-proof record is created</h3>
-                  <p className="mk-tech-step-desc">Every incident is logged to the Mykei Registry. Hash-chained and append-only. If the goods surface online or at a market, the record already exists. Stolen stock becomes harder to sell.</p>
+                  <h3 className="mk-tech-step-title">A tamper-aware record is intended</h3>
+                  <p className="mk-tech-step-desc">The intended design is a tamper-evident registry: hash-chained, append-only, with device signatures and controlled corrections, not an absolute tamper-proof guarantee. If the goods surface online or at a market, the aim is a record that already exists.</p>
                 </div>
               </div>
             </Reveal>

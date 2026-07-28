@@ -536,7 +536,7 @@ export const HeroSection = () => {
 
         {/* Trust bar */}
         <div className="mk-trust">
-          {["Company No. 16984969", "Registered in England & Wales", "Manchester, UK", "5 Retailers: Letters of Intent Signed", "Patent-pending: UK application No. 2606630.8"].map((item, i) => (
+          {["Company No. 16984969", "Registered in England & Wales", "Manchester, UK", "5 Non-Binding Letters of Interest (Discovery Meetings, Mar 2026)", "Patent-pending: UK application No. 2606630.8"].map((item, i) => (
             <div className="mk-trust-item" key={i}>
               {i > 0 && <div className="mk-trust-dot" />}
               {item}

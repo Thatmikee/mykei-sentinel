@@ -364,7 +364,7 @@ export default function BriefIndex() {
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 20 }}>Founder bio for publication</div>
               <blockquote style={{ borderLeft: `2px solid ${GOLD}`, paddingLeft: 20, margin: "0 0 24px" }}>
                 <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 15, fontStyle: "italic", color: INK, lineHeight: 1.75 }}>
-                  Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN, a patent-pending shelf-mounted retail defence device that detects bulk-sweep theft events, triggers controlled marker deployment, and records cartridge-linked activations in the Mykei Registry. He coined the doctrine of Economic Sterilisation in 2025 (UK patent application No. 2606630.8). A former Head Accountant at B's Hive, he holds an MSc from Manchester Metropolitan University, an MBA from the Nigerian Defence Academy, and a BSc from Benson Idahosa University. Five letters of intent are signed in Greater Manchester. The pilot has not yet begun; the system is at controlled prototype stage.
+                  Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN, a patent-pending shelf-mounted retail defence device that detects bulk-sweep theft events, triggers controlled marker deployment, and records cartridge-linked activations in the Mykei Registry. He coined the doctrine of Economic Sterilisation in 2025 (UK patent application No. 2606630.8). A former Head Accountant at B's Hive, he holds an MSc from Manchester Metropolitan University, an MBA from the Nigerian Defence Academy, and a BSc from Benson Idahosa University. Five non-binding letters of interest were signed in Greater Manchester in March 2026, following discovery meetings. They are not procurement commitments and do not establish a pilot start date. The pilot has not yet begun; the system is at controlled prototype stage.
                 </p>
               </blockquote>
               <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
@@ -384,7 +384,7 @@ export default function BriefIndex() {
                   "UK retail crime incidents: 5.8 million (ACS 2026)",
                   "Patent application: GB2606630.8, 17 claims",
                   "ADN response time: design target under 3 seconds",
-                  "Independent Retail Pilot: 2026, 5 signed LOIs",
+                  "Independent Retail Pilot: 2026, 5 non-binding letters of interest, no pilot start date confirmed",
                   "Privacy-by-design: no camera, no biometric or suspect identity data",
                 ].map(fact => (
                   <div key={fact} style={{ display: "flex", gap: 10, padding: "8px 0", borderBottom: `1px solid ${RULE}`, fontSize: 12.5, color: MUTED, lineHeight: 1.5 }}>
