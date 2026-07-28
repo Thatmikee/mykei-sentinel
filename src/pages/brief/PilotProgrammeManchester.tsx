@@ -4,8 +4,8 @@ export default function PilotProgrammeManchester() {
       <p>
         Every technology that eventually becomes infrastructure passes through a moment where real
         businesses, in a real geography, test it under real conditions. For the ADN, that moment is the
-        validation programme, planned for 2026. A number of independent retailers across Greater Manchester
-        have signed Letters of Intent. The validation is not framed as a proof of concept for the hardware alone.
+        validation programme, planned for 2026. Five independent retailers across Greater Manchester signed
+        non-binding letters of interest in March 2026, following discovery meetings. The validation is not framed as a proof of concept for the hardware alone.
         It is a proof of doctrine, establishing whether Economic Sterilisation deployed at
         street level produces measurable behavioural change in a concentrated urban area.
       </p>
@@ -45,7 +45,7 @@ export default function PilotProgrammeManchester() {
       <h2>The Validation Partners</h2>
 
       <p>
-        The businesses that have signed Letters of Intent represent a cross-section of independent
+        The businesses that signed non-binding letters of interest represent a cross-section of independent
         retail in Greater Manchester. Cashoppers Jewellers operates in the jewellery and high-value
         goods sector. Shop9jaLtd is a community grocery retailer. Khawaja Food Store serves the
         convenience and food market. Moston Lane Poundstore is a value retail operator on one of the

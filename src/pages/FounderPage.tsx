@@ -39,7 +39,7 @@ const TIMELINE = [
   { year: "2024", title: "MSc International Business Management, Merit", sub: "Manchester Metropolitan University · Manchester, UK", type: "edu" },
   { year: "2025", title: "Coins the term Economic Sterilisation", sub: "The doctrine that removes the commercial incentive for theft before it repeats", type: "invention" },
   { year: "2026", title: "Incorporates Mykei Securities Ltd · Files 17-claim patent", sub: "Co. 16984969 · Patent application No. GB2606630.8 · Manchester", type: "founding" },
-  { year: "2026", title: "5 signed letters of intent · prototype and registry proof of concept", sub: "Greater Manchester · 2026 · controlled prototype stage, field validation not yet begun", type: "founding" },
+  { year: "2026", title: "5 non-binding letters of interest (Mar 2026, no pilot start date) · prototype and registry proof of concept", sub: "Greater Manchester · 2026 · controlled prototype stage, field validation not yet begun", type: "founding" },
 ];
 
 const TYPE_COLORS: Record<string, string> = {

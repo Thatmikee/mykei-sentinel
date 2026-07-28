@@ -732,7 +732,7 @@ export function generateRetailerEmail(data: LOIData): string {
     </div>
     <div class="stat-cell">
       <div class="stat-num">5</div>
-      <div class="stat-label">Signed retailer LOIs</div>
+      <div class="stat-label">Non-binding letters of interest</div>
     </div>
     <div class="stat-cell">
       <div class="stat-num">UK</div>
