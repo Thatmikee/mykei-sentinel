@@ -120,19 +120,6 @@ export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [vote, setVote] = useState<"yes"|"no"|null>(() => localStorage.getItem("mykei_vote") as "yes"|"no"|null);
-  const [voteCounts, setVoteCounts] = useState<{yes:number,no:number}>(() => {
-    try { return JSON.parse(localStorage.getItem("mykei_vote_counts") || "null") || {yes:0,no:0}; } catch { return {yes:0,no:0}; }
-  });
-
-  const castVote = (v: "yes"|"no") => {
-    if (vote) return;
-    const next = { ...voteCounts, [v]: voteCounts[v] + 1 };
-    localStorage.setItem("mykei_vote", v);
-    localStorage.setItem("mykei_vote_counts", JSON.stringify(next));
-    setVote(v); setVoteCounts(next);
-  };
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -883,9 +870,9 @@ export default function Index() {
       <section style={{ padding: "88px clamp(24px,6vw,80px)", background: "rgba(255,255,255,0.72)" }}>
         <div className="mk-rme-row" style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "flex-start", gap: 0 }}>
           {[
-            { word: "Register", sub: "The design intent is for stock to be on record before an incident, not after.", color: "#15803d" },
-            { word: "Mark",     sub: "Design intent: goods are marked, not people.",             color: "#c27803" },
-            { word: "Evidence", sub: "Designed to be timestamped and hash-chained, filed before anyone reaches the door.", color: "#b91c1c" },
+            { word: "Register", sub: "The design intent is for stock to be on record before an incident, not after.", color: "#5C4639" },
+            { word: "Mark",     sub: "Design intent: goods are marked, not people.",             color: "#765C14" },
+            { word: "Evidence", sub: "Designed to be timestamped and hash-chained, filed before anyone reaches the door.", color: "#2D1204" },
           ].map(({ word, sub, color }, i) => (
             <div key={word} style={{ display: "flex", alignItems: "flex-start", gap: 0, flex: i < 2 ? "0 0 auto" : "1" }}>
               <div>
@@ -946,39 +933,6 @@ export default function Index() {
         </div>
       </section>
 
-
-      {/* PUBLIC VOTE */}
-      <section style={{ background: "rgba(255,255,255,0.72)", padding: "72px clamp(24px,6vw,80px)" }}>
-        <div style={{ maxWidth: 560, margin: "0 auto", textAlign: "center" }}>
-          <Reveal>
-            <h2 style={{ fontFamily: "'Sora',system-ui,sans-serif", fontSize: "clamp(22px,3vw,34px)", fontWeight: 700, color: "#2D1204", marginBottom: 12, lineHeight: 1.2 }}>
-              Does this make sense to you?
-            </h2>
-            <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, color: "#75604E", marginBottom: 36, lineHeight: 1.7 }}>
-              One question. No email. No sign-up. Just a vote.
-            </p>
-            {!vote ? (
-              <div style={{ display: "flex", gap: 16, justifyContent: "center" }}>
-                {(["yes","no"] as const).map(v => (
-                  <button key={v} onClick={() => castVote(v)} style={{
-                    fontFamily: "'JetBrains Mono',monospace", fontSize: 13, fontWeight: 700,
-                    letterSpacing: 2, textTransform: "uppercase",
-                    padding: "16px 44px", borderRadius: 6, cursor: "pointer", border: "none",
-                    background: v === "yes" ? "#2D1204" : "#fff",
-                    color: v === "yes" ? "#fff" : "#2D1204",
-                    boxShadow: v === "no" ? "inset 0 0 0 1.5px #D8D0C8" : "none",
-                    transition: "all 0.18s",
-                  }}>{v === "yes" ? "Yes" : "No"}</button>
-                ))}
-              </div>
-            ) : (
-              <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 18, fontWeight: 700, color: vote === "yes" ? "#2D7D46" : "#C0392B" }}>
-                {vote === "yes" ? "Thanks. That means a lot." : "Fair enough. We'll keep working."}
-              </div>
-            )}
-          </Reveal>
-        </div>
-      </section>
 
       {/* PILOT CTA */}
       <section id="pilot-survey" className="mk-survey">
