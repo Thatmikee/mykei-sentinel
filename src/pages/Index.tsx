@@ -360,8 +360,9 @@ export default function Index() {
 
         /* Identity headline */
         .mk-hero-identity {
-          font-size: clamp(42px, 5.5vw, 72px);
-          font-weight: 800; line-height: 1.04; letter-spacing: -2.5px; color: #2D1204; margin-bottom: 28px;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: clamp(40px, 5.2vw, 68px);
+          font-weight: 700; line-height: 1.1; letter-spacing: -0.5px; color: #2D1204; margin-bottom: 28px;
         }
         .mk-identity-accent { color: #765C14; font-style: italic; }
         .mk-vision-accent {
@@ -411,7 +412,7 @@ export default function Index() {
         .mk-hero-stat-num span { color: #2D1204; }
         .mk-hero-stat-label {
           font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.8px;
-          text-transform: uppercase; color: #8A7460; line-height: 1.5;
+          text-transform: uppercase; color: #75604E; line-height: 1.5;
         }
 
         .mk-proof-item { display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #5C4639; }
@@ -448,7 +449,7 @@ export default function Index() {
         .mk-proof-bar-item:last-child { border-right: none; margin-right: 0; }
         .mk-proof-icon {
           width: 24px; height: 24px; border-radius: 50%;
-          border: 1px solid rgba(17,17,17,0.35);
+          border: 1px solid rgba(45,18,4,0.35);
           background: #FFFFFF;
           display: inline-flex; align-items: center; justify-content: center;
           font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700;
@@ -463,16 +464,16 @@ export default function Index() {
         }
         .mk-reality-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .mk-reality-img {
-          border: 1px solid rgba(17,17,17,0.3); border-radius: 10px;
-          background: rgba(17,17,17,0.06);
+          border: 1px solid rgba(45,18,4,0.3); border-radius: 10px;
+          background: rgba(45,18,4,0.06);
           aspect-ratio: 4/3; display: flex; flex-direction: column;
           align-items: center; justify-content: center; gap: 12px;
           position: relative; overflow: hidden;
         }
         .mk-reality-img::before {
           content: ''; position: absolute; inset: 0;
-          background-image: linear-gradient(rgba(17,17,17,0.04) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(17,17,17,0.04) 1px, transparent 1px);
+          background-image: linear-gradient(rgba(45,18,4,0.04) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(45,18,4,0.04) 1px, transparent 1px);
           background-size: 24px 24px;
         }
         .mk-reality-placeholder { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #2D1204; text-align: center; position: relative; z-index: 1; }
@@ -496,7 +497,7 @@ export default function Index() {
           color: #2D1204; margin-bottom: 12px; letter-spacing: 1px;
         }
         .mk-commercial-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.8px; text-transform: uppercase; color: #2D1204; font-weight: 600; margin-bottom: 4px; }
-        .mk-commercial-sub { font-size: 11.5px; color: #8A7460; line-height: 1.5; }
+        .mk-commercial-sub { font-size: 11.5px; color: #75604E; line-height: 1.5; }
 
         /* ── DESIGNED FOR ── */
         .mk-designed { background: rgba(255,255,255,0.72); padding: 72px 52px; }
@@ -540,7 +541,7 @@ export default function Index() {
         }
         .mk-stat-card:last-child { border-right: none; }
         .mk-stat-num { font-size: 38px; font-weight: 800; color: #2D1204; letter-spacing: -1px; line-height: 1; }
-        .mk-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; color: #8A7460; margin-top: 10px; line-height: 1.6; }
+        .mk-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; color: #75604E; margin-top: 10px; line-height: 1.6; }
         .mk-market-note { border-left: 2px solid #2D1204; padding: 4px 0 4px 20px; font-size: 15px; color: #3D2B1F; line-height: 1.75; max-width: 760px; margin-top: 48px; }
         .mk-market-note strong { color: #2D1204; font-weight: 700; }
 
@@ -562,22 +563,22 @@ export default function Index() {
           width: 72px; height: 72px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
           font-family: 'Sora', sans-serif; font-size: 22px; font-weight: 800;
-          color: #8A7460; line-height: 1; letter-spacing: 0;
+          color: #75604E; line-height: 1; letter-spacing: 0;
           border: 1px solid #E0D8C8; background: #fff;
-          box-shadow: 0 0 0 0 rgba(17,17,17,0);
+          box-shadow: 0 0 0 0 rgba(45,18,4,0);
           transition: all 0.3s ease;
         }
         .mk-tech-step:hover .mk-tech-step-num {
           color: #fff; background: #2D1204; border-color: #2D1204;
-          box-shadow: 0 0 0 6px rgba(17,17,17,0.08), 0 8px 28px rgba(17,17,17,0.28);
+          box-shadow: 0 0 0 6px rgba(45,18,4,0.08), 0 8px 28px rgba(45,18,4,0.28);
         }
         .mk-tech-step-body {}
         .mk-tech-step-title { font-size: 22px; font-weight: 700; color: #2D1204; margin-bottom: 12px; line-height: 1.2; }
         .mk-tech-step-desc { font-size: 16px; color: #5C4639; line-height: 1.75; max-width: 580px; }
         .mk-tech-note { border-left: 2px solid #2D1204; padding: 4px 0 4px 20px; font-size: 14px; color: #3D2B1F; line-height: 1.6; margin-top: 48px; }
         .mk-tech-note strong { color: #2D1204; }
-        .mk-h2-dark { font-family: 'Sora', system-ui, sans-serif; font-size: clamp(30px,3.8vw,50px); font-weight: 700; color: #2D1204; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.08; }
-        .mk-sub-dark { font-size: 16px; color: #8A7460; max-width: 520px; line-height: 1.7; margin-bottom: 0; }
+        .mk-h2-dark { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px,3.8vw,50px); font-weight: 700; color: #2D1204; letter-spacing: 0; margin-bottom: 14px; line-height: 1.15; }
+        .mk-sub-dark { font-size: 16px; color: #75604E; max-width: 520px; line-height: 1.7; margin-bottom: 0; }
 
         /* ── SPECS ── */
         .mk-specs {
@@ -608,12 +609,12 @@ export default function Index() {
         .mk-survey::before {
           content: ''; position: absolute; inset: 0; pointer-events: none;
           background:
-            radial-gradient(ellipse 50% 60% at 50% 0%, rgba(17,17,17,0.12) 0%, transparent 60%),
-            radial-gradient(ellipse 30% 30% at 10% 100%, rgba(17,17,17,0.06) 0%, transparent 50%);
+            radial-gradient(ellipse 50% 60% at 50% 0%, rgba(45,18,4,0.12) 0%, transparent 60%),
+            radial-gradient(ellipse 30% 30% at 10% 100%, rgba(45,18,4,0.06) 0%, transparent 50%);
         }
         .mk-survey-inner { max-width: 600px; margin: 0 auto; }
         .mk-submit-btn { background: #2D1204; color: #fff; border: none; padding: 14px 32px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 6px; font-family: 'Sora', sans-serif; transition: all 0.2s; }
-        .mk-submit-btn:hover { background: #3D2B1F; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(17,17,17,0.28); }
+        .mk-submit-btn:hover { background: #3D2B1F; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(45,18,4,0.28); }
         .mk-form-note { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #5C4639; text-align: center; letter-spacing: 0.5px; }
         .mk-learn-note { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #5C4639; letter-spacing: 1px; text-transform: uppercase; margin-top: 36px; margin-bottom: 14px; }
         .mk-learn-btn {
@@ -635,7 +636,7 @@ export default function Index() {
         }
         @keyframes mk-glow-cycle {
           0%   { box-shadow: 0 0 12px 3px rgba(30,30,30,0.2);   border-color: #2D1204; color: #2D1204; }
-          50%  { box-shadow: 0 0 16px 4px rgba(17,17,17,0.5); border-color: #2D1204; color: #2D1204; }
+          50%  { box-shadow: 0 0 16px 4px rgba(45,18,4,0.5); border-color: #2D1204; color: #2D1204; }
           100% { box-shadow: 0 0 12px 3px rgba(30,30,30,0.2);   border-color: #2D1204; color: #2D1204; }
         }
         .mk-learn-btn:hover { transform: translateY(-2px); }
@@ -703,7 +704,7 @@ export default function Index() {
           font-size: 8.5px;
           letter-spacing: 0.8px;
           text-transform: uppercase;
-          color: #8A7460;
+          color: #75604E;
           line-height: 1.5;
         }
         @media (max-width: 1024px) {
@@ -712,7 +713,7 @@ export default function Index() {
           .mk-designed-grid { grid-template-columns: 1fr; }
           .mk-why-now-grid { grid-template-columns: 1fr; }
           .mk-proof-bar-inner { grid-template-columns: 1fr; }
-          .mk-proof-bar-label { border-right: none; border-bottom: 1px solid rgba(17,17,17,0.2); padding: 16px 0; }
+          .mk-proof-bar-label { border-right: none; border-bottom: 1px solid rgba(45,18,4,0.2); padding: 16px 0; }
           .mk-proof-bar-items { padding: 16px 0; flex-wrap: wrap; gap: 12px; }
           .mk-proof-bar-item { border-right: none; padding: 4px 0; margin-right: 0; }
         }
@@ -824,7 +825,7 @@ export default function Index() {
           <a href="/enterprise" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Enterprise</a>
           <a href="/signal" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Signal</a>
           <a href="/contact" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Contact</a>
-          <a href="/enterprise" className="mk-mobile-cta" onClick={() => setMenuOpen(false)}>Discuss the Pilot</a>
+          <a href="/enterprise" className="mk-mobile-cta" onClick={() => setMenuOpen(false)}>Discuss a pilot</a>
         </div>
       )}
 
@@ -839,29 +840,11 @@ export default function Index() {
             </h1>
 
             <p className="mk-hero-body">
-              Stolen goods have value because they can be sold. Mykei makes them harder to sell. By marking the goods and logging the incident, with the aim of making the resale market harder to move stolen stock through.
+              Stolen goods have value because they can be sold. Mykei is being built to make them harder to sell. By marking the goods and logging the incident, with the aim of making the resale market harder to move stolen stock through.
             </p>
 
-            <div className="mk-hero-actions">
-              <a href="/enterprise" className="mk-btn-primary">Discuss the Pilot</a>
-              <a href="#how-it-works" className="mk-btn-secondary">How it works</a>
-            </div>
           </div>
 
-          <div className="mk-hero-stats">
-            <div className="mk-hero-stat">
-              <div className="mk-hero-stat-num">5.5<span> Million</span></div>
-              <div className="mk-hero-stat-label">Detected UK shop theft incidents/yr, ~£400m in detected loss (BRC Crime Report 2026)</div>
-            </div>
-            <div className="mk-hero-stat">
-              <div className="mk-hero-stat-num">£5<span> Billion</span></div>
-              <div className="mk-hero-stat-label">Spent by UK retailers on security over 5 years, mostly on watching</div>
-            </div>
-            <div className="mk-hero-stat">
-              <div className="mk-hero-stat-num" style={{ fontSize: 28 }}>Patent<span> pending</span></div>
-              <div className="mk-hero-stat-label">UK application No. 2606630.8</div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -927,7 +910,7 @@ export default function Index() {
       <section id="how-it-works" className="mk-tech">
         <div className="mk-tech-inner">
           <Reveal>
-            <h2 className="mk-h2-dark">The shelf <FightsWord /> back.</h2>
+            <h2 className="mk-h2-dark">When stock is removed in bulk, the shelf notices.</h2>
             <p className="mk-sub-dark">Sweep is detected. ADN is designed to trigger a marker payload and log the event to the registry. Detection, decision logic and event-logging are demonstrated in prototype; controlled marker deployment and reliable field detection are still in development.</p>
           </Reveal>
           <div className="mk-tech-steps">
@@ -946,7 +929,7 @@ export default function Index() {
                 <div className="mk-tech-step-num">02</div>
                 <div className="mk-tech-step-body">
                   <h3 className="mk-tech-step-title">The goods are marked</h3>
-                  <p className="mk-tech-step-desc">The taken stock is intended to receive a forensic marker automatically. Not visible to the thief. Linked to your shop, the date, and the batch incident.</p>
+                  <p className="mk-tech-step-desc">The taken stock is intended to receive a batch-identifiable marker automatically. Not visible to the thief. Linked to your shop, the date, and the batch incident.</p>
                 </div>
               </div>
             </Reveal>
@@ -977,7 +960,7 @@ export default function Index() {
             <h2 style={{ fontFamily: "'Sora',system-ui,sans-serif", fontSize: "clamp(22px,3vw,34px)", fontWeight: 700, color: "#2D1204", marginBottom: 12, lineHeight: 1.2 }}>
               Does this make sense to you?
             </h2>
-            <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, color: "#8A7460", marginBottom: 36, lineHeight: 1.7 }}>
+            <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, color: "#75604E", marginBottom: 36, lineHeight: 1.7 }}>
               One question. No email. No sign-up. Just a vote.
             </p>
             {!vote ? (
