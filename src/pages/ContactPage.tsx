@@ -117,8 +117,8 @@ export default function ContactPage() {
               <div>
                 <strong style={{ color: INK, fontWeight: 500 }}>Mykei Securities Ltd</strong><br />
                 Company No. 16984969<br />
-                Bartle House, Oxford Court<br />
-                Manchester, M2 3WQ<br />
+                2 Princess Court, Butterstile Lane<br />
+                Prestwich, Manchester, M25 9PW<br />
                 England and Wales
               </div>
               <div>

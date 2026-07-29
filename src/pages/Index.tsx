@@ -632,12 +632,6 @@ export default function Index() {
           position: relative;
           color: #2D1204;
           background: #fff;
-          animation: mk-glow-cycle 3s ease-in-out infinite;
-        }
-        @keyframes mk-glow-cycle {
-          0%   { box-shadow: 0 0 12px 3px rgba(30,30,30,0.2);   border-color: #2D1204; color: #2D1204; }
-          50%  { box-shadow: 0 0 16px 4px rgba(45,18,4,0.5); border-color: #2D1204; color: #2D1204; }
-          100% { box-shadow: 0 0 12px 3px rgba(30,30,30,0.2);   border-color: #2D1204; color: #2D1204; }
         }
         .mk-learn-btn:hover { transform: translateY(-2px); }
 
@@ -794,7 +788,7 @@ export default function Index() {
             <li key={label}><a href={href}>{label}</a></li>
           ))}
         </ul>
-        <a href="/enterprise" className="mk-nav-cta">Discuss the Pilot</a>
+        <a href="/enterprise" className="mk-nav-cta">Discuss a pilot</a>
         <div className="mk-more-wrap">
           <button className="mk-more-btn" onClick={() => setMoreOpen(v => !v)} aria-label="More pages">
             More <span style={{ fontSize: 10, lineHeight: 1 }}>▾</span>
@@ -877,7 +871,7 @@ export default function Index() {
                   Give independent retailers the one thing security has rarely offered: a way to make stolen goods harder to cash out.
                 </p>
                 <p style={{ fontFamily: "'Sora',sans-serif", fontSize: "clamp(14px,1.4vw,16px)", lineHeight: 1.8, color: "#3D2B1F", margin: "0 0 32px" }}>
-                  Mykei Securities builds security hardware for independent shops. Not the big chains with entire security teams. The butcher, the pharmacy, the corner shop. The people who built something and do not deserve to watch it slowly disappear.
+                  Mykei Securities is building security hardware for independent shops. Not the big chains with entire security teams. The butcher, the pharmacy, the corner shop. The people who built something and do not deserve to watch it slowly disappear.
                 </p>
               </div>
             </Reveal>
@@ -992,22 +986,10 @@ export default function Index() {
           <Reveal>
             <h2 className="mk-h2-dark">Your cameras recorded it. Your stock still walked. What now?</h2>
             <p className="mk-sub-dark" style={{ marginBottom: 36 }}>We do not take every case. Tell us about yours.</p>
-            <a href="/enterprise" className="mk-submit-btn" style={{ display: "inline-block", textDecoration: "none" }}>Discuss the Pilot</a>
+            <a href="/enterprise" className="mk-submit-btn" style={{ display: "inline-block", textDecoration: "none" }}>Discuss a pilot</a>
             <p className="mk-form-note" style={{ marginTop: 20 }}>No pressure. Just a conversation. Company No. 16984969</p>
-            <div style={{ marginTop: 36, display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
+            <div style={{ marginTop: 36, display: "flex", justifyContent: "center" }}>
               <a href="/howitworks" className="mk-learn-btn">See How It Works →</a>
-              <a href="/howitworks#demo" style={{
-                display: "inline-flex", alignItems: "center", gap: 10,
-                background: "#2D1204", color: "#fff",
-                fontFamily: "'JetBrains Mono',monospace",
-                fontWeight: 700, fontSize: 11, letterSpacing: 2,
-                textTransform: "uppercase",
-                padding: "16px 36px", borderRadius: 8, textDecoration: "none",
-                boxShadow: "0 8px 40px rgba(0,0,0,0.25)",
-                transition: "all 0.3s ease",
-              }}>
-                ▶ ADN in Action
-              </a>
             </div>
           </Reveal>
         </div>
