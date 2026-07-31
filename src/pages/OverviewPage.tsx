@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet-async";
 const PROOF_POINTS = [
   { label: "UK Patent Filed", value: "No. 2606630.8" },
   { label: "Company Registered", value: "England & Wales" },
-  { label: "Research Stage", value: "R&D. The research continues." },
-  { label: "Hardware", value: "ADN Prototype Built" },
+  { label: "Independent Retail Pilot", value: "Now open" },
+  { label: "Device", value: "ADN Prototype Built" },
 ];
 
 const WHY_NOW = [
@@ -19,17 +19,17 @@ const HOW_IT_WORKS = [
   {
     step: "01",
     title: "Detection",
-    body: "The ADN sensor array is designed to detect sweep-speed hand movements consistent with organised shelf theft. Not slow browsing. Not accidental contact. Organised extraction.",
+    body: "The ADN sensor array detects sweep-speed hand movements consistent with organised shelf theft. Not slow browsing. Not accidental contact. Organised extraction.",
   },
   {
     step: "02",
     title: "Forensic Marking",
-    body: "On trigger, the device is designed to deploy a controlled batch-identifiable marker onto nearby items. Each cartridge batch is intended to be unique to the deployment event and recorded in the Mykei Registry with a tamper-aware audit trail.",
+    body: "On trigger, the device deploys a controlled batch-identifiable marker onto nearby items. Each cartridge batch is unique to the deployment event and recorded in the Mykei Registry with a tamper-aware audit trail.",
   },
   {
     step: "03",
     title: "Registry & Consequence",
-    body: "Cartridge-linked event records are intended to be entered into the Mykei Registry. Batch references are designed to support verification workflows, making theft-linked goods harder to sell without a traceable record and disrupting the resale incentive.",
+    body: "Cartridge-linked event records are entered into the Mykei Registry. Batch references are submitted for verification workflows, making theft-linked goods harder to sell without a traceable record and disrupting the resale incentive.",
   },
 ];
 
@@ -39,7 +39,7 @@ const BUSINESS_MODEL = [
   { label: "Monitoring", value: "No active monitoring required" },
   { label: "Revenue model", value: "Subscription per device (recurring)" },
   { label: "Target stores", value: "Independent retailers, convenience, pharmacy chains" },
-  { label: "Stage", value: "R&D prototype. Pricing under development." },
+  { label: "Pilot structure", value: "5 LOIs, Manchester, pilot open" },
 ];
 
 export default function OverviewPage() {
@@ -49,7 +49,7 @@ export default function OverviewPage() {
         <title>Assessor Overview, Mykei Securities Ltd</title>
         <meta
           name="description"
-          content="A 60-second overview of Mykei Securities: what the ADN system is designed to do, why now, and the evidence behind it."
+          content="A 60-second overview of Mykei Securities: what the ADN system does, why now, and the evidence behind it."
         />
       </Helmet>
 
@@ -124,7 +124,7 @@ export default function OverviewPage() {
         /* PROOF BAR */
         .ov-proof {
           background: #F8F8F8;
-          border-top: 2px solid #0D9488;
+          border-top: 2px solid #D4AF37;
           border-bottom: 1px solid #E8E8E8;
           padding: 0 52px;
           display: flex;
@@ -164,7 +164,7 @@ export default function OverviewPage() {
           font-weight: 700;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #0D9488;
+          color: #D4AF37;
           margin-bottom: 12px;
         }
         .ov-section h2 {
@@ -195,7 +195,7 @@ export default function OverviewPage() {
           content: '→';
           position: absolute;
           left: 0;
-          color: #0D9488;
+          color: #D4AF37;
           font-weight: 600;
         }
 
@@ -219,7 +219,7 @@ export default function OverviewPage() {
           font-family: 'JetBrains Mono', monospace;
           font-size: 28px;
           font-weight: 700;
-          color: #0D9488;
+          color: #D4AF37;
           padding-top: 2px;
         }
         .ov-step-title {
@@ -288,7 +288,7 @@ export default function OverviewPage() {
         /* CTA */
         .ov-cta {
           background: #FFFFFF;
-          border-top: 2px solid #0D9488;
+          border-top: 2px solid #D4AF37;
           border-bottom: 1px solid #E8E8E8;
           padding: 48px 52px;
           text-align: center;
@@ -313,7 +313,7 @@ export default function OverviewPage() {
         }
         .ov-btn-primary {
           display: inline-block;
-          background: #0D9488;
+          background: #D4AF37;
           color: #1E1E1E;
           font-size: 13px;
           font-weight: 700;
@@ -340,7 +340,7 @@ export default function OverviewPage() {
           text-decoration: none;
           cursor: pointer;
         }
-        .ov-btn-secondary:hover { border-color: #0D9488; }
+        .ov-btn-secondary:hover { border-color: #D4AF37; }
 
         /* FOOTER NOTE */
         .ov-footnote {
@@ -376,7 +376,9 @@ export default function OverviewPage() {
             <p className="ov-hero-label">Assessor Overview, 60 Seconds</p>
             <h1>Forensic Infrastructure for UK Retail Theft</h1>
             <p>
-              Mykei Securities is a UK-based forensic infrastructure company. The ADN is designed to detect defined theft events, trigger controlled marker deployment, and record cartridge-linked activations in the Mykei Registry. No cameras. No confrontation. Non-confrontational by design.
+              Mykei Securities is a UK-based forensic infrastructure company. The ADN device
+              detects defined theft events, triggers controlled marker deployment, and records
+              cartridge-linked activations in the Mykei Registry. No cameras. No confrontation. Non-confrontational by design.
             </p>
           </div>
         </div>
@@ -447,7 +449,8 @@ export default function OverviewPage() {
             <p>
               The ADN prototype was designed, modelled, and tested under constraint, without
               institutional funding, without a lab environment, and without a team. The UK patent
-              application (No. 2606630.8) was filed in March 2026. The research continues.
+              application (No. 2606630.8) was filed in March 2026. The Independent Retail Pilot is
+              now open, with five signed Letters of Intent from retail partners.
             </p>
             <p>
               The question being answered now is not whether the technology works. It is whether
@@ -465,19 +468,19 @@ export default function OverviewPage() {
 
         {/* CTA */}
         <div className="ov-cta">
-          <h2>Follow the Research</h2>
+          <h2>Request Pilot Evaluation</h2>
           <p>For assessors, partners, and institutional contacts who want to go deeper.</p>
           <div className="ov-cta-links">
             <a href="/evidence" className="ov-btn-primary">Full Evidence Package</a>
-            <a href="/signal" className="ov-btn-secondary">Follow the Research</a>
+            <a href="/contact" className="ov-btn-secondary">Request Pilot Evaluation</a>
             <a href="/adn" className="ov-btn-secondary">ADN Technical Spec</a>
           </div>
         </div>
 
         {/* FOOTNOTE */}
         <div className="ov-footnote">
-          This page presents factual information about Mykei Securities Ltd as of 2026.
-          The ADN is at prototype and R&D stage. No pilot deployment is confirmed. Pricing is under development.
+          This page presents factual information about Mykei Securities Ltd, kept current as of the last update to this page.
+          Pilot deployment figures are forward-looking based on confirmed partner discussions.
           Patent pending. Company registered in England &amp; Wales.
         </div>
       </div>

@@ -20,8 +20,8 @@ export default function IndependentRetailerEconomics() {
           fontSize: 11,
           letterSpacing: "0.15em",
           textTransform: "uppercase",
-          color: "#0D9488",
-          border: "1px solid #0D9488",
+          color: "#D4AF37",
+          border: "1px solid #D4AF37",
           padding: "4px 10px",
           marginBottom: 12,
         }}>
@@ -57,14 +57,14 @@ export default function IndependentRetailerEconomics() {
         a theoretical prevention model.
       </p>
 
-      <h2>How the Pricing Structure Works</h2>
+      <h2>How Commercial Terms Would Work</h2>
 
       <p>
-        ADN is structured as Hardware-as-a-Service. There is a one-time setup fee covering the
-        unit, installation, and Mykei Registry onboarding. There is then a monthly
-        subscription for continued service, event logging, registry access, and support. Specific
-        amounts are not listed on this page. For pricing details and to discuss the structure in
-        the context of your store, visit mykei.io/pilot.
+        ADN is intended to be structured as Hardware-as-a-Service, on the model of a one-time
+        setup covering the unit, installation, and Mykei Registry onboarding, followed by a
+        monthly subscription for continued service, event logging, registry access, and support.
+        No fixed pricing is published. Terms would be agreed directly with Mykei for any store
+        considering participation; visit mykei.io/pilot to start that conversation.
       </p>
       <p>
         The HaaS model matters for independent retailers because it eliminates capital expenditure.
@@ -79,13 +79,13 @@ export default function IndependentRetailerEconomics() {
 
       <p>
         The relevant comparison is not to doing nothing. Most retailers already spend something on
-        security. The question is whether that spend is producing marker-based evidence at a cost
+        security. The question is whether that spend is producing forensic-grade output at a cost
         that makes commercial sense.
       </p>
       <p>
         A staffed security guard costs between GBP 25,000 and GBP 35,000 per year when employment
         costs are included. Guards provide presence and deterrence during their shift, but they
-        cannot be everywhere simultaneously, they cannot mark stolen goods with marker identifiers,
+        cannot be everywhere simultaneously, they cannot mark stolen goods with forensic identifiers,
         and their effectiveness varies with experience and attention. Electronic article surveillance
         systems for a small independent store typically cost between GBP 3,000 and GBP 8,000 to
         install, plus ongoing expenditure on tags for every item of stock. EAS generates an alarm
@@ -97,7 +97,7 @@ export default function IndependentRetailerEconomics() {
       </p>
       <p>
         ADN is autonomous, requiring no staff time beyond the initial onboarding. It produces
-        marker-based evidence, subject to supplier qualification: a unique marker code on the goods, timestamped to a specific activation
+        forensic-grade output: a unique DNA code on the goods, timestamped to a specific activation
         event, registered in a cloud database linked to the store. It is lower cost than most
         alternatives and produces a category of evidence that cameras and tags cannot.
       </p>

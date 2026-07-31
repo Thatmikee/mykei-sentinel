@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 
-const GOLD = "#0D9488";
+const GOLD = "#C9A84C";
 const INK = "#1E1E1E";
 const PAPER = "#FAFAF8";
 const MUTED = "#6B6B65";
@@ -26,8 +26,8 @@ function SimpleNav() {
       <a href="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: INK, textDecoration: "none" }}>
         Mykei Securities
       </a>
-      <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
-        Follow the Research
+      <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
+        Apply for Pilot
       </a>
     </nav>
   );
@@ -108,6 +108,22 @@ export default function StateOfTheftPage() {
           </div>
         </section>
 
+        {/* WHY THIS MATTERS */}
+        <section style={{ maxWidth: 880, margin: "0 auto", padding: "72px 40px", borderBottom: `1px solid ${RULE}` }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 32 }}>
+            Why this matters
+          </div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, fontWeight: 400, color: INK, marginBottom: 20, lineHeight: 1.3, maxWidth: 640 }}>
+            Organised retail crime is not impulsive. It is a supply chain running through the shop floor.
+          </h2>
+          <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, maxWidth: 640, marginBottom: 16 }}>
+            Professional crews treat shelves as a warehouse: sweep the stock, move it through resale channels, come back next week. CCTV records what happened. Tags slow down honest customers more than anyone else. None of it touches the underlying economics. Existing security watches crime happen but leaves the incentive untouched, and as long as stolen goods can be sold, theft remains worth the risk.
+          </p>
+          <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#BBBBB4", lineHeight: 1.6, maxWidth: 640 }}>
+            Industry figures on this page are drawn from published UK and global retail crime reporting. Mykei has not independently verified them and they are shown for context only.
+          </p>
+        </section>
+
         {/* COVERAGE AREAS */}
         <section style={{ maxWidth: 880, margin: "0 auto", padding: "72px 40px", borderBottom: `1px solid ${RULE}` }}>
           <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 32 }}>
@@ -119,14 +135,14 @@ export default function StateOfTheftPage() {
                 The quarterly edition tracks four areas.
               </h2>
               <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8 }}>
-                Each report combines published crime surveys (ACS, BRC, ONS) with data from Mykei-deployed ADN units: incident detection rates, controlled marker deployment frequency, and Mykei Registry event records.
+                Each report combines published crime surveys (ACS, BRC, ONS) with, once field data exists, bench and pilot results from ADN units: incident detection rates, controlled marker deployment frequency, and Mykei Registry event records. No ADN unit is currently deployed in a live retail store.
               </p>
             </div>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {[
                 "Incident volume: UK and global figures by sector",
                 "Economic cost: loaded cost per incident, insurance adjustment data",
-                "Forensic outcomes: Proprietary Forensic Marking Compound and ADN deployment results",
+                "Forensic outcomes: Proprietary Forensic Marking Compound and ADN bench-test results",
                 "Resale intelligence: platform-level stolen goods flagging rates",
               ].map(item => (
                 <li key={item} style={{ display: "flex", gap: 12, padding: "12px 0", borderBottom: `1px solid ${RULE}`, fontSize: 14, color: MUTED, lineHeight: 1.6 }}>
@@ -142,16 +158,16 @@ export default function StateOfTheftPage() {
         <section style={{ maxWidth: 880, margin: "0 auto", padding: "72px 40px 96px" }}>
           <div style={{ maxWidth: 520 }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, fontWeight: 400, color: INK, marginBottom: 16, lineHeight: 1.25 }}>
-              The first edition is in preparation.
+              The first edition publishes Q3 2026.
             </h2>
             <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, marginBottom: 28 }}>
-              If you are a retailer and want early access to the data and the ADN research programme, follow the research updates.
+              If you are a retailer and want early access to the data and the ADN pilot, request a place in the Manchester cohort.
             </p>
             <a
-              href="/signal"
+              href="/pilot"
               style={{ display: "inline-block", padding: "12px 24px", background: INK, color: "#fff", borderRadius: 4, fontFamily: "'JetBrains Mono', monospace", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}
             >
-              Follow the Research
+              Apply for ADN pilot
             </a>
           </div>
         </section>

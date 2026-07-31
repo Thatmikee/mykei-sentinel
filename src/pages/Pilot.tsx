@@ -15,7 +15,7 @@ import { commercialTerms } from "@/data/commercialTerms";
 const TURNSTILE_SITE_KEY = "0x4AAAAAADLhkxAX0ez1A7Za";
 
 const DARK   = "#1C120A";
-const GOLD   = "#0D9488";
+const GOLD   = "#C8A96E";
 const CREAM  = "#F8F3ED";
 const SAND   = "#EDE5D8";
 const MUTED  = "#8A7560";
@@ -97,6 +97,7 @@ export default function Pilot() {
         tsWidgetId.current = window.turnstile.render("#ts-container", {
           sitekey: TURNSTILE_SITE_KEY,
           size: "invisible",
+          action: "pilot-loi",
           callback: onTsSuccess,
         });
       }
@@ -170,7 +171,7 @@ export default function Pilot() {
     doc.setFontSize(22); doc.setFont("helvetica", "bold");
     doc.text("LETTER OF INTENT", M, y);
     doc.setFontSize(10); doc.setFont("helvetica", "normal");
-    doc.text("ADN Independent Retail Pilot  ·  2026", W - M, y, { align: "right" });
+    doc.text("Independent Retail Pilot  ·  2026", W - M, y, { align: "right" });
     y += 7; doc.setLineWidth(0.4); doc.line(M, y, W - M, y); y += 8;
     doc.setFontSize(10); doc.setFont("helvetica", "bold");
     doc.text("RETAILER DETAILS", M, y); y += 7;
@@ -203,14 +204,14 @@ export default function Pilot() {
     doc.setFontSize(7.5); doc.setFont("helvetica", "normal"); doc.setTextColor(150);
     doc.text("COMMERCIAL TERMS", M, y); y += 5;
     doc.setTextColor(0); doc.setFontSize(9.5); doc.setFont("helvetica", "normal");
-    doc.text(`Setup ${commercialTerms.pdfRows[0].value}  \u00b7  Monthly ${commercialTerms.pdfRows[1].value}  \u00b7  Minimum term ${commercialTerms.pdfRows[2].value}  \u00b7  Total minimum ${commercialTerms.pdfRows[3].value}`, M, y); y += 5;
+    doc.text(`${commercialTerms.pdfRows[0].value}  \u00b7  Minimum term ${commercialTerms.pdfRows[1].value}`, M, y); y += 5;
     doc.setFontSize(8.5); doc.setTextColor(110);
-    doc.text("Fixed by contract. No variation during the alpha pilot.", M, y); y += 4;
+    doc.text("No fixed pricing published. Terms confirmed directly with Mykei before pilot start.", M, y); y += 4;
     doc.setTextColor(0); doc.setLineWidth(0.2); doc.line(M, y, W - M, y); y += 7;
 
     for (const [label, text] of [
       ["Pilot Commitment:", "Not a legally binding letter of intent."],
-      ["The ADN System:", "Non-visual Time-of-Flight sensors are designed to detect defined shelf events. Controlled marker deployment is subject to supplier specification, SDS/COSHH review, and deployment environment review."],
+      ["The ADN System:", "Non-visual Time-of-Flight sensors detect defined shelf events. Controlled marker deployment is subject to supplier specification, SDS/COSHH review, and deployment environment review."],
       ["Economic Sterilisation:", "Marker deployment events are linked to device, location, timestamp, and cartridge reference in the Mykei Registry to support verification workflows."],
       ["No Obligation:", "No obligation to continue after the 3-month pilot period."],
     ] as [string, string][]) {
@@ -275,13 +276,13 @@ export default function Pilot() {
 
       const result = await res.json();
       if (!res.ok || !result.success) {
-        if (import.meta.env.DEV) console.error('Worker returned error:', result);
+        console.error('Worker returned error:', result);
         setErrors({ submit: 'Submission failed. Please email protocol@mykei.io directly or try again.' });
         setSubmitting(false);
         return;
       }
     } catch (err) {
-      if (import.meta.env.DEV) console.error('Submit network error:', err);
+      console.error('Submit network error:', err);
       setErrors({ submit: 'Network error. Please email protocol@mykei.io directly.' });
       setSubmitting(false);
       return;
@@ -454,7 +455,7 @@ export default function Pilot() {
                     <span style={{ fontWeight: 600 }}>{value}</span>
                   </div>
                 ))}
-                <p style={{ fontSize: "11px", color: MUTED, margin: "8px 0 0", fontStyle: "italic" }}>Fixed. A pricing change requires a code release.</p>
+                <p style={{ fontSize: "11px", color: MUTED, margin: "8px 0 0", fontStyle: "italic" }}>Commercial terms are agreed directly with Mykei before the pilot starts and are not published on this page.</p>
               </div>
               <label style={{ display: "flex", gap: "10px", alignItems: "flex-start", cursor: "pointer", marginBottom: "24px", marginTop: "4px" }}>
                 <input type="checkbox" checked={form.agreed} onChange={e => update("agreed", e.target.checked)} style={{ marginTop: "3px", accentColor: GOLD, width: "16px", height: "16px", flexShrink: 0 }} />

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#0D9488";
+const GOLD = "#c9a84c";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -54,7 +54,7 @@ export default function SignalSalfordVintedPage() {
           "headline": "The Black Market Grocery Store: How Mykei Breaks the Economic Bridge",
           "description": "The Feb 2026 BRC report confirms organised crime groups are systematically targeting stores for online resale. The Mykei Registry is designed to disrupt that pipeline.",
           "url": "https://mykei.io/signal/salford-to-vinted-black-market",
-          "datePublished": "2026-04-03T08:00:00Z",
+          "datePublished": "2026-04-15T08:00:00Z",
           "author": { "@type": "Person", "name": "Michael Esema", "url": "https://mykei.io/founder" },
           "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io", "logo": { "@type": "ImageObject", "url": "https://mykei.io/mykei-logo.png" } },
           "image": "https://mykei.io/social-share.png",
@@ -68,7 +68,7 @@ export default function SignalSalfordVintedPage() {
           ]
         })}
         articleMeta={{
-          publishedTime: "2026-04-03T08:00:00Z",
+          publishedTime: "2026-04-15T08:00:00Z",
           author: "Michael Esema",
           section: "Retail Security",
           tags: ["organised crime", "Mykei Registry", "eBay", "Vinted", "economic sterilisation"],
@@ -80,7 +80,7 @@ export default function SignalSalfordVintedPage() {
         {/* Nav */}
         <nav style={{ borderBottom: `1px solid ${RULE}`, padding: "0 40px", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "rgba(255,255,255,0.97)", backdropFilter: "blur(12px)", zIndex: 100 }}>
           <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", color: GOLD, textDecoration: "none", textTransform: "uppercase" }}>The Signal</a>
-          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "1.5px", color: INK, textDecoration: "none", textTransform: "uppercase", border: `1px solid ${RULE}`, padding: "6px 16px", borderRadius: 4 }}>Follow the Research</a>
+          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "1.5px", color: INK, textDecoration: "none", textTransform: "uppercase", border: `1px solid ${RULE}`, padding: "6px 16px", borderRadius: 4 }}>Join the Pilot</a>
         </nav>
 
         {/* Header */}
@@ -105,26 +105,11 @@ export default function SignalSalfordVintedPage() {
               <div style={{ width: 40, height: 40, borderRadius: "50%", background: GOLD, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, color: "#fff", fontSize: 14 }}>ME</div>
               <div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: INK }}>Michael Esema</div>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: MID }}>Founder, Mykei Securities · 3 April 2026 · 7 min read</div>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: MID }}>Founder, Mykei Securities · 15 April 2026 · 7 min read</div>
               </div>
             </div>
           </Reveal>
         </header>
-
-        {/* Hero Image */}
-        <div style={{ maxWidth: 900, margin: "0 auto 48px", padding: "0 32px" }}>
-          <figure style={{ margin: 0 }}>
-            <img
-              src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=1200&q=80&auto=format&fit=crop"
-              alt="Person browsing a resale marketplace app on a smartphone"
-              style={{ width: "100%", borderRadius: 6, display: "block", maxHeight: 480, objectFit: "cover" }}
-              loading="lazy"
-            />
-            <figcaption style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", marginTop: 8, letterSpacing: "0.5px" }}>
-              Photo: Unsplash / online resale markets
-            </figcaption>
-          </figure>
-        </div>
 
         {/* Article */}
         <article style={{ maxWidth: 760, margin: "0 auto", padding: "0 32px 80px" }}>
@@ -171,7 +156,7 @@ export default function SignalSalfordVintedPage() {
               The BRC 2026 report flags the resale gap explicitly. eBay, Vinted, and Facebook Marketplace have volume, and volume creates noise. In that noise a stolen razor looks like a second-hand one, especially when the seller has five months of positive feedback and a plausible story about clearing out a bathroom cabinet. Platform compliance teams are reactive by design. By the time a report gets investigated, the item is sold, the buyer has it, and the account has been refreshed.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 14 }}>
-              The <a href="/adn" style={{ color: GOLD, textDecoration: "underline" }}>Mykei Registry</a> doesn't wait for a report. When the <a href="/adn" style={{ color: GOLD, textDecoration: "underline" }}>ADN</a> fires and registers a batch code, that batch code is the bridge between the shelf and the resale channel. The intended pipeline, still in development: the registry is designed to support resale-channel verification. Mykei has filed seventeen patent claims covering this architecture (patent pending). What it means practically: the moment of marking is also the moment the goods become traceable across every channel they move through.
+              The Mykei Registry is designed not to wait for a report. When ADN fires and registers a batch code, that batch code is intended to be the bridge between the shelf and the resale channel. The intended pipeline: the registry cross-references listings, no human required. Mykei holds seventeen patent claims covering this architecture. What it means practically: the moment of marking is also the moment the goods become traceable across every channel they move through.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
               That's the part the security industry hasn't built in forty years of trying.
@@ -189,17 +174,17 @@ export default function SignalSalfordVintedPage() {
           <Reveal>
             <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>What "commercially toxic" actually means.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              Marked goods carry a record on two levels simultaneously. Physical: a forensic marker compound bonded to fabric, packaging, and skin. UV-readable. Compounds in this class, as used by established forensic marking programmes across thousands of UK prosecutions, work on the same principle. Any buyer who later gets searched has a forensic connection to the original theft event. Digital: the batch code is live in the Mykei Registry, the first layer of a resale verification workflow. Not hard to sell. Traceable to own.
+              Marked goods carry a record on two levels simultaneously. Physical: a forensic marker compound bonded to fabric, packaging, and skin. UV-readable. Compounds in this class, as used by established forensic marking programmes across thousands of UK prosecutions, work on the same principle. Any buyer who later gets searched has a forensic connection to the original theft event. Digital: the batch code is designed to be registered in the Mykei Registry, an in-development event-record architecture intended to be the first layer of a resale verification workflow. Not hard to sell. Traceable to own.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              When an OCG calculates a target, they're calculating liquidation probability. That's it. What can we take, and what can we get for it. Push the liquidation probability toward zero and the target loses its value. Every shelf the ADN covers changes that calculation. That's not a security feature. It's a change to the underlying economics of whether your store is worth hitting.
+              When an OCG calculates a target, they're calculating liquidation probability. That's it. What can we take, and what can we get for it. Push the liquidation probability toward zero and the target loses its value. Every shelf a deployed ADN unit covers is designed to change that calculation. That's not a security feature. It's a change to the underlying economics of whether your store is worth hitting.
             </p>
           </Reveal>
 
           <Reveal>
-            <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>The pilot stores in Manchester are not testing a gadget.</h2>
+            <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>The proposed pilot stores in Manchester are not just testing a gadget.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The five retailers in the Independent Retail Pilot are testing a forensic doctrine. The Active Deterrent Node (ADN) is the hardware layer. The Mykei Registry is the audit layer. Together they make a store's inventory a liability to steal rather than an asset. When the OCGs doing systematic targeting update their target selection criteria, a Mykei-protected shop should drop off the list. Not because it has better cameras. Because the goods inside are no longer worth the acquisition cost.
+              The five retailers who signed non-binding letters of interest for the Independent Retail Pilot would, if the pilot proceeds, be testing a forensic doctrine. ADN is the hardware layer. The Mykei Registry is the audit layer. Together they are designed to make a store's inventory a liability to steal rather than an asset. If OCGs doing systematic targeting update their target selection criteria as intended, a Mykei-protected shop would drop off the list, not because it has better cameras, but because the goods inside are no longer worth the acquisition cost. None of this has been field-validated yet.
             </p>
           </Reveal>
 
@@ -209,9 +194,9 @@ export default function SignalSalfordVintedPage() {
               <ul style={{ padding: 0, margin: 0, listStyle: "none" }}>
                 {[
                   "The BRC 2026 report confirms OCGs operate retail theft as a structured supply chain, not random opportunism.",
-                  "The resale market, not the shelf, is where the crime is profitable. Reduce the resale value and the crime follows.",
+                  "The resale market, not the shelf, is where the crime is profitable. Block the resale and you block the crime.",
                   "The Mykei Registry creates a traceable batch record. The designed pathway connects to resale platform verification workflows.",
-                  "ADN controlled markers make stolen goods harder to sell without a traceable record and commercially difficult to move.",
+                  "ADN controlled markers are designed to make stolen goods harder to sell without a traceable record and commercially difficult to move.",
                   "The Independent Retail Pilot is a forensic field deployment, not a product demo.",
                 ].map((t, i) => (
                   <li key={i} style={{ display: "flex", gap: 12, padding: "9px 0", borderBottom: i < 4 ? `1px solid ${RULE}` : "none", fontSize: 14, lineHeight: 1.65, color: INK }}>
@@ -228,8 +213,8 @@ export default function SignalSalfordVintedPage() {
             <div style={{ textAlign: "center", border: `1px solid ${RULE}`, borderRadius: 10, padding: "40px 32px", marginBottom: 48 }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Independent Retail Pilot · Now open</div>
               <h3 style={{ fontSize: 22, fontWeight: 700, color: INK, margin: "0 0 12px" }}>Deploy the forensic blockade in your store.</h3>
-              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 0 28px" }}>Mykei publishes findings through The Signal as the ADN development programme continues.</p>
-              <a href="/signal" style={{ display: "inline-block", background: GOLD, color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 700, padding: "14px 36px", borderRadius: 6, textDecoration: "none" }}>Read the Archive</a>
+              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 0 28px" }}>Five slots. Pricing scoped per pilot. Prototype-stage hardware from day one.</p>
+              <a href="/pilot" style={{ display: "inline-block", background: GOLD, color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 700, padding: "14px 36px", borderRadius: 6, textDecoration: "none" }}>Apply for the Pilot</a>
             </div>
           </Reveal>
 
@@ -246,7 +231,7 @@ export default function SignalSalfordVintedPage() {
               <div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: INK, marginBottom: 8 }}>About the Author</div>
                 <p style={{ fontSize: 14, lineHeight: 1.75, color: MID, margin: "0 0 10px" }}>
-                  <strong style={{ color: INK }}>Michael Esema, MBA, MSc.</strong> Founder of Mykei Securities. I spent years in government financial audit and emergency budget management, then came to the UK and watched retail theft up close at B's Hive. The two experiences together made the structural failure impossible to ignore. I filed seventeen patent claims and built the ADN to close it.
+                  <strong style={{ color: INK }}>Michael Esema, MBA, MSc.</strong> Founder of Mykei Securities. I spent years in government financial audit and emergency budget management, then came to the UK and watched retail theft up close at B's Hive. The two experiences together made the structural failure impossible to ignore. I filed seventeen patent claims and built ADN to close it.
                 </p>
                 <a href="https://michaelesema.com" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: GOLD, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none" }}>17 patent claims at michaelesema.com</a>
               </div>

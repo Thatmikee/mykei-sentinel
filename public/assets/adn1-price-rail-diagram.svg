@@ -4,7 +4,7 @@
   <rect width="900" height="480" fill="#F9F8F3"/>
 
   <!-- Eyebrow -->
-  <text x="450" y="36" text-anchor="middle" font-size="9.5" fill="#B8962E" letter-spacing="2.5" text-transform="uppercase">ADN-1 ACTIVE FORENSIC DEFENCE NODE — PRICE RAIL DEPLOYMENT (FRONT ELEVATION)</text>
+  <text x="450" y="36" text-anchor="middle" font-size="9.5" fill="#B8962E" letter-spacing="2.5" text-transform="uppercase">ADN ACTIVE FORENSIC DEFENCE NODE, PRICE RAIL DEPLOYMENT (FRONT ELEVATION)</text>
 
   <!-- ═══ GONDOLA SHELF UNIT ═══ -->
 
@@ -79,12 +79,12 @@
   <!-- Price rail label -->
   <text x="450" y="308" text-anchor="middle" font-size="8.5" fill="#8A7A6A" letter-spacing="1.5">STANDARD GONDOLA PRICE RAIL</text>
 
-  <!-- ═══ ADN-1 DEVICE ═══ -->
+  <!-- ═══ ADN DEVICE ═══ -->
   <!-- Main enclosure on price rail — centred -->
   <rect x="270" y="293" width="360" height="28" fill="#0A0B0A" stroke="#D4AF37" stroke-width="1.5" rx="4"/>
 
   <!-- Device label -->
-  <text x="450" y="311" text-anchor="middle" font-size="9" fill="#D4AF37" letter-spacing="2" font-weight="bold">ADN-1</text>
+  <text x="450" y="311" text-anchor="middle" font-size="9" fill="#D4AF37" letter-spacing="2" font-weight="bold">ADN</text>
 
   <!-- Magnetic mount indicator (bottom strip) -->
   <rect x="310" y="319" width="280" height="4" fill="#444" rx="2"/>
@@ -115,7 +115,7 @@
   <line x1="140" y1="200" x2="760" y2="200" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.6"/>
 
   <!-- Detection zone label -->
-  <text x="450" y="192" text-anchor="middle" font-size="8.5" fill="#B8962E" letter-spacing="1.5">BILATERAL DETECTION ZONE — FULL SHELF FACE — 940nm ToF — 30 READINGS/SEC</text>
+  <text x="450" y="192" text-anchor="middle" font-size="8.5" fill="#B8962E" letter-spacing="1.5">BILATERAL DETECTION ZONE, FULL SHELF FACE, 940nm ToF, 30 READINGS/SEC</text>
 
   <!-- ═══ ANNOTATIONS ═══ -->
 
@@ -133,7 +133,7 @@
   <line x1="450" y1="323" x2="450" y2="395" stroke="#8A7A6A" stroke-width="0.8"/>
   <text x="450" y="406" text-anchor="middle" font-size="8" fill="#4A4A48">No drilling. No wiring. 5-minute install.</text>
 
-  <!-- ADN-1 spec callout top right -->
+  <!-- ADN spec callout top right -->
   <rect x="680" y="60" width="200" height="80" fill="#F2EFE8" stroke="#CEC5B6" stroke-width="1" rx="4"/>
   <text x="695" y="76" font-size="7.5" fill="#B8962E" letter-spacing="1.5">ENCLOSURE</text>
   <text x="695" y="90" font-size="9" fill="#0A0B0A">150 × 40 × 32mm</text>
@@ -141,7 +141,7 @@
   <text x="695" y="118" font-size="9" fill="#0A0B0A">WiFi → AWS IoT / BLE</text>
   <text x="695" y="130" font-size="7.5" fill="#B8962E" letter-spacing="1.5">TRIGGER LATENCY</text>
 
-  <!-- ADN-1 spec callout continued - too narrow, repositioned -->
+  <!-- ADN spec callout continued - too narrow, repositioned -->
   <text x="695" y="144" font-size="9" fill="#0A0B0A"> &lt; 50ms</text>
 
   <!-- Bottom legend -->
@@ -149,7 +149,7 @@
   <circle cx="130" cy="443" r="5" fill="#D4AF37" opacity="0.8"/>
   <text x="142" y="447" font-size="8.5" fill="#4A4A48">ToF sensor (×2)</text>
   <rect x="230" y="438" width="18" height="10" fill="#0A0B0A" rx="2"/>
-  <text x="254" y="447" font-size="8.5" fill="#4A4A48">ADN-1 enclosure</text>
+  <text x="254" y="447" font-size="8.5" fill="#4A4A48">ADN enclosure</text>
   <line x1="350" y1="443" x2="375" y2="443" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="382" y="447" font-size="8.5" fill="#4A4A48">Detection zone boundary</text>
   <rect x="520" y="438" width="18" height="10" fill="#C8C0B0" rx="1"/>

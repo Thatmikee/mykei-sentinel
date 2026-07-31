@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PageSEO from "@/components/PageSEO";
 
 const DARK = "#1E1E1E";
-const GOLD = "#0D9488";
+const GOLD = "#C8A96E";
 const CREAM = "#F8F3ED";
 const MUTED = "#8A7560";
 
@@ -57,7 +57,7 @@ function PullQuote({ text }: { text: string }) {
         fontFamily: "'Playfair Display', Georgia, serif",
         fontSize: 22,
         fontStyle: "italic",
-        borderLeft: "3px solid #0D9488",
+        borderLeft: "3px solid #D4AF37",
         padding: "20px 0 20px 28px",
         margin: "36px 0",
         color: "#1E1E1E",
@@ -73,7 +73,7 @@ function SectionDivider() {
     <hr
       style={{
         border: "none",
-        borderTop: "1px solid #0D9488",
+        borderTop: "1px solid #D4AF37",
         opacity: 0.4,
         margin: "48px 0",
       }}
@@ -217,7 +217,7 @@ export default function ThesisPage() {
                   float: "left",
                   lineHeight: 0.85,
                   paddingRight: 10,
-                  color: "#0D9488",
+                  color: "#D4AF37",
                   fontFamily: "'Playfair Display', Georgia, serif",
                 }}
               >
@@ -242,7 +242,7 @@ export default function ThesisPage() {
           <section style={{ marginBottom: 64 }}>
             <h2 style={sectionHeading}>2. The Doctrine Defined</h2>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              Economic Sterilisation is a doctrine, not a device. It is a principle governing how security infrastructure should be designed: not to prevent theft at the point of occurrence alone, but to reduce the resale value and resale confidence of stolen goods. It builds on Mike Sutton's Market Reduction Approach in criminology. The ADN is an early implementation of the doctrine.
+              Economic Sterilisation is a doctrine, not a device. It is a principle governing how security infrastructure should be designed: not to prevent theft at the point of occurrence alone, but to destroy the commercial value of stolen goods permanently and automatically. The ADN system is a prototype-stage implementation of it.
             </p>
 
             <PullQuote text="I am not building a security company. I am building the argument that theft should not pay." />
@@ -256,7 +256,7 @@ export default function ThesisPage() {
             </p>
             <h3 style={subHeading}>Cloud Logging via the Mykei Registry</h3>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              The Mykei Registry is Mykei's proprietary cloud database. When a deployment event is detected, it is logged in real time with device ID, store location, timestamp, event type, and cartridge batch reference. This creates a tamper-aware audit trail of inventory events that have left legitimate custody without authorisation. Registry records are structured to support verification, insurer review, and investigation workflows.
+              The Mykei Registry is a designed event-record architecture, not yet a live product. When a deployment event is detected, the design intent is that it is logged with device ID, store location, timestamp, event type, and cartridge batch reference. The goal is a tamper-aware audit trail of inventory events that have left legitimate custody without authorisation. Registry records are designed to support verification, insurer review, and investigation workflows.
             </p>
             <h3 style={subHeading}>Secondary-Market Disruption</h3>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
@@ -360,16 +360,16 @@ export default function ThesisPage() {
           <section style={{ marginBottom: 48 }}>
             <h2 style={sectionHeading}>5. Patent and Attribution</h2>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              Economic Sterilisation is Michael Esema's term for Mykei's modern operational framework around resale-confidence reduction. The underlying stolen-goods-market principle is not new: it sits within a criminology lineage that includes Market Reduction theory. Mykei's contribution is the commercial and technical packaging around asset marking, registry records, evidence workflows and lawful verification.
+              The term "Economic Sterilisation" was coined by Michael Esema in 2025. No prior use of the term in the context of retail security has been identified in published academic or commercial literature. It represents a novel framing of the relationship between forensic asset marking, digital registry systems, and commercial incentive removal.
             </p>
 
             <PullQuote text="The patent is 17 claims. The doctrine is one sentence." />
 
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              Patent-pending: UK application No. 2606630.8, filed 23 March 2026 by Michael Esema, covering 17 claims relating to the system and method of economic sterilisation as embodied in the ADN device. The application covers the integration of dual time-of-flight sensor detection, controlled marker deployment triggered by theft events, and real-time event registration in a cloud-based registry.
+              UK patent application GB2606630.8, filed 23 March 2026, 17 claims, patent pending, not granted.
             </p>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              The ADN is an early implementation of the Economic Sterilisation doctrine, currently at controlled prototype stage. It has been demonstrated in controlled prototype and registry proof-of-concept tests. Field efficacy data has not yet been gathered. Any results will be published in summary form on this site once a pilot has been completed.
+              The ADN is a prototype-stage implementation of the Economic Sterilisation doctrine. The Independent Retail Pilot, planned across selected retailers in Greater Manchester, is intended to generate the first real-world efficacy data. Results from the pilot will be published in summary form on this site.
             </p>
             <p style={{ ...bodyText, color: MUTED, lineHeight: 1.8 }}>
               Mykei Securities Ltd. Company No. 16984969.
@@ -388,8 +388,8 @@ export default function ThesisPage() {
               M.E., April 2026
             </p>
             <svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 40 C20 20, 35 15, 45 30 C55 45, 60 25, 70 20 C80 15, 85 35, 90 30 C100 20, 110 10, 125 25 C135 35, 140 20, 155 15 C165 10, 175 30, 185 25 C195 20, 205 35, 210 30" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-              <path d="M8 48 C50 48, 100 50, 160 47" stroke="#0D9488" strokeWidth="0.8" strokeLinecap="round" fill="none"/>
+              <path d="M10 40 C20 20, 35 15, 45 30 C55 45, 60 25, 70 20 C80 15, 85 35, 90 30 C100 20, 110 10, 125 25 C135 35, 140 20, 155 15 C165 10, 175 30, 185 25 C195 20, 205 35, 210 30" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+              <path d="M8 48 C50 48, 100 50, 160 47" stroke="#D4AF37" strokeWidth="0.8" strokeLinecap="round" fill="none"/>
             </svg>
           </section>
 
@@ -414,7 +414,7 @@ export default function ThesisPage() {
             fontFamily: "'Arial', sans-serif",
           }}
         >
-          Research Updates
+          Independent Retail Pilot, 2026
         </p>
         <h2
           style={{
@@ -426,13 +426,13 @@ export default function ThesisPage() {
             lineHeight: 1.3,
           }}
         >
-          Build the first credible pilot.
+          Commercial terms agreed directly with Mykei.
         </h2>
         <p style={{ color: "#C9BFB4", fontSize: 16, marginBottom: 36, lineHeight: 1.7 }}>
-          Discuss a network or enterprise pilot to test asset registration, marking readiness, evidence workflows and resale-confidence reduction.
+          Join the Independent Retail Pilot and be among the first retailers to deploy Economic Sterilisation in Greater Manchester.
         </p>
         <Link
-          to="/signal"
+          to="/pilot"
           style={{
             display: "inline-block",
             background: GOLD,
@@ -445,7 +445,7 @@ export default function ThesisPage() {
             fontFamily: "'Arial', sans-serif",
           }}
         >
-          Follow the Research
+          Apply for the Pilot
         </Link>
       </section>
 
@@ -466,7 +466,7 @@ export default function ThesisPage() {
           {" · "}
           <Link to="/signal" style={{ color: MUTED, textDecoration: "underline" }}>The Brief</Link>
           {" · "}
-          <Link to="/enterprise" style={{ color: MUTED, textDecoration: "underline" }}>Enterprise</Link>
+          <Link to="/pilot" style={{ color: MUTED, textDecoration: "underline" }}>Pilot</Link>
         </p>
       </footer>
     </div>

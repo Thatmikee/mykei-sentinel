@@ -2,7 +2,7 @@ const specifications = [
   { label: "Processor", value: "Encrypted Logic Core" },
   { label: "Sensor", value: "Tactical Multi-zone Sensor Array" },
   { label: "Laser", value: "940nm VCSEL" },
-  { label: "Response Time", value: "Target <200ms" },
+  { label: "Response Time", value: "<200ms" },
   { label: "Encryption", value: "AES-256-GCM" },
   { label: "Cloud Protocol", value: "TLS 1.3" }
 ];

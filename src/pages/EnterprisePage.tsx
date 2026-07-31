@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Footer from "@/components/Footer";
 
-const GOLD = "#0D9488";
+const GOLD = "#765C14";
 const INK = "#1E1E1E";
 const PAPER = "#FAFAF8";
 const MUTED = "#6B6B65";
@@ -76,17 +76,19 @@ function EnterpriseForm() {
   };
 
   const draft = form.name
-    ? `Subject: Introducing Mykei Securities: Strategic Retail Pilot Enquiry
+    ? `Subject: Introducing Mykei Securities, Strategic Retail Pilot Enquiry
 
 Hi [Name],
 
 I wanted to bring something to your attention that may be worth a conversation.
 
-I have been looking at Mykei Securities, a UK company developing the ADN, a shelf-mounted active forensic defence device for high-loss retail categories. Their approach is different to CCTV or EAS tags. The device is designed to use non-visual shelf-level sensing to detect bulk-sweep theft patterns, deploy a registry-linked forensic marker, and create a timestamped event record connecting device, store, time, and marker batch.
+I have been looking at Mykei Securities, a UK company developing ADN, a shelf-mounted active forensic defence device for high-loss retail categories. Their approach is different to CCTV or EAS tags, the device uses non-visual shelf-level sensing to detect bulk-sweep theft patterns, deploys a registry-linked marker, and creates a timestamped event record connecting device, store, time, and marker batch.
 
 The proposition is non-confrontational and does not process any facial or biometric data.
 
-They are inviting enquiries from retailers interested in a structured pilot. I have submitted an initial enquiry on behalf of ${form.company} and I think it is worth a short conversation internally first.
+They are currently offering a structured Strategic Retail Pilot: 10 stores, 60-90 days, one or two high-loss categories, with before-and-after incident comparison and registry event reporting.
+
+I have submitted an initial enquiry on behalf of ${form.company}. They have been in touch with me and I think it is worth a short conversation internally first.
 
 Their website: https://mykei.io
 Their doctrine: https://mykei.io/economic-sterilisation
@@ -109,7 +111,7 @@ ${form.title}, ${form.company}`
         </p>
         <div style={{ background: "#F7F6F2", border: "1px solid #E4E2DC", borderRadius: 6, padding: "20px 22px", marginBottom: 12 }}>
           <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, marginBottom: 12 }}>
-            Draft. Forward to your team.
+            Draft, forward to your team
           </div>
           <pre style={{ fontFamily: "inherit", fontSize: 13, color: INK, lineHeight: 1.75, whiteSpace: "pre-wrap", margin: 0 }}>{draft}</pre>
         </div>
@@ -145,7 +147,7 @@ ${form.title}, ${form.company}`
         </div>
         <div>
           <label htmlFor="ent-storeCount" style={labelStyle}>Estimated store count</label>
-          <input id="ent-storeCount" style={inputStyle} name="storeCount" type="text" required placeholder="e.g. 1, 3–5, 10, 25, 50+" value={form.storeCount} onChange={set("storeCount")} aria-required="true" />
+          <input id="ent-storeCount" style={inputStyle} name="storeCount" type="text" required placeholder="e.g. 1, 3 to 5, 10, 25, 50+" value={form.storeCount} onChange={set("storeCount")} aria-required="true" />
         </div>
       </div>
 
@@ -187,7 +189,7 @@ export default function EnterprisePage() {
   useEffect(() => {
     document.title = "Strategic Retail Pilots | Mykei Securities Ltd";
     const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", "Strategic retail pilots for supermarkets, pharmacies, insurers, and multi-site operators. The ADN creates batch-linked forensic event records designed to disrupt resale and support loss-prevention workflows. Mykei Securities Ltd, Manchester.");
+    if (desc) desc.setAttribute("content", "Strategic retail pilots for supermarkets, pharmacies, insurers, and multi-site operators. ADN creates batch-linked forensic event records designed to disrupt resale and support loss-prevention workflows. Mykei Securities Ltd, Manchester.");
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.href = "https://mykei.io/enterprise";
     const ogUrl = document.querySelector('meta[property="og:url"]');
@@ -231,14 +233,14 @@ export default function EnterprisePage() {
                 Evidence-led, not surveillance-led.
               </h2>
               <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, marginBottom: 20 }}>
-                The ADN does not rely on facial recognition, cameras, or biometric identification. It is designed to create a batch-linked forensic event record when a defined shelf-level event occurs.
+                ADN does not rely on facial recognition, cameras, or biometric identification. It is designed to create a batch-linked forensic event record when a defined shelf-level event occurs.
               </p>
               <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8 }}>
                 Strategic pilots allow batch-control, registry workflow, deployment density, operational supply, and loss-reduction assumptions to be tested at meaningful scale.
               </p>
             </div>
             <div>
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: MUTED, marginBottom: 16 }}>Where the ADN may fit</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: MUTED, marginBottom: 16 }}>Where ADN may fit</div>
               <ul style={{ margin: 0, padding: "0 0 0 20px", fontSize: 14, color: MUTED, lineHeight: 2 }}>
                 {["High-loss categories", "Pharmacies", "Supermarkets", "Health and beauty", "Alcohol and convenience", "Multi-site retail", "Insurer-backed pilots", "Organised retail crime response teams"].map(item => (
                   <li key={item}>{item}</li>
@@ -285,7 +287,7 @@ export default function EnterprisePage() {
             Mykei's proposed institutional pathway runs in three stages. First, a structured retail pilot with a named operator, producing a documented case study with verified loss-reduction data. Second, a working-group conversation with relevant industry bodies around registry interoperability and evidence workflow standards. Third, where appropriate, a proposal for registry data integration with established secure asset databases used by UK law enforcement and insurers. Each stage depends on the one before it. The priority is getting the pilot right.
           </p>
           <p style={{ fontSize: 14, color: MUTED, lineHeight: 1.8, marginTop: 16, maxWidth: 640 }}>
-            If you are evaluating the ADN in the context of an institutional pilot, sector trial, or industry body conversation, contact us directly.
+            If you are evaluating ADN in the context of an institutional pilot, sector trial, or industry body conversation, contact us directly.
           </p>
         </section>
 

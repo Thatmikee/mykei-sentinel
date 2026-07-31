@@ -61,15 +61,18 @@ export default function EconomicSterilisationExplained() {
       </p>
 
       <p>
-        This is where the three components of Economic Sterilisation interact. Forensic marking
-        places a physically irremovable, uniquely coded identifier on the stolen goods and on
-        any individual present during the sweep event. Cloud logging creates a permanent,
-        timestamped record linking that identifier to a specific store, shelf location, item
-        category, and event time. Marketplace flagging makes that reference code available for
-        cross-referencing against resale listings, so that a flagged item appearing on a platform
-        can be identified and actioned. None of these components is sufficient alone. Together,
-        they create a coherent system that operates at the resale layer of the theft economy,
-        which is where ORC operations are genuinely vulnerable.
+        This is where the components of Economic Sterilisation interact. Forensic marking
+        is designed to place a physically irremovable, uniquely coded identifier on the stolen
+        goods and on any individual present during the sweep event. Cloud logging is designed
+        to create a permanent, timestamped record linking that identifier to a specific store,
+        shelf location, item category, and event time. The intent is that this reference code
+        could later support cross-referencing against a resale listing if a retailer or
+        investigator raises a specific case, not that listings are automatically monitored or
+        flagged. Mykei does not scan, flag, or monitor marketplace listings, and has no live
+        integration with any resale platform. None of these components is sufficient alone, and
+        none is yet operating at scale. Together, they are intended to create a coherent system
+        that operates at the resale layer of the theft economy, which is where ORC operations are
+        genuinely vulnerable.
       </p>
 
       <h2>Structure, Not Tactics</h2>
@@ -89,10 +92,11 @@ export default function EconomicSterilisationExplained() {
       <p>
         The Theft Economic Sterilisation System, or TESS, is the category name for systems
         that implement this doctrine. The ADN, developed by Mykei Securities Ltd and covered
-        by a UK patent application (No. 2606630.8, filed March 2026, 17 claims, patent pending), is an early
-        implementation of the TESS category. It brings the Economic Sterilisation doctrine
-        into a shelf-mounted device accessible to independent retailers at a scale that
-        previously required enterprise retail budgets. The underlying principle, however, is
+        by UK patent application No. 2606630.8, filed March 2026, 17 claims, patent pending,
+        not granted, is a prototype-stage implementation of the TESS category. It is designed
+        to bring the Economic Sterilisation doctrine into a shelf-mounted device accessible to
+        independent retailers at a scale that previously required enterprise retail budgets.
+        The underlying principle, however, is
         not device-specific. Economic Sterilisation is an architectural approach to retail
         security that can be implemented across a range of deployment formats as the technology
         and the Mykei Registry mature.
@@ -105,9 +109,9 @@ export default function EconomicSterilisationExplained() {
       </p>
 
       <p style={{ marginTop: "2rem", fontStyle: "italic" }}>
-        Pricing is under development. Follow the research at{" "}
-        <a href="/signal" style={{ textDecoration: "underline" }}>
-          mykei.io/signal
+        Commercial terms are agreed directly with Mykei for retailers in the Manchester pilot. See{" "}
+        <a href="/pilot" style={{ textDecoration: "underline" }}>
+          mykei.io/pilot
         </a>
         .
       </p>

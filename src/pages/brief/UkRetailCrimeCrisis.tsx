@@ -93,9 +93,9 @@ export default function UkRetailCrimeCrisis() {
       </p>
 
       <p style={{ marginTop: "2rem", fontStyle: "italic" }}>
-        Pricing is under development. Follow the research at{" "}
-        <a href="/signal" style={{ textDecoration: "underline" }}>
-          mykei.io/signal
+        Commercial terms are agreed directly with Mykei for pilot retailers. See{" "}
+        <a href="/pilot" style={{ textDecoration: "underline" }}>
+          mykei.io/pilot
         </a>
         .
       </p>

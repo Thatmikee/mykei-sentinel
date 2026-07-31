@@ -72,8 +72,8 @@ export default function FebruaryBrcRetailCrimeNoise() {
       <h2>Read next</h2>
 
       <p>
-        Read <a href="/howitworks">how the ADN works</a>, then see the <a href="/adn">ADN system page</a>.
-        To follow the research, visit <a href="/signal">mykei.io/signal</a>.
+        Read <a href="/howitworks">how ADN works</a>, then see the <a href="/adn">ADN product page</a>.
+        For repeat theft at a specific shelf, request a <a href="/pilot">pilot fit check</a>.
       </p>
 
       <h2>Sources</h2>

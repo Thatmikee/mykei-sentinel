@@ -1,5 +1,5 @@
 // src/pages/ADN1DetailPage.tsx
-// Route: /adn-1
+// Route: /adn (canonical); /adn-1 redirects here
 
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -10,21 +10,6 @@ const fade = (delay = 0) => ({
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6, delay },
 });
-
-const SPECS = [
-  { label: "MICROCONTROLLER",  value: "Custom dual-core detection engine" },
-  { label: "SENSOR",                value: "Dual-zone ToF sensor array" },
-  { label: "DETECTION TECHNOLOGY",  value: "Time-of-flight kinetic signature analysis" },
-  { label: "DETECTION RANGE",       value: "0 to 1,200mm" },
-  { label: "RESPONSE TIME",    value: "< 200ms" },
-  { label: "MARKER SYSTEM",    value: "Forensic marker deployment (patent pending)" },
-  { label: "CONNECTIVITY",     value: "Wi-Fi 802.11 b/g/n" },
-  { label: "ENCRYPTION",       value: "AES-256-GCM (edge)" },
-  { label: "POWER",            value: "5V USB-C / 12V DC" },
-  { label: "IP RATING",        value: "IP42" },
-  { label: "OPERATING TEMP",   value: "0°C to 40°C" },
-  { label: "FORM FACTOR",      value: "Shelf-mount · Standard bay compatible" },
-];
 
 const MODES = [
   {
@@ -63,9 +48,9 @@ const MODES = [
 ];
 
 const SEQUENCE = [
-  { n: "01", title: "DETECT",      body: "Dual ToF sensors map a 3D velocity vector across both detection zones. When the kinetic signature matches the configured bulk-sweep threshold, the trigger fires. Design target: under 200ms." },
-  { n: "02", title: "MARK",        body: "A forensic marker deployment fires automatically, applying an invisible batch-identifiable compound directly to the taken goods. The marker is permanently bonded, shelf-coded, and linked to this specific incident. Subject to marker supplier specification and deployment environment review." },
-  { n: "03", title: "LOG",         body: "An encrypted marker deployment event record is transmitted to the Mykei secure cloud registry. The record contains timestamp, node ID, zone, kinetic vector data, and the cartridge batch reference." },
+  { n: "01", title: "DETECT",      body: "Dual ToF sensors map a 3D velocity vector across both detection zones. When the kinetic signature matches the configured bulk-sweep threshold, the trigger fires in under 200ms." },
+  { n: "02", title: "MARK",        body: "The Ultrasonic Deployment Module deploys a burst of invisible batch-identifiable marker compound onto the stolen goods and the individual carrying them. Subject to marker supplier specification, SDS/COSHH review, and deployment environment review." },
+  { n: "03", title: "LOG",         body: "An AES-256-GCM encrypted marker deployment event record is transmitted to the Mykei secure cloud registry via MQTT over TLS 1.3. The record contains timestamp, node ID, zone, ToF vector data, and the cartridge batch reference." },
   { n: "04", title: "DISRUPT",     body: "The cartridge batch reference is registered in the Mykei Registry, linked to the device, store, and timestamp. The event record is designed to support verification and investigation workflows, making theft-linked goods harder to sell anonymously." },
 ];
 
@@ -82,8 +67,8 @@ export default function ADN1DetailPage() {
     script.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "name": "ADN Active Forensic Defence Node",
-      "headline": "ADN Active Forensic Defence Node, Technical Specification",
+      "name": "ADN shelf defence node",
+      "headline": "ADN shelf defence node, Technical Specification",
       "description": "The ADN is a shelf-mounted retail security device using kinetic signature analysis to detect bulk sweep retail theft. It triggers controlled marker deployment and logs a cartridge-linked event record to the Mykei Registry. No cameras. No biometrics. No biometric or suspect identity data captured.",
       "author": { "@type": "Person", "@id": "https://michaelesema.com/#person", "name": "Michael Esema" },
       "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io" },
@@ -107,13 +92,13 @@ export default function ADN1DetailPage() {
           className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider uppercase"
           style={{ textDecoration: "none" }}
         >
-          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 11, letterSpacing: "2.5px", color: "#0D9488", textTransform: "uppercase" as const }}>MYKEI</span>
+          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 11, letterSpacing: "2.5px", color: "#D4A843", textTransform: "uppercase" as const }}>MYKEI</span>
           Home
         </a>
         <a
-          href="/adn"
+          href="/adn-in-action"
           className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider transition-all rounded"
-          style={{ background: "#0D9488", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
+          style={{ background: "#D4A843", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
         >
           ▶ ADN in Action
         </a>
@@ -136,15 +121,15 @@ export default function ADN1DetailPage() {
             </div>
           </motion.div>
 
-          <motion.h1 {...fade(0.1)} className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <motion.h1 {...fade(0.1)} className="text-4xl md:text-6xl font-bold mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Active Forensic<br />
             <span className="text-primary">Defence System</span>
           </motion.h1>
 
           <motion.p {...fade(0.2)} className="text-muted-foreground text-lg max-w-2xl leading-relaxed mb-10">
-            A shelf-mounted autonomous hardware node designed to detect bulk retail theft in real time,
-            trigger controlled marker deployment, and register a cartridge-linked event record,
-            with no human intervention. Response time is a design target of under 200 milliseconds.
+            A shelf-mounted autonomous node that detects bulk retail theft in real time,
+            triggers controlled marker deployment, and registers a cartridge-linked event record,
+            all within 200 milliseconds, with no human intervention.
           </motion.p>
 
           <motion.div {...fade(0.3)} className="flex flex-wrap gap-3">
@@ -162,12 +147,12 @@ export default function ADN1DetailPage() {
         <div className="container px-6 max-w-5xl">
           <motion.div {...fade(0)} className="text-center max-w-3xl mx-auto">
             <p className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase mb-4">Economic Sterilisation</p>
-            <p className="text-2xl md:text-3xl font-bold leading-snug mb-4">
+            <p className="text-2xl md:text-3xl font-bold leading-snug mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
               Thieves steal to resell.<br />
               <span className="text-primary">If they can't sell it, there's no point stealing it.</span>
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              The ADN does not try to physically prevent theft or identify criminals. It is designed to disrupt
+              The ADN does not try to physically prevent theft or identify criminals. It disrupts
               the resale incentive at the moment of the crime, making theft-linked goods harder to
               sell anonymously and removing the economic rationale behind organised retail theft.
             </p>
@@ -180,7 +165,7 @@ export default function ADN1DetailPage() {
         <div className="container px-6 max-w-5xl">
           <motion.div {...fade(0)} className="mb-12">
             <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Activation Sequence</span>
-            <h2 className="text-2xl md:text-3xl font-bold mt-2">Four steps. Designed for under two seconds.</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mt-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Four steps. Under two seconds.</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -206,7 +191,7 @@ export default function ADN1DetailPage() {
         <div className="container px-6 max-w-5xl">
           <motion.div {...fade(0)} className="mb-12">
             <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Configurable Detection</span>
-            <h2 className="text-2xl md:text-3xl font-bold mt-2">Three sensitivity modes</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mt-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Three sensitivity modes</h2>
             <p className="text-muted-foreground mt-2 max-w-xl">
               Calibrated for your store type and risk profile. Configurable from the retailer dashboard or companion app.
             </p>
@@ -237,34 +222,13 @@ export default function ADN1DetailPage() {
         </div>
       </section>
 
-      {/* ── Technical specifications ── */}
-      <section className="py-20 border-t border-border">
-        <div className="container px-6 max-w-5xl">
-          <motion.div {...fade(0)} className="mb-12">
-            <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Hardware</span>
-            <h2 className="text-2xl md:text-3xl font-bold mt-2">Technical specifications</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden">
-            {SPECS.map((spec, i) => (
-              <motion.div key={i} {...fade(i * 0.04)}
-                className="bg-background p-5"
-              >
-                <div className="font-mono text-[10px] text-muted-foreground tracking-wider mb-2">{spec.label}</div>
-                <div className="font-mono text-sm text-primary">{spec.value}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Staff override ── */}
       <section className="py-20 border-t border-border">
         <div className="container px-6 max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <motion.div {...fade(0)}>
               <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Operational Governance</span>
-              <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4">PIN-Authenticated Inhibit Protocol</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>PIN-Authenticated Inhibit Protocol</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Staff enter a four-digit PIN via the device or companion app to activate Inhibit Mode before
                 working in the detection zone. The forensic system disables for a defined window while the
@@ -272,7 +236,7 @@ export default function ADN1DetailPage() {
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Every inhibit activation, its time, duration, staff code, and reason, is written as a
-                permanent, tamper-proof entry in the Forensic Event Log. The system reverts to active mode
+                tamper-evident entry in the Mykei event log. The system reverts to active mode
                 automatically when the window expires.
               </p>
             </motion.div>
@@ -300,13 +264,13 @@ export default function ADN1DetailPage() {
         <div className="container px-6 max-w-5xl">
           <motion.div {...fade(0)} className="mb-10">
             <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Evidence Pathway</span>
-            <h2 className="text-2xl md:text-3xl font-bold mt-2">Designed to support evidential workflows</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mt-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Designed to support evidential workflows</h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { stat: "3,000+", label: "UK prosecutions supported by forensic marking compound evidence across the industry (industry data)" },
               { stat: "CPS", label: "Crown Prosecution Service guidance references forensic marking evidence in retail theft cases" },
-              { stat: "Batch-linked", label: "Every ADN activation is designed to be cartridge-linked, timestamped, and recorded in the Mykei Registry for verification workflows" },
+              { stat: "Batch-linked", label: "Every ADN activation is cartridge-linked, timestamped, and recorded in the Mykei Registry for verification workflows" },
             ].map((item, i) => (
               <motion.div key={i} {...fade(i * 0.15)} className="glow-border rounded-lg p-6">
                 <div className="text-3xl font-bold text-primary mb-2">{item.stat}</div>
@@ -315,7 +279,7 @@ export default function ADN1DetailPage() {
             ))}
           </div>
           <motion.p {...fade(0.5)} className="mt-8 font-mono text-xs text-muted-foreground max-w-2xl">
-            The ADN is designed to use a batch-identifiable marker compound, uniquely cartridge-linked per activation event.
+            The ADN uses a batch-identifiable marker compound, uniquely cartridge-linked per activation event.
             Each deployment event record is designed to support evidential and investigation workflows. Marker specification subject to supplier SDS/COSHH review.
           </motion.p>
         </div>
@@ -327,16 +291,16 @@ export default function ADN1DetailPage() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }} className="adn-family-grid">
             <motion.div {...fade(0)}>
               <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">ADN platform</span>
-              <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4">ADN platform. ADN device.</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>The ADN platform.</h2>
               <p className="text-muted-foreground leading-relaxed">
-                ADN is Mykei's Active Deterrent Node platform. The first ADN model is designed for retail environments, combining non-visual detection, controlled forensic marking, and secure event registration in one system.
+                ADN is Mykei's shelf level defence platform, currently a working prototype. It is designed to combine non-visual detection, controlled marker deployment, and signed event registration in one system. It is not yet deployed in stores.
               </p>
             </motion.div>
             <motion.div {...fade(0.1)}>
               <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Batch-linked evidence record</span>
-              <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4">Every event, fully traceable.</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Every event, fully traceable.</h2>
               <p className="text-muted-foreground leading-relaxed">
-                The ADN is designed around a batch-linked evidence model. Each event record is intended to connect device ID, timestamp, store reference, event type, and forensic batch reference. This creates a traceable bridge between the physical marker and the digital registry entry.
+                ADN is built around a batch-linked evidence model. Each event record is designed to connect device ID, timestamp, store reference, event type, and forensic batch reference. This creates a traceable bridge between the physical marker and the digital registry entry.
               </p>
             </motion.div>
           </div>
@@ -349,7 +313,7 @@ export default function ADN1DetailPage() {
         <div className="container px-6 max-w-5xl">
           <motion.div {...fade(0)} className="mb-10">
             <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">The Market</span>
-            <h2 className="text-2xl md:text-3xl font-bold mt-2">The problem is large. The solution is absent.</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mt-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>The problem is large. The solution is absent.</h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {[
@@ -365,7 +329,7 @@ export default function ADN1DetailPage() {
             ))}
           </div>
           <motion.p {...fade(0.4)} className="font-mono text-xs text-muted-foreground max-w-2xl">
-            At 10% market penetration across UK independent convenience retail, the ADN represents a significant addressable recurring revenue opportunity. Pricing is under development. The market has no existing solution that removes resale value from stolen goods. Economic Sterilisation is a new category.
+            Market sizing at scale has not yet been validated against a live pilot and is not published here pending that evidence. Existing approaches to retail theft, CCTV, EAS tagging, forensic marking, focus on detection or deterrence at the point of theft; ADN is intended to act on the resale value of goods after removal, which we believe is a distinct approach, though we have not conducted an exhaustive competitor review to confirm no other operator addresses this angle.
           </motion.p>
         </div>
       </section>
@@ -375,18 +339,20 @@ export default function ADN1DetailPage() {
         <div className="container px-6 max-w-5xl">
           <motion.div {...fade(0)} className="mb-10">
             <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Commercial Model</span>
-            <h2 className="text-2xl md:text-3xl font-bold mt-2">Unit economics built for the shopkeeper.</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mt-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Unit economics built for the shopkeeper.</h2>
             <p className="text-muted-foreground mt-2 max-w-xl">
-              Designed for the cash position of an independent retailer, not an enterprise procurement cycle. Pricing is under development.
+              Priced against the cash position of an independent retailer, not an enterprise procurement cycle.
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <motion.div {...fade(0.1)}>
               {[
-                { label: "Installation",                   value: "Under 1 hour, no retrofit required" },
-                { label: "Staffing",                       value: "Zero additional staff needed" },
-                { label: "Revenue model",                  value: "Subscription per device (recurring)" },
-                { label: "Pricing",                        value: "Under development" },
+                { label: "Device fee (one-time)",          value: "To be scoped per pilot" },
+                { label: "Monthly subscription",           value: "To be scoped per pilot" },
+                { label: "12-month total cost",            value: "Not yet fixed" },
+                { label: "24-month LTV per retailer",      value: "Not yet fixed" },
+                { label: "Break-even (one bulk sweep stopped)", value: "Illustrative only, not yet field-validated" },
+                { label: "Pilot commitment",               value: "Proposed 3 months, no lock-in" },
               ].map((r, i) => (
                 <motion.div key={i} {...fade(i * 0.06)} className="flex justify-between items-center py-3 border-b border-border/50 font-mono text-xs">
                   <span className="text-muted-foreground">{r.label}</span>
@@ -398,17 +364,32 @@ export default function ADN1DetailPage() {
               <div className="border border-border rounded-lg p-5">
                 <div className="font-mono text-[10px] text-muted-foreground tracking-wider uppercase mb-3">Break-even scenario</div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  A single bulk sweep of premium goods (cigarettes, spirits, cosmetics) typically represents £150 to £400 in stock loss. One prevented event in Month 1 would cover a hardware fee in that range. The recurring subscription is intended to remain lower than the expected loss from a single unchallenged sweep event.
+                  A single bulk sweep of premium goods (cigarettes, spirits, cosmetics) typically represents £150 to £400 in stock loss. Pilot pricing is being scoped against the principle that it should sit meaningfully below the cost of a single unchallenged sweep event.
                 </p>
               </div>
               <div className="border border-border rounded-lg p-5">
                 <div className="font-mono text-[10px] text-muted-foreground tracking-wider uppercase mb-3">Revenue model</div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Recurring revenue is intended to come from the monthly subscription: cloud registry access, Mykei Registry event writes, and cartridge replenishment. LTV compounds with multi-unit deployments in larger retail locations.
+                  The ADN unit would be sold at near-cost during the pilot phase. Recurring revenue would come from the monthly subscription: cloud registry access, Mykei Registry event writes, and cartridge replenishment. LTV is expected to compound with multi-unit deployments in larger retail locations, once a pilot is underway.
                 </p>
               </div>
             </motion.div>
           </div>
+          <motion.div {...fade(0.15)} className="mt-12 grid grid-cols-2 md:grid-cols-5 gap-6">
+            {[
+              { label: "Installation", sub: "Design target, under 1 hour" },
+              { label: "Staff Training", sub: "Simple handover" },
+              { label: "Monitoring", sub: "No behavioural monitoring" },
+              { label: "Billing", sub: "Planned subscription service" },
+              { label: "Scalability", sub: "Independent to multi-site" },
+            ].map(({ label, sub }, i) => (
+              <div key={label} className="text-center">
+                <div className="font-mono text-xs text-muted-foreground tracking-wider uppercase mb-1">{String(i + 1).padStart(2, "0")}</div>
+                <div className="text-sm font-bold">{label}</div>
+                <div className="text-xs text-muted-foreground mt-1">{sub}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -417,7 +398,7 @@ export default function ADN1DetailPage() {
         <div className="container px-6 max-w-5xl">
           <motion.div {...fade(0)} className="mb-8">
             <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Regulatory</span>
-            <h2 className="text-2xl md:text-3xl font-bold mt-2">Compliance and certification pathway</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mt-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Compliance and certification pathway</h2>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
@@ -439,7 +420,7 @@ export default function ADN1DetailPage() {
               {
                 badge: "GB2606630.8",
                 title: "UK Patent application: pending",
-                body: "UK patent application No. 2606630.8, filed with the UK Intellectual Property Office. Patent pending.",
+                body: "UK patent application GB2606630.8, filed 23 March 2026, 17 claims. Patent pending, not granted. Filed with the UK Intellectual Property Office.",
               },
             ].map((item, i) => (
               <motion.div key={i} {...fade(i * 0.1)} className="border border-border rounded-lg p-6">
@@ -458,16 +439,17 @@ export default function ADN1DetailPage() {
       <section className="py-20 border-t border-border">
         <div className="container px-6 max-w-3xl text-center">
           <motion.div {...fade(0)}>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Follow the ADN research</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Deploy the ADN at your store</h2>
             <p className="text-muted-foreground mb-8">
-              The research continues. If you run a retail store and want to be informed as the ADN moves toward deployment, register your interest.
+              Alpha pilot places are open to independent retailers in Greater Manchester.
+              Commercial terms agreed directly with Mykei. A 3-month minimum term is proposed, not yet finalised.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <button
-                onClick={() => navigate("/signal")}
+                onClick={() => navigate("/#contact")}
                 className="px-8 py-4 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors rounded"
               >
-                Follow the Research →
+                Request Pilot Access →
               </button>
               <button
                 onClick={() => navigate("/technology/ats")}

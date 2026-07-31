@@ -28,7 +28,7 @@ const ARTICLES = [
     slug: 'surgeon-not-camera-200ms',
     issue: '03',
     headline: 'A Surgeon, Not a Camera: The 200 Millisecond Rule',
-    standfirst: 'The ADN-1 responds in under 200ms. CCTV records a crime after it happens. There is no comparison worth making.',
+    standfirst: 'The ADN responds in under 200ms. CCTV records a crime after it happens. There is no comparison worth making.',
     tag: 'Technology',
   },
   {

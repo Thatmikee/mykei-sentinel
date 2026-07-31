@@ -39,9 +39,6 @@ const SignalCoopCrimeWarPage   = lazy(() => import("./pages/SignalCoopCrimeWarPa
 const BlogPostPage             = lazy(() => import("./pages/BlogPostPage"));
 const ThesisPage               = lazy(() => import("./pages/ThesisPage"));
 const ProtocolPage             = lazy(() => import("./pages/ProtocolPage"));
-const DoctrinePage             = lazy(() => import("./pages/DoctrinePage"));
-const PressPageFull            = lazy(() => import("./pages/PressPage"));
-const SimIntelPage             = lazy(() => import("./pages/SimIntelPage"));
 
 const queryClient = new QueryClient();
 
@@ -62,8 +59,8 @@ const App = () => (
             <Route path="/adn-1" element={<Navigate to="/adn" replace />} />
             <Route path="/technology/adn-1" element={<Navigate to="/adn" replace />} />
             <Route path="/technology/ats" element={<ATSDetail />} />
-            <Route path="/adn-1-in-action" element={<Navigate to="/adn" replace />} />
-            <Route path="/intel" element={<SimIntelPage />} />
+            <Route path="/adn-in-action" element={<ADN1InAction />} />
+            <Route path="/adn-1-in-action" element={<Navigate to="/adn-in-action" replace />} />
             <Route path="/founder" element={<FounderPage />} />
             <Route path="/michael-esema" element={<FounderPage />} />
             <Route path="/economic-sterilisation" element={<EconomicSterilisationPage />} />
@@ -81,8 +78,7 @@ const App = () => (
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/certification" element={<CertificationPage />} />
             <Route path="/state-of-theft" element={<StateOfTheftPage />} />
-            <Route path="/press" element={<PressPageFull />} />
-            <Route path="/doctrine" element={<DoctrinePage />} />
+            <Route path="/press" element={<Navigate to="/founder" replace />} />
             <Route path="/investors" element={<InvestorsPage />} />
             <Route path="/enterprise" element={<EnterprisePage />} />
             <Route path="/signal" element={<BriefIndex />} />

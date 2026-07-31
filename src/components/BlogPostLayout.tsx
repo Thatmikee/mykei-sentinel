@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { BlogPostMeta } from "@/data/blogPosts";
 
 const DARK = "#1E1E1E";
-const GOLD = "#0D9488";
+const GOLD = "#D4AF37";
 const CREAM = "#F8F3ED";
 const MUTED = "#8A7560";
 
@@ -223,7 +223,7 @@ export default function BlogPostLayout({ meta, children }: BlogPostLayoutProps) 
           color: GOLD,
           marginBottom: "16px",
         }}>
-          Research Updates
+          Independent Retail Pilot
         </p>
         <p style={{
           fontFamily: "'Playfair Display', Georgia, serif",
@@ -233,10 +233,10 @@ export default function BlogPostLayout({ meta, children }: BlogPostLayoutProps) 
           marginBottom: "28px",
           lineHeight: 1.35,
         }}>
-          Mykei publishes its findings through The Signal as the ADN development programme continues.
+          Commercial terms agreed directly with Mykei. Join the Manchester pilot.
         </p>
         <a
-          href="/signal"
+          href="/pilot"
           style={{
             display: "inline-block",
             backgroundColor: GOLD,
@@ -251,7 +251,7 @@ export default function BlogPostLayout({ meta, children }: BlogPostLayoutProps) 
             borderRadius: "3px",
           }}
         >
-          Follow the Research
+          Apply Now
         </a>
       </section>
 

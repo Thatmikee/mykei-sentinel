@@ -43,7 +43,7 @@ export function generateRetailerEmail(data: LOIData): string {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mykei Securities | Research Programme Enquiry Received</title>
+  <title>Mykei Securities | Pilot Request Received</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
@@ -700,7 +700,7 @@ export function generateRetailerEmail(data: LOIData): string {
       </svg>
     </div>
     <div class="header-eyebrow">Mykei Securities Ltd. · Confirmed</div>
-    <div class="header-title">ADN Research Programme 2026</div>
+    <div class="header-title">Independent Retail Pilot 2026</div>
     <div class="header-sub">Letter of Intent · Signed &amp; Received</div>
     <div class="shimmer-bar"></div>
   </div>
@@ -713,10 +713,10 @@ export function generateRetailerEmail(data: LOIData): string {
       </svg>
       Founding Retailer
     </div>
-    <div class="hero-headline">We have it, <span>${firstName}.</span><br/>Your enquiry is in.</div>
+    <div class="hero-headline">We have it, <span>${firstName}.</span><br/>Your pilot request is in.</div>
     <div class="hero-body">
       Your signed Letter of Intent is confirmed. ${safe.storeName} is now in review for the
-      Mykei ADN Research Programme. Here is what happens next.
+      Mykei ADN Independent Retail Pilot. Here is what happens next.
     </div>
   </div>
 
@@ -729,10 +729,6 @@ export function generateRetailerEmail(data: LOIData): string {
     <div class="stat-cell">
       <div class="stat-num">0</div>
       <div class="stat-label">Cameras or facial recognition</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-num">5</div>
-      <div class="stat-label">Signed retailer LOIs</div>
     </div>
     <div class="stat-cell">
       <div class="stat-num">UK</div>
@@ -750,13 +746,13 @@ export function generateRetailerEmail(data: LOIData): string {
       <div class="story-body">
         <strong>Picture this.</strong> Someone walks into your shop, sweeps stock off the shelf, and gets out before anyone can react. It happens. Right now, once they are gone, the stock is usually gone too.
         <br/><br/>
-        The ADN is designed to change what happens in that half-second window.
+        The ADN changes what happens in that half-second window.
         <br/><br/>
         Sitting on your shelving unit, the ADN uses non-visual Time-of-Flight sensors to read shelf movement in real time. <strong>No cameras. No recording. No faces.</strong> Just physics.
         <br/><br/>
-        When a defined theft event is detected, the ADN is designed to trigger controlled marker deployment onto the affected items. The marker is batch-identifiable and linked to a timestamped record in the Mykei Registry: your device, your store, and the cartridge session.
+        When a defined theft event is detected, ADN triggers controlled marker deployment onto the affected items. The marker is batch-identifiable and linked to a timestamped record in the Mykei Registry: your device, your store, and the cartridge session.
         <br/><br/>
-        Theft pays when stolen goods can still be sold. The ADN is designed to make theft-linked stock harder to move by connecting the shelf event to a marker deployment record and verification workflow.
+        Theft pays when stolen goods can still be sold. ADN is designed to make theft-linked stock harder to move by connecting the shelf event to a marker deployment record and verification workflow.
       </div>
       <div class="story-divider"></div>
       <div class="story-punchline">
@@ -781,7 +777,7 @@ export function generateRetailerEmail(data: LOIData): string {
           </svg>
         </div>
         <div class="step-body-col">
-          <div class="step-title">Detect. Invisible laser sensing</div>
+          <div class="step-title">Detect, invisible laser sensing</div>
           <div class="step-desc">940nm Time-of-Flight sensors monitor your shelving in real time. No video, no audio, just precise movement and mass detection. A normal browsing customer? No trigger. A bulk grab? Detected instantly.</div>
         </div>
       </div>
@@ -797,7 +793,7 @@ export function generateRetailerEmail(data: LOIData): string {
           </svg>
         </div>
         <div class="step-body-col">
-          <div class="step-title">Mark. Controlled batch-identifiable marker</div>
+          <div class="step-title">Mark, controlled batch-identifiable marker</div>
           <div class="step-desc">In under 200 milliseconds, a controlled marker mist is deployed onto the items. It is invisible to the naked eye and batch-identifiable under verification. Subject to marker supplier specification and COSHH review.</div>
         </div>
       </div>
@@ -812,7 +808,7 @@ export function generateRetailerEmail(data: LOIData): string {
           </svg>
         </div>
         <div class="step-body-col">
-          <div class="step-title">Register. Cartridge-linked event recorded to the Mykei Registry</div>
+          <div class="step-title">Register, cartridge-linked event recorded to the Mykei Registry</div>
           <div class="step-desc">The marker deployment event is instantly recorded in the Mykei Registry, linked to your device, your store, and your cartridge batch. Every activation creates a timestamped, batch-linked event record.</div>
         </div>
       </div>
@@ -827,7 +823,7 @@ export function generateRetailerEmail(data: LOIData): string {
           </svg>
         </div>
         <div class="step-body-col">
-          <div class="step-title">Disrupt. The resale incentive is undermined</div>
+          <div class="step-title">Disrupt, the resale incentive is undermined</div>
           <div class="step-desc">Stolen items linked to a deployment event record are harder to move with confidence. The batch marker shows what was deployed. The registry shows where, when, and under which cartridge session. Theft becomes harder to profit from.</div>
         </div>
       </div>
@@ -847,7 +843,7 @@ export function generateRetailerEmail(data: LOIData): string {
         <div class="next-right">
           <div class="next-timing">Now</div>
           <div class="next-title">LOI logged &amp; confirmed</div>
-          <div class="next-desc">Your signed Letter of Intent is received. ${safe.storeName} is now in the Mykei ADN Research Programme review queue. This email is your record of that.</div>
+          <div class="next-desc">Your signed Letter of Intent is received. ${safe.storeName} is now in the Mykei Independent Retail Pilot review queue. This email is your record of that.</div>
         </div>
       </div>
 
@@ -859,7 +855,7 @@ export function generateRetailerEmail(data: LOIData): string {
         <div class="next-right">
           <div class="next-timing">Within 48 hours</div>
           <div class="next-title">We call you for a brief walk-through</div>
-          <div class="next-desc">A member of the Mykei team will call you on <strong>${safe.phone}</strong> to walk through how the ADN is designed to be installed in your specific store layout, shelf positions, sensor placement, and the marker cartridge setup. Takes about 20 minutes.</div>
+          <div class="next-desc">A member of the Mykei team will call you on <strong>${safe.phone}</strong> to walk through how the ADN will be installed in your specific store layout, shelf positions, sensor placement, and the marker cartridge setup. Takes about 20 minutes.</div>
         </div>
       </div>
 
@@ -881,9 +877,9 @@ export function generateRetailerEmail(data: LOIData): string {
           <div class="next-dot"><div class="next-dot-num">04</div></div>
         </div>
         <div class="next-right">
-          <div class="next-timing">Day 1 of programme</div>
-          <div class="next-title">Programme starts after the deployment check</div>
-          <div class="next-desc">If the site is suitable, your cartridge session is registered in the Mykei Registry before deployment. Registry event logging begins from day one of the programme, and you receive a monthly report showing any activations and activity.</div>
+          <div class="next-timing">Day 1 of pilot</div>
+          <div class="next-title">Pilot starts after the deployment check</div>
+          <div class="next-desc">If the site is suitable, your cartridge session is intended to be registered in the Mykei Registry design before deployment. The Registry is in development, not yet live, and you receive a monthly pilot report showing any activations and activity.</div>
         </div>
       </div>
 
@@ -906,7 +902,7 @@ export function generateRetailerEmail(data: LOIData): string {
       <div class="loi-header">
         <div class="loi-header-left">
           <div class="loi-header-title">Letter of Intent, Your Signed Copy</div>
-          <div class="loi-header-sub">ADN Validation Programme · 2026 · Mykei Securities Ltd. · Co. No. 16984969</div>
+          <div class="loi-header-sub">Independent Retail Pilot · 2026 · Mykei Securities Ltd. · Co. No. 16984969</div>
         </div>
         <div class="loi-header-right">
           <svg width="32" height="32" viewBox="0 0 28 28" fill="none">
@@ -960,7 +956,7 @@ export function generateRetailerEmail(data: LOIData): string {
         <div class="loi-rule"></div>
 
         <div class="loi-declaration">
-          I, the undersigned, acting on behalf of the business named above, hereby confirm our intent to participate in the Mykei Securities Ltd ADN validation programme. This constitutes a formal expression of commercial interest. This LOI is not a legally binding contract.
+          I, the undersigned, acting on behalf of the business named above, hereby confirm our intent to participate in the Mykei Securities Ltd ADN Independent Retail Pilot. This constitutes a formal expression of commercial interest. This LOI is not a legally binding contract.
         </div>
 
         <div class="loi-term">
@@ -1006,9 +1002,9 @@ export function generateRetailerEmail(data: LOIData): string {
       <div class="cta-eyebrow">Before your installation</div>
       <div class="cta-headline">See exactly how the ADN works.</div>
       <div class="cta-body">
-        Visit the Mykei technology page for a full breakdown of the hardware, the controlled marker deployment process, and how the registry event workflow is designed to operate end-to-end.
+        Visit the Mykei technology page for a full breakdown of the hardware, the controlled marker deployment process, and how the registry event workflow operates end-to-end.
       </div>
-      <a href="https://mykei.io/#how-it-works" class="cta-btn">How the ADN Works</a>
+      <a href="https://mykei.io/#how-it-works" class="cta-btn">How the ADN Works →</a>
       <div class="cta-secondary">Questions? protocol@mykei.io · 07985151551</div>
     </div>
 
@@ -1025,7 +1021,7 @@ export function generateRetailerEmail(data: LOIData): string {
     <div class="footer-legal">
       This email was sent to ${safe.email} because you signed a Letter of Intent with Mykei Securities Ltd.
       This LOI is a declaration of commercial intent and is not a legally binding contract.
-      Your data is held securely and used only in connection with the ADN validation programme enquiry.
+      Your data is held securely and used only in connection with the ADN Independent Retail Pilot.
     </div>
   </div>
 

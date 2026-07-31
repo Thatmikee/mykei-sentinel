@@ -18,11 +18,11 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
       width={width}
       style={{ display: "block", fontFamily: "'Sora', sans-serif", maxWidth: "100%" }}
       role="img"
-      aria-label="ADN system flow: Detection → Marking → Registry → Resale Risk"
+      aria-label="ADN system flow: Detection to Marking to Registry to Resale Risk"
     >
       <defs>
         <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#0D9488" />
+          <path d="M0,0 L0,6 L8,3 z" fill="#D4AF37" />
         </marker>
       </defs>
 
@@ -34,7 +34,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
         <line
           key={i}
           x1={a.x1} y1={a.y1} x2={a.x2} y2={a.y2}
-          stroke="#0D9488"
+          stroke="#D4AF37"
           strokeWidth="1.5"
           markerEnd="url(#arrow)"
         />
@@ -49,7 +49,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
             width="172"
             height="72"
             fill="#FFFFFF"
-            stroke={i === 3 ? "#0D9488" : "#E8E8E8"}
+            stroke={i === 3 ? "#D4AF37" : "#E8E8E8"}
             strokeWidth={i === 3 ? "1.5" : "1"}
             rx="4"
           />
@@ -60,7 +60,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
             fontSize="10"
             fontWeight="700"
             letterSpacing="0.12em"
-            fill={i === 3 ? "#0D9488" : "#8a7a5a"}
+            fill={i === 3 ? "#D4AF37" : "#8a7a5a"}
           >
             {n.label}
           </text>
@@ -92,7 +92,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
           x={n.x + 10}
           y={n.y - 18}
           fontSize="9"
-          fill="#0D9488"
+          fill="#D4AF37"
           fontWeight="700"
           fontFamily="'JetBrains Mono', monospace"
         >
@@ -102,7 +102,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
 
       {/* Caption */}
       <text x="430" y="178" textAnchor="middle" fontSize="9" fill="#aaa" fontStyle="italic">
-        ADN system flow. Engineering documentation (April 2026)
+        ADN system flow, engineering documentation (April 2026)
       </text>
     </svg>
   );

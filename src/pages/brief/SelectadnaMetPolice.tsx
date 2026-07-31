@@ -95,7 +95,8 @@ export default function SelectadnaMetPolice() {
       </p>
       <p>
         The police proved the concept. The question was always whether independent retailers would ever
-        gain continuous access to the same level of forensic protection. Pricing is under development. Follow the research at mykei.io/signal.
+        gain continuous access to the same level of forensic protection. Commercial terms are agreed directly with Mykei
+        for retailers joining the Manchester pilot.
       </p>
     </article>
   );

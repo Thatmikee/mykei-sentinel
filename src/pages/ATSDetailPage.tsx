@@ -15,7 +15,7 @@ const LAYERS = [
   {
     n: "01",
     title: "EDGE, ADN Node",
-    body: "AES-256-GCM encrypted local processing on the Encrypted Logic Core. The Forensic Event Package is designed to be assembled at the edge: timestamp, node ID, ToF vector data, forensic batch code, before transmission begins.",
+    body: "AES-256-GCM encrypted local processing on the Encrypted Logic Core. The Forensic Event Package is assembled at the edge, timestamp, node ID, ToF vector data, forensic batch code, before transmission begins.",
   },
   {
     n: "02",
@@ -25,7 +25,7 @@ const LAYERS = [
   {
     n: "03",
     title: "REGISTRY, Forensic Digital Twin Platform",
-    body: "The Mykei secure cloud registry receives and stores the event with cryptographic signing. The tamper-aware audit trail is designed so that alteration, deletion, or backdating can be detected. Row-level security ensures each retailer sees only their own data.",
+    body: "The Mykei secure cloud registry receives and stores the event with cryptographic signing. The tamper-aware audit trail means the record cannot be altered, deleted, or backdated. Row-level security ensures each retailer sees only their own data.",
   },
   {
     n: "04",
@@ -82,13 +82,13 @@ export default function ATSDetailPage() {
           className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider uppercase"
           style={{ textDecoration: "none" }}
         >
-          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 11, letterSpacing: "2.5px", color: "#0D9488", textTransform: "uppercase" as const }}>MYKEI</span>
+          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 11, letterSpacing: "2.5px", color: "#D4A843", textTransform: "uppercase" as const }}>MYKEI</span>
           Home
         </a>
         <a
-          href="/adn"
+          href="/adn-in-action"
           className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider transition-all rounded"
-          style={{ background: "#0D9488", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
+          style={{ background: "#D4A843", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
         >
           ▶ ADN in Action
         </a>
@@ -111,7 +111,7 @@ export default function ATSDetailPage() {
             </div>
           </motion.div>
 
-          <motion.h1 {...fade(0.1)} className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <motion.h1 {...fade(0.1)} className="text-4xl md:text-6xl font-bold mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             Forensic Cloud<br />
             <span className="text-primary">Registry Infrastructure</span>
           </motion.h1>
@@ -157,7 +157,7 @@ export default function ATSDetailPage() {
         <div className="container px-6 max-w-5xl">
           <motion.div {...fade(0)} className="mb-12">
             <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">System Architecture</span>
-            <h2 className="text-2xl md:text-3xl font-bold mt-2">Four layers. One chain of custody.</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mt-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Four layers. One chain of custody.</h2>
           </motion.div>
 
           <div className="relative">
@@ -191,7 +191,7 @@ export default function ATSDetailPage() {
         <div className="container px-6 max-w-5xl">
           <motion.div {...fade(0)} className="mb-12">
             <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Mykei Registry</span>
-            <h2 className="text-2xl md:text-3xl font-bold mt-2">Cartridge-linked event records at scale</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mt-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Cartridge-linked event records at scale</h2>
             <p className="text-muted-foreground mt-2 max-w-xl">
               The registry is not a passive record. Every marker deployment event is cartridge-linked, timestamped, and designed to support verification and investigation workflows.
             </p>
@@ -218,7 +218,7 @@ export default function ATSDetailPage() {
         <div className="container px-6 max-w-5xl">
           <motion.div {...fade(0)} className="mb-12">
             <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Infrastructure</span>
-            <h2 className="text-2xl md:text-3xl font-bold mt-2">Technical specifications</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mt-2" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Technical specifications</h2>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden">
@@ -238,7 +238,7 @@ export default function ATSDetailPage() {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <motion.div {...fade(0)}>
               <span className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">Privacy & Compliance</span>
-              <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4">GDPR-compliant by architecture</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>GDPR-compliant by architecture</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 No personal data enters the ATS. The detection mechanism at the edge is a laser vector,
                 not a camera. No images, no biometrics, no facial scans are ever captured or transmitted.
@@ -273,16 +273,17 @@ export default function ATSDetailPage() {
       <section className="py-20 border-t border-border">
         <div className="container px-6 max-w-3xl text-center">
           <motion.div {...fade(0)}>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">See the full system in action</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>See the full system in action</h2>
             <p className="text-muted-foreground mb-8">
-              The ADN and ATS are designed to operate as one integrated system. Field validation has not yet begun. Follow the research to stay informed.
+              The ADN and ATS operate as one integrated system. Request pilot access to deploy
+              both at your store as part of the Alpha cohort.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <button
-                onClick={() => navigate("/signal")}
+                onClick={() => navigate("/#contact")}
                 className="px-8 py-4 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors rounded"
               >
-                Follow the Research →
+                Request Pilot Access →
               </button>
               <button
                 onClick={() => navigate("/adn")}

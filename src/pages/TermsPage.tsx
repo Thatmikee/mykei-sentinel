@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Footer from "@/components/Footer";
 
-const GOLD = "#0D9488";
+const GOLD = "#D4AF37";
 const INK = "#1E1E1E";
 const PAPER = "#FAFAF8";
 const MUTED = "#6B6B65";
@@ -51,7 +51,7 @@ export default function TermsPage() {
   useEffect(() => {
     document.title = "Terms of Service | Mykei Securities Ltd";
     const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", "Terms of Service for Mykei Securities Ltd. Governing the use of mykei.io and the ADN validation programme.");
+    if (desc) desc.setAttribute("content", "Terms of Service for Mykei Securities Ltd. Governing the use of mykei.io and the ADN Independent Retail Pilot programme.");
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.href = "https://mykei.io/terms";
     let noindex = document.querySelector('meta[name="robots"]');
@@ -87,12 +87,12 @@ export default function TermsPage() {
           <div style={section}>
             <h2 style={h2}>1. Who we are</h2>
             <p style={p}>
-              Mykei Securities Ltd is a company registered in England and Wales (Company No. 16984969). Our registered address is Bartle House, Oxford Court, Manchester, M2 3WQ. We can be contacted at protocol@mykei.io.
+              Mykei Securities Ltd is a company registered in England and Wales (Company No. 16984969). Our registered office is 2 Princess Court, Butterstile Lane, Prestwich, Manchester, M25 9PW. We can be contacted at protocol@mykei.io.
             </p>
 
             <h2 style={h2}>2. What these terms cover</h2>
             <p style={p}>
-              These terms apply to all visitors to mykei.io, to organisations completing a Letter of Intent (LOI) for the Independent Retail Pilot, and to any party evaluating the ADN Active Forensic Defence Node for commercial deployment.
+              These terms apply to all visitors to mykei.io, to organisations registering interest in an independent retail pilot, and to any party evaluating ADN. Registering interest and any letter of interest are non-binding and do not create a contract.
             </p>
 
             <h2 style={h2}>3. Website use</h2>
@@ -105,10 +105,10 @@ export default function TermsPage() {
 
             <h2 style={h2}>4. Independent Retail Pilot</h2>
             <p style={p}>
-              Submission of a Letter of Intent via the pilot form at mykei.io/signal does not constitute a binding contract. It expresses an intention to discuss participation in the ADN validation programme and initiates a conversation with Michael Esema, Founder.
+              Submission of a Letter of Intent via the pilot form at mykei.io/pilot does not constitute a binding contract. It expresses an intention to discuss participation in the Independent Retail Pilot programme and initiates a conversation with Michael Esema, Founder.
             </p>
             <p style={p}>
-              Pilot and validation programme pricing is under development and will be confirmed in a written agreement before any device installation takes place. No pricing commitment is made by submitting a Letter of Intent.
+              Pilot pricing is scoped per pilot and confirmed in writing before device installation. No lock-in applies after the initial pilot term.
             </p>
             <p style={p}>
               Mykei Securities reserves the right to refuse or withdraw pilot participation at any time if a retailer's premises are found to be unsuitable for safe device deployment or if the retailer is in breach of applicable law.

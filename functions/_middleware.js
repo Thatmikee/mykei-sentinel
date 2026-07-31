@@ -1,29 +1,29 @@
 // Cloudflare Pages Middleware, per-route meta injection
-// Fixes: all SPA routes serving identical ADN-1 index.html to crawlers
+// Fixes: all SPA routes serving identical ADN index.html to crawlers
 // LinkedIn / WhatsApp / X bots don't run JS, they see raw HTML only.
 // This middleware fetches index.html server-side, swaps meta, returns patched HTML.
 
 const ROUTE_META = {
   '/': {
-    title: 'ADN-1 Forensic Retail Defence | Mykei Securities',
-    description: 'Mykei Securities builds ADN-1 for retail theft prevention: shelf-level event detection, controlled marker deployment, and Mykei Registry event records.',
+    title: 'ADN Forensic Retail Defence | Mykei Securities',
+    description: 'Mykei Securities is developing ADN, a patent-pending prototype for retail theft prevention: shelf-level event detection, controlled marker deployment, and Mykei Registry event records.',
     canonical: 'https://mykei.io',
-    ogTitle: 'Mykei Securities | ADN-1 Forensic Retail Defence System',
-    ogDescription: 'ADN-1 is a shelf-level retail defence device for high-loss categories. It links event detection, controlled marker deployment, and Mykei Registry records.',
+    ogTitle: 'Mykei Securities | ADN Forensic Retail Defence System',
+    ogDescription: 'ADN is a patent-pending prototype shelf-level retail defence device for high-loss categories, designed to link event detection, controlled marker deployment, and Mykei Registry records.',
     ogUrl: 'https://mykei.io',
     ogImage: 'https://mykei.io/social-share.png',
-    twitterTitle: 'Mykei Securities | ADN-1 Forensic Retail Defence',
-    twitterDescription: 'ADN-1 helps retailers protect high-loss shelves with event detection, controlled marker deployment, and Mykei Registry records. No cameras.',
+    twitterTitle: 'Mykei Securities | ADN Forensic Retail Defence',
+    twitterDescription: 'ADN is a prototype designed to help retailers protect high-loss shelves with event detection, controlled marker deployment, and Mykei Registry records. No cameras.',
   },
   '/howitworks': {
-    title: 'How ADN-1 Works | Mykei Securities',
-    description: 'A plain explanation of ADN-1: shelf event detection, controlled marker deployment, cartridge-linked records, and the Mykei Registry.',
+    title: 'How ADN Works | Mykei Securities',
+    description: 'A plain explanation of ADN: shelf event detection, controlled marker deployment, cartridge-linked records, and the Mykei Registry.',
     canonical: 'https://mykei.io/howitworks',
-    ogTitle: 'How ADN-1 Works | Mykei Securities',
-    ogDescription: 'How ADN-1 turns a defined shelf-level theft event into controlled marker deployment and a cartridge-linked registry record.',
+    ogTitle: 'How ADN Works | Mykei Securities',
+    ogDescription: 'How ADN is designed to turn a defined shelf-level theft event into controlled marker deployment and a cartridge-linked registry record.',
     ogUrl: 'https://mykei.io/howitworks',
     ogImage: 'https://mykei.io/social-share.png',
-    twitterTitle: 'How ADN-1 Works | Mykei Securities',
+    twitterTitle: 'How ADN Works | Mykei Securities',
     twitterDescription: 'Shelf event detection, controlled marker deployment, cartridge-linked records, and the Mykei Registry.',
   },
   '/protocol': {
@@ -39,14 +39,14 @@ const ROUTE_META = {
   },
   '/founder': {
     title: 'Michael Esema | Founder & CEO, Mykei Securities',
-    description: 'Michael Esema is the founder of Mykei Securities Ltd, inventor of ADN-1, and originator of Economic Sterilisation. Manchester-based, Nigerian-born, MBA, MSc.',
+    description: 'Michael Esema is the founder of Mykei Securities Ltd, inventor of ADN, and originator of Economic Sterilisation. Manchester-based, Nigerian-born, MBA, MSc.',
     canonical: 'https://mykei.io/founder',
     ogTitle: 'Michael Esema | Founder & CEO, Mykei Securities',
-    ogDescription: 'Founder of Mykei Securities Ltd, inventor of ADN-1, and originator of Economic Sterilisation.',
+    ogDescription: 'Founder of Mykei Securities Ltd, inventor of ADN, and originator of Economic Sterilisation.',
     ogUrl: 'https://mykei.io/founder',
     ogImage: 'https://mykei.io/social-share.png',
     twitterTitle: 'Michael Esema | Founder & CEO, Mykei Securities',
-    twitterDescription: 'Inventor of the ADN-1. Originator of Economic Sterilisation. MBA, MSc.',
+    twitterDescription: 'Inventor of the ADN. Originator of Economic Sterilisation. MBA, MSc.',
   },
   '/economic-sterilisation': {
     title: 'Economic Sterilisation | The Doctrine | Mykei Securities',
@@ -59,31 +59,42 @@ const ROUTE_META = {
     twitterTitle: 'Economic Sterilisation | The Doctrine | Mykei Securities',
     twitterDescription: 'A retail theft doctrine focused on disrupting resale confidence through registry-linked evidence.',
   },
-  '/adn-1': {
-    title: 'ADN-1 | Forensic Retail Defence System | Mykei Securities',
-    description: 'ADN-1 is a patent-pending shelf-level retail defence device for high-loss categories, controlled marker deployment, and Mykei Registry event records.',
-    canonical: 'https://mykei.io/adn-1',
-    ogTitle: 'ADN-1 | Forensic Retail Defence System',
+  '/adn': {
+    title: 'ADN | Forensic Retail Defence System | Mykei Securities',
+    description: 'ADN is a patent-pending prototype shelf-level retail defence device for high-loss categories, designed for controlled marker deployment and Mykei Registry event records.',
+    canonical: 'https://mykei.io/adn',
+    ogTitle: 'ADN | Forensic Retail Defence System',
     ogDescription: 'Shelf-level retail defence for defined theft events. Controlled marker deployment, cartridge-linked activation, and Mykei Registry records.',
-    ogUrl: 'https://mykei.io/adn-1',
+    ogUrl: 'https://mykei.io/adn',
     ogImage: 'https://mykei.io/social-share.png',
-    twitterTitle: 'ADN-1 | Forensic Retail Defence | Mykei Securities',
-    twitterDescription: 'ADN-1 links shelf theft events to controlled marker deployment and registry event records.',
+    twitterTitle: 'ADN | Forensic Retail Defence | Mykei Securities',
+    twitterDescription: 'ADN is designed to link shelf theft events to controlled marker deployment and registry event records.',
+  },
+  '/adn-in-action': {
+    title: 'ADN in Action, Scroll-Through Simulation | Mykei Securities',
+    description: 'A scroll-driven simulation of the ADN detection, marking, and registry sequence, illustrative only, not a live deployment or real event data.',
+    canonical: 'https://mykei.io/adn-in-action',
+    ogTitle: 'ADN in Action | Mykei Securities',
+    ogDescription: 'See the ADN detection, marking, and registry sequence in a scroll-driven simulation. Illustrative only, not live deployment data.',
+    ogUrl: 'https://mykei.io/adn-in-action',
+    ogImage: 'https://mykei.io/social-share.png',
+    twitterTitle: 'ADN in Action | Mykei Securities',
+    twitterDescription: 'A scroll-driven simulation of the ADN detection, marking, and registry sequence. Illustrative only.',
   },
   '/pilot': {
     title: 'Independent Retail Pilot | Mykei Securities',
-    description: 'Request an ADN-1 pilot evaluation for high-loss retail shelves. Mykei reviews store fit, deployment criteria, and registry-linked marker workflow suitability.',
+    description: 'Request an ADN pilot evaluation for high-loss retail shelves. Mykei reviews store fit, deployment criteria, and registry-linked marker workflow suitability.',
     canonical: 'https://mykei.io/pilot',
     ogTitle: 'Independent Retail Pilot | Mykei Securities',
-    ogDescription: 'Request a pilot evaluation for ADN-1. Built for high-loss shelves, non-confrontational defence, controlled marker deployment, and registry records.',
+    ogDescription: 'Request a pilot evaluation for ADN. Built for high-loss shelves, non-confrontational defence, controlled marker deployment, and registry records.',
     ogUrl: 'https://mykei.io/pilot',
     ogImage: 'https://mykei.io/social-share.png',
     twitterTitle: 'Independent Retail Pilot | Mykei Securities',
-    twitterDescription: 'Request an ADN-1 pilot evaluation for high-loss retail shelves.',
+    twitterDescription: 'Request an ADN pilot evaluation for high-loss retail shelves.',
   },
   '/enterprise': {
     title: 'Enterprise Retail Pilots | Mykei Securities',
-    description: 'Strategic retail pilot reviews for multi-site retailers, loss prevention teams, insurers, and forensic partners evaluating ADN-1 and Mykei Registry workflows.',
+    description: 'Strategic retail pilot reviews for multi-site retailers, loss prevention teams, insurers, and forensic partners evaluating ADN and Mykei Registry workflows.',
     canonical: 'https://mykei.io/enterprise',
     ogTitle: 'Enterprise Retail Pilots | Mykei Securities',
     ogDescription: 'Strategic pilot reviews for multi-site retail loss prevention, forensic workflow design, controlled marker deployment, and registry evidence packs.',
@@ -105,7 +116,7 @@ const ROUTE_META = {
   },
   '/technology/ats': {
     title: 'Mykei Registry Infrastructure | Mykei Securities',
-    description: 'Mykei Registry is the event-record layer designed to connect ADN-1 device activity, shelf zones, timestamps, cartridge sessions, and marker batch references.',
+    description: 'Mykei Registry is the event-record layer designed to connect ADN device activity, shelf zones, timestamps, cartridge sessions, and marker batch references.',
     canonical: 'https://mykei.io/technology/ats',
     ogTitle: 'Mykei Registry Infrastructure | Mykei Securities',
     ogDescription: 'The registry layer behind cartridge-linked shelf event records and evidence-supporting retail workflows.',
@@ -137,26 +148,26 @@ const ROUTE_META = {
     twitterDescription: 'Verified retail protection workflows and registry-linked marker records.',
   },
   '/roadmap': {
-    title: 'ADN-1 Roadmap | Mykei Securities',
-    description: 'The ADN-1 roadmap tracks prototype proof, sensor testing, registry mockups, cartridge-linked activation, and field validation milestones.',
+    title: 'ADN Roadmap | Mykei Securities',
+    description: 'The ADN roadmap tracks prototype proof, sensor testing, registry mockups, cartridge-linked activation, and field validation milestones.',
     canonical: 'https://mykei.io/roadmap',
-    ogTitle: 'ADN-1 Roadmap | Mykei Securities',
+    ogTitle: 'ADN Roadmap | Mykei Securities',
     ogDescription: 'Prototype proof, sensor testing, registry mockups, cartridge-linked activation, and field validation milestones.',
     ogUrl: 'https://mykei.io/roadmap',
     ogImage: 'https://mykei.io/social-share.png',
-    twitterTitle: 'ADN-1 Roadmap | Mykei Securities',
+    twitterTitle: 'ADN Roadmap | Mykei Securities',
     twitterDescription: 'Prototype proof, sensor testing, registry mockups, and field validation milestones.',
   },
   '/contact': {
     title: 'Contact Mykei Securities',
-    description: 'Contact Mykei Securities for ADN-1 enterprise pilot review, marker supplier conversations, registry workflow questions, and retail loss-prevention discussions.',
+    description: 'Contact Mykei Securities for ADN enterprise pilot review, marker supplier conversations, registry workflow questions, and retail loss-prevention discussions.',
     canonical: 'https://mykei.io/contact',
     ogTitle: 'Contact Mykei Securities',
-    ogDescription: 'Contact Mykei for ADN-1 pilot review, supplier conversations, registry workflow questions, and retail loss-prevention discussions.',
+    ogDescription: 'Contact Mykei for ADN pilot review, supplier conversations, registry workflow questions, and retail loss-prevention discussions.',
     ogUrl: 'https://mykei.io/contact',
     ogImage: 'https://mykei.io/social-share.png',
     twitterTitle: 'Contact Mykei Securities',
-    twitterDescription: 'ADN-1 pilot review, supplier conversations, and registry workflow questions.',
+    twitterDescription: 'ADN pilot review, supplier conversations, and registry workflow questions.',
   },
   '/privacy': {
     title: 'Privacy Policy | Mykei Securities',
@@ -237,7 +248,7 @@ const ROUTE_META = {
   },
   '/signal/surgeon-not-camera-200ms': {
     title: 'A Surgeon, Not a Camera: The 200 Millisecond Rule | The Signal',
-    description: 'Mykei explains why ADN-1 is designed around fast shelf-level event response rather than camera-based surveillance.',
+    description: 'Mykei explains why ADN is being designed around fast shelf-level event response rather than camera-based surveillance.',
     canonical: 'https://mykei.io/signal/surgeon-not-camera-200ms',
     ogTitle: 'A Surgeon, Not a Camera: The 200 Millisecond Rule',
     ogDescription: 'Fast shelf-level event response instead of camera-based surveillance.',
@@ -248,7 +259,7 @@ const ROUTE_META = {
   },
   '/signal/shopkeeper-maths-adn1-cost': {
     title: "The Maths: Built for the Shopkeeper's Cash Position | The Signal",
-    description: 'A Mykei Signal article on the early ADN-1 pricing thesis for independent retailers and why retail security economics must fit cash reality.',
+    description: 'A Mykei Signal article on the early ADN pricing thesis for independent retailers and why retail security economics must fit cash reality.',
     canonical: 'https://mykei.io/signal/shopkeeper-maths-adn1-cost',
     ogTitle: "The Maths: Built for the Shopkeeper's Cash Position",
     ogDescription: 'Retail security economics must fit the cash reality of the shopkeeper.',
@@ -410,17 +421,6 @@ export async function onRequest(context) {
   headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
   headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
   headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')
-  headers.set('Content-Security-Policy', [
-    "default-src 'self'",
-    "script-src 'self' https://www.googletagmanager.com https://cdn-cookieyes.com https://challenges.cloudflare.com 'unsafe-inline'",
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-    "font-src 'self' https://fonts.gstatic.com",
-    "img-src 'self' data: https:",
-    "connect-src 'self' https://send-loi.michaelesema.workers.dev https://generativelanguage.googleapis.com https://www.google-analytics.com",
-    "frame-src https://challenges.cloudflare.com",
-    "object-src 'none'",
-    "base-uri 'self'",
-  ].join('; '))
 
   return new Response(html, { headers })
 }

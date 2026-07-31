@@ -165,7 +165,7 @@ y += 10;
 const toc = [
   ["01", "The Problem",                         "03"],
   ["02", "The Doctrine",                        "04"],
-  ["03", "How the ADN-1 Works",                 "05"],
+  ["03", "How the ADN Works",                 "05"],
   ["04", "The Toxic Inventory Registry",         "06"],
   ["05", "The Evidence Base",                   "07"],
   ["06", "The Manchester Alpha Pilot",          "08"],
@@ -188,7 +188,7 @@ for (const [num, title, page] of toc) {
 y += 8;
 setFont("normal", 8.5, MID);
 const tocNote = doc.splitTextToSize(
-  "This white paper sets out the theoretical basis for economic sterilisation as a retail security doctrine, the technical architecture of the ADN-1 system, and the business case for independent retailers. It is intended for retailers, insurers, law enforcement partners, and investors.",
+  "This white paper sets out the theoretical basis for economic sterilisation as a retail security doctrine, the technical architecture of the ADN system, and the business case for independent retailers. It is intended for retailers, insurers, law enforcement partners, and investors.",
   TW
 );
 doc.text(tocNote, ML, y);
@@ -289,16 +289,16 @@ for (const [title, detail] of pillars) {
   y += 5;
 }
 
-// ─── SECTION 03 — HOW THE ADN-1 WORKS ──────────────────────────────────────
+// ─── SECTION 03 — HOW THE ADN WORKS ──────────────────────────────────────
 newPage();
 y = 28;
 
 y = sectionLabel("Section 03", y);
-y = h2("How the ADN-1 works.", y);
+y = h2("How the ADN works.", y);
 y += 2;
 
 y = body(
-  "The ADN-1 is the hardware layer of the economic sterilisation system. It mounts on the front price rail of a standard retail gondola shelf and detects theft events, responding with a selective forensic deployment in under three seconds. There are no cameras. No biometric data. No facial recognition. GDPR compliance is structural, not a policy choice.",
+  "The ADN is the hardware layer of the economic sterilisation system. It mounts on the front price rail of a standard retail gondola shelf and detects theft events, responding with a selective forensic deployment in under three seconds. There are no cameras. No biometric data. No facial recognition. GDPR compliance is structural, not a policy choice.",
   y
 );
 y += 5;
@@ -321,7 +321,7 @@ for (const [title, detail] of steps) {
 y += 3;
 setFont("normal", 8, MID);
 const techNote = doc.splitTextToSize(
-  "The ADN-1 runs Arduino firmware (v2.7) on the ESP32 Feather V2 platform. OTA firmware updates are delivered over encrypted MQTT. The unit operates on 5V USB-C and draws under 2W in standby. No local data storage. All event data is transmitted to the registry immediately and held in volatile memory only.",
+  "The ADN runs Arduino firmware (v2.7) on the ESP32 Feather V2 platform. OTA firmware updates are delivered over encrypted MQTT. The unit operates on 5V USB-C and draws under 2W in standby. No local data storage. All event data is transmitted to the registry immediately and held in volatile memory only.",
   TW
 );
 doc.setFillColor(...LIGHT);
@@ -363,7 +363,7 @@ doc.roundedRect(ML, y, TW, 42, 3, 3, "F");
 
 const flowY = y + 8;
 const flowItems = [
-  ["01  DETECTION", "ADN-1 fires. Batch code generated."],
+  ["01  DETECTION", "ADN fires. Batch code generated."],
   ["02  REGISTRY",  "Code posted to Toxic Inventory Registry over TLS."],
   ["03  API SCAN",  "Registry queries eBay, Vinted, Facebook Marketplace."],
   ["04  FLAG",      "Matching listings suppressed programmatically."],
@@ -412,13 +412,13 @@ y = h2("The Manchester Alpha Pilot.", y);
 y += 2;
 
 y = body(
-  "The Manchester Alpha Pilot deploys five ADN-1 units across five independent retail locations in Greater Manchester in Q2 2026. Each site runs a seven-day Net 7 evaluation under full production conditions, not a controlled environment. Founders pricing applies: £149 setup plus £40 per month.",
+  "The Manchester Alpha Pilot deploys five ADN units across five independent retail locations in Greater Manchester in Q2 2026. Each site runs a seven-day Net 7 evaluation under full production conditions, not a controlled environment. Founders pricing applies: £149 setup plus £40 per month.",
   y
 );
 y += 5;
 
 y = body(
-  "The pilot tests two things simultaneously. The technical reliability of the ADN-1 detection and deployment chain under real store conditions. And the commercial response: whether OCGs conducting systematic targeting update their risk models in response to Mykei Protected signage.",
+  "The pilot tests two things simultaneously. The technical reliability of the ADN detection and deployment chain under real store conditions. And the commercial response: whether OCGs conducting systematic targeting update their risk models in response to Mykei Protected signage.",
   y
 );
 y += 5;
@@ -449,7 +449,7 @@ y = body(
 y += 5;
 
 y = body(
-  "ADN-1 is priced for the store with one till and a spreadsheet. At £40 per month, the break-even point is a single theft prevention event worth approximately £480 per year, or one serious incident avoided per month with a basket value of around £40. For a pharmacy, off-licence, or convenience store stocking razor blades, nappies, or alcohol, that threshold is cleared in the first week.",
+  "ADN is priced for the store with one till and a spreadsheet. At £40 per month, the break-even point is a single theft prevention event worth approximately £480 per year, or one serious incident avoided per month with a basket value of around £40. For a pharmacy, off-licence, or convenience store stocking razor blades, nappies, or alcohol, that threshold is cleared in the first week.",
   y
 );
 y += 5;
@@ -508,7 +508,7 @@ y = h2("Conclusion.", y);
 y += 2;
 
 y = body(
-  "The retail security industry has spent four decades trying to stop theft at the moment it happens. The ADN-1 and the Toxic Inventory Registry operate on a different principle: make the theft commercially worthless before the thief reaches the door.",
+  "The retail security industry has spent four decades trying to stop theft at the moment it happens. The ADN and the Toxic Inventory Registry operate on a different principle: make the theft commercially worthless before the thief reaches the door.",
   y
 );
 y += 5;

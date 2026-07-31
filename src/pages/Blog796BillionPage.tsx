@@ -30,7 +30,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-const GOLD = "#0D9488";
+const GOLD = "#c9a84c";
 const INK = "#1a1108";
 const MID = "#5c4a32";
 const FAINT = "#f5f1eb";
@@ -85,7 +85,7 @@ export default function Blog796BillionPage() {
         canonical="https://mykei.io/blog/the-796-billion-problem"
         ogType="article"
         keywords="retail theft $796 billion, organised retail crime prevention, economic sterilisation, retail theft for small businesses, retail crime for accountants, shoplifting for enterprise, theft economics for retailers"
-        ogImageAlt="The $796 Billion Problem: retail theft economics analysis by Mykei Securities"
+        ogImageAlt="The $796 Billion Problem, retail theft economics analysis by Mykei Securities"
         articleMeta={{ publishedTime: "2026-04-10T00:00:00Z", author: "Michael Esema", section: "Retail Security", tags: ["Economic Sterilisation","Retail Theft","Organised Retail Crime","ADN"] }}
         breadcrumbs={[["Home","https://mykei.io"],["Blog","/blog"],["The $796 Billion Problem",""]]}
       />
@@ -180,8 +180,8 @@ export default function Blog796BillionPage() {
           <a href="/economic-sterilisation" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: GOLD }}>
             Economic Sterilisation
           </a>
-          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: scrolled ? INK : "#fff", border: `1px solid ${GOLD}`, padding: "7px 14px", transition: "color 0.25s" }}>
-            Follow the Research
+          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: scrolled ? INK : "#fff", border: `1px solid ${GOLD}`, padding: "7px 14px", transition: "color 0.25s" }}>
+            Join Pilot
           </a>
         </div>
       </nav>
@@ -215,7 +215,7 @@ export default function Blog796BillionPage() {
 
         <Reveal delay={0.12}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, paddingTop: 24, borderTop: `1px solid rgba(26,17,8,0.1)` }}>
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: FAINT, border: `1px solid rgba(13,148,136,0.3)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: 36, height: 36, borderRadius: "50%", background: FAINT, border: `1px solid rgba(201,168,76,0.3)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
               <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: GOLD, fontWeight: 500 }}>ME</span>
             </div>
             <div>
@@ -355,7 +355,7 @@ export default function Blog796BillionPage() {
         <Reveal>
           <h2>What the technology makes possible</h2>
           <p>
-            The ADN is an early implementation of Economic Sterilisation.
+            The ADN is a prototype-stage implementation of Economic Sterilisation.
             It mounts under a retail shelf, detects bulk-sweep theft events using kinetic
             signature analysis (no cameras, no facial recognition, no biometric data),
             and triggers controlled marker deployment onto goods and the individual carrying them.
@@ -369,8 +369,8 @@ export default function Blog796BillionPage() {
             Forensic marking is not new. Proprietary Forensic Marking Compound has demonstrated up to 83% reductions
             in burglaries and theft in police projects. A recent operation saw 5,000 tagged
             items lead to 15 arrests and the recovery of £150,000 in stolen goods. Homebase
-            cut stock loss by 20% using SmartWater. What the ADN is designed to add is autonomous
-            deployment, registry integration, and delivery at retail shelf scale.
+            cut stock loss by 20% using SmartWater. What the ADN adds is autonomous
+            deployment, designed registry integration, and delivery at retail shelf scale.
           </p>
         </Reveal>
 
@@ -402,7 +402,7 @@ export default function Blog796BillionPage() {
                 "Professional theft networks operate at scale because stolen goods have a commercial aftermarket.",
                 "Forensic marking changes the commercial calculus: batch-linked goods are harder to sell anonymously, reducing the theft value.",
                 "Proprietary Forensic Marking Compound trials showed up to 83% reductions in repeat theft at marked locations.",
-                "The ADN is designed to automate deployment at the point of theft, without cameras, biometrics, or human intervention. It is patent-pending R&D; field validation has not yet begun.",
+                "The ADN automates deployment at the point of theft, without cameras, biometrics, or human intervention.",
               ].map(item => (
                 <li key={item} style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, color: INK, lineHeight: 1.7, marginBottom: 8 }}>{item}</li>
               ))}
@@ -432,12 +432,12 @@ export default function Blog796BillionPage() {
         {/* PILOT CTA, inline, not a full-bleed block */}
         <Reveal>
           <div style={{ marginTop: 48, padding: "36px 32px", background: FAINT, borderLeft: `3px solid ${GOLD}` }}>
-            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Research Updates · Mykei Securities</div>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Independent Retail Pilot · 2026 · Greater Manchester</div>
             <p style={{ fontFamily: "'Playfair Display',serif", fontSize: 18, color: INK, lineHeight: 1.5, marginBottom: 20, fontWeight: 400 }}>
-              ADN is patent-pending R&D. Field validation has not yet begun. Follow the research to stay informed.
+              Independent Retail Pilot. Retail validation route for Economic Sterilisation.
             </p>
-            <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#fff", background: INK, padding: "11px 24px", display: "inline-block" }}>
-              Follow the Research
+            <a href="/pilot" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#fff", background: INK, padding: "11px 24px", display: "inline-block" }}>
+              Join the Pilot
             </a>
           </div>
         </Reveal>

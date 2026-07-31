@@ -41,7 +41,7 @@ export default function MarketplaceFlagging() {
         The proceeds fund the next run.
       </p>
 
-      <h2>The Intelligence Gap and What the TIR Provides</h2>
+      <h2>The Intelligence Gap, and Why It Is an Industry Problem</h2>
 
       <p>
         The core problem is the intelligence gap between the physical crime and the digital
@@ -49,29 +49,30 @@ export default function MarketplaceFlagging() {
         There is no mechanism through which a retailer's theft event automatically generates a
         queryable record that a platform's trust team or a police officer can cross-reference
         against a suspicious listing. The physical and digital worlds remain disconnected at
-        precisely the point where connecting them would matter most.
+        precisely the point where connecting them would matter most. Closing that gap would
+        require cooperation across retailers, platforms, and law enforcement, not a single
+        vendor's product.
       </p>
       <p>
-        The Mykei Registry is designed to close that gap. Every ADN activation
-        generates a unique forensic reference code linked to a store record and item category.
-        This code is registered in the Mykei Registry at the moment of deployment. If a thief takes the
-        marked goods and lists them online, the code on those goods is now the bridge between
-        the physical marker and the commercial trail of the listing. A retailer whose goods were
-        taken can provide TIR reference codes to police or to a platform's trust-and-safety team.
-        Any item suspected of being stolen can be tested against those codes. The forensic chain
-        from store shelf to online listing becomes legible in a way it has never been before.
+        Mykei's contribution is narrower and earlier-stage than a marketplace-monitoring system.
+        The Mykei Registry is a designed event-record architecture, not yet live, intended to
+        generate a unique forensic reference code for each marker deployment event, linked to a
+        store record and item category. The design intent is that if a thief takes marked goods
+        and lists them online, a retailer or investigator could use that reference code as evidence
+        connecting a specific listing to a specific theft event. Mykei does not scan, flag, or
+        monitor marketplace listings, and has no integration with eBay, Vinted, Facebook Marketplace,
+        or Depop.
       </p>
       <p>
-        Integration with marketplace trust-and-safety teams is a roadmap item. The TIR is live
-        and logging events from pilot stores now. As the pilot generates a body of activation
-        data, the case for formalising that integration with platforms becomes a data argument
-        rather than a speculative one.
+        Any integration with marketplace trust-and-safety teams is a long-term aspiration, not a
+        roadmap commitment with a date. The Registry itself is still in development and is not yet
+        logging events from any pilot store.
       </p>
 
       <h2>Deterrence Before the Theft</h2>
 
       <p>
-        The TIR's most significant value may not be retrospective. The same logic that applied
+        The Registry's most significant intended value may not be retrospective. The same logic that applied
         to Proprietary Forensic Marking Compound signage in documented UK police trials applies here. If a thief knows that
         the goods they are targeting are forensically marked and registered in a database that
         feeds into marketplace intelligence, the calculus changes before the theft occurs. A
@@ -80,14 +81,17 @@ export default function MarketplaceFlagging() {
         to steal it.
       </p>
       <p>
-        This is economic sterilisation in its most direct form. The TIR is not only a reactive
-        database for post-incident investigation. It is a prospective deterrent, operating through
-        the same mechanism as every other credible forensic marking programme: communicating to
+        This is the intent behind economic sterilisation as a doctrine: not only a reactive
+        database for post-incident investigation, but a prospective deterrent, operating through
+        the same mechanism as other credible forensic marking programmes: communicating to
         criminals that the risk-to-reward ratio has shifted before any decision to steal is made.
+        Realising that intent for Mykei still depends on the Registry, the marker, and any
+        marketplace cooperation reaching a working, evidenced stage.
       </p>
       <p>
-        The "Protected by Mykei Securities" decal communicates this at the point of entry. The
-        TIR is the infrastructure that makes that communication credible. Pricing is under development. Follow the research at mykei.io/signal.
+        The "Protected by Mykei Securities" decal communicates the doctrine at the point of entry.
+        The Registry is the infrastructure intended to make that communication credible, once it
+        is built and tested. See mykei.io/pilot for pilot details.
       </p>
     </article>
   );

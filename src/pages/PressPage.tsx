@@ -1,789 +1,267 @@
-// Route: /press -- michaelesema.com/press
-// Canonical: https://michaelesema.com/press
-// Three bio lengths, photo placeholders, key facts, speaking topics, press contact.
-// Benchmark: tristanharris.com -- structured journalist toolkit.
-
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
 import PageSEO from "@/components/PageSEO";
 
-const GOLD = "#0D9488";
+const GOLD = "#C9A84C";
 const INK = "#1A1A18";
-const MUTED = "#5A5A54";
-const RULE = "#E4E4E0";
 const PAPER = "#FAFAF8";
-const LIGHT = "#F2F2EF";
+const MUTED = "#6B6B65";
+const RULE = "#E8E8E4";
 
-function Nav() {
+function SimpleNav() {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", fn, { passive: true });
+    const fn = () => setScrolled(window.scrollY > 48);
+    window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
   return (
-    <nav
-      aria-label="Site navigation"
-      style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        height: 56, padding: "0 clamp(24px, 5vw, 64px)",
-        display: "flex", alignItems: "center", justifyContent: "space-between",
-        background: scrolled ? "rgba(250,250,248,0.97)" : PAPER,
-        borderBottom: `1px solid ${scrolled ? RULE : "transparent"}`,
-        backdropFilter: "blur(10px)",
-        transition: "background 0.3s, border-color 0.3s",
-      }}
-    >
-      <a
-        href="/"
-        aria-label="Michael Esema home"
-        style={{
-          fontFamily: "'JetBrains Mono', monospace",
-          fontSize: 10, letterSpacing: "0.18em",
-          textTransform: "uppercase", color: INK, textDecoration: "none",
-        }}
-      >
-        Michael Esema
+    <nav aria-label="Site navigation" style={{
+      position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+      height: 56, padding: "0 48px",
+      display: "flex", alignItems: "center", justifyContent: "space-between",
+      background: scrolled ? "rgba(250,250,248,0.97)" : "rgba(250,250,248,1)",
+      borderBottom: `1px solid ${RULE}`,
+      backdropFilter: "blur(12px)",
+    }}>
+      <a href="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: INK, textDecoration: "none" }}>
+        Mykei Securities
       </a>
-      <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
-        <a
-          href="/doctrine"
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: 9, letterSpacing: "0.14em",
-            textTransform: "uppercase", color: MUTED, textDecoration: "none",
-          }}
-        >
-          Doctrine
-        </a>
-        <a
-          href="https://mykei.io"
-          target="_blank" rel="noopener noreferrer"
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: 9, letterSpacing: "0.14em",
-            textTransform: "uppercase", color: GOLD, textDecoration: "none",
-            border: `1px solid ${GOLD}`, padding: "6px 14px",
-          }}
-        >
-          Mykei.io
-        </a>
-      </div>
+      <a href="/adn" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
+        Apply for ADN
+      </a>
     </nav>
   );
 }
 
-function useReveal() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [v, setV] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setV(true); obs.disconnect(); } },
-      { threshold: 0.05 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-  return { ref, v };
-}
-
-function Fade({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
-  const { ref, v } = useReveal();
-  return (
-    <div ref={ref} style={{
-      opacity: v ? 1 : 0,
-      transform: v ? "translateY(0)" : "translateY(16px)",
-      transition: `opacity 0.8s ease ${delay}s, transform 0.8s ease ${delay}s`,
-    }}>
-      {children}
-    </div>
-  );
-}
-
-function CopyButton({ text, label }: { text: string; label: string }) {
-  const [copied, setCopied] = useState(false);
-  const copy = () => {
-    navigator.clipboard.writeText(text).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
-  return (
-    <button
-      onClick={copy}
-      aria-label={`Copy ${label}`}
-      style={{
-        fontFamily: "'JetBrains Mono', monospace",
-        fontSize: 9, letterSpacing: "0.14em",
-        textTransform: "uppercase",
-        color: copied ? "#4A7C59" : GOLD,
-        background: "none", border: `1px solid ${copied ? "#4A7C59" : GOLD}`,
-        padding: "6px 14px", cursor: "pointer",
-        transition: "color 0.2s, border-color 0.2s",
-      }}
-    >
-      {copied ? "Copied" : "Copy"}
-    </button>
-  );
-}
-
-const SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  "dateModified": "2026-05-24T00:00:00+00:00",
-  "mainEntity": {
-    "@type": "Person",
-    "@id": "https://michaelesema.com/#person",
-    "name": "Michael Esema",
-    "additionalName": "Essien",
-    "alternateName": ["Michael Essien Esema", "Mike Esema"],
-    "description": "Michael Esema (Michael Essien Esema) is a Nigerian-born entrepreneur based in Manchester, UK. Founder and CEO of Mykei Securities Ltd and proposer of Economic Sterilisation as an operational extension of Market Reduction theory.",
-    "jobTitle": "Founder & CEO",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Mykei Securities Ltd",
-      "url": "https://mykei.io"
-    },
-    "nationality": { "@type": "Country", "name": "Nigeria" },
-    "homeLocation": { "@type": "Place", "name": "Manchester, Greater Manchester, United Kingdom" },
-    "url": "https://michaelesema.com",
-    "sameAs": [
-      "https://michaelesema.com",
-      "https://mykei.io",
-      "https://www.linkedin.com/in/michaelesema",
-      "https://twitter.com/michaelesema"
-    ],
-    "birthDate": "1996-10",
-    "birthPlace": { "@type": "Place", "name": "Nigeria" },
-    "alumniOf": [
-      { "@type": "EducationalOrganization", "name": "Manchester Metropolitan University" },
-      { "@type": "EducationalOrganization", "name": "Nigerian Defence Academy" },
-      { "@type": "EducationalOrganization", "name": "Benson Idahosa University" }
-    ]
-  },
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Michael Esema", "item": "https://michaelesema.com" },
-      { "@type": "ListItem", "position": 2, "name": "Press", "item": "https://michaelesema.com/press" }
-    ]
-  }
-};
-
-const ONE_LINER = "Michael Esema is the Manchester-based Founder and CEO of Mykei Securities Ltd and proposer of Economic Sterilisation, a modern operational extension of Market Reduction theory for resale-driven theft.";
-
-const SHORT_BIO = `Michael Esema is the Founder and CEO of Mykei Securities Ltd (Company No. 16984969, Manchester). He proposes Economic Sterilisation as a modern operational extension of Market Reduction theory and filed UK Patent Application No. GB2606630.8 on 23 March 2026. He built the ADN as a patent-pending R&D pathway for event-triggered marking and registry-linked evidence while employed full-time.
-
-He holds an MSc in International Business Management with Merit (Manchester Metropolitan University, 2024), an MBA (Nigerian Defence Academy, 2023), and a BSc in Accounting (Benson Idahosa University, 2018). Mykei has controlled prototype and registry evidence, but field validation and commercial proof remain separate gates.`;
-
-const LONG_BIO = `His father, Obong Barr. Essien Joseph Esema, was born in 1959 into the royal family of Esema, Akai-Ubium, Nsit Ubium, Akwa Ibom State, Nigeria. He became the first Local Government Chairman of Nsit Ubium, a practicing lawyer and Principal Partner of Essien Esema and Associates, and Special Adviser to the Secretary to the Government of the Federation on legal matters. He co-authored "Power and Functions of Local Government and Area Councils in Nigeria." His life's work was building institutions to protect public resources from exploitation. He died in 2019. He did not live to see his son file a UK patent.
-
-His mother, Mrs Mary Esema, is Deputy Director of Nigeria's National Malaria Elimination Programme and former Assistant Director at the Federal Ministry of Health. She holds a BSc in Virology from the University of Calabar. She does not treat patients one at a time. She dismantles the conditions that allow disease to spread. Her son applied the same logic to retail theft.
-
-Michael Esema was born in October 1996 in Nigeria. He graduated with a BSc in Accounting from Benson Idahosa University in 2018, completed his National Youth Service Corps year, and spent four years in hospitality finance, moving from Head Accountant to Assistant Manager at B's Hive Hotel and Suites. He arrived in Manchester in 2023 and found UK retail doing what institutions had always done: recording failure, absorbing loss, calling it normal.
-
-He completed an MSc in International Business Management with Merit from Manchester Metropolitan University in 2024 and holds a Level 7 Advanced Diploma in Project Management and Lean Six Sigma certification. He built the ADN personally, on £10,000, while employed full-time.
-
-On 23 March 2026, he filed UK Patent Application No. GB2606630.8, a 17-claim patent application (patent pending) connected to event-triggered marking and registry-linked evidence. Mykei now frames the ADN as one R&D pathway inside the wider Economic Sterilisation and Mykei Protocol architecture. Mykei Securities Ltd (Company No. 16984969) was incorporated on 24 January 2026.
-
-The doctrine: make theft economically irrational. Close the market that theft sells into. The idea did not come from a lab or an accelerator. It came from watching institutions absorb loss, deciding that was not an acceptable answer, and building something that addressed the actual cause.`;
-
 const FACTS = [
-  { label: "Patent", value: "Application No. GB2606630.8 (UK IPO), 17 claims, filed 23 March 2026, receipt issued 26 March 2026" },
-  { label: "Company", value: "Mykei Securities Ltd, Company No. 16984969, incorporated 24 January 2026, Manchester" },
-  { label: "Doctrine", value: "Economic Sterilisation, operational extension of Market Reduction theory." },
-  { label: "Commercial proof", value: "Enterprise or network pilot still required; LOIs are interest signals, not revenue." },
-  { label: "Public demo", value: "ADN demonstrated publicly at NEC Birmingham, April 2026" },
-  { label: "Education", value: "MSc International Business Management, Merit (MMU, 2024); MBA (Nigerian Defence Academy, 2023); BSc Accounting (Benson Idahosa University, 2018)" },
-  { label: "Certifications", value: "Lean Six Sigma; Level 7 Advanced Diploma in Project Management" },
-  { label: "Social", value: "1,435 LinkedIn followers; 5,682 Twitter followers" },
-  { label: "Sites", value: "michaelesema.com; mykei.io" },
-  { label: "Industry context", value: "UK retail theft cost £2.2 billion in 2025, highest ever recorded. 20 million+ incidents. Industry spent £1.8 billion on security." },
-  { label: "ADN spec (R&D)", value: "Shelf-mounted IoT device. Dual Time-of-Flight sensors. Forensic marker deployment. Encrypted event record to Mykei Registry (AWS IoT Core). No camera. No biometric data. Patent pending. Field validation not yet begun." },
-];
-
-const SPEAKING_TOPICS = [
-  "Economic Sterilisation: the doctrine that makes theft economically irrational",
-  "Why retail security has failed and what actually changes the calculus",
-  "Removing the financial incentive behind organised retail theft",
-  "From doctrine to device: building Mykei Securities from first principles",
-  "The resale economy that sustains retail crime, and how to close it",
-  "Forensic marking, IoT event records, and the future of retail loss prevention",
+  "Global retail theft: $796 billion annually (Global Retail Theft Barometer)",
+  "UK retail crime incidents: 5.5 million (BRC Crime Survey, 2026)",
+  "Patent: Application No. 2606630.8 (UK IPO), 17 claims, filed 23 March 2026, receipt issued 26 March 2026",
+  "Independent Retail Pilot: 2026, pre-pilot conversations open",
+  "ADN response time: under 3 seconds from detection to deployment",
+  "Pricing to be scoped per pilot",
+  "No camera, no biometric data, no facial recognition, no personal data by design",
+  "Forensic marker compound: UV-verifiable, batch-identifiable, designed to support evidential workflows",
 ];
 
 export default function PressPage() {
   useEffect(() => {
-    const el = document.createElement("script");
-    el.type = "application/ld+json";
-    el.text = JSON.stringify(SCHEMA);
-    document.head.appendChild(el);
-    return () => { document.head.removeChild(el); };
+    document.title = "Press Kit | Mykei Securities Ltd";
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute("content", "Press kit for Mykei Securities Ltd: founder bio, company facts, logos, and media contact. ADN forensic retail security. Manchester, UK.");
+    const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (canonical) canonical.href = "https://mykei.io/press";
   }, []);
 
   return (
     <>
       <PageSEO
-        title="Press Kit -- Michael Esema, Founder of Mykei Securities Ltd"
-        description="Press resources for Michael Esema, Founder and CEO of Mykei Securities Ltd. Three bio lengths, key facts, press photo, ADN product image, speaking topics, and direct media contact. michaelesema.com/press"
-        canonical="https://michaelesema.com/press"
-        keywords="Michael Esema press kit, Michael Esema biography, Mykei Securities press, economic sterilisation journalist, retail theft founder Manchester, ADN press"
-        breadcrumbs={[["Michael Esema", "https://michaelesema.com"], ["Press", "/press"]]}
+        title="Press Kit | Mykei Securities Ltd, ADN Forensic Retail Security"
+        description="Press resources for Mykei Securities Ltd: founder biography, company fact sheet, product overview, logos, and media contact. ADN forensic retail defence. Manchester, UK. Company No. 16984969."
+        canonical="https://mykei.io/press"
+        keywords="Mykei Securities press kit, Michael Esema biography, ADN press, retail security media, economic sterilisation press"
       />
-
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap');
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { background: ${PAPER}; color: ${INK}; font-family: 'Sora', sans-serif; }
-        ::selection { background: rgba(13,148,136,0.2); }
-        *:focus-visible { outline: 2px solid ${GOLD}; outline-offset: 3px; }
-        @media (prefers-reduced-motion: reduce) {
-          * { transition: none !important; animation: none !important; }
-        }
-        .press-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        @media (max-width: 680px) {
-          .press-grid-2 { grid-template-columns: 1fr; gap: 32px; }
-        }
-      `}</style>
-
-      <a href="#main-content" style={{
-        position: "absolute", top: -40, left: 0,
-        background: GOLD, color: INK, padding: "8px 16px", zIndex: 9999,
-        fontFamily: "'JetBrains Mono',monospace", fontSize: 11,
-        textDecoration: "none",
-        transition: "top 0.2s",
-      }}
-        onFocus={e => (e.currentTarget.style.top = "0")}
-        onBlur={e => (e.currentTarget.style.top = "-40px")}
-      >
-        Skip to main content
-      </a>
-
-      <Nav />
-
-      <main id="main-content">
+      <SimpleNav />
+      <main style={{ background: PAPER, minHeight: "100vh", paddingTop: 80 }}>
 
         {/* HEADER */}
-        <header style={{
-          maxWidth: 880, margin: "0 auto",
-          padding: "clamp(96px, 12vw, 144px) clamp(24px, 5vw, 48px) clamp(56px, 6vw, 72px)",
-          borderBottom: `1px solid ${RULE}`,
-        }}>
-          <Fade>
-            <p style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 9, letterSpacing: "0.2em",
-              textTransform: "uppercase", color: GOLD,
-              marginBottom: 24,
-            }}>
-              Media &amp; Press
-            </p>
-            <h1 style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: "clamp(32px, 5.5vw, 58px)",
-              fontWeight: 400, lineHeight: 1.1,
-              color: INK, marginBottom: 20,
-            }}>
-              For journalists and media.
-            </h1>
-            <p style={{ fontSize: 16, color: MUTED, lineHeight: 1.75, maxWidth: 520 }}>
-              Bio in three lengths ready to copy. Key facts. Photos. Speaking topics.
-              Direct contact. If you are writing about retail crime, organised theft, or
-              Economic Sterilisation, start here.
-            </p>
-          </Fade>
-        </header>
-
-        {/* PHOTOS */}
-        <section
-          aria-labelledby="photos-heading"
-          style={{
-            maxWidth: 880, margin: "0 auto",
-            padding: "clamp(56px, 6vw, 80px) clamp(24px, 5vw, 48px)",
-            borderBottom: `1px solid ${RULE}`,
-          }}
-        >
-          <Fade>
-            <h2
-              id="photos-heading"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 9, letterSpacing: "0.18em",
-                textTransform: "uppercase", color: MUTED,
-                marginBottom: 32, fontWeight: 400,
-              }}
-            >
-              Photos
-            </h2>
-            <div className="press-grid-2">
-              <figure style={{ margin: 0 }}>
-                <div style={{
-                  background: LIGHT,
-                  border: `1px solid ${RULE}`,
-                  height: 280, borderRadius: 2,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  marginBottom: 12, overflow: "hidden",
-                }}>
-                  <img
-                    src="/images/michael-esema-press.jpg"
-                    alt="Michael Esema, Founder and CEO of Mykei Securities Ltd"
-                    width={400} height={280}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                    onError={e => {
-                      (e.currentTarget as HTMLImageElement).style.display = "none";
-                      (e.currentTarget.parentElement as HTMLElement).style.background = LIGHT;
-                    }}
-                  />
-                </div>
-                <figcaption>
-                  <p style={{
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 9, letterSpacing: "0.12em",
-                    textTransform: "uppercase", color: MUTED, marginBottom: 8,
-                  }}>
-                    Press portrait
-                  </p>
-                  <p style={{ fontSize: 12, color: MUTED, marginBottom: 10 }}>
-                    Michael Esema &middot; High-resolution available on request
-                  </p>
-                  <a
-                    href="mailto:michael.e@mykei.io?subject=Press photo request"
-                    style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: 9, letterSpacing: "0.12em",
-                      textTransform: "uppercase", color: GOLD,
-                      textDecoration: "none", borderBottom: `1px solid ${GOLD}`,
-                      paddingBottom: 2,
-                    }}
-                  >
-                    Request hi-res
-                  </a>
-                </figcaption>
-              </figure>
-
-              <figure style={{ margin: 0 }}>
-                <div style={{
-                  background: LIGHT,
-                  border: `1px solid ${RULE}`,
-                  height: 280, borderRadius: 2,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  marginBottom: 12, overflow: "hidden",
-                }}>
-                  <img
-                    src="/images/adn1-press.jpg"
-                    alt="ADN Active Forensic Defence Node -- shelf-mounted IoT device by Mykei Securities Ltd"
-                    width={400} height={280}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                    onError={e => {
-                      (e.currentTarget as HTMLImageElement).style.display = "none";
-                    }}
-                  />
-                </div>
-                <figcaption>
-                  <p style={{
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 9, letterSpacing: "0.12em",
-                    textTransform: "uppercase", color: MUTED, marginBottom: 8,
-                  }}>
-                    ADN product image
-                  </p>
-                  <p style={{ fontSize: 12, color: MUTED, marginBottom: 10 }}>
-                    ADN Active Forensic Defence Node &middot; High-resolution available on request
-                  </p>
-                  <a
-                    href="mailto:michael.e@mykei.io?subject=ADN product image request"
-                    style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: 9, letterSpacing: "0.12em",
-                      textTransform: "uppercase", color: GOLD,
-                      textDecoration: "none", borderBottom: `1px solid ${GOLD}`,
-                      paddingBottom: 2,
-                    }}
-                  >
-                    Request hi-res
-                  </a>
-                </figcaption>
-              </figure>
-            </div>
-          </Fade>
+        <section style={{ maxWidth: 880, margin: "0 auto", padding: "80px 40px 64px", borderBottom: `1px solid ${RULE}` }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: GOLD, marginBottom: 24 }}>
+            Media &amp; Press
+          </div>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(32px, 5vw, 58px)", fontWeight: 400, lineHeight: 1.1, color: INK, marginBottom: 24 }}>
+            For journalists and media.
+          </h1>
+          <p style={{ fontSize: 17, color: MUTED, lineHeight: 1.75, maxWidth: 540 }}>
+            Founder biography, company facts, product overview, downloadable assets, and direct contact.
+            If you are writing about retail crime, forensic security, or the Manchester pilot, start here.
+          </p>
         </section>
 
-        {/* BIOS */}
-        <section
-          aria-labelledby="bios-heading"
-          style={{
-            maxWidth: 880, margin: "0 auto",
-            padding: "clamp(56px, 6vw, 80px) clamp(24px, 5vw, 48px)",
-            borderBottom: `1px solid ${RULE}`,
-          }}
-        >
-          <Fade>
-            <h2
-              id="bios-heading"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 9, letterSpacing: "0.18em",
-                textTransform: "uppercase", color: MUTED,
-                marginBottom: 40, fontWeight: 400,
-              }}
-            >
-              Biography
-            </h2>
-
-            {/* ONE-LINER */}
-            <div style={{
-              background: LIGHT, padding: "24px 28px",
-              border: `1px solid ${RULE}`, marginBottom: 32,
-            }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 12, flexWrap: "wrap", gap: 12 }}>
-                <h3 style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 9, letterSpacing: "0.16em",
-                  textTransform: "uppercase", color: GOLD, fontWeight: 400,
-                }}>
-                  One-liner
-                </h3>
-                <CopyButton text={ONE_LINER} label="one-liner bio" />
-              </div>
-              <p style={{ fontSize: 15, color: INK, lineHeight: 1.65, fontFamily: "'Sora', sans-serif" }}>
-                {ONE_LINER}
+        {/* FOUNDER BIO */}
+        <section style={{ maxWidth: 880, margin: "0 auto", padding: "72px 40px", borderBottom: `1px solid ${RULE}` }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 32 }}>
+            Founder bio
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}>
+            <div>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 24, fontWeight: 400, color: INK, marginBottom: 16 }}>
+                Michael Esema
+              </h2>
+              <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: GOLD, marginBottom: 20 }}>
+                Founder &amp; CEO, Mykei Securities Ltd
+              </p>
+              <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, marginBottom: 16 }}>
+                Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN Active Forensic Defence Node, a shelf-mounted IoT device that detects bulk-sweep theft events, triggers controlled marker deployment, and logs cartridge-linked activations in the Mykei Registry.
+              </p>
+              <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, marginBottom: 16 }}>
+                In 2025, he coined the doctrine of Economic Sterilisation: the systematic disruption of the resale incentive behind retail theft through forensic marking and registry event records. UK patent application No. 2606630.8.
+              </p>
+              <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, marginBottom: 16 }}>
+                Before founding Mykei, Michael progressed from Head Accountant to Assistant Manager at B's Hive, where he developed an operational understanding of the financial toll retail theft places on independent businesses. That direct experience shaped every design decision in the ADN.
+              </p>
+              <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8 }}>
+                He holds an MSc from Manchester Metropolitan University (2024, Merit), an MBA from the Nigerian Defence Academy (2022), and a BSc from Benson Idahosa University (2018). He is a Lean Six Sigma practitioner, a Level 7 Project Management Advanced Diploma holder, and a recipient of the NUASA Most Auspicious Male Award. The Independent Retail Pilot is open for expressions of interest in 2026.
               </p>
             </div>
-
-            {/* SHORT BIO */}
-            <div style={{
-              background: LIGHT, padding: "24px 28px",
-              border: `1px solid ${RULE}`, marginBottom: 32,
-            }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 16, flexWrap: "wrap", gap: 12 }}>
-                <h3 style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 9, letterSpacing: "0.16em",
-                  textTransform: "uppercase", color: GOLD, fontWeight: 400,
-                }}>
-                  Short bio (for publication)
-                </h3>
-                <CopyButton text={SHORT_BIO} label="short bio" />
-              </div>
-              {SHORT_BIO.split("\n\n").map((p, i) => (
-                <p key={i} style={{
-                  fontSize: 14, color: INK, lineHeight: 1.75,
-                  fontFamily: "'Sora', sans-serif",
-                  marginBottom: i < SHORT_BIO.split("\n\n").length - 1 ? 16 : 0,
-                }}>
-                  {p}
-                </p>
-              ))}
-            </div>
-
-            {/* LONG BIO */}
-            <div style={{
-              background: LIGHT, padding: "24px 28px",
-              border: `1px solid ${RULE}`,
-            }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 16, flexWrap: "wrap", gap: 12 }}>
-                <h3 style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 9, letterSpacing: "0.16em",
-                  textTransform: "uppercase", color: GOLD, fontWeight: 400,
-                }}>
-                  Long bio (profile-length)
-                </h3>
-                <CopyButton text={LONG_BIO} label="long bio" />
-              </div>
-              {LONG_BIO.split("\n\n").map((p, i) => (
-                <p key={i} style={{
-                  fontSize: 14, color: INK, lineHeight: 1.8,
-                  fontFamily: "'Playfair Display', serif",
-                  marginBottom: i < LONG_BIO.split("\n\n").length - 1 ? 20 : 0,
-                }}>
-                  {p}
-                </p>
-              ))}
-            </div>
-          </Fade>
-        </section>
-
-        {/* KEY FACTS */}
-        <section
-          aria-labelledby="facts-heading"
-          style={{
-            maxWidth: 880, margin: "0 auto",
-            padding: "clamp(56px, 6vw, 80px) clamp(24px, 5vw, 48px)",
-            borderBottom: `1px solid ${RULE}`,
-          }}
-        >
-          <Fade>
-            <h2
-              id="facts-heading"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 9, letterSpacing: "0.18em",
-                textTransform: "uppercase", color: MUTED,
-                marginBottom: 32, fontWeight: 400,
-              }}
-            >
-              Key facts
-            </h2>
-            <dl>
-              {FACTS.map(({ label, value }) => (
-                <div
-                  key={label}
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "180px 1fr",
-                    gap: 24,
-                    padding: "16px 0",
-                    borderBottom: `1px solid ${RULE}`,
-                    alignItems: "baseline",
-                  }}
-                >
-                  <dt style={{
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 9, letterSpacing: "0.12em",
-                    textTransform: "uppercase", color: MUTED,
-                  }}>
-                    {label}
-                  </dt>
-                  <dd style={{ fontSize: 13, color: INK, lineHeight: 1.65, fontFamily: "'Sora', sans-serif" }}>
-                    {value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </Fade>
-        </section>
-
-        {/* SPEAKING TOPICS */}
-        <section
-          aria-labelledby="speaking-heading"
-          style={{
-            maxWidth: 880, margin: "0 auto",
-            padding: "clamp(56px, 6vw, 80px) clamp(24px, 5vw, 48px)",
-            borderBottom: `1px solid ${RULE}`,
-          }}
-        >
-          <Fade>
-            <h2
-              id="speaking-heading"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 9, letterSpacing: "0.18em",
-                textTransform: "uppercase", color: MUTED,
-                marginBottom: 32, fontWeight: 400,
-              }}
-            >
-              Speaking topics
-            </h2>
-            <ul style={{ listStyle: "none", padding: 0 }}>
-              {SPEAKING_TOPICS.map((topic, i) => (
-                <li
-                  key={i}
-                  style={{
-                    display: "flex", gap: 20, alignItems: "baseline",
-                    padding: "18px 0", borderBottom: `1px solid ${RULE}`,
-                    fontSize: 15, color: INK, lineHeight: 1.5,
-                    fontFamily: "'Sora', sans-serif",
-                  }}
-                >
-                  <span aria-hidden="true" style={{
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 10, color: GOLD, flexShrink: 0,
-                  }}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  {topic}
-                </li>
-              ))}
-            </ul>
-          </Fade>
-        </section>
-
-        {/* DOCTRINE */}
-        <section
-          aria-labelledby="doctrine-ref-heading"
-          style={{
-            maxWidth: 880, margin: "0 auto",
-            padding: "clamp(56px, 6vw, 80px) clamp(24px, 5vw, 48px)",
-            borderBottom: `1px solid ${RULE}`,
-          }}
-        >
-          <Fade>
-            <h2
-              id="doctrine-ref-heading"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 9, letterSpacing: "0.18em",
-                textTransform: "uppercase", color: MUTED,
-                marginBottom: 24, fontWeight: 400,
-              }}
-            >
-              The doctrine
-            </h2>
-            <blockquote
-              cite="https://michaelesema.com/doctrine"
-              style={{
-                borderLeft: `3px solid ${GOLD}`, paddingLeft: 28,
-                margin: 0, marginBottom: 20,
-              }}
-            >
-              <p style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: "clamp(18px, 2.2vw, 22px)",
-                fontStyle: "italic", lineHeight: 1.65,
-                color: INK, marginBottom: 12,
-              }}>
-                "A framework for reducing the resale confidence and economic acceptability of
-                stolen goods through marking, registry records, evidence workflows and lawful
-                verification."
+            <div>
+              <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: MUTED, marginBottom: 16 }}>
+                Short bio (for publication)
               </p>
-              <cite style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 9, color: MUTED, letterSpacing: "0.1em",
-                fontStyle: "normal", display: "block",
-              }}>
-                Economic Sterilisation, Mykei Securities Ltd
-              </cite>
-            </blockquote>
+              <blockquote style={{ borderLeft: `2px solid ${GOLD}`, paddingLeft: 20, margin: "0 0 28px" }}>
+                <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 15, fontStyle: "italic", color: INK, lineHeight: 1.7 }}>
+                  Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN, a shelf-mounted active forensic retail defence device that detects bulk-sweep theft events, triggers controlled marker deployment, and records cartridge-linked activations in the Mykei Registry. He coined the doctrine of Economic Sterilisation in 2025 (UK patent application No. 2606630.8). A former Head Accountant and Assistant Manager at B's Hive, he holds an MSc from Manchester Metropolitan University, an MBA from the Nigerian Defence Academy, and a BSc from Benson Idahosa University. He is a recipient of the NUASA Most Auspicious Male Award.
+                </p>
+              </blockquote>
+              <a
+                href="https://www.linkedin.com/in/michaelesema"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: GOLD, textDecoration: "none", borderBottom: `1px solid ${GOLD}`, paddingBottom: 2 }}
+              >
+                linkedin.com/in/michaelesema
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* FACT SHEET */}
+        <section style={{ maxWidth: 880, margin: "0 auto", padding: "72px 40px", borderBottom: `1px solid ${RULE}` }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 32 }}>
+            Company fact sheet
+          </div>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            {FACTS.map(fact => (
+              <li key={fact} style={{ display: "flex", gap: 16, padding: "14px 0", borderBottom: `1px solid ${RULE}`, fontSize: 14, color: MUTED, lineHeight: 1.5 }}>
+                <span style={{ color: GOLD, minWidth: 12, lineHeight: "1.5em" }}>+</span>
+                {fact}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* DOWNLOADABLE ASSETS */}
+        <section style={{ maxWidth: 880, margin: "0 auto", padding: "72px 40px", borderBottom: `1px solid ${RULE}` }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 32 }}>
+            Downloadable assets
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+            <div>
+              <div style={{ background: "#0A0D09", padding: 32, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12, height: 120 }}>
+                <img src="/logo.png" alt="Mykei Securities logo on dark background" style={{ height: 48, objectFit: "contain" }} />
+              </div>
+              <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: MUTED, marginBottom: 8 }}>Primary logo</p>
+              <a
+                href="/mykei-logo.png"
+                download
+                style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: GOLD, textDecoration: "none", borderBottom: `1px solid ${GOLD}`, paddingBottom: 2 }}
+              >
+                Download logo
+              </a>
+            </div>
+            <div>
+              <div style={{ background: "#0A0D09", borderRadius: 8, overflow: "hidden", marginBottom: 12, height: 120, display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
+                <img src="/social-share.png" alt="Mykei Securities social share image" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              </div>
+              <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: MUTED, marginBottom: 8 }}>Social share image (1200 x 630)</p>
+              <a
+                href="/social-share.png"
+                download
+                style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: GOLD, textDecoration: "none", borderBottom: `1px solid ${GOLD}`, paddingBottom: 2 }}
+              >
+                Download image
+              </a>
+            </div>
+          </div>
+          <div style={{ marginTop: 32, paddingTop: 32, borderTop: `1px solid ${RULE}` }}>
+            <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: MUTED, marginBottom: 12 }}>Doctrine</p>
             <a
-              href="/doctrine"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 9, letterSpacing: "0.14em",
-                textTransform: "uppercase", color: GOLD,
-                textDecoration: "none", borderBottom: `1px solid ${GOLD}`,
-                paddingBottom: 2,
-              }}
+              href="/economic-sterilisation"
+              style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: GOLD, textDecoration: "none", borderBottom: `1px solid ${GOLD}`, paddingBottom: 2 }}
             >
-              Read the full doctrine →
+              Read Economic Sterilisation
             </a>
-          </Fade>
+          </div>
         </section>
 
-        {/* CONTACT */}
-        <section
-          aria-labelledby="contact-heading"
-          style={{
-            maxWidth: 880, margin: "0 auto",
-            padding: "clamp(56px, 6vw, 80px) clamp(24px, 5vw, 48px) clamp(80px, 10vw, 120px)",
-          }}
-        >
-          <Fade>
-            <h2
-              id="contact-heading"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 9, letterSpacing: "0.18em",
-                textTransform: "uppercase", color: MUTED,
-                marginBottom: 24, fontWeight: 400,
-              }}
-            >
-              Press contact
-            </h2>
-            <p style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(22px, 3vw, 32px)",
-              fontWeight: 400, color: INK,
-              lineHeight: 1.25, marginBottom: 20,
-            }}>
-              Get in touch.
-            </p>
-            <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.75, maxWidth: 480, marginBottom: 32 }}>
-              Interview requests, comment on retail crime data, access to the ADN technical
-              specification, or background briefing on Economic Sterilisation. We respond to
-              media enquiries within 24 hours.
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              <div>
-                <p style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 9, letterSpacing: "0.12em",
-                  textTransform: "uppercase", color: MUTED, marginBottom: 8,
-                }}>
-                  Email
-                </p>
-                <a
-                  href="mailto:michael.e@mykei.io"
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: 18, color: GOLD,
-                    textDecoration: "none",
-                  }}
-                >
-                  michael.e@mykei.io
-                </a>
-              </div>
-              <div>
-                <p style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 9, letterSpacing: "0.12em",
-                  textTransform: "uppercase", color: MUTED, marginBottom: 8,
-                }}>
-                  LinkedIn
-                </p>
-                <a
-                  href="https://www.linkedin.com/in/michaelesema"
-                  target="_blank" rel="noopener noreferrer"
-                  style={{
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 12, color: MUTED,
-                    textDecoration: "none",
-                  }}
-                >
-                  linkedin.com/in/michaelesema
-                </a>
-              </div>
-              <div>
-                <p style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 9, letterSpacing: "0.12em",
-                  textTransform: "uppercase", color: MUTED, marginBottom: 8,
-                }}>
-                  Company
-                </p>
-                <a
-                  href="https://mykei.io"
-                  target="_blank" rel="noopener noreferrer"
-                  style={{
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 12, color: MUTED,
-                    textDecoration: "none",
-                  }}
-                >
-                  mykei.io
-                </a>
-              </div>
+        {/* RESEARCH & ANALYSIS */}
+        <section style={{ maxWidth: 880, margin: "0 auto", padding: "72px 40px", borderBottom: `1px solid ${RULE}` }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 32 }}>
+            Research &amp; analysis
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+            {[
+              {
+                href: "/blog/the-796-billion-problem",
+                date: "April 2026",
+                tag: "Retail Economics",
+                title: "The $796 Billion Problem",
+                sub: "Retail theft is not a crime problem. It is an economics problem. Every solution the industry has tried is fighting the wrong battle.",
+              },
+              {
+                href: "/blog/beyond-the-buzzer",
+                date: "April 2026",
+                tag: "Forensic Security",
+                title: "Beyond the Buzzer",
+                sub: "The EAS tag and the security buzzer have been the frontline of retail theft prevention for forty years. They have failed. Here is what works instead.",
+              },
+            ].map(({ href, date, tag, title, sub }) => (
+              <a
+                key={href}
+                href={href}
+                style={{ display: "block", padding: "28px 0", borderBottom: `1px solid ${RULE}`, textDecoration: "none", transition: "background 0.15s" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "rgba(201,168,76,0.04)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+              >
+                <div style={{ display: "flex", gap: 16, alignItems: "baseline", marginBottom: 8 }}>
+                  <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD }}>{tag}</span>
+                  <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: MUTED, opacity: 0.6 }}>{date}</span>
+                </div>
+                <h3 style={{ fontFamily: "'Playfair Display',serif", fontSize: 22, fontWeight: 400, color: INK, marginBottom: 8, lineHeight: 1.2 }}>{title}</h3>
+                <p style={{ fontSize: 14, color: MUTED, lineHeight: 1.7, maxWidth: 560, margin: 0 }}>{sub}</p>
+              </a>
+            ))}
+            <div style={{ paddingTop: 20 }}>
+              <a href="/blog" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, textDecoration: "none", borderBottom: `1px solid ${GOLD}`, paddingBottom: 2 }}>
+                All research →
+              </a>
             </div>
-          </Fade>
+          </div>
+        </section>
+
+        {/* MEDIA CONTACT */}
+        <section style={{ maxWidth: 880, margin: "0 auto", padding: "72px 40px 96px" }}>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 32 }}>
+            Media contact
+          </div>
+          <div style={{ maxWidth: 480 }}>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, fontWeight: 400, color: INK, marginBottom: 16 }}>
+              Get in touch.
+            </h2>
+            <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, marginBottom: 24 }}>
+              We aim to respond to media enquiries within 24 hours. For interview requests, comment on retail crime data, or access to the ADN technical specification, contact the press team directly.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <a href="mailto:protocol@mykei.io" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, letterSpacing: "0.1em", color: GOLD, textDecoration: "none" }}>
+                protocol@mykei.io
+              </a>
+              <a href="https://www.linkedin.com/in/michaelesema" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, letterSpacing: "0.1em", color: MUTED, textDecoration: "none" }}>
+                linkedin.com/in/michaelesema
+              </a>
+            </div>
+          </div>
         </section>
 
       </main>
-
-      <footer role="contentinfo" style={{
-        borderTop: `1px solid ${RULE}`,
-        padding: "24px clamp(24px, 5vw, 64px)",
-        display: "flex", justifyContent: "space-between", alignItems: "center",
-        flexWrap: "wrap", gap: 12, background: PAPER,
-      }}>
-        <small style={{
-          fontFamily: "'JetBrains Mono', monospace",
-          fontSize: 9, color: MUTED, letterSpacing: "0.06em",
-        }}>
-          &copy; 2026 Michael Esema &nbsp;&middot;&nbsp; Mykei Securities Ltd &nbsp;&middot;&nbsp; Co. 16984969
-        </small>
-        <a
-          href="https://mykei.io"
-          target="_blank" rel="noopener noreferrer"
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: 9, color: GOLD, letterSpacing: "0.1em",
-            textDecoration: "none", textTransform: "uppercase",
-          }}
-        >
-          mykei.io
-        </a>
-      </footer>
+      <Footer />
+      <style>{`
+        *:focus-visible { outline: 2px solid ${GOLD}; outline-offset: 3px; }
+        @media (max-width: 640px) {
+          section { padding-left: 24px !important; padding-right: 24px !important; }
+          section > div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </>
   );
 }
