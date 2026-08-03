@@ -13,6 +13,9 @@
 /blog                     /signal                    301
 /blog/*                   /signal                    301
 
+# Slug fix — "adn1" replaced with "adn" sitewide
+/signal/shopkeeper-maths-adn1-cost   /signal/shopkeeper-maths-adn-cost   301
+
 # SEO redirects — US/alternate spellings
 /economic-sterilization            /economic-sterilisation            301
 /glossary/economic-sterilization   /glossary/economic-sterilisation   301

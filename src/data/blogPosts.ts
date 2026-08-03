@@ -137,7 +137,7 @@ export const blogPosts: BlogPostMeta[] = [
     readingTime: "8 min read",
   },
   {
-    slug: "shopkeeper-maths-adn1-cost",
+    slug: "shopkeeper-maths-adn-cost",
     title: "The Maths: Built for the Shopkeeper's Cash Position",
     date: "2026-03-28",
     summary: "Pricing to be scoped per pilot. The unit economics of forensic retail defence, for BIRA members and independent retailers.",

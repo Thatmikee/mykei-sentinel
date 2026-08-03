@@ -39,13 +39,13 @@ export default function SignalShopkeeperMathsPage() {
       <PageSEO
         title="The Maths: Built for the Shopkeeper's Cash Position | The Signal"
         description="Pricing to be scoped per pilot. Michael Esema breaks down why unit economics for forensic retail defence must fit independent retailers. BIRA members, corner shops, pharmacies, jewellers."
-        canonical="https://mykei.io/signal/shopkeeper-maths-adn1-cost"
+        canonical="https://mykei.io/signal/shopkeeper-maths-adn-cost"
         ogImage="https://mykei.io/og/signal-shopkeeper-maths-adn1-cost.png"
         keywords="ADN pricing independent retailer, retail security cost analysis UK, BIRA member retail security, shopkeeper anti-theft ROI, forensic retail defence cost, independent retailer theft losses UK, affordable retail security UK, corner shop theft prevention cost, Manchester retail security startup"
         breadcrumbs={[
           { name: "Home", url: "https://mykei.io" },
           { name: "The Signal", url: "https://mykei.io/signal" },
-          { name: "The Maths: Built for the Shopkeeper", url: "https://mykei.io/signal/shopkeeper-maths-adn1-cost" },
+          { name: "The Maths: Built for the Shopkeeper", url: "https://mykei.io/signal/shopkeeper-maths-adn-cost" },
         ]}
         ogType="article"
         ldJson={JSON.stringify({
@@ -53,7 +53,7 @@ export default function SignalShopkeeperMathsPage() {
           "@type": "NewsArticle",
           "headline": "The Maths: Built for the Shopkeeper's Cash Position",
           "description": "Pricing to be scoped per pilot. Unit economics thinking behind forensic retail defence for independent retailers.",
-          "url": "https://mykei.io/signal/shopkeeper-maths-adn1-cost",
+          "url": "https://mykei.io/signal/shopkeeper-maths-adn-cost",
           "datePublished": "2026-04-15T08:00:00Z",
           "author": { "@type": "Person", "name": "Michael Esema", "url": "https://mykei.io/founder" },
           "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io", "logo": { "@type": "ImageObject", "url": "https://mykei.io/mykei-logo.png" } },
@@ -215,7 +215,7 @@ export default function SignalShopkeeperMathsPage() {
           </Reveal>
 
           <SignalShareBar
-            url="https://mykei.io/signal/shopkeeper-maths-adn1-cost"
+            url="https://mykei.io/signal/shopkeeper-maths-adn-cost"
             title="Why ADN Pricing Has to Fit the Shopkeeper's Cash Position, Not the Enterprise's."
             description="Pricing to be scoped per pilot. The thinking behind unit economics for a retailer who cannot afford to get this wrong."
           />

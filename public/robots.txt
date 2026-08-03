@@ -4,7 +4,6 @@ Disallow: /private/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /api/
-Disallow: /.netlify/
 Disallow: /internal/
 
 # Search and answer-engine crawlers

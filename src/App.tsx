@@ -85,7 +85,7 @@ const App = () => (
             <Route path="/signal/cctv-313-million-movie-ticket" element={<SignalCCTVScamPage />} />
             <Route path="/signal/salford-to-vinted-black-market" element={<SignalSalfordVintedPage />} />
             <Route path="/signal/surgeon-not-camera-200ms" element={<SignalSurgeonNotCameraPage />} />
-            <Route path="/signal/shopkeeper-maths-adn1-cost" element={<SignalShopkeeperMathsPage />} />
+            <Route path="/signal/shopkeeper-maths-adn-cost" element={<SignalShopkeeperMathsPage />} />
             <Route path="/signal/david-robinson-gmb-cctv-theatre" element={<SignalDMRGMBPage />} />
             <Route path="/signal/fog-security-systems-debunked" element={<SignalFogSecurityPage />} />
             <Route path="/signal/shoplifting-133-percent-london-1-in-14" element={<SignalShopliftingSystemPage />} />
