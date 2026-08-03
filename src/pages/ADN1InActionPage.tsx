@@ -1022,7 +1022,6 @@ export default function ADN1InActionPage() {
           {[
             { n: "200ms", l: "Detection to deployment" },
             { n: "50ms",  l: "On-device decision time"  },
-            { n: "5",     l: "Signed LOIs, pilot cohort" },
             { n: "0",     l: "Biometric or suspect data" },
           ].map(({ n, l }) => (
             <div className="adn-stat" key={l}>

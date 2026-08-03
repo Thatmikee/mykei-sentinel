@@ -4,8 +4,8 @@ export default function PilotProgrammeManchester() {
       <p>
         Every technology that eventually becomes infrastructure passes through a moment where real
         businesses, in a real geography, test it under real conditions. For ADN, that moment is the
-        Independent Retail Pilot, running through 2026. Five independent retailers across Greater Manchester
-        have signed Letters of Intent. The pilot is not framed as a proof of concept for the hardware alone.
+        Independent Retail Pilot, running through 2026. Independent retailers in Greater Manchester
+        have signed non-binding letters of intent. The pilot is not framed as a proof of concept for the hardware alone.
         It is a proof of doctrine, establishing whether Economic Sterilisation deployed at
         street level produces measurable behavioural change in a concentrated urban area.
       </p>
@@ -38,7 +38,7 @@ export default function PilotProgrammeManchester() {
         deterrent power when multiple stores in a shared catchment carry the "Protected by Mykei
         Securities" decal. A thief operating in Moston or Prestwich who encounters a marked store cannot
         simply move to the adjacent premises if that premises is also marked. The pilot concentrates
-        five stores across a single metropolitan area deliberately, to begin generating that adjacency
+        independent retailers across a single metropolitan area deliberately, to begin generating that adjacency
         effect from day one.
       </p>
 
@@ -70,13 +70,13 @@ export default function PilotProgrammeManchester() {
         Securities" window decal, positioned at the entrance or on the primary shopfront glazing, and
         direct onboarding with the founder. None of this has happened yet: no unit has been installed,
         no store has been registered in the Mykei Registry, and no forensic reference code has been
-        generated for any of the five businesses.
+        generated for any of the businesses.
       </p>
       <p>
         What a future validation programme would not include matters equally. There would be no CCTV
         component, no biometric systems, no staff training programme, and no operational change
-        required of staff. As things stand today, none of the five businesses that signed letters of
-        interest has hardware installed, a decal displayed, or any activation logged.
+        required of staff. As things stand today, none of the businesses that signed letters of
+        intent has hardware installed, a decal displayed, or any activation logged.
       </p>
       <p>
         If a validation programme proceeds, Mykei intends to collect event logs from each unit: sweep

@@ -298,7 +298,7 @@ export default function Roadmap() {
             <div className="rm-eyebrow">Product Roadmap · Mykei Securities Ltd</div>
             <h1 className="rm-h1">Q1 complete.<br />ADN deploying Q2.</h1>
             <p className="rm-subline">
-              Patent filed. 5+ retailers signed. Website live. Investor pitch out.<br />
+              Patent filed. Independent retailers in Greater Manchester have signed non-binding letters of intent. Website live. Investor pitch out.<br />
               Now we put ADN on the shelf.
             </p>
           </div>

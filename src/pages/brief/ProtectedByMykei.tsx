@@ -72,12 +72,12 @@ export default function ProtectedByMykei() {
         marked. The rational response is to move to a different geography entirely.
       </p>
       <p>
-        This network effect is one of the core hypotheses of the Independent Retail Pilot. Five
-        stores across Greater Manchester, spanning jewellery, grocery, convenience, and community
+        This network effect is one of the core hypotheses of the Independent Retail Pilot. Independent
+        retailers across Greater Manchester, spanning jewellery, grocery, convenience, and community
         retail, represent the beginning of a cluster. The pilot will generate data on activation
         events, and it will begin to test whether concentrated adoption in a shared geography
         produces observable changes in incident patterns across the participating stores. One
-        pilot, five retailers, one doctrine: that making theft commercially pointless is more
+        pilot, one doctrine: that making theft commercially pointless is more
         durable than making it physically difficult.
       </p>
       <p>

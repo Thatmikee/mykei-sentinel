@@ -184,7 +184,7 @@ export default function SignalSalfordVintedPage() {
           <Reveal>
             <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>The proposed pilot stores in Manchester are not just testing a gadget.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The five retailers who signed non-binding letters of interest for the Independent Retail Pilot would, if the pilot proceeds, be testing a forensic doctrine. ADN is the hardware layer. The Mykei Registry is the audit layer. Together they are designed to make a store's inventory a liability to steal rather than an asset. If OCGs doing systematic targeting update their target selection criteria as intended, a Mykei-protected shop would drop off the list, not because it has better cameras, but because the goods inside are no longer worth the acquisition cost. None of this has been field-validated yet.
+              The independent retailers who signed non-binding letters of intent for the Independent Retail Pilot would, if the pilot proceeds, be testing a forensic doctrine. ADN is the hardware layer. The Mykei Registry is the audit layer. Together they are designed to make a store's inventory a liability to steal rather than an asset. If OCGs doing systematic targeting update their target selection criteria as intended, a Mykei-protected shop would drop off the list, not because it has better cameras, but because the goods inside are no longer worth the acquisition cost. None of this has been field-validated yet.
             </p>
           </Reveal>
 
@@ -213,7 +213,7 @@ export default function SignalSalfordVintedPage() {
             <div style={{ textAlign: "center", border: `1px solid ${RULE}`, borderRadius: 10, padding: "40px 32px", marginBottom: 48 }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Independent Retail Pilot · Now open</div>
               <h3 style={{ fontSize: 22, fontWeight: 700, color: INK, margin: "0 0 12px" }}>Deploy the forensic blockade in your store.</h3>
-              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 0 28px" }}>Five slots. Pricing scoped per pilot. Prototype-stage hardware from day one.</p>
+              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 0 28px" }}>Non-binding letters of intent only. Pricing scoped per pilot. Prototype-stage hardware from day one.</p>
               <a href="/pilot" style={{ display: "inline-block", background: GOLD, color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 700, padding: "14px 36px", borderRadius: 6, textDecoration: "none" }}>Apply for the Pilot</a>
             </div>
           </Reveal>

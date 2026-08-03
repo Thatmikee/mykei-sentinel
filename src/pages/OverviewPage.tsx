@@ -39,7 +39,7 @@ const BUSINESS_MODEL = [
   { label: "Monitoring", value: "No active monitoring required" },
   { label: "Revenue model", value: "Subscription per device (recurring)" },
   { label: "Target stores", value: "Independent retailers, convenience, pharmacy chains" },
-  { label: "Pilot structure", value: "5 LOIs, Manchester, pilot open" },
+  { label: "Pilot structure", value: "Non-binding LOIs signed, Manchester, pilot open" },
 ];
 
 export default function OverviewPage() {
@@ -450,7 +450,7 @@ export default function OverviewPage() {
               The ADN prototype was designed, modelled, and tested under constraint, without
               institutional funding, without a lab environment, and without a team. The UK patent
               application (No. 2606630.8) was filed in March 2026. The Independent Retail Pilot is
-              now open, with five signed Letters of Intent from retail partners.
+              now open, with non-binding letters of intent signed by independent retailers in Greater Manchester.
             </p>
             <p>
               The question being answered now is not whether the technology works. It is whether

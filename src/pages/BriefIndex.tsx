@@ -424,7 +424,7 @@ export default function BriefIndex() {
           Independent Retail Pilot · 2026
         </div>
         <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: "clamp(22px,3vw,32px)", fontWeight: 700, color: INK, marginBottom: 12, lineHeight: 1.25, maxWidth: 560, margin: "0 auto 12px" }}>
-          Five retailers. Direct founder support. No middlemen.
+          Independent retailers. Direct founder support. No middlemen.
         </p>
         <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, color: MUTED, marginBottom: 32, lineHeight: 1.7, maxWidth: 460, margin: "0 auto 32px" }}>
           Michael visits every site personally before installation. Commercial terms agreed directly with Mykei. No automated sequences.

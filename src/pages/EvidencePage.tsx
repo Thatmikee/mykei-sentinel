@@ -197,7 +197,7 @@ export default function EvidencePage() {
                 {[
                   ["Geography", "Greater Manchester, UK"],
                   ["Phase", "Independent retail validation"],
-                  ["Partners", "5 independent retailers"],
+                  ["Partners", "Independent retailers, Greater Manchester"],
                   ["Timeline", "2026 pilot recruitment"],
                   ["Data", "No registry event records yet, pilot not started"],
                 ].map(([k, v]) => (
@@ -285,7 +285,7 @@ export default function EvidencePage() {
             <span className="ev-eyebrow">03 · Event Logs</span>
             <h2 className="ev-h2">Sanitised Forensic Event Records</h2>
             <p className="ev-body" style={{ marginBottom: 32 }}>
-              The following are representative sanitised records from bench and lab testing of the ADN prototype. No retail deployment has occurred; retailer identities referenced elsewhere on this page relate to signed letters of interest only.
+              The following are representative sanitised records from bench and lab testing of the ADN prototype. No retail deployment has occurred; retailer identities referenced elsewhere on this page relate to signed letters of intent only.
             </p>
           </Reveal>
           <Reveal>
@@ -398,7 +398,7 @@ export default function EvidencePage() {
                 The Mykei Registry design logs events, encrypted and timestamped, and is in development, not yet live. The detection cycle, from sweep to compound deployment, completes in under 200 milliseconds in bench testing.
               </p>
               <p style={{ fontSize: 16, lineHeight: 1.85, color: "#2D1204", marginBottom: 28 }}>
-                Five independent retailers in Greater Manchester have reviewed the system and signed non-binding letters of interest. No installation date is confirmed. This is a prototype seeking validation before it can seek to scale.
+                Independent retailers in Greater Manchester have reviewed the system and signed non-binding letters of intent. No installation date is confirmed. This is a prototype seeking validation before it can seek to scale.
               </p>
               <div style={{ display: "flex", alignItems: "center", gap: 16, paddingTop: 20, borderTop: "1px solid #E8E8E8" }}>
                 <div>
