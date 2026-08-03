@@ -18,6 +18,13 @@ export default defineConfig({
   },
   build: {
     sourcemap: false,
+    // The "pdf" manual chunk (jspdf/html2canvas/dompurify) is only needed by
+    // the lazy-loaded /pilot route's PDF generation. Vite's default
+    // modulepreload injection would otherwise hint the browser to fetch it
+    // on every page, including the homepage, for no benefit.
+    modulePreload: {
+      resolveDependencies: (_filename, deps) => deps.filter((dep) => !dep.includes("pdf-")),
+    },
     rollupOptions: {
       output: {
         manualChunks(id) {

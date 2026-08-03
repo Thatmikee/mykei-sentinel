@@ -98,8 +98,6 @@ export default function FounderPage() {
     });
     document.head.appendChild(schema);
 
-    document.title = "Michael Esema, Founder & CEO, Mykei Securities Ltd | Originator of Economic Sterilisation";
-
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Michael Esema (Michael Essien Esema), Nigerian-born entrepreneur in Manchester. Founder of Mykei Securities Ltd, inventor of ADN, and originator of Economic Sterilisation. MBA, MSc, BSc. Patent pending.");
 

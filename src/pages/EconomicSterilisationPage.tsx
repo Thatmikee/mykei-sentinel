@@ -37,7 +37,7 @@ const COMPARISON = [
   { aspect: "Uses cameras / biometrics", traditional: "Almost always", es: "No camera or biometric identification" },
   { aspect: "Effective after theft occurs", traditional: "No", es: "Yes, goods become harder to move without a traceable record" },
   { aspect: "Addresses resale market", traditional: "No", es: "Yes, forensic record supports resale disruption" },
-  { aspect: "Reduces repeat theft", traditional: "Marginally", es: "Systematically, no ROI for thieves" },
+  { aspect: "Intended to reduce repeat theft", traditional: "Marginally", es: "Designed to remove ROI for thieves, not yet field-validated" },
   { aspect: "Evidential record", traditional: "Sometimes (CCTV)", es: "Cryptographically signed, designed to support evidential workflows" },
 ];
 
@@ -135,8 +135,7 @@ export default function EconomicSterilisationPage() {
     ]);
     document.head.appendChild(schema);
 
-    document.title = "Economic Sterilisation, Definition & Doctrine | Mykei Securities";
-
+    
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Economic Sterilisation is Mykei's doctrine for reducing the resale incentive behind retail theft by linking theft-related events to marker and registry records. Coined by Michael Esema, Mykei Securities, 2025.");
 

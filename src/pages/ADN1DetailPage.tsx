@@ -50,7 +50,7 @@ const MODES = [
 const SEQUENCE = [
   { n: "01", title: "DETECT",      body: "Dual ToF sensors map a 3D velocity vector across both detection zones. When the kinetic signature matches the configured bulk-sweep threshold, the trigger fires in under 200ms." },
   { n: "02", title: "MARK",        body: "The Ultrasonic Deployment Module deploys a burst of invisible batch-identifiable marker compound onto the stolen goods and the individual carrying them. Subject to marker supplier specification, SDS/COSHH review, and deployment environment review." },
-  { n: "03", title: "LOG",         body: "An AES-256-GCM encrypted marker deployment event record is transmitted to the Mykei secure cloud registry via MQTT over TLS 1.3. The record contains timestamp, node ID, zone, ToF vector data, and the cartridge batch reference." },
+  { n: "03", title: "LOG",         body: "An AES-256-GCM encrypted marker deployment event record is designed to be transmitted to the Mykei secure cloud registry via MQTT over TLS 1.3, once the registry is live. The record would contain timestamp, node ID, zone, ToF vector data, and the cartridge batch reference." },
   { n: "04", title: "DISRUPT",     body: "The cartridge batch reference is registered in the Mykei Registry, linked to the device, store, and timestamp. The event record is designed to support verification and investigation workflows, making theft-linked goods harder to sell anonymously." },
 ];
 

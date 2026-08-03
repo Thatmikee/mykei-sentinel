@@ -5,14 +5,14 @@
 
 const ROUTE_META = {
   '/': {
-    title: 'ADN Forensic Retail Defence | Mykei Securities',
-    description: 'Mykei Securities is developing ADN, a patent-pending prototype for retail theft prevention: shelf-level event detection, controlled marker deployment, and Mykei Registry event records.',
+    title: 'Mykei Securities | Shelf Level Retail Defence',
+    description: 'Mykei Securities is developing ADN, a shelf level retail defence device in prototype: event detection, controlled marker deployment, and Mykei Registry event records. Pre-pilot, UK patent pending.',
     canonical: 'https://mykei.io',
-    ogTitle: 'Mykei Securities | ADN Forensic Retail Defence System',
+    ogTitle: 'Mykei Securities | Shelf Level Retail Defence',
     ogDescription: 'ADN is a patent-pending prototype shelf-level retail defence device for high-loss categories, designed to link event detection, controlled marker deployment, and Mykei Registry records.',
     ogUrl: 'https://mykei.io',
     ogImage: 'https://mykei.io/social-share.png',
-    twitterTitle: 'Mykei Securities | ADN Forensic Retail Defence',
+    twitterTitle: 'Mykei Securities | Shelf Level Retail Defence',
     twitterDescription: 'ADN is a prototype designed to help retailers protect high-loss shelves with event detection, controlled marker deployment, and Mykei Registry records. No cameras.',
   },
   '/howitworks': {
@@ -38,7 +38,7 @@ const ROUTE_META = {
     twitterDescription: 'Registry-first asset protection for Nigerian solar, estate, school, warehouse, and SME assets.',
   },
   '/founder': {
-    title: 'Michael Esema | Founder & CEO, Mykei Securities',
+    title: 'Michael Esema, Founder & CEO, Mykei Securities Ltd | Manchester',
     description: 'Michael Esema is the founder of Mykei Securities Ltd, inventor of ADN, and originator of Economic Sterilisation. Manchester-based, Nigerian-born, MBA, MSc.',
     canonical: 'https://mykei.io/founder',
     ogTitle: 'Michael Esema | Founder & CEO, Mykei Securities',
@@ -49,7 +49,7 @@ const ROUTE_META = {
     twitterDescription: 'Inventor of the ADN. Originator of Economic Sterilisation. MBA, MSc.',
   },
   '/economic-sterilisation': {
-    title: 'Economic Sterilisation | The Doctrine | Mykei Securities',
+    title: 'Economic Sterilisation, The Doctrine Coined by Michael Esema | Mykei Securities',
     description: 'Economic Sterilisation is Mykei Securities doctrine for disrupting the resale incentive behind retail theft through registry-linked evidence workflows.',
     canonical: 'https://mykei.io/economic-sterilisation',
     ogTitle: 'Economic Sterilisation | The Doctrine',
@@ -60,7 +60,7 @@ const ROUTE_META = {
     twitterDescription: 'A retail theft doctrine focused on disrupting resale confidence through registry-linked evidence.',
   },
   '/adn': {
-    title: 'ADN | Forensic Retail Defence System | Mykei Securities',
+    title: 'ADN Retail Security Device · Bulk Sweep Theft Detection | Mykei',
     description: 'ADN is a patent-pending prototype shelf-level retail defence device for high-loss categories, designed for controlled marker deployment and Mykei Registry event records.',
     canonical: 'https://mykei.io/adn',
     ogTitle: 'ADN | Forensic Retail Defence System',
@@ -93,7 +93,7 @@ const ROUTE_META = {
     twitterDescription: 'Request an ADN pilot evaluation for high-loss retail shelves.',
   },
   '/enterprise': {
-    title: 'Enterprise Retail Pilots | Mykei Securities',
+    title: 'Strategic Retail Pilots | Mykei Securities Ltd',
     description: 'Strategic retail pilot reviews for multi-site retailers, loss prevention teams, insurers, and forensic partners evaluating ADN and Mykei Registry workflows.',
     canonical: 'https://mykei.io/enterprise',
     ogTitle: 'Enterprise Retail Pilots | Mykei Securities',
@@ -126,7 +126,7 @@ const ROUTE_META = {
     twitterDescription: 'Device, shelf, timestamp, cartridge session, and marker batch references in one event record.',
   },
   '/state-of-theft': {
-    title: 'State of Retail Theft | Mykei Securities',
+    title: 'State of Retail Theft | Mykei Securities Research Dashboard',
     description: 'A Mykei briefing page on UK retail theft, organised resale incentives, high-loss categories, and the evidence gap facing retailers.',
     canonical: 'https://mykei.io/state-of-theft',
     ogTitle: 'State of Retail Theft | Mykei Securities',
@@ -390,6 +390,14 @@ function injectMeta(html, meta) {
 
 export async function onRequest(context) {
   const url = new URL(context.request.url)
+
+  // Canonicalize www.mykei.io -> mykei.io (avoids duplicate-content: both were
+  // serving identical 200 responses with no redirect between them).
+  if (url.hostname === 'www.mykei.io') {
+    url.hostname = 'mykei.io'
+    return Response.redirect(url.toString(), 301)
+  }
+
   const pathname = url.pathname.replace(/\/$/, '') || '/'
 
   if (NOINDEX_ASSET_PATHS.has(pathname)) {
