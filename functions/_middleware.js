@@ -157,6 +157,7 @@ const ROUTE_META = {
     ogImage: 'https://mykei.io/social-share.png',
     twitterTitle: 'ADN Roadmap | Mykei Securities',
     twitterDescription: 'Prototype proof, sensor testing, registry mockups, and field validation milestones.',
+    noindex: true,
   },
   '/contact': {
     title: 'Contact Mykei Securities',
@@ -385,6 +386,7 @@ function injectMeta(html, meta) {
   html = html.replace(/<meta name="twitter:title" content="[^"]*"/, `<meta name="twitter:title" content="${meta.twitterTitle}"`)
   html = html.replace(/<meta name="twitter:description" content="[^"]*"/, `<meta name="twitter:description" content="${meta.twitterDescription}"`)
   html = html.replace(/<meta name="twitter:image" content="[^"]*"/, `<meta name="twitter:image" content="${meta.ogImage}"`)
+  html = html.replace(/<meta name="robots" content="[^"]*"/, `<meta name="robots" content="${meta.noindex ? 'noindex, nofollow' : 'index, follow'}"`)
   return html
 }
 
@@ -424,6 +426,7 @@ export async function onRequest(context) {
   headers.set('X-Frame-Options', 'DENY')
   headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
   headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
+  if (meta.noindex) headers.set('X-Robots-Tag', 'noindex, nofollow')
   headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')
 
   return new Response(html, { headers })
