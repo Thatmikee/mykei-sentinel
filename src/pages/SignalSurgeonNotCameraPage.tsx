@@ -118,7 +118,7 @@ export default function SignalSurgeonNotCameraPage() {
               The security industry loves "AI-powered." Every camera system with a motion filter, every EAS tag reader with a beep threshold, every app that sends push notifications, all of them are "AI-powered" now. It's not a lie, exactly. It's just a word that has been diluted to the point of describing nothing specific.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The ADN is a forensic instrument with one specific diagnostic task: distinguish a bulk-sweep theft event from normal retail activity, in real time, on device, without a network, without a camera, without capturing any personal data, with a false positive rate below 0.3%. If you've ever written a real-time classifier for constrained hardware, you know that's a tighter spec than it sounds.
+              The ADN is designed as a forensic instrument with one specific diagnostic task: distinguish a bulk-sweep event from normal retail activity, in real time, on device, without a network, without a camera, without capturing any personal data. That distinction has not yet been field-validated. If you've ever written a real-time classifier for constrained hardware, you know that's a tighter spec than it sounds.
             </p>
           </Reveal>
 

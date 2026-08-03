@@ -205,7 +205,7 @@ export default function SignalDMRGMBPage() {
               A CCTV camera records a face. In most shoplifting cases, that face is unknown to police and cannot be matched to anything. The footage sits on a DVR until the hard drive is overwritten. No arrest. No recovery. No consequence.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The ADN marks the goods. The goods go wherever they go. When they surface on Vinted three days later, the TIR flags them. When a buyer meets the seller and hands over cash, the goods still carry the marker. The marker is not peelable. It is not washable with household products. It is a permanent forensic record of the theft event, carried by the stolen goods themselves.
+              The ADN is designed to mark the goods. The goods go wherever they go. When a buyer meets the seller and hands over cash, the goods still carry the marker. Mykei does not monitor or flag listings on any resale platform. The marker is designed to resist casual removal. It is designed as a durable forensic record, carried by the goods themselves.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
               Robinson called cameras theatre. The reason cameras are theatre is that they produce evidence with no reliable chain of consequence attached to it. The ADN produces evidence that travels with the crime. That is a different category of system entirely.

@@ -35,7 +35,7 @@ const schemaData = {
 const comparisonRows = [
   ["Primary mechanism", "Deter, detect, or delay", "Remove commercial value"],
   ["What it targets", "The act of theft", "The incentive for theft"],
-  ["Requires staff action", "Yes", "No, fully autonomous"],
+  ["Requires staff action", "Yes", "No, designed to trigger without staff input"],
   [
     "Uses cameras or biometrics",
     "Almost always",

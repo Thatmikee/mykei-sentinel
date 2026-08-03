@@ -750,7 +750,7 @@ export function generateRetailerEmail(data: LOIData): string {
         <br/><br/>
         Sitting on your shelving unit, the ADN uses non-visual Time-of-Flight sensors to read shelf movement in real time. <strong>No cameras. No recording. No faces.</strong> Just physics.
         <br/><br/>
-        When a defined theft event is detected, ADN triggers controlled marker deployment onto the affected items. The marker is batch-identifiable and linked to a timestamped record in the Mykei Registry: your device, your store, and the cartridge session.
+        When a defined shelf clearance event is detected, ADN is designed to trigger controlled marker deployment onto the affected items. The marker is batch-identifiable and linked to a timestamped record in the Mykei Registry: your device, your store, and the cartridge session.
         <br/><br/>
         Theft pays when stolen goods can still be sold. ADN is designed to make theft-linked stock harder to move by connecting the shelf event to a marker deployment record and verification workflow.
       </div>

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "claim-safety-gate": "bash scripts/claim-safety-gate.sh",
+    "build": "npm run claim-safety-gate && vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
