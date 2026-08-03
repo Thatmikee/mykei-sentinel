@@ -446,7 +446,7 @@ export default function ADN1DetailPage() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <button
-                onClick={() => navigate("/#contact")}
+                onClick={() => navigate("/pilot")}
                 className="px-8 py-4 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors rounded"
               >
                 Request Pilot Access →
@@ -461,6 +461,16 @@ export default function ADN1DetailPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="container px-6 py-8 flex items-center justify-between flex-wrap gap-3 border-t border-border">
+        <div className="font-mono text-xs text-muted-foreground tracking-wider uppercase">
+          Mykei Securities Ltd · Co. 16984969
+        </div>
+        <div className="font-mono text-xs text-muted-foreground">
+          © 2026 Mykei Securities Ltd · <a href="/" className="hover:text-primary transition-colors">mykei.io</a>
+        </div>
+      </footer>
 
     </div>
   );
