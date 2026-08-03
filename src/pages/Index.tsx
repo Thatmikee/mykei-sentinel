@@ -531,12 +531,7 @@ export default function Index() {
           </button>
           {moreOpen && (
             <div className="mk-more-menu" onMouseLeave={() => setMoreOpen(false)}>
-              <a href="/howitworks" onClick={() => setMoreOpen(false)}>How It Works</a>
-              <a href="/adn" onClick={() => setMoreOpen(false)}>ADN Device</a>
-              <a href="/economic-sterilisation" onClick={() => setMoreOpen(false)}>Economic Sterilisation</a>
               <a href="/enterprise" onClick={() => setMoreOpen(false)}>Enterprise</a>
-              <div className="mk-more-divider" />
-              <a href="/signal" onClick={() => setMoreOpen(false)}>Signal</a>
               <a href="/certification" onClick={() => setMoreOpen(false)}>Certification</a>
               <a href="/contact" onClick={() => setMoreOpen(false)}>Contact</a>
             </div>
@@ -585,7 +580,7 @@ export default function Index() {
             </div>
 
             <p className="mk-hero-body">
-              Mykei is developing ADN, a shelf level device designed to turn a theft event into a marker and a registry record. No cameras. No chasing. No biometric data. The aim is to make stolen stock harder to move. ADN is a working prototype and is not yet deployed in stores.
+              Mykei is developing ADN, a shelf level device designed to turn a theft event into a marker and a registry record. No cameras. No biometric data. The aim is to make stolen stock harder to move. ADN is a working prototype and is not yet deployed in stores.
             </p>
 
             <p ref={statsReveal.ref} style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 13, color: "#765C14", marginBottom: 28 }}>
@@ -597,7 +592,7 @@ export default function Index() {
             </div>
 
             <div className="mk-hero-proof">
-              {["No cameras", "Non-confrontational by design", "No biometric data", "UK registered company"].map(p => (
+              {["No cameras", "Non-confrontational by design", "No biometric data"].map(p => (
                 <div className="mk-proof-item" key={p}>
                   <div className="mk-proof-check">✓</div>{p}
                 </div>
@@ -610,7 +605,7 @@ export default function Index() {
                 { num: "£2.2B", label: "Reported annual\ncost of retail theft" },
                 { num: "20M+", label: "Reported theft\nincidents in a year" },
                 { num: "Prototype", label: "Bench stage,\nnot yet in stores" },
-                { num: "5", label: "Non-binding letters\nof interest, Mar 2026" },
+                { num: "Signed", label: "Non-binding letters\nof intent, Mar 2026" },
               ].map(s => (
                 <div className="mk-tablet-stat" key={s.num}>
                   <div className="mk-tablet-stat-num">{s.num}</div>
@@ -636,8 +631,6 @@ export default function Index() {
           <div className="mk-proof-bar-items">
             {[
               { icon: "01", strong: "Patent Pending", text: "UK application No. 2606630.8, not granted" },
-              { icon: "02", strong: "Pilot Route", text: "Independent and strategic reviews" },
-              { icon: "03", strong: "Privacy Posture", text: "No cameras or biometric data" },
             ].map(({ icon, strong, text }) => (
               <div className="mk-proof-bar-item" key={strong}>
                 <span className="mk-proof-icon">{icon}</span>
@@ -716,7 +709,7 @@ export default function Index() {
             <h2 className="mk-h2-dark">Come talk to us early.</h2>
             <p className="mk-sub-dark" style={{ marginBottom: 36 }}>We are talking to independent retailers across Greater Manchester about whether ADN would fit their store. Registering interest is not a commitment and does not create a contract.</p>
             <a href="/pilot" className="mk-submit-btn" style={{ display: "inline-block", textDecoration: "none" }}>Register Interest</a>
-            <p className="mk-form-note" style={{ marginTop: 20 }}>No obligation. Mykei Securities Ltd, Company No. 16984969, registered office 2 Princess Court, Butterstile Lane, Prestwich, Manchester, M25 9PW.</p>
+            <p className="mk-form-note" style={{ marginTop: 20 }}>No obligation.</p>
           </Reveal>
         </div>
       </section>
