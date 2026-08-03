@@ -110,7 +110,6 @@ export default function BlogIndexPage() {
       <Footer />
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&family=JetBrains+Mono:wght@400;500&display=swap');
         *:focus-visible { outline: 2px solid ${GOLD}; outline-offset: 3px; }
         @media (max-width: 640px) {
           nav { padding: 0 20px !important; }

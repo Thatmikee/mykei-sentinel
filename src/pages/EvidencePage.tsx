@@ -80,7 +80,6 @@ export default function EvidencePage() {
         breadcrumbs={[["Home", "https://mykei.io"], ["Evidence", "/evidence"]]}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@300;400;500&family=Sora:wght@300;400;500;600;700&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Sora', sans-serif; background: #FFFFFF; color: #1E1E1E; }
         a { text-decoration: none; }

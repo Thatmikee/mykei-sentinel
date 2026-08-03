@@ -452,7 +452,6 @@ export default function BriefIndex() {
       </footer>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;500&display=swap');
         @media (max-width: 720px) {
           .signal-lead-grid { grid-template-columns: 1fr !important; }
           .signal-lead-grid > div:nth-child(2) { display: none; }

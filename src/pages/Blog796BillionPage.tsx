@@ -90,7 +90,6 @@ export default function Blog796BillionPage() {
         breadcrumbs={[["Home","https://mykei.io"],["Blog","/blog"],["The $796 Billion Problem",""]]}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Sora', sans-serif; background: #fff; color: ${INK}; }

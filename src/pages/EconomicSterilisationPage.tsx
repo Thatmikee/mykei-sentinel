@@ -159,7 +159,6 @@ export default function EconomicSterilisationPage() {
         breadcrumbs={[["Home","https://mykei.io"],["Economic Sterilisation","/economic-sterilisation"]]}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Sora', sans-serif; background: #fff; color: #2D1204; }

@@ -141,7 +141,6 @@ export default function GlossaryESPage() {
         keywords="economic sterilisation definition, economic sterilisation glossary, TESS definition, theft economic sterilisation, Michael Esema coined term, retail security glossary"
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Sora', sans-serif; background: #fff; color: ${INK}; }

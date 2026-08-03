@@ -10,7 +10,6 @@ export default function NotFound() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Sora', sans-serif; background: #0a1628; color: #fff; }
         a { text-decoration: none; }

@@ -118,7 +118,6 @@ export default function FounderPage() {
         keywords="Michael Esema, Michael Essien Esema, Mykei Securities founder, economic sterilisation inventor, ADN inventor, Manchester entrepreneur, retail security founder"
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Sora', sans-serif; background: #FFFFFF; color: #1E1E1E; }
