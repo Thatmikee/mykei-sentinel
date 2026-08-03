@@ -62,7 +62,7 @@ const FAQS = [
   },
   {
     q: "Where can I read more?",
-    a: "The full doctrine is at mykei.io/economic-sterilisation. Technical implementation is at mykei.io/adn. The white paper is available for download at the bottom of this page.",
+    a: "The full doctrine is at mykei.io/economic-sterilisation. Technical implementation is at mykei.io/adn.",
   },
 ];
 
@@ -391,7 +391,7 @@ export default function GlossaryESPage() {
         </Reveal>
       </div>
 
-      {/* FULL DOCTRINE LINK + WHITE PAPER */}
+      {/* FULL DOCTRINE LINK */}
       <div className="g-wrap" style={{ maxWidth: 800, margin: "0 auto", padding: "56px 48px 96px" }}>
         <Reveal>
           <div style={{ padding: "32px", background: FAINT, borderLeft: `3px solid ${GOLD}` }}>

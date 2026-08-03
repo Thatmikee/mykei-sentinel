@@ -369,7 +369,7 @@ const ROUTE_META = {
   },
 }
 
-const NOINDEX_ASSET_PATHS = new Set([
+const REMOVED_ASSET_PATHS = new Set([
   '/Mykei_Economic_Sterilisation_White_Paper.pdf',
   '/Mykei_ADN1_Pilot_Programme_Overview.pdf',
 ])
@@ -400,14 +400,10 @@ export async function onRequest(context) {
 
   const pathname = url.pathname.replace(/\/$/, '') || '/'
 
-  if (NOINDEX_ASSET_PATHS.has(pathname)) {
-    const response = await context.next()
-    const headers = new Headers(response.headers)
-    headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive')
-    return new Response(response.body, {
-      status: response.status,
-      statusText: response.statusText,
-      headers,
+  if (REMOVED_ASSET_PATHS.has(pathname)) {
+    return new Response('Gone', {
+      status: 410,
+      headers: { 'X-Robots-Tag': 'noindex, nofollow, noarchive' },
     })
   }
 
