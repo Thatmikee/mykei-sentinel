@@ -79,8 +79,8 @@ export default function IndependentRetailerEconomics() {
 
       <p>
         The relevant comparison is not to doing nothing. Most retailers already spend something on
-        security. The question is whether that spend is producing forensic-grade output at a cost
-        that makes commercial sense.
+        security. The question is whether that spend is producing records that support investigation
+        and verification workflows at a cost that makes commercial sense.
       </p>
       <p>
         A staffed security guard costs between GBP 25,000 and GBP 35,000 per year when employment

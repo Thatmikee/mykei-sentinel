@@ -368,8 +368,8 @@ export default function Blog796BillionPage() {
             Forensic marking is not new. Proprietary Forensic Marking Compound has demonstrated up to 83% reductions
             in burglaries and theft in police projects. A recent operation saw 5,000 tagged
             items lead to 15 arrests and the recovery of £150,000 in stolen goods. Homebase
-            cut stock loss by 20% using SmartWater. What the ADN adds is autonomous
-            deployment, designed registry integration, and delivery at retail shelf scale.
+            cut stock loss by 20% using SmartWater. What the ADN adds is deployment designed to
+            operate autonomously, designed registry integration, and delivery at retail shelf scale.
           </p>
         </Reveal>
 
