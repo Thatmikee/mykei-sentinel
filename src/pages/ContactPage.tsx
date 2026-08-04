@@ -117,14 +117,12 @@ export default function ContactPage() {
               <div>
                 <strong style={{ color: INK, fontWeight: 500 }}>Mykei Securities Ltd</strong><br />
                 Company No. 16984969<br />
-                2 Princess Court, Butterstile Lane<br />
-                Prestwich, Manchester, M25 9PW<br />
                 England and Wales
               </div>
               <div>
                 <strong style={{ color: INK, fontWeight: 500 }}>Patent</strong><br />
                 UK patent application No. 2606630.8<br />
-                Pending, not granted. Filed 23 March 2026.<br />
+                Patent pending. Filed 23 March 2026.<br />
                 <a href="https://michaelesema.com" target="_blank" rel="noopener noreferrer" style={{ color: GOLD, textDecoration: "none" }}>michaelesema.com</a>
               </div>
             </div>

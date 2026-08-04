@@ -420,7 +420,7 @@ export default function ADN1DetailPage() {
               {
                 badge: "GB2606630.8",
                 title: "UK Patent application: pending",
-                body: "UK patent application GB2606630.8, filed 23 March 2026, 17 claims. Patent pending, not granted. Filed with the UK Intellectual Property Office.",
+                body: "UK patent application GB2606630.8, filed 23 March 2026, 17 claims. Patent pending. Filed with the UK Intellectual Property Office.",
               },
             ].map((item, i) => (
               <motion.div key={i} {...fade(i * 0.1)} className="border border-border rounded-lg p-6">

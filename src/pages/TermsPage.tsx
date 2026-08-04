@@ -87,7 +87,7 @@ export default function TermsPage() {
           <div style={section}>
             <h2 style={h2}>1. Who we are</h2>
             <p style={p}>
-              Mykei Securities Ltd is a company registered in England and Wales (Company No. 16984969). Our registered office is 2 Princess Court, Butterstile Lane, Prestwich, Manchester, M25 9PW. We can be contacted at protocol@mykei.io.
+              Mykei Securities Ltd is a company registered in England and Wales (Company No. 16984969). We can be contacted at protocol@mykei.io.
             </p>
 
             <h2 style={h2}>2. What these terms cover</h2>

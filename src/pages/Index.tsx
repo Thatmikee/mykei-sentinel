@@ -146,10 +146,8 @@ export default function Index() {
               "email": "protocol@mykei.io",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "2 Princess Court, Butterstile Lane, Prestwich",
                 "addressLocality": "Manchester",
                 "addressRegion": "Greater Manchester",
-                "postalCode": "M25 9PW",
                 "addressCountry": "GB"
               },
               "geo": { "@type": "GeoCoordinates", "latitude": "53.5215", "longitude": "-2.2814" },
@@ -719,7 +717,7 @@ export default function Index() {
         <div>
           <img src="/mykei-logo.png" alt="Mykei Securities" style={{ height: 36, width: "auto", objectFit: "contain", marginBottom: 10 }} />
           <div className="mk-footer-name">MYKEI SECURITIES LTD</div>
-          <div className="mk-footer-meta">Co. No: 16984969. Registered in England &amp; Wales. Registered office: 2 Princess Court, Butterstile Lane, Prestwich, Manchester, M25 9PW. UK patent application No. 2606630.8, pending, not granted.</div>
+          <div className="mk-footer-meta">Co. No: 16984969. Registered in England &amp; Wales. UK patent application No. 2606630.8, patent pending.</div>
           <div className="mk-footer-meta" style={{ marginTop: 6 }}>
             Enterprise &amp; multi-site enquiries: <a href="mailto:protocol@mykei.io" style={{ color: "inherit", textDecoration: "underline" }}>protocol@mykei.io</a>
           </div>

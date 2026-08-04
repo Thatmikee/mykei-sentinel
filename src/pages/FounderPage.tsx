@@ -220,7 +220,7 @@ export default function FounderPage() {
                   { label: "Origin", val: "Nigeria" },
                   { label: "Based", val: "Manchester, United Kingdom" },
                   { label: "Former employer", val: "B's Hive Hotel & Suites · Nigeria" },
-                  { label: "Patent", val: "No. 2606630.8 (UK) · 17 claims · patent pending, not granted" },
+                  { label: "Patent", val: "No. 2606630.8 (UK) · 17 claims · patent pending" },
                   { label: "Patent ownership", val: "Filed in Michael Esema's personal name; assignment to Mykei Securities Ltd outstanding" },
                   { label: "Company", val: "Mykei Securities Ltd · Co. 16984969" },
                   { label: "Pilot", val: "Manchester Alpha · in planning" },

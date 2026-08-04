@@ -115,7 +115,7 @@ export default function InvestorsPage() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 40 }}>
             {[
-              { stat: "17", label: "claims in pending patent application", note: "No. 2606630.8 (UK), filed 23 March 2026, patent pending, not granted" },
+              { stat: "17", label: "claims in pending patent application", note: "No. 2606630.8 (UK), filed 23 March 2026, patent pending" },
               { stat: "5", label: "pilot partner slots open", note: "Greater Manchester" },
               { stat: "1", label: "founder, zero investors to date", note: "Revenue-first approach. No dilution before traction." },
             ].map(({ stat, label, note }) => (

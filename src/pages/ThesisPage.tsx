@@ -366,7 +366,7 @@ export default function ThesisPage() {
             <PullQuote text="The patent is 17 claims. The doctrine is one sentence." />
 
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
-              UK patent application GB2606630.8, filed 23 March 2026, 17 claims, patent pending, not granted.
+              UK patent application GB2606630.8, filed 23 March 2026, 17 claims, patent pending.
             </p>
             <p style={{ ...bodyText, lineHeight: 1.8 }}>
               The ADN is a prototype-stage implementation of the Economic Sterilisation doctrine. The Independent Retail Pilot, planned across selected retailers in Greater Manchester, is intended to generate the first real-world efficacy data. Results from the pilot will be published in summary form on this site.
