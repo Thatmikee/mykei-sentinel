@@ -127,9 +127,9 @@ export default function ADN1DetailPage() {
           </motion.h1>
 
           <motion.p {...fade(0.2)} className="text-muted-foreground text-lg max-w-2xl leading-relaxed mb-10">
-            A shelf-mounted autonomous node that detects bulk retail theft in real time,
-            triggers controlled marker deployment, and registers a cartridge-linked event record,
-            all within 200 milliseconds, with no human intervention.
+            A shelf-mounted node designed to detect bulk retail theft in real time,
+            trigger controlled marker deployment, and register a cartridge-linked event record,
+            designed to complete within 200 milliseconds, with no human intervention.
           </motion.p>
 
           <motion.div {...fade(0.3)} className="flex flex-wrap gap-3">

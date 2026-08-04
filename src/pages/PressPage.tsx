@@ -93,7 +93,7 @@ export default function PressPage() {
                 Founder &amp; CEO, Mykei Securities Ltd
               </p>
               <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, marginBottom: 16 }}>
-                Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN Active Forensic Defence Node, a shelf-mounted IoT device that detects bulk-sweep theft events, triggers controlled marker deployment, and logs cartridge-linked activations in the Mykei Registry.
+                Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN Active Forensic Defence Node, a shelf-mounted IoT device designed to detect bulk-sweep theft events, trigger controlled marker deployment, and log cartridge-linked activations in the Mykei Registry.
               </p>
               <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, marginBottom: 16 }}>
                 In 2025, he coined the doctrine of Economic Sterilisation: the systematic disruption of the resale incentive behind retail theft through forensic marking and registry event records. UK patent application No. 2606630.8.
@@ -111,7 +111,7 @@ export default function PressPage() {
               </p>
               <blockquote style={{ borderLeft: `2px solid ${GOLD}`, paddingLeft: 20, margin: "0 0 28px" }}>
                 <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 15, fontStyle: "italic", color: INK, lineHeight: 1.7 }}>
-                  Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN, a shelf-mounted active forensic retail defence device that detects bulk-sweep theft events, triggers controlled marker deployment, and records cartridge-linked activations in the Mykei Registry. He coined the doctrine of Economic Sterilisation in 2025 (UK patent application No. 2606630.8). A former Head Accountant and Assistant Manager at B's Hive, he holds an MSc from Manchester Metropolitan University, an MBA from the Nigerian Defence Academy, and a BSc from Benson Idahosa University. He is a recipient of the NUASA Most Auspicious Male Award.
+                  Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN, a shelf-mounted active forensic retail defence device designed to detect bulk-sweep theft events, trigger controlled marker deployment, and record cartridge-linked activations in the Mykei Registry. He coined the doctrine of Economic Sterilisation in 2025 (UK patent application No. 2606630.8). A former Head Accountant and Assistant Manager at B's Hive, he holds an MSc from Manchester Metropolitan University, an MBA from the Nigerian Defence Academy, and a BSc from Benson Idahosa University. He is a recipient of the NUASA Most Auspicious Male Award.
                 </p>
               </blockquote>
               <a

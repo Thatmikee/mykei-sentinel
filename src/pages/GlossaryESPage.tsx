@@ -369,7 +369,7 @@ export default function GlossaryESPage() {
                 },
                 {
                   term: "Kinetic Signature Analysis (KSA)",
-                  def: "The detection method used by the ADN. Dual Time-of-Flight laser sensors sample the motion field above a retail fixture at 30Hz. A classification algorithm on the Encrypted Logic Core microcontroller distinguishes between normal browsing and bulk-sweep motion patterns in under 50ms.",
+                  def: "The detection method used by the ADN. Dual Time-of-Flight laser sensors sample the motion field above a retail fixture at 30Hz. A classification algorithm on the Encrypted Logic Core microcontroller is designed to distinguish between normal browsing and bulk-sweep motion patterns in under 50ms.",
                 },
                 {
                   term: "Forensic Marking",

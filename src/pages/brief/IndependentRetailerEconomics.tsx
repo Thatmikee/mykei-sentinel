@@ -96,10 +96,11 @@ export default function IndependentRetailerEconomics() {
         the goods, and footage quality and retention periods frequently limit its evidential utility.
       </p>
       <p>
-        ADN is autonomous, requiring no staff time beyond the initial onboarding. It produces
-        forensic-grade output: a unique DNA code on the goods, timestamped to a specific activation
-        event, registered in a cloud database linked to the store. It is lower cost than most
-        alternatives and produces a category of evidence that cameras and tags cannot.
+        ADN is designed to operate autonomously, requiring no staff time beyond the initial onboarding.
+        It produces records designed to support investigation and verification workflows: a unique
+        DNA code on the goods, timestamped to a specific activation event, registered in a cloud
+        database linked to the store. It is lower cost than most alternatives and produces a category
+        of evidence that cameras and tags cannot.
       </p>
       <p>
         For a retailer losing GBP 4,600 per year to theft, the break-even calculation is
