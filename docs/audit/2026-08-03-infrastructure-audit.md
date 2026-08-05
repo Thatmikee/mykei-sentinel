@@ -58,11 +58,17 @@ Checked against the actual Chrome/Firefox/Safari HSTS preload list via `hstsprel
 
 **Action needed (not a code fix, an out-of-band step):** submit https://mykei.io to https://hstspreload.org/ directly. This is safe once the domain and all subdomains are confirmed to serve HTTPS correctly, which they appear to (www redirects to https apex correctly, no mixed content found this session).
 
-## 5. CookieYes 403 — CSP FIX SHIPPED, RUNTIME BEHAVIOUR UNVERIFIED
+## 5. CookieYes 403 — CORRECTED 2026-08-04: root cause is a dead client ID, not CSP
 
-`log.cookieyes.com` was missing from `connect-src` (the CDN script domain `cdn-cookieyes.com` was allowed, but the consent-log endpoint it calls was not) — this was fixed in commit `e309f5c` and is confirmed live in the CSP dump above.
+**Earlier entry in this document was wrong and is corrected here.** It previously claimed adding `log.cookieyes.com` to `connect-src` (commit `e309f5c`) "fixed the 403." That's not possible: CSP is browser-enforced and can only block a request the browser makes — it can never cause a third-party origin to return an HTTP 403. The `log.cookieyes.com` connect-src entry is still correct to have (it was a real gap) but it did not fix this issue.
 
-**What is NOT verified:** whether the banner actually renders in a real browser and whether it successfully records a consent choice against `log.cookieyes.com` without erroring for some other reason. A bare curl GET to `log.cookieyes.com` returns 401 (expected — it's an API endpoint needing a real payload, not proof of anything either way). This needs an actual browser session with console/network inspection, which was unavailable both times this was attempted this session (Chrome extension never connected). This remains genuinely unverified, not assumed working.
+**Actual root cause, confirmed 2026-08-04 via curl and Playwright against live production:** the CookieYes script URL itself —
+```
+https://cdn-cookieyes.com/client_data/3827feeaf5b6081f66aa049a/script.js
+```
+— returns 403 directly from CookieYes's own application (body: "We can't find the page you are looking for… contact support@cookieyes.com"), reproducible from a bare curl with no site/browser context at all. A known-live third-party CookieYes client ID was tested against the same endpoint with zero headers and returned 200 with a real script body. Random/invalid IDs return the exact same 403 as ours. Referer and Origin headers (mykei.io, www.mykei.io, none, example.com) made no difference. This rules out a CSP, referer-policy, or domain-canonicalisation cause on our side — the client ID `3827feeaf5b6081f66aa049a` is not recognised by CookieYes's own system, most likely an expired/suspended account or a deleted site registration (the ID was added 21 May 2026 per commit `05fc0c7`).
+
+**No code fix exists for this.** It requires Michael to log into the CookieYes dashboard, check the account/billing status for mykei.io, and either re-register the domain (new snippet, new ID) or confirm the ID and contact CookieYes support. The consent banner does not render at all right now, and GA4 remains deliberately blocked in CSP (`region1.google-analytics.com` not in `connect-src`) until a working consent mechanism is confirmed live in a real browser — do not relax that until this is fixed on CookieYes's side and re-verified.
 
 ## 6. Sitemap / robots.txt — already fixed this session, confirmed via file read
 
