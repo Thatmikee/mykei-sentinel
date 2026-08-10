@@ -19,7 +19,7 @@ form-action 'self' https://send-loi.michaelesema.workers.dev
 
 This is the state AFTER this session's fixes (fonts self-hosted, so style-src/font-src no longer need Google; log.cookieyes.com added to connect-src to fix the 403). `region1.google-analytics.com` deliberately NOT added — GA4 stays CSP-blocked until CookieYes consent is verified working, which this session could not confirm (browser extension never connected).
 
-## 2. access-control-allow-origin: * — STILL LIVE, NOT FIXABLE FROM THIS REPO
+## 2. access-control-allow-origin: * — FIXED 2026-08-10, was wrong that it needed dashboard access
 
 ```
 access-control-allow-origin: *
@@ -27,7 +27,7 @@ access-control-allow-origin: *
 
 Confirmed present on every response from `https://mykei.io/`, including this run's curl check. Grepped the entire repo for `Access-Control-Allow-Origin` — the only occurrence is in `workers/send-loi/worker.js:68`, which correctly reflects a specific validated origin, not a wildcard. This header is not set by `public/_headers`, not set by `functions/_middleware.js`, not set anywhere in git-tracked code.
 
-**Conclusion: this must be a Cloudflare Pages dashboard-level setting** (either a legacy "Access-Control-Allow-Origin" toggle in the Pages project settings, or a Transform Rule configured outside the repo). It cannot be fixed by a commit. Needs direct Cloudflare dashboard access to locate and remove.
+**Correction, 2026-08-10:** this was fixable from the repo after all. Cloudflare Pages' `_headers` file supports an explicit removal directive — a line reading `! Access-Control-Allow-Origin` under the `/*` block strips a header injected by the platform default, without needing dashboard access. Added in commit `7a67fff`, confirmed live: a fresh `curl -I https://mykei.io/` after deploy shows no `access-control-allow-origin` header at all, while the rest of the header set (CSP, HSTS, X-XSS-Protection, etc.) is unchanged. The `send-loi` worker's own scoped CORS (`workers/send-loi/worker.js:68`) is untouched and still correctly reflects a specific validated origin, not a wildcard.
 
 ## 3. www → apex redirect — CONFIRMED WORKING
 
