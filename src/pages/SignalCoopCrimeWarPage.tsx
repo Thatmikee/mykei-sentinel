@@ -5,6 +5,7 @@
 import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
+import EditorialNote from "@/components/EditorialNote";
 
 const GOLD = "#c9a84c";
 const GOLD_DARK = "#B8922A";
@@ -211,6 +212,25 @@ export default function SignalCoopCrimeWarPage() {
               <div style={{ height: 1, background: INK }} />
             </blockquote>
           </Reveal>
+
+          <EditorialNote kind="context" date="2026-08-18">
+            <p style={{ margin: "0 0 10px" }}>
+              The charge-rate and volume figures in this section have been overtaken by events, and
+              we are flagging that rather than editing the piece silently.
+            </p>
+            <p style={{ margin: "0 0 10px" }}>
+              ONS recorded 507,086 shoplifting offences in the year to March 2026, down about 4%.
+              The Metropolitan Police reported positive outcomes up 123% to 5,996 in 2025/26, and a
+              direct evidence-submission scheme lifting the positive-outcome rate from 7.3% to 29.4%
+              in pilot boroughs. The claim below that the numbers "have not materially improved" was
+              accurate when written and is no longer accurate now.
+            </p>
+            <p style={{ margin: 0 }}>
+              We think the underlying argument survives, because a higher charge rate does not make
+              stolen goods harder to sell. But that is an argument we now have to make, rather than
+              something the charge rate demonstrates on our behalf.
+            </p>
+          </EditorialNote>
 
           {/* Section: What changed */}
           <Reveal>

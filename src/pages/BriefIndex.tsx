@@ -82,10 +82,8 @@ export default function BriefIndex() {
           Mykei Securities
         </a>
         <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
+          <Link to="/signal/masthead" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>Masthead</Link>
           <a href="/howitworks" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>How It Works</a>
-          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
-            Apply for Pilot
-          </a>
         </div>
       </nav>
 
@@ -128,9 +126,9 @@ export default function BriefIndex() {
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: "0.1em", color: MUTED }}>
               {today}
             </span>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: "0.12em", textTransform: "uppercase", color: GOLD }}>
-              Vol. 1 · Issue {sorted.length}
-            </span>
+            <Link to="/signal/masthead" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: "0.12em", textTransform: "uppercase", color: GOLD, textDecoration: "none" }}>
+              Vol. 1 · {sorted.length} pieces · Masthead
+            </Link>
           </div>
         </div>
       </header>

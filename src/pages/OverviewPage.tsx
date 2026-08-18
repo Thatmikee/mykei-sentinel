@@ -9,7 +9,7 @@ const PROOF_POINTS = [
 
 const WHY_NOW = [
   "UK retail theft reached £2.2 billion in 2023. A 26-year high with no structural solution.",
-  "Police enforce a de facto £200 threshold; organised retail crime operates below it deliberately.",
+  "Police have enforced a de facto £200 threshold, and organised retail crime has operated below it deliberately. The Crime and Policing Act 2026 repeals the provision behind it, though that repeal had not yet commenced as of August 2026.",
   "CCTV captures footage. It does not stop resale. The economic loop remains intact.",
   "Forensic marking technology is proven in asset recovery. It has never been productised for retail shelf defence.",
   "Marketplace platforms face growing legal pressure to verify item provenance, creating a demand-side pull for registry infrastructure.",

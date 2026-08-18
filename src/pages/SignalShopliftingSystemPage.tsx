@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
+import EditorialNote from "@/components/EditorialNote";
 
 const GOLD = "#c9a84c";
 const INK  = "#1E1E1E";
@@ -117,6 +118,25 @@ export default function SignalShopliftingSystemPage() {
               530,000 shoplifting offences were recorded in England and Wales in 2025. Fewer than 1 in 5 resulted in a charge. In London, the Metropolitan Police charged in fewer than 7% of cases, roughly 1 in 14. Thematic coding reveals the same gangs cycling the same routes. The policing response is still per-incident, per-store. Michael Esema on why that mismatch only resolves one way.
             </p>
           </Reveal>
+
+          <EditorialNote kind="context" date="2026-08-18">
+            <p style={{ margin: "0 0 10px" }}>
+              Two figures in this piece have since been superseded, and we are leaving the original
+              text intact rather than quietly editing it.
+            </p>
+            <p style={{ margin: "0 0 10px" }}>
+              <strong>Volume.</strong> ONS figures published in July 2026 record 507,086 shoplifting
+              offences in the year to March 2026, a fall of about 4% on the previous year. It is the
+              first recorded annual decline after several years of increases.
+            </p>
+            <p style={{ margin: 0 }}>
+              <strong>Charge rate.</strong> The Metropolitan Police reported in August 2026 that
+              positive outcomes rose 123% to 5,996, and that a direct evidence-submission scheme
+              lifted the positive-outcome rate from 7.3% to 29.4% across six pilot boroughs before
+              expanding to eight more. The London ratio quoted below is no longer current. The
+              structural argument of this piece does not depend on it, but the number does.
+            </p>
+          </EditorialNote>
 
           {/* Stat block */}
           <Reveal delay={0.12}>

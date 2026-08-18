@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
+import EditorialNote from "@/components/EditorialNote";
 
 const GOLD = "#c9a84c";
 const INK = "#1E1E1E";
@@ -114,6 +115,20 @@ export default function SignalPoliceThresholdPage() {
               Liberal Democrats data, broadcast on ITV1, puts shoplifting cases up 133% in five years. Only 1 in 5 results in a charge nationally. In London, 1 in 14. The de facto £200 floor means most retail theft is absorbed, logged, and forgotten. Michael Esema on why Economic Sterilisation removes the need to call anyone.
             </p>
           </Reveal>
+
+          <EditorialNote kind="update" date="2026-08-18">
+            <p style={{ margin: 0 }}>
+              The Crime and Policing Act 2026 received Royal Assent on 29 April 2026 and repeals
+              section 22A of the Magistrates' Courts Act 1980, the provision that made low-value
+              shoplifting a summary-only offence.{" "}
+              <strong>That repeal has not yet come into force.</strong> Section 255 of the Act
+              commences provisions by regulations, and the shoplifting repeal was not included in
+              the Commencement No. 1 Regulations made in June 2026. Full Fact asked the Home Office
+              in July 2026 when it would commence and had no answer at the time of writing. The £200
+              practice described below therefore still stands today. It is now living on borrowed
+              time rather than describing a permanent feature of the system.
+            </p>
+          </EditorialNote>
 
           {/* Fact sheet image */}
           <Reveal delay={0.12}>
