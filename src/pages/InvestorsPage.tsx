@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 
-const GOLD = "#0D9488";
+const GOLD = "#C9A84C";
 const INK = "#1A1A18";
 const PAPER = "#FAFAF8";
 const MUTED = "#6B6B65";
@@ -83,7 +83,7 @@ export default function InvestorsPage() {
                 Professional retail theft is profitable because the stolen goods have a market. CCTV, guards, and alarms address the theft event. None of them address the resale market that makes the event worth committing.
               </p>
               <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8 }}>
-                Mykei's approach is to make the goods commercially compromised. The ADN is designed to apply a UV-verifiable controlled forensic marker compound to stolen merchandise and create a batch-linked event record in the Mykei Registry. That record is intended to support resale disruption, insurer review, and law-enforcement verification workflows. The forensic incentive for theft is removed.
+                Mykei's approach is to make the goods commercially compromised. ADN applies a UV-verifiable controlled marker compound to stolen merchandise and creates a batch-linked event record in the Mykei Registry. That record supports resale disruption, insurer review, and law-enforcement verification workflows. The forensic incentive for theft is removed.
               </p>
             </div>
             <div>
@@ -95,7 +95,7 @@ export default function InvestorsPage() {
                   ["$796B", "global retail theft losses annually"],
                   ["$31.2B", "AI loss prevention market by 2030"],
                   ["6.2M", "UK retail theft incidents in 2024"],
-                  ["83%", "repeat theft reduction in forensic marking compound pilots"],
+                  ["83%", "repeat theft reduction, Met Police programme 2024, third-party forensic marking (not Mykei's own result)"],
                   ["<10%", "police clear-up rate for retail theft"],
                 ].map(([val, label]) => (
                   <div key={label} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", padding: "10px 0", borderBottom: `1px solid ${RULE}` }}>
@@ -115,8 +115,8 @@ export default function InvestorsPage() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 40 }}>
             {[
-              { stat: "17", label: "claims in pending patent application", note: "No. 2606630.8 (UK), kinetic detection and TIR architecture" },
-              { stat: "5+", label: "letters of intent from retailers", note: "Pilot structure under development. No confirmed cohort date." },
+              { stat: "17", label: "claims in pending patent application", note: "No. 2606630.8 (UK), filed 23 March 2026, patent pending" },
+              { stat: "5", label: "pilot partner slots open", note: "Greater Manchester" },
               { stat: "1", label: "founder, zero investors to date", note: "Revenue-first approach. No dilution before traction." },
             ].map(({ stat, label, note }) => (
               <div key={stat} style={{ borderTop: `2px solid ${GOLD}`, paddingTop: 20 }}>
@@ -139,7 +139,7 @@ export default function InvestorsPage() {
                 The capital goes to two places.
               </h2>
               <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, marginBottom: 16 }}>
-                First: hardware production at scale. The current ADN prototype is hand-assembled for the research phase. Investment unlocks contract manufacturing, which reduces unit cost and enables a national rollout.
+                First: hardware production at scale. The current ADN unit is a hand-assembled bench prototype. Investment unlocks contract manufacturing, which reduces unit cost and enables a national rollout.
               </p>
               <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8 }}>
                 Second: the Mykei Registry. The registry is the network layer of the product. Its value scales with the number of active deployments. Capital here funds platform integrations and the API infrastructure that makes the registry useful to insurers and law enforcement.
@@ -147,7 +147,7 @@ export default function InvestorsPage() {
             </div>
             <div>
               <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8, marginBottom: 20 }}>
-                The pricing model is being developed alongside the hardware. The target is a structure that becomes cash-flow positive early in any deployment programme.
+                Everything else is covered by pilot revenue. The pricing model is designed to be cash-flow positive from the first five deployments.
               </p>
               <p style={{ fontSize: 15, color: MUTED, lineHeight: 1.8 }}>
                 If this is interesting to you, the conversation starts with a call. There is no deck to request. The product is the pitch.

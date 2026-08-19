@@ -5,10 +5,36 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Font preconnect, eliminates 600-900ms critical path latency -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+    <!-- Sitewide font override: every page references 'Sora' / 'JetBrains Mono' /
+         'Playfair Display' by name in inline styles. Rather than editing each
+         occurrence, these font-family names are aliased to Arial here so every
+         existing reference renders as Arial without a per-file edit. -->
+    <style>
+      @font-face {
+        font-family: 'Sora';
+        font-style: normal;
+        font-weight: 100 900;
+        src: local('Arial');
+      }
+      @font-face {
+        font-family: 'JetBrains Mono';
+        font-style: normal;
+        font-weight: 100 800;
+        src: local('Arial');
+      }
+      @font-face {
+        font-family: 'Playfair Display';
+        font-style: normal;
+        font-weight: 400 900;
+        src: local('Arial');
+      }
+      @font-face {
+        font-family: 'Playfair Display';
+        font-style: italic;
+        font-weight: 400 900;
+        src: local('Arial');
+      }
+    </style>
 
     <!-- Inline critical CSS: palette vars + above-the-fold defaults -->
     <style>
@@ -28,34 +54,32 @@
         margin: 0;
         background: #F9F8F6;
         color: #1E1E1E;
-        font-family: 'Sora', system-ui, sans-serif;
+        font-family: Arial, system-ui, sans-serif;
         -webkit-font-smoothing: antialiased;
       }
       #root { min-height: 100vh; }
     </style>
 
     <!-- Primary SEO -->
-    <title>Mykei Securities | Anti-Resale Crime and Asset Integrity</title>
-    <meta name="description" content="Mykei Securities helps shops make stolen goods harder to sell. Security hardware that marks stock, creates a record, and makes resale the risky part. Manchester, UK." />
-    <meta name="keywords" content="Mykei Securities, Michael Esema, Economic Sterilisation, anti-resale crime, asset integrity, Market Reduction Approach, Mike Sutton, stolen goods markets, resale confidence reduction, Mykei Protocol, Mykei Registry, ADN, construction theft, solar theft, tool theft, retail theft economics" />
+    <title>Mykei Securities | Shelf Level Retail Defence</title>
+    <meta name="description" content="Mykei Securities is developing ADN, a shelf level retail defence device in prototype: event detection, controlled marker deployment, and Mykei Registry event records. Pre-pilot, UK patent pending." />
     <meta name="author" content="Michael Esema, Mykei Securities Ltd" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://mykei.io" />
-    <link rel="alternate" type="text/plain" href="https://mykei.io/llms.txt" title="Mykei Securities answer-engine guide" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Mykei Securities" />
-    <meta property="og:title" content="Mykei Securities | Anti-Resale Crime and Asset Integrity" />
-    <meta property="og:description" content="Mykei helps valuable assets become easier to evidence, harder to present as clean, and less trusted in resale when stolen. ADN is a patent-pending forensic shelf node." />
+    <meta property="og:title" content="Mykei Securities | Shelf Level Retail Defence" />
+    <meta property="og:description" content="ADN is a shelf-level retail defence device for high-loss categories. It links event detection, controlled marker deployment, and Mykei Registry records." />
     <meta property="og:url" content="https://mykei.io" />
     <meta property="og:image" content="https://mykei.io/social-share.png" />
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@MykeisecLtd" />
-    <meta name="twitter:title" content="Mykei Securities | Anti-Resale Crime and Asset Integrity" />
-    <meta name="twitter:description" content="Economic Sterilisation, the Mykei Protocol, registry records and the ADN for modern resale-confidence reduction." />
+    <meta name="twitter:site" content="@mykeisecurities" />
+    <meta name="twitter:title" content="Mykei Securities | Shelf Level Retail Defence" />
+    <meta name="twitter:description" content="ADN is a shelf-level retail defence device for high-loss categories. It links event detection, controlled marker deployment, and Mykei Registry records." />
     <meta name="twitter:image" content="https://mykei.io/social-share.png" />
 
     <!-- JSON-LD Organization Schema -->
@@ -67,8 +91,8 @@
       "alternateName": "Mykei Securities",
       "url": "https://mykei.io",
       "logo": "https://mykei.io/favicon.ico",
-      "description": "Mykei Securities is a Manchester-based anti-resale crime and asset-integrity company developing Economic Sterilisation, the Mykei Protocol, registry records and ADN as a patent-pending forensic shelf node.",
-      "foundingDate": "2026",
+      "description": "Mykei Securities is developing ADN, a shelf level retail defence device in prototype: event detection, controlled marker deployment, and Mykei Registry event records. Pre-pilot, UK patent pending.",
+      "foundingDate": "2026-01",
       "founder": {
         "@type": "Person",
         "@id": "https://michaelesema.com/#person",
@@ -78,7 +102,7 @@
         "url": "https://michaelesema.com",
         "nationality": { "@type": "Country", "name": "Nigeria" },
         "homeLocation": { "@type": "Place", "name": "Manchester, Greater Manchester, United Kingdom" },
-        "description": "Michael Esema (full name: Michael Essien Esema) is a Nigerian-born entrepreneur based in Manchester, UK. Founder of Mykei Securities Ltd and proposer of Economic Sterilisation as a modern operational extension of Market Reduction theory."
+        "description": "Michael Esema (full name: Michael Essien Esema) is a Nigerian-born entrepreneur based in Manchester, UK. Originator of Economic Sterilisation (2025). MSc Manchester Metropolitan University. MBA Nigerian Defence Academy. BSc Benson Idahosa University."
       },
       "address": {
         "@type": "PostalAddress",
@@ -87,31 +111,23 @@
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "contactType": "business development",
-        "url": "https://mykei.io/enterprise"
+        "contactType": "sales",
+        "url": "https://mykei.io/pilot"
       },
       "knowsAbout": [
-        "Anti-resale crime",
-        "Asset integrity",
-        "Economic Sterilisation",
-        "Market Reduction Approach",
-        "Mike Sutton",
-        "Stolen goods markets",
-        "Resale confidence reduction",
-        "Asset marking",
-        "Digital ownership registries",
-        "Evidence workflows",
-        "Mykei Registry",
-        "Mykei Protocol",
-        "Construction theft",
-        "Solar theft",
-        "Tool theft",
-        "Infrastructure asset protection",
         "Retail theft prevention",
+        "Forensic retail defence",
+        "Shelf-level retail security",
+        "Controlled marker deployment",
+        "Mykei Registry",
+        "Economic Sterilisation",
+        "Shoplifting prevention",
         "Organised retail crime",
-        "Enterprise and network asset-integrity pilots",
-        "Enterprise loss prevention",
-        "ADN"
+        "Bulk sweep theft",
+        "Retail shrinkage",
+        "No-camera retail security",
+        "Independent retail pilots",
+        "Enterprise loss prevention"
       ],
       "sameAs": [
         "https://michaelesema.com",
@@ -128,7 +144,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Mykei Securities Ltd",
-      "description": "Mykei Securities develops anti-resale crime and asset-integrity systems that connect asset marking, registry records, evidence workflows and resale-confidence reduction.",
+      "description": "Mykei Securities builds ADN, a shelf-level retail defence device that links theft-event detection, controlled marker deployment, and Mykei Registry records. No cameras.",
       "url": "https://mykei.io",
       "logo": "https://mykei.io/mykei-logo.png",
       "address": {
@@ -143,19 +159,19 @@
       "founder": { "@type": "Person", "name": "Michael Esema" },
       "legalName": "Mykei Securities Ltd",
       "identifier": { "@type": "PropertyValue", "propertyID": "Companies House company number", "value": "16984969" },
-      "keywords": "anti-resale crime, asset integrity, Economic Sterilisation, Market Reduction Approach, Michael Esema, Mykei Registry, Mykei Protocol, ADN, construction theft, solar theft, tool theft, retail theft economics",
-      "knowsAbout": ["Economic Sterilisation", "Market Reduction Approach", "Mike Sutton", "Anti-Resale Crime", "Asset Integrity", "Stolen Goods Markets", "Resale Confidence Reduction", "Asset Marking", "Evidence Workflows", "Mykei Registry", "Mykei Protocol", "Construction Theft", "Solar Theft", "Tool Theft", "Retail Theft Economics", "ADN"],
+      "keywords": "retail security, bulk sweep theft, ADN, economic sterilisation, forensic retail defence, retail theft prevention Manchester, batch-linked event record, registry-linked marker",
+      "knowsAbout": ["Economic Sterilisation", "Bulk Sweep Theft", "Forensic Retail Defence", "Retail Security Hardware", "Shelf-Level Retail Security", "Organised Retail Crime", "Shoplifting Prevention", "Retail Shrinkage", "Controlled Marker Deployment", "Anti-Theft Device Retail", "IoT Security Hardware", "Mykei Registry", "Enterprise Loss Prevention"],
       "sameAs": ["https://mykei.io", "https://michaelesema.com"]
     }
     </script>
 
-    <!-- SoftwareApplication Schema for ADN -->
+    <!-- SoftwareApplication Schema for ADN system -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Mykei Registry",
-      "description": "Registry and evidence-readiness layer by Mykei Securities for asset records, marking status, incident context and resale-confidence reduction workflows.",
+      "description": "Registry layer by Mykei Securities that records batch-linked ADN marker deployment events with device identifier, store reference, timestamp, and cartridge batch reference.",
       "applicationCategory": "SecurityApplication",
       "operatingSystem": "Cloud (secure cloud registry)",
       "url": "https://mykei.io",
@@ -171,7 +187,7 @@
       "name": "Mykei Securities",
       "alternateName": "Mykei Securities Ltd",
       "url": "https://mykei.io",
-      "description": "Mykei Securities develops anti-resale crime and asset-integrity systems for asset marking, registry records, evidence workflows and resale-confidence reduction.",
+      "description": "Mykei Securities develops ADN, a shelf-level forensic retail defence device for retail theft prevention, controlled marker deployment, and Mykei Registry records.",
       "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd" },
       "inLanguage": "en-GB"
     }
@@ -184,8 +200,8 @@
       "@type": "ProfilePage",
       "name": "Michael Esema, Founder & CEO, Mykei Securities Ltd",
       "url": "https://mykei.io/founder",
-      "description": "Profile of Michael Esema (Michael Essien Esema), Nigerian-born entrepreneur based in Manchester, UK. Founder of Mykei Securities Ltd and proposer of Economic Sterilisation as an operational extension of Market Reduction theory.",
-      "dateModified": "2026-06-11T00:00:00Z",
+      "description": "Profile of Michael Esema (Michael Essien Esema), Nigerian-born entrepreneur based in Manchester, UK. Founder of Mykei Securities Ltd and originator of Economic Sterilisation (coined 2025).",
+      "dateModified": "2026-03-30T00:00:00Z",
       "mainEntity": {
         "@type": "Person",
         "@id": "https://michaelesema.com/#person",
@@ -213,11 +229,11 @@
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Economic Sterilisation, A Technology-Enabled Extension of Market Reduction Theory",
-      "description": "Economic Sterilisation is Mykei's framework for reducing the resale confidence and economic acceptability of stolen goods through asset marking, registry records, evidence workflows and lawful verification. It builds on Mike Sutton's Market Reduction Approach.",
+      "headline": "Economic Sterilisation, The Retail Security Doctrine Coined by Michael Esema",
+      "description": "Economic Sterilisation is the doctrine of disrupting the resale incentive behind retail theft through forensic marking and registry event records. Coined by Michael Esema, Mykei Securities Ltd, Manchester, 2025.",
       "url": "https://mykei.io/economic-sterilisation",
       "datePublished": "2025-01-01",
-      "dateModified": "2026-06-11T00:00:00Z",
+      "dateModified": "2026-03-30T00:00:00Z",
       "author": {
         "@type": "Person",
         "@id": "https://michaelesema.com/#person",
@@ -228,7 +244,7 @@
       "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io" },
       "mainEntityOfPage": "https://mykei.io/economic-sterilisation",
       "about": { "@type": "DefinedTerm", "name": "Economic Sterilisation" },
-      "keywords": "economic sterilisation, Michael Esema, Mykei Securities, Market Reduction Approach, Mike Sutton, stolen goods markets, anti-resale crime, asset integrity, resale confidence reduction, asset marking, digital registry, evidence workflows, Mykei Protocol, ADN"
+      "keywords": "economic sterilisation, theft economic sterilisation system, TESS, retail theft doctrine, Michael Esema, Mykei Securities, resale incentive, forensic retail defence, batch-linked event record"
     }
     </script>
 
@@ -239,12 +255,12 @@
       "@type": "DefinedTerm",
       "name": "Economic Sterilisation",
       "alternateName": ["Theft Economic Sterilisation System", "TESS", "Economic Sterilization"],
-      "description": "Mykei's operational framework for reducing the resale confidence and economic acceptability of stolen goods through asset marking, registry records, evidence workflows and lawful verification. It should be understood as a modern commercial extension of Market Reduction theory, not as the first discovery that stolen-goods markets drive theft.",
+      "description": "The systematic disruption of the resale incentive behind retail theft through forensic marking and registry event records, linking theft-related events to a device, location, time, and cartridge reference. Where conventional security deters or detects, Economic Sterilisation removes the commercial outcome that makes theft worthwhile.",
       "inDefinedTermSet": {
         "@type": "DefinedTermSet",
-        "name": "Mykei Securities Anti-Resale Crime Glossary",
+        "name": "Mykei Securities Retail Security Glossary",
         "url": "https://mykei.io",
-        "description": "Terms defined by Mykei Securities Ltd in anti-resale crime, asset integrity, registry records and resale-confidence reduction"
+        "description": "Terms coined and defined by Mykei Securities Ltd in the field of forensic retail defence"
       },
       "url": "https://mykei.io/economic-sterilisation",
       "sameAs": "https://mykei.io/economic-sterilisation",
@@ -262,8 +278,8 @@
       },
       "subjectOf": {
         "@type": "TechArticle",
-        "name": "Mykei Protocol and ADN",
-        "url": "https://mykei.io/adn-1"
+        "name": "ADN Active Forensic Defence Node",
+        "url": "https://mykei.io/adn"
       }
     }
     </script>
@@ -273,12 +289,16 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied'
+    });
     gtag('config', 'G-7GCJY8N89S');
   </script>
   <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/3827feeaf5b6081f66aa049a/script.js"></script>
   </head>
   <body>
-    <div id="root"><h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Mykei Securities. Anti-resale crime and asset integrity. Economic Sterilisation by Michael Esema.</h1></div>
+    <div id="root"><h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Mykei Securities. ADN Forensic Retail Defence. Economic Sterilisation by Michael Esema.</h1></div>
 
     <!--
       Hidden form for Netlify Forms bot detection.
@@ -302,7 +322,7 @@
       <textarea name="message"></textarea>
     </form>
 
-    <!-- ADN-1 pilot claim form, detected by Netlify build bot -->
+    <!-- ADN pilot claim form, detected by Netlify build bot -->
     <form name="adn1-claim" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true">
       <input name="bot-field" />
       <input name="name"     type="text"  />

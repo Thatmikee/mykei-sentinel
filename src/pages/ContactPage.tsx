@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Footer from "@/components/Footer";
 
-const GOLD = "#0D9488";
+const GOLD = "#765C14";
 const INK = "#1A1A18";
 const PAPER = "#FAFAF8";
 const MUTED = "#6B6B65";
@@ -20,8 +20,8 @@ function SimpleNav() {
       <a href="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: INK, textDecoration: "none" }}>
         Mykei Securities
       </a>
-      <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
-        Follow the Research
+      <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
+        Apply for Pilot
       </a>
     </nav>
   );
@@ -31,7 +31,7 @@ export default function ContactPage() {
   useEffect(() => {
     document.title = "Contact | Mykei Securities Ltd";
     const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", "Contact Mykei Securities Ltd. Reach Michael Esema directly for research enquiries, press, investment, and enterprise enquiries about the ADN forensic retail security system.");
+    if (desc) desc.setAttribute("content", "Contact Mykei Securities Ltd. Reach Michael Esema directly for pilot enquiries, press, investment, and enterprise deployments of the ADN forensic retail security system.");
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.href = "https://mykei.io/contact";
     const ogUrl = document.querySelector('meta[property="og:url"]');
@@ -42,10 +42,10 @@ export default function ContactPage() {
 
   const contacts = [
     {
-      label: "Research enquiries",
-      desc: "Independent retailers interested in following the ADN research programme.",
-      cta: "Follow the Research",
-      href: "/signal",
+      label: "Pilot enquiries",
+      desc: "Independent retailers interested in the Mykei Independent Retail Pilot.",
+      cta: "Apply via the pilot form",
+      href: "/pilot",
       external: false,
     },
     {
@@ -117,14 +117,12 @@ export default function ContactPage() {
               <div>
                 <strong style={{ color: INK, fontWeight: 500 }}>Mykei Securities Ltd</strong><br />
                 Company No. 16984969<br />
-                Bartle House, Oxford Court<br />
-                Manchester, M2 3WQ<br />
                 England and Wales
               </div>
               <div>
                 <strong style={{ color: INK, fontWeight: 500 }}>Patent</strong><br />
                 UK patent application No. 2606630.8<br />
-                17 claims, filed 2026<br />
+                Patent pending. Filed 23 March 2026.<br />
                 <a href="https://michaelesema.com" target="_blank" rel="noopener noreferrer" style={{ color: GOLD, textDecoration: "none" }}>michaelesema.com</a>
               </div>
             </div>

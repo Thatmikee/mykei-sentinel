@@ -4,8 +4,9 @@
 import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
+import EditorialNote from "@/components/EditorialNote";
 
-const GOLD = "#0D9488";
+const GOLD = "#c9a84c";
 const INK  = "#1E1E1E";
 const MID  = "#5c4a32";
 const RULE = "#DDD5C4";
@@ -49,7 +50,7 @@ export default function SignalShopliftingSystemPage() {
           "headline": "Shoplifting Up 133% in Five Years. London Charges 1 in 14. The System Has a Name for This: Acceptable Loss.",
           "description": "530,000 shoplifting offences. Charges in fewer than 1 in 5 cases nationally, 1 in 14 in London. Organised gangs operate systemically while policing responds per-incident. Michael Esema on Economic Sterilisation as the structural fix.",
           "url": "https://mykei.io/signal/shoplifting-133-percent-london-1-in-14",
-          "datePublished": "2026-05-21T10:00:00Z",
+          "datePublished": "2026-04-16T10:00:00Z",
           "author": { "@type": "Person", "name": "Michael Esema", "url": "https://mykei.io/founder" },
           "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io", "logo": { "@type": "ImageObject", "url": "https://mykei.io/mykei-logo.png" } },
           "image": "https://mykei.io/social-share.png",
@@ -73,7 +74,7 @@ export default function SignalShopliftingSystemPage() {
           { name: "Shoplifting Up 133% in Five Years", url: "https://mykei.io/signal/shoplifting-133-percent-london-1-in-14" },
         ]}
         articleMeta={{
-          publishedTime: "2026-05-21T10:00:00Z",
+          publishedTime: "2026-04-16T10:00:00Z",
           author: "Michael Esema",
           section: "Retail Security",
           tags: ["shoplifting", "organised retail crime", "London", "thematic coding", "Liberal Democrats", "economic sterilisation"],
@@ -85,7 +86,7 @@ export default function SignalShopliftingSystemPage() {
         {/* Nav */}
         <nav style={{ borderBottom: `1px solid ${RULE}`, padding: "0 40px", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "rgba(255,255,255,0.97)", backdropFilter: "blur(12px)", zIndex: 100 }}>
           <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", color: GOLD, textDecoration: "none", textTransform: "uppercase" }}>The Signal</a>
-          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", color: INK, textDecoration: "none", textTransform: "uppercase", background: GOLD, padding: "8px 18px" }}>Follow the Research</a>
+          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", color: INK, textDecoration: "none", textTransform: "uppercase", background: GOLD, padding: "8px 18px" }}>Join the Pilot</a>
         </nav>
 
         <article style={{ maxWidth: 740, margin: "0 auto", padding: "64px 24px 100px" }}>
@@ -97,7 +98,7 @@ export default function SignalShopliftingSystemPage() {
               <span style={{ width: 3, height: 3, borderRadius: "50%", background: RULE, display: "inline-block" }} />
               <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999" }}>Issue 15</span>
               <span style={{ width: 3, height: 3, borderRadius: "50%", background: RULE, display: "inline-block" }} />
-              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999" }}>21 May 2026</span>
+              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999" }}>16 April 2026</span>
               <span style={{ width: 3, height: 3, borderRadius: "50%", background: RULE, display: "inline-block" }} />
               <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999" }}>7 min read</span>
               <span style={{ marginLeft: 8, background: "#1a1a2e", color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 9, fontWeight: 700, letterSpacing: "1px", padding: "3px 8px", textTransform: "uppercase" }}>Home Office Data</span>
@@ -118,20 +119,24 @@ export default function SignalShopliftingSystemPage() {
             </p>
           </Reveal>
 
-          {/* Hero Image */}
-          <Reveal>
-            <figure style={{ margin: "0 0 36px" }}>
-              <img
-                src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=1200&q=80&auto=format&fit=crop"
-                alt="Empty retail store aisle. The aftermath of organised theft."
-                style={{ width: "100%", borderRadius: 6, display: "block", maxHeight: 420, objectFit: "cover" }}
-                loading="lazy"
-              />
-              <figcaption style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", marginTop: 8, letterSpacing: "0.5px" }}>
-                Photo: Unsplash / retail crime
-              </figcaption>
-            </figure>
-          </Reveal>
+          <EditorialNote kind="context" date="2026-08-18">
+            <p style={{ margin: "0 0 10px" }}>
+              Two figures in this piece have since been superseded, and we are leaving the original
+              text intact rather than quietly editing it.
+            </p>
+            <p style={{ margin: "0 0 10px" }}>
+              <strong>Volume.</strong> ONS figures published in July 2026 record 507,086 shoplifting
+              offences in the year to March 2026, a fall of about 4% on the previous year. It is the
+              first recorded annual decline after several years of increases.
+            </p>
+            <p style={{ margin: 0 }}>
+              <strong>Charge rate.</strong> The Metropolitan Police reported in August 2026 that
+              positive outcomes rose 123% to 5,996, and that a direct evidence-submission scheme
+              lifted the positive-outcome rate from 7.3% to 29.4% across six pilot boroughs before
+              expanding to eight more. The London ratio quoted below is no longer current. The
+              structural argument of this piece does not depend on it, but the number does.
+            </p>
+          </EditorialNote>
 
           {/* Stat block */}
           <Reveal delay={0.12}>
@@ -215,13 +220,13 @@ export default function SignalShopliftingSystemPage() {
 
           <Reveal>
             <p style={{ fontSize: 17, lineHeight: 1.85, marginBottom: 24, color: INK }}>
-              <a href="/economic-sterilisation" style={{ color: GOLD, textDecoration: "underline" }}>Economic Sterilisation</a> is the doctrine that addresses it. Not improved detection rates. Not cleaner CCTV footage. The only question that matters: what happens to the stolen goods once they leave the store? If they sell, the theft worked. If they cannot be moved, it didn't.
+              Economic Sterilisation is the doctrine that addresses it directly. Not: improve detection rates. Not: make CCTV footage cleaner. The question is: what happens to the stolen goods after they leave the store? If they can be sold, they have value. If they cannot, the theft did not produce the outcome the thief needed.
             </p>
           </Reveal>
 
           <Reveal>
             <p style={{ fontSize: 17, lineHeight: 1.85, marginBottom: 24, color: INK }}>
-              In the proposed ADN workflow, a controlled marker would be deployed onto the item and registered to the Mykei Registry with a timestamp, store ID, and unique batch code. The design intention is that the batch code travels with the goods. The goods become harder to sell anonymously. A buyer who acquires marked goods would be connected to a verifiable event record.
+              When the ADN fires, a controlled marker is deployed onto the item and registered to the Mykei Registry with a timestamp, store ID, and unique batch code. That batch code travels with the goods. The goods become harder to sell anonymously. A buyer who acquires marked goods becomes connected to a verifiable event record. The goods stop being liquid.
             </p>
           </Reveal>
 
@@ -233,7 +238,7 @@ export default function SignalShopliftingSystemPage() {
 
           <Reveal>
             <p style={{ fontSize: 17, lineHeight: 1.85, marginBottom: 40, color: INK }}>
-              The charge rate in London is 1 in 14. That is the system working at capacity. The question is not whether it can be pushed to 1 in 10. The question is whether the stolen goods were worth taking in the first place. The ADN is designed to change that answer before the police are ever called.
+              The charge rate in London is 1 in 14. That is the system working at capacity. The question is not whether it can be pushed to 1 in 10. The question is whether the stolen goods were worth taking in the first place. ADN changes that answer before the police are ever called.
             </p>
           </Reveal>
 
@@ -247,7 +252,7 @@ export default function SignalShopliftingSystemPage() {
                 <li style={{ fontSize: 15, color: INK }}>800 cases a day close with no suspect identified (Liberal Democrats, House of Commons Library data)</li>
                 <li style={{ fontSize: 15, color: INK }}>Thematic coding reveals organised gang networks operating across multiple stores, while the policing architecture responds per-incident</li>
                 <li style={{ fontSize: 15, color: INK }}>Economic Sterilisation removes the commercial logic of theft before any police response is needed</li>
-                <li style={{ fontSize: 15, color: INK }}>The ADN Mykei Registry is designed to function as distributed thematic intelligence, linking incidents across stores via shared batch codes</li>
+                <li style={{ fontSize: 15, color: INK }}>The ADN Mykei Registry functions as distributed thematic intelligence, linking incidents across stores via shared batch codes</li>
               </ul>
             </div>
           </Reveal>
@@ -255,12 +260,12 @@ export default function SignalShopliftingSystemPage() {
           {/* Pilot CTA */}
           <Reveal>
             <div style={{ background: "#fff", border: `2px solid ${GOLD}`, borderRadius: 6, padding: "36px 40px", marginBottom: 48, textAlign: "center" }}>
-              <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 22, color: INK, marginBottom: 10 }}>The research continues.</div>
+              <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 22, color: INK, marginBottom: 10 }}>The Independent Retail Pilot is open for expressions of interest.</div>
               <p style={{ fontFamily: "'Georgia',serif", fontSize: 15, color: "#555", lineHeight: 1.7, marginBottom: 24 }}>
-                Mykei publishes findings through The Signal as the ADN development programme continues.
+                Independent retailers in Manchester can apply for an upcoming pilot cohort. No obligation after pilot. Commercial terms agreed directly with Mykei.
               </p>
-              <a href="/signal" style={{ display: "inline-block", background: GOLD, color: INK, fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", padding: "14px 32px", borderRadius: 4, textDecoration: "none" }}>
-                Read the Archive
+              <a href="/pilot" style={{ display: "inline-block", background: GOLD, color: INK, fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", padding: "14px 32px", borderRadius: 4, textDecoration: "none" }}>
+                Apply for the Pilot
               </a>
             </div>
           </Reveal>
@@ -293,7 +298,7 @@ export default function SignalShopliftingSystemPage() {
           <div style={{ display: "flex", gap: 24 }}>
             <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", textDecoration: "none" }}>All articles</a>
             <a href="/economic-sterilisation" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", textDecoration: "none" }}>Economic Sterilisation</a>
-            <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", textDecoration: "none" }}>Follow the Research</a>
+            <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", textDecoration: "none" }}>Join the Pilot</a>
           </div>
         </footer>
 

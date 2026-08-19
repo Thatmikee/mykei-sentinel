@@ -50,7 +50,7 @@ export default function JanuaryRetailTheftStoppedLookingRandom() {
 
       <p>
         Forensic retail infrastructure fills the gap between what CCTV records and what a later
-        investigation can actually use. Police, guards, cameras, store policy. None of that
+        investigation can actually use. Police, guards, cameras, store policy, none of that
         changes. What changes is whether the shelf event itself creates a traceable record.
       </p>
 
@@ -62,8 +62,8 @@ export default function JanuaryRetailTheftStoppedLookingRandom() {
       <h2>Read next</h2>
 
       <p>
-        See <a href="/howitworks">how the ADN works</a> and the <a href="/adn">ADN system page</a>.
-        To follow the research, visit <a href="/signal">mykei.io/signal</a>.
+        See <a href="/howitworks">how ADN works</a> and the <a href="/adn">ADN product page</a>.
+        For retailers with repeat shelf theft, start with a <a href="/pilot">store fit check</a>.
       </p>
 
       <h2>Source</h2>

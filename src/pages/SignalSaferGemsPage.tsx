@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#0D9488";
+const GOLD = "#c9a84c";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -49,8 +49,8 @@ export default function SignalSaferGemsPage() {
           "headline": "SaferGems Logged 10 Armed Robberies in Three Months. The Government's Answer Won't Be Ready Until 2030.",
           "description": "SaferGems recorded 10 armed jewellery robberies in Q1 2026, up from 1 in 2025. £3.2M stolen. The institutional response is AI crime mapping due in 2030 and fog machines that do not remove resale value. Michael Esema on Economic Sterilisation as the alternative doctrine.",
           "url": "https://mykei.io/signal/safergems-jewellery-theft-ai-police-response",
-          "datePublished": "2026-05-07T14:00:00Z",
-          "dateModified": "2026-05-07T14:00:00Z",
+          "datePublished": "2026-04-15T14:00:00Z",
+          "dateModified": "2026-04-15T14:00:00Z",
           "author": { "@type": "Person", "name": "Michael Esema", "url": "https://mykei.io/founder" },
           "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io", "logo": { "@type": "ImageObject", "url": "https://mykei.io/mykei-logo.png" } },
           "image": "https://mykei.io/social-share.png",
@@ -74,7 +74,7 @@ export default function SignalSaferGemsPage() {
           { name: "SaferGems jewellery theft surge: AI policing and the doctrine that actually works", url: "https://mykei.io/signal/safergems-jewellery-theft-ai-police-response" },
         ]}
         articleMeta={{
-          publishedTime: "2026-05-07T14:00:00Z",
+          publishedTime: "2026-04-15T14:00:00Z",
           author: "Michael Esema",
           section: "Retail Security",
           tags: ["SaferGems", "jewellery theft", "AI policing", "Metropolitan Police", "Surrey Police", "ITV News", "economic sterilisation", "ADN"],
@@ -86,7 +86,7 @@ export default function SignalSaferGemsPage() {
         {/* Nav */}
         <nav style={{ borderBottom: `1px solid ${RULE}`, padding: "0 40px", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "rgba(255,255,255,0.97)", backdropFilter: "blur(12px)", zIndex: 100 }}>
           <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", color: GOLD, textDecoration: "none", textTransform: "uppercase" }}>The Signal</a>
-          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "1.5px", color: INK, textDecoration: "none", textTransform: "uppercase", border: `1px solid ${RULE}`, padding: "6px 16px", borderRadius: 4 }}>Follow the Research</a>
+          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "1.5px", color: INK, textDecoration: "none", textTransform: "uppercase", border: `1px solid ${RULE}`, padding: "6px 16px", borderRadius: 4 }}>Join the Pilot</a>
         </nav>
 
         {/* Header */}
@@ -94,7 +94,7 @@ export default function SignalSaferGemsPage() {
           <Reveal>
             <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 20, flexWrap: "wrap" }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "2.5px", textTransform: "uppercase", color: GOLD }}>
-                The Signal · Issue 13 · May 2026
+                The Signal · Issue 13 · April 2026
               </div>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "1.5px", textTransform: "uppercase", background: "#c0392b", color: "#fff", padding: "3px 10px", borderRadius: 3 }}>
                 As reported on ITV News
@@ -116,26 +116,11 @@ export default function SignalSaferGemsPage() {
               <div style={{ width: 40, height: 40, borderRadius: "50%", background: INK, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, color: "#fff", fontSize: 14 }}>ME</div>
               <div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: INK }}>Michael Esema</div>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: MID }}>Founder, Mykei Securities · 7 May 2026 · 8 min read</div>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: MID }}>Founder, Mykei Securities · 15 April 2026 · 8 min read</div>
               </div>
             </div>
           </Reveal>
         </header>
-
-        {/* Hero Image */}
-        <div style={{ maxWidth: 900, margin: "0 auto 48px", padding: "0 32px" }}>
-          <figure style={{ margin: 0 }}>
-            <img
-              src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=80&auto=format&fit=crop"
-              alt="Diamond jewellery on dark velvet, the high-value goods driving armed robbery increases"
-              style={{ width: "100%", borderRadius: 6, display: "block", maxHeight: 480, objectFit: "cover" }}
-              loading="lazy"
-            />
-            <figcaption style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", marginTop: 8, letterSpacing: "0.5px" }}>
-              Photo: Unsplash / jewellery theft
-            </figcaption>
-          </figure>
-        </div>
 
         {/* Article */}
         <article style={{ maxWidth: 760, margin: "0 auto", padding: "0 32px 80px" }}>
@@ -146,7 +131,7 @@ export default function SignalSaferGemsPage() {
               {[
                 { n: "10×", label: "increase in armed jewellery robberies, Q1 2025 to Q1 2026", src: "SaferGems Q1 2026" },
                 { n: "£3.2M", label: "stolen in Q1 2026 alone, up from £60K in the whole of 2025", src: "SaferGems Q1 2026" },
-                { n: "£4,000+", label: "per troy ounce of gold, making physical stock a highly liquid target", src: "London Bullion Market May 2026" },
+                { n: "£4,000+", label: "per troy ounce of gold, making physical stock a highly liquid target", src: "London Bullion Market April 2026" },
               ].map(({ n, label, src }) => (
                 <div key={n} style={{ border: `1px solid ${RULE}`, borderRadius: 8, padding: "20px 18px", background: WARM }}>
                   <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 28, fontWeight: 700, color: INK, lineHeight: 1, marginBottom: 8 }}>{n}</div>
@@ -201,7 +186,7 @@ export default function SignalSaferGemsPage() {
                   { q: "January 2026", v: "Surge begins. SaferGems escalates alert level." },
                   { q: "March 2026", v: "Haringey Bilezzik attack. 4 suspects, 3 mopeds. Under 2 minutes." },
                   { q: "Q1 2026 total", v: "10 incidents · £3.2M stolen · 10× year-on-year" },
-                  { q: "May 2026", v: "Met Police DCI Scott Mather speaks publicly. SaferGems issues sector-wide guidance." },
+                  { q: "April 2026", v: "Met Police DCI Scott Mather speaks publicly. SaferGems issues sector-wide guidance." },
                 ].map(({ q, v }) => (
                   <div key={q} style={{ display: "flex", gap: 20, alignItems: "flex-start", borderBottom: "1px solid rgba(255,255,255,0.08)", paddingBottom: 12 }}>
                     <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: GOLD, flexShrink: 0, minWidth: 120, lineHeight: 1.6 }}>{q}</span>
@@ -215,10 +200,10 @@ export default function SignalSaferGemsPage() {
           <Reveal>
             <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>The government's response: map the crime, wait five years.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              In May 2026, DSIT and UKRI announced the Concentrations of Crime Data Challenge, a £4 million programme to build an AI system that maps crime hotspots across England and Wales. Peter Kyle, the Science and Technology Secretary, said the system would "help police get ahead of crime" rather than merely respond to it. Dame Diana Johnson, the Policing Minister, described it as a tool to direct resources toward knife crime, theft, and antisocial behaviour before incidents escalate.
+              In April 2026, DSIT and UKRI announced the Concentrations of Crime Data Challenge, a £4 million programme to build an AI system that maps crime hotspots across England and Wales. Peter Kyle, the Science and Technology Secretary, said the system would "help police get ahead of crime" rather than merely respond to it. Dame Diana Johnson, the Policing Minister, described it as a tool to direct resources toward knife crime, theft, and antisocial behaviour before incidents escalate.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The prototype is due in May 2026. Operational deployment is scheduled for 2030. The ten armed robberies that already happened in Q1 sit outside both timelines.
+              The prototype is due in April 2026. Operational deployment is scheduled for 2030. The ten armed robberies that already happened in Q1 sit outside both timelines.
             </p>
           </Reveal>
 
@@ -258,15 +243,15 @@ export default function SignalSaferGemsPage() {
                 </ul>
               </div>
               <div style={{ border: `1px solid ${GOLD}`, borderRadius: 8, padding: "24px 22px", background: WARM }}>
-                <a href="/economic-sterilisation" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, textDecoration: "underline", marginBottom: 14, display: "block" }}>Economic Sterilisation</a>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Economic Sterilisation</div>
                 <ul style={{ padding: 0, margin: 0, listStyle: "none" }}>
                   {[
                     "Marks goods forensically at the point of ownership",
-                    "Batch code designed to be registered in the Mykei Registry",
+                    "Batch code registered in the Mykei Registry",
                     "Stolen goods become commercially difficult to move",
                     "Registry event record supports resale verification workflows",
                     "UV-detectable marker visible at any inspection",
-                    "Designed for deployment in high-value retail environments",
+                    "Active from day one of installation",
                   ].map((t, i) => (
                     <li key={i} style={{ fontSize: 13, lineHeight: 1.7, color: INK, padding: "5px 0", borderBottom: i < 5 ? `1px solid ${RULE}` : "none" }}>{t}</li>
                   ))}
@@ -278,7 +263,7 @@ export default function SignalSaferGemsPage() {
           <Reveal>
             <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>SaferGems is recommending fog machines. This is the same problem.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              In its May 2026 guidance, SaferGems recommended that jewellers consider security fog systems as part of their response protocol. A fog machine fires when intruders are detected, reduces visibility to near zero, and forces them to leave.
+              In its April 2026 guidance, SaferGems recommended that jewellers consider security fog systems as part of their response protocol. A fog machine fires when intruders are detected, reduces visibility to near zero, and forces them to leave.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
               We covered last week why fog systems share the same structural failure as CCTV. The test is this: after your security system fires, are the stolen goods still sellable? For fog, the answer is yes. If the crew got out with the stock before the fog deployed, or if they return with better timing, the goods are clean. There is no forensic marker. There is no registry entry. A buyer cannot distinguish fog-adjacent stolen gold from legitimately purchased gold.
@@ -299,7 +284,7 @@ export default function SignalSaferGemsPage() {
           <Reveal>
             <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>What actually changes the economics.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The Active Deterrent Node (ADN) deployment module marks every item in a display case with a forensic marker compound within 200 milliseconds of activation. The batch code registers in the Mykei Registry in real time. From that point, every piece of stock in the affected area carries a UV-visible marker tied to that specific retailer's registry entry.
+              The ADN deployment module is designed to mark every item in a display case with a forensic marker compound within 200 milliseconds of activation. The batch code is designed to register in the Mykei Registry, which is not yet live. From that point, the intent is that every piece of stock in the affected area carries a UV-visible marker tied to that specific retailer's registry entry.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
               A crew that takes marked gold cannot sell it anonymously. Listing on eBay or Vinted leaves a batch record. Presenting it to a legitimate trade buyer exposes the UV marker. The item is commercially difficult to move. The robbery has not produced the outcome the crew planned for.
@@ -319,7 +304,7 @@ export default function SignalSaferGemsPage() {
                   "Gold at £4,000+/oz means high-street jewellery stock has the economics of cash. The incentive will persist regardless of police visibility.",
                   "The UK Government's £4M AI crime mapping system targets operational deployment in 2030. The surge is happening now.",
                   "SaferGems recommends fog machines. Fog systems do not affect the resale value of stolen goods. The incentive is unchanged.",
-                  "Economic Sterilisation removes the incentive by making stolen goods harder to resell. The ADN is designed to mark stock forensically. Design target: activation in under 200ms.",
+                  "Economic Sterilisation removes the incentive by making stolen goods commercially inert. The ADN marks stock forensically at the point of activation, in 200ms, permanently.",
                 ].map((t, i) => (
                   <li key={i} style={{ display: "flex", gap: 12, padding: "9px 0", borderBottom: i < 4 ? `1px solid ${RULE}` : "none", fontSize: 14, lineHeight: 1.65, color: INK }}>
                     <span style={{ color: GOLD, fontWeight: 700, flexShrink: 0, fontFamily: "'JetBrains Mono',monospace", fontSize: 12 }}>0{i + 1}</span>
@@ -334,9 +319,9 @@ export default function SignalSaferGemsPage() {
           <Reveal>
             <div style={{ textAlign: "center", border: `1px solid ${RULE}`, borderRadius: 10, padding: "40px 32px", marginBottom: 48 }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Independent Retail Pilot · 2026</div>
-              <h3 style={{ fontSize: 22, fontWeight: 700, color: INK, margin: "0 0 12px" }}>The research continues.</h3>
-              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 auto 28px" }}>Mykei publishes findings through The Signal as the ADN development programme continues.</p>
-              <a href="/signal" style={{ display: "inline-block", background: GOLD, color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 700, padding: "14px 36px", borderRadius: 6, textDecoration: "none" }}>Read the Archive</a>
+              <h3 style={{ fontSize: 22, fontWeight: 700, color: INK, margin: "0 0 12px" }}>Independent Retail Pilot. Non-binding letters of intent only.</h3>
+              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 auto 28px" }}>Pricing scoped per pilot. No lock-in after the pilot. Direct founding team support.</p>
+              <a href="/pilot" style={{ display: "inline-block", background: GOLD, color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 700, padding: "14px 36px", borderRadius: 6, textDecoration: "none" }}>Apply for the Pilot</a>
             </div>
           </Reveal>
 

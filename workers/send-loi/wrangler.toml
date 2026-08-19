@@ -1,0 +1,22 @@
+name = "send-loi"
+main = "worker.js"
+compatibility_date = "2026-04-13"
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+# Optional but recommended: per-IP rate limiting on this endpoint.
+# Requires no external service — Cloudflare's native Workers rate limiter.
+# namespace_id is any positive-integer string you choose (must be unique within this worker).
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 5
+  period = 60
+
+# Secrets (set once per environment, never committed):
+#   wrangler secret put RESEND_API_KEY
+#   wrangler secret put TURNSTILE_SECRET_KEY

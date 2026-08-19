@@ -85,7 +85,7 @@ export default function Adn1HowItWorks() {
         form of biometric processing. It does not collect or store personal data about
         individuals in the retail environment. The event payload logged to AWS IoT Core contains
         no information that identifies or could be used to identify any person. No personal data
-        is collected at any stage of the sequence. There is nothing to protect because nothing
+        is collected at any stage of the sequence, there is nothing to protect because nothing
         identifying is captured by design.
       </p>
 
@@ -102,9 +102,9 @@ export default function Adn1HowItWorks() {
       </p>
 
       <p style={{ marginTop: "2rem", fontStyle: "italic" }}>
-        Pricing is under development. Follow the research at{" "}
-        <a href="/signal" style={{ textDecoration: "underline" }}>
-          mykei.io/signal
+        Commercial terms are agreed directly with Mykei for pilot retailers. See{" "}
+        <a href="/pilot" style={{ textDecoration: "underline" }}>
+          mykei.io/pilot
         </a>
         .
       </p>

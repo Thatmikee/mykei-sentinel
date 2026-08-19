@@ -30,7 +30,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-const GOLD = "#0D9488";
+const GOLD = "#c9a84c";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
 const FAINT = "#f5f1eb";
@@ -56,7 +56,7 @@ export default function BlogBeyondBuzzerPage() {
   useEffect(() => {
     document.title = "Beyond the Buzzer: How Forensic Marking is Shrinking the Secondary Market for Stolen Goods | Mykei Securities";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Proprietary Forensic Marking Compound reduced theft by 83% in police projects. SmartWater helped Homebase cut stock loss by 20%. The ADN is designed to go further: autonomous deployment, registry-linked event records, and Economic Sterilisation at scale. Patent-pending R&D; field validation not yet begun.");
+    if (meta) meta.setAttribute("content", "Third-party forensic marking programmes have reported theft reductions in police projects and retailer case studies. ADN is designed to go further with autonomous deployment, registry-linked event records, and Economic Sterilisation at scale, though this has not yet been field-validated.");
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute("href", "https://mykei.io/blog/beyond-the-buzzer");
 
@@ -67,7 +67,7 @@ export default function BlogBeyondBuzzerPage() {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "Beyond the Buzzer: How Forensic Marking is Shrinking the Secondary Market for Stolen Goods",
-        "description": "Proprietary Forensic Marking Compound reduced theft by 83% in police projects. SmartWater helped Homebase cut stock loss by 20%. The ADN is designed to go further: autonomous deployment, registry-linked event records, and Economic Sterilisation at scale. Patent-pending R&D; field validation not yet begun.",
+        "description": "Third-party forensic marking programmes have reported theft reductions in police projects and retailer case studies. ADN is designed to go further with autonomous deployment, registry-linked event records, and Economic Sterilisation at scale, though this has not yet been field-validated.",
         "author": { "@type": "Person", "name": "Michael Esema", "url": "https://michaelesema.com" },
         "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io" },
         "datePublished": "2026-04-10",
@@ -96,16 +96,15 @@ export default function BlogBeyondBuzzerPage() {
     <>
       <PageSEO
         title="Beyond the Buzzer: How Forensic Marking is Shrinking the Stolen Goods Market | Mykei Securities"
-        description="Proprietary Forensic Marking Compound reduced theft by 83% in police operations. SmartWater cut Homebase stock loss by 20%. The ADN is designed to go further: autonomous deployment, registry-linked event records, and Economic Sterilisation at scale. Patent-pending R&D; field validation not yet begun."
+        description="Third-party forensic marking programmes have reported theft reductions in police operations and retailer case studies. ADN is designed to go further with autonomous deployment, registry-linked event records, and Economic Sterilisation at scale, though this has not yet been field-validated."
         canonical="https://mykei.io/blog/beyond-the-buzzer"
         ogType="article"
         keywords="forensic marking retail, Proprietary Forensic Marking Compound retail, SmartWater retail, economic sterilisation, batch-identifiable marker retail security, retail theft for independent retailers, forensic marking for small businesses, shoplifting deterrent for accountants, theft prevention for enterprise"
-        ogImageAlt="Beyond the Buzzer: how forensic marking is shrinking the stolen goods market"
+        ogImageAlt="Beyond the Buzzer, how forensic marking is shrinking the stolen goods market"
         articleMeta={{ publishedTime: "2026-04-10T00:00:00Z", author: "Michael Esema", section: "Retail Security", tags: ["Forensic Marking","Proprietary Forensic Marking Compound","Economic Sterilisation","ADN","Retail Theft"] }}
         breadcrumbs={[["Home","https://mykei.io"],["Blog","/blog"],["Beyond the Buzzer",""]]}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Sora', sans-serif; background: #fff; color: ${INK}; }
@@ -185,8 +184,8 @@ export default function BlogBeyondBuzzerPage() {
           <a href="/economic-sterilisation" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: GOLD }}>
             Economic Sterilisation
           </a>
-          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: INK, border: `1px solid ${GOLD}`, padding: "7px 14px" }}>
-            Follow the Research
+          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: INK, border: `1px solid ${GOLD}`, padding: "7px 14px" }}>
+            Join Pilot
           </a>
         </div>
       </nav>
@@ -214,13 +213,13 @@ export default function BlogBeyondBuzzerPage() {
         <Reveal delay={0.1}>
           <p className="b-standfirst" style={{ fontFamily: "'Sora',sans-serif", fontSize: 18, fontWeight: 300, lineHeight: 1.75, color: MID, marginBottom: 36 }}>
             The EAS tag and the security buzzer have been the frontline of retail theft prevention
-            for forty years. They have failed. Here is what works instead, and how the ADN is designed to take it further.
+            for forty years. They have failed. Here is what works instead, and how the ADN takes it further.
           </p>
         </Reveal>
 
         <Reveal delay={0.12}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, paddingTop: 24, borderTop: `1px solid rgba(26,17,8,0.1)` }}>
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: FAINT, border: `1px solid rgba(13,148,136,0.3)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: 36, height: 36, borderRadius: "50%", background: FAINT, border: `1px solid rgba(201,168,76,0.3)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
               <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: GOLD, fontWeight: 500 }}>ME</span>
             </div>
             <div>
@@ -267,14 +266,14 @@ export default function BlogBeyondBuzzerPage() {
           </p>
           <p>
             Proprietary Forensic Marking Compound, used by UK police forces, has shown up to 83% reductions in
-            burglaries and theft in specific operation areas. In one documented operation,
+            burglaries and theft in specific operation areas (third-party police programme result, not Mykei's own). In one documented operation,
             5,000 items were tagged. That led to 15 arrests and the recovery of £150,000 in
             stolen goods. The markers gave police a forensic link between goods, location,
             and suspect. Admissible evidence, no camera required.
           </p>
           <p>
             Homebase cut stock loss by 20% after implementing SmartWater, another forensic
-            chemical marking solution. Goods marked with SmartWater could be traced to a
+            chemical marking solution (third-party retailer case study, not a Mykei result). Goods marked with SmartWater could be traced to a
             specific retail location. When thieves found out, they shifted to unmarked targets.
           </p>
         </Reveal>
@@ -322,7 +321,7 @@ export default function BlogBeyondBuzzerPage() {
         </Reveal>
 
         <Reveal>
-          <h2>How the ADN is designed to take forensic marking further</h2>
+          <h2>How the ADN takes forensic marking further</h2>
           <p>
             The ADN is a shelf-mounted autonomous device. It triggers controlled marker deployment
             with no staff involvement, no manual labelling, no per-item application. When its
@@ -346,7 +345,7 @@ export default function BlogBeyondBuzzerPage() {
           <div className="def">
             <p>
               Proprietary Forensic Marking Compound and SmartWater proved the principle: forensic marking changes criminal
-              behaviour. The ADN is designed to automate the deployment and close the secondary market loop,
+              behaviour. The ADN automates the deployment, closes the secondary market loop,
               and turns individual store-level deterrence into a doctrine. That doctrine is
               Economic Sterilisation.
             </p>
@@ -367,8 +366,8 @@ export default function BlogBeyondBuzzerPage() {
           </p>
           <p>
             The Theft Economic Sterilisation System (TESS), implemented through the ADN,
-            applies MRA logic proactively. The ADN is designed not to wait for a theft to be reported.
-            It is intended to act at the moment of the event. A cartridge-linked event record is designed to be created in
+            applies MRA logic proactively. The ADN does not wait for a theft to be reported.
+            It acts at the moment of the event. A cartridge-linked event record is created in
             the Mykei Registry before the thief has left the building.
           </p>
           <p>
@@ -402,9 +401,9 @@ export default function BlogBeyondBuzzerPage() {
             <ul style={{ margin: 0, padding: "0 0 0 20px", listStyleType: "disc" }}>
               {[
                 "EAS tags and security buzzers address the theft event but leave the resale market untouched.",
-                "Proprietary Forensic Marking Compound reduced burglaries and theft by 83% in police-run programmes. SmartWater cut Homebase stock loss by 20%.",
+                "Proprietary Forensic Marking Compound reduced burglaries and theft by 83% in police-run programmes; SmartWater cut Homebase stock loss by 20% (both third-party results, not Mykei's own).",
                 "Batch-identifiable markers are designed to support evidential workflows and link goods directly to retail origin.",
-                "Conventional forensic marking requires manual deployment. The ADN is designed to deploy automatically, with a detection-to-response design target of under 50ms.",
+                "Conventional forensic marking requires manual deployment. The ADN deploys automatically in under 50ms.",
                 "The Mykei Registry creates a cartridge-linked event record that supports verification and investigation workflows.",
                 "Economic Sterilisation removes the commercial reward for theft rather than hardening the target against it.",
               ].map(item => (
@@ -427,7 +426,7 @@ export default function BlogBeyondBuzzerPage() {
               </a>
               <a href="/adn" style={{ padding: "24px", border: `1px solid rgba(26,17,8,0.1)`, display: "block" }}>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, color: GOLD, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 10 }}>Technical specs</div>
-                <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 16, color: INK, lineHeight: 1.4 }}>ADN Active Forensic Defence Node: Technical Overview</div>
+                <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 16, color: INK, lineHeight: 1.4 }}>ADN Active Forensic Defence Node: Full Technical Specifications</div>
               </a>
             </div>
           </div>
@@ -436,12 +435,12 @@ export default function BlogBeyondBuzzerPage() {
         {/* PILOT CTA */}
         <Reveal>
           <div style={{ marginTop: 48, padding: "36px 32px", background: FAINT, borderLeft: `3px solid ${GOLD}` }}>
-            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Research Updates · Mykei Securities</div>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Independent Retail Pilot · 2026 · Greater Manchester</div>
             <p style={{ fontFamily: "'Playfair Display',serif", fontSize: 18, color: INK, lineHeight: 1.5, marginBottom: 20, fontWeight: 400 }}>
-              ADN is patent-pending R&D. Field validation has not yet begun. Follow the research to stay informed.
+              Independent Retail Pilot. Retail validation route for Economic Sterilisation.
             </p>
-            <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#fff", background: INK, padding: "11px 24px", display: "inline-block" }}>
-              Follow the Research
+            <a href="/pilot" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#fff", background: INK, padding: "11px 24px", display: "inline-block" }}>
+              Join the Pilot
             </a>
           </div>
         </Reveal>

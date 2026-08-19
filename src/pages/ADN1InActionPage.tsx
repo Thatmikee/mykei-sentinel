@@ -1,6 +1,6 @@
 // src/pages/ADN1InActionPage.tsx
-// Route: /adn-1-in-action
-// Gold background · Sora · Scroll driven theft narrative
+// Route: /adn-in-action
+// Gold background, Sora, scroll driven theft narrative
 
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -78,7 +78,7 @@ export function SensorPod({ lit, ping }: { lit: boolean; ping: boolean }) {
     <div style={{
       width: 34, height: 34, borderRadius: "50%", flexShrink: 0,
       background: lit ? "rgba(212,168,67,0.15)" : "#0E0E0E",
-      border: `2px solid ${lit ? "#0D9488" : "#252525"}`,
+      border: `2px solid ${lit ? "#D4A843" : "#252525"}`,
       boxShadow: lit
         ? (ping ? "0 0 22px rgba(212,168,67,0.6), 0 0 44px rgba(212,168,67,0.2)" : "0 0 10px rgba(212,168,67,0.3)")
         : "none",
@@ -87,7 +87,7 @@ export function SensorPod({ lit, ping }: { lit: boolean; ping: boolean }) {
     }}>
       <div style={{
         width: 13, height: 13, borderRadius: "50%",
-        background: lit ? "#0D9488" : "#1A1A1A",
+        background: lit ? "#D4A843" : "#1A1A1A",
         boxShadow: lit ? "0 0 10px rgba(212,168,67,0.9)" : "none",
         transition: "all 0.5s",
       }} />
@@ -223,7 +223,7 @@ export function ADN1Scene({ phase }: { phase: number }) {
             {[0,1,2].map(i => (
               <div key={i} style={{
                 width: 10, height: 10, borderRadius: "50%",
-                background: marked ? "#0D9488" : "#1A1A1A",
+                background: marked ? "#D4A843" : "#1A1A1A",
                 boxShadow: marked ? "0 0 10px rgba(212,168,67,0.8)" : "none",
                 transition: `all 0.4s ease ${i*80}ms`,
               }} />
@@ -236,8 +236,8 @@ export function ADN1Scene({ phase }: { phase: number }) {
       <svg viewBox="0 0 600 600" style={{ position: "absolute", inset: 0, overflow: "visible", pointerEvents: "none" }}>
         <defs>
           <radialGradient id="laserCone" cx="50%" cy="0%" r="100%">
-            <stop offset="0%" stopColor="#0D9488" stopOpacity="0.25" />
-            <stop offset="100%" stopColor="#0D9488" stopOpacity="0" />
+            <stop offset="0%" stopColor="#D4A843" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="#D4A843" stopOpacity="0" />
           </radialGradient>
           {/* 3D sphere for thief head */}
           <radialGradient id="head3d" cx="32%" cy="28%" r="68%">
@@ -295,7 +295,7 @@ export function ADN1Scene({ phase }: { phase: number }) {
 
         {/* Shelf rail */}
         <rect x="48" y="290" width="504" height="5" rx="2.5" fill="#1A1A1A" />
-        <rect x="48" y="290" width="504" height="1.5" fill="#0D9488" opacity="0.25" />
+        <rect x="48" y="290" width="504" height="1.5" fill="#D4A843" opacity="0.25" />
         <rect x="90" y="264" width="8" height="30" rx="2" fill="#141414" />
         <rect x="502" y="264" width="8" height="30" rx="2" fill="#141414" />
 
@@ -310,14 +310,14 @@ export function ADN1Scene({ phase }: { phase: number }) {
               <rect
                 x={x} y={swept ? 255 : 298} width={62} height={swept ? 0 : 50} rx={5}
                 fill={tagged ? "rgba(212,168,67,0.07)" : "#0D0D0D"}
-                stroke={blk ? "#EF4444" : tagged ? "#0D9488" : "#1C1C1C"}
+                stroke={blk ? "#EF4444" : tagged ? "#D4A843" : "#1C1C1C"}
                 strokeWidth={tagged ? 1.5 : 0.8}
                 opacity={swept ? 0 : 1}
                 style={{ transition: "all 0.8s cubic-bezier(0.16,1,0.3,1)" }}
               />
               {tagged && !swept && (
                 <text x={x+31} y={323} textAnchor="middle" fontSize={7}
-                  fill="#0D9488" fontFamily="JetBrains Mono,monospace" opacity={0.65}>DNA</text>
+                  fill="#D4A843" fontFamily="JetBrains Mono,monospace" opacity={0.65}>DNA</text>
               )}
               {blk && !swept && (
                 <text x={x+31} y={316} textAnchor="middle" fontSize={16}
@@ -454,7 +454,7 @@ export function ADN1Scene({ phase }: { phase: number }) {
           {/* DNA tagged halo, phase 2+ */}
           {phase >= 2 && (
             <>
-              <circle cx={0} cy={-20} r={0} fill="none" stroke="#0D9488" strokeWidth={2} strokeOpacity={0.7}>
+              <circle cx={0} cy={-20} r={0} fill="none" stroke="#D4A843" strokeWidth={2} strokeOpacity={0.7}>
                 <animate attributeName="r" from="8" to="75" dur="1.1s" repeatCount="indefinite" />
                 <animate attributeName="stroke-opacity" from="0.8" to="0" dur="1.1s" repeatCount="indefinite" />
               </circle>
@@ -473,19 +473,19 @@ export function ADN1Scene({ phase }: { phase: number }) {
             <polygon points="192,248 80,295 240,295"
               fill="url(#laserCone)" opacity={phase === 1 ? 0.9 : 0.5} />
             <line x1="192" y1="248" x2="105" y2="293"
-              stroke={phase === 2 ? "#FF8C42" : "#0D9488"} strokeWidth="2" strokeOpacity="0.9" strokeDasharray="5 4">
+              stroke={phase === 2 ? "#FF8C42" : "#D4A843"} strokeWidth="2" strokeOpacity="0.9" strokeDasharray="5 4">
               <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="0.35s" repeatCount="indefinite" />
             </line>
             {/* Right cone + beam */}
             <polygon points="408,248 360,295 520,295"
               fill="url(#laserCone)" opacity={phase === 1 ? 0.9 : 0.5} />
             <line x1="408" y1="248" x2="495" y2="293"
-              stroke={phase === 2 ? "#FF8C42" : "#0D9488"} strokeWidth="2" strokeOpacity="0.9" strokeDasharray="5 4">
+              stroke={phase === 2 ? "#FF8C42" : "#D4A843"} strokeWidth="2" strokeOpacity="0.9" strokeDasharray="5 4">
               <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="0.35s" repeatCount="indefinite" />
             </line>
             {/* Scan sweep line */}
             <line x1="48" y1="268" x2="552" y2="268"
-              stroke={phase === 1 ? "#FF6B35" : "#0D9488"} strokeWidth="0.8" strokeOpacity={phase === 1 ? 0.25 : 0.1} strokeDasharray="3 14">
+              stroke={phase === 1 ? "#FF6B35" : "#D4A843"} strokeWidth="0.8" strokeOpacity={phase === 1 ? 0.25 : 0.1} strokeDasharray="3 14">
               <animateTransform attributeName="transform" type="translate"
                 from="0 -14" to="0 14" dur="1s" repeatCount="indefinite" additive="sum" />
             </line>
@@ -509,7 +509,7 @@ export function ADN1Scene({ phase }: { phase: number }) {
             {[0,1,2,3].map(i => (
               <circle key={i} cx={300} cy={260} r={0}
                 fill="none"
-                stroke={["#FFD060","#0D9488","#FF8C42","#FF6B35"][i]}
+                stroke={["#FFD060","#D4A843","#FF8C42","#FF6B35"][i]}
                 strokeWidth={2.5 - i * 0.4} strokeOpacity={0.75}>
                 <animate attributeName="r" from="6" to={90 + i * 26}
                   dur={`${0.8 + i * 0.25}s`} begin={`${i * 0.15}s`} repeatCount="indefinite" />
@@ -598,8 +598,8 @@ export function ADN1Scene({ phase }: { phase: number }) {
         {[0,1,2,3,4].map(i => (
           <g key={i}>
             <circle cx={28} cy={200+i*50} r={5}
-              fill={i <= phase ? "#0D9488" : "#141414"}
-              stroke={i === phase ? "#0D9488" : "#1E1E1E"}
+              fill={i <= phase ? "#D4A843" : "#141414"}
+              stroke={i === phase ? "#D4A843" : "#1E1E1E"}
               strokeWidth={i === phase ? 1.5 : 1}
             />
             {i < 4 && <line x1={28} y1={205+i*50} x2={28} y2={245+i*50}
@@ -621,35 +621,35 @@ export const SCENES = [
     phase: "01",
     label: "Standby",
     title: "The ADN sits on your shelf.\nSilent. Always watching.",
-    body: "Multi-zone sensor units read depth and velocity across the entire shelf face, around the clock. Not watching people. Watching physics.",
+    body: "Dual Tactical Multi-zone Sensor Array units fire 940nm laser pulses at 30Hz. They read depth velocity across the entire shelf face, around the clock. Not watching people. Watching physics.",
     tech: [
-      ["SENSOR",    "Multi-zone Sensor Array"],
-      ["COVERAGE",  "Full shelf face"],
-      ["MODE",      "Passive. Always on."],
+      ["SENSOR",    "Tactical Multi-zone Sensor Array"],
+      ["FREQUENCY", "940nm VCSEL · 30Hz"],
+      ["COVERAGE",  "Full shelf face · 1,200mm range"],
       ["GDPR",      "No camera. No biometric data."],
     ],
   },
   {
     phase: "02",
     label: "Theft Detected",
-    title: "A bulk sweep event.\nClassified on-device.",
-    body: "The Encrypted Logic Core kinetic signature classifier detects an arm clearing multiple items in a single lateral motion. That physics pattern does not occur in normal shopping. The algorithm fires. No cloud round-trip. On-device. Immediate. Design target: under 50ms.",
+    title: "A bulk sweep event.\nClassified in under 50ms.",
+    body: "The Encrypted Logic Core kinetic signature classifier detects an arm clearing multiple items in a single lateral motion. That physics pattern does not occur in normal shopping. The algorithm fires. No cloud round-trip. On-device. Immediate.",
     tech: [
       ["PROCESSOR",  "Encrypted Logic Core"],
       ["ALGORITHM",  "Kinetic signature classifier"],
-      ["DECISION",   "Design target: < 50ms · fully on-device"],
+      ["DECISION",   "< 50ms · fully on-device"],
       ["PATENT",     "No. 2606630.8 (UK)"],
     ],
   },
   {
     phase: "03",
     label: "DNA Deployed",
-    title: "An invisible cloud.\nDesigned to adhere to the evidence.",
-    body: "The Ultrasonic Deployment Module is designed to deploy a cloud of Proprietary Forensic Marking Compound, unique to this retailer's batch. Subject to supplier SDS and COSHH review, the formulation is intended to adhere to skin, clothing, and merchandise, remain UV-detectable, and support evidential workflows.",
+    title: "An invisible cloud.\nMolecularly bonded to the evidence.",
+    body: "The Ultrasonic Deployment Module fires a cloud of Proprietary Forensic Marking Compound, unique to this retailer's batch. The formula bonds to skin, clothing, and merchandise at a molecular level. It does not wash off. It fluoresces under UV. It is the evidence.",
     tech: [
       ["MARKER",    "Proprietary Forensic Marking Compound"],
       ["ACTUATOR",  "Ultrasonic Deployment Module"],
-      ["DEPLOY",    "Design target: < 200ms from trigger"],
+      ["DEPLOY",    "< 200ms from trigger"],
       ["BOND",      "Permanent · UV verifiable · evidential workflow ready"],
     ],
   },
@@ -686,6 +686,15 @@ export default function ADN1InActionPage() {
   const navigate = useNavigate();
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [phase, setPhase] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+    document.title = "ADN in Action, Scroll-Through Simulation | Mykei Securities";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "A scroll-driven simulation of the ADN detection, marking, and registry sequence, illustrative only, not a live deployment or real event data.");
+    const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (canonical) canonical.href = "https://mykei.io/adn-in-action";
+  }, []);
 
   useEffect(() => {
     const update = () => {
@@ -809,7 +818,7 @@ export default function ADN1InActionPage() {
         .adn-stat-n {
           font-family: 'Sora', system-ui, sans-serif;
           font-size: 40px; font-style: italic; font-weight: 700;
-          color: #0D9488; letter-spacing: -1px;
+          color: #D4A843; letter-spacing: -1px;
         }
         .adn-stat-l {
           font-family: 'JetBrains Mono', monospace;
@@ -899,7 +908,7 @@ export default function ADN1InActionPage() {
         }
         .adn-cta-overline {
           font-family: 'JetBrains Mono', monospace;
-          font-size: 9px; letter-spacing: 3px; color: #0D9488;
+          font-size: 9px; letter-spacing: 3px; color: #D4AF37;
           text-transform: uppercase; margin-bottom: 28px;
         }
         .adn-cta-h2 {
@@ -909,14 +918,14 @@ export default function ADN1InActionPage() {
           line-height: 1.08; letter-spacing: -2px;
           color: #1E1E1E; margin-bottom: 24px;
         }
-        .adn-cta-h2 em { color: #0D9488; font-style: italic; }
+        .adn-cta-h2 em { color: #D4A843; font-style: italic; }
         .adn-cta-sub {
           font-size: 17px; line-height: 1.8; color: #555;
           max-width: 540px; margin: 0 auto 52px;
         }
         .adn-cta-btn {
           display: inline-block;
-          background: #0D9488; color: #050505;
+          background: #D4A843; color: #050505;
           font-family: 'JetBrains Mono', monospace;
           font-weight: 700; font-size: 12px; letter-spacing: 2px;
           text-transform: uppercase;
@@ -990,7 +999,7 @@ export default function ADN1InActionPage() {
 
         {/* HERO */}
         <section className="adn-hero">
-          <div className="adn-hero-overline">Mykei Securities · ADN · Prototype Simulation</div>
+          <div className="adn-hero-overline">Mykei Securities · ADN · Live Simulation</div>
           <h1 className="adn-hero-h1">
             ADN<br />in Action.
           </h1>
@@ -1011,9 +1020,8 @@ export default function ADN1InActionPage() {
         {/* STATS BAR */}
         <div className="adn-stats">
           {[
-            { n: "200ms", l: "Detection to deployment (design target)" },
-            { n: "50ms",  l: "On-device decision time (design target)"  },
-            { n: "R&D",   l: "Prototype stage. The research continues." },
+            { n: "200ms", l: "Detection to deployment" },
+            { n: "50ms",  l: "On-device decision time"  },
             { n: "0",     l: "Biometric or suspect data" },
           ].map(({ n, l }) => (
             <div className="adn-stat" key={l}>
@@ -1059,15 +1067,15 @@ export default function ADN1InActionPage() {
 
         {/* CTA */}
         <section className="adn-cta">
-          <div className="adn-cta-overline">Research continues · Follow the ADN</div>
+          <div className="adn-cta-overline">Independent Retail Pilot · 2026</div>
           <h2 className="adn-cta-h2">
-            You have seen what it is designed to do.<br />
-            <em>The research continues.</em>
+            You have seen what it does.<br />
+            <em>Your shop deserves this.</em>
           </h2>
           <p className="adn-cta-sub">
-            The ADN is at prototype stage. If you run a retail store and want to be kept informed as development progresses, register your interest and get direct access to the founder.
+            Apply for the Independent Retail Pilot. Prototype-stage registry-linked marker workflow, direct access to the founder. Sign a Letter of Intent to secure your place.
           </p>
-          <a href="/signal" className="adn-cta-btn">Follow the Research</a>
+          <a href="/pilot" className="adn-cta-btn">Join the Pilot</a>
         </section>
 
         {/* FOOTER */}

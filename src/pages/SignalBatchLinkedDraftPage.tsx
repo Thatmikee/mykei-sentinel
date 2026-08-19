@@ -5,7 +5,7 @@
 export default function SignalBatchLinkedDraftPage() {
   return (
     <article style={{ maxWidth: 720, margin: "0 auto", padding: "80px 24px", fontFamily: "'Sora', sans-serif", color: "#1E1E1E", lineHeight: 1.8 }}>
-      <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#0D9488", marginBottom: 16 }}>
+      <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#D4AF37", marginBottom: 16 }}>
         Signal · Draft · Not published
       </div>
       <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(26px, 3.5vw, 44px)", fontWeight: 400, lineHeight: 1.15, marginBottom: 24 }}>
@@ -42,19 +42,19 @@ export default function SignalBatchLinkedDraftPage() {
         The doctrine is Economic Sterilisation: remove the commercial incentive for theft by making stolen goods harder to liquidate, riskier to handle, and easier to connect to a verified theft event.
       </p>
       <p>
-        That doctrine applies at two scales. The first is independent retail validation, where ADN is deployed in individual shops to prove detection accuracy, registry logging, and non-confrontational deterrence in real environments.
+        That doctrine applies at two scales. The first is independent retail validation, where ADN is intended to be deployed in individual shops to prove detection accuracy, registry logging, and non-confrontational deterrence in real environments.
       </p>
       <p>
         The second is strategic retail pilots, where the same forensic event architecture is deployed at category level across larger operations: supermarkets, pharmacies, multi-site operators, insurer-backed programmes. At that scale, the batch-linked evidence model becomes the primary value proposition. Not just deterrence. Infrastructure.
       </p>
 
-      <div style={{ marginTop: 40, padding: "24px 28px", background: "#FFFFFF", borderLeft: "3px solid #0D9488" }}>
-        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#0D9488", marginBottom: 12 }}>Key takeaways</div>
+      <div style={{ marginTop: 40, padding: "24px 28px", background: "#FFFFFF", borderLeft: "3px solid #D4AF37" }}>
+        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#D4AF37", marginBottom: 12 }}>Key takeaways</div>
         <ul style={{ margin: 0, padding: "0 0 0 20px" }}>
           <li>Forensic marking only becomes infrastructure when the physical marker connects to a verifiable digital record.</li>
           <li>ADN's batch-linked event model connects device ID, timestamp, store reference, event type, and forensic batch reference automatically.</li>
           <li>The Economic Sterilisation doctrine applies at independent retail scale and at strategic retail pilot scale.</li>
-          <li>Pricing for validation deployments is under development and not published.</li>
+          <li>Independent Retail Pilot Pricing applies to selected Manchester Alpha validation deployments only.</li>
           <li>Strategic and enterprise pilots are scoped separately based on deployment size, chemistry requirements, and batch-control architecture.</li>
         </ul>
       </div>

@@ -32,7 +32,6 @@ export const HeroSection = () => {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
         * { box-sizing: border-box; }
 
@@ -531,12 +530,12 @@ export const HeroSection = () => {
             <li><a href="#specs">Technology</a></li>
             <li><a href="/roadmap">Roadmap</a></li>
           </ul>
-          <a href="/signal" className="mk-nav-cta">Follow the Research →</a>
+          <a href="#pilot-survey" className="mk-nav-cta">Request Pilot →</a>
         </nav>
 
         {/* Trust bar */}
         <div className="mk-trust">
-          {["Company No. 16984969", "Registered in England & Wales", "Manchester, UK", "5 Retailers: Letters of Intent Signed", "Patent-pending: UK application No. 2606630.8"].map((item, i) => (
+          {["Company No. 16984969", "Registered in England & Wales", "Manchester, UK", "Independent Retailers: Non-Binding Letters of Intent Signed", "Patent-pending: UK application No. 2606630.8"].map((item, i) => (
             <div className="mk-trust-item" key={i}>
               {i > 0 && <div className="mk-trust-dot" />}
               {item}
@@ -560,14 +559,14 @@ export const HeroSection = () => {
             </h1>
 
             <p className={`mk-body ${visible ? "vis" : ""}`}>
-              The ADN doesn't try to stop the thief. It triggers controlled marker deployment, registers a cartridge-linked event, and is designed to make those goods harder to sell anonymously the moment they leave the shelf.
+              The ADN doesn't try to stop the thief. It triggers controlled marker deployment, registers a cartridge-linked event, and makes those goods harder to sell anonymously the moment they leave the shelf.
               Batch-identifiable marker. Secure registry. The resale incentive is disrupted.{" "}
               <strong style={{ color: "#0D1B4B", fontWeight: 600 }}>Economic Sterilisation.</strong>
             </p>
 
             <div className={`mk-actions ${visible ? "vis" : ""}`}>
               <a href="#specs" className="mk-btn-primary">See the Technology →</a>
-              <a href="/signal" className="mk-btn-secondary">Follow the Research</a>
+              <a href="#pilot-survey" className="mk-btn-secondary">Request Pilot Access</a>
             </div>
 
             <div className={`mk-proof ${visible ? "vis" : ""}`}>
@@ -606,7 +605,7 @@ export const HeroSection = () => {
               </div>
               <div className="mk-panel-foot">
                 <span className="mk-panel-foot-text">Event MYK-20260304-003</span>
-                <span className="mk-panel-foot-status">● Registry active</span>
+                <span className="mk-panel-foot-status">● Registry in development</span>
               </div>
             </div>
           </div>

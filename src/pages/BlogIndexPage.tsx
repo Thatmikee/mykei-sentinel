@@ -1,7 +1,7 @@
 import Footer from "@/components/Footer";
 import PageSEO from "@/components/PageSEO";
 
-const GOLD = "#0D9488";
+const GOLD = "#C9A84C";
 const INK = "#1E1E1E";
 const PAPER = "#FAFAF8";
 const MUTED = "#6B6B65";
@@ -28,11 +28,11 @@ export default function BlogIndexPage() {
   return (
     <>
       <PageSEO
-        title="The Mykei Brief: Retail Theft Economics & Forensic Security | Mykei Securities"
+        title="The Mykei Brief, Retail Theft Economics & Forensic Security | Mykei Securities"
         description="Analysis on retail theft economics, forensic security, and the case for Economic Sterilisation. Research-backed articles for independent retailers, accountants, lawyers, startups, enterprise teams, and policy-makers."
         canonical="https://mykei.io/blog"
         keywords="retail theft economics, forensic retail security, economic sterilisation research, organised retail crime analysis, Mykei Securities blog, retail theft for small businesses, shoplifting for accountants, retail crime for lawyers, economic sterilisation for startups, retail security for enterprise, theft prevention for retailers, UK retail crime 2026"
-        ogImageAlt="The Mykei Brief: analysis on retail theft and forensic security"
+        ogImageAlt="The Mykei Brief, analysis on retail theft and forensic security"
         breadcrumbs={[["Home","https://mykei.io"],["Blog","/blog"]]}
         ldJson={JSON.stringify({
           "@context": "https://schema.org",
@@ -110,7 +110,6 @@ export default function BlogIndexPage() {
       <Footer />
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&family=JetBrains+Mono:wght@400;500&display=swap');
         *:focus-visible { outline: 2px solid ${GOLD}; outline-offset: 3px; }
         @media (max-width: 640px) {
           nav { padding: 0 20px !important; }

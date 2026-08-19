@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Footer from "@/components/Footer";
 
-const GOLD = "#0D9488";
+const GOLD = "#C9A84C";
 const INK = "#1A1A18";
 const PAPER = "#FAFAF8";
 const MUTED = "#6B6B65";
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
             },
             {
               heading: "Lawful basis",
-              body: `We process form submission data on the basis of legitimate interest (UK GDPR Art. 6(1)(f)) to respond to your enquiry and evaluate your suitability for the ADN research and validation programme. We process analytics data on the basis of consent (UK GDPR Art. 6(1)(a)). You may withdraw consent for analytics at any time by adjusting your browser settings or using the opt-out mechanism provided by Google Analytics.`,
+              body: `We process form submission data on the basis of legitimate interest (UK GDPR Art. 6(1)(f)) to respond to your enquiry and evaluate your suitability for the ADN pilot programme. We process analytics data on the basis of consent (UK GDPR Art. 6(1)(a)). You may withdraw consent for analytics at any time by adjusting your browser settings or using the opt-out mechanism provided by Google Analytics.`,
             },
             {
               heading: "How long we keep it",
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
             },
             {
               heading: "ADN forensic event data",
-              body: `The ADN device does not collect personal data. It records: device ID, timestamp, and sensor distance readings. This event data is transmitted encrypted (TLS 1.3) to our cloud infrastructure hosted on Amazon Web Services (eu-north-1 region, Stockholm) and stored encrypted at rest (AES-256). No images, audio, biometric data, or names are recorded. The ADN is designed with data minimisation and privacy-by-design principles. Mykei acts as sole data controller for ADN forensic event records.`,
+              body: `The ADN device does not collect personal data. It records: device ID, timestamp, and sensor distance readings. This event data is transmitted encrypted (TLS 1.3) to our cloud infrastructure hosted on Amazon Web Services (eu-north-1 region, Stockholm) and stored encrypted at rest (AES-256). No images, audio, biometric data, or names are recorded. ADN is designed with data minimisation and privacy-by-design principles. Mykei acts as sole data controller for ADN event records.`,
             },
             {
               heading: "Third-party services",

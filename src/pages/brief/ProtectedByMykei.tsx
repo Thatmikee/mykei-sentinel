@@ -51,7 +51,7 @@ export default function ProtectedByMykei() {
       </p>
       <p>
         A thief who encounters the Mykei decal and investigates what it means will find a
-        patent application (2606630.8, filed 23 March 2026, 17 claims, patent pending), a publicly documented
+        patent application (GB2606630.8, filed 23 March 2026, 17 claims, patent pending), a publicly documented
         technology, and a clear explanation of what economic sterilisation means for the goods
         they are considering stealing. They will understand that the forensic mark on those goods
         reduces the item's resale value to near zero. That understanding changes the expected
@@ -72,12 +72,12 @@ export default function ProtectedByMykei() {
         marked. The rational response is to move to a different geography entirely.
       </p>
       <p>
-        This network effect is one of the core hypotheses of the Independent Retail Pilot. Five
-        stores across Greater Manchester, spanning jewellery, grocery, convenience, and community
+        This network effect is one of the core hypotheses of the Independent Retail Pilot. Independent
+        retailers across Greater Manchester, spanning jewellery, grocery, convenience, and community
         retail, represent the beginning of a cluster. The pilot will generate data on activation
         events, and it will begin to test whether concentrated adoption in a shared geography
         produces observable changes in incident patterns across the participating stores. One
-        pilot, five retailers, one doctrine: that making theft commercially pointless is more
+        pilot, one doctrine: that making theft commercially pointless is more
         durable than making it physically difficult.
       </p>
       <p>
@@ -89,7 +89,7 @@ export default function ProtectedByMykei() {
         and the cloud logging are the architecture beneath it.
       </p>
       <p>
-        Pricing is under development. Follow the research at mykei.io/signal.
+        Commercial terms are agreed directly with Mykei for retailers joining the pilot. Apply at mykei.io/pilot.
       </p>
     </article>
   );

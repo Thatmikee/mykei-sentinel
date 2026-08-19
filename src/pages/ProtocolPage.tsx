@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 const FOREST = "#1A3A2A";
 const GROVE  = "#2D5C3F";
-const BRASS  = "#0D9488";
+const BRASS  = "#C9A84C";
 const IVORY  = "#F8F5EE";
 const INK    = "#1E1E16";
 const MUTED  = "#66665A";

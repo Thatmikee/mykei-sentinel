@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 
-const GOLD = "#0D9488";
+const GOLD = "#c9a84c";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -38,7 +38,7 @@ export default function SignalSurgeonNotCameraPage() {
     <>
       <PageSEO
         title="A Surgeon, Not a Camera: The 200 Millisecond Rule | The Signal"
-        description="How do you tell a bulk-sweep theft from a shopper picking up a product? The Active Deterrent Node (ADN) does it in under 50ms using kinetic signature classification and a forensic deployment module. This is forensic infrastructure, not AI surveillance."
+        description="How do you tell a bulk-sweep theft from a shopper picking up a product? The ADN does it in under 50ms using XSHUT address management on GPIO 4 and GPIO 5, kinetic signature classification on an Encrypted Logic Core, and a 113kHz Forensic Mist Deployment System. This is forensic infrastructure, not AI surveillance."
         canonical="https://mykei.io/signal/surgeon-not-camera-200ms"
         ogImage="https://mykei.io/og/signal-surgeon-not-camera-200ms.png"
         keywords="ADN technical how it works, Tactical Multi-zone Sensor Array dual sensor theft detection, Encrypted Logic Core retail security, kinetic signature analysis theft, Forensic Mist Deployment System anti-theft, bulk sweep detection algorithm, forensic retail security hardware, 200 milliseconds theft response, ADN firmware explained, Mykei technical blog"
@@ -54,7 +54,7 @@ export default function SignalSurgeonNotCameraPage() {
           "headline": "A Surgeon, Not a Camera: The 200 Millisecond Rule",
           "description": "How the ADN distinguishes a bulk-sweep theft from a shopper in under 50ms using dual Tactical Multi-zone Sensor Array sensors, Encrypted Logic Core kinetic classification, and a 113kHz Forensic Mist Deployment System.",
           "url": "https://mykei.io/signal/surgeon-not-camera-200ms",
-          "datePublished": "2026-03-20T08:00:00Z",
+          "datePublished": "2026-04-15T08:00:00Z",
           "author": { "@type": "Person", "name": "Michael Esema", "url": "https://mykei.io/founder" },
           "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io", "logo": { "@type": "ImageObject", "url": "https://mykei.io/mykei-logo.png" } },
           "image": "https://mykei.io/social-share.png",
@@ -67,7 +67,7 @@ export default function SignalSurgeonNotCameraPage() {
           ]
         })}
         articleMeta={{
-          publishedTime: "2026-03-20T08:00:00Z",
+          publishedTime: "2026-04-15T08:00:00Z",
           author: "Michael Esema",
           section: "Technical",
           tags: ["Encrypted Logic Core", "Tactical Multi-zone Sensor Array", "kinetic analysis", "forensic hardware", "ADN firmware"],
@@ -79,14 +79,14 @@ export default function SignalSurgeonNotCameraPage() {
         {/* Nav */}
         <nav style={{ borderBottom: `1px solid ${RULE}`, padding: "0 40px", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "rgba(255,255,255,0.97)", backdropFilter: "blur(12px)", zIndex: 100 }}>
           <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", color: GOLD, textDecoration: "none", textTransform: "uppercase" }}>The Signal</a>
-          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "1.5px", color: INK, textDecoration: "none", textTransform: "uppercase", border: `1px solid ${RULE}`, padding: "6px 16px", borderRadius: 4 }}>Follow the Research</a>
+          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "1.5px", color: INK, textDecoration: "none", textTransform: "uppercase", border: `1px solid ${RULE}`, padding: "6px 16px", borderRadius: 4 }}>Join the Pilot</a>
         </nav>
 
         {/* Header */}
         <header style={{ maxWidth: 760, margin: "0 auto", padding: "72px 32px 48px" }}>
           <Reveal>
             <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "2.5px", textTransform: "uppercase", color: GOLD, marginBottom: 20 }}>
-              The Signal · Issue 03 · March 2026
+              The Signal · Issue 03 · April 2026
             </div>
           </Reveal>
           <Reveal delay={0.1}>
@@ -104,26 +104,11 @@ export default function SignalSurgeonNotCameraPage() {
               <div style={{ width: 40, height: 40, borderRadius: "50%", background: GOLD, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, color: "#fff", fontSize: 14 }}>ME</div>
               <div>
                 <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, color: INK }}>Michael Esema</div>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: MID }}>Founder, Mykei Securities · 20 March 2026 · 8 min read</div>
+                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: MID }}>Founder, Mykei Securities · 15 April 2026 · 8 min read</div>
               </div>
             </div>
           </Reveal>
         </header>
-
-        {/* Hero Image */}
-        <div style={{ maxWidth: 900, margin: "0 auto 48px", padding: "0 32px" }}>
-          <figure style={{ margin: 0 }}>
-            <img
-              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80&auto=format&fit=crop"
-              alt="Surgical tools laid out with precision. The contrast to passive surveillance."
-              style={{ width: "100%", borderRadius: 6, display: "block", maxHeight: 480, objectFit: "cover" }}
-              loading="lazy"
-            />
-            <figcaption style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", marginTop: 8, letterSpacing: "0.5px" }}>
-              Photo: Unsplash / precision over observation
-            </figcaption>
-          </figure>
-        </div>
 
         {/* Article */}
         <article style={{ maxWidth: 760, margin: "0 auto", padding: "0 32px 80px" }}>
@@ -133,14 +118,14 @@ export default function SignalSurgeonNotCameraPage() {
               The security industry loves "AI-powered." Every camera system with a motion filter, every EAS tag reader with a beep threshold, every app that sends push notifications, all of them are "AI-powered" now. It's not a lie, exactly. It's just a word that has been diluted to the point of describing nothing specific.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The Active Deterrent Node (ADN) is a forensic instrument with one specific diagnostic task: distinguish a bulk-sweep theft event from normal retail activity, in real time, on device, without a network, without a camera, without capturing any personal data. The design target for bench testing is a false positive rate below 0.3%. If you've ever written a real-time classifier for constrained hardware, you know that's a tighter spec than it sounds.
+              The ADN is designed as a forensic instrument with one specific diagnostic task: distinguish a bulk-sweep event from normal retail activity, in real time, on device, without a network, without a camera, without capturing any personal data. That distinction has not yet been field-validated. If you've ever written a real-time classifier for constrained hardware, you know that's a tighter spec than it sounds.
             </p>
           </Reveal>
 
           <Reveal>
             <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>The I2C problem that almost killed the dual-sensor design.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The ADN is designed to use two Tactical Multi-zone Sensor Array Time-of-Flight sensors to monitor a shelf zone. This creates a problem that anyone who has worked with I2C peripherals on a shared bus will recognise immediately: both sensors come from the factory with the same I2C address (0x29). You cannot address them individually on a shared bus without resolving this conflict.
+              The ADN uses two Tactical Multi-zone Sensor Array Time-of-Flight sensors to monitor a shelf zone. This creates a problem that anyone who has worked with I2C peripherals on a shared bus will recognise immediately: both sensors come from the factory with the same I2C address (0x29). You cannot address them individually on a shared bus without resolving this conflict.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
               The standard solution is XSHUT pin management. The Tactical Multi-zone Sensor Array has a XSHUT line that holds the sensor in hardware standby when pulled low. We bring both sensors up in hardware standby, then wake Sensor A on GPIO4 first, immediately reassign its I2C address in firmware (0x30), then wake Sensor B on GPIO5 and leave it on the default address (0x29). From that point, both sensors are individually addressable and both can operate simultaneously on the same I2C bus without conflict.
@@ -173,7 +158,7 @@ sensor_b = Tactical Multi-zone Sensor Array(i2c, address=0x29)  # Sensor B stays
 
           <Reveal>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              This matters for one reason beyond the technical: it means the <a href="/adn" style={{ color: GOLD, textDecoration: "underline" }}>ADN</a> gets bilateral sweep data. A single sensor cannot distinguish between a normal single-item pick and a bulk sweep. Two sensors watching the same zone from different positions, firing simultaneously and comparing trajectory vectors, can. The kinetic signature of a bulk sweep is specific: bilateral displacement, high velocity, short dwell time, multiple simultaneous zone changes. A shopper picking up a product has a completely different signature.
+              This matters for one reason beyond the technical: it means the ADN gets bilateral sweep data. A single sensor cannot distinguish between a normal single-item pick and a bulk sweep. Two sensors watching the same zone from different positions, firing simultaneously and comparing trajectory vectors, can. The kinetic signature of a bulk sweep is specific: bilateral displacement, high velocity, short dwell time, multiple simultaneous zone changes. A shopper picking up a product has a completely different signature.
             </p>
           </Reveal>
 
@@ -206,10 +191,10 @@ sensor_b = Tactical Multi-zone Sensor Array(i2c, address=0x29)  # Sensor B stays
           <Reveal>
             <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.5px", color: INK, margin: "40px 0 16px" }}>Why a 113kHz ultrasonic deployment module and not a servo?</h2>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The actuation stage gets less attention than the detection stage, but it is where the forensic doctrine is physically enacted. The ADN is designed to use a 113kHz Forensic Mist Deployment System disc to atomise the forensic marker compound. At that frequency, the ultrasonic deployment module creates a micron-scale mist, not a spray. Micron-scale particles travel further, disperse into a wider cone, and bond to a broader surface area than a mechanical spray ever could. They also do not produce a visible cloud that would alert the thief to the activation.
+              The actuation stage gets less attention than the detection stage, but it is where the forensic doctrine is physically enacted. The ADN uses a 113kHz Forensic Mist Deployment System disc to atomise the forensic marker compound. At that frequency, the ultrasonic deployment module creates a micron-scale mist, not a spray. Micron-scale particles travel further, disperse into a wider cone, and bond to a broader surface area than a mechanical spray ever could. They also do not produce a visible cloud that would alert the thief to the activation.
             </p>
             <p style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 28 }}>
-              The design target for the trigger-to-deployment sequence is under 200 milliseconds from the first threshold crossing. In a bulk sweep that takes 1.5 to 3 seconds, the architecture is intended to deploy the marker while goods are still in motion. That is the design objective the bench work is built toward.
+              The entire trigger-to-deployment sequence runs in under 200 milliseconds from the first threshold crossing. In a bulk sweep that takes 1.5 to 3 seconds from start to finish, this means the markers are deployed while the goods are still in motion. The thief is marked before they are at the exit. The goods are marked before they leave the store.
             </p>
           </Reveal>
 
@@ -239,7 +224,7 @@ sensor_b = Tactical Multi-zone Sensor Array(i2c, address=0x29)  # Sensor B stays
                   "Dual Tactical Multi-zone Sensor Array sensors require XSHUT address management via GPIO 4 and GPIO 5. One I2C bus. Two independent sensors.",
                   "The kinetic classifier runs on Core 1 of the Encrypted Logic Core at 240MHz, reaching a decision in under 50ms.",
                   "A 113kHz Forensic Mist Deployment System disc atomises the marker compound at micron scale, achieving broader coverage and silent deployment than mechanical spray.",
-                  "Design target trigger-to-deployment: under 200ms. Bench architecture intended to mark goods before they leave the shelf zone.",
+                  "Total trigger-to-deployment time: under 200ms. The goods are marked before the thief reaches the exit.",
                   "No camera. No biometric data. No personal data captured by design.",
                 ].map((t, i) => (
                   <li key={i} style={{ display: "flex", gap: 12, padding: "9px 0", borderBottom: i < 4 ? `1px solid ${RULE}` : "none", fontSize: 14, lineHeight: 1.65, color: INK }}>
@@ -256,15 +241,15 @@ sensor_b = Tactical Multi-zone Sensor Array(i2c, address=0x29)  # Sensor B stays
             <div style={{ textAlign: "center", border: `1px solid ${RULE}`, borderRadius: 10, padding: "40px 32px", marginBottom: 48 }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, marginBottom: 14 }}>Independent Retail Pilot · 2026</div>
               <h3 style={{ fontSize: 22, fontWeight: 700, color: INK, margin: "0 0 12px" }}>Deploy forensic infrastructure. Not another camera.</h3>
-              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 0 28px" }}>Mykei publishes findings through The Signal as the ADN development programme continues.</p>
-              <a href="/signal" style={{ display: "inline-block", background: GOLD, color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 700, padding: "14px 36px", borderRadius: 6, textDecoration: "none" }}>Read the Archive</a>
+              <p style={{ fontSize: 15, color: MID, lineHeight: 1.7, maxWidth: 480, margin: "0 0 28px" }}>Non-binding letters of intent only. Pricing scoped per pilot. Prototype-stage hardware, direct founding team support.</p>
+              <a href="/pilot" style={{ display: "inline-block", background: GOLD, color: "#fff", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 700, padding: "14px 36px", borderRadius: 6, textDecoration: "none" }}>Apply for the Pilot</a>
             </div>
           </Reveal>
 
           <SignalShareBar
             url="https://mykei.io/signal/surgeon-not-camera-200ms"
             title="A Surgeon, Not a Camera: The 200 Millisecond Rule"
-            description="CCTV timestamps the crime. The ADN is designed to act before the shelf is empty. The difference is 200ms and a forensic event record."
+            description="CCTV timestamps the crime. ADN acts before the shelf is empty. The difference is 200ms and a forensic event record."
           />
 
           {/* Author */}

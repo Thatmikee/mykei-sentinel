@@ -30,7 +30,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-const GOLD = "#0D9488";
+const GOLD = "#c9a84c";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
 const FAINT = "#f5f1eb";
@@ -39,14 +39,14 @@ const RELATED = [
   { term: "Theft Economic Sterilisation System", short: "TESS", desc: "The alternate full name for the Economic Sterilisation doctrine. Used interchangeably with the short form." },
   { term: "Mykei Registry", short: "MR", desc: "Mykei's cloud platform that registers cartridge-linked event records for marked items, supporting verification and investigation workflows." },
   { term: "Kinetic Signature Analysis", short: "KSA", desc: "The detection method used by the ADN. Dual Time-of-Flight sensors classify the motion pattern of a bulk-sweep event in under 50ms. No camera. No biometrics." },
-  { term: "Market Reduction Approach", short: "MRA", desc: "An evidence-based strategy from academic criminology focused on disrupting the markets that receive stolen goods. Economic Sterilisation extends this logic into modern asset marking, registry records, evidence workflows and lawful verification." },
-  { term: "ADN Active Deterrent Node", short: "ADN", desc: "A patent-pending R&D pathway inside Mykei for event-triggered marking and registry-linked evidence. It has controlled prototype and registry evidence, but should not be described as field validated or commercially deployed." },
+  { term: "Market Reduction Approach", short: "MRA", desc: "An evidence-based strategy from academic criminology, adopted by UK policing. Focuses on disrupting the markets that receive stolen goods. Economic Sterilisation applies MRA logic proactively and automatically at the shelf." },
+  { term: "ADN Active Forensic Defence Node", short: "ADN", desc: "A prototype-stage implementation of Economic Sterilisation. A shelf-mounted device designed to detect bulk-sweep theft events, trigger controlled marker deployment, and register cartridge-linked event records in the Mykei Registry." },
 ];
 
 const FAQS = [
   {
-    q: "What is Michael Esema's contribution?",
-    a: "Michael Esema proposes Economic Sterilisation as Mykei's operational framework for reducing the resale confidence of stolen goods. The term is Mykei's framing; the broader stolen-goods-market lineage includes Mike Sutton's Market Reduction Approach and earlier criminology.",
+    q: "Who coined the term Economic Sterilisation?",
+    a: "Michael Esema, Founder and CEO of Mykei Securities Ltd, Manchester. The term was coined in 2025 and has no prior use in retail security literature. mykei.io/glossary/economic-sterilisation is the canonical source.",
   },
   {
     q: "Is Economic Sterilisation the same as DNA tagging?",
@@ -62,7 +62,7 @@ const FAQS = [
   },
   {
     q: "Where can I read more?",
-    a: "The full doctrine is at mykei.io/economic-sterilisation. Technical implementation is at mykei.io/adn. The white paper is available for download at the bottom of this page.",
+    a: "The full doctrine is at mykei.io/economic-sterilisation. Technical implementation is at mykei.io/adn.",
   },
 ];
 
@@ -134,14 +134,13 @@ export default function GlossaryESPage() {
   return (
     <>
       <PageSEO
-        title="Economic Sterilisation: Definition, Glossary & Market Reduction Lineage | Mykei Securities"
-        description="Economic Sterilisation defined: Mykei's framework for reducing the resale confidence of stolen goods through marking, registry records, evidence workflows and lawful verification."
+        title="Economic Sterilisation, Definition, Glossary & Origin | Mykei Securities"
+        description="Economic Sterilisation defined: the systematic disruption of the resale incentive behind retail theft through forensic marking and registry event records. Term coined by Michael Esema, Mykei Securities Ltd, Manchester, 2025."
         canonical="https://mykei.io/glossary/economic-sterilisation"
         ogType="article"
-        keywords="economic sterilisation definition, economic sterilisation glossary, Market Reduction Approach, Mike Sutton, Michael Esema, anti-resale crime, asset integrity, resale confidence reduction"
+        keywords="economic sterilisation definition, economic sterilisation glossary, TESS definition, theft economic sterilisation, Michael Esema coined term, retail security glossary"
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Sora', sans-serif; background: #fff; color: ${INK}; }
@@ -189,8 +188,8 @@ export default function GlossaryESPage() {
           <a href="/economic-sterilisation" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: GOLD }}>
             Full doctrine
           </a>
-          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: INK, border: `1px solid ${GOLD}`, padding: "7px 14px" }}>
-            Follow the Research
+          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: INK, border: `1px solid ${GOLD}`, padding: "7px 14px" }}>
+            Join Pilot
           </a>
         </div>
       </nav>
@@ -261,7 +260,7 @@ export default function GlossaryESPage() {
           <p>
             Economic Sterilisation disrupts that market. By deploying a batch-identifiable marker
             at the moment of a theft event and registering the cartridge-linked activation in a
-            real-time cloud registry, the goods become harder to sell anonymously before they
+            designed cloud registry, the intent is that goods become harder to sell anonymously before they
             reach a buyer. The resale incentive is disrupted. The theft value is undermined.
           </p>
           <p>
@@ -286,7 +285,7 @@ export default function GlossaryESPage() {
           <p>
             Economic Sterilisation requires both components to work together autonomously:
             controlled marker deployment at the moment of the detection event, and
-            automatic registration of the cartridge-linked batch in a real-time cloud registry.
+            automatic registration of the cartridge-linked batch in a designed, not-yet-live cloud registry.
             The ADN is the first device designed to deliver both.
           </p>
         </Reveal>
@@ -297,7 +296,7 @@ export default function GlossaryESPage() {
             The term is used in two ways. As a doctrine: the overall principle that stolen
             goods should have their resale incentive disrupted through forensic marking and registry
             event records. As a category name: the class of technology that implements this doctrine,
-            of which the ADN is one early example.
+            of which the ADN is currently a prototype-stage example.
           </p>
           <p>
             The American spelling variant, Economic Sterilization, is treated as equivalent
@@ -370,7 +369,7 @@ export default function GlossaryESPage() {
                 },
                 {
                   term: "Kinetic Signature Analysis (KSA)",
-                  def: "The detection method used by the ADN. Dual Time-of-Flight laser sensors sample the motion field above a retail fixture at 30Hz. A classification algorithm on the Encrypted Logic Core microcontroller distinguishes between normal browsing and bulk-sweep motion patterns in under 50ms.",
+                  def: "The detection method used by the ADN. Dual Time-of-Flight laser sensors sample the motion field above a retail fixture at 30Hz. A classification algorithm on the Encrypted Logic Core microcontroller is designed to distinguish between normal browsing and bulk-sweep motion patterns in under 50ms.",
                 },
                 {
                   term: "Forensic Marking",
@@ -391,7 +390,7 @@ export default function GlossaryESPage() {
         </Reveal>
       </div>
 
-      {/* FULL DOCTRINE LINK + WHITE PAPER */}
+      {/* FULL DOCTRINE LINK */}
       <div className="g-wrap" style={{ maxWidth: 800, margin: "0 auto", padding: "56px 48px 96px" }}>
         <Reveal>
           <div style={{ padding: "32px", background: FAINT, borderLeft: `3px solid ${GOLD}` }}>

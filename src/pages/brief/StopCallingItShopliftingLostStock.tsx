@@ -121,9 +121,9 @@ export default function StopCallingItShopliftingLostStock() {
       <h2>Read next</h2>
 
       <p>
-        Read <a href="/howitworks">how the ADN works</a>, then see the{" "}
-        <a href="/technology/ats">registry layer</a>. To follow the research, visit{" "}
-        <a href="/signal">mykei.io/signal</a>.
+        Read <a href="/howitworks">how ADN works</a>, then see the{" "}
+        <a href="/technology/ats">registry layer</a>. Retailers can request a{" "}
+        <a href="/pilot">pilot fit check</a>.
       </p>
 
       <h2>Sources</h2>

@@ -2,7 +2,7 @@
 
 Public website for Mykei Securities Ltd.
 
-Mykei is developing ADN-1, a patent-pending shelf-level retail defence system designed to detect defined theft events, trigger controlled marker deployment, and record cartridge-linked activations in the Mykei Registry.
+Mykei is developing ADN, a patent-pending shelf-level retail defence system designed to detect defined theft events, trigger controlled marker deployment, and record cartridge-linked activations in the Mykei Registry.
 
 ## Development
 

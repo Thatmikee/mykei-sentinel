@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import PageSEO from "@/components/PageSEO";
 
-const GOLD = "#0D9488";
+const GOLD = "#C9A84C";
 const INK = "#1A1A18";
 const PAPER = "#FAFAF8";
 const MUTED = "#6B6B65";
@@ -27,14 +27,14 @@ function SimpleNav() {
       <a href="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: INK, textDecoration: "none" }}>
         Mykei Securities
       </a>
-      <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
-        Follow the Research
+      <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
+        Apply for ADN
       </a>
     </nav>
   );
 }
 
-/* Mykei wordmark — inlined from mykei_logo_black.svg, tinted to gold */
+/* Mykei wordmark, inlined from mykei_logo_black.svg, tinted to gold */
 function MykeiLogo({ height = 96, fill = GOLD }: { height?: number; fill?: string }) {
   const aspect = 1073 / 1342;
   const width = Math.round(height * aspect);
@@ -53,7 +53,7 @@ export default function CertificationPage() {
   useEffect(() => {
     document.title = "Mykei Protected Certification | Mykei Securities";
     const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", "The Mykei Protected badge signals to customers that a retail location runs ADN forensic marking. Become a certified Mykei Protected partner.");
+    if (desc) desc.setAttribute("content", "The Mykei Protected badge signals to customers, insurers, and resale platforms that a retail location runs ADN forensic marking. Become a certified Mykei Protected partner.");
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.href = "https://mykei.io/certification";
     const schema = document.createElement("script");
@@ -63,7 +63,7 @@ export default function CertificationPage() {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Mykei Protected Certification",
-      "description": "Certification programme for retail locations deploying ADN forensic security. The Mykei Protected badge is designed to support insurer review and resale-channel verification.",
+      "description": "Certification programme for retail locations deploying ADN forensic security. The Mykei Protected badge is recognised by insurers and resale platforms.",
       "provider": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io" },
       "url": "https://mykei.io/certification",
       "serviceType": "Retail Security Certification",
@@ -93,10 +93,10 @@ export default function CertificationPage() {
               Mykei Protected.
             </h1>
             <p style={{ fontSize: 17, color: MUTED, lineHeight: 1.75, maxWidth: 500 }}>
-              The Mykei Protected badge tells customers, insurers, and supply-chain partners that this location runs forensic retail security. It is not a sticker. It reflects a verified deployment of the ADN with batch-linked event registration.
+              The Mykei Protected badge tells customers, insurers, and supply-chain partners that this location runs forensic retail security. It is not a sticker. It signals an active ADN deployment with verified forensic coverage and batch-linked event registration. No locations are certified yet; the programme opens alongside the Q3 2026 pilot.
             </p>
           </div>
-          {/* Certificate badge — oblong pill */}
+          {/* Certificate badge, oblong pill */}
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "16px 0" }}>
             <div style={{
               display: "flex",
@@ -107,7 +107,7 @@ export default function CertificationPage() {
               border: `1px solid ${GOLD}`,
               borderRadius: 120,
               background: "#fff",
-              boxShadow: `0 0 0 5px ${PAPER}, 0 0 0 6px ${GOLD}22, 0 8px 32px rgba(13,148,136,0.12)`,
+              boxShadow: `0 0 0 5px ${PAPER}, 0 0 0 6px ${GOLD}22, 0 8px 32px rgba(201,168,76,0.12)`,
             }}>
               <MykeiLogo height={88} fill={GOLD} />
               <div style={{
@@ -135,11 +135,11 @@ export default function CertificationPage() {
             {[
               {
                 title: "Active forensic defence",
-                body: "Certified locations have at least one active ADN unit with verified sensor calibration and registry-linked marker deployment capability. The badge reflects a real deployment, not a purchased membership.",
+                body: "Certified locations will need at least one active ADN unit with verified sensor calibration and registry-linked marker deployment capability. The badge is intended to reflect a real deployment, not a purchased membership.",
               },
               {
-                title: "Insurer review",
-                body: "Mykei Protected status is designed to support insurer review as a possible risk-reduction signal for retail crime premiums. No insurer agreement is in place yet.",
+                title: "Insurer recognition",
+                body: "We are in active discussions with UK insurance underwriters to have Mykei Protected status recognised as a risk-reduction factor for retail crime premiums. Details will be published as agreements are finalised.",
               },
               {
                 title: "Registry event records",
@@ -172,19 +172,19 @@ export default function CertificationPage() {
                 Anyone can confirm whether a Mykei Protected badge is backed by an active deployment. Enter the store's name or postcode below. The portal is public and does not require an account.
               </p>
               <p style={{ fontSize: 13, color: MUTED, lineHeight: 1.7, fontStyle: "italic" }}>
-                The public verification portal is planned to open when the first certified locations are deployed. Timing is subject to the pilot programme schedule.
+                The public verification portal opens when the first certified locations go live in Q3 2026.
               </p>
             </div>
             <div style={{ border: `1px solid ${RULE}`, borderRadius: 8, padding: "32px 28px", background: "#fff" }}>
               <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, marginBottom: 20 }}>
-                In development
+                Coming Q3 2026
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 <input
                   type="text"
                   placeholder="Store name or postcode"
                   disabled
-                  aria-label="Store name or postcode (verification portal not yet available)"
+                  aria-label="Store name or postcode (verification portal not yet live)"
                   style={{ padding: "12px 16px", border: `1px solid ${RULE}`, borderRadius: 4, fontSize: 14, color: MUTED, background: "#F5F5F3", cursor: "not-allowed", fontFamily: "inherit" }}
                 />
                 <button
@@ -192,7 +192,7 @@ export default function CertificationPage() {
                   aria-disabled="true"
                   style={{ padding: "12px", background: RULE, color: MUTED, border: "none", borderRadius: 4, fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", cursor: "not-allowed" }}
                 >
-                  Verify, not yet available
+                  Verify, launching Q3 2026
                 </button>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function CertificationPage() {
               Certification follows deployment.
             </h2>
             {[
-              { step: "01", text: "Register your interest at mykei.io/signal. Pilot structure and pricing are under development. Qualified applicants in Greater Manchester will be contacted first." },
+              { step: "01", text: "Apply for the ADN pilot at mykei.io/pilot." },
               { step: "02", text: "Complete the seven-day Net 7 evaluation. Active ADN units are automatically enrolled in the Mykei Registry for cartridge-linked event registration." },
               { step: "03", text: "Receive your Mykei Protected badge, shelf signage, and digital verification credentials at the end of the pilot window." },
             ].map(({ step, text }) => (
@@ -219,10 +219,10 @@ export default function CertificationPage() {
               </div>
             ))}
             <a
-              href="/signal"
+              href="/pilot"
               style={{ display: "inline-block", marginTop: 12, background: GOLD, color: INK, padding: "13px 28px", borderRadius: 4, fontFamily: "'JetBrains Mono', monospace", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none" }}
             >
-              Follow the Research
+              Apply for the Pilot
             </a>
           </div>
         </section>

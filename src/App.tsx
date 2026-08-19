@@ -26,6 +26,7 @@ const StateOfTheftPage         = lazy(() => import("./pages/StateOfTheftPage"));
 const InvestorsPage            = lazy(() => import("./pages/InvestorsPage"));
 const EnterprisePage           = lazy(() => import("./pages/EnterprisePage"));
 const BriefIndex               = lazy(() => import("./pages/BriefIndex"));
+const MastheadPage             = lazy(() => import("./pages/MastheadPage"));
 const SignalCCTVScamPage       = lazy(() => import("./pages/SignalCCTVScamPage"));
 const SignalSalfordVintedPage  = lazy(() => import("./pages/SignalSalfordVintedPage"));
 const SignalSurgeonNotCameraPage = lazy(() => import("./pages/SignalSurgeonNotCameraPage"));
@@ -39,9 +40,6 @@ const SignalCoopCrimeWarPage   = lazy(() => import("./pages/SignalCoopCrimeWarPa
 const BlogPostPage             = lazy(() => import("./pages/BlogPostPage"));
 const ThesisPage               = lazy(() => import("./pages/ThesisPage"));
 const ProtocolPage             = lazy(() => import("./pages/ProtocolPage"));
-const DoctrinePage             = lazy(() => import("./pages/DoctrinePage"));
-const PressPageFull            = lazy(() => import("./pages/PressPage"));
-const SimIntelPage             = lazy(() => import("./pages/SimIntelPage"));
 
 const queryClient = new QueryClient();
 
@@ -62,8 +60,8 @@ const App = () => (
             <Route path="/adn-1" element={<Navigate to="/adn" replace />} />
             <Route path="/technology/adn-1" element={<Navigate to="/adn" replace />} />
             <Route path="/technology/ats" element={<ATSDetail />} />
-            <Route path="/adn-1-in-action" element={<Navigate to="/adn" replace />} />
-            <Route path="/intel" element={<SimIntelPage />} />
+            <Route path="/adn-in-action" element={<ADN1InAction />} />
+            <Route path="/adn-1-in-action" element={<Navigate to="/adn-in-action" replace />} />
             <Route path="/founder" element={<FounderPage />} />
             <Route path="/michael-esema" element={<FounderPage />} />
             <Route path="/economic-sterilisation" element={<EconomicSterilisationPage />} />
@@ -81,15 +79,15 @@ const App = () => (
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/certification" element={<CertificationPage />} />
             <Route path="/state-of-theft" element={<StateOfTheftPage />} />
-            <Route path="/press" element={<PressPageFull />} />
-            <Route path="/doctrine" element={<DoctrinePage />} />
+            <Route path="/press" element={<Navigate to="/founder" replace />} />
             <Route path="/investors" element={<InvestorsPage />} />
             <Route path="/enterprise" element={<EnterprisePage />} />
             <Route path="/signal" element={<BriefIndex />} />
+            <Route path="/signal/masthead" element={<MastheadPage />} />
             <Route path="/signal/cctv-313-million-movie-ticket" element={<SignalCCTVScamPage />} />
             <Route path="/signal/salford-to-vinted-black-market" element={<SignalSalfordVintedPage />} />
             <Route path="/signal/surgeon-not-camera-200ms" element={<SignalSurgeonNotCameraPage />} />
-            <Route path="/signal/shopkeeper-maths-adn1-cost" element={<SignalShopkeeperMathsPage />} />
+            <Route path="/signal/shopkeeper-maths-adn-cost" element={<SignalShopkeeperMathsPage />} />
             <Route path="/signal/david-robinson-gmb-cctv-theatre" element={<SignalDMRGMBPage />} />
             <Route path="/signal/fog-security-systems-debunked" element={<SignalFogSecurityPage />} />
             <Route path="/signal/shoplifting-133-percent-london-1-in-14" element={<SignalShopliftingSystemPage />} />

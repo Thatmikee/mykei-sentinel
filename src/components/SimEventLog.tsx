@@ -1,16 +1,16 @@
 const SIM_EVENTS = [
-  { t: "T+0.0s",  type: "DETECTION", msg: "Sweep detected. ToF vector threshold exceeded (94cm/s lateral)" },
-  { t: "T+0.3s",  type: "CONFIRM",   msg: "Second-zone confirmation positive. False trigger excluded" },
-  { t: "T+0.6s",  type: "DEPLOY",    msg: "Marker deployed. Batch SIM-0426 cartridge-linked event recorded" },
-  { t: "T+0.9s",  type: "REGISTRY",  msg: "Mykei Registry updated. Item status: MARKED / LOGGED" },
-  { t: "T+1.2s",  type: "VERIFY",    msg: "Submitted for verification workflow. Cartridge-linked event record created" },
-  { t: "T+1.4s",  type: "COMPLETE",  msg: "Event MYK-SIM-001 closed. Node returned to ARMED" },
+  { t: "T+0.0s",  type: "DETECTION", msg: "Sweep detected, ToF vector threshold exceeded (94cm/s lateral)" },
+  { t: "T+0.3s",  type: "CONFIRM",   msg: "Second-zone confirmation positive, false trigger excluded" },
+  { t: "T+0.6s",  type: "DEPLOY",    msg: "Marker deployed, batch SIM-0426 cartridge-linked event recorded" },
+  { t: "T+0.9s",  type: "REGISTRY",  msg: "Mykei Registry updated, item status: MARKED / LOGGED" },
+  { t: "T+1.2s",  type: "VERIFY",    msg: "Submitted for verification workflow, cartridge-linked event record created" },
+  { t: "T+1.4s",  type: "COMPLETE",  msg: "Event MYK-SIM-001 closed, node returned to ARMED" },
 ];
 
 const TYPE_COLOUR: Record<string, string> = {
   DETECTION: "#8a6a1a",
   CONFIRM:   "#2D7D46",
-  DEPLOY:    "#0D9488",
+  DEPLOY:    "#D4AF37",
   REGISTRY:  "#1E1E1E",
   VERIFY:    "#8a6a1a",
   COMPLETE:  "#2D7D46",
@@ -39,7 +39,7 @@ export default function SimEventLog({ caption = true }: Props) {
         alignItems: "center",
       }}>
         <span style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.14em", color: "#8a7a5a" }}>
-          EVENT LOG · NODE ADN-SIM
+          EVENT LOG · NODE ADN1-SIM
         </span>
         <span style={{ fontSize: "10px", color: "#aaa" }}>MYK-SIM-001</span>
       </div>
@@ -81,7 +81,7 @@ export default function SimEventLog({ caption = true }: Props) {
           fontFamily: "'Sora', sans-serif",
           fontStyle: "italic",
         }}>
-          Simulated event log based on ADN system architecture. Not derived from live deployment data.
+          Simulated event log based on ADN system architecture, not derived from live deployment data
         </div>
       )}
     </div>

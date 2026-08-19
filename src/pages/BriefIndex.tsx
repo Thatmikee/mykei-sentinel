@@ -4,7 +4,7 @@ import { blogPosts } from "@/data/blogPosts";
 import PageSEO from "@/components/PageSEO";
 
 const INK    = "#0F0C08";
-const GOLD   = "#0D9488";
+const GOLD   = "#B8962E";
 const PAPER  = "#FAFAF6";
 const WARM   = "#F2EDE3";
 const MUTED  = "#6B5E4A";
@@ -82,10 +82,8 @@ export default function BriefIndex() {
           Mykei Securities
         </a>
         <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
+          <Link to="/signal/masthead" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>Masthead</Link>
           <a href="/howitworks" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>How It Works</a>
-          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
-            Follow the Research
-          </a>
         </div>
       </nav>
 
@@ -128,9 +126,9 @@ export default function BriefIndex() {
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: "0.1em", color: MUTED }}>
               {today}
             </span>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: "0.12em", textTransform: "uppercase", color: GOLD }}>
-              Vol. 1 · Issue {sorted.length}
-            </span>
+            <Link to="/signal/masthead" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: "0.12em", textTransform: "uppercase", color: GOLD, textDecoration: "none" }}>
+              Vol. 1 · {sorted.length} pieces · Masthead
+            </Link>
           </div>
         </div>
       </header>
@@ -364,7 +362,7 @@ export default function BriefIndex() {
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 20 }}>Founder bio for publication</div>
               <blockquote style={{ borderLeft: `2px solid ${GOLD}`, paddingLeft: 20, margin: "0 0 24px" }}>
                 <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 15, fontStyle: "italic", color: INK, lineHeight: 1.75 }}>
-                  Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN, a patent-pending shelf-mounted retail defence device that detects bulk-sweep theft events, triggers controlled marker deployment, and records cartridge-linked activations in the Mykei Registry. He coined the doctrine of Economic Sterilisation in 2025 (UK patent application No. 2606630.8). A former Head Accountant at B's Hive, he holds an MSc from Manchester Metropolitan University, an MBA from the Nigerian Defence Academy, and a BSc from Benson Idahosa University. Five letters of intent are signed in Greater Manchester. The pilot has not yet begun; the system is at controlled prototype stage.
+                  Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN, a patent-pending shelf-mounted retail defence device that detects bulk-sweep theft events, triggers controlled marker deployment, and records cartridge-linked activations in the Mykei Registry. He coined the doctrine of Economic Sterilisation in 2025 (UK patent application No. 2606630.8). A former Head Accountant at B's Hive, he holds an MSc from Manchester Metropolitan University, an MBA from the Nigerian Defence Academy, and a BSc from Benson Idahosa University. Five non-binding letters of interest were signed by independent retailers in Greater Manchester in March 2026. No pilot has started.
                 </p>
               </blockquote>
               <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
@@ -383,8 +381,8 @@ export default function BriefIndex() {
                   "Global retail theft: $796 billion annually",
                   "UK retail crime incidents: 5.8 million (ACS 2026)",
                   "Patent application: GB2606630.8, 17 claims",
-                  "ADN response time: design target under 3 seconds",
-                  "Independent Retail Pilot: 2026, 5 signed LOIs",
+                  "ADN response time: under 3 seconds",
+                  "Independent retail: 5 non-binding letters of interest, March 2026",
                   "Privacy-by-design: no camera, no biometric or suspect identity data",
                 ].map(fact => (
                   <div key={fact} style={{ display: "flex", gap: 10, padding: "8px 0", borderBottom: `1px solid ${RULE}`, fontSize: 12.5, color: MUTED, lineHeight: 1.5 }}>
@@ -410,7 +408,7 @@ export default function BriefIndex() {
                   protocol@mykei.io
                 </a>
                 <p style={{ fontSize: 12, color: MUTED, marginTop: 6, lineHeight: 1.6 }}>
-                  Interviews, comment on retail crime data, ADN technical overview. 24-hour response.
+                  Interviews, comment on retail crime data, ADN technical spec. 24-hour response.
                 </p>
               </div>
             </div>
@@ -419,23 +417,23 @@ export default function BriefIndex() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: WARM, borderTop: `1px solid ${RULE}`, padding: "72px 24px", textAlign: "center" }}>
+      <section style={{ background: WARM, padding: "72px 24px", textAlign: "center" }}>
         <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: GOLD, marginBottom: 16 }}>
           Independent Retail Pilot · 2026
         </div>
         <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: "clamp(22px,3vw,32px)", fontWeight: 700, color: INK, marginBottom: 12, lineHeight: 1.25, maxWidth: 560, margin: "0 auto 12px" }}>
-          Built for independent retailers. Direct founder involvement. No intermediaries.
+          Independent retailers. Direct founder support. No middlemen.
         </p>
         <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, color: MUTED, marginBottom: 32, lineHeight: 1.7, maxWidth: 460, margin: "0 auto 32px" }}>
-          Mykei publishes its findings through The Signal as the ADN development programme continues.
+          Michael visits every site personally before installation. Commercial terms agreed directly with Mykei. No automated sequences.
         </p>
-        <a href="/signal" style={{
+        <a href="/pilot" style={{
           display: "inline-block", background: INK, color: WHITE,
           fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700,
           letterSpacing: "0.14em", textTransform: "uppercase",
           textDecoration: "none", padding: "14px 40px", borderRadius: 2,
         }}>
-          Read the Archive
+          Apply Now
         </a>
       </section>
 
@@ -452,7 +450,6 @@ export default function BriefIndex() {
       </footer>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;500&display=swap');
         @media (max-width: 720px) {
           .signal-lead-grid { grid-template-columns: 1fr !important; }
           .signal-lead-grid > div:nth-child(2) { display: none; }

@@ -4,12 +4,17 @@
 /brief                    /signal                    301
 /brief/*                  /signal/:splat             301
 
-# Legacy page merged — ADN-1 in Action is now ADN-1
-/adn-1-in-action          /adn-1                     301
+# Legacy page merged — ADN in Action is now ADN
+/adn-1-in-action          /adn-in-action             301
+/adn-1                    /adn                       301
+/technology/adn-1         /adn                       301
 
 # Blog redirects to The Signal
 /blog                     /signal                    301
 /blog/*                   /signal                    301
+
+# Slug fix — "adn1" replaced with "adn" sitewide
+/signal/shopkeeper-maths-adn1-cost   /signal/shopkeeper-maths-adn-cost   301
 
 # SEO redirects — US/alternate spellings
 /economic-sterilization            /economic-sterilisation            301

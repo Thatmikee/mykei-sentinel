@@ -4,45 +4,45 @@ const PHASES = [
   {
     quarter: "Q1 2026",
     title: "Foundation",
-    status: "active",
+    status: "done",
     milestones: [
       { text: "Company incorporated, No. 16984969", done: true },
-      { text: "Director funding secured", done: true },
+      { text: "Founder and co-director funding used for initial setup", done: true },
       { text: "Encrypted Logic Core prototype on breadboard", done: true },
       { text: "Dual Tactical Multi-zone Sensor Array I²C address resolution confirmed", done: true },
       { text: "Bulk-sweep kinetic detection algorithm written", done: true },
       { text: "Patent application filed, No. 2606630.8 (UK) (17 claims)", done: true },
       { text: "Technical Data Sheet published", done: true },
       { text: "mykei.io website launched with full tech documentation", done: true },
-      { text: "Pilot application system launched, signed LOI PDF on submission", done: true },
+      { text: "Pilot fit conversations open with independent retailers", done: true },
       { text: "Business plan finalised, March 2026", done: true },
       { text: "Investor pitch deck published, v2", done: true },
       { text: "Innovation grant application submitted", done: true },
-      { text: "5+ Letters of Intent secured from pilot retailers", done: true },
+      { text: "Pilot fit conversations open with prospective retailers", done: false },
     ],
   },
   {
     quarter: "Q2 2026",
     title: "Integration",
-    status: "next",
+    status: "delayed",
     milestones: [
       { text: "Marker supplier confirmed and SDS/COSHH review complete", done: false },
       { text: "Batch-identifiable marker integrated and field-tested", done: false },
       { text: "Production enclosure (3D printed)", done: false },
-      { text: "Mykei Registry deployed, cartridge-linked event records logging", done: false },
-      { text: "End-to-end system demo (detection, marker deployment, registry event)", done: false },
-      { text: "5 pilot sites hardware-deployed in Greater Manchester (target)", done: false },
+      { text: "Mykei Registry design finalised, cartridge-linked event records logging designed", done: false },
+      { text: "End-to-end system demo (detection → marker deployment → registry event)", done: false },
+      { text: "5 pilot sites hardware-live in Greater Manchester", done: false },
       { text: "First real theft event recorded on registry", done: false },
     ],
   },
   {
     quarter: "Q3 2026",
     title: "Evidence",
-    status: "planned",
+    status: "active",
     milestones: [
       { text: "First cartridge-linked event record submitted to support police investigation", done: false },
       { text: "First insurance claim supported by marker deployment event record", done: false },
-      { text: "Retailer management dashboard deployed", done: false },
+      { text: "Retailer management dashboard live", done: false },
       { text: "10+ active pilot sites", done: false },
       { text: "BIRA partnership introduction", done: false },
       { text: "Press coverage secured", done: false },
@@ -78,9 +78,11 @@ const PHASES = [
 ];
 
 const STATUS_CONFIG = {
-  active: { label: "IN PROGRESS", bg: "rgba(13,148,136,0.12)", border: "rgba(13,148,136,0.4)", color: "#0D9488", dot: "#0D9488" },
-  next:   { label: "UP NEXT",     bg: "rgba(15,31,61,0.08)",   border: "rgba(15,31,61,0.2)",   color: "#0f1f3d", dot: "#0f1f3d" },
-  planned:{ label: "PLANNED",     bg: "rgba(148,163,184,0.08)", border: "rgba(148,163,184,0.25)", color: "#94a3b8", dot: "#94a3b8" },
+  active:  { label: "IN PROGRESS", bg: "rgba(201,168,76,0.12)", border: "rgba(201,168,76,0.4)", color: "#c9a84c", dot: "#c9a84c" },
+  next:    { label: "UP NEXT",     bg: "rgba(15,31,61,0.08)",   border: "rgba(15,31,61,0.2)",   color: "#0f1f3d", dot: "#0f1f3d" },
+  planned: { label: "PLANNED",     bg: "rgba(148,163,184,0.08)", border: "rgba(148,163,184,0.25)", color: "#94a3b8", dot: "#94a3b8" },
+  done:    { label: "DONE",        bg: "rgba(34,197,94,0.10)",   border: "rgba(34,197,94,0.3)",   color: "#16a34a", dot: "#16a34a" },
+  delayed: { label: "BEHIND SCHEDULE", bg: "rgba(220,38,38,0.08)", border: "rgba(220,38,38,0.25)", color: "#b91c1c", dot: "#b91c1c" },
 };
 
 export default function Roadmap() {
@@ -101,14 +103,13 @@ export default function Roadmap() {
   const navLinks = [
     ["Home",         "/"],
     ["How It Works", "/howitworks"],
-    ["Research",     "/signal"],
+    ["Pilot",        "/pilot"],
     ["Roadmap",      "/roadmap"],
   ];
 
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Sora', sans-serif; background: #f8f9fc; color: #0f1f3d; }
@@ -131,12 +132,12 @@ export default function Roadmap() {
         }
         .rm-nav-brand { display: flex; flex-direction: column; gap: 2px; }
         .rm-nav-brand-name { font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #0f1f3d; line-height: 1; }
-        .rm-nav-brand-sub  { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: #0D9488; }
+        .rm-nav-brand-sub  { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: #c9a84c; }
         .rm-nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
         .rm-nav-links a { font-size: 13px; font-weight: 500; color: #475569; padding: 6px 14px; border-radius: 6px; transition: all 0.15s; }
         .rm-nav-links a:hover, .rm-nav-links a.active { color: #0f1f3d; background: rgba(15,31,61,0.04); }
         .rm-nav-cta { font-size: 13px; font-weight: 600; color: #fff; background: #4A2008; padding: 8px 20px; border-radius: 6px; transition: all 0.2s; }
-        .rm-nav-cta:hover { background: #0D9488; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(13,148,136,0.3); }
+        .rm-nav-cta:hover { background: #c9a84c; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,168,76,0.3); }
         .rm-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
         .rm-hamburger span { display: block; width: 22px; height: 2px; background: #0f1f3d; border-radius: 2px; }
         .rm-mobile-menu { background: #fff; border-bottom: 1px solid #e2e8f3; padding: 16px 24px; display: flex; flex-direction: column; gap: 4px; }
@@ -146,7 +147,7 @@ export default function Roadmap() {
         /* HERO HEADER */
         .rm-header {
           background: #FFFFFF;
-          background-image: radial-gradient(rgba(13,148,136,0.07) 1px, transparent 1px);
+          background-image: radial-gradient(rgba(201,168,76,0.07) 1px, transparent 1px);
           background-size: 28px 28px;
           padding: 120px 52px 64px;
           position: relative; overflow: hidden;
@@ -162,7 +163,7 @@ export default function Roadmap() {
           display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: end;
           animation: fadeUp 0.7s ease both;
         }
-        .rm-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: #0D9488; margin-bottom: 14px; }
+        .rm-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: #D4AF37; margin-bottom: 14px; }
         .rm-h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: #1E1E1E; letter-spacing: -1px; line-height: 1.1; margin-bottom: 12px; }
         .rm-subline { font-size: 15px; color: #6E6E6E; max-width: 480px; line-height: 1.7; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.3px; }
 
@@ -170,14 +171,14 @@ export default function Roadmap() {
         .rm-progress-widget {
           background: rgba(255,255,255,0.04);
           backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(13,148,136,0.2);
+          border: 1px solid rgba(201,168,76,0.2);
           border-radius: 12px; padding: 24px 28px;
           min-width: 200px; text-align: center;
         }
-        .rm-progress-pct { font-size: 42px; font-weight: 800; color: #0D9488; letter-spacing: -2px; line-height: 1; }
+        .rm-progress-pct { font-size: 42px; font-weight: 800; color: #c9a84c; letter-spacing: -2px; line-height: 1; }
         .rm-progress-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 6px; }
         .rm-progress-bar-bg { background: rgba(255,255,255,0.06); border-radius: 100px; height: 4px; margin-top: 14px; overflow: hidden; }
-        .rm-progress-bar-fill { background: linear-gradient(90deg, #0D9488, #5EEAD4); border-radius: 100px; height: 4px; transition: width 1.2s ease; }
+        .rm-progress-bar-fill { background: linear-gradient(90deg, #c9a84c, #f0d080); border-radius: 100px; height: 4px; transition: width 1.2s ease; }
         .rm-progress-counts { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.2); margin-top: 8px; }
 
         /* FLOW DIAGRAM */
@@ -201,8 +202,8 @@ export default function Roadmap() {
         }
         .rm-flow-line { height: 1.5px; flex: 1; background: #e2e8f3; }
         .rm-flow-arrow { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid #e2e8f3; flex-shrink: 0; }
-        .rm-flow-arrow.gold { border-left-color: #0D9488; }
-        .rm-flow-line.gold { background: linear-gradient(90deg, #0D9488, #5EEAD4); }
+        .rm-flow-arrow.gold { border-left-color: #c9a84c; }
+        .rm-flow-line.gold { background: linear-gradient(90deg, #c9a84c, #e8d080); }
 
         /* CARDS GRID */
         .rm-cards-section { padding: 48px 52px 80px; }
@@ -214,8 +215,8 @@ export default function Roadmap() {
           overflow: hidden; transition: all 0.25s ease; cursor: pointer;
         }
         .rm-card.rm-card-selected {
-          border-color: #0D9488;
-          box-shadow: 0 8px 32px rgba(13,148,136,0.12), 0 0 0 1px rgba(13,148,136,0.15);
+          border-color: #c9a84c;
+          box-shadow: 0 8px 32px rgba(201,168,76,0.12), 0 0 0 1px rgba(201,168,76,0.15);
         }
         .rm-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(15,31,61,0.08); }
         .rm-card-head { padding: 16px; border-bottom: 1px solid #f1f5f9; }
@@ -273,7 +274,7 @@ export default function Roadmap() {
           ))}
           <li><a href="https://michaelesema.com" target="_blank" rel="noreferrer">Founder</a></li>
         </ul>
-        <a href="/signal" className="rm-nav-cta">Follow the Research →</a>
+        <a href="/pilot" className="rm-nav-cta">Join the Pilot →</a>
         <button className="rm-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <span /><span /><span />
         </button>
@@ -285,7 +286,7 @@ export default function Roadmap() {
             <a key={label} href={href} className="rm-mobile-link" onClick={() => setMenuOpen(false)}>{label}</a>
           ))}
           <a href="https://michaelesema.com" target="_blank" rel="noreferrer" className="rm-mobile-link" onClick={() => setMenuOpen(false)}>Founder</a>
-          <a href="/signal" className="rm-mobile-cta" onClick={() => setMenuOpen(false)}>Follow the Research →</a>
+          <a href="/pilot" className="rm-mobile-cta" onClick={() => setMenuOpen(false)}>Join the Pilot →</a>
         </div>
       )}
 
@@ -294,10 +295,10 @@ export default function Roadmap() {
         <div className="rm-header-inner">
           <div>
             <div className="rm-eyebrow">Product Roadmap · Mykei Securities Ltd</div>
-            <h1 className="rm-h1">Q1 complete.<br />Hardware development in progress.</h1>
+            <h1 className="rm-h1">Q1 complete.<br />ADN deploying Q2.</h1>
             <p className="rm-subline">
-              Patent filed. 5+ retailers signed. Website live. Investor pitch out.<br />
-              Hardware and marker qualification ongoing.
+              Patent filed. Independent retailers in Greater Manchester have signed non-binding letters of intent. Website live. Investor pitch out.<br />
+              Now we put ADN on the shelf.
             </p>
           </div>
           <div className="rm-progress-widget">
@@ -328,7 +329,7 @@ export default function Roadmap() {
                   <div
                     className="rm-flow-pill"
                     style={{
-                      background: isSelected ? cfg.color : (isActive ? "rgba(13,148,136,0.08)" : "#f8f9fc"),
+                      background: isSelected ? cfg.color : (isActive ? "rgba(201,168,76,0.08)" : "#f8f9fc"),
                       borderColor: isSelected ? cfg.color : cfg.border,
                       color: isSelected ? "#fff" : cfg.color,
                       fontWeight: isActive || isSelected ? 600 : 400,

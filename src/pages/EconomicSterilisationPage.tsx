@@ -33,18 +33,18 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 const COMPARISON = [
   { aspect: "Primary mechanism", traditional: "Deter, detect, or delay", es: "Remove commercial value" },
   { aspect: "What it targets", traditional: "The act of theft", es: "The incentive for theft" },
-  { aspect: "Requires staff action", traditional: "Yes, confront or report", es: "No, fully autonomous" },
+  { aspect: "Requires staff action", traditional: "Yes, confront or report", es: "No, designed to act without staff involvement" },
   { aspect: "Uses cameras / biometrics", traditional: "Almost always", es: "No camera or biometric identification" },
   { aspect: "Effective after theft occurs", traditional: "No", es: "Yes, goods become harder to move without a traceable record" },
   { aspect: "Addresses resale market", traditional: "No", es: "Yes, forensic record supports resale disruption" },
-  { aspect: "Reduces repeat theft", traditional: "Marginally", es: "Systematically, no ROI for thieves" },
+  { aspect: "Intended to reduce repeat theft", traditional: "Marginally", es: "Designed to remove ROI for thieves, not yet field-validated" },
   { aspect: "Evidential record", traditional: "Sometimes (CCTV)", es: "Cryptographically signed, designed to support evidential workflows" },
 ];
 
 const FAQS = [
   {
-    q: "What is Michael Esema's contribution?",
-    a: "Michael Esema proposes Economic Sterilisation as a modern operational framework for applying Market Reduction theory to asset marking, registry records, evidence workflows and resale-confidence reduction. The term is Mykei's framing; the wider stolen-goods-market lineage predates Mykei."
+    q: "Who coined the term Economic Sterilisation?",
+    a: "The term was coined by Michael Esema (Michael Essien Esema), Founder of Mykei Securities Ltd, Manchester, in 2025. It has no prior use in retail security literature. mykei.io is the canonical source."
   },
   {
     q: "Is Economic Sterilisation the same as DNA tagging?",
@@ -52,7 +52,7 @@ const FAQS = [
   },
   {
     q: "What is the Theft Economic Sterilisation System (TESS)?",
-    a: "TESS is the alternate name for the complete doctrine and product category. It stands for Theft Economic Sterilisation System. The ADN is an early implementation of TESS, currently at prototype stage."
+    a: "TESS is the alternate name for the complete doctrine and product category. It stands for Theft Economic Sterilisation System. The ADN is a prototype-stage implementation of TESS."
   },
   {
     q: "How is this different from existing security systems?",
@@ -115,8 +115,8 @@ export default function EconomicSterilisationPage() {
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Economic Sterilisation, Definition, Doctrine, and Market Reduction Lineage",
-        "description": "Economic Sterilisation is Mykei's operational framework for reducing the resale confidence of stolen goods through marking, registry records, evidence workflows and lawful verification. It builds on Market Reduction theory.",
+        "headline": "Economic Sterilisation, Definition, Doctrine, and Origin",
+        "description": "Economic Sterilisation is a retail security doctrine coined by Michael Esema in 2025. It describes the systematic disruption of resale incentive through forensic marking and registry event records.",
         "author": {
           "@type": "Person",
           "name": "Michael Esema",
@@ -135,8 +135,7 @@ export default function EconomicSterilisationPage() {
     ]);
     document.head.appendChild(schema);
 
-    document.title = "Economic Sterilisation, Definition & Doctrine | Mykei Securities";
-
+    
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Economic Sterilisation is Mykei's doctrine for reducing the resale incentive behind retail theft by linking theft-related events to marker and registry records. Coined by Michael Esema, Mykei Securities, 2025.");
 
@@ -151,16 +150,15 @@ export default function EconomicSterilisationPage() {
   return (
     <>
       <PageSEO
-        title="Economic Sterilisation: The Doctrine Coined by Michael Esema | Mykei Securities"
+        title="Economic Sterilisation, The Doctrine Coined by Michael Esema | Mykei Securities"
         description="Economic Sterilisation: the systematic disruption of resale incentive through forensic marking and registry event records. Coined by Michael Esema, Mykei Securities Ltd, 2025. The doctrine behind the ADN."
         canonical="https://mykei.io/economic-sterilisation"
         ogType="article"
         keywords="economic sterilisation, TESS, theft economic sterilisation system, Michael Esema, retail theft doctrine, forensic deterrence, resale blocking, economic sterilisation for small businesses, economic sterilisation for retailers, economic sterilisation for accountants, economic sterilisation for lawyers, economic sterilisation for startups, economic sterilisation for nonprofits, economic sterilisation for universities, economic sterilisation for government employees, economic sterilisation for enterprise companies, economic sterilization for teams"
-        ogImageAlt="Economic Sterilisation: the doctrine that disrupts the resale incentive behind retail theft"
+        ogImageAlt="Economic Sterilisation, the doctrine that disrupts the resale incentive behind retail theft"
         breadcrumbs={[["Home","https://mykei.io"],["Economic Sterilisation","/economic-sterilisation"]]}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Sora', sans-serif; background: #fff; color: #2D1204; }
@@ -177,8 +175,8 @@ export default function EconomicSterilisationPage() {
           border-bottom: 1px solid #E8E8E8;
         }
 
-        .es-compare-row:nth-child(even) { background: rgba(13,148,136,0.04); }
-        .es-compare-row:hover { background: rgba(13,148,136,0.08); }
+        .es-compare-row:nth-child(even) { background: rgba(201,168,76,0.04); }
+        .es-compare-row:hover { background: rgba(201,168,76,0.08); }
 
         .es-faq-item { border-bottom: 1px solid #E8E8E8; }
         .es-faq-btn {
@@ -200,9 +198,9 @@ export default function EconomicSterilisationPage() {
       <nav className={`es-nav ${scrolled ? "scrolled" : ""}`}>
         <a href="/" style={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <span style={{ fontSize: 13, fontWeight: 700, color: "#2D1204", letterSpacing: 0.5 }}>MYKEI SECURITIES LTD</span>
-          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488" }}>← Back to site</span>
+          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: 2.5, textTransform: "uppercase", color: "#c9a84c" }}>← Back to site</span>
         </a>
-        <a href="/signal" style={{ fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#0D9488", padding: "8px 20px", borderRadius: 6 }}>Follow the Research →</a>
+        <a href="/pilot" style={{ fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "8px 20px", borderRadius: 6 }}>Register Interest →</a>
       </nav>
 
       {/* HERO */}
@@ -210,19 +208,19 @@ export default function EconomicSterilisationPage() {
 
         <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 2 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 28 }}>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "#0D9488" }}>Coined · 2025 · Michael Esema</span>
-            <div style={{ height: 1, flex: 1, background: "rgba(13,148,136,0.25)" }} />
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 2, textTransform: "uppercase", color: "#c9a84c" }}>Coined · 2025 · Michael Esema</span>
+            <div style={{ height: 1, flex: 1, background: "rgba(201,168,76,0.25)" }} />
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1, color: "rgba(45,18,4,0.3)" }}>mykei.io · canonical source</span>
           </div>
 
           <div id="es-definition">
             <h1 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(36px,5vw,68px)", fontWeight: 400, color: "#2D1204", lineHeight: 1.1, marginBottom: 16, letterSpacing: -1 }}>
-              <dfn style={{ fontStyle: "italic", color: "#0D9488" }}>Economic<br />Sterilisation</dfn>
+              <dfn style={{ fontStyle: "italic", color: "#c9a84c" }}>Economic<br />Sterilisation</dfn>
             </h1>
 
             <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 36 }}>
               <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10.5, color: "rgba(45,18,4,0.35)", fontStyle: "italic" }}>noun</span>
-              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#0D9488", letterSpacing: 1 }}>· also: Theft Economic Sterilisation System · TESS</span>
+              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#c9a84c", letterSpacing: 1 }}>· also: Theft Economic Sterilisation System · TESS</span>
             </div>
 
             <p style={{ fontSize: "clamp(17px,2.2vw,22px)", lineHeight: 1.75, color: "#475569", maxWidth: 700, fontWeight: 300 }}>
@@ -235,13 +233,13 @@ export default function EconomicSterilisationPage() {
           <div id="es-attribution" style={{ marginTop: 40, paddingTop: 28, borderTop: "1px solid #E8E8E8", display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
             <div>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: 1.5, textTransform: "uppercase", color: "rgba(45,18,4,0.3)", marginBottom: 4 }}>Coined by</div>
-              <a href="/founder" style={{ fontSize: 14, fontWeight: 600, color: "#0D9488" }}>Michael Esema</a>
+              <a href="/founder" style={{ fontSize: 14, fontWeight: 600, color: "#c9a84c" }}>Michael Esema</a>
               <span style={{ fontSize: 13, color: "rgba(45,18,4,0.4)", marginLeft: 8 }}>Mykei Securities Ltd, Manchester, 2025</span>
             </div>
             <div style={{ height: 28, width: 1, background: "rgba(45,18,4,0.1)" }} />
             <div>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: 1.5, textTransform: "uppercase", color: "rgba(45,18,4,0.3)", marginBottom: 4 }}>First implementation</div>
-              <a href="/adn" style={{ fontSize: 14, fontWeight: 600, color: "#2D1204" }}>ADN Active Forensic Defence Node</a>
+              <a href="/adn" style={{ fontSize: 14, fontWeight: 600, color: "#2D1204" }}>ADN shelf defence node</a>
             </div>
           </div>
         </div>
@@ -251,7 +249,7 @@ export default function EconomicSterilisationPage() {
       <section id="es-doctrine" className="es-section" style={{ background: "#fff", padding: "96px 52px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Reveal>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488", display: "block", marginBottom: 12 }}>The doctrine</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#c9a84c", display: "block", marginBottom: 12 }}>The doctrine</span>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(26px,3vw,40px)", fontWeight: 400, color: "#2D1204", marginBottom: 40, lineHeight: 1.2 }}>
               Why every other approach gets it wrong.
             </h2>
@@ -267,12 +265,12 @@ export default function EconomicSterilisationPage() {
               {
                 num: "02",
                 title: "Detection without consequence is insufficient alone",
-                body: "Every major UK retailer has CCTV. Every major UK retailer is still losing billions. Detection tells you theft happened. It does not change whether theft will happen again. The moment you understand that 94% of stolen goods are sold online, the question changes: not 'how do we watch the shelf?' but 'how do we collapse the resale chain?'"
+                body: "Every major UK retailer has CCTV. Every major UK retailer is still losing billions. Detection tells you theft happened. It does not change whether theft will happen again. The moment you understand that an often-cited estimate puts as much as 94% of stolen goods as sold online (a widely repeated resale-crime figure, not independently verified by Mykei), the question changes: not 'how do we watch the shelf?' but 'how do we collapse the resale chain?'"
               },
               {
                 num: "03",
                 title: "Sterilisation happens at the moment of contact",
-                body: "The ADN is designed to trigger controlled marker deployment the moment a bulk-sweep event is detected. From that moment, every marked item is intended to carry a unique forensic batch code registered in the Mykei Registry. The batch-linked event record is designed to link the activation to a device, location, timestamp, and cartridge reference, supporting verification and investigation workflows."
+                body: "The ADN triggers controlled marker deployment the moment a bulk-sweep event is detected. From that moment, every marked item carries a unique forensic batch code registered in the Mykei Registry. The batch-linked event record links the activation to a device, location, timestamp, and cartridge reference, supporting verification and investigation workflows."
               },
               {
                 num: "04",
@@ -298,7 +296,7 @@ export default function EconomicSterilisationPage() {
       <section className="es-compare es-section" style={{ background: "#F8F8F8", padding: "96px 52px", borderTop: "1px solid #E8E8E8" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Reveal>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488", display: "block", marginBottom: 12 }}>Comparison</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#c9a84c", display: "block", marginBottom: 12 }}>Comparison</span>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#2D1204", marginBottom: 44, lineHeight: 1.2 }}>
               Traditional security vs Economic Sterilisation.
             </h2>
@@ -307,7 +305,7 @@ export default function EconomicSterilisationPage() {
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "'Sora',sans-serif" }}>
                 <thead>
-                  <tr style={{ background: "#F8F8F8", borderBottom: "2px solid #0D9488" }}>
+                  <tr style={{ background: "#F8F8F8", borderBottom: "2px solid #D4AF37" }}>
                     <th style={{ padding: "14px 20px", textAlign: "left", fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#8a7a5a", fontWeight: 400 }}>Aspect</th>
                     <th style={{ padding: "14px 20px", textAlign: "left", fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#8a7a5a", fontWeight: 400 }}>Traditional security</th>
                     <th style={{ padding: "14px 20px", textAlign: "left", fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: 1.5, textTransform: "uppercase", color: "#8a6a1a", fontWeight: 400 }}>Economic Sterilisation</th>
@@ -332,27 +330,26 @@ export default function EconomicSterilisationPage() {
       <section className="es-section" style={{ background: "#FFFFFF", padding: "96px 52px", borderTop: "1px solid #E8E8E8" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Reveal>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488", display: "block", marginBottom: 12 }}>Implementation</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#D4AF37", display: "block", marginBottom: 12 }}>Implementation</span>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16, lineHeight: 1.2 }}>
-              The ADN is an early Theft Economic Sterilisation System.
+              The ADN is a prototype-stage Theft Economic Sterilisation System.
             </h2>
             <p style={{ fontSize: 15.5, color: "#555", maxWidth: 640, lineHeight: 1.8, marginBottom: 52 }}>
-              Designed and built by Michael Esema from first principles. Firmware,
-              detection algorithm, cloud architecture, and a 17-claim UK patent application
-              (GB2606630.8, patent pending), all by one founder who refused to wait for
-              someone else to solve it.
+              Designed and built by Michael Esema from first principles, with a UK patent application pending. Firmware,
+              detection algorithm, cloud architecture, and 17-claim patent application, all by one founder
+              who refused to wait for someone else to solve it.
             </p>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 20 }}>
             {[
               { step: "01", title: "Detect", body: "Dual Tactical Multi-zone Sensor Array ToF sensors at 30Hz. Kinetic signature classified in under 50ms. No camera. No face. No data." },
               { step: "02", title: "Mark", body: "Controlled marker deployment. Unique cartridge batch code. UV-detectable. Subject to supplier SDS and COSHH review." },
-              { step: "03", title: "Log", body: "AES-256-GCM encrypted marker deployment event record, cryptographically signed and sent to secure cloud registry in real time. Tamper-aware audit trail. Designed to support evidential workflows." },
+              { step: "03", title: "Log", body: "AES-256-GCM encrypted marker deployment event record, cryptographically signed and designed to be sent to a secure cloud registry. Not yet live. Intended tamper-aware audit trail, designed to support evidential workflows." },
               { step: "04", title: "Disrupt", body: "Mykei Registry batch-links each event to device, timestamp, location, and cartridge reference. Event data supports resale disruption confidence, insurer review, and investigation workflows." },
             ].map(({ step, title, body }) => (
               <Reveal key={step}>
                 <div style={{ padding: "28px 24px", border: "1px solid #E8E8E8", borderRadius: 8, background: "#FFFFFF" }}>
-                  <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 32, color: "#0D9488", opacity: 0.4, lineHeight: 1, marginBottom: 16 }}>{step}</div>
+                  <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 32, color: "#D4AF37", opacity: 0.4, lineHeight: 1, marginBottom: 16 }}>{step}</div>
                   <div style={{ fontSize: 15, fontWeight: 700, color: "#1E1E1E", marginBottom: 10 }}>{title}</div>
                   <div style={{ fontSize: 13, color: "#666", lineHeight: 1.7 }}>{body}</div>
                 </div>
@@ -361,7 +358,7 @@ export default function EconomicSterilisationPage() {
           </div>
           <Reveal delay={0.2}>
             <div style={{ marginTop: 40, display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <a href="/adn" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#0D9488", padding: "12px 24px", borderRadius: 8 }}>ADN Technical Specs →</a>
+              <a href="/adn" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D4AF37", padding: "12px 24px", borderRadius: 8 }}>ADN Technical Specs →</a>
               <a href="/technology/ats" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "12px 24px", borderRadius: 8 }}>Mykei Registry →</a>
             </div>
           </Reveal>
@@ -373,15 +370,15 @@ export default function EconomicSterilisationPage() {
         <div style={{ maxWidth: 900, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }} className="doctrine-grid">
           <Reveal>
             <div>
-              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#0D9488", marginBottom: 16 }}>Doctrine versus implementation</div>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#D4AF37", marginBottom: 16 }}>Doctrine versus implementation</div>
               <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, lineHeight: 1.8, color: "#374151" }}>
-                Economic Sterilisation is the doctrine. ADN is the first implementation. The doctrine can be deployed at different market tiers: independent retail validation, strategic retail pilots, insurer-backed pilots, and future evidence-system alignment. The objective remains unchanged at every tier: remove the commercial incentive behind organised retail theft without increasing confrontation risk for staff.
+                Economic Sterilisation is the doctrine. ADN is a prototype-stage implementation. The doctrine can be deployed at different market tiers: independent retail validation, strategic retail pilots, insurer-backed pilots, and future evidence-system alignment. The objective remains unchanged at every tier: remove the commercial incentive behind organised retail theft without increasing confrontation risk for staff.
               </p>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <div>
-              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#0D9488", marginBottom: 16 }}>Why the batch reference matters</div>
+              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#D4AF37", marginBottom: 16 }}>Why the batch reference matters</div>
               <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, lineHeight: 1.8, color: "#374151" }}>
                 Forensic marking only becomes infrastructure when the physical marker connects to a verifiable digital record. Mykei's registry model is designed to link each event to a device ID, timestamp, location reference, event type, and forensic batch reference. That link is the bridge between a marked item and a traceable event record that supports investigation, insurer review, and resale disruption workflows.
               </p>
@@ -391,11 +388,38 @@ export default function EconomicSterilisationPage() {
         <style>{`@media (max-width: 720px) { .doctrine-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
+      {/* WHY NOW */}
+      <section style={{ background: "#FAFAF8", padding: "72px clamp(24px,5vw,80px)" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <Reveal>
+            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#D4AF37", marginBottom: 16 }}>Why now</div>
+            <h2 style={{ fontFamily: "'Sora', system-ui, sans-serif", fontSize: "clamp(24px,3vw,32px)", fontWeight: 700, color: "#1E1E1E", marginBottom: 16, lineHeight: 1.2, maxWidth: 640 }}>
+              A few things are changing at once, and older security models are not keeping up.
+            </h2>
+          </Reveal>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 24 }} className="whynow-grid">
+            {[
+              "Organised retail crime is increasing across the UK, outpacing investment in conventional deterrence.",
+              "Online resale platforms are accelerating theft liquidity, turning stolen goods into cash within hours.",
+              "Rising costs of guards and surveillance are pricing independent retailers out of adequate protection.",
+              "Growing regulatory pressure on biometric monitoring is closing off the CCTV-based approach entirely.",
+            ].map((text) => (
+              <Reveal key={text}>
+                <div style={{ padding: "18px 20px", background: "#FFFFFF", borderRadius: 6, borderLeft: "3px solid #D4AF37", fontSize: 14, color: "#374151", lineHeight: 1.6 }}>
+                  {text}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+        <style>{`@media (max-width: 720px) { .whynow-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
       {/* FAQ */}
       <section className="es-section" style={{ background: "#fff", padding: "96px 52px", borderTop: "1px solid #E8E8E8" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <Reveal>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#0D9488", display: "block", marginBottom: 12 }}>Questions</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#c9a84c", display: "block", marginBottom: 12 }}>Questions</span>
             <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,36px)", fontWeight: 400, color: "#2D1204", marginBottom: 44 }}>
               Frequently asked about Economic Sterilisation.
             </h2>
@@ -408,7 +432,7 @@ export default function EconomicSterilisationPage() {
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
                   <span>{q}</span>
-                  <span style={{ fontSize: 18, color: "#0D9488", flexShrink: 0, marginLeft: 16, transition: "transform 0.2s", transform: openFaq === i ? "rotate(45deg)" : "rotate(0)" }}>+</span>
+                  <span style={{ fontSize: 18, color: "#c9a84c", flexShrink: 0, marginLeft: 16, transition: "transform 0.2s", transform: openFaq === i ? "rotate(45deg)" : "rotate(0)" }}>+</span>
                 </button>
                 {openFaq === i && (
                   <div style={{ fontSize: 14.5, lineHeight: 1.85, color: "#64748b", paddingBottom: 24 }}>{a}</div>
@@ -420,16 +444,16 @@ export default function EconomicSterilisationPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: "#FFFFFF", padding: "72px 52px", textAlign: "center", borderTop: "2px solid #0D9488" }}>
+      <section style={{ background: "#FFFFFF", padding: "72px 52px", textAlign: "center", borderTop: "2px solid #D4AF37" }}>
         <Reveal>
           <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(24px,3vw,38px)", fontWeight: 400, color: "#1E1E1E", marginBottom: 16 }}>
-            Follow the research.
+            The Independent Retail Pilot is open for expressions of interest.
           </h2>
           <p style={{ fontSize: 15, color: "#666", marginBottom: 36, maxWidth: 500, margin: "0 auto 36px" }}>
-            The research continues. Register your interest to follow development of asset registration, marking readiness, evidence workflows, and resale-confidence reduction.
+            Apply for the Independent Retail Pilot and evaluate Economic Sterilisation in Greater Manchester retail conditions.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/signal" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#0D9488", padding: "14px 32px", borderRadius: 8 }}>Follow the Research →</a>
+            <a href="/pilot" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D4AF37", padding: "14px 32px", borderRadius: 8 }}>Register Interest →</a>
             <a href="/adn" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "14px 32px", borderRadius: 8 }}>View ADN Specs</a>
           </div>
         </Reveal>
