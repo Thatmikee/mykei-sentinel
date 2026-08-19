@@ -97,6 +97,14 @@ export default function BriefIndex() {
         <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
           <Link to="/signal/masthead" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>Masthead</Link>
           <a href="/howitworks" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>How It Works</a>
+          {/*
+            Forward CTA. Not "Apply for Pilot" — that sells a paused product and
+            points backwards. The publication's job now is to build the readership
+            the company does not have, so the ask is to follow the work.
+          */}
+          <a href="/contact" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
+            Get New Reviews
+          </a>
         </div>
       </nav>
 
