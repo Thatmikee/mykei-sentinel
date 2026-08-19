@@ -7,15 +7,19 @@
 
 import PageSEO from "@/components/PageSEO";
 
-const INK = "#0F0C08";
-const TEAL = "#0D9488";
-const PAPER = "#FAFAF6";
-const MUTED = "#6B5E4A";
-const RULE = "#DDD5C4";
-const WHITE = "#FFFFFF";
+import { SIGNAL, TYPE } from "@/styles/signalTokens";
 
-const mono = "'JetBrains Mono',monospace";
-const serif = "'Playfair Display',Georgia,serif";
+const INK = SIGNAL.INK;
+// Was a stray teal (#0D9488) — the only non-gold accent on the site, and the
+// reason the masthead did not match anything else. Now the house accent.
+const TEAL = SIGNAL.ACCENT;
+const PAPER = SIGNAL.PAPER;
+const MUTED = SIGNAL.MUTED;
+const RULE = SIGNAL.RULE;
+const WHITE = SIGNAL.SURFACE;
+
+const mono = TYPE.UTILITY;
+const serif = TYPE.DISPLAY;
 
 function Label({ children }: { children: React.ReactNode }) {
   return (

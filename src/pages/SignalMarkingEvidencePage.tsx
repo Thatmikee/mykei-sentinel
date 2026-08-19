@@ -16,14 +16,16 @@ const STANDFIRST =
 const DATE = "2026-08-19";
 const AUTHOR = "Michael Esema";
 
-const INK = "#1E1E1E";
-const MID = "#5c4a32";
-const GOLD = "#c9a84c";
-const RULE = "#DDD5C4";
-const PAPER = "#FAFAF6";
+import { SIGNAL, TYPE } from "@/styles/signalTokens";
 
-const mono = "'JetBrains Mono',monospace";
-const serif = "'Playfair Display',Georgia,serif";
+const INK = SIGNAL.INK;
+const MID = SIGNAL.MUTED;
+const GOLD = SIGNAL.ACCENT;
+const RULE = SIGNAL.RULE;
+const PAPER = SIGNAL.PAPER;
+
+const mono = TYPE.UTILITY;
+const serif = TYPE.DISPLAY;
 
 function H2({ children }: { children: React.ReactNode }) {
   return (
