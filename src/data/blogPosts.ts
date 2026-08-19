@@ -9,6 +9,26 @@ export interface BlogPostMeta {
 }
 
 export const blogPosts: BlogPostMeta[] = [
+  // ── August 2026 ────────────────────────────────────────────────────────
+  {
+    slug: "forensic-marking-evidence-review",
+    title:
+      "We Are Building a Forensic Marking Product. Its Evidence Base Is Weaker Than the Industry Says.",
+    date: "2026-08-19",
+    landmark: true,
+    summary:
+      "Two independent studies, one of them randomised, point the same way. Forensic property marking produces a real early drop in crime that does not last, and most people handed a free kit never use it. Co-op has published no outcome data at all. We are entering this category, so we are publishing the review nobody else will.",
+    tags: [
+      "evidence review",
+      "forensic marking",
+      "SmartWater",
+      "SelectaDNA",
+      "Co-op",
+      "deterrence decay",
+      "research",
+    ],
+    readingTime: "9 min read",
+  },
   {
     slug: "stop-calling-it-shoplifting-lost-stock",
     title: "Stop Calling It Shoplifting If The System Still Treats It Like Lost Stock",
