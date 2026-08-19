@@ -2,14 +2,15 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
 import PageSEO from "@/components/PageSEO";
+import { SIGNAL } from "@/styles/signalTokens";
 
-const INK    = "#0F0C08";
-const GOLD   = "#B8962E";
-const PAPER  = "#FAFAF6";
+const INK    = SIGNAL.INK;
+const GOLD   = SIGNAL.ACCENT;
+const PAPER  = SIGNAL.PAPER;
 const WARM   = "#F2EDE3";
-const MUTED  = "#6B5E4A";
-const RULE   = "#DDD5C4";
-const WHITE  = "#FFFFFF";
+const MUTED  = SIGNAL.MUTED;
+const RULE   = SIGNAL.RULE;
+const WHITE  = SIGNAL.SURFACE;
 
 function formatDate(iso: string): string {
   const [year, month, day] = iso.split("-").map(Number);

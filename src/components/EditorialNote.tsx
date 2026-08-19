@@ -10,6 +10,8 @@
  * is not trusted; one that corrects itself in public is.
  */
 
+import { SIGNAL, TYPE } from "@/styles/signalTokens";
+
 type NoteKind = "update" | "correction" | "context";
 
 const KIND_LABEL: Record<NoteKind, string> = {
@@ -19,9 +21,9 @@ const KIND_LABEL: Record<NoteKind, string> = {
 };
 
 const KIND_ACCENT: Record<NoteKind, string> = {
-  update: "#0D9488",
-  correction: "#B3261E",
-  context: "#6B5E4A",
+  update: SIGNAL.ACCENT,
+  correction: SIGNAL.CORRECTION,
+  context: SIGNAL.MUTED,
 };
 
 interface EditorialNoteProps {
@@ -53,14 +55,14 @@ export default function EditorialNote({
       aria-label={`${KIND_LABEL[kind]} ${formatDate(date)}`}
       style={{
         borderLeft: `3px solid ${accent}`,
-        background: "#FAFAF6",
+        background: SIGNAL.PAPER,
         padding: "16px 20px",
         margin: "32px 0",
       }}
     >
       <div
         style={{
-          fontFamily: "'JetBrains Mono',monospace",
+          fontFamily: TYPE.UTILITY,
           fontSize: 9,
           letterSpacing: "0.16em",
           textTransform: "uppercase",
@@ -70,7 +72,7 @@ export default function EditorialNote({
       >
         {KIND_LABEL[kind]} · {formatDate(date)}
       </div>
-      <div style={{ fontSize: 15, lineHeight: 1.75, color: "#3F3A32" }}>
+      <div style={{ fontSize: 15, lineHeight: 1.75, color: SIGNAL.INK }}>
         {children}
       </div>
     </aside>
