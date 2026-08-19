@@ -85,7 +85,7 @@ const App = () => (
             <Route path="/enterprise" element={<EnterprisePage />} />
             <Route path="/signal" element={<BriefIndex />} />
             <Route path="/signal/masthead" element={<MastheadPage />} />
-            <Route path="/signal/forensic-marking-evidence-review" element={<SignalMarkingEvidencePage />} />
+            <Route path="/signal/marking-evidence" element={<SignalMarkingEvidencePage />} />
             <Route path="/signal/cctv-313-million-movie-ticket" element={<SignalCCTVScamPage />} />
             <Route path="/signal/salford-to-vinted-black-market" element={<SignalSalfordVintedPage />} />
             <Route path="/signal/surgeon-not-camera-200ms" element={<SignalSurgeonNotCameraPage />} />

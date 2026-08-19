@@ -24,5 +24,8 @@
 # Founder alias
 /michael-esema            /founder                   301
 
+# Shortened Signal slugs
+/signal/forensic-marking-evidence-review   /signal/marking-evidence   301
+
 # SPA catch-all — must be last
 /*    /index.html   200

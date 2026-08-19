@@ -8,7 +8,7 @@ import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 import EditorialNote from "@/components/EditorialNote";
 
-const SLUG = "forensic-marking-evidence-review";
+const SLUG = "marking-evidence";
 const TITLE =
   "We Are Building a Forensic Marking Product. Its Evidence Base Is Weaker Than the Industry Says.";
 const STANDFIRST =

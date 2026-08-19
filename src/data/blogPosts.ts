@@ -63,12 +63,12 @@ const ISSUE_BY_SLUG: Record<string, number> = {
   "police-200-pound-threshold": 14,
   "shoplifting-133-percent-london-1-in-14": 15,
   "coop-named-the-enemy-economics-unchanged": 16,
-  "forensic-marking-evidence-review": 17,
+  "marking-evidence": 17,
 };
 
 /** Explicit filing. Anything not listed falls back to tag inference below. */
 const DEPARTMENT_BY_SLUG: Record<string, Department> = {
-  "forensic-marking-evidence-review": "Evidence",
+  "marking-evidence": "Evidence",
   "police-200-pound-threshold": "Policy",
   "coop-named-the-enemy-economics-unchanged": "Policy",
   "shoplifting-133-percent-london-1-in-14": "Data",
@@ -123,7 +123,7 @@ export function fileOf(post: BlogPostMeta): {
 export const blogPosts: BlogPostMeta[] = [
   // ── August 2026 ────────────────────────────────────────────────────────
   {
-    slug: "forensic-marking-evidence-review",
+    slug: "marking-evidence",
     title:
       "We Are Building a Forensic Marking Product. Its Evidence Base Is Weaker Than the Industry Says.",
     date: "2026-08-19",
