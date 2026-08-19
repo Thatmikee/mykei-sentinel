@@ -242,8 +242,8 @@ export default function MastheadPage() {
           </P>
           <P>
             To report an error, write to{" "}
-            <a href="mailto:hello@mykei.io" style={{ color: TEAL, textDecoration: "underline" }}>
-              hello@mykei.io
+            <a href="mailto:protocol@mykei.io" style={{ color: TEAL, textDecoration: "underline" }}>
+              protocol@mykei.io
             </a>{" "}
             with the article and the specific claim. Corrections are made without argument where the
             evidence is clear.
