@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { blogPosts } from "@/data/blogPosts";
+import { blogPosts, fileOf, DEPARTMENTS, DEPARTMENT_BLURB } from "@/data/blogPosts";
 import PageSEO from "@/components/PageSEO";
 import { SIGNAL } from "@/styles/signalTokens";
 
@@ -25,6 +25,18 @@ const mainStories      = sorted.filter(p => !p.tags.includes("Retail Crime Files
 const lead             = mainStories.find(p => p.landmark) ?? mainStories[0];
 const secondary        = mainStories.filter(p => p.slug !== lead.slug).slice(0, 3);
 const rest             = mainStories.filter(p => p.slug !== lead.slug).slice(3);
+
+/** Highest real issue number on record, so the dateline is not a post count. */
+const latestIssue      = sorted.reduce((max, p) => Math.max(max, fileOf(p).issue ?? 0), 0);
+
+/** Pieces grouped by department, newest first within each, empty ones dropped. */
+const byDepartment     = DEPARTMENTS
+  .map(d => ({
+    department: d,
+    blurb: DEPARTMENT_BLURB[d],
+    posts: sorted.filter(p => fileOf(p).department === d),
+  }))
+  .filter(g => g.posts.length > 0);
 
 export default function BriefIndex() {
   const [scrolled, setScrolled] = useState(false);
@@ -128,7 +140,7 @@ export default function BriefIndex() {
               {today}
             </span>
             <Link to="/signal/masthead" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: "0.12em", textTransform: "uppercase", color: GOLD, textDecoration: "none" }}>
-              Vol. 1 · {sorted.length} pieces · Masthead
+              Vol. 1 · Issue {latestIssue} · Masthead
             </Link>
           </div>
         </div>
@@ -290,6 +302,63 @@ export default function BriefIndex() {
             </div>
           </div>
 
+          {/* DEPARTMENTS — what makes this a magazine rather than a list */}
+          <section
+            aria-label="Departments"
+            style={{ maxWidth: 1100, margin: "0 auto", padding: "0 clamp(16px,4vw,48px)" }}
+          >
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,180px),1fr))",
+                border: `1px solid ${RULE}`,
+                borderBottom: "none",
+                background: WHITE,
+              }}
+            >
+              {byDepartment.map((g) => (
+                <div
+                  key={g.department}
+                  style={{
+                    padding: "18px 20px",
+                    borderRight: `1px solid ${RULE}`,
+                    borderBottom: `1px solid ${RULE}`,
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: "'JetBrains Mono',monospace",
+                      fontSize: 9,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: GOLD,
+                      marginBottom: 8,
+                    }}
+                  >
+                    {g.department}
+                    <span style={{ color: MUTED }}> ({g.posts.length})</span>
+                  </div>
+                  <p style={{ fontSize: 13, lineHeight: 1.6, color: MUTED, margin: "0 0 10px" }}>
+                    {g.blurb}
+                  </p>
+                  <Link
+                    to={`/signal/${g.posts[0].slug}`}
+                    style={{
+                      fontFamily: "'Playfair Display',Georgia,serif",
+                      fontSize: 14.5,
+                      lineHeight: 1.35,
+                      color: INK,
+                      textDecoration: "none",
+                      display: "block",
+                    }}
+                  >
+                    {g.posts[0].title}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </section>
+
           <main style={{ maxWidth: 1100, margin: "0 auto", padding: "24px clamp(16px,4vw,48px) 80px" }}>
             <div style={{
               display: "grid",
@@ -311,8 +380,16 @@ export default function BriefIndex() {
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = WARM; }}
                     onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = WHITE; }}
                   >
-                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, color: GOLD, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 10 }}>
-                      {formatDate(post.date)} · {post.readingTime}
+                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, color: GOLD, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 10, display: "flex", flexWrap: "wrap", gap: 6 }}>
+                      <span style={{ color: INK, fontWeight: 600 }}>{fileOf(post).department}</span>
+                      <span aria-hidden>·</span>
+                      <span>{formatDate(post.date)}</span>
+                      {fileOf(post).issue !== undefined && (
+                        <>
+                          <span aria-hidden>·</span>
+                          <span>No. {fileOf(post).issue}</span>
+                        </>
+                      )}
                     </div>
                     <h2 style={{
                       fontFamily: "'Playfair Display',Georgia,serif",
