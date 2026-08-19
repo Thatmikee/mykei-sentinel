@@ -1,3 +1,32 @@
+/**
+ * Departments. A magazine files pieces; a blog just lists them.
+ *
+ * Each department answers a different question, which is why the reader needs
+ * the label before the headline:
+ *   Evidence  — what does the research actually support?
+ *   Data      — what do the numbers say, and who produced them?
+ *   Policy    — what has changed in law or enforcement?
+ *   Field     — what is happening in shops?
+ *   Doctrine  — what do we argue, and why?
+ */
+export type Department = "Evidence" | "Data" | "Policy" | "Field" | "Doctrine";
+
+export const DEPARTMENTS: Department[] = [
+  "Evidence",
+  "Data",
+  "Policy",
+  "Field",
+  "Doctrine",
+];
+
+export const DEPARTMENT_BLURB: Record<Department, string> = {
+  Evidence: "What the research supports, and what it does not.",
+  Data: "The numbers, and who paid for them.",
+  Policy: "Law, enforcement and the machinery of response.",
+  Field: "What actually happens in shops.",
+  Doctrine: "The argument we are making.",
+};
+
 export interface BlogPostMeta {
   slug: string;
   title: string;
@@ -6,6 +35,89 @@ export interface BlogPostMeta {
   tags: string[];
   readingTime: string;   // e.g. "5 min read"
   landmark?: boolean;    // Landmark Read feature post
+  department?: Department;
+  /**
+   * Issue number. These are real: they were already recorded in the page
+   * comments and datelines (Issue 01 through Issue 16) before this field
+   * existed, and are transcribed from there rather than invented. Pieces
+   * published without an issue number are left undefined rather than
+   * back-filled with a guess.
+   */
+  issue?: number;
+}
+
+/**
+ * Issue numbers, transcribed from the datelines already printed on the article
+ * pages (e.g. SignalCCTVScamPage renders "The Signal · Issue 01 · April 2026").
+ * Only pieces that already carried a number are listed. Nothing is invented,
+ * and gaps are left as gaps.
+ */
+const ISSUE_BY_SLUG: Record<string, number> = {
+  "cctv-313-million-movie-ticket": 1,
+  "salford-to-vinted-black-market": 2,
+  "surgeon-not-camera-200ms": 3,
+  "shopkeeper-maths-adn-cost": 4,
+  "david-robinson-gmb-cctv-theatre": 11,
+  "fog-security-systems-debunked": 12,
+  "safergems-jewellery-theft-ai-police-response": 13,
+  "police-200-pound-threshold": 14,
+  "shoplifting-133-percent-london-1-in-14": 15,
+  "coop-named-the-enemy-economics-unchanged": 16,
+  "forensic-marking-evidence-review": 17,
+};
+
+/** Explicit filing. Anything not listed falls back to tag inference below. */
+const DEPARTMENT_BY_SLUG: Record<string, Department> = {
+  "forensic-marking-evidence-review": "Evidence",
+  "police-200-pound-threshold": "Policy",
+  "coop-named-the-enemy-economics-unchanged": "Policy",
+  "shoplifting-133-percent-london-1-in-14": "Data",
+  "cctv-313-million-movie-ticket": "Data",
+  "shopkeeper-maths-adn-cost": "Data",
+  "fog-security-systems-debunked": "Evidence",
+  "selectadna-met-police": "Evidence",
+  "synthetic-dna-forensics": "Evidence",
+  "why-cctv-fails": "Evidence",
+  "salford-to-vinted-black-market": "Field",
+  "safergems-jewellery-theft-ai-police-response": "Field",
+  "waitrose-smart-cabinets-resale-problem": "Field",
+  "independent-retailer-economics": "Field",
+  "pilot-programme-manchester": "Field",
+  "marketplace-flagging": "Field",
+  "economic-sterilisation-explained": "Doctrine",
+  "surgeon-not-camera-200ms": "Doctrine",
+  "protected-by-mykei": "Doctrine",
+  "adn1-how-it-works": "Doctrine",
+  "stop-calling-it-shoplifting-lost-stock": "Doctrine",
+  "david-robinson-gmb-cctv-theatre": "Field",
+  "uk-retail-crime-crisis": "Data",
+};
+
+/** Falls back to tags so a new piece files itself sensibly before curation. */
+function inferDepartment(post: BlogPostMeta): Department {
+  const explicit = DEPARTMENT_BY_SLUG[post.slug];
+  if (explicit) return explicit;
+
+  const tags = post.tags.map((t) => t.toLowerCase());
+  const has = (...needles: string[]) =>
+    needles.some((n) => tags.some((t) => t.includes(n)));
+
+  if (has("evidence", "research", "study")) return "Evidence";
+  if (has("police", "legislation", "policy", "threshold", "charge rate")) return "Policy";
+  if (has("data", "statistics", "ons", "brc")) return "Data";
+  if (has("economic sterilisation", "adn", "doctrine")) return "Doctrine";
+  return "Field";
+}
+
+/** Department and issue for a post, resolving overrides and inference. */
+export function fileOf(post: BlogPostMeta): {
+  department: Department;
+  issue?: number;
+} {
+  return {
+    department: post.department ?? inferDepartment(post),
+    issue: post.issue ?? ISSUE_BY_SLUG[post.slug],
+  };
 }
 
 export const blogPosts: BlogPostMeta[] = [
