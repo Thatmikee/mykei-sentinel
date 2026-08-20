@@ -1,3 +1,14 @@
+// src/pages/BriefIndex.tsx
+// The Signal — magazine front.
+//
+// This was a newspaper-style front page: nameplate, lead plus three secondary,
+// then a card grid. Structurally that is a landing page wearing a masthead.
+//
+// A magazine opens with a COVER: one issue, one cover line set enormous, a few
+// secondary lines, a folio. Then CONTENTS. Then the archive. The typographic
+// range is the point — a cover line at ~96px against contents at 13px is what
+// separates a publication from a blog index.
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { blogPosts, fileOf, DEPARTMENTS, DEPARTMENT_BLURB } from "@/data/blogPosts";
@@ -7,10 +18,12 @@ import { SIGNAL } from "@/styles/signalTokens";
 const INK    = SIGNAL.INK;
 const GOLD   = SIGNAL.ACCENT;
 const PAPER  = SIGNAL.PAPER;
-const WARM   = "#F2EDE3";
 const MUTED  = SIGNAL.MUTED;
 const RULE   = SIGNAL.RULE;
 const WHITE  = SIGNAL.SURFACE;
+
+const DISPLAY = "'Playfair Display',Georgia,serif";
+const MONO    = "'JetBrains Mono',ui-monospace,monospace";
 
 function formatDate(iso: string): string {
   const [year, month, day] = iso.split("-").map(Number);
@@ -19,18 +32,20 @@ function formatDate(iso: string): string {
   });
 }
 
-const sorted           = [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-const retailCrimeFiles = sorted.filter(p => p.tags.includes("Retail Crime Files"));
-const mainStories      = sorted.filter(p => !p.tags.includes("Retail Crime Files"));
-const lead             = mainStories.find(p => p.landmark) ?? mainStories[0];
-const secondary        = mainStories.filter(p => p.slug !== lead.slug).slice(0, 3);
-const rest             = mainStories.filter(p => p.slug !== lead.slug).slice(3);
+function monthYear(iso: string): string {
+  const [year, month] = iso.split("-").map(Number);
+  return new Date(year, month - 1, 1).toLocaleDateString("en-GB", {
+    month: "long", year: "numeric",
+  });
+}
 
-/** Highest real issue number on record, so the dateline is not a post count. */
-const latestIssue      = sorted.reduce((max, p) => Math.max(max, fileOf(p).issue ?? 0), 0);
+const sorted       = [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const cover        = sorted.find(p => p.landmark) ?? sorted[0];
+const coverLines   = sorted.filter(p => p.slug !== cover.slug).slice(0, 3);
+const archive      = sorted.filter(p => p.slug !== cover.slug);
+const latestIssue  = sorted.reduce((max, p) => Math.max(max, fileOf(p).issue ?? 0), 0);
 
-/** Pieces grouped by department, newest first within each, empty ones dropped. */
-const byDepartment     = DEPARTMENTS
+const contents = DEPARTMENTS
   .map(d => ({
     department: d,
     blurb: DEPARTMENT_BLURB[d],
@@ -38,17 +53,27 @@ const byDepartment     = DEPARTMENTS
   }))
   .filter(g => g.posts.length > 0);
 
+/** Small caps utility label. Used for folios, eyebrows and department marks. */
+function Folio({ children, color = MUTED, size = 9 }: {
+  children: React.ReactNode; color?: string; size?: number;
+}) {
+  return (
+    <span style={{
+      fontFamily: MONO, fontSize: size, letterSpacing: "0.22em",
+      textTransform: "uppercase", color,
+    }}>
+      {children}
+    </span>
+  );
+}
+
 export default function BriefIndex() {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", fn);
+    window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
-
-  const today = new Date().toLocaleDateString("en-GB", {
-    weekday: "long", day: "numeric", month: "long", year: "numeric",
-  });
 
   return (
     <div style={{ backgroundColor: PAPER, minHeight: "100vh", color: INK }}>
@@ -56,7 +81,7 @@ export default function BriefIndex() {
         title="The Signal | Retail Security Intelligence | Mykei Securities"
         description="Research and analysis on retail theft economics, forensic security, and Economic Sterilisation. Published for independent retailers, investors, policy-makers, and anyone fighting organised retail crime."
         canonical="https://mykei.io/signal"
-        keywords="retail theft intelligence, economic sterilisation, organised retail crime, ADN forensic security, Manchester retail pilot, retail crime for small businesses, shoplifting for accountants, theft economics for investors, retail security for enterprise"
+        keywords="retail theft intelligence, economic sterilisation, organised retail crime, ADN forensic security, retail crime research, evidence review, retail security for enterprise"
         ogImageAlt="The Signal: retail security intelligence by Mykei Securities"
         breadcrumbs={[["Home","https://mykei.io"],["The Signal","/signal"]]}
         ldJson={JSON.stringify({
@@ -64,7 +89,7 @@ export default function BriefIndex() {
           "@type": "Blog",
           "@id": "https://mykei.io/signal",
           "name": "The Signal",
-          "description": "Retail security intelligence. Research on Economic Sterilisation, organised retail crime, and the ADN pilot.",
+          "description": "Retail security intelligence. Research on Economic Sterilisation, organised retail crime, and the ADN.",
           "url": "https://mykei.io/signal",
           "publisher": { "@type": "Organization", "name": "Mykei Securities Ltd", "url": "https://mykei.io" },
           "blogPost": sorted.slice(0, 6).map(p => ({
@@ -80,468 +105,265 @@ export default function BriefIndex() {
         })}
       />
 
-      {/* NAV */}
+      <style>{`
+        @media (max-width: 900px) {
+          .sig-cover-grid { grid-template-columns: 1fr !important; }
+          .sig-cover-rail { border-left: none !important; padding-left: 0 !important;
+                            border-top: 1px solid ${RULE}; padding-top: 28px; margin-top: 28px; }
+          .sig-contents-grid { grid-template-columns: 1fr !important; }
+        }
+        .sig-link { text-decoration: none; color: inherit; display: block; }
+        .sig-link:focus-visible { outline: 3px solid ${GOLD}; outline-offset: 4px; }
+        .sig-row { transition: background 160ms ease; }
+        .sig-row:hover { background: ${WHITE}; }
+        @media (prefers-reduced-motion: reduce) {
+          .sig-row { transition: none; }
+        }
+      `}</style>
+
+      {/* ─── RUNNING HEAD ─────────────────────────────────────────────── */}
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        background: scrolled ? "rgba(255,255,255,0.97)" : WHITE,
-        borderBottom: `1px solid ${RULE}`,
-        backdropFilter: scrolled ? "blur(12px)" : "none",
+        background: scrolled ? "rgba(250,250,246,0.96)" : "transparent",
+        borderBottom: scrolled ? `1px solid ${RULE}` : "1px solid transparent",
+        backdropFilter: scrolled ? "blur(10px)" : "none",
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "0 clamp(16px,4vw,48px)", height: 56,
-        transition: "box-shadow 0.2s",
-        boxShadow: scrolled ? "0 1px 12px rgba(0,0,0,0.05)" : "none",
+        padding: "0 clamp(16px,4vw,48px)", height: 54,
+        transition: "background 200ms ease, border-color 200ms ease",
       }}>
-        <a href="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: INK, textDecoration: "none" }}>
-          Mykei Securities
-        </a>
-        <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
-          <Link to="/signal/masthead" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>Masthead</Link>
-          <a href="/howitworks" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>How It Works</a>
-          {/*
-            Forward CTA. Not "Apply for Pilot" — that sells a paused product and
-            points backwards. The publication's job now is to build the readership
-            the company does not have, so the ask is to follow the work.
-          */}
-          <a href="/contact" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
-            Get New Reviews
-          </a>
+        <a href="/" className="sig-link"><Folio color={INK}>Mykei Securities</Folio></a>
+        <div style={{ display: "flex", gap: "clamp(14px,2.5vw,26px)", alignItems: "center" }}>
+          <Link to="/signal/masthead" className="sig-link"><Folio>Masthead</Folio></Link>
+          <a href="/howitworks" className="sig-link"><Folio>How It Works</Folio></a>
+          <a href="/contact" className="sig-link" style={{
+            color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px",
+          }}><Folio color={GOLD}>Get New Reviews</Folio></a>
         </div>
       </nav>
 
-      {/* MASTHEAD */}
-      <header style={{ background: WHITE, paddingTop: 56, borderBottom: `1px solid ${RULE}` }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px clamp(16px,4vw,48px) 0" }}>
-
-          {/* Top rule */}
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
+      {/* ─── COVER ────────────────────────────────────────────────────── */}
+      <header style={{
+        minHeight: "100svh", display: "flex", flexDirection: "column",
+        justifyContent: "space-between",
+        padding: "78px clamp(16px,4vw,48px) 32px",
+        maxWidth: 1240, margin: "0 auto", boxSizing: "border-box",
+      }}>
+        {/* Nameplate */}
+        <div>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 14 }}>
             <div style={{ flex: 1, height: 2, background: INK }} />
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: "0.24em", textTransform: "uppercase", color: MUTED, whiteSpace: "nowrap" }}>
-              Retail Security Intelligence
-            </span>
+            <Folio size={8}>Retail Security Intelligence</Folio>
             <div style={{ flex: 1, height: 2, background: INK }} />
           </div>
 
-          {/* Nameplate */}
           <h1 style={{
-            fontFamily: "'Playfair Display',Georgia,serif",
-            fontSize: "clamp(56px,10vw,120px)",
-            fontWeight: 700,
-            lineHeight: 0.9,
-            letterSpacing: "-0.03em",
-            color: INK,
-            textAlign: "center",
-            marginBottom: 16,
+            fontFamily: DISPLAY,
+            fontSize: "clamp(52px,13vw,168px)",
+            fontWeight: 700, lineHeight: 0.84, letterSpacing: "-0.045em",
+            textAlign: "center", margin: "0 0 14px",
           }}>
             The Signal
           </h1>
 
-          {/* Dateline */}
           <div style={{
-            display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8,
+            display: "flex", justifyContent: "space-between", alignItems: "baseline",
+            flexWrap: "wrap", gap: 8,
             borderTop: `1px solid ${RULE}`, borderBottom: `1px solid ${RULE}`,
-            padding: "10px 0", marginBottom: 0,
+            padding: "9px 0",
           }}>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: "0.1em", textTransform: "uppercase", color: MUTED }}>
-              Published by Mykei Securities Ltd · Manchester, UK
-            </span>
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: "0.1em", color: MUTED }}>
-              {today}
-            </span>
-            <Link to="/signal/masthead" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: "0.12em", textTransform: "uppercase", color: GOLD, textDecoration: "none" }}>
-              Vol. 1 · Issue {latestIssue} · Masthead
+            <Folio size={8.5}>Published by Mykei Securities Ltd · Manchester</Folio>
+            <Folio size={8.5} color={GOLD}>Vol. 1 · No. {latestIssue}</Folio>
+            <Folio size={8.5}>{monthYear(cover.date)}</Folio>
+          </div>
+        </div>
+
+        {/* Cover line + rail */}
+        <div className="sig-cover-grid" style={{
+          display: "grid", gridTemplateColumns: "minmax(0,2.15fr) minmax(0,1fr)",
+          gap: "clamp(24px,4vw,56px)", alignItems: "end",
+          padding: "clamp(32px,6vh,72px) 0",
+        }}>
+          <div>
+            <div style={{ marginBottom: 18 }}>
+              <Folio color={GOLD}>{fileOf(cover).department}</Folio>
+              <Folio color={MUTED}>{"  ·  "}{cover.readingTime}</Folio>
+            </div>
+
+            <Link to={`/signal/${cover.slug}`} className="sig-link">
+              <h2 style={{
+                fontFamily: DISPLAY,
+                fontSize: "clamp(30px,5.4vw,74px)",
+                fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.032em",
+                margin: "0 0 22px",
+              }}>
+                {cover.title}
+              </h2>
+              <p style={{
+                fontSize: "clamp(15px,1.5vw,18px)", lineHeight: 1.7, color: MUTED,
+                maxWidth: "62ch", margin: "0 0 22px",
+              }}>
+                {cover.summary}
+              </p>
+              <span style={{
+                fontFamily: MONO, fontSize: 10, letterSpacing: "0.16em",
+                textTransform: "uppercase", color: GOLD,
+                borderBottom: `1px solid ${GOLD}`, paddingBottom: 3,
+              }}>
+                Read this issue
+              </span>
             </Link>
           </div>
+
+          {/* Also in this issue */}
+          <aside className="sig-cover-rail" style={{
+            borderLeft: `1px solid ${RULE}`, paddingLeft: "clamp(20px,2.5vw,34px)",
+          }}>
+            <div style={{ marginBottom: 16 }}><Folio size={8}>Also in this issue</Folio></div>
+            {coverLines.map((p) => (
+              <Link key={p.slug} to={`/signal/${p.slug}`} className="sig-link" style={{ marginBottom: 18 }}>
+                <div style={{ marginBottom: 5 }}>
+                  <Folio size={8} color={GOLD}>{fileOf(p).department}</Folio>
+                </div>
+                <div style={{
+                  fontFamily: DISPLAY, fontSize: "clamp(15px,1.5vw,18px)",
+                  lineHeight: 1.28, letterSpacing: "-0.01em",
+                }}>
+                  {p.title}
+                </div>
+              </Link>
+            ))}
+          </aside>
         </div>
+
+        <div style={{ textAlign: "center" }}><Folio size={8}>Contents below</Folio></div>
       </header>
 
-      {/* LEAD + 3 SECONDARY */}
-      <section style={{ background: WHITE, borderBottom: `2px solid ${INK}` }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 clamp(16px,4vw,48px)" }}>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "2fr 1px 1fr",
-            gap: 0,
-            padding: "40px 0",
-          }} className="signal-lead-grid">
+      {/* ─── CONTENTS ─────────────────────────────────────────────────── */}
+      <section aria-labelledby="contents-heading" style={{
+        background: WHITE, borderTop: `2px solid ${INK}`, borderBottom: `2px solid ${INK}`,
+      }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto", padding: "clamp(40px,7vh,84px) clamp(16px,4vw,48px)" }}>
+          <div style={{ display: "flex", alignItems: "baseline", gap: 16, marginBottom: 40 }}>
+            <h2 id="contents-heading" style={{
+              fontFamily: DISPLAY, fontSize: "clamp(24px,3.2vw,38px)",
+              fontWeight: 700, letterSpacing: "-0.02em", margin: 0,
+            }}>
+              Contents
+            </h2>
+            <div style={{ flex: 1, height: 1, background: RULE }} />
+            <Folio size={8}>{sorted.length} pieces</Folio>
+          </div>
 
-            {/* Lead story */}
-            <div style={{ paddingRight: "clamp(20px,3vw,40px)" }}>
-              {lead.landmark && (
+          <div className="sig-contents-grid" style={{
+            display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,320px),1fr))",
+            gap: "clamp(28px,4vw,52px)",
+          }}>
+            {contents.map((g) => (
+              <div key={g.department}>
                 <div style={{
-                  display: "inline-block",
-                  fontFamily: "'JetBrains Mono',monospace",
-                  fontSize: 8, letterSpacing: "0.2em", textTransform: "uppercase",
-                  color: WHITE, background: INK,
-                  padding: "3px 10px", marginBottom: 18,
+                  display: "flex", alignItems: "baseline", gap: 10,
+                  borderBottom: `2px solid ${INK}`, paddingBottom: 8, marginBottom: 4,
                 }}>
-                  Landmark Read
+                  <Folio color={INK} size={10}>{g.department}</Folio>
+                  <div style={{ flex: 1 }} />
+                  <Folio size={8}>{g.posts.length}</Folio>
                 </div>
-              )}
-              <Link to={`/signal/${lead.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: GOLD, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 14 }}>
-                  {formatDate(lead.date)} · {lead.readingTime}
-                </div>
-                <h2 style={{
-                  fontFamily: "'Playfair Display',Georgia,serif",
-                  fontSize: "clamp(24px,3.2vw,38px)",
-                  fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.02em",
-                  color: INK, marginBottom: 18,
-                  borderBottom: `2px solid ${INK}`, paddingBottom: 16,
-                }}>
-                  {lead.title}
-                </h2>
-                <p style={{ fontSize: 15.5, lineHeight: 1.85, color: MUTED, marginBottom: 24 }}>
-                  {lead.summary}
+                <p style={{ fontSize: 12.5, lineHeight: 1.6, color: MUTED, margin: "10px 0 14px" }}>
+                  {g.blurb}
                 </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 24 }}>
-                  {lead.tags.slice(0, 3).map(tag => (
-                    <span key={tag} style={{
-                      fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5,
-                      letterSpacing: "0.1em", textTransform: "uppercase",
-                      color: INK, border: `1px solid ${RULE}`, padding: "2px 8px",
-                    }}>{tag}</span>
-                  ))}
-                </div>
+
+                {g.posts.map((p) => {
+                  const { issue } = fileOf(p);
+                  return (
+                    <Link key={p.slug} to={`/signal/${p.slug}`} className="sig-link sig-row" style={{
+                      display: "flex", gap: 12, alignItems: "baseline",
+                      padding: "9px 6px 9px 0", borderBottom: `1px solid ${RULE}`,
+                    }}>
+                      <span style={{
+                        fontFamily: MONO, fontSize: 10, color: GOLD,
+                        minWidth: 26, fontVariantNumeric: "tabular-nums",
+                      }}>
+                        {issue !== undefined ? String(issue).padStart(2, "0") : "—"}
+                      </span>
+                      <span style={{
+                        fontFamily: DISPLAY, fontSize: 15, lineHeight: 1.35, flex: 1,
+                      }}>
+                        {p.title}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── ARCHIVE ──────────────────────────────────────────────────── */}
+      <section aria-labelledby="archive-heading" style={{
+        maxWidth: 1240, margin: "0 auto",
+        padding: "clamp(40px,7vh,84px) clamp(16px,4vw,48px) 96px",
+      }}>
+        <div style={{ display: "flex", alignItems: "baseline", gap: 16, marginBottom: 32 }}>
+          <h2 id="archive-heading" style={{
+            fontFamily: DISPLAY, fontSize: "clamp(20px,2.6vw,30px)",
+            fontWeight: 700, letterSpacing: "-0.02em", margin: 0,
+          }}>
+            The archive
+          </h2>
+          <div style={{ flex: 1, height: 1, background: RULE }} />
+        </div>
+
+        <div style={{ borderTop: `1px solid ${RULE}` }}>
+          {archive.map((post) => {
+            const { department, issue } = fileOf(post);
+            return (
+              <Link key={post.slug} to={`/signal/${post.slug}`} className="sig-link sig-row" style={{
+                display: "grid",
+                gridTemplateColumns: "minmax(0,auto) minmax(0,1fr) minmax(0,auto)",
+                gap: "clamp(12px,3vw,32px)", alignItems: "baseline",
+                padding: "18px 8px", borderBottom: `1px solid ${RULE}`,
+              }}>
                 <span style={{
-                  fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "0.14em",
-                  textTransform: "uppercase", color: GOLD,
-                  borderBottom: `1px solid ${GOLD}`, paddingBottom: 2,
+                  fontFamily: MONO, fontSize: 10, color: GOLD,
+                  minWidth: 26, fontVariantNumeric: "tabular-nums",
                 }}>
-                  Read the full piece
+                  {issue !== undefined ? String(issue).padStart(2, "0") : "—"}
+                </span>
+                <span>
+                  <span style={{
+                    fontFamily: DISPLAY, fontSize: "clamp(16px,1.9vw,21px)",
+                    lineHeight: 1.3, letterSpacing: "-0.012em", display: "block",
+                    marginBottom: 5,
+                  }}>
+                    {post.title}
+                  </span>
+                  <Folio size={8}>{department}</Folio>
+                </span>
+                <span style={{ textAlign: "right", whiteSpace: "nowrap" }}>
+                  <Folio size={8.5}>{formatDate(post.date)}</Folio>
                 </span>
               </Link>
-            </div>
-
-            {/* Column rule */}
-            <div style={{ background: RULE }} />
-
-            {/* 3 secondary */}
-            <div style={{ paddingLeft: "clamp(20px,3vw,40px)", display: "flex", flexDirection: "column", gap: 0 }}>
-              {secondary.map((post, i) => (
-                <div key={post.slug} style={{
-                  paddingBottom: i < secondary.length - 1 ? 24 : 0,
-                  marginBottom: i < secondary.length - 1 ? 24 : 0,
-                  borderBottom: i < secondary.length - 1 ? `1px solid ${RULE}` : "none",
-                }}>
-                  <Link to={`/signal/${post.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
-                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, color: GOLD, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>
-                      {formatDate(post.date)}
-                    </div>
-                    <h3 style={{
-                      fontFamily: "'Playfair Display',Georgia,serif",
-                      fontSize: "clamp(15px,1.7vw,19px)",
-                      fontWeight: 700, lineHeight: 1.3, color: INK,
-                      marginBottom: 8, letterSpacing: "-0.01em",
-                    }}>
-                      {post.title}
-                    </h3>
-                    <p style={{ fontSize: 13.5, lineHeight: 1.75, color: MUTED }}>
-                      {post.summary}
-                    </p>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* RETAIL CRIME FILES */}
-      {retailCrimeFiles.length > 0 && (
-        <section style={{ background: INK, color: WHITE, borderBottom: `2px solid ${INK}` }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto", padding: "56px clamp(16px,4vw,48px)" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "0.9fr 1.6fr", gap: "clamp(28px,5vw,64px)", alignItems: "start" }} className="press-grid">
-              <div>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.22em", textTransform: "uppercase", color: GOLD, marginBottom: 16 }}>
-                  Retail Crime Files
-                </div>
-                <h2 style={{
-                  fontFamily: "'Playfair Display',Georgia,serif",
-                  fontSize: "clamp(28px,4vw,46px)",
-                  fontWeight: 700,
-                  lineHeight: 1.08,
-                  color: WHITE,
-                  marginBottom: 18,
-                }}>
-                  A monthly record of what the security industry keeps missing.
-                </h2>
-                <p style={{ color: "rgba(255,255,255,0.76)", fontSize: 15, lineHeight: 1.8, marginBottom: 0 }}>
-                  Each file reviews one month of UK retail crime reporting and extracts the Mykei lesson: the shelf event needs a record.
-                </p>
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 12 }}>
-                {retailCrimeFiles.map((post) => (
-                  <Link key={post.slug} to={`/signal/${post.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
-                    <article style={{
-                      height: "100%",
-                      border: "1px solid rgba(255,255,255,0.16)",
-                      background: "rgba(255,255,255,0.045)",
-                      padding: 22,
-                      borderRadius: 4,
-                    }}>
-                      <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, letterSpacing: "0.16em", textTransform: "uppercase", color: GOLD, marginBottom: 12 }}>
-                        {post.tags[1]} · {post.readingTime}
-                      </div>
-                      <h3 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 20, lineHeight: 1.2, color: WHITE, marginBottom: 12 }}>
-                        {post.title.replace(/^(January|February|March|April) File: /, "")}
-                      </h3>
-                      <p style={{ fontSize: 13.5, lineHeight: 1.7, color: "rgba(255,255,255,0.74)" }}>
-                        {post.summary}
-                      </p>
-                    </article>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ALL EDITIONS */}
-      {rest.length > 0 && (
-        <>
-          <div style={{ maxWidth: 1100, margin: "0 auto", padding: "36px clamp(16px,4vw,48px) 0" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-              <div style={{ height: 1, flex: 1, background: RULE }} />
-              <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.22em", textTransform: "uppercase", color: MUTED, whiteSpace: "nowrap" }}>
-                All editions
-              </span>
-              <div style={{ height: 1, flex: 1, background: RULE }} />
-            </div>
-          </div>
-
-          {/* DEPARTMENTS — what makes this a magazine rather than a list */}
-          <section
-            aria-label="Departments"
-            style={{ maxWidth: 1100, margin: "0 auto", padding: "0 clamp(16px,4vw,48px)" }}
-          >
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,180px),1fr))",
-                border: `1px solid ${RULE}`,
-                borderBottom: "none",
-                background: WHITE,
-              }}
-            >
-              {byDepartment.map((g) => (
-                <div
-                  key={g.department}
-                  style={{
-                    padding: "18px 20px",
-                    borderRight: `1px solid ${RULE}`,
-                    borderBottom: `1px solid ${RULE}`,
-                  }}
-                >
-                  <div
-                    style={{
-                      fontFamily: "'JetBrains Mono',monospace",
-                      fontSize: 9,
-                      letterSpacing: "0.18em",
-                      textTransform: "uppercase",
-                      color: GOLD,
-                      marginBottom: 8,
-                    }}
-                  >
-                    {g.department}
-                    <span style={{ color: MUTED }}> ({g.posts.length})</span>
-                  </div>
-                  <p style={{ fontSize: 13, lineHeight: 1.6, color: MUTED, margin: "0 0 10px" }}>
-                    {g.blurb}
-                  </p>
-                  <Link
-                    to={`/signal/${g.posts[0].slug}`}
-                    style={{
-                      fontFamily: "'Playfair Display',Georgia,serif",
-                      fontSize: 14.5,
-                      lineHeight: 1.35,
-                      color: INK,
-                      textDecoration: "none",
-                      display: "block",
-                    }}
-                  >
-                    {g.posts[0].title}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <main style={{ maxWidth: 1100, margin: "0 auto", padding: "24px clamp(16px,4vw,48px) 80px" }}>
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill,minmax(min(100%,300px),1fr))",
-              border: `1px solid ${RULE}`,
-            }}>
-              {rest.map((post, i) => (
-                <Link key={post.slug} to={`/signal/${post.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
-                  <article
-                    style={{
-                      padding: "28px 24px",
-                      borderRight: `1px solid ${RULE}`,
-                      borderBottom: `1px solid ${RULE}`,
-                      background: WHITE,
-                      transition: "background 0.15s",
-                      cursor: "pointer",
-                      height: "100%", boxSizing: "border-box",
-                    }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = WARM; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = WHITE; }}
-                  >
-                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5, color: GOLD, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 10, display: "flex", flexWrap: "wrap", gap: 6 }}>
-                      <span style={{ color: INK, fontWeight: 600 }}>{fileOf(post).department}</span>
-                      <span aria-hidden>·</span>
-                      <span>{formatDate(post.date)}</span>
-                      {fileOf(post).issue !== undefined && (
-                        <>
-                          <span aria-hidden>·</span>
-                          <span>No. {fileOf(post).issue}</span>
-                        </>
-                      )}
-                    </div>
-                    <h2 style={{
-                      fontFamily: "'Playfair Display',Georgia,serif",
-                      fontSize: "clamp(16px,1.8vw,20px)",
-                      fontWeight: 700, lineHeight: 1.3, color: INK,
-                      marginBottom: 10, letterSpacing: "-0.01em",
-                      borderBottom: `1px solid ${RULE}`, paddingBottom: 10,
-                    }}>
-                      {post.title}
-                    </h2>
-                    <p style={{ fontSize: 13.5, lineHeight: 1.75, color: MUTED, marginBottom: 14 }}>
-                      {post.summary}
-                    </p>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
-                      {post.tags.slice(0, 2).map(tag => (
-                        <span key={tag} style={{
-                          fontFamily: "'JetBrains Mono',monospace", fontSize: 8.5,
-                          letterSpacing: "0.09em", textTransform: "uppercase",
-                          color: MUTED, border: `1px solid ${RULE}`, padding: "2px 6px",
-                        }}>{tag}</span>
-                      ))}
-                    </div>
-                  </article>
-                </Link>
-              ))}
-            </div>
-          </main>
-        </>
-      )}
-
-      {/* PRESS & MEDIA */}
-      <section style={{ background: WHITE, borderTop: `2px solid ${INK}` }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "56px clamp(16px,4vw,48px)" }}>
-
-          {/* Section header */}
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 40 }}>
-            <div style={{ height: 1, flex: 1, background: RULE }} />
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.22em", textTransform: "uppercase", color: MUTED, whiteSpace: "nowrap" }}>
-              For journalists &amp; media
-            </span>
-            <div style={{ height: 1, flex: 1, background: RULE }} />
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: "clamp(32px,5vw,80px)", alignItems: "start" }} className="press-grid">
-
-            {/* Founder bio */}
-            <div>
-              <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 20 }}>Founder bio for publication</div>
-              <blockquote style={{ borderLeft: `2px solid ${GOLD}`, paddingLeft: 20, margin: "0 0 24px" }}>
-                <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: 15, fontStyle: "italic", color: INK, lineHeight: 1.75 }}>
-                  Michael Esema is the founder and CEO of Mykei Securities Ltd. He invented the ADN, a patent-pending shelf-mounted retail defence device that detects bulk-sweep theft events, triggers controlled marker deployment, and records cartridge-linked activations in the Mykei Registry. He coined the doctrine of Economic Sterilisation in 2025 (UK patent application No. 2606630.8). A former Head Accountant at B's Hive, he holds an MSc from Manchester Metropolitan University, an MBA from the Nigerian Defence Academy, and a BSc from Benson Idahosa University. Five non-binding letters of interest were signed by independent retailers in Greater Manchester in March 2026. No pilot has started.
-                </p>
-              </blockquote>
-              <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-                <a href="/founder" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, textDecoration: "none", borderBottom: `1px solid ${GOLD}`, paddingBottom: 2 }}>Full founder profile</a>
-                <a href="https://www.linkedin.com/in/michaelesema" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>LinkedIn</a>
-              </div>
-            </div>
-
-            {/* Facts + downloads + contact */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-
-              {/* Key facts */}
-              <div>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 14 }}>Key facts</div>
-                {[
-                  "Global retail theft: $796 billion annually",
-                  "UK retail crime incidents: 5.8 million (ACS 2026)",
-                  "Patent application: GB2606630.8, 17 claims",
-                  "ADN response time: under 3 seconds",
-                  "Independent retail: 5 non-binding letters of interest, March 2026",
-                  "Privacy-by-design: no camera, no biometric or suspect identity data",
-                ].map(fact => (
-                  <div key={fact} style={{ display: "flex", gap: 10, padding: "8px 0", borderBottom: `1px solid ${RULE}`, fontSize: 12.5, color: MUTED, lineHeight: 1.5 }}>
-                    <span style={{ color: GOLD, flexShrink: 0 }}>+</span>{fact}
-                  </div>
-                ))}
-              </div>
-
-              {/* Downloads */}
-              <div>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 14 }}>Downloads</div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                  <a href="/social-share.png" download style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>
-                    Press image 1200×630 →
-                  </a>
-                </div>
-              </div>
-
-              {/* Contact */}
-              <div>
-                <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.18em", textTransform: "uppercase", color: MUTED, marginBottom: 14 }}>Media contact</div>
-                <a href="mailto:protocol@mykei.io" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, letterSpacing: "0.08em", color: GOLD, textDecoration: "none" }}>
-                  protocol@mykei.io
-                </a>
-                <p style={{ fontSize: 12, color: MUTED, marginTop: 6, lineHeight: 1.6 }}>
-                  Interviews, comment on retail crime data, ADN technical spec. 24-hour response.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section style={{ background: WARM, padding: "72px 24px", textAlign: "center" }}>
-        <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: GOLD, marginBottom: 16 }}>
-          Independent Retail Pilot · 2026
-        </div>
-        <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: "clamp(22px,3vw,32px)", fontWeight: 700, color: INK, marginBottom: 12, lineHeight: 1.25, maxWidth: 560, margin: "0 auto 12px" }}>
-          Independent retailers. Direct founder support. No middlemen.
-        </p>
-        <p style={{ fontFamily: "'Sora',sans-serif", fontSize: 15, color: MUTED, marginBottom: 32, lineHeight: 1.7, maxWidth: 460, margin: "0 auto 32px" }}>
-          Michael visits every site personally before installation. Commercial terms agreed directly with Mykei. No automated sequences.
-        </p>
-        <a href="/pilot" style={{
-          display: "inline-block", background: INK, color: WHITE,
-          fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700,
-          letterSpacing: "0.14em", textTransform: "uppercase",
-          textDecoration: "none", padding: "14px 40px", borderRadius: 2,
+      {/* ─── COLOPHON ─────────────────────────────────────────────────── */}
+      <footer style={{ borderTop: `2px solid ${INK}`, background: WHITE }}>
+        <div style={{
+          maxWidth: 1240, margin: "0 auto",
+          padding: "36px clamp(16px,4vw,48px)",
+          display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16,
         }}>
-          Apply Now
-        </a>
-      </section>
-
-      {/* FOOTER */}
-      <footer style={{ background: WHITE, borderTop: `1px solid ${RULE}`, padding: "24px clamp(16px,4vw,48px)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-        <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: MUTED, letterSpacing: "0.06em" }}>
-          &copy; {new Date().getFullYear()} Mykei Securities Ltd · Company No. 16984969 · Manchester, UK
-        </span>
-        <div style={{ display: "flex", gap: 20 }}>
-          {[["Home","/"],["How It Works","/howitworks"],["Privacy","/privacy"]].map(([l,h]) => (
-            <a key={l} href={h} style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: MUTED, textDecoration: "none" }}>{l}</a>
-          ))}
+          <Folio size={8.5}>The Signal · Mykei Securities Ltd · Company 16984969</Folio>
+          <div style={{ display: "flex", gap: 20 }}>
+            <Link to="/signal/masthead" className="sig-link"><Folio size={8.5}>Masthead</Folio></Link>
+            <a href="/privacy" className="sig-link"><Folio size={8.5}>Privacy</Folio></a>
+            <a href="mailto:protocol@mykei.io" className="sig-link"><Folio size={8.5} color={GOLD}>protocol@mykei.io</Folio></a>
+          </div>
         </div>
       </footer>
-
-      <style>{`
-        @media (max-width: 720px) {
-          .signal-lead-grid { grid-template-columns: 1fr !important; }
-          .signal-lead-grid > div:nth-child(2) { display: none; }
-          .press-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </div>
   );
 }
