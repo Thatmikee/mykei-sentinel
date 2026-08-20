@@ -28,6 +28,7 @@ const EnterprisePage           = lazy(() => import("./pages/EnterprisePage"));
 const BriefIndex               = lazy(() => import("./pages/BriefIndex"));
 const MastheadPage             = lazy(() => import("./pages/MastheadPage"));
 const SignalClinical           = lazy(() => import("./pages/SignalClinical"));
+const SignalThresholdPage      = lazy(() => import("./pages/SignalThresholdPage"));
 const SignalMarkingEvidencePage = lazy(() => import("./pages/SignalMarkingEvidencePage"));
 const SignalCCTVScamPage       = lazy(() => import("./pages/SignalCCTVScamPage"));
 const SignalSalfordVintedPage  = lazy(() => import("./pages/SignalSalfordVintedPage"));
@@ -87,6 +88,7 @@ const App = () => (
             <Route path="/signal" element={<BriefIndex />} />
             <Route path="/signal/masthead" element={<MastheadPage />} />
             <Route path="/signal/clinical" element={<SignalClinical />} />
+            <Route path="/signal/threshold-repealed-still-law" element={<SignalThresholdPage />} />
             <Route path="/signal/marking-evidence" element={<SignalMarkingEvidencePage />} />
             <Route path="/signal/cctv-313-million-movie-ticket" element={<SignalCCTVScamPage />} />
             <Route path="/signal/salford-to-vinted-black-market" element={<SignalSalfordVintedPage />} />

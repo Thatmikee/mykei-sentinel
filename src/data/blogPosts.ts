@@ -44,6 +44,13 @@ export interface BlogPostMeta {
    * back-filled with a guess.
    */
   issue?: number;
+  /**
+   * Marginal note for the front page lead. Optional, and omitted rather than
+   * guessed: an earlier front hardcoded a sources count belonging to one
+   * specific piece, so any new lead would have inherited a false note.
+   */
+  sourcesCited?: number;
+  sourceNote?: string;
 }
 
 /**
@@ -123,11 +130,37 @@ export function fileOf(post: BlogPostMeta): {
 export const blogPosts: BlogPostMeta[] = [
   // ── August 2026 ────────────────────────────────────────────────────────
   {
+    slug: "threshold-repealed-still-law",
+    title: "The \u00a3200 Threshold Was Repealed in April. It Is Still the Law Today.",
+    date: "2026-08-20",
+    landmark: true,
+    department: "Policy",
+    issue: 18,
+    summary:
+      "Parliament voted to abolish the low-value shoplifting threshold. The government has not switched it on, and will not say when. Meanwhile the provision everyone is arguing about never governed whether police turn up.",
+    tags: [
+      "legislation",
+      "Crime and Policing Act 2026",
+      "section 22A",
+      "police",
+      "Home Office",
+      "retail crime law",
+      "ONS",
+    ],
+    readingTime: "8 min read",
+    sourcesCited: 9,
+    sourceNote:
+      "Every legal status read directly from legislation.gov.uk on 20 August 2026, not from press summaries. Commencement can change with one statutory instrument.",
+  },
+  {
     slug: "marking-evidence",
     title:
       "We Are Building a Forensic Marking Product. Its Evidence Base Is Weaker Than the Industry Says.",
     date: "2026-08-19",
     landmark: true,
+    sourcesCited: 3,
+    sourceNote:
+      "Two peer reviewed, one randomised. Both paywalled, and every figure confirmed against a second independent source before publication.",
     summary:
       "Two independent studies, one of them randomised, point the same way. Forensic property marking produces a real early drop in crime that does not last, and most people handed a free kit never use it. Co-op has published no outcome data at all. We are entering this category, so we are publishing the review nobody else will.",
     tags: [

@@ -38,16 +38,11 @@ import {
 import PageSEO from "@/components/PageSEO";
 
 /* ── Tokens ───────────────────────────────────────────────────────────── */
-const GROUND = "#FFFFFF";
-const INK    = "#111318";
-const INK_2  = "#4A4F58";
-const INK_3  = "#767D88";   // 4.54:1 on white — AA at body size
-const RULE   = "#D8DBE0";
-const RULE_2 = "#EDEFF2";
-const RED    = "#D8001F";   // 5.33:1 on white
+// Single source of truth, shared with the article pages of this edition.
+import { RED_EDITION, RED_TYPE } from "@/styles/signalRed";
 
-const SANS = "'IBM Plex Sans',system-ui,sans-serif";
-const MONO = "'JetBrains Mono',ui-monospace,monospace";
+const { GROUND, INK, INK_2, INK_3, RULE, RULE_2, RED } = RED_EDITION;
+const { SANS, MONO } = RED_TYPE;
 
 /**
  * Evidence grade per piece, derived from tags rather than hand-assigned, so a
@@ -229,17 +224,21 @@ export default function SignalClinical() {
                 </>
               )}
 
-              <Label>Sources cited</Label>
-              <div style={{
-                fontFamily: MONO, fontSize: 32, fontWeight: 500, lineHeight: 1,
-                margin: "6px 0 14px", fontVariantNumeric: "tabular-nums",
-              }}>03</div>
+              {lead.sourcesCited !== undefined && (
+                <>
+                  <Label>Sources cited</Label>
+                  <div style={{
+                    fontFamily: MONO, fontSize: 32, fontWeight: 500, lineHeight: 1,
+                    margin: "6px 0 14px", fontVariantNumeric: "tabular-nums",
+                  }}>{String(lead.sourcesCited).padStart(2, "0")}</div>
+                </>
+              )}
 
-              <p style={{ fontSize: 12.5, lineHeight: 1.65, color: INK_2, margin: 0 }}>
-                Two peer reviewed, one randomised. Both paywalled, and every
-                figure confirmed against a second independent source before
-                publication.
-              </p>
+              {lead.sourceNote && (
+                <p style={{ fontSize: 12.5, lineHeight: 1.65, color: INK_2, margin: 0 }}>
+                  {lead.sourceNote}
+                </p>
+              )}
             </aside>
           </div>
         </div>
