@@ -111,8 +111,14 @@ export default function SignalClinical() {
     .map(d => ({ department: d, items: filed.filter(p => fileOf(p).department === d) }))
     .filter(g => g.items.length > 0);
 
+  const issueNo = String(rows.length).padStart(3, "0");
+  const revised = isoShort(rows[0].date);
+
   return (
-    <div style={{ background: GROUND, minHeight: "100vh", color: INK, fontFamily: SANS }}>
+    <div style={{
+      background: GROUND, minHeight: "100vh", color: INK, fontFamily: SANS,
+      position: "relative",
+    }}>
       <PageSEO
         title="The Signal | Retail security, reviewed against the evidence"
         description="A standing review of the evidence behind retail security claims: research, data, policy and what actually happens in shops."
@@ -122,39 +128,83 @@ export default function SignalClinical() {
 
       <style>{`
         .sg-link { text-decoration: none; color: inherit; display: block; }
-        .sg-link:focus-visible { outline: 2px solid ${RED}; outline-offset: 3px; }
-        .sg-head { transition: color 120ms linear; }
-        .sg-link:hover .sg-head { color: ${RED}; }
-        @media (prefers-reduced-motion: reduce) { .sg-head { transition: none; } }
+        .sg-link:focus-visible { outline: 2px solid ${RED}; outline-offset: 4px; }
+
+        /* Headline hover draws a rule rather than recolouring the text. A
+           colour swap on a serif-free headline reads as a broken link; a rule
+           drawing in reads as a page that is paying attention. */
+        .sg-head { position: relative; display: inline; background-image: linear-gradient(${RED}, ${RED});
+                   background-repeat: no-repeat; background-position: 0 100%;
+                   background-size: 0% 2px; transition: background-size 260ms cubic-bezier(.2,.7,.3,1); }
+        .sg-link:hover .sg-head, .sg-link:focus-visible .sg-head { background-size: 100% 2px; }
+
+        /* One orchestrated page load. Staggered, short, and once. */
+        @keyframes sg-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+        .sg-rise { animation: sg-rise 620ms cubic-bezier(.16,.84,.44,1) both; }
+
+        /* Playfair drop cap on the lead. The nameplate face reappearing once in
+           the body is what ties a masthead to its page. */
+        .sg-drop::first-letter {
+          font-family: ${DISPLAY}; font-weight: 900; color: ${RED};
+          float: left; font-size: 3.35em; line-height: 0.82;
+          padding: 6px 12px 0 0; margin-top: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .sg-head { transition: none; }
+          .sg-rise { animation: none; }
+        }
         @media (max-width: 900px) {
-          .sg-plate { grid-template-columns: 1fr !important; gap: 22px !important; }
+          .sg-plate { grid-template-columns: 1fr !important; gap: 20px !important; }
           .sg-lead  { grid-template-columns: 1fr !important; }
           .sg-tier  { grid-template-columns: 1fr !important; }
-          .sg-dept  { grid-template-columns: 1fr !important; gap: 10px !important; }
+          .sg-dept  { grid-template-columns: 1fr !important; gap: 12px !important; }
+          .sg-feature { grid-column: auto !important; }
+          .sg-ghost { display: none !important; }
         }
       `}</style>
 
-      {/* Publication signature: the red bar owns the top of the page. */}
+      {/* Paper grain. Barely there, but a flat white ground is the thing that
+          makes a clinical page read as a wireframe rather than a printed page. */}
+      <div aria-hidden style={{
+        position: "fixed", inset: 0, pointerEvents: "none", zIndex: 1, opacity: 0.5,
+        backgroundImage:
+          "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='0.032'/></svg>\")",
+      }} />
+
+      <div style={{ position: "relative", zIndex: 2 }}>
+
       <div aria-hidden style={{ height: 7, background: RED }} />
 
-      {/* ── NAMEPLATE ────────────────────────────────────────────────── */}
+      {/* ── MASTHEAD ─────────────────────────────────────────────────────
+          Nameplate plus furniture. A trade title is recognised by the block
+          as a whole: dateline above, hairline rules, standing matter below. */}
       <header style={{ borderBottom: `2px solid ${INK}` }}>
-        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(20px,3vh,34px) clamp(16px,4vw,44px) 20px" }}>
-          {/* Retuned for Playfair. The -0.055em tracking and 0.86 leading were
-              fitted to Plex caps; at display size Playfair's caps crash into
-              each other at that tracking, and its high stroke contrast needs
-              more air. Caps, so no descenders to clear. */}
-          <h1 style={{
+        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 clamp(16px,4vw,44px) 20px" }}>
+
+          <div className="sg-rise" style={{
+            display: "flex", justifyContent: "space-between", alignItems: "center",
+            gap: 16, padding: "11px 0", borderBottom: `1px solid ${RULE}`, flexWrap: "wrap",
+          }}>
+            <Label color={INK_2}>Mykei Securities Ltd · Manchester</Label>
+            <Label color={INK_2}>No. {issueNo}</Label>
+            <Label color={INK_2}>{revised}</Label>
+          </div>
+
+          <h1 className="sg-rise" style={{
             fontFamily: DISPLAY, fontSize: "clamp(46px,12vw,150px)", fontWeight: 900,
             letterSpacing: "-0.012em", lineHeight: 0.94, margin: 0,
-            color: RED, textTransform: "uppercase",
+            color: RED, textTransform: "uppercase", padding: "14px 0 8px",
+            animationDelay: "60ms",
           }}>
             The Signal
           </h1>
 
-          <div className="sg-plate" style={{
+          <div aria-hidden style={{ height: 1, background: INK, marginBottom: 16 }} />
+
+          <div className="sg-plate sg-rise" style={{
             display: "grid", gridTemplateColumns: "minmax(0,1fr) auto",
-            alignItems: "end", gap: 40, marginTop: 18,
+            alignItems: "end", gap: 40, animationDelay: "120ms",
           }}>
             <div>
               <p style={{
@@ -175,7 +225,7 @@ export default function SignalClinical() {
             <dl style={{ margin: 0, display: "grid", gap: 5, minWidth: 168 }}>
               {[
                 ["Entries", String(rows.length)],
-                ["Revised", isoShort(rows[0].date)],
+                ["Revised", revised],
                 ["Method", "Stated in full"],
               ].map(([k, v]) => (
                 <div key={k} style={{ display: "flex", justifyContent: "space-between", gap: 20 }}>
@@ -194,21 +244,22 @@ export default function SignalClinical() {
       {/* ── LEAD ─────────────────────────────────────────────────────── */}
       <section style={{ borderBottom: `1px solid ${RULE}` }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(30px,5vh,58px) clamp(16px,4vw,44px)" }}>
-          <div className="sg-lead" style={{
-            display: "grid", gridTemplateColumns: "minmax(0,1fr) 228px", gap: "clamp(26px,4vw,60px)",
+          <div className="sg-lead sg-rise" style={{
+            display: "grid", gridTemplateColumns: "minmax(0,1fr) 228px",
+            gap: "clamp(26px,4vw,60px)", animationDelay: "180ms",
           }}>
             <div>
               <Label color={RED} size={11}>{fileOf(lead).department}</Label>
 
               <Link to={`/signal/${lead.slug}`} className="sg-link" style={{ marginTop: 14 }}>
-                <h2 className="sg-head" style={{
+                <h2 style={{
                   fontFamily: SANS, fontSize: "clamp(30px,4.6vw,60px)", fontWeight: 600,
                   letterSpacing: "-0.035em", lineHeight: 1.04, margin: "0 0 18px",
                   textWrap: "balance",
                 }}>
-                  {lead.title}
+                  <span className="sg-head">{lead.title}</span>
                 </h2>
-                <p style={{
+                <p className="sg-drop" style={{
                   fontSize: "clamp(15.5px,1.5vw,18px)", lineHeight: 1.66, color: INK_2,
                   margin: "0 0 20px", maxWidth: "64ch",
                 }}>
@@ -224,8 +275,7 @@ export default function SignalClinical() {
               </Link>
             </div>
 
-            {/* Marginal note. Grade set in words, not colour. */}
-            <aside style={{ borderLeft: `3px solid ${RED}`, paddingLeft: 22 }}>
+            <aside style={{ borderLeft: `3px solid ${RED}`, paddingLeft: 22, alignSelf: "start" }}>
               {gradeOf(lead) && (
                 <>
                   <Label>Evidence grade</Label>
@@ -256,23 +306,32 @@ export default function SignalClinical() {
         </div>
       </section>
 
-      {/* ── SECOND TIER ──────────────────────────────────────────────── */}
+      {/* ── SECOND TIER ──────────────────────────────────────────────────
+          Asymmetric on purpose. Three equal columns is the shape a template
+          produces; a feature plus two shorter items is the shape an editor
+          produces, and it gives the eye somewhere to land first. */}
       <section aria-label="Also this issue" style={{ borderBottom: `2px solid ${INK}` }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(24px,4vh,44px) clamp(16px,4vw,44px)" }}>
-          <div className="sg-tier" style={{
-            display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: "clamp(22px,3vw,44px)",
+          <div className="sg-tier sg-rise" style={{
+            display: "grid", gridTemplateColumns: "repeat(12,minmax(0,1fr))",
+            gap: "clamp(22px,3vw,44px)", animationDelay: "240ms",
           }}>
-            {seconds.map(post => (
-              <Link key={post.slug} to={`/signal/${post.slug}`} className="sg-link">
+            {seconds.map((post, i) => (
+              <Link key={post.slug} to={`/signal/${post.slug}`}
+                className={`sg-link${i === 0 ? " sg-feature" : ""}`}
+                style={{ gridColumn: i === 0 ? "span 6" : "span 3" }}>
                 <Label color={RED}>{fileOf(post).department}</Label>
-                <h3 className="sg-head" style={{
-                  fontFamily: SANS, fontSize: "clamp(18px,1.8vw,22px)", fontWeight: 600,
-                  letterSpacing: "-0.022em", lineHeight: 1.22, margin: "10px 0 10px",
-                  textWrap: "balance",
+                <h3 style={{
+                  fontFamily: SANS,
+                  fontSize: i === 0 ? "clamp(21px,2.4vw,30px)" : "clamp(17px,1.6vw,20px)",
+                  fontWeight: 600, letterSpacing: "-0.024em", lineHeight: 1.18,
+                  margin: "10px 0 10px", textWrap: "balance",
                 }}>
-                  {post.title}
+                  <span className="sg-head">{post.title}</span>
                 </h3>
-                <p style={{ fontSize: 14, lineHeight: 1.62, color: INK_2, margin: "0 0 12px" }}>
+                <p style={{
+                  fontSize: i === 0 ? 15 : 13.5, lineHeight: 1.6, color: INK_2, margin: "0 0 12px",
+                }}>
                   {post.summary}
                 </p>
                 <Label>{metaLine(post)}</Label>
@@ -288,20 +347,31 @@ export default function SignalClinical() {
           {byDepartment.map(({ department, items }) => (
             <div key={department} className="sg-dept" style={{
               display: "grid", gridTemplateColumns: "236px minmax(0,1fr)",
-              gap: "clamp(24px,4vw,52px)", padding: "30px 0",
+              gap: "clamp(24px,4vw,52px)", padding: "34px 0",
               borderTop: `1px solid ${RULE}`,
             }}>
               <div>
                 <h2 style={{
-                  fontFamily: SANS, fontSize: "clamp(26px,3vw,38px)", fontWeight: 700,
-                  letterSpacing: "-0.035em", lineHeight: 0.98, margin: 0,
+                  fontFamily: DISPLAY, fontSize: "clamp(26px,3vw,40px)", fontWeight: 900,
+                  letterSpacing: "-0.015em", lineHeight: 0.98, margin: 0,
                   color: RED, textTransform: "uppercase",
                 }}>
                   {department}
                 </h2>
-                <p style={{ fontSize: 13, lineHeight: 1.6, color: INK_2, margin: "10px 0 0", maxWidth: "30ch" }}>
+                <p style={{
+                  fontSize: 13, lineHeight: 1.6, color: INK_2, margin: "10px 0 0", maxWidth: "30ch",
+                }}>
                   {DEPARTMENT_BLURB[department as Department]}
                 </p>
+                {/* Folio numeral: the count of pieces filed under this head.
+                    Ornament derived from content rather than applied to it.
+                    It sits BELOW the blurb in its own space. An earlier version
+                    absolutely positioned it behind the department name, where
+                    it collided with the letterforms and read as a bug. */}
+                <div aria-hidden className="sg-ghost" style={{
+                  fontFamily: DISPLAY, fontSize: 62, fontWeight: 900, lineHeight: 1,
+                  color: RULE, marginTop: 14, userSelect: "none",
+                }}>{String(items.length).padStart(2, "0")}</div>
               </div>
 
               <div>
@@ -310,11 +380,11 @@ export default function SignalClinical() {
                     padding: "13px 0",
                     borderTop: i === 0 ? "none" : `1px solid ${RULE_2}`,
                   }}>
-                    <h3 className="sg-head" style={{
+                    <h3 style={{
                       fontFamily: SANS, fontSize: 16.5, fontWeight: 500,
                       letterSpacing: "-0.014em", lineHeight: 1.34, margin: "0 0 6px",
                     }}>
-                      {post.title}
+                      <span className="sg-head">{post.title}</span>
                     </h3>
                     <Label>{metaLine(post, true)}</Label>
                   </Link>
@@ -338,6 +408,8 @@ export default function SignalClinical() {
           <Label color={INK_2}>protocol@mykei.io</Label>
         </div>
       </footer>
+
+      </div>
     </div>
   );
 }
