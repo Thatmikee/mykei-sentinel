@@ -1,0 +1,43 @@
+{
+  "_comment": [
+    "Sources for the Signal wire. RSS and Atom only: we read the feeds",
+    "publishers provide for this purpose, we do not crawl their sites.",
+    "Feeds marked manual:true publish no machine readable feed we could find.",
+    "They are listed rather than dropped, because a missing source that is",
+    "invisible in the config reads as covered when it is not."
+  ],
+  "feeds": [
+    { "id": "legislation-si",   "name": "legislation.gov.uk, new statutory instruments", "tier": "primary", "url": "https://www.legislation.gov.uk/uksi/data.feed" },
+    { "id": "legislation-new",  "name": "legislation.gov.uk, all new legislation",       "tier": "primary", "url": "https://www.legislation.gov.uk/new/data.feed" },
+    { "id": "homeoffice",       "name": "Home Office, news and communications",          "tier": "primary", "url": "https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=home-office" },
+
+    { "id": "retailgazette",    "name": "Retail Gazette",   "tier": "trade", "url": "https://www.retailgazette.co.uk/feed/" },
+    { "id": "retailtimes",      "name": "Retail Times",     "tier": "trade", "url": "https://retailtimes.co.uk/feed/" },
+    { "id": "retailsector",     "name": "Retail Sector",    "tier": "trade", "url": "https://www.retailsector.co.uk/feed/" },
+    { "id": "grocerygazette",   "name": "Grocery Gazette",  "tier": "trade", "url": "https://www.grocerygazette.co.uk/feed/" },
+    { "id": "thegrocer",        "name": "The Grocer",       "tier": "trade", "url": "https://www.thegrocer.co.uk/34272.rss" },
+    { "id": "365retail",        "name": "365 Retail",       "tier": "trade", "url": "https://365retail.co.uk/feed/" },
+    { "id": "drapers",          "name": "Drapers",          "tier": "trade", "url": "https://www.drapersonline.com/rss" },
+    { "id": "ft-uk",            "name": "Financial Times, UK", "tier": "trade", "url": "https://www.ft.com/rss/home/uk" },
+
+    { "id": "retailweek",       "name": "Retail Week",      "tier": "trade", "manual": true,
+      "note": "No RSS or Atom feed found on 20 Aug 2026. Root, /rss, /feed and /latest.rss all 404 and the homepage declares no feed link. Check by hand." },
+    { "id": "retaileconomics",  "name": "Retail Economics", "tier": "trade", "manual": true,
+      "note": "No RSS or Atom feed found on 20 Aug 2026. /rss, /feed/ and /news/feed all 404 and the homepage declares no feed link. Research house rather than a wire, so a periodic manual check is probably the right cadence anyway." }
+  ],
+
+  "_scoring": "An item is kept when it matches at least one 'must' term. Score is the count of distinct matched terms, with primary tier sources given a floor so legal changes are never buried under trade volume.",
+  "must": [
+    "shoplift", "shop theft", "retail crime", "retail theft", "stolen goods",
+    "organised retail", "loss prevention", "shrinkage", "theft",
+    "magistrates", "sentencing", "statutory instrument", "commencement",
+    "crime and policing", "section 22a", "police funding", "town centre",
+    "facial recognition", "cctv", "security tag", "tagging", "self-checkout",
+    "resale", "second-hand", "marketplace", "vinted", "ebay", "depop",
+    "assault", "shopworker", "retail worker", "usdaw", "brc", "acs"
+  ],
+  "hot": [
+    "section 22a", "commencement", "statutory instrument", "crime and policing",
+    "threshold", "shoplift", "retail crime", "facial recognition"
+  ]
+}

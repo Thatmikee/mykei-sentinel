@@ -20,7 +20,11 @@
 //            as display size. It belongs to the PUBLICATION — nameplate,
 //            department heads, kickers. It never grades a source.
 //   Type     IBM Plex Sans, drawn by IBM for technical documentation, against
-//            JetBrains Mono for every figure, date and reference.
+//            JetBrains Mono for every figure, date and reference. The NAMEPLATE
+//            is the single exception: Playfair Display, because the masthead of
+//            a magazine is a wordmark rather than a heading, and a trade title
+//            is recognised by it. Body copy stays sans. Do not "restore
+//            consistency" by setting the nameplate in Plex.
 //
 // WHY GRADE IS NO LONGER A COLOURED SQUARE
 // The evidence grade used to be a coloured dot nested inside the No. column.
@@ -42,7 +46,7 @@ import PageSEO from "@/components/PageSEO";
 import { RED_EDITION, RED_TYPE } from "@/styles/signalRed";
 
 const { GROUND, INK, INK_2, INK_3, RULE, RULE_2, RED } = RED_EDITION;
-const { SANS, MONO } = RED_TYPE;
+const { SANS, MONO, DISPLAY } = RED_TYPE;
 
 /**
  * Evidence grade per piece, derived from tags rather than hand-assigned, so a
@@ -51,9 +55,13 @@ const { SANS, MONO } = RED_TYPE;
  */
 function gradeOf(post: BlogPostMeta): string | null {
   const t = post.tags.map(x => x.toLowerCase()).join(" ");
-  if (/evidence review|research|study|randomised/.test(t)) return "Independent";
-  if (/ons|legislation|police|home office|act/.test(t))    return "Primary";
-  if (/brc|acs|survey|vendor|smartwater|selectadna/.test(t)) return "Industry";
+  // Word boundaries matter here. An earlier version matched a bare "act",
+  // which is a substring of "tactical" and "action", and so graded a piece
+  // tagged "tactical multi-zone sensor array" as PRIMARY evidence. Printing an
+  // unearned high grade is worse than printing none.
+  if (/evidence review|research|\bstudy\b|randomised|peer.reviewed/.test(t)) return "Independent";
+  if (/\bons\b|legislation|\bpolice\b|home office|\bact\b|statutory instrument|hansard/.test(t)) return "Primary";
+  if (/\bbrc\b|\bacs\b|survey|vendor|smartwater|selectadna/.test(t)) return "Industry";
   // No match means we have not graded this piece, which is not the same as
   // grading it weak. An earlier draft printed "Single source" here and so
   // labelled twenty of twenty-seven entries with a verdict nobody had reached.
@@ -132,9 +140,13 @@ export default function SignalClinical() {
       {/* ── NAMEPLATE ────────────────────────────────────────────────── */}
       <header style={{ borderBottom: `2px solid ${INK}` }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(20px,3vh,34px) clamp(16px,4vw,44px) 20px" }}>
+          {/* Retuned for Playfair. The -0.055em tracking and 0.86 leading were
+              fitted to Plex caps; at display size Playfair's caps crash into
+              each other at that tracking, and its high stroke contrast needs
+              more air. Caps, so no descenders to clear. */}
           <h1 style={{
-            fontFamily: SANS, fontSize: "clamp(52px,13.5vw,168px)", fontWeight: 700,
-            letterSpacing: "-0.055em", lineHeight: 0.86, margin: 0,
+            fontFamily: DISPLAY, fontSize: "clamp(46px,12vw,150px)", fontWeight: 900,
+            letterSpacing: "-0.012em", lineHeight: 0.94, margin: 0,
             color: RED, textTransform: "uppercase",
           }}>
             The Signal

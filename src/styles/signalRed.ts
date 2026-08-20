@@ -26,6 +26,14 @@ export const RED_EDITION = {
 } as const;
 
 export const RED_TYPE = {
+  /**
+   * Nameplate only. A magazine is allowed one decorative face, and it belongs
+   * to the wordmark: Vogue sets a high contrast display serif over a sans body
+   * for exactly this reason. Playfair Display is already self-hosted for the
+   * other edition, so this costs no new bytes and stays inside the CSP, which
+   * blocks Google Fonts. Do not use it for body copy.
+   */
+  DISPLAY: "'Playfair Display',Georgia,serif",
   /** IBM Plex Sans, drawn by IBM for technical documentation. Self-hosted. */
   SANS: "'IBM Plex Sans',system-ui,sans-serif",
   /** Every figure, date and reference. Self-hosted. */
