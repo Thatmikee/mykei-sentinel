@@ -1,64 +1,78 @@
 // src/pages/SignalClinical.tsx
-// The Signal — CLINICAL direction. Alternative front for side-by-side comparison
-// against the warm-paper/Playfair version at /signal.
+// The Signal — the red edition. Front page of a retail security publication.
 //
 // WHY THIS EXISTS
-// The /signal front passed an AI-design audit on every obvious count (no
-// gradients, no Inter, no glassmorphism) and still failed the harder test:
-// warm cream ground + high-contrast serif display + gold accent is one of the
-// three clusters AI design collapses into. It is the "tasteful" default.
+// The /signal front passed an AI-design audit on every obvious count and still
+// failed the harder test: warm cream + serif display + gold accent is one of
+// the three clusters AI design collapses into. The clinical rebuild fixed the
+// palette but replaced one tell with another — a four-swatch colour legend, a
+// department tally strip, and twenty-seven rows of identical weight. That is a
+// dashboard, not a magazine.
 //
 // THE DIRECTION
-// Not a heritage magazine. A statistical bulletin. The reference points are the
-// ONS statistical release, a Cochrane review, a government inquiry report:
-// documents whose authority comes from being legible and auditable, not warm.
+// One red, one ink, white paper. Scale contrast carries the hierarchy the way
+// it does in a print title: one lead at full size, three pieces at half, the
+// rest filed by department. Nothing is colour-coded.
 //
-//   Ground     Hard white. No cream. Paper you photocopy, not paper you frame.
-//   Ink        Cool near-black (#111318). One ink, doing the work.
-//   Accent     None decorative. Colour is FUNCTIONAL only: it marks evidence
-//              strength and corrections. If something is coloured here, it is
-//              telling you how much to trust the thing next to it.
-//   Type       IBM Plex Sans, drawn by IBM for technical documentation, against
-//              JetBrains Mono for every figure and reference. No serif at all.
-//   Signature  The evidence grade in the margin. Every piece carries the grade
-//              of its strongest source, using the same scheme published on the
-//              masthead. Ornament derived from content, not applied to it.
+//   Ground   Hard white. Paper you photocopy, not paper you frame.
+//   Ink      Cool near-black (#111318). One ink doing the work.
+//   Red      #D8001F, 5.33:1 on white, so it is legible at body size as well
+//            as display size. It belongs to the PUBLICATION — nameplate,
+//            department heads, kickers. It never grades a source.
+//   Type     IBM Plex Sans, drawn by IBM for technical documentation, against
+//            JetBrains Mono for every figure, date and reference.
+//
+// WHY GRADE IS NO LONGER A COLOURED SQUARE
+// The evidence grade used to be a coloured dot nested inside the No. column.
+// Two problems. Removing that column would have silently removed the grade
+// with it, and hot red collided head-on with the existing "Single-source" red
+// in the same four-swatch legend. Grade is now set in words in the margin,
+// which is more legible, survives greyscale, and leaves red to the masthead.
 
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { blogPosts, fileOf, DEPARTMENTS, type BlogPostMeta } from "@/data/blogPosts";
+import {
+  blogPosts, fileOf, DEPARTMENTS, DEPARTMENT_BLURB,
+  type BlogPostMeta, type Department,
+} from "@/data/blogPosts";
 import PageSEO from "@/components/PageSEO";
 
 /* ── Tokens ───────────────────────────────────────────────────────────── */
 const GROUND = "#FFFFFF";
 const INK    = "#111318";
 const INK_2  = "#4A4F58";
-const INK_3  = "#7A818C";
+const INK_3  = "#767D88";   // 4.54:1 on white — AA at body size
 const RULE   = "#D8DBE0";
 const RULE_2 = "#EDEFF2";
-
-/* Functional colour only. Each maps to an evidence grade from the masthead. */
-const GRADE = {
-  Primary:     { dot: "#1A5E3A", label: "Primary" },
-  Independent: { dot: "#1E4E8C", label: "Independent" },
-  Industry:    { dot: "#8A5A00", label: "Industry" },
-  Unverified:  { dot: "#B3261E", label: "Single-source" },
-} as const;
-type GradeKey = keyof typeof GRADE;
+const RED    = "#D8001F";   // 5.33:1 on white
 
 const SANS = "'IBM Plex Sans',system-ui,sans-serif";
 const MONO = "'JetBrains Mono',ui-monospace,monospace";
 
 /**
- * Evidence grade per piece. Derived from tags rather than hand-assigned, so a
+ * Evidence grade per piece, derived from tags rather than hand-assigned, so a
  * new piece grades itself and nobody can quietly upgrade their own sourcing.
+ * Set in words, never in colour. The full scheme is published on the masthead.
  */
-function gradeOf(post: BlogPostMeta): GradeKey {
+function gradeOf(post: BlogPostMeta): string | null {
   const t = post.tags.map(x => x.toLowerCase()).join(" ");
   if (/evidence review|research|study|randomised/.test(t)) return "Independent";
   if (/ons|legislation|police|home office|act/.test(t))    return "Primary";
   if (/brc|acs|survey|vendor|smartwater|selectadna/.test(t)) return "Industry";
-  return "Unverified";
+  // No match means we have not graded this piece, which is not the same as
+  // grading it weak. An earlier draft printed "Single source" here and so
+  // labelled twenty of twenty-seven entries with a verdict nobody had reached.
+  // Grade is a claim about sourcing and has to be earned by reading the piece.
+  return null;
+}
+
+/** Meta line. Grade is omitted entirely when the piece has not been graded. */
+function metaLine(post: BlogPostMeta, withReadingTime = false): string {
+  const parts = [isoShort(post.date)];
+  const g = gradeOf(post);
+  if (g) parts.push(g);
+  if (withReadingTime) parts.push(post.readingTime);
+  return parts.join(" · ");
 }
 
 function isoShort(iso: string): string {
@@ -66,10 +80,12 @@ function isoShort(iso: string): string {
   return `${d}.${m}.${y}`;
 }
 
-function Label({ children, color = INK_3 }: { children: React.ReactNode; color?: string }) {
+function Label({ children, color = INK_3, size = 10 }: {
+  children: React.ReactNode; color?: string; size?: number;
+}) {
   return (
     <span style={{
-      fontFamily: MONO, fontSize: 10, letterSpacing: "0.08em",
+      fontFamily: MONO, fontSize: size, letterSpacing: "0.09em",
       textTransform: "uppercase", color,
     }}>{children}</span>
   );
@@ -80,70 +96,85 @@ export default function SignalClinical() {
     () => [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     []
   );
-  const latestIssue = rows.reduce((max, p) => Math.max(max, fileOf(p).issue ?? 0), 0);
-  const lead = rows.find(p => p.landmark) ?? rows[0];
 
-  const gradeCounts = DEPARTMENTS.map(d => ({
-    department: d,
-    n: rows.filter(p => fileOf(p).department === d).length,
-  })).filter(g => g.n > 0);
+  const lead = rows.find(p => p.landmark) ?? rows[0];
+  // Scale contrast: one lead, three at half weight, the rest filed by
+  // department. Without these tiers the page is a database dump.
+  const seconds = rows.filter(p => p.slug !== lead.slug).slice(0, 3);
+  const filedSlugs = new Set([lead.slug, ...seconds.map(p => p.slug)]);
+  const filed = rows.filter(p => !filedSlugs.has(p.slug));
+
+  const byDepartment = DEPARTMENTS
+    .map(d => ({ department: d, items: filed.filter(p => fileOf(p).department === d) }))
+    .filter(g => g.items.length > 0);
 
   return (
     <div style={{ background: GROUND, minHeight: "100vh", color: INK, fontFamily: SANS }}>
       <PageSEO
-        title="The Signal | Clinical edition | Mykei Securities"
-        description="Alternative front for The Signal, set as a statistical bulletin rather than a magazine. Evidence grades in the margin."
+        title="The Signal | Retail security, reviewed against the evidence"
+        description="A standing review of the evidence behind retail security claims: research, data, policy and what actually happens in shops."
         canonical="https://mykei.io/signal/clinical"
-        breadcrumbs={[["Home","https://mykei.io"],["The Signal","/signal"],["Clinical","/signal/clinical"]]}
+        breadcrumbs={[["Home","https://mykei.io"],["The Signal","/signal"],["Red edition","/signal/clinical"]]}
       />
 
       <style>{`
-        .cl-link { text-decoration: none; color: inherit; display: block; }
-        .cl-link:focus-visible { outline: 2px solid ${INK}; outline-offset: 3px; }
-        .cl-row { transition: background 120ms linear; }
-        .cl-row:hover { background: ${RULE_2}; }
-        @media (prefers-reduced-motion: reduce) { .cl-row { transition: none; } }
-        @media (max-width: 860px) {
-          .cl-masthead { grid-template-columns: 1fr !important; gap: 20px !important; }
-          .cl-row-grid { grid-template-columns: 52px 1fr !important; }
-          .cl-row-meta { grid-column: 2; display: flex; gap: 14px; padding-top: 6px; }
-          .cl-lead { grid-template-columns: 1fr !important; }
+        .sg-link { text-decoration: none; color: inherit; display: block; }
+        .sg-link:focus-visible { outline: 2px solid ${RED}; outline-offset: 3px; }
+        .sg-head { transition: color 120ms linear; }
+        .sg-link:hover .sg-head { color: ${RED}; }
+        @media (prefers-reduced-motion: reduce) { .sg-head { transition: none; } }
+        @media (max-width: 900px) {
+          .sg-plate { grid-template-columns: 1fr !important; gap: 22px !important; }
+          .sg-lead  { grid-template-columns: 1fr !important; }
+          .sg-tier  { grid-template-columns: 1fr !important; }
+          .sg-dept  { grid-template-columns: 1fr !important; gap: 10px !important; }
         }
       `}</style>
 
-      {/* ── DOCUMENT HEAD ────────────────────────────────────────────── */}
+      {/* Publication signature: the red bar owns the top of the page. */}
+      <div aria-hidden style={{ height: 7, background: RED }} />
+
+      {/* ── NAMEPLATE ────────────────────────────────────────────────── */}
       <header style={{ borderBottom: `2px solid ${INK}` }}>
-        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "22px clamp(16px,4vw,40px)" }}>
-          <div className="cl-masthead" style={{
-            display: "grid", gridTemplateColumns: "1fr auto", alignItems: "end", gap: 32,
+        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(20px,3vh,34px) clamp(16px,4vw,44px) 20px" }}>
+          <h1 style={{
+            fontFamily: SANS, fontSize: "clamp(52px,13.5vw,168px)", fontWeight: 700,
+            letterSpacing: "-0.055em", lineHeight: 0.86, margin: 0,
+            color: RED, textTransform: "uppercase",
+          }}>
+            The Signal
+          </h1>
+
+          <div className="sg-plate" style={{
+            display: "grid", gridTemplateColumns: "minmax(0,1fr) auto",
+            alignItems: "end", gap: 40, marginTop: 18,
           }}>
             <div>
-              <Label color={INK_3}>Mykei Securities Ltd · Manchester</Label>
-              <h1 style={{
-                fontFamily: SANS, fontSize: "clamp(30px,5vw,54px)", fontWeight: 600,
-                letterSpacing: "-0.028em", lineHeight: 1.02, margin: "8px 0 0",
-              }}>
-                The Signal
-              </h1>
               <p style={{
-                fontSize: 14, lineHeight: 1.6, color: INK_2, margin: "10px 0 0", maxWidth: "56ch",
+                fontSize: "clamp(15px,1.5vw,18px)", lineHeight: 1.45, color: INK,
+                margin: 0, maxWidth: "44ch", fontWeight: 500, letterSpacing: "-0.012em",
               }}>
-                A standing review of the evidence behind retail security claims.
-                Published by a company that sells into the field, which is stated
-                on every page rather than hidden.
+                Retail security, reviewed against the evidence.
+              </p>
+              <p style={{
+                fontSize: 13, lineHeight: 1.6, color: INK_2, margin: "8px 0 0", maxWidth: "58ch",
+              }}>
+                Research, data, policy, and what actually happens in shops.
+                Published by a company that sells into this field, which is
+                stated on every page rather than buried.
               </p>
             </div>
 
-            <dl style={{ margin: 0, display: "grid", gap: 6, minWidth: 150 }}>
+            <dl style={{ margin: 0, display: "grid", gap: 5, minWidth: 168 }}>
               {[
-                ["Issue", String(latestIssue).padStart(2, "0")],
                 ["Entries", String(rows.length)],
                 ["Revised", isoShort(rows[0].date)],
+                ["Method", "Stated in full"],
               ].map(([k, v]) => (
-                <div key={k} style={{ display: "flex", justifyContent: "space-between", gap: 18 }}>
+                <div key={k} style={{ display: "flex", justifyContent: "space-between", gap: 20 }}>
                   <dt><Label>{k}</Label></dt>
                   <dd style={{
-                    margin: 0, fontFamily: MONO, fontSize: 12, fontWeight: 500,
+                    margin: 0, fontFamily: MONO, fontSize: 11.5, fontWeight: 500,
                     fontVariantNumeric: "tabular-nums", color: INK,
                   }}>{v}</dd>
                 </div>
@@ -153,169 +184,147 @@ export default function SignalClinical() {
         </div>
       </header>
 
-      {/* ── KEY / LEGEND ─────────────────────────────────────────────── */}
-      <section aria-label="Evidence grading key" style={{
-        borderBottom: `1px solid ${RULE}`, background: "#FBFCFD",
-      }}>
-        <div style={{
-          maxWidth: 1120, margin: "0 auto", padding: "12px clamp(16px,4vw,40px)",
-          display: "flex", flexWrap: "wrap", gap: "10px 26px", alignItems: "center",
-        }}>
-          <Label color={INK_2}>Evidence grade</Label>
-          {(Object.keys(GRADE) as GradeKey[]).map(k => (
-            <span key={k} style={{ display: "inline-flex", alignItems: "center", gap: 7 }}>
-              <span aria-hidden style={{
-                width: 8, height: 8, background: GRADE[k].dot, flexShrink: 0,
-              }} />
-              <Label color={INK_2}>{GRADE[k].label}</Label>
-            </span>
-          ))}
-          <Link to="/signal/masthead" className="cl-link" style={{ marginLeft: "auto" }}>
-            <Label color={INK}>Method →</Label>
-          </Link>
-        </div>
-      </section>
-
-      {/* ── LEAD ENTRY ───────────────────────────────────────────────── */}
+      {/* ── LEAD ─────────────────────────────────────────────────────── */}
       <section style={{ borderBottom: `1px solid ${RULE}` }}>
-        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "clamp(28px,5vh,52px) clamp(16px,4vw,40px)" }}>
-          <div className="cl-lead" style={{
-            display: "grid", gridTemplateColumns: "minmax(0,1fr) 220px", gap: "clamp(24px,4vw,56px)",
+        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(30px,5vh,58px) clamp(16px,4vw,44px)" }}>
+          <div className="sg-lead" style={{
+            display: "grid", gridTemplateColumns: "minmax(0,1fr) 228px", gap: "clamp(26px,4vw,60px)",
           }}>
             <div>
-              <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 14 }}>
-                <span aria-hidden style={{
-                  width: 8, height: 8, background: GRADE[gradeOf(lead)].dot,
-                }} />
-                <Label color={INK_2}>{GRADE[gradeOf(lead)].label} evidence</Label>
-                <Label color={INK_3}>· {fileOf(lead).department}</Label>
-              </div>
+              <Label color={RED} size={11}>{fileOf(lead).department}</Label>
 
-              <Link to={`/signal/${lead.slug}`} className="cl-link">
-                <h2 style={{
-                  fontFamily: SANS, fontSize: "clamp(24px,3.4vw,40px)", fontWeight: 600,
-                  letterSpacing: "-0.025em", lineHeight: 1.14, margin: "0 0 16px",
+              <Link to={`/signal/${lead.slug}`} className="sg-link" style={{ marginTop: 14 }}>
+                <h2 className="sg-head" style={{
+                  fontFamily: SANS, fontSize: "clamp(30px,4.6vw,60px)", fontWeight: 600,
+                  letterSpacing: "-0.035em", lineHeight: 1.04, margin: "0 0 18px",
                   textWrap: "balance",
                 }}>
                   {lead.title}
                 </h2>
                 <p style={{
-                  fontSize: 15.5, lineHeight: 1.75, color: INK_2, margin: "0 0 18px", maxWidth: "68ch",
+                  fontSize: "clamp(15.5px,1.5vw,18px)", lineHeight: 1.66, color: INK_2,
+                  margin: "0 0 20px", maxWidth: "64ch",
                 }}>
                   {lead.summary}
                 </p>
                 <span style={{
-                  fontFamily: MONO, fontSize: 11, letterSpacing: "0.06em",
-                  borderBottom: `1px solid ${INK}`, paddingBottom: 2,
+                  fontFamily: MONO, fontSize: 11, letterSpacing: "0.07em",
+                  textTransform: "uppercase", color: RED,
+                  borderBottom: `1px solid ${RED}`, paddingBottom: 3,
                 }}>
-                  Read entry {String(fileOf(lead).issue ?? 0).padStart(2, "0")} →
+                  Read in full →
                 </span>
               </Link>
             </div>
 
-            {/* Marginal note — the signature device */}
-            <aside style={{ borderLeft: `1px solid ${RULE}`, paddingLeft: 20 }}>
+            {/* Marginal note. Grade set in words, not colour. */}
+            <aside style={{ borderLeft: `3px solid ${RED}`, paddingLeft: 22 }}>
+              {gradeOf(lead) && (
+                <>
+                  <Label>Evidence grade</Label>
+                  <div style={{
+                    fontFamily: SANS, fontSize: 21, fontWeight: 600, letterSpacing: "-0.02em",
+                    margin: "6px 0 18px", lineHeight: 1.2,
+                  }}>{gradeOf(lead)}</div>
+                </>
+              )}
+
               <Label>Sources cited</Label>
               <div style={{
-                fontFamily: MONO, fontSize: 34, fontWeight: 500, lineHeight: 1,
-                margin: "8px 0 16px", fontVariantNumeric: "tabular-nums",
+                fontFamily: MONO, fontSize: 32, fontWeight: 500, lineHeight: 1,
+                margin: "6px 0 14px", fontVariantNumeric: "tabular-nums",
               }}>03</div>
+
               <p style={{ fontSize: 12.5, lineHeight: 1.65, color: INK_2, margin: 0 }}>
-                Two of them peer reviewed, one randomised. Both paywalled, and
-                every figure confirmed against a second independent source
-                before publication.
+                Two peer reviewed, one randomised. Both paywalled, and every
+                figure confirmed against a second independent source before
+                publication.
               </p>
             </aside>
           </div>
         </div>
       </section>
 
-      {/* ── THE REGISTER ─────────────────────────────────────────────── */}
-      <section aria-labelledby="register-heading">
-        <div style={{ maxWidth: 1120, margin: "0 auto", padding: "clamp(28px,5vh,48px) clamp(16px,4vw,40px) 72px" }}>
-          <div style={{
-            // The department tallies overflow a 375px viewport if this row cannot
-            // wrap. Wrapping keeps every count visible instead of hiding them.
-            display: "flex", alignItems: "baseline", gap: 16, marginBottom: 6,
-            flexWrap: "wrap", rowGap: 6,
+      {/* ── SECOND TIER ──────────────────────────────────────────────── */}
+      <section aria-label="Also this issue" style={{ borderBottom: `2px solid ${INK}` }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(24px,4vh,44px) clamp(16px,4vw,44px)" }}>
+          <div className="sg-tier" style={{
+            display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: "clamp(22px,3vw,44px)",
           }}>
-            <h2 id="register-heading" style={{
-              fontFamily: SANS, fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em", margin: 0,
-            }}>
-              Register of entries
-            </h2>
-            <div style={{ flex: 1, minWidth: 24, height: 1, background: RULE }} />
-            {gradeCounts.map(g => (
-              <Label key={g.department} color={INK_3}>{g.department} {g.n}</Label>
-            ))}
-          </div>
-
-          {/* Column head */}
-          <div className="cl-row-grid" style={{
-            display: "grid", gridTemplateColumns: "52px minmax(0,1fr) 130px 96px",
-            gap: 16, padding: "10px 0", borderBottom: `2px solid ${INK}`,
-          }}>
-            <Label>No.</Label>
-            <Label>Entry</Label>
-            <Label>Department</Label>
-            <Label>Date</Label>
-          </div>
-
-          {rows.map((post, i) => {
-            const { department } = fileOf(post);
-            // Register index, not issue number. Only 11 of the entries ever carried
-            // an issue number in their dateline, so numbering by issue leaves most
-            // rows blank. A register numbers its own rows, newest first.
-            const no = rows.length - i;
-            const g = GRADE[gradeOf(post)];
-            return (
-              <Link key={post.slug} to={`/signal/${post.slug}`} className="cl-link cl-row cl-row-grid" style={{
-                display: "grid", gridTemplateColumns: "52px minmax(0,1fr) 130px 96px",
-                gap: 16, padding: "14px 0", borderBottom: `1px solid ${RULE_2}`,
-                alignItems: "baseline",
-              }}>
-                <span style={{
-                  fontFamily: MONO, fontSize: 12, color: INK_3,
-                  fontVariantNumeric: "tabular-nums", display: "flex",
-                  alignItems: "center", gap: 8,
-                }}>
-                  <span aria-hidden title={g.label} style={{
-                    width: 7, height: 7, background: g.dot, flexShrink: 0,
-                  }} />
-                  {String(no).padStart(2, "0")}
-                </span>
-
-                <span style={{
-                  fontSize: 15, lineHeight: 1.4, fontWeight: 500, letterSpacing: "-0.01em",
+            {seconds.map(post => (
+              <Link key={post.slug} to={`/signal/${post.slug}`} className="sg-link">
+                <Label color={RED}>{fileOf(post).department}</Label>
+                <h3 className="sg-head" style={{
+                  fontFamily: SANS, fontSize: "clamp(18px,1.8vw,22px)", fontWeight: 600,
+                  letterSpacing: "-0.022em", lineHeight: 1.22, margin: "10px 0 10px",
+                  textWrap: "balance",
                 }}>
                   {post.title}
-                </span>
-
-                <span className="cl-row-meta"><Label color={INK_2}>{department}</Label></span>
-                <span style={{
-                  fontFamily: MONO, fontSize: 11, color: INK_3,
-                  fontVariantNumeric: "tabular-nums",
-                }}>
-                  {isoShort(post.date)}
-                </span>
+                </h3>
+                <p style={{ fontSize: 14, lineHeight: 1.62, color: INK_2, margin: "0 0 12px" }}>
+                  {post.summary}
+                </p>
+                <Label>{metaLine(post)}</Label>
               </Link>
-            );
-          })}
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FILED BY DEPARTMENT ──────────────────────────────────────── */}
+      <section aria-label="Filed by department">
+        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(28px,5vh,52px) clamp(16px,4vw,44px) 76px" }}>
+          {byDepartment.map(({ department, items }) => (
+            <div key={department} className="sg-dept" style={{
+              display: "grid", gridTemplateColumns: "236px minmax(0,1fr)",
+              gap: "clamp(24px,4vw,52px)", padding: "30px 0",
+              borderTop: `1px solid ${RULE}`,
+            }}>
+              <div>
+                <h2 style={{
+                  fontFamily: SANS, fontSize: "clamp(26px,3vw,38px)", fontWeight: 700,
+                  letterSpacing: "-0.035em", lineHeight: 0.98, margin: 0,
+                  color: RED, textTransform: "uppercase",
+                }}>
+                  {department}
+                </h2>
+                <p style={{ fontSize: 13, lineHeight: 1.6, color: INK_2, margin: "10px 0 0", maxWidth: "30ch" }}>
+                  {DEPARTMENT_BLURB[department as Department]}
+                </p>
+              </div>
+
+              <div>
+                {items.map((post, i) => (
+                  <Link key={post.slug} to={`/signal/${post.slug}`} className="sg-link" style={{
+                    padding: "13px 0",
+                    borderTop: i === 0 ? "none" : `1px solid ${RULE_2}`,
+                  }}>
+                    <h3 className="sg-head" style={{
+                      fontFamily: SANS, fontSize: 16.5, fontWeight: 500,
+                      letterSpacing: "-0.014em", lineHeight: 1.34, margin: "0 0 6px",
+                    }}>
+                      {post.title}
+                    </h3>
+                    <Label>{metaLine(post, true)}</Label>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* ── FOOT ─────────────────────────────────────────────────────── */}
       <footer style={{ borderTop: `2px solid ${INK}` }}>
         <div style={{
-          maxWidth: 1120, margin: "0 auto", padding: "24px clamp(16px,4vw,40px)",
-          display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 14,
+          maxWidth: 1180, margin: "0 auto", padding: "22px clamp(16px,4vw,44px) 40px",
+          display: "flex", flexWrap: "wrap", gap: "14px 30px", alignItems: "baseline",
         }}>
           <Label color={INK_2}>Mykei Securities Ltd · Company 16984969 · England and Wales</Label>
-          <div style={{ display: "flex", gap: 20 }}>
-            <Link to="/signal" className="cl-link"><Label color={INK}>Magazine edition</Label></Link>
-            <Link to="/signal/masthead" className="cl-link"><Label color={INK}>Method</Label></Link>
-            <a href="mailto:protocol@mykei.io" className="cl-link"><Label color={INK}>protocol@mykei.io</Label></a>
-          </div>
+          <div style={{ flex: 1, minWidth: 20 }} />
+          <Link to="/signal/masthead" className="sg-link"><Label color={RED}>Masthead and method</Label></Link>
+          <Link to="/signal" className="sg-link"><Label color={INK_2}>Magazine edition</Label></Link>
+          <Label color={INK_2}>protocol@mykei.io</Label>
         </div>
       </footer>
     </div>
