@@ -54,13 +54,15 @@ const contents = DEPARTMENTS
   .filter(g => g.posts.length > 0);
 
 /** Small caps utility label. Used for folios, eyebrows and department marks. */
-function Folio({ children, color = MUTED, size = 9 }: {
-  children: React.ReactNode; color?: string; size?: number;
+function Folio({ children, color = MUTED, size = 9, wrap = false }: {
+  children: React.ReactNode; color?: string; size?: number; wrap?: boolean;
 }) {
   return (
     <span style={{
       fontFamily: MONO, fontSize: size, letterSpacing: "0.22em",
       textTransform: "uppercase", color,
+      // Nav labels must never break mid-phrase; long colophon lines must.
+      whiteSpace: wrap ? "normal" : "nowrap",
     }}>
       {children}
     </span>
@@ -106,6 +108,17 @@ export default function BriefIndex() {
       />
 
       <style>{`
+        /* The running head overflowed its 54px bar at 375px: every label
+           wrapped and collided. Tighten, then shed the least important link. */
+        @media (max-width: 720px) {
+          .sig-nav-secondary { display: none !important; }
+        }
+        /* Inline styles sit on the inner span, so the override must target it. */
+        @media (max-width: 460px) {
+          .sig-nav-wordmark span { font-size: 7.5px !important; letter-spacing: 0.1em !important; }
+          .sig-nav-cta span { font-size: 7.5px !important; letter-spacing: 0.1em !important; }
+          .sig-nav-cta { padding: 6px 9px !important; }
+        }
         @media (max-width: 900px) {
           .sig-cover-grid { grid-template-columns: 1fr !important; }
           .sig-cover-rail { border-left: none !important; padding-left: 0 !important;
@@ -131,11 +144,11 @@ export default function BriefIndex() {
         padding: "0 clamp(16px,4vw,48px)", height: 54,
         transition: "background 200ms ease, border-color 200ms ease",
       }}>
-        <a href="/" className="sig-link"><Folio color={INK}>Mykei Securities</Folio></a>
+        <a href="/" className="sig-link sig-nav-wordmark"><Folio color={INK} size={9}>Mykei Securities</Folio></a>
         <div style={{ display: "flex", gap: "clamp(14px,2.5vw,26px)", alignItems: "center" }}>
           <Link to="/signal/masthead" className="sig-link"><Folio>Masthead</Folio></Link>
-          <a href="/howitworks" className="sig-link"><Folio>How It Works</Folio></a>
-          <a href="/contact" className="sig-link" style={{
+          <a href="/howitworks" className="sig-link sig-nav-secondary"><Folio>How It Works</Folio></a>
+          <a href="/contact" className="sig-link sig-nav-cta" style={{
             color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px",
           }}><Folio color={GOLD}>Get New Reviews</Folio></a>
         </div>
@@ -159,8 +172,10 @@ export default function BriefIndex() {
           <h1 style={{
             fontFamily: DISPLAY,
             fontSize: "clamp(52px,13vw,168px)",
-            fontWeight: 700, lineHeight: 0.84, letterSpacing: "-0.045em",
-            textAlign: "center", margin: "0 0 14px",
+            // Playfair has deep descenders. At 0.84 the 'g' in Signal collided
+            // with the folio rule and obscured the issue number.
+            fontWeight: 700, lineHeight: 1.0, letterSpacing: "-0.045em",
+            textAlign: "center", margin: "0 0 6px",
           }}>
             The Signal
           </h1>
@@ -179,9 +194,9 @@ export default function BriefIndex() {
 
         {/* Cover line + rail */}
         <div className="sig-cover-grid" style={{
-          display: "grid", gridTemplateColumns: "minmax(0,2.15fr) minmax(0,1fr)",
-          gap: "clamp(24px,4vw,56px)", alignItems: "end",
-          padding: "clamp(32px,6vh,72px) 0",
+          display: "grid", gridTemplateColumns: "minmax(0,1.9fr) minmax(0,1fr)",
+          gap: "clamp(24px,4vw,56px)", alignItems: "start",
+          padding: "clamp(28px,5vh,56px) 0",
         }}>
           <div>
             <div style={{ marginBottom: 18 }}>
@@ -192,9 +207,9 @@ export default function BriefIndex() {
             <Link to={`/signal/${cover.slug}`} className="sig-link">
               <h2 style={{
                 fontFamily: DISPLAY,
-                fontSize: "clamp(30px,5.4vw,74px)",
-                fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.032em",
-                margin: "0 0 22px",
+                fontSize: "clamp(28px,4vw,54px)",
+                fontWeight: 700, lineHeight: 1.06, letterSpacing: "-0.025em",
+                margin: "0 0 20px", textWrap: "balance",
               }}>
                 {cover.title}
               </h2>
@@ -356,7 +371,7 @@ export default function BriefIndex() {
           padding: "36px clamp(16px,4vw,48px)",
           display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16,
         }}>
-          <Folio size={8.5}>The Signal · Mykei Securities Ltd · Company 16984969</Folio>
+          <Folio size={8.5} wrap>The Signal · Mykei Securities Ltd · Company 16984969</Folio>
           <div style={{ display: "flex", gap: 20 }}>
             <Link to="/signal/masthead" className="sig-link"><Folio size={8.5}>Masthead</Folio></Link>
             <a href="/privacy" className="sig-link"><Folio size={8.5}>Privacy</Folio></a>

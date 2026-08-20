@@ -5,34 +5,38 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Sitewide font override: every page references 'Sora' / 'JetBrains Mono' /
-         'Playfair Display' by name in inline styles. Rather than editing each
-         occurrence, these font-family names are aliased to Arial here so every
-         existing reference renders as Arial without a per-file edit. -->
+    <!-- Real, self-hosted fonts.
+         These were previously all aliased to local('Arial'), which silently
+         overrode every typographic decision in the codebase: the Playfair
+         nameplate, the monospace folios, all of it rendered as Arial. The
+         CSP sets font-src 'self' data:, so Google Fonts cannot be linked.
+         The fix is to self-host, not to alias away the problem.
+         Variable woff2, latin subset, font-display: swap so text is never
+         invisible while loading. -->
+    <link rel="preload" as="font" type="font/woff2"
+          href="/fonts/playfair-latin.woff2" crossorigin />
     <style>
       @font-face {
-        font-family: 'Sora';
+        font-family: 'Playfair Display';
         font-style: normal;
-        font-weight: 100 900;
-        src: local('Arial');
+        font-weight: 400 900;
+        font-display: swap;
+        src: url('/fonts/playfair-latin.woff2') format('woff2');
       }
       @font-face {
         font-family: 'JetBrains Mono';
         font-style: normal;
-        font-weight: 100 800;
-        src: local('Arial');
+        font-weight: 400 700;
+        font-display: swap;
+        src: url('/fonts/jetbrainsmono-latin.woff2') format('woff2');
       }
+      /* Sora is referenced by legacy pages but never self-hosted. Map it to the
+         system UI stack rather than Arial so those pages at least look native. */
       @font-face {
-        font-family: 'Playfair Display';
+        font-family: 'Sora';
         font-style: normal;
-        font-weight: 400 900;
-        src: local('Arial');
-      }
-      @font-face {
-        font-family: 'Playfair Display';
-        font-style: italic;
-        font-weight: 400 900;
-        src: local('Arial');
+        font-weight: 100 900;
+        src: local('system-ui'), local('-apple-system'), local('Helvetica Neue'), local('Arial');
       }
     </style>
 
