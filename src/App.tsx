@@ -85,9 +85,14 @@ const App = () => (
             <Route path="/press" element={<Navigate to="/founder" replace />} />
             <Route path="/investors" element={<InvestorsPage />} />
             <Route path="/enterprise" element={<EnterprisePage />} />
-            <Route path="/signal" element={<BriefIndex />} />
+            {/* The red edition is the Signal. The previous gold magazine front
+                is kept at /signal/magazine rather than deleted, so the work is
+                still reachable and nothing 404s. /signal/clinical 301s to
+                /signal at the edge, see public/_redirects. */}
+            <Route path="/signal" element={<SignalClinical />} />
+            <Route path="/signal/magazine" element={<BriefIndex />} />
             <Route path="/signal/masthead" element={<MastheadPage />} />
-            <Route path="/signal/clinical" element={<SignalClinical />} />
+            <Route path="/signal/clinical" element={<Navigate to="/signal" replace />} />
             <Route path="/signal/threshold-repealed-still-law" element={<SignalThresholdPage />} />
             <Route path="/signal/marking-evidence" element={<SignalMarkingEvidencePage />} />
             <Route path="/signal/cctv-313-million-movie-ticket" element={<SignalCCTVScamPage />} />

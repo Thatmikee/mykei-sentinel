@@ -168,8 +168,8 @@ export default function SignalClinical() {
       <PageSEO
         title="The Signal | Retail security, reviewed against the evidence"
         description="A standing review of the evidence behind retail security claims: research, data, policy and what actually happens in shops."
-        canonical="https://mykei.io/signal/clinical"
-        breadcrumbs={[["Home","https://mykei.io"],["The Signal","/signal"],["Red edition","/signal/clinical"]]}
+        canonical="https://mykei.io/signal"
+        breadcrumbs={[["Home","https://mykei.io"],["The Signal","/signal"]]}
       />
 
       <style>{`
@@ -470,7 +470,7 @@ export default function SignalClinical() {
           <Label color={INK_2}>Mykei Securities Ltd · Company 16984969 · England and Wales</Label>
           <div style={{ flex: 1, minWidth: 20 }} />
           <Link to="/signal/masthead" className="sg-link"><Label color={RED}>Masthead and method</Label></Link>
-          <Link to="/signal" className="sg-link"><Label color={INK_2}>Magazine edition</Label></Link>
+          <Link to="/signal/magazine" className="sg-link"><Label color={INK_2}>Previous edition</Label></Link>
           <Label color={INK_2}>protocol@mykei.io</Label>
         </div>
       </footer>

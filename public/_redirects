@@ -27,5 +27,9 @@
 # Shortened Signal slugs
 /signal/forensic-marking-evidence-review   /signal/marking-evidence   301
 
+# The red edition became /signal on 21 Aug 2026. The old preview URL was
+# published in this session, so it redirects rather than 404s.
+/signal/clinical          /signal                    301
+
 # SPA catch-all — must be last
 /*    /index.html   200
