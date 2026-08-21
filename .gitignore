@@ -45,3 +45,6 @@ CLAIM_SAFETY_BRIEF.md
 
 .claude/
 .playwright-mcp/
+
+# Wrangler local state for the signal-wire Worker
+workers/signal-wire/.wrangler/

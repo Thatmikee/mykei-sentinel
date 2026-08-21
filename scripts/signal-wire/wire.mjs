@@ -32,7 +32,9 @@ import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const CONFIG = JSON.parse(readFileSync(join(HERE, "feeds.json"), "utf8"));
+// One source of truth, shared with the Worker. Two copies of a feed list is
+// two lists that disagree inside a month.
+const CONFIG = JSON.parse(readFileSync(join(HERE, "../../workers/signal-wire/feeds.json"), "utf8"));
 const SEEN_PATH = join(HERE, "seen.json");
 
 // The digest is deliberately written OUTSIDE the repo build path. The

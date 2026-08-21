@@ -1,0 +1,14 @@
+# Deliberately NOT at the repo root. Cloudflare Pages builds this repository,
+# and a root wrangler.toml risks the project being treated as a Worker.
+name = "signal-wire"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+
+# 06:45 UTC daily. Always on: unlike the local launchd job this runs whether or
+# not any machine is awake.
+[triggers]
+crons = ["45 6 * * *"]
+
+[[kv_namespaces]]
+binding = "WIRE"
+id = "2e18addb2a5940a88a4c310c3bb0f3a8"
