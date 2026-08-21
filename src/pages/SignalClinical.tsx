@@ -473,7 +473,11 @@ export default function SignalClinical() {
         }}>
           <Label color={INK_2}>Mykei Securities Ltd · Company 16984969 · England and Wales</Label>
           <div style={{ flex: 1, minWidth: 20 }} />
-          <Link to="/signal/masthead" className="sg-link"><Label color={RED}>Masthead and method</Label></Link>
+          {/* The front page had no route back to the company site. The running
+              head covers the articles, but this page is not an article, so the
+              only way out of the magazine was the browser back button. */}
+          <Link to="/" className="sg-link"><Label color={RED}>mykei.io</Label></Link>
+          <Link to="/signal/masthead" className="sg-link"><Label color={INK_2}>Masthead and method</Label></Link>
           <Link to="/signal/magazine" className="sg-link"><Label color={INK_2}>Previous edition</Label></Link>
           <Label color={INK_2}>protocol@mykei.io</Label>
         </div>
