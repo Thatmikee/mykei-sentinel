@@ -37,7 +37,10 @@ function P({ children }: { children: React.ReactNode }) {
 /** Statutory text, set apart so the reader can see the actual words. */
 function Statute({ cite, children }: { cite: string; children: React.ReactNode }) {
   return (
-    <figure style={{ margin: "30px 0", borderLeft: `3px solid ${RED}`, paddingLeft: 22 }}>
+    // Neutral ink rule, not a red stripe. A coloured left border on a panel is
+    // the most reliable single tell of generated design; the citation label
+    // below carries the accent instead.
+    <figure style={{ margin: "30px 0", borderLeft: `2px solid ${INK}`, paddingLeft: 22 }}>
       <blockquote style={{
         margin: 0, fontFamily: MONO, fontSize: 14.5, lineHeight: 1.68, color: INK,
       }}>{children}</blockquote>

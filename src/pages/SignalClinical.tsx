@@ -11,8 +11,22 @@
 //
 // THE DIRECTION
 // One red, one ink, white paper. Scale contrast carries the hierarchy the way
-// it does in a print title: one lead at full size, three pieces at half, the
-// rest filed by department. Nothing is colour-coded.
+// it does in a print title. Nothing is colour-coded.
+//
+// STRUCTURE, AND WHERE IT COMES FROM
+// The front was previously organised into five departments named Evidence,
+// Data, Policy, Field and Doctrine. Those were invented here. No magazine uses
+// them, and a taxonomy nobody outside this repo recognises is a liability
+// dressed as an editorial system.
+//
+// This version uses the actual architecture of a magazine, which is positional
+// rather than topical:
+//   Cover          the one piece the issue is sold on
+//   The well       the features, the long substantial reads, set large
+//   Front of book  the short pieces, set compact, headline and date
+//   Back of book   the complete dated index of everything published
+// Weight is derived from what we already record, length and landmark status,
+// so nothing has to be hand-classified into a category somebody invented.
 //
 //   Ground   Hard white. Paper you photocopy, not paper you frame.
 //   Ink      Cool near-black (#111318). One ink doing the work.
@@ -35,10 +49,7 @@
 
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import {
-  blogPosts, fileOf, DEPARTMENTS, DEPARTMENT_BLURB,
-  type BlogPostMeta, type Department,
-} from "@/data/blogPosts";
+import { blogPosts, type BlogPostMeta } from "@/data/blogPosts";
 import PageSEO from "@/components/PageSEO";
 
 /* ── Tokens ───────────────────────────────────────────────────────────── */
@@ -83,6 +94,23 @@ function isoShort(iso: string): string {
   return `${d}.${m}.${y}`;
 }
 
+/** Section head with a rule running off to the right. Standing furniture. */
+function SectionRule({ id, children }: { id?: string; children: React.ReactNode }) {
+  // Set in the display face, sentence case. Every section previously opened
+  // with an uppercase letterspaced mono micro-label, which is the reflex
+  // eyebrow that generated pages apply to everything. Caps are now reserved
+  // for the masthead dateline, where they are genuine newspaper furniture.
+  return (
+    <div style={{ display: "flex", alignItems: "baseline", gap: 18, marginBottom: 22 }}>
+      <h2 id={id} style={{
+        fontFamily: DISPLAY, fontSize: "clamp(20px,2.1vw,27px)", letterSpacing: "-0.015em",
+        color: INK, margin: 0, fontWeight: 900, whiteSpace: "nowrap", lineHeight: 1,
+      }}>{children}</h2>
+      <div aria-hidden style={{ flex: 1, height: 1, background: RULE }} />
+    </div>
+  );
+}
+
 function Label({ children, color = INK_3, size = 10 }: {
   children: React.ReactNode; color?: string; size?: number;
 }) {
@@ -94,22 +122,40 @@ function Label({ children, color = INK_3, size = 10 }: {
   );
 }
 
+/** Dates and reading times. Mono and tabular, but NOT shouted in caps. */
+function Meta({ children }: { children: React.ReactNode }) {
+  return (
+    <span style={{
+      fontFamily: MONO, fontSize: 11, color: INK_3,
+      fontVariantNumeric: "tabular-nums", letterSpacing: "0.01em",
+    }}>{children}</span>
+  );
+}
+
 export default function SignalClinical() {
   const rows = useMemo(
     () => [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     []
   );
 
-  const lead = rows.find(p => p.landmark) ?? rows[0];
-  // Scale contrast: one lead, three at half weight, the rest filed by
-  // department. Without these tiers the page is a database dump.
-  const seconds = rows.filter(p => p.slug !== lead.slug).slice(0, 3);
-  const filedSlugs = new Set([lead.slug, ...seconds.map(p => p.slug)]);
-  const filed = rows.filter(p => !filedSlugs.has(p.slug));
+  /** Minutes, parsed from the readingTime string we already record. */
+  const minutesOf = (p: BlogPostMeta) => parseInt(p.readingTime, 10) || 0;
 
-  const byDepartment = DEPARTMENTS
-    .map(d => ({ department: d, items: filed.filter(p => fileOf(p).department === d) }))
-    .filter(g => g.items.length > 0);
+  const lead = rows.find(p => p.landmark) ?? rows[0];
+  const rest = rows.filter(p => p.slug !== lead.slug);
+
+  // The well: the substantial pieces. Front of book: the short ones. Split on
+  // evidence we already hold rather than on a category somebody assigned.
+  const isFeature = (p: BlogPostMeta) => p.landmark === true || minutesOf(p) >= 7;
+  // Three, not four. The well grid is 6 + 3 + 3 columns, so a fourth item
+  // wraps to a second row on its own and leaves a hole beside it.
+  const well = rest.filter(isFeature).slice(0, 3);
+  const wellSlugs = new Set(well.map(p => p.slug));
+  const frontOfBook = rest.filter(p => !wellSlugs.has(p.slug) && !isFeature(p)).slice(0, 8);
+
+  // Back of book carries EVERYTHING, including pieces shown above. An index
+  // that omits what it has already displayed is not an index.
+  const backOfBook = rows;
 
   const issueNo = String(rows.length).padStart(3, "0");
   const revised = isoShort(rows[0].date);
@@ -160,6 +206,8 @@ export default function SignalClinical() {
           .sg-tier  { grid-template-columns: 1fr !important; }
           .sg-dept  { grid-template-columns: 1fr !important; gap: 12px !important; }
           .sg-feature { grid-column: auto !important; }
+          .sg-fob { grid-template-columns: 1fr !important; }
+          .sg-index { grid-template-columns: 1fr !important; gap: 5px !important; }
           .sg-ghost { display: none !important; }
         }
       `}</style>
@@ -243,13 +291,16 @@ export default function SignalClinical() {
 
       {/* ── LEAD ─────────────────────────────────────────────────────── */}
       <section style={{ borderBottom: `1px solid ${RULE}` }}>
-        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(30px,5vh,58px) clamp(16px,4vw,44px)" }}>
+        {/* Narrower measure. The cover story is the one thing on this page
+            somebody actually reads at length, so it gets a reading width
+            rather than the page-wide container used everywhere else. */}
+        <div style={{ maxWidth: 1010, margin: "0 auto", padding: "clamp(30px,5vh,58px) clamp(16px,4vw,44px)" }}>
           <div className="sg-lead sg-rise" style={{
             display: "grid", gridTemplateColumns: "minmax(0,1fr) 228px",
             gap: "clamp(26px,4vw,60px)", animationDelay: "180ms",
           }}>
             <div>
-              <Label color={RED} size={11}>{fileOf(lead).department}</Label>
+              <Label color={RED} size={11}>Cover story</Label>
 
               <Link to={`/signal/${lead.slug}`} className="sg-link" style={{ marginTop: 14 }}>
                 <h2 style={{
@@ -275,7 +326,12 @@ export default function SignalClinical() {
               </Link>
             </div>
 
-            <aside style={{ borderLeft: `3px solid ${RED}`, paddingLeft: 22, alignSelf: "start" }}>
+            {/* No coloured left stripe. A red rule down the side of a panel is
+                the most reliable single tell of generated design, and this
+                aside does not need one: it is already separated by position,
+                measure and a neutral hairline, which is how a print sidebar
+                has always been set. */}
+            <aside style={{ borderTop: `1px solid ${INK}`, paddingTop: 16, alignSelf: "start" }}>
               {gradeOf(lead) && (
                 <>
                   <Label>Evidence grade</Label>
@@ -306,26 +362,27 @@ export default function SignalClinical() {
         </div>
       </section>
 
-      {/* ── SECOND TIER ──────────────────────────────────────────────────
-          Asymmetric on purpose. Three equal columns is the shape a template
-          produces; a feature plus two shorter items is the shape an editor
-          produces, and it gives the eye somewhere to land first. */}
-      <section aria-label="Also this issue" style={{ borderBottom: `2px solid ${INK}` }}>
-        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(24px,4vh,44px) clamp(16px,4vw,44px)" }}>
+      {/* ── THE WELL ─────────────────────────────────────────────────
+          The features. In print this is the centre of the magazine and it is
+          where the substantial reads live. First one runs wider, because a
+          row of identical columns is the shape a template produces. */}
+      <section aria-labelledby="well-heading" style={{ borderBottom: `2px solid ${INK}` }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(26px,4vh,46px) clamp(16px,4vw,44px)" }}>
+          <SectionRule id="well-heading">The well</SectionRule>
+
           <div className="sg-tier sg-rise" style={{
             display: "grid", gridTemplateColumns: "repeat(12,minmax(0,1fr))",
             gap: "clamp(22px,3vw,44px)", animationDelay: "240ms",
           }}>
-            {seconds.map((post, i) => (
+            {well.map((post, i) => (
               <Link key={post.slug} to={`/signal/${post.slug}`}
                 className={`sg-link${i === 0 ? " sg-feature" : ""}`}
                 style={{ gridColumn: i === 0 ? "span 6" : "span 3" }}>
-                <Label color={RED}>{fileOf(post).department}</Label>
                 <h3 style={{
                   fontFamily: SANS,
                   fontSize: i === 0 ? "clamp(21px,2.4vw,30px)" : "clamp(17px,1.6vw,20px)",
                   fontWeight: 600, letterSpacing: "-0.024em", lineHeight: 1.18,
-                  margin: "10px 0 10px", textWrap: "balance",
+                  margin: "0 0 10px", textWrap: "balance",
                 }}>
                   <span className="sg-head">{post.title}</span>
                 </h3>
@@ -334,64 +391,73 @@ export default function SignalClinical() {
                 }}>
                   {post.summary}
                 </p>
-                <Label>{metaLine(post)}</Label>
+                <Meta>{metaLine(post, true)}</Meta>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── FILED BY DEPARTMENT ──────────────────────────────────────── */}
-      <section aria-label="Filed by department">
-        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(28px,5vh,52px) clamp(16px,4vw,44px) 76px" }}>
-          {byDepartment.map(({ department, items }) => (
-            <div key={department} className="sg-dept" style={{
-              display: "grid", gridTemplateColumns: "236px minmax(0,1fr)",
-              gap: "clamp(24px,4vw,52px)", padding: "34px 0",
-              borderTop: `1px solid ${RULE}`,
-            }}>
-              <div>
-                <h2 style={{
-                  fontFamily: DISPLAY, fontSize: "clamp(26px,3vw,40px)", fontWeight: 900,
-                  letterSpacing: "-0.015em", lineHeight: 0.98, margin: 0,
-                  color: RED, textTransform: "uppercase",
-                }}>
-                  {department}
-                </h2>
-                <p style={{
-                  fontSize: 13, lineHeight: 1.6, color: INK_2, margin: "10px 0 0", maxWidth: "30ch",
-                }}>
-                  {DEPARTMENT_BLURB[department as Department]}
-                </p>
-                {/* Folio numeral: the count of pieces filed under this head.
-                    Ornament derived from content rather than applied to it.
-                    It sits BELOW the blurb in its own space. An earlier version
-                    absolutely positioned it behind the department name, where
-                    it collided with the letterforms and read as a bug. */}
-                <div aria-hidden className="sg-ghost" style={{
-                  fontFamily: DISPLAY, fontSize: 62, fontWeight: 900, lineHeight: 1,
-                  color: RULE, marginTop: 14, userSelect: "none",
-                }}>{String(items.length).padStart(2, "0")}</div>
-              </div>
+      {/* ── FRONT OF BOOK ────────────────────────────────────────────
+          Short pieces, set compact. Headline and date, nothing else: the
+          point of a front of book is that you can scan the whole of it. */}
+      {frontOfBook.length > 0 && (
+        <section aria-labelledby="fob-heading" style={{ borderBottom: `1px solid ${RULE}` }}>
+          <div style={{ maxWidth: 1180, margin: "0 auto", padding: "clamp(26px,4vh,44px) clamp(16px,4vw,44px)" }}>
+            <SectionRule id="fob-heading">Front of book</SectionRule>
 
-              <div>
-                {items.map((post, i) => (
-                  <Link key={post.slug} to={`/signal/${post.slug}`} className="sg-link" style={{
-                    padding: "13px 0",
-                    borderTop: i === 0 ? "none" : `1px solid ${RULE_2}`,
+            <div className="sg-fob" style={{
+              display: "grid", gridTemplateColumns: "repeat(2,minmax(0,1fr))",
+              columnGap: "clamp(30px,5vw,72px)",
+            }}>
+              {frontOfBook.map(post => (
+                <Link key={post.slug} to={`/signal/${post.slug}`} className="sg-link" style={{
+                  padding: "12px 0", borderBottom: `1px solid ${RULE_2}`,
+                }}>
+                  <h3 style={{
+                    fontFamily: SANS, fontSize: 16, fontWeight: 500,
+                    letterSpacing: "-0.014em", lineHeight: 1.35, margin: "0 0 5px",
                   }}>
-                    <h3 style={{
-                      fontFamily: SANS, fontSize: 16.5, fontWeight: 500,
-                      letterSpacing: "-0.014em", lineHeight: 1.34, margin: "0 0 6px",
-                    }}>
-                      <span className="sg-head">{post.title}</span>
-                    </h3>
-                    <Label>{metaLine(post, true)}</Label>
-                  </Link>
-                ))}
-              </div>
+                    <span className="sg-head">{post.title}</span>
+                  </h3>
+                  <Meta>{metaLine(post, true)}</Meta>
+                </Link>
+              ))}
             </div>
-          ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── BACK OF BOOK ─────────────────────────────────────────────
+          The complete dated index. Everything published, newest first,
+          including the pieces shown above. An index that omits what it has
+          already displayed is not an index. */}
+      <section aria-labelledby="bob-heading">
+        {/* Wider. A dense dated register wants the run of the page; forcing it
+            into the same measure as the features is the single-container
+            reflex, not a decision. */}
+        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "clamp(26px,4vh,46px) clamp(16px,4vw,44px) 76px" }}>
+          <SectionRule id="bob-heading">Back of book</SectionRule>
+
+          <ol style={{ listStyle: "none", margin: 0, padding: 0 }}>
+            {backOfBook.map(post => (
+              <li key={post.slug}>
+                <Link to={`/signal/${post.slug}`} className="sg-link sg-index" style={{
+                  display: "grid", gridTemplateColumns: "minmax(0,1fr) auto",
+                  gap: 20, alignItems: "baseline",
+                  padding: "11px 0", borderBottom: `1px solid ${RULE_2}`,
+                }}>
+                  <span style={{
+                    fontFamily: SANS, fontSize: 15.5, fontWeight: 500,
+                    letterSpacing: "-0.012em", lineHeight: 1.4,
+                  }}>
+                    <span className="sg-head">{post.title}</span>
+                  </span>
+                  <Meta>{metaLine(post, true)}</Meta>
+                </Link>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
