@@ -130,6 +130,30 @@ export function fileOf(post: BlogPostMeta): {
 export const blogPosts: BlogPostMeta[] = [
   // ── August 2026 ────────────────────────────────────────────────────────
   {
+    slug: "facial-recognition-evidence",
+    title:
+      "Facial Recognition Is Spreading Through UK Retail. Nobody Has Published Evidence That It Cuts Theft.",
+    date: "2026-08-21",
+    landmark: true,
+    issue: 19,
+    summary:
+      "Every reduction figure in this market is self-reported by the retailer or the vendor. The independent testing that does exist measures whether the cameras recognise faces, which is a different question, and it comes from policing rather than shops.",
+    tags: [
+      "evidence review",
+      "facial recognition",
+      "Facewatch",
+      "ICO",
+      "legislation",
+      "police",
+      "retail crime",
+      "biometrics",
+    ],
+    readingTime: "9 min read",
+    sourcesCited: 9,
+    sourceNote:
+      "The ICO closure letter to Facewatch was read as a primary document, not through press summaries. Sources that refused automated access are named in the piece.",
+  },
+  {
     slug: "threshold-repealed-still-law",
     title: "The \u00a3200 Threshold Was Repealed in April. It Is Still the Law Today.",
     date: "2026-08-20",
