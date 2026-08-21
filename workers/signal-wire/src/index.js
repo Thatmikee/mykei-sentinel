@@ -169,12 +169,89 @@ async function runWire(env) {
   await env.WIRE.put(`digest:${stamp}`, digest, { expirationTtl: 60 * 60 * 24 * 120 });
   await env.WIRE.put("digest:latest", digest);
 
-  return { stamp, kept: kept.length, failures: failures.length, digest };
+  return { stamp, kept, failures, digest };
+}
+
+/**
+ * Deliver the digest by email.
+ *
+ * Why this exists: without it the wire writes faithfully to a URL nobody is
+ * prompted to open, which is indistinguishable from not running at all. A
+ * pipeline with no delivery is a pipeline that gets ignored inside a week.
+ *
+ * Resend rather than Cloudflare's native Email Sending: mykei.io already sends
+ * through Resend (it is in the domain's SPF record and the send-loi Worker uses
+ * it), and onboarding the native service would add DNS records to a production
+ * domain whose single SPF record already carries iCloud and Resend. Not worth
+ * risking live email to save a secret.
+ *
+ * Quiet days send nothing. A daily "no news" email trains you to filter the
+ * whole thread, and then the one that matters gets filtered too.
+ */
+async function deliver(env, result) {
+  if (!env.RESEND_API_KEY) {
+    console.log("no RESEND_API_KEY set, skipping email. Set it with: wrangler secret put RESEND_API_KEY");
+    return { sent: false, reason: "no api key" };
+  }
+
+  const newCount = result.kept.length;
+  const failCount = result.failures.length;
+  if (!newCount && !failCount) return { sent: false, reason: "nothing new, stayed quiet" };
+
+  const primary = result.kept.filter(k => k.feed.tier === "primary");
+  const bits = [];
+  if (newCount) bits.push(`${newCount} new`);
+  if (primary.length) bits.push(`${primary.length} primary`);
+  if (failCount) bits.push(`${failCount} feed failure${failCount > 1 ? "s" : ""}`);
+  const subject = `Signal wire ${result.stamp}: ${bits.join(", ")}`;
+
+  // Primary-source items go in the body, because those are the ones that can
+  // invalidate something already published. Trade items are a link away.
+  const lead = primary.length
+    ? primary.map(p => `• ${p.title}\n  ${p.link}`).join("\n\n")
+    : result.kept.slice(0, 5).map(p => `• ${p.title}\n  ${p.link}`).join("\n\n");
+
+  const text = [
+    subject,
+    "",
+    primary.length ? "PRIMARY SOURCES, read these first:" : "Top items:",
+    "",
+    lead,
+    "",
+    failCount ? `Feeds that failed: ${result.failures.map(f => f.feed.name).join(", ")}` : "",
+    "",
+    "Nothing here is published. Verify against the primary source before use.",
+    "",
+    "Full digest is attached below.",
+    "",
+    "----",
+    result.digest,
+  ].filter(Boolean).join("\n");
+
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${env.RESEND_API_KEY}`,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      from: "The Signal wire <protocol@mykei.io>",
+      to: ["michael.e@mykei.io"],
+      subject,
+      text,
+    }),
+  });
+
+  if (!res.ok) {
+    console.log("Resend error", res.status, await res.text());
+    return { sent: false, reason: `resend ${res.status}` };
+  }
+  return { sent: true, subject };
 }
 
 export default {
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(runWire(env));
+    ctx.waitUntil(runWire(env).then(r => deliver(env, r)));
   },
 
   async fetch(request, env) {
@@ -189,9 +266,11 @@ export default {
 
     if (url.pathname === "/run") {
       const r = await runWire(env);
-      return new Response(`ran ${r.stamp}: ${r.kept} new, ${r.failures} failures\n`, {
-        headers: { "content-type": "text/plain; charset=utf-8" },
-      });
+      const d = url.searchParams.get("mail") === "1" ? await deliver(env, r) : { sent: false, reason: "not requested" };
+      return new Response(
+        `ran ${r.stamp}: ${r.kept.length} new, ${r.failures.length} failures\nemail: ${d.sent ? "sent" : "not sent (" + d.reason + ")"}\n`,
+        { headers: { "content-type": "text/plain; charset=utf-8" } }
+      );
     }
 
     const key = url.pathname === "/" || url.pathname === "/latest"

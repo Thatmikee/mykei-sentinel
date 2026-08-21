@@ -135,9 +135,13 @@ const idOf = it => createHash("sha1").update(it.guid || it.link || it.title).dig
 
 /* ── run ──────────────────────────────────────────────────────────────── */
 
-const seen = existsSync(SEEN_PATH) && !ALL
-  ? new Set(JSON.parse(readFileSync(SEEN_PATH, "utf8")).ids || [])
-  : new Set();
+// Two separate things: what we filter against, and what we persist.
+// --all re-reports everything, but must NOT erase the history. An earlier
+// version wrote only the current run's ids and silently truncated the store.
+const storedIds = existsSync(SEEN_PATH)
+  ? (JSON.parse(readFileSync(SEEN_PATH, "utf8")).ids || [])
+  : [];
+const seen = ALL ? new Set() : new Set(storedIds);
 
 const active = CONFIG.feeds.filter(f => !f.manual);
 const manual = CONFIG.feeds.filter(f => f.manual);
@@ -243,11 +247,30 @@ if (DRY) {
   mkdirSync(OUT_DIR, { recursive: true });
   const out = join(OUT_DIR, `wire-${stamp}.md`);
   writeFileSync(out, digest, "utf8");
-  const ids = [...seen, ...kept.map(k => k.id)].slice(-4000);
+  const ids = [...new Set([...storedIds, ...kept.map(k => k.id)])].slice(-4000);
   writeFileSync(SEEN_PATH, JSON.stringify({ updated: now.toISOString(), ids }, null, 0), "utf8");
   console.log(`\nDigest: ${out}`);
   console.log(`Seen store: ${ids.length} ids`);
 }
 
 console.log(`\n${kept.length} new relevant items, ${failures.length} feed failures.`);
+
+// Local delivery. The digest existing in a folder is not the same as being
+// told it exists; without this the file is written faithfully and never read.
+// Quiet runs stay silent on purpose, so the notification keeps its meaning.
+if (!DRY && (kept.length || failures.length)) {
+  const primary = kept.filter(k => k.feed.tier === "primary").length;
+  const bits = [];
+  if (kept.length) bits.push(`${kept.length} new`);
+  if (primary) bits.push(`${primary} primary`);
+  if (failures.length) bits.push(`${failures.length} feed failures`);
+  const msg = bits.join(", ");
+  try {
+    const { execFileSync } = await import("node:child_process");
+    execFileSync("/usr/bin/osascript", ["-e",
+      `display notification ${JSON.stringify(msg)} with title "Signal wire" subtitle ${JSON.stringify(stamp)}`]);
+  } catch {
+    // A notification failing must never fail the run. The digest is written.
+  }
+}
 if (failures.length) process.exitCode = 0; // failures are reported, not fatal
