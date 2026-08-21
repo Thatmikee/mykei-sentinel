@@ -6,7 +6,7 @@ import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 import SignalRunningHead from "@/components/SignalRunningHead";
 
-const GOLD = "#c9a84c";
+const GOLD = "#D8001F";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";

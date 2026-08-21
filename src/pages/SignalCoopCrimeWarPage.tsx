@@ -8,8 +8,8 @@ import SignalShareBar from "@/components/SignalShareBar";
 import EditorialNote from "@/components/EditorialNote";
 import SignalRunningHead from "@/components/SignalRunningHead";
 
-const GOLD = "#c9a84c";
-const GOLD_DARK = "#B8922A";
+const GOLD = "#D8001F";
+const GOLD_DARK = "#A80018";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
@@ -260,7 +260,7 @@ export default function SignalCoopCrimeWarPage() {
                   </ul>
                 </div>
                 <div>
-                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: "#e07b7b", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14, paddingBottom: 10, borderBottom: "1px solid rgba(224,123,123,0.3)" }}>
+                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: "#D8001F", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14, paddingBottom: 10, borderBottom: "1px solid rgba(216,0,31,0.3)" }}>
                     What didn't change
                   </div>
                   <ul style={{ margin: 0, padding: "0 0 0 18px", fontSize: 14, lineHeight: 2.1, color: "rgba(245,241,235,0.82)" }}>

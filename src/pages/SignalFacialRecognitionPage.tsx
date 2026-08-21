@@ -330,10 +330,13 @@ export default function SignalFacialRecognitionPage() {
         </P>
         <P>
           There is a growing record of shoppers wrongly flagged, searched and
-          publicly ejected. In 2026 Sainsbury’s was reported to have wrongly
-          ejected shoppers on two separate occasions, pausing the technology at
-          one store after the second. The supplier attributed that incident to
-          human error rather than to the technology. That deflection deserves
+          publicly ejected. Trade and technology press reported in August 2026
+          that Sainsbury’s had wrongly ejected shoppers on two separate
+          occasions and paused the technology at one store after the second,
+          with the supplier attributing that incident to human error rather
+          than to the technology. We were unable to open those reports directly,
+          for the reason given below, so this paragraph rests on reporting
+          rather than on documents we read ourselves. That deflection deserves
           examining rather than accepting, because the human error in question
           was a member of staff acting on an alert the system produced. If the
           alert is only safe when staff correctly disregard it, the alert is

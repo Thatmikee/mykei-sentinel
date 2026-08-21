@@ -325,7 +325,10 @@ export default function LOILeadCaptureForm() {
         <div className="flex flex-wrap justify-center gap-6 mt-8">
           {[
             "UK Company No. 16984969",
-            "GDPR Compliant, No Camera Data",
+            // Was "GDPR Compliant, No Camera Data". Claim Safety Rules bar
+            // claiming GDPR compliance without a formal review, and none is on
+            // record. "No camera data" is a factual property of the design.
+            "No camera data",
             "Alpha Cohort, Manchester 2026",
           ].map(t => (
             <span key={t} className="text-xs text-gray-400 flex items-center gap-1.5">

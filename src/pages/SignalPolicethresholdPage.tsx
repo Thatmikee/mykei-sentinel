@@ -7,7 +7,7 @@ import SignalShareBar from "@/components/SignalShareBar";
 import EditorialNote from "@/components/EditorialNote";
 import SignalRunningHead from "@/components/SignalRunningHead";
 
-const GOLD = "#c9a84c";
+const GOLD = "#D8001F";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
 const WARM = "#F5F1EB";
