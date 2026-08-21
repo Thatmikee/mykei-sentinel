@@ -8,6 +8,7 @@
 import PageSEO from "@/components/PageSEO";
 
 import { SIGNAL, TYPE } from "@/styles/signalTokens";
+import SignalRunningHead from "@/components/SignalRunningHead";
 
 const INK = SIGNAL.INK;
 // Was a stray teal (#0D9488) — the only non-gold accent on the site, and the
@@ -105,6 +106,8 @@ export default function MastheadPage() {
           ["Masthead", "/signal/masthead"],
         ]}
       />
+
+      <SignalRunningHead />
 
       {/* Masthead header */}
       <header style={{ background: WHITE, borderBottom: `2px solid ${INK}` }}>

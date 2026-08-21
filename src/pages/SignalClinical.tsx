@@ -51,6 +51,7 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { blogPosts, type BlogPostMeta } from "@/data/blogPosts";
 import PageSEO from "@/components/PageSEO";
+import SignalSearch from "@/components/SignalSearch";
 
 /* ── Tokens ───────────────────────────────────────────────────────────── */
 // Single source of truth, shared with the article pages of this edition.
@@ -270,7 +271,9 @@ export default function SignalClinical() {
               </p>
             </div>
 
-            <dl style={{ margin: 0, display: "grid", gap: 5, minWidth: 168 }}>
+            <div style={{ display: "grid", gap: 14, justifyItems: "end" }}>
+            <SignalSearch />
+            <dl style={{ margin: 0, display: "grid", gap: 5, minWidth: 168, width: "100%" }}>
               {[
                 ["Entries", String(rows.length)],
                 ["Revised", revised],
@@ -285,6 +288,7 @@ export default function SignalClinical() {
                 </div>
               ))}
             </dl>
+            </div>
           </div>
         </div>
       </header>

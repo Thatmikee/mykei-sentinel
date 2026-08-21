@@ -17,6 +17,7 @@ const DATE = "2026-08-19";
 const AUTHOR = "Michael Esema";
 
 import { SIGNAL, TYPE } from "@/styles/signalTokens";
+import SignalRunningHead from "@/components/SignalRunningHead";
 
 const INK = SIGNAL.INK;
 const MID = SIGNAL.MUTED;
@@ -113,6 +114,8 @@ export default function SignalMarkingEvidencePage() {
           description: STANDFIRST,
         })}
       />
+
+      <SignalRunningHead />
 
       <article
         style={{ maxWidth: 720, margin: "0 auto", padding: "96px clamp(16px,4vw,32px) 96px" }}

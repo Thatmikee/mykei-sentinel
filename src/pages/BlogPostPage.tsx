@@ -18,6 +18,7 @@ import FebruaryBrcRetailCrimeNoise from "./brief/FebruaryBrcRetailCrimeNoise";
 import MarchChocolateCasePatternEvidence from "./brief/MarchChocolateCasePatternEvidence";
 import AprilCctvEvidenceGap from "./brief/AprilCctvEvidenceGap";
 import StopCallingItShopliftingLostStock from "./brief/StopCallingItShopliftingLostStock";
+import SignalRunningHead from "@/components/SignalRunningHead";
 
 const POST_COMPONENTS: Record<string, React.ComponentType> = {
   "stop-calling-it-shoplifting-lost-stock": StopCallingItShopliftingLostStock,
@@ -57,14 +58,19 @@ export default function BlogPostPage() {
   }
 
   return (
-    <BlogPostLayout meta={meta}>
-      <PostComponent />
-    </BlogPostLayout>
+    <>
+      <SignalRunningHead />
+      <BlogPostLayout meta={meta}>
+        <PostComponent />
+      </BlogPostLayout>
+    </>
   );
 }
 
 function PostNotFound() {
   return (
+    <>
+    <SignalRunningHead />
     <div style={{
       minHeight: "100vh",
       backgroundColor: "#F8F3ED",
@@ -113,8 +119,9 @@ function PostNotFound() {
           paddingBottom: "2px",
         }}
       >
-        Back to The Brief
+        All entries
       </Link>
     </div>
+    </>
   );
 }

@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
+import SignalRunningHead from "@/components/SignalRunningHead";
 
 const GOLD = "#c9a84c";
 const INK = "#0F0C08";
@@ -74,13 +75,11 @@ export default function SignalSurgeonNotCameraPage() {
         }}
       />
 
+      <SignalRunningHead />
+
       <div style={{ fontFamily: "'Georgia',serif", background: "#fff", color: INK, minHeight: "100vh" }}>
 
         {/* Nav */}
-        <nav style={{ borderBottom: `1px solid ${RULE}`, padding: "0 40px", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "rgba(255,255,255,0.97)", backdropFilter: "blur(12px)", zIndex: 100 }}>
-          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", color: GOLD, textDecoration: "none", textTransform: "uppercase" }}>The Signal</a>
-          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "1.5px", color: INK, textDecoration: "none", textTransform: "uppercase", border: `1px solid ${RULE}`, padding: "6px 16px", borderRadius: 4 }}>Join the Pilot</a>
-        </nav>
 
         {/* Header */}
         <header style={{ maxWidth: 760, margin: "0 auto", padding: "72px 32px 48px" }}>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 interface ArticleMeta {
@@ -58,6 +59,29 @@ export default function PageSEO({
       })
     : null;
 
+  /**
+   * Canonical is written imperatively into the single <link rel="canonical">
+   * that ships in index.html, rather than rendered through Helmet.
+   *
+   * Why not just render it in Helmet: Helmet does not manage the static tag in
+   * index.html, so rendering a second one left EVERY page emitting two
+   * canonicals with different values, the static one claiming the page was the
+   * homepage. Why not delete the static tag instead: ContactPage,
+   * EnterprisePage and StateOfTheftPage mutate that exact element via
+   * querySelector, guarded by `if (canonical)`, so deleting it would silently
+   * leave those three pages with no canonical at all.
+   *
+   * One tag, every writer pointing at it. The data-for attribute records which
+   * path set it, so the route-level fallback in App can tell an explicit
+   * canonical from a stale one left behind by the previous page.
+   */
+  useEffect(() => {
+    const el = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!el) return;
+    el.href = canonical;
+    el.setAttribute("data-for", window.location.pathname);
+  }, [canonical]);
+
   return (
     <Helmet>
       {/* Core */}
@@ -65,7 +89,6 @@ export default function PageSEO({
       <title>{title}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
-      <link rel="canonical" href={canonical} />
       <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
       <meta name="author" content="Michael Esema, Mykei Securities Ltd" />
       <meta name="copyright" content="Mykei Securities Ltd" />

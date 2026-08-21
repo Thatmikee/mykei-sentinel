@@ -9,6 +9,7 @@
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 import { RED_EDITION, RED_TYPE } from "@/styles/signalRed";
+import SignalRunningHead from "@/components/SignalRunningHead";
 
 const SLUG = "threshold-repealed-still-law";
 const TITLE = "The £200 Threshold Was Repealed in April. It Is Still the Law Today.";
@@ -111,6 +112,8 @@ export default function SignalThresholdPage() {
           description: STANDFIRST,
         })}
       />
+
+      <SignalRunningHead />
 
       <article style={{ maxWidth: 700, margin: "0 auto", padding: "72px clamp(16px,4vw,32px) 96px" }}>
         <div style={{

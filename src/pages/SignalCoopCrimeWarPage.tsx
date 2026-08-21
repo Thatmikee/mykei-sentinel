@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 import EditorialNote from "@/components/EditorialNote";
+import SignalRunningHead from "@/components/SignalRunningHead";
 
 const GOLD = "#c9a84c";
 const GOLD_DARK = "#B8922A";
@@ -114,22 +115,13 @@ export default function SignalCoopCrimeWarPage() {
         }}
       />
 
+      <SignalRunningHead />
+
       <ReadingProgress />
 
       <div style={{ fontFamily: "'Georgia', 'Times New Roman', serif", background: "#fff", color: INK, minHeight: "100vh" }}>
 
         {/* ── Sticky masthead nav ── */}
-        <nav aria-label="Article navigation" style={{ borderBottom: `1px solid ${RULE}`, padding: "0 40px", height: 52, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "rgba(255,255,255,0.98)", backdropFilter: "blur(16px)", zIndex: 100 }}>
-          <a href="/signal" className="signal-nav-link" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.2em", color: GOLD_DARK, textDecoration: "none", textTransform: "uppercase" }}>
-            The Signal
-          </a>
-          <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, letterSpacing: "0.16em", textTransform: "uppercase", color: MID }}>Issue 16 · May 2026</span>
-            <a href="/pilot" className="signal-nav-cta" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.14em", color: "#fff", background: INK, textDecoration: "none", textTransform: "uppercase", padding: "8px 18px", borderRadius: 3 }}>
-              Join the Pilot
-            </a>
-          </div>
-        </nav>
 
         {/* ── Hero masthead ── */}
         <div style={{ background: INK, borderBottom: `3px solid ${GOLD}` }}>

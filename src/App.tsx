@@ -3,7 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -46,12 +47,34 @@ const ProtocolPage             = lazy(() => import("./pages/ProtocolPage"));
 
 const queryClient = new QueryClient();
 
+/**
+ * Route level canonical fallback.
+ *
+ * Fifteen pages render no SEO component at all. Without this they would keep
+ * whichever canonical the previously viewed page left in the tag, which is
+ * worse than having none: it tells Google the page is a duplicate of something
+ * it is not. PageSEO stamps data-for with its own path, so an explicit
+ * canonical is never overwritten here.
+ */
+function CanonicalFallback() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const el = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!el) return;
+    if (el.getAttribute("data-for") === pathname) return;
+    el.href = `https://mykei.io${pathname === "/" ? "" : pathname}`;
+    el.setAttribute("data-for", pathname);
+  }, [pathname]);
+  return null;
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <CanonicalFallback />
         <Suspense fallback={<div style={{ height: "100vh", background: "#FFFFFF" }} />}>
           <Routes>
             <Route path="/" element={<Index />} />

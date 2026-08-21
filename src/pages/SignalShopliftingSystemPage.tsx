@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import PageSEO from "@/components/PageSEO";
 import SignalShareBar from "@/components/SignalShareBar";
 import EditorialNote from "@/components/EditorialNote";
+import SignalRunningHead from "@/components/SignalRunningHead";
 
 const GOLD = "#c9a84c";
 const INK  = "#1E1E1E";
@@ -81,13 +82,11 @@ export default function SignalShopliftingSystemPage() {
         }}
       />
 
+      <SignalRunningHead />
+
       <div style={{ fontFamily: "'Georgia',serif", background: "#fff", color: INK, minHeight: "100vh" }}>
 
         {/* Nav */}
-        <nav style={{ borderBottom: `1px solid ${RULE}`, padding: "0 40px", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "rgba(255,255,255,0.97)", backdropFilter: "blur(12px)", zIndex: 100 }}>
-          <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", color: GOLD, textDecoration: "none", textTransform: "uppercase" }}>The Signal</a>
-          <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", color: INK, textDecoration: "none", textTransform: "uppercase", background: GOLD, padding: "8px 18px" }}>Join the Pilot</a>
-        </nav>
 
         <article style={{ maxWidth: 740, margin: "0 auto", padding: "64px 24px 100px" }}>
 
