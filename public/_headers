@@ -6,7 +6,7 @@
 
 /*
   ! Access-Control-Allow-Origin
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://challenges.cloudflare.com https://cdn-cookieyes.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; frame-src https://challenges.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://cdn-cookieyes.com https://log.cookieyes.com https://send-loi.michaelesema.workers.dev; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://send-loi.michaelesema.workers.dev
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://challenges.cloudflare.com https://cdn-cookieyes.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; frame-src https://challenges.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://cdn-cookieyes.com https://log.cookieyes.com https://send-loi.michaelesema.workers.dev; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://send-loi.michaelesema.workers.dev
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff

@@ -327,7 +327,7 @@ export default function Pilot() {
         <p style={{ color: MUTED, fontSize: "15px", lineHeight: 1.65, margin: "0 0 24px" }}>
           <strong style={{ color: DARK }}>{form.storeName}</strong> has submitted a signed Letter of Intent for the ADN Independent Retail Pilot. A confirmation email with your signed copy is on its way.
         </p>
-        <div style={{ background: CREAM, border: `1px solid ${SAND}`, borderRadius: "10px", padding: "16px 18px", marginBottom: "18px", textAlign: "left" }}>
+        <div style={{ background: PANEL, border: `1px solid ${SAND}`, borderRadius: "10px", padding: "16px 18px", marginBottom: "18px", textAlign: "left" }}>
           <p style={{ margin: "0 0 10px", fontSize: "11px", fontWeight: 700, color: DARK, textTransform: "uppercase", letterSpacing: "0.08em" }}>What happens next</p>
           <ol style={{ margin: 0, paddingLeft: "18px", color: MUTED, fontSize: "13px", lineHeight: 1.7 }}>
             <li>We review your store type, shelf layout, and theft-loss context.</li>
@@ -335,7 +335,7 @@ export default function Pilot() {
             <li>If the store is suitable, we agree the deployment criteria before any installation.</li>
           </ol>
         </div>
-        <div style={{ background: CREAM, border: `1px solid ${SAND}`, borderRadius: "10px", padding: "14px 18px", marginBottom: "24px", textAlign: "left" }}>
+        <div style={{ background: PANEL, border: `1px solid ${SAND}`, borderRadius: "10px", padding: "14px 18px", marginBottom: "24px", textAlign: "left" }}>
           <p style={{ margin: "0 0 4px", fontSize: "11px", fontWeight: 600, color: MUTED, textTransform: "uppercase", letterSpacing: "0.08em" }}>Confirmation sent to</p>
           <p style={{ margin: 0, fontSize: "14px", fontWeight: 600, color: DARK }}>{form.email}</p>
         </div>
@@ -436,7 +436,7 @@ export default function Pilot() {
             <>
               <h2 style={{ color: DARK, fontSize: "19px", fontWeight: 700, margin: "0 0 4px" }}>Sign & Confirm</h2>
               <p style={{ color: MUTED, fontSize: "14px", margin: "0 0 20px" }}>Draw your signature to complete the LOI.</p>
-              <div style={{ background: CREAM, border: `1px solid ${SAND}`, borderRadius: "10px", padding: "16px 18px", marginBottom: "20px", fontSize: "13px", color: MUTED, lineHeight: 1.75 }}>
+              <div style={{ background: PANEL, border: `1px solid ${SAND}`, borderRadius: "10px", padding: "16px 18px", marginBottom: "20px", fontSize: "13px", color: MUTED, lineHeight: 1.75 }}>
                 I, <strong style={{ color: DARK }}>{form.fullName}</strong>, confirm that <strong style={{ color: DARK }}>{form.storeName}</strong> intends to participate in the Mykei Securities ADN Independent Retail Pilot. {commercialTerms.displayLine}. No obligation after the pilot.
               </div>
               <div style={{ border: `2px dashed ${signed ? GOLD : SAND}`, borderRadius: "10px", overflow: "hidden", marginBottom: "8px", position: "relative", background: "#FFFDF9", transition: "border-color 0.2s" }}>
@@ -449,7 +449,7 @@ export default function Pilot() {
               </div>
               {signed && <button onClick={clearSig} style={{ fontSize: "12px", color: MUTED, background: "none", border: "none", cursor: "pointer", marginBottom: "12px", padding: 0 }}>Clear signature</button>}
               {!signed && <p style={{ ...err, marginBottom: "12px" }}>Signature is required.</p>}
-              <div style={{ background: CREAM, border: `1px solid ${SAND}`, borderRadius: "10px", padding: "14px 16px", marginBottom: "16px" }}>
+              <div style={{ background: PANEL, border: `1px solid ${SAND}`, borderRadius: "10px", padding: "14px 16px", marginBottom: "16px" }}>
                 <p style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.08em", color: GOLD, margin: "0 0 10px", textTransform: "uppercase" }}>Commercial Terms</p>
                 {commercialTerms.pdfRows.map(({ label, value }) => (
                   <div key={label} style={{ display: "flex", justifyContent: "space-between", fontSize: "13px", color: DARK, padding: "4px 0", borderBottom: `1px solid ${SAND}` }}>

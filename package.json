@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "claim-safety-gate": "bash scripts/claim-safety-gate.sh",
-    "build": "npm run claim-safety-gate && vite build",
+    "build": "npm run claim-safety-gate && vite build && node scripts/csp-hashes.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
