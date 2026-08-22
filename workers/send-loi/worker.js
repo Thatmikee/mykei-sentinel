@@ -163,6 +163,81 @@ export default {
         );
       }
 
+      // Enquiry submissions: the LOI and Contact forms.
+      //
+      // These previously POSTed to "/" because the site was once on Netlify and
+      // that is how Netlify Forms captures a submission. The site moved to
+      // Cloudflare Pages, where POSTing to "/" simply returns the HTML document
+      // with a 200. The client code treated any 200 as success, so both forms
+      // told the sender their enquiry had been received and then discarded it.
+      // Every enquiry submitted through them was lost.
+      //
+      // They now come here. There is no signed PDF in this flow, so the branch
+      // sits ahead of the attachment checks, but every other protection above
+      // (rate limit, body size cap, Turnstile) has already run.
+      const formType = formData.get("formType");
+      if (formType === "enquiry") {
+        const company = formData.get("company") || "";
+        const message = formData.get("message") || "";
+        const source  = formData.get("source") || "website";
+
+        const safeCompany = escapeHtml(company);
+        const safeMessage = escapeHtml(message);
+        const safeSource  = escapeHtml(source);
+
+        const enquiryHtml = `
+          <h2>New enquiry</h2>
+          <p><strong>Name:</strong> ${escapeHtml(fullName)}</p>
+          <p><strong>Company:</strong> ${safeCompany || "&mdash;"}</p>
+          <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+          <p><strong>Phone:</strong> ${escapeHtml(phone) || "&mdash;"}</p>
+          <p><strong>Message:</strong><br>${safeMessage || "&mdash;"}</p>
+          <p><strong>Form:</strong> ${safeSource}</p>
+          <p><strong>Submitted:</strong> ${new Date().toISOString()}</p>
+        `;
+        const enquiryText = [
+          "New enquiry",
+          `Name: ${fullName}`,
+          `Company: ${company || "-"}`,
+          `Email: ${email}`,
+          `Phone: ${phone || "-"}`,
+          `Message: ${message || "-"}`,
+          `Form: ${source}`,
+          `Submitted: ${new Date().toISOString()}`,
+        ].join("\n");
+
+        const validReplyTo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        const enquiryRes = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${env.RESEND_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "Mykei Securities <protocol@mykei.io>",
+            to: ["protocol@mykei.io", "michael.e@mykei.io"],
+            ...(validReplyTo ? { reply_to: email } : {}),
+            subject: `New enquiry: ${company || fullName}`,
+            html: enquiryHtml,
+            text: enquiryText,
+          }),
+        });
+
+        if (!enquiryRes.ok) {
+          const error = await enquiryRes.text();
+          logError("Resend error (enquiry)", { status: enquiryRes.status, error });
+          return new Response(JSON.stringify({ success: false, error: "Email service error" }), {
+            status: 500,
+            headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
+          });
+        }
+
+        return new Response(JSON.stringify({ success: true }), {
+          status: 200,
+          headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
+        });
+      }
+
       if (!pdfFile) {
         return new Response(JSON.stringify({ success: false, error: "No PDF file" }), {
           status: 400,

@@ -15,12 +15,12 @@ import { commercialTerms } from "@/data/commercialTerms";
 const TURNSTILE_SITE_KEY = "0x4AAAAAADLhkxAX0ez1A7Za";
 
 const DARK   = "#1C120A";
-const GOLD   = "#C8A96E";
+const GOLD   = "#D8001F";
 const CREAM   = "#FFFFFF";   // page ground
 const ONDARK  = "#F7F8FA";   // light type on ink blocks
 const PANEL   = "#F4F6F8";   // boxed fills that must read on white
 const SAND   = "#EDE5D8";
-const MUTED  = "#8A7560";
+const MUTED  = "#767D88";
 
 // Input validation
 const sanitise  = (v: string) => v.replace(/[<>"'`;]/g, "").trim();

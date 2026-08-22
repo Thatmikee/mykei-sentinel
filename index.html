@@ -312,46 +312,12 @@
     <div id="root"><h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Mykei Securities. ADN Forensic Retail Defence. Economic Sterilisation by Michael Esema.</h1></div>
 
     <!--
-      Hidden form for Netlify Forms bot detection.
-      Netlify's build bot cannot see JS-rendered forms in a React SPA.
-      This static copy teaches Netlify what fields to expect.
-      It is never shown to users. The actual submission is done
-      via fetch() inside Pilot.tsx using FormData.
-      Field names here must exactly match those in Pilot.tsx.
+      The three hidden forms that sat here were Netlify Forms bot-detection
+      stubs: Netlify's build bot cannot see a JS-rendered form in a React SPA,
+      so a static copy taught it what fields to expect. The site runs on
+      Cloudflare Pages, where they did nothing at all. Removed 22 Aug 2026.
+      Live submissions go to the send-loi Worker.
     -->
-    <!-- LOI enquiry form, detected by Netlify build bot -->
-    <form name="loi-enquiry" netlify netlify-honeypot="bot-field" hidden aria-hidden="true">
-      <input name="bot-field" />
-      <input name="ownerName"   type="text"  />
-      <input name="storeName"   type="text"  />
-      <input name="address"     type="text"  />
-      <input name="email"       type="email" />
-      <input name="phone"       type="tel"   />
-      <input name="storeType"   type="text"  />
-      <input name="theftLoss"   type="text"  />
-      <input name="theftLevel"  type="text"  />
-      <textarea name="message"></textarea>
-    </form>
-
-    <!-- ADN pilot claim form, detected by Netlify build bot -->
-    <form name="adn1-claim" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true">
-      <input name="bot-field" />
-      <input name="name"     type="text"  />
-      <input name="shopName" type="text"  />
-      <input name="email"    type="email" />
-      <input name="phone"    type="tel"   />
-    </form>
-
-    <!-- Enterprise enquiry form, detected by Netlify build bot -->
-    <form name="enterprise-enquiry" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true">
-      <input name="bot-field"   />
-      <input name="name"        type="text"  />
-      <input name="company"     type="text"  />
-      <input name="title"       type="text"  />
-      <input name="email"       type="email" />
-      <input name="storeCount"  type="text"  />
-    </form>
-
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

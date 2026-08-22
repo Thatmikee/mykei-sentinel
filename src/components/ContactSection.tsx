@@ -160,8 +160,7 @@ const ContactSection = () => {
 
             <div className="p-8 md:p-12">
               <>
-                {/* Netlify hidden detection form, DO NOT REMOVE */}
-                <form name="pilot-enquiry" data-netlify="true" hidden>
+                <form name="pilot-enquiry" hidden>
                   <input type="text"  name="name" />
                   <input type="text"  name="organization" />
                   <input type="email" name="email" />
@@ -174,7 +173,6 @@ const ContactSection = () => {
                 <form
                   name="pilot-enquiry"
                   method="POST"
-                  data-netlify="true"
                   onSubmit={handleSubmit}
                   className="space-y-6"
                   noValidate

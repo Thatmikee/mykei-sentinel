@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import PageSEO from "@/components/PageSEO";
 
-const GOLD = "#C9A84C";
+const GOLD = "#D8001F";
 const INK = "#1A1A18";
 const PAPER = "#FFFFFF";
 const MUTED = "#6B6B65";
@@ -211,7 +211,7 @@ export default function PressPage() {
                 key={href}
                 href={href}
                 style={{ display: "block", padding: "28px 0", borderBottom: `1px solid ${RULE}`, textDecoration: "none", transition: "background 0.15s" }}
-                onMouseEnter={e => (e.currentTarget.style.background = "rgba(201,168,76,0.04)")}
+                onMouseEnter={e => (e.currentTarget.style.background = "rgba(216,0,31,0.04)")}
                 onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
               >
                 <div style={{ display: "flex", gap: 16, alignItems: "baseline", marginBottom: 8 }}>

@@ -26,7 +26,7 @@ export default function NotFound() {
           padding: 40px 24px;
           position: relative; overflow: hidden;
           background: #0a1628;
-          background-image: radial-gradient(rgba(201,168,76,0.06) 1px, transparent 1px);
+          background-image: radial-gradient(rgba(216,0,31,0.06) 1px, transparent 1px);
           background-size: 28px 28px;
         }
         .nf-wrap::before {
@@ -38,7 +38,7 @@ export default function NotFound() {
         /* Scanline effect */
         .nf-scanline {
           position: absolute; left: 0; right: 0; height: 2px;
-          background: linear-gradient(90deg, transparent, rgba(201,168,76,0.15), transparent);
+          background: linear-gradient(90deg, transparent, rgba(216,0,31,0.15), transparent);
           animation: scan 4s linear infinite;
           pointer-events: none;
         }
@@ -56,13 +56,13 @@ export default function NotFound() {
           color: rgba(255,255,255,0.2); margin-bottom: 32px;
           display: flex; align-items: center; justify-content: center; gap: 10px;
         }
-        .nf-dot { width: 6px; height: 6px; border-radius: 50%; background: #c9a84c; animation: blink 1.5s ease-in-out infinite; }
+        .nf-dot { width: 6px; height: 6px; border-radius: 50%; background: #D8001F; animation: blink 1.5s ease-in-out infinite; }
 
         .nf-code {
           font-size: clamp(72px, 14vw, 120px); font-weight: 800;
-          color: #c9a84c; letter-spacing: -4px; line-height: 1;
+          color: #D8001F; letter-spacing: -4px; line-height: 1;
           margin-bottom: 8px;
-          text-shadow: 0 0 60px rgba(201,168,76,0.2);
+          text-shadow: 0 0 60px rgba(216,0,31,0.2);
         }
 
         .nf-headline {
@@ -80,10 +80,10 @@ export default function NotFound() {
 
         .nf-btn-primary {
           font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
-          color: #0a1628; background: #c9a84c; padding: 12px 28px; border-radius: 6px;
+          color: #0a1628; background: #D8001F; padding: 12px 28px; border-radius: 6px;
           transition: all 0.2s;
         }
-        .nf-btn-primary:hover { background: #e0c060; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+        .nf-btn-primary:hover { background: #D8001F; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(216,0,31,0.3); }
 
         .nf-btn-secondary {
           font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 500;
@@ -97,7 +97,7 @@ export default function NotFound() {
           font-family: 'JetBrains Mono', monospace;
         }
         .nf-brand-name { font-size: 11px; font-weight: 500; letter-spacing: 1px; color: rgba(255,255,255,0.4); }
-        .nf-brand-sub  { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #c9a84c; margin-top: 2px; }
+        .nf-brand-sub  { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #D8001F; margin-top: 2px; }
 
         @media (max-width: 480px) {
           .nf-brand { left: 24px; }

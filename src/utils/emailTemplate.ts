@@ -151,7 +151,7 @@ export function generateRetailerEmail(data: LOIData): string {
       font-weight: 600;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #c8a96e;
+      color: #D8001F;
       margin-bottom: 10px;
       animation: fadeIn 0.6s ease 0.4s both;
     }
@@ -175,9 +175,9 @@ export function generateRetailerEmail(data: LOIData): string {
       height: 2px;
       background: linear-gradient(90deg,
         transparent 0%,
-        #c8a96e 25%,
-        #f0d898 50%,
-        #c8a96e 75%,
+        #D8001F 25%,
+        #D8001F 50%,
+        #D8001F 75%,
         transparent 100%);
       background-size: 400% auto;
       animation: shimmer 3s linear infinite;
@@ -197,7 +197,7 @@ export function generateRetailerEmail(data: LOIData): string {
       align-items: center;
       gap: 6px;
       background: #0d1f4a;
-      color: #c8a96e;
+      color: #D8001F;
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.2em;
@@ -214,7 +214,7 @@ export function generateRetailerEmail(data: LOIData): string {
       letter-spacing: -0.01em;
     }
     .hero-headline span {
-      color: #c8a96e;
+      color: #D8001F;
     }
     .hero-body {
       margin-top: 14px;
@@ -246,7 +246,7 @@ export function generateRetailerEmail(data: LOIData): string {
     .stat-num {
       font-size: 22px;
       font-weight: 700;
-      color: #c8a96e;
+      color: #D8001F;
       line-height: 1;
       letter-spacing: -0.02em;
     }
@@ -271,7 +271,7 @@ export function generateRetailerEmail(data: LOIData): string {
       font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #c8a96e;
+      color: #D8001F;
       margin-bottom: 6px;
     }
     .section-title {
@@ -283,7 +283,7 @@ export function generateRetailerEmail(data: LOIData): string {
     }
     .gold-rule {
       height: 2px;
-      background: linear-gradient(90deg, #c8a96e 0%, rgba(200,169,110,0.1) 100%);
+      background: linear-gradient(90deg, #D8001F 0%, rgba(200,169,110,0.1) 100%);
       width: 48px;
       margin-bottom: 20px;
       animation: growWidth 0.8s ease both;
@@ -314,7 +314,7 @@ export function generateRetailerEmail(data: LOIData): string {
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #c8a96e;
+      color: #D8001F;
       margin-bottom: 12px;
     }
     .story-headline {
@@ -334,7 +334,7 @@ export function generateRetailerEmail(data: LOIData): string {
       font-weight: 600;
     }
     .story-body em {
-      color: #c8a96e;
+      color: #D8001F;
       font-style: normal;
       font-weight: 600;
     }
@@ -350,7 +350,7 @@ export function generateRetailerEmail(data: LOIData): string {
       line-height: 1.6;
       padding: 16px 20px;
       background: rgba(200,169,110,0.12);
-      border-left: 3px solid #c8a96e;
+      border-left: 3px solid #D8001F;
       border-radius: 0 2px 2px 0;
     }
 
@@ -381,7 +381,7 @@ export function generateRetailerEmail(data: LOIData): string {
     .step-num {
       font-size: 13px;
       font-weight: 700;
-      color: #c8a96e;
+      color: #D8001F;
       letter-spacing: 0.08em;
     }
     .step-icon-col {
@@ -438,7 +438,7 @@ export function generateRetailerEmail(data: LOIData): string {
     .next-dot-num {
       font-size: 11px;
       font-weight: 700;
-      color: #c8a96e;
+      color: #D8001F;
     }
     .next-right {
       display: table-cell;
@@ -450,7 +450,7 @@ export function generateRetailerEmail(data: LOIData): string {
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #c8a96e;
+      color: #D8001F;
       margin-bottom: 3px;
     }
     .next-title {
@@ -635,7 +635,7 @@ export function generateRetailerEmail(data: LOIData): string {
     }
     .cta-btn {
       display: inline-block;
-      background: #c8a96e;
+      background: #D8001F;
       color: #0d1f4a !important;
       text-decoration: none;
       font-size: 11px;
@@ -696,7 +696,7 @@ export function generateRetailerEmail(data: LOIData): string {
       <svg width="30" height="30" viewBox="0 0 28 28" fill="none">
         <path d="M14 3L24 8.5V19.5L14 25L4 19.5V8.5L14 3Z" stroke="rgba(200,169,110,0.7)" stroke-width="1.5" fill="none"/>
         <path d="M14 7L21 11V17L14 21L7 17V11L14 7Z" fill="rgba(200,169,110,0.1)" stroke="rgba(200,169,110,0.4)" stroke-width="1"/>
-        <circle cx="14" cy="14" r="2.5" fill="#c8a96e"/>
+        <circle cx="14" cy="14" r="2.5" fill="#D8001F"/>
       </svg>
     </div>
     <div class="header-eyebrow">Mykei Securities Ltd. · Confirmed</div>
@@ -709,7 +709,7 @@ export function generateRetailerEmail(data: LOIData): string {
   <div class="hero">
     <div class="hero-badge">
       <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-        <circle cx="4" cy="4" r="3.5" fill="#c8a96e"/>
+        <circle cx="4" cy="4" r="3.5" fill="#D8001F"/>
       </svg>
       Founding Retailer
     </div>
@@ -771,9 +771,9 @@ export function generateRetailerEmail(data: LOIData): string {
         <div class="step-num-col"><div class="step-num">01</div></div>
         <div class="step-icon-col">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <circle cx="14" cy="14" r="10" stroke="#c8a96e" stroke-width="1.2" fill="none" opacity="0.4"/>
-            <circle cx="14" cy="14" r="5" stroke="#c8a96e" stroke-width="1.4" fill="none"/>
-            <circle cx="14" cy="14" r="1.5" fill="#c8a96e"/>
+            <circle cx="14" cy="14" r="10" stroke="#D8001F" stroke-width="1.2" fill="none" opacity="0.4"/>
+            <circle cx="14" cy="14" r="5" stroke="#D8001F" stroke-width="1.4" fill="none"/>
+            <circle cx="14" cy="14" r="1.5" fill="#D8001F"/>
           </svg>
         </div>
         <div class="step-body-col">
@@ -787,9 +787,9 @@ export function generateRetailerEmail(data: LOIData): string {
         <div class="step-num-col"><div class="step-num">02</div></div>
         <div class="step-icon-col">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <path d="M14 6C14 6 8 10 8 16C8 19.3 10.7 22 14 22C17.3 22 20 19.3 20 16C20 10 14 6 14 6Z" stroke="#c8a96e" stroke-width="1.3" fill="rgba(200,169,110,0.1)"/>
-            <circle cx="14" cy="16" r="2" fill="#c8a96e" opacity="0.6"/>
-            <path d="M10 9L8 5M18 9L20 5M14 6V3" stroke="#c8a96e" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+            <path d="M14 6C14 6 8 10 8 16C8 19.3 10.7 22 14 22C17.3 22 20 19.3 20 16C20 10 14 6 14 6Z" stroke="#D8001F" stroke-width="1.3" fill="rgba(200,169,110,0.1)"/>
+            <circle cx="14" cy="16" r="2" fill="#D8001F" opacity="0.6"/>
+            <path d="M10 9L8 5M18 9L20 5M14 6V3" stroke="#D8001F" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
           </svg>
         </div>
         <div class="step-body-col">
@@ -803,8 +803,8 @@ export function generateRetailerEmail(data: LOIData): string {
         <div class="step-num-col"><div class="step-num">03</div></div>
         <div class="step-icon-col">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <rect x="7" y="6" width="14" height="16" rx="2" stroke="#c8a96e" stroke-width="1.3" fill="rgba(200,169,110,0.08)"/>
-            <path d="M10 11H18M10 14H18M10 17H14" stroke="#c8a96e" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+            <rect x="7" y="6" width="14" height="16" rx="2" stroke="#D8001F" stroke-width="1.3" fill="rgba(200,169,110,0.08)"/>
+            <path d="M10 11H18M10 14H18M10 17H14" stroke="#D8001F" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
           </svg>
         </div>
         <div class="step-body-col">
@@ -818,8 +818,8 @@ export function generateRetailerEmail(data: LOIData): string {
         <div class="step-num-col"><div class="step-num">04</div></div>
         <div class="step-icon-col">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <circle cx="14" cy="14" r="9" stroke="#c8a96e" stroke-width="1.3" fill="none" opacity="0.3"/>
-            <path d="M10 14L13 17L18 11" stroke="#c8a96e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="14" cy="14" r="9" stroke="#D8001F" stroke-width="1.3" fill="none" opacity="0.3"/>
+            <path d="M10 14L13 17L18 11" stroke="#D8001F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="step-body-col">

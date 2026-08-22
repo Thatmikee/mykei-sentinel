@@ -22,7 +22,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
     >
       <defs>
         <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L8,3 z" fill="#D4AF37" />
+          <path d="M0,0 L0,6 L8,3 z" fill="#D8001F" />
         </marker>
       </defs>
 
@@ -34,7 +34,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
         <line
           key={i}
           x1={a.x1} y1={a.y1} x2={a.x2} y2={a.y2}
-          stroke="#D4AF37"
+          stroke="#D8001F"
           strokeWidth="1.5"
           markerEnd="url(#arrow)"
         />
@@ -49,7 +49,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
             width="172"
             height="72"
             fill="#FFFFFF"
-            stroke={i === 3 ? "#D4AF37" : "#E8E8E8"}
+            stroke={i === 3 ? "#D8001F" : "#E8E8E8"}
             strokeWidth={i === 3 ? "1.5" : "1"}
             rx="4"
           />
@@ -60,7 +60,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
             fontSize="10"
             fontWeight="700"
             letterSpacing="0.12em"
-            fill={i === 3 ? "#D4AF37" : "#8a7a5a"}
+            fill={i === 3 ? "#D8001F" : "#767D88"}
           >
             {n.label}
           </text>
@@ -92,7 +92,7 @@ export default function ADN1FlowDiagram({ width = "100%" }: { width?: string | n
           x={n.x + 10}
           y={n.y - 18}
           fontSize="9"
-          fill="#D4AF37"
+          fill="#D8001F"
           fontWeight="700"
           fontFamily="'JetBrains Mono', monospace"
         >

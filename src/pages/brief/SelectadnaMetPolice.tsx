@@ -16,7 +16,7 @@ export default function SelectadnaMetPolice() {
           alt="Police law enforcement abstract"
           style={{ width: "100%", maxHeight: 400, objectFit: "cover", borderRadius: 4, display: "block", marginBottom: 8 }}
         />
-        <p style={{ fontFamily: "monospace", fontSize: 11, color: "#8A7560", margin: 0 }}>Photo: Unsplash</p>
+        <p style={{ fontFamily: "monospace", fontSize: 11, color: "#767D88", margin: 0 }}>Photo: Unsplash</p>
       </div>
 
       <h2>Operation Opal and the Metropolitan Police Approach</h2>

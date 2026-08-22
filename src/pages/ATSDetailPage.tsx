@@ -82,13 +82,13 @@ export default function ATSDetailPage() {
           className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground hover:text-primary transition-colors tracking-wider uppercase"
           style={{ textDecoration: "none" }}
         >
-          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 11, letterSpacing: "2.5px", color: "#D4A843", textTransform: "uppercase" as const }}>MYKEI</span>
+          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontWeight: 700, fontSize: 11, letterSpacing: "2.5px", color: "#D8001F", textTransform: "uppercase" as const }}>MYKEI</span>
           Home
         </a>
         <a
           href="/adn-in-action"
           className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider transition-all rounded"
-          style={{ background: "#D4A843", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
+          style={{ background: "#D8001F", color: "#050505", padding: "9px 20px", textDecoration: "none", letterSpacing: "1.5px" }}
         >
           ▶ ADN in Action
         </a>

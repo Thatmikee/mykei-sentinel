@@ -28,10 +28,8 @@ dist-ssr
 .env.local
 .env.*.local
 
-# Local Netlify folder
-.netlify
 
-# internal/ CompanyOS is tracked in git but excluded from Netlify deploy
+# internal/ CompanyOS is tracked in git but excluded from the deploy
 # (Vite only builds src/ into dist/ — internal/ is never published)
 #
 # 2026-05-21: Company operating material moved out of the public website repo.

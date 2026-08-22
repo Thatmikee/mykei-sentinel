@@ -86,7 +86,7 @@ export default function OverviewPage() {
           font-weight: 600;
           letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: #8a7a5a;
+          color: #767D88;
         }
 
         /* HERO */
@@ -102,7 +102,7 @@ export default function OverviewPage() {
           font-weight: 600;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: #8a7a5a;
+          color: #767D88;
           margin-bottom: 16px;
         }
         .ov-hero h1 {
@@ -124,7 +124,7 @@ export default function OverviewPage() {
         /* PROOF BAR */
         .ov-proof {
           background: #F8F8F8;
-          border-top: 2px solid #D4AF37;
+          border-top: 2px solid #D8001F;
           border-bottom: 1px solid #E8E8E8;
           padding: 0 52px;
           display: flex;
@@ -140,7 +140,7 @@ export default function OverviewPage() {
           font-weight: 600;
           letter-spacing: 0.1em;
           text-transform: uppercase;
-          color: #8a7a5a;
+          color: #767D88;
           margin-bottom: 4px;
         }
         .ov-proof-item-value {
@@ -164,7 +164,7 @@ export default function OverviewPage() {
           font-weight: 700;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #D4AF37;
+          color: #D8001F;
           margin-bottom: 12px;
         }
         .ov-section h2 {
@@ -195,7 +195,7 @@ export default function OverviewPage() {
           content: '→';
           position: absolute;
           left: 0;
-          color: #D4AF37;
+          color: #D8001F;
           font-weight: 600;
         }
 
@@ -219,7 +219,7 @@ export default function OverviewPage() {
           font-family: 'JetBrains Mono', monospace;
           font-size: 28px;
           font-weight: 700;
-          color: #D4AF37;
+          color: #D8001F;
           padding-top: 2px;
         }
         .ov-step-title {
@@ -253,7 +253,7 @@ export default function OverviewPage() {
           font-weight: 600;
           letter-spacing: 0.1em;
           text-transform: uppercase;
-          color: #8a7a5a;
+          color: #767D88;
           margin-bottom: 6px;
         }
         .ov-model-card-value {
@@ -282,13 +282,13 @@ export default function OverviewPage() {
           padding-top: 20px;
           border-top: 1px solid #E8E8E8;
           font-size: 13px;
-          color: #8a7a5a;
+          color: #767D88;
         }
 
         /* CTA */
         .ov-cta {
           background: #FFFFFF;
-          border-top: 2px solid #D4AF37;
+          border-top: 2px solid #D8001F;
           border-bottom: 1px solid #E8E8E8;
           padding: 48px 52px;
           text-align: center;
@@ -313,7 +313,7 @@ export default function OverviewPage() {
         }
         .ov-btn-primary {
           display: inline-block;
-          background: #D4AF37;
+          background: #D8001F;
           color: #1E1E1E;
           font-size: 13px;
           font-weight: 700;
@@ -325,7 +325,7 @@ export default function OverviewPage() {
           border: none;
           cursor: pointer;
         }
-        .ov-btn-primary:hover { background: #c9a030; }
+        .ov-btn-primary:hover { background: #D8001F; }
         .ov-btn-secondary {
           display: inline-block;
           background: transparent;
@@ -340,7 +340,7 @@ export default function OverviewPage() {
           text-decoration: none;
           cursor: pointer;
         }
-        .ov-btn-secondary:hover { border-color: #D4AF37; }
+        .ov-btn-secondary:hover { border-color: #D8001F; }
 
         /* FOOTER NOTE */
         .ov-footnote {
@@ -459,7 +459,7 @@ export default function OverviewPage() {
             </p>
             <div className="ov-founder-credit">
               Michael Esema · Founder, Mykei Securities Ltd ·{" "}
-              <a href="/founder" style={{ color: "#8a7a5a", textDecoration: "underline" }}>
+              <a href="/founder" style={{ color: "#767D88", textDecoration: "underline" }}>
                 Full founder statement →
               </a>
             </div>

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import PageSEO from "@/components/PageSEO";
 
 const DARK = "#1E1E1E";
-const GOLD = "#C8A96E";
+const GOLD = "#D8001F";
 const CREAM   = "#FFFFFF";   // page ground
 const ONDARK  = "#F7F8FA";   // light type on ink blocks
-const MUTED = "#8A7560";
+const MUTED = "#767D88";
 
 const schemaData = {
   "@context": "https://schema.org",
@@ -58,7 +58,7 @@ function PullQuote({ text }: { text: string }) {
         fontFamily: "'Playfair Display', Georgia, serif",
         fontSize: 22,
         fontStyle: "italic",
-        borderLeft: "3px solid #D4AF37",
+        borderLeft: "3px solid #D8001F",
         padding: "20px 0 20px 28px",
         margin: "36px 0",
         color: "#1E1E1E",
@@ -74,7 +74,7 @@ function SectionDivider() {
     <hr
       style={{
         border: "none",
-        borderTop: "1px solid #D4AF37",
+        borderTop: "1px solid #D8001F",
         opacity: 0.4,
         margin: "48px 0",
       }}
@@ -218,7 +218,7 @@ export default function ThesisPage() {
                   float: "left",
                   lineHeight: 0.85,
                   paddingRight: 10,
-                  color: "#D4AF37",
+                  color: "#D8001F",
                   fontFamily: "'Playfair Display', Georgia, serif",
                 }}
               >
@@ -389,8 +389,8 @@ export default function ThesisPage() {
               M.E., April 2026
             </p>
             <svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 40 C20 20, 35 15, 45 30 C55 45, 60 25, 70 20 C80 15, 85 35, 90 30 C100 20, 110 10, 125 25 C135 35, 140 20, 155 15 C165 10, 175 30, 185 25 C195 20, 205 35, 210 30" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-              <path d="M8 48 C50 48, 100 50, 160 47" stroke="#D4AF37" strokeWidth="0.8" strokeLinecap="round" fill="none"/>
+              <path d="M10 40 C20 20, 35 15, 45 30 C55 45, 60 25, 70 20 C80 15, 85 35, 90 30 C100 20, 110 10, 125 25 C135 35, 140 20, 155 15 C165 10, 175 30, 185 25 C195 20, 205 35, 210 30" stroke="#D8001F" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+              <path d="M8 48 C50 48, 100 50, 160 47" stroke="#D8001F" strokeWidth="0.8" strokeLinecap="round" fill="none"/>
             </svg>
           </section>
 

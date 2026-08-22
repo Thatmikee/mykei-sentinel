@@ -18,7 +18,7 @@ export default function MarketplaceFlagging() {
           alt="Online marketplace phone"
           style={{ width: "100%", maxHeight: 400, objectFit: "cover", borderRadius: 4, display: "block", marginBottom: 8 }}
         />
-        <p style={{ fontFamily: "monospace", fontSize: 11, color: "#8A7560", margin: 0 }}>Photo: Unsplash</p>
+        <p style={{ fontFamily: "monospace", fontSize: 11, color: "#767D88", margin: 0 }}>Photo: Unsplash</p>
       </div>
 
       <h2>The Platform Scale Problem</h2>

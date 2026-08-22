@@ -3,9 +3,9 @@ import { Helmet } from "react-helmet-async";
 import { BlogPostMeta } from "@/data/blogPosts";
 
 const DARK = "#1E1E1E";
-const GOLD = "#D4AF37";
+const GOLD = "#D8001F";
 const CREAM = "#FFFFFF";
-const MUTED = "#8A7560";
+const MUTED = "#767D88";
 
 function formatDate(iso: string): string {
   const [year, month, day] = iso.split("-").map(Number);

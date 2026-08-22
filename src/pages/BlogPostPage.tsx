@@ -40,8 +40,8 @@ const POST_COMPONENTS: Record<string, React.ComponentType> = {
 };
 
 const DARK = "#1C120A";
-const GOLD = "#C8A96E";
-const MUTED = "#8A7560";
+const GOLD = "#D8001F";
+const MUTED = "#767D88";
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();

@@ -30,9 +30,9 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-const GOLD = "#c9a84c";
+const GOLD = "#D8001F";
 const INK = "#1E1E1E";
-const MID = "#5c4a32";
+const MID = "#4A4F58";
 const FAINT = "#F4F6F8";
 
 const RELATED = [

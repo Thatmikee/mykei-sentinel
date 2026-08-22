@@ -177,22 +177,22 @@ export default function Index() {
         }
         .mk-nav-brand { display: flex; flex-direction: row; align-items: center; gap: 10px; }
         .mk-nav-brand-texts { display: flex; flex-direction: column; gap: 2px; }
-        .mk-nav-brand-name { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #2D1204; line-height: 1; }
-        .mk-nav-brand-sub { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: #765C14; }
+        .mk-nav-brand-name { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #111318; line-height: 1; }
+        .mk-nav-brand-sub { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: #D8001F; }
         .mk-nav-links { display: flex; align-items: center; list-style: none; margin: 0; padding: 0; }
         .mk-nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #5C4639; padding: 4px 16px; transition: color 0.15s; }
-        .mk-nav-links a:hover { color: #2D1204; }
-        .mk-nav-cta { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: #2D1204; padding: 9px 20px; border: 1px solid #2D1204; transition: background 0.2s, color 0.2s; }
-        .mk-nav-cta:hover { background: #c9a84c; border-color: #765C14; color: #2D1204; }
+        .mk-nav-links a:hover { color: #111318; }
+        .mk-nav-cta { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: #111318; padding: 9px 20px; border: 1px solid #111318; transition: background 0.2s, color 0.2s; }
+        .mk-nav-cta:hover { background: #D8001F; border-color: #D8001F; color: #111318; }
         .mk-more-wrap { position: relative; display: inline-flex; align-items: center; margin-left: 8px; }
         .mk-more-btn { background: none; border: 1px solid #E8E8E8; border-radius: 6px; cursor: pointer; padding: 6px 14px; display: inline-flex; align-items: center; gap: 5px; transition: border-color 0.15s; font-family: 'Sora', system-ui, sans-serif; font-size: 13px; font-weight: 500; color: #1A1A1A; }
-        .mk-more-btn:hover { border-color: #765C14; color: #765C14; }
+        .mk-more-btn:hover { border-color: #D8001F; color: #D8001F; }
         .mk-more-menu { position: absolute; top: calc(100% + 8px); right: 0; min-width: 220px; background: #FFFFFF; border: 1px solid #E8E8E8; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 200; padding: 8px 0; }
-        .mk-more-menu a { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #2D1204; text-decoration: none; padding: 9px 18px; transition: background 0.12s; }
-        .mk-more-menu a:hover { background: #FFFFFF; color: #765C14; }
+        .mk-more-menu a { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #111318; text-decoration: none; padding: 9px 18px; transition: background 0.12s; }
+        .mk-more-menu a:hover { background: #FFFFFF; color: #D8001F; }
         .mk-more-divider { height: 1px; background: #E8E8E8; margin: 6px 0; }
         .mk-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
-        .mk-hamburger span { display: block; width: 22px; height: 1.5px; background: #2D1204; }
+        .mk-hamburger span { display: block; width: 22px; height: 1.5px; background: #111318; }
 
         /* ── HERO ── */
         .mk-hero {
@@ -201,7 +201,8 @@ export default function Index() {
         }
         .mk-hero::before {
           content: ''; position: absolute; inset: 0;
-          background-image: linear-gradient(rgba(45,18,4,0.022) 1px, transparent 1px),
+          background-image: none; /* removed: decorative hairline grid, organised no content */
+          --removed-grid: linear-gradient(transparent 1px, transparent 1px),
                             linear-gradient(90deg, rgba(45,18,4,0.022) 1px, transparent 1px);
           background-size: 52px 52px; pointer-events: none;
         }
@@ -218,18 +219,18 @@ export default function Index() {
           margin-bottom: 32px;
         }
         .mk-badge-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 500; color: #555555; letter-spacing: 1.2px; text-transform: uppercase; }
-        .mk-badge-sep { width: 1px; height: 12px; background: rgba(212,175,55,0.5); }
+        .mk-badge-sep { width: 1px; height: 12px; background: rgba(216,0,31,0.5); }
         .mk-badge-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #555555; letter-spacing: 0.8px; display: flex; align-items: center; gap: 5px; }
-        .mk-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #c9a84c; }
+        .mk-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #D8001F; }
 
         /* Identity headline */
         .mk-hero-identity {
           font-family: 'Playfair Display', Georgia, serif;
           font-size: clamp(38px, 5vw, 64px);
-          font-weight: 700; line-height: 1.08; letter-spacing: -1px; color: #2D1204; margin-bottom: 10px;
+          font-weight: 700; line-height: 1.08; letter-spacing: -1px; color: #111318; margin-bottom: 10px;
         }
-        .mk-identity-accent { color: #765C14; }
-        .mk-identity-rule { display: block; width: 44px; height: 3px; background: #c9a84c; border-radius: 2px; margin: 20px 0 22px; }
+        .mk-identity-accent { color: #D8001F; }
+        .mk-identity-rule { display: block; width: 44px; height: 3px; background: #D8001F; border-radius: 2px; margin: 20px 0 22px; }
 
         .mk-hero-descriptor {
           font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 1.5px;
@@ -239,22 +240,22 @@ export default function Index() {
         .mk-hero-body {
           font-size: 17px; line-height: 1.8; color: #475569; max-width: 650px; margin-bottom: 34px;
         }
-        .mk-hero-body strong { color: #2D1204; font-weight: 600; }
+        .mk-hero-body strong { color: #111318; font-weight: 600; }
 
         .mk-hero-actions {
           display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
         }
         .mk-btn-primary {
           font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600;
-          color: #fff; background: #4A2008; padding: 13px 28px; border-radius: 7px;
+          color: #fff; background: #111318; padding: 13px 28px; border-radius: 7px;
           display: inline-flex; align-items: center; gap: 8px; transition: all 0.22s;
         }
-        .mk-btn-primary:hover { background: #D4AF37; }
+        .mk-btn-primary:hover { background: #D8001F; }
         .mk-btn-secondary {
           font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 500;
-          color: #2D1204; border: 1.5px solid #dde4ef; padding: 12px 28px; border-radius: 7px; transition: all 0.2s;
+          color: #111318; border: 1.5px solid #dde4ef; padding: 12px 28px; border-radius: 7px; transition: all 0.2s;
         }
-        .mk-btn-secondary:hover { border-color: #4A2008; background: #f8f9fc; }
+        .mk-btn-secondary:hover { border-color: #111318; background: #f8f9fc; }
 
         .mk-hero-proof {
           display: flex; align-items: center; gap: 18px; margin-top: 24px; flex-wrap: wrap;
@@ -277,7 +278,7 @@ export default function Index() {
           padding: 0 32px 0 0; border-right: 1px solid #E8E8E8;
           gap: 10px; min-width: 160px;
         }
-        .mk-proof-bar-dot { width: 7px; height: 7px; border-radius: 50%; background: #c9a84c; flex-shrink: 0; }
+        .mk-proof-bar-dot { width: 7px; height: 7px; border-radius: 50%; background: #D8001F; flex-shrink: 0; }
         .mk-proof-bar-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #2D7D46; }
         .mk-proof-bar-sub { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1px; color: #555555; margin-top: 3px; }
         .mk-proof-bar-items {
@@ -297,31 +298,32 @@ export default function Index() {
           background: #FFFFFF;
           display: inline-flex; align-items: center; justify-content: center;
           font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700;
-          color: #765C14; flex-shrink: 0;
+          color: #D8001F; flex-shrink: 0;
         }
         .mk-proof-text { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.8px; color: #555; line-height: 1.5; }
-        .mk-proof-text strong { color: #2D1204; font-weight: 700; display: block; font-size: 11px; }
+        .mk-proof-text strong { color: #111318; font-weight: 700; display: block; font-size: 11px; }
 
         /* ── IN-STORE REALITY ── */
         .mk-reality {
           background: #FFFFFF; padding: 72px 52px;
-          border-bottom: 1px solid rgba(201,168,76,0.15);
+          border-bottom: 1px solid rgba(216,0,31,0.15);
         }
         .mk-reality-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .mk-reality-img {
-          border: 1px solid rgba(201,168,76,0.3); border-radius: 10px;
-          background: rgba(201,168,76,0.06);
+          border: 1px solid rgba(216,0,31,0.3); border-radius: 10px;
+          background: rgba(216,0,31,0.06);
           aspect-ratio: 4/3; display: flex; flex-direction: column;
           align-items: center; justify-content: center; gap: 12px;
           position: relative; overflow: hidden;
         }
         .mk-reality-img::before {
           content: ''; position: absolute; inset: 0;
-          background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+          background-image: none; /* removed: decorative hairline grid */
+          --removed-grid-2: linear-gradient(transparent 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(216,0,31,0.04) 1px, transparent 1px);
           background-size: 24px 24px;
         }
-        .mk-reality-placeholder { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #765C14; text-align: center; position: relative; z-index: 1; }
+        .mk-reality-placeholder { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #D8001F; text-align: center; position: relative; z-index: 1; }
         .mk-reality-placeholder-icon { font-size: 32px; opacity: 0.3; margin-bottom: 4px; }
         .mk-reality-caption { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.5px; color: #555555; text-align: center; margin-top: 10px; font-style: italic; }
 
@@ -342,9 +344,9 @@ export default function Index() {
           border-radius: 50%; border: 1px solid rgba(118,92,20,0.35);
           display: flex; align-items: center; justify-content: center;
           font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700;
-          color: #765C14; background: #FFFFFF;
+          color: #D8001F; background: #FFFFFF;
         }
-        .mk-commercial-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.8px; text-transform: uppercase; color: #2D1204; font-weight: 600; margin-bottom: 4px; }
+        .mk-commercial-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.8px; text-transform: uppercase; color: #111318; font-weight: 600; margin-bottom: 4px; }
         .mk-commercial-sub { font-size: 11.5px; color: #64748b; line-height: 1.5; }
 
         /* ── DESIGNED FOR ── */
@@ -354,10 +356,10 @@ export default function Index() {
         .mk-designed-item {
           display: flex; align-items: flex-start; gap: 14px;
           padding: 20px 24px; background: rgba(255,255,255,0.6);
-          border: 1px solid rgba(201,168,76,0.2); border-radius: 8px;
+          border: 1px solid rgba(216,0,31,0.2); border-radius: 8px;
         }
-        .mk-designed-check { width: 20px; height: 20px; border-radius: "50%"; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; color: #555555; flex-shrink: 0; margin-top: 2px; }
-        .mk-designed-text { font-size: 14px; color: #2D1204; line-height: 1.6; font-weight: 500; }
+        .mk-designed-check { width: 20px; height: 20px; border-radius: "50%"; background: rgba(216,0,31,0.15); border: 1px solid rgba(216,0,31,0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; color: #555555; flex-shrink: 0; margin-top: 2px; }
+        .mk-designed-text { font-size: 14px; color: #111318; line-height: 1.6; font-weight: 500; }
 
         /* ── WHY NOW ── */
         .mk-why-now {
@@ -367,9 +369,9 @@ export default function Index() {
         .mk-why-now-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
         .mk-why-now-item {
           display: flex; align-items: flex-start; gap: 14px; padding: 20px 24px;
-          border-left: 3px solid #c9a84c; background: #FFFFFF; border-radius: 0 6px 6px 0;
+          border-left: 3px solid #D8001F; background: #FFFFFF; border-radius: 0 6px 6px 0;
         }
-        .mk-why-now-text { font-size: 14px; color: #2D1204; line-height: 1.65; }
+        .mk-why-now-text { font-size: 14px; color: #111318; line-height: 1.65; }
 
         /* ── TRUST BAR (legacy, removed) ── */
         .mk-trust { display: none; }
@@ -379,7 +381,7 @@ export default function Index() {
         /* ── MARKET ── */
         .mk-market { background: #FFFFFF; padding: 96px 52px; position: relative; }
         .mk-market-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-        .mk-section-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: #765C14; margin-bottom: 14px; }
+        .mk-section-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: #D8001F; margin-bottom: 14px; }
         .mk-h2-light { font-family: 'Sora', system-ui, sans-serif; font-size: clamp(30px,3.8vw,50px); font-weight: 700; color: #fff; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.08; }
         .mk-sub-light { font-size: 16px; color: rgba(255,255,255,0.78); max-width: 520px; line-height: 1.7; margin-bottom: 52px; }
 
@@ -389,10 +391,10 @@ export default function Index() {
           background: #FFFFFF;
           border: 1px solid #E8E8E8; border-radius: 8px; padding: 32px 24px;
         }
-        .mk-stat-card:hover { border-color: #765C14; }
-        .mk-stat-num { font-size: 38px; font-weight: 800; color: #765C14; letter-spacing: -1px; line-height: 1; }
+        .mk-stat-card:hover { border-color: #D8001F; }
+        .mk-stat-num { font-size: 38px; font-weight: 800; color: #D8001F; letter-spacing: -1px; line-height: 1; }
         .mk-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; color: #64748b; margin-top: 10px; line-height: 1.6; }
-        .mk-market-note { background: #F8F8F8; border: 1px solid #E8E8E8; border-left: 4px solid #D4AF37; padding: 20px 24px; border-radius: 8px; font-size: 15px; color: #374151; line-height: 1.75; max-width: 760px; }
+        .mk-market-note { background: #F8F8F8; border: 1px solid #E8E8E8; border-left: 4px solid #D8001F; padding: 20px 24px; border-radius: 8px; font-size: 15px; color: #374151; line-height: 1.75; max-width: 760px; }
         .mk-market-note strong { color: #1A1A1A; font-weight: 700; }
 
         /* ── TECH ── */
@@ -408,15 +410,15 @@ export default function Index() {
           background: #FFFFFF;
           transition: border-color 0.2s ease;
         }
-        .mk-tech-card:hover { border-color: #765C14; }
-        .mk-tech-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; color: #765C14; border: 1px solid rgba(201,168,76,0.4); padding: 3px 10px; border-radius: 100px; margin-bottom: 16px; }
-        .mk-tech-title { font-size: 15px; font-weight: 700; color: #2D1204; margin-bottom: 10px; }
+        .mk-tech-card:hover { border-color: #D8001F; }
+        .mk-tech-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; color: #D8001F; border: 1px solid rgba(216,0,31,0.4); padding: 3px 10px; border-radius: 100px; margin-bottom: 16px; }
+        .mk-tech-title { font-size: 15px; font-weight: 700; color: #111318; margin-bottom: 10px; }
         .mk-tech-desc { font-size: 13px; color: #64748b; line-height: 1.65; margin-bottom: 20px; }
         .mk-tech-specs { border-top: 1px solid #E8E8E8; padding-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .mk-spec-key { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.8px; text-transform: uppercase; color: #475569; }
         .mk-spec-val { font-size: 12px; font-weight: 700; color: #1A1A1A; margin-top: 1px; }
-        .mk-tech-note { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.25); border-left: 3px solid #c9a84c; padding: 14px 18px; border-radius: 4px; font-size: 14px; color: #374151; line-height: 1.6; }
-        .mk-tech-note strong { color: #2D1204; }
+        .mk-tech-note { background: rgba(216,0,31,0.08); border: 1px solid rgba(216,0,31,0.25); border-left: 3px solid #D8001F; padding: 14px 18px; border-radius: 4px; font-size: 14px; color: #374151; line-height: 1.6; }
+        .mk-tech-note strong { color: #111318; }
         .mk-h2-dark  { font-family: 'Sora', system-ui, sans-serif; font-size: clamp(30px,3.8vw,50px); font-weight: 700; color: #1E1E1E; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.08; }
         .mk-sub-dark  { font-size: 16px; color: #64748b; max-width: 520px; line-height: 1.7; margin-bottom: 52px; }
 
@@ -429,24 +431,24 @@ export default function Index() {
         .mk-survey::before {
           content: ''; position: absolute; inset: 0; pointer-events: none;
           background:
-            radial-gradient(ellipse 50% 60% at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 60% at 50% 0%, rgba(216,0,31,0.12) 0%, transparent 60%),
             radial-gradient(ellipse 30% 30% at 10% 100%, rgba(74,32,8,0.06) 0%, transparent 50%);
         }
         .mk-survey-inner { max-width: 600px; margin: 0 auto; }
-        .mk-submit-btn { background: #4A2008; color: #fff; border: none; padding: 14px 32px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 6px; font-family: 'Sora', sans-serif; transition: all 0.2s; }
-        .mk-submit-btn:hover { background: #c9a84c; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,168,76,0.28); }
+        .mk-submit-btn { background: #111318; color: #fff; border: none; padding: 14px 32px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 6px; font-family: 'Sora', sans-serif; transition: all 0.2s; }
+        .mk-submit-btn:hover { background: #D8001F; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(216,0,31,0.28); }
         .mk-form-note { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #475569; text-align: center; letter-spacing: 0.5px; }
 
         /* ── FOOTER ── */
         .mk-footer { padding: 28px 52px; background: #fff; border-top: 1px solid #E8E8E8; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-        .mk-footer-name { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; color: #2D1204; }
+        .mk-footer-name { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; color: #111318; }
         .mk-footer-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #555555; letter-spacing: 0.5px; margin-top: 2px; }
         .mk-footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #475569; letter-spacing: 0.5px; }
 
         /* ── MOBILE ── */
         .mk-mobile-menu { background: #fff; border-bottom: 1px solid #e2e8f3; padding: 16px 24px; display: flex; flex-direction: column; gap: 4px; }
-        .mk-mobile-link { font-size: 15px; font-weight: 500; color: #2D1204; padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
-        .mk-mobile-cta { font-size: 14px; font-weight: 700; color: #fff; background: #4A2008; padding: 12px; border-radius: 6px; text-align: center; margin-top: 8px; }
+        .mk-mobile-link { font-size: 15px; font-weight: 500; color: #111318; padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
+        .mk-mobile-cta { font-size: 14px; font-weight: 700; color: #fff; background: #111318; padding: 12px; border-radius: 6px; text-align: center; margin-top: 8px; }
 
         @media (max-width: 1024px) {
           .mk-hero-inner { grid-template-columns: 1fr; }
@@ -471,7 +473,7 @@ export default function Index() {
           font-family: 'Sora', sans-serif;
           font-size: 26px;
           font-weight: 800;
-          color: #765C14;
+          color: #D8001F;
           line-height: 1;
           margin-bottom: 4px;
         }
@@ -489,7 +491,7 @@ export default function Index() {
           .mk-designed-grid { grid-template-columns: 1fr; }
           .mk-why-now-grid { grid-template-columns: 1fr; }
           .mk-proof-bar-inner { grid-template-columns: 1fr; }
-          .mk-proof-bar-label { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); padding: 16px 0; }
+          .mk-proof-bar-label { border-right: none; border-bottom: 1px solid rgba(216,0,31,0.2); padding: 16px 0; }
           .mk-proof-bar-items { padding: 16px 0; flex-wrap: wrap; gap: 12px; }
           .mk-proof-bar-item { border-right: none; padding: 4px 0; margin-right: 0; }
         }
@@ -581,7 +583,7 @@ export default function Index() {
               Mykei is developing ADN, a shelf level device designed to turn a theft event into a marker and a registry record. No cameras. No biometric data. The aim is to make stolen stock harder to move. ADN is a working prototype and is not yet deployed in stores.
             </p>
 
-            <p ref={statsReveal.ref} style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 13, color: "#765C14", marginBottom: 28 }}>
+            <p ref={statsReveal.ref} style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 13, color: "#4A4F58", marginBottom: 28 }}>
               £{(b42/10).toFixed(1)}B lost to retail theft annually in the UK, reported industry figure, not independently verified by Mykei.
             </p>
 
@@ -655,9 +657,9 @@ export default function Index() {
                 { icon: "◈", point: "Staff confrontation is dangerous.", sub: "ADN is designed for non-confrontational shelf defence without cameras, facial recognition, or biometric data." },
               ].map(({ icon, point, sub }) => (
                 <div key={point} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono',monospace", color: "#765C14", fontSize: 13, flexShrink: 0, marginTop: 2 }}>{icon}</span>
+                  <span style={{ fontFamily: "'JetBrains Mono',monospace", color: "#D8001F", fontSize: 13, flexShrink: 0, marginTop: 2 }}>{icon}</span>
                   <div>
-                    <div style={{ fontFamily: "'Sora',sans-serif", fontWeight: 600, fontSize: 14, color: "#2D1204", marginBottom: 6 }}>{point}</div>
+                    <div style={{ fontFamily: "'Sora',sans-serif", fontWeight: 600, fontSize: 14, color: "#111318", marginBottom: 6 }}>{point}</div>
                     <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, color: "#64748b", lineHeight: 1.65 }}>{sub}</div>
                   </div>
                 </div>
@@ -665,7 +667,7 @@ export default function Index() {
             </div>
             <a href="/howitworks#faq" style={{
               fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: 2,
-              color: "#B07820", textDecoration: "none", textTransform: "uppercase" as const,
+              color: "#D8001F", textDecoration: "none", textTransform: "uppercase" as const,
               borderBottom: "1px solid rgba(176,120,32,0.4)", paddingBottom: 2,
             }}>
               Frequently Asked Questions →
@@ -686,13 +688,13 @@ export default function Index() {
             <a href="/adn" style={{
               display: "inline-flex", alignItems: "center",
               fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: 1.5,
-              color: "#765C14", textDecoration: "none",
+              color: "#D8001F", textDecoration: "none",
               borderBottom: "1px solid rgba(212,168,67,0.3)", paddingBottom: 2,
             }}>View ADN in detail →</a>
             <a href="/howitworks" style={{
               display: "inline-flex", alignItems: "center",
               fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: 1.5,
-              color: "#765C14", textDecoration: "none",
+              color: "#D8001F", textDecoration: "none",
               borderBottom: "1px solid rgba(212,168,67,0.3)", paddingBottom: 2,
             }}>See How It Works →</a>
           </div>

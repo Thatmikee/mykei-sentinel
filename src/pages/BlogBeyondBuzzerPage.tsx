@@ -30,9 +30,9 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-const GOLD = "#c9a84c";
+const GOLD = "#D8001F";
 const INK = "#1E1E1E";
-const MID = "#5c4a32";
+const MID = "#4A4F58";
 const FAINT = "#F4F6F8";
 
 const EVIDENCE = [
@@ -219,7 +219,7 @@ export default function BlogBeyondBuzzerPage() {
 
         <Reveal delay={0.12}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, paddingTop: 24, borderTop: `1px solid rgba(26,17,8,0.1)` }}>
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: FAINT, border: `1px solid rgba(201,168,76,0.3)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: 36, height: 36, borderRadius: "50%", background: FAINT, border: `1px solid rgba(216,0,31,0.3)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
               <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: GOLD, fontWeight: 500 }}>ME</span>
             </div>
             <div>

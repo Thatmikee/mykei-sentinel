@@ -177,8 +177,8 @@ export const HeroSection = () => {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          background: #fff8f0;
-          border: 1px solid #fde4c0;
+          background: #F4F6F8;
+          border: 1px solid #D8DBE0;
           border-radius: 100px;
           padding: 5px 14px 5px 10px;
           margin-bottom: 28px;

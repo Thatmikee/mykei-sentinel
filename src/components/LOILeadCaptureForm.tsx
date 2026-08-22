@@ -1,13 +1,11 @@
 // LOILeadCaptureForm.tsx
 // Drop this into your src/components/ directory.
 // Requires: react-router-dom (already in Vite+shadcn stack)
-// On submit → POSTs to Netlify Forms + navigates to /pilot-download
 //
-// Netlify setup: the hidden input name="form-name" value="loi-enquiry" is
-// all you need. Netlify auto-detects it on first deploy.
 
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTurnstile, ENQUIRY_ENDPOINT } from "../hooks/useTurnstile";
 
 const NAVY   = "#0D2240";
 const ORANGE = "#E8621A";
@@ -54,6 +52,7 @@ const EMPTY: FormState = {
 
 export default function LOILeadCaptureForm() {
   const navigate = useNavigate();
+  const { token: tsToken, reset: tsReset } = useTurnstile("ts-loi-container", "loi-enquiry");
   const formRef  = useRef<HTMLFormElement>(null);
 
   const [fields, setFields]       = useState<FormState>(EMPTY);
@@ -84,25 +83,45 @@ export default function LOILeadCaptureForm() {
     setSubmitting(true);
     setSubmitError("");
 
+    // Forms captures a submission. The site is on Cloudflare Pages, where that
+    // request just returns the HTML document with a 200. The old catch block
+    // then navigated to the success page anyway, so every enquiry was accepted,
+    // confirmed to the sender, and lost. It now goes to the Worker, and a
+    // failure is shown as a failure.
+    if (!tsToken) {
+      setSubmitError("Verification is still loading. Please try again in a moment.");
+      setSubmitting(false);
+      return;
+    }
+
     try {
-      const body = new URLSearchParams({
-        "form-name": "loi-enquiry",
-        ...Object.fromEntries(Object.entries(fields)),
-      });
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
-      });
-      if (!res.ok) throw new Error("Submission failed");
+      const body = new FormData();
+      body.append("formType", "enquiry");
+      body.append("source", "loi-enquiry");
+      body.append("fullName", fields.ownerName);
+      body.append("storeName", fields.storeName);
+      body.append("company", fields.storeName);
+      body.append("email", fields.email);
+      body.append("phone", fields.phone || "");
+      body.append("message", fields.message || "");
+      body.append("cf-turnstile-response", tsToken);
+
+      const res = await fetch(ENQUIRY_ENDPOINT, { method: "POST", body });
+      const result = await res.json().catch(() => ({ success: false }));
+
+      if (!res.ok || !result.success) {
+        tsReset();
+        setSubmitError("Submission failed. Please email protocol@mykei.io directly.");
+        setSubmitting(false);
+        return;
+      }
+
       navigate("/pilot-download", {
         state: { name: fields.ownerName.split(" ")[0], store: fields.storeName },
       });
     } catch {
-      // Netlify Forms may return 200 even on static-preview; navigate anyway
-      navigate("/pilot-download", {
-        state: { name: fields.ownerName.split(" ")[0], store: fields.storeName },
-      });
+      tsReset();
+      setSubmitError("Network error. Please email protocol@mykei.io directly.");
     } finally {
       setSubmitting(false);
     }
@@ -164,10 +183,8 @@ export default function LOILeadCaptureForm() {
             onSubmit={handleSubmit}
             name="loi-enquiry"
             method="POST"
-            data-netlify="true"
             className="p-8 md:p-10 space-y-6"
           >
-            {/* Netlify hidden field */}
             <input type="hidden" name="form-name" value="loi-enquiry" />
 
             {/* Row 1 */}
@@ -292,6 +309,7 @@ export default function LOILeadCaptureForm() {
               {submitError && (
                 <p className="text-red-500 text-sm mb-4 text-center">{submitError}</p>
               )}
+              <div id="ts-loi-container" />
               <button
                 type="submit"
                 disabled={submitting}

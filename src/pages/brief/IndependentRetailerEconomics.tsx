@@ -20,8 +20,8 @@ export default function IndependentRetailerEconomics() {
           fontSize: 11,
           letterSpacing: "0.15em",
           textTransform: "uppercase",
-          color: "#D4AF37",
-          border: "1px solid #D4AF37",
+          color: "#D8001F",
+          border: "1px solid #D8001F",
           padding: "4px 10px",
           marginBottom: 12,
         }}>
@@ -32,7 +32,7 @@ export default function IndependentRetailerEconomics() {
           alt="Financial economics"
           style={{ width: "100%", maxHeight: 400, objectFit: "cover", borderRadius: 4, display: "block", marginBottom: 8 }}
         />
-        <p style={{ fontFamily: "monospace", fontSize: 11, color: "#8A7560", margin: 0 }}>Photo: Unsplash</p>
+        <p style={{ fontFamily: "monospace", fontSize: 11, color: "#767D88", margin: 0 }}>Photo: Unsplash</p>
       </div>
 
       <h2>The Problem With Security ROI Calculations</h2>
