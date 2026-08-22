@@ -139,7 +139,7 @@ export default function SignalShopliftingSystemPage() {
 
           {/* Stat block */}
           <Reveal delay={0.12}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 48, background: "#F9F7F3", border: `1px solid ${RULE}`, borderRadius: 6, padding: 28 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 16, marginBottom: 48, background: "#F4F6F8", border: `1px solid ${RULE}`, borderRadius: 6, padding: 28 }}>
               {[
                 { stat: "+133%", label: "shoplifting increase in 5 years", source: "LBC / Home Office" },
                 { stat: "1 in 5", label: "cases charged nationally", source: "Liberal Democrats data" },
@@ -243,7 +243,7 @@ export default function SignalShopliftingSystemPage() {
 
           {/* Key takeaways */}
           <Reveal>
-            <div style={{ background: "#F9F7F3", border: `1px solid ${RULE}`, borderRadius: 6, padding: "28px 32px", marginBottom: 48 }}>
+            <div style={{ background: "#F4F6F8", border: `1px solid ${RULE}`, borderRadius: 6, padding: "28px 32px", marginBottom: 48 }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, marginBottom: 16 }}>Key takeaways</div>
               <ul style={{ margin: 0, padding: "0 0 0 18px", lineHeight: 2 }}>
                 <li style={{ fontSize: 15, color: INK }}>Shoplifting offences are up 133% in five years in England and Wales (530,643 in year to March 2025)</li>

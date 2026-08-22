@@ -233,7 +233,7 @@ export default function HowItWorksPage() {
           background: #ffffff;
           padding: clamp(24px, 3vw, 34px);
         }
-        .hiw-card.dark { background: #0a0b0a; border-color: #0a0b0a; color: #f5f5f0; }
+        .hiw-card.dark { background: #0a0b0a; border-color: #0a0b0a; color: #F7F8FA; }
         .hiw-card-title { margin: 0 0 12px; font-size: 18px; font-weight: 800; color: inherit; }
         .hiw-card-text { margin: 0; color: #4b5563; line-height: 1.72; font-size: 15px; }
         .hiw-card.dark .hiw-eyebrow { color: #d4af37; }
@@ -358,7 +358,7 @@ export default function HowItWorksPage() {
         .hiw-faq p { margin: 14px 0 0; color: #4b5563; line-height: 1.72; font-size: 14px; }
         .hiw-cta {
           background: #0a0b0a;
-          color: #f5f5f0;
+          color: #F7F8FA;
           border-radius: 10px;
           padding: clamp(32px, 5vw, 56px);
           display: grid;

@@ -299,7 +299,7 @@ export default function Pilot() {
     width: "100%", padding: "12px 14px", borderRadius: "8px",
     border: `1.5px solid ${hasError ? "#C0392B" : SAND}`,
     fontSize: "15px", color: DARK, outline: "none",
-    boxSizing: "border-box", fontFamily: "inherit", background: "#FFFDF9",
+    boxSizing: "border-box", fontFamily: "inherit", background: "#FFFFFF",
     transition: "border-color 0.2s",
   });
   const lbl: React.CSSProperties = {
@@ -439,7 +439,7 @@ export default function Pilot() {
               <div style={{ background: PANEL, border: `1px solid ${SAND}`, borderRadius: "10px", padding: "16px 18px", marginBottom: "20px", fontSize: "13px", color: MUTED, lineHeight: 1.75 }}>
                 I, <strong style={{ color: DARK }}>{form.fullName}</strong>, confirm that <strong style={{ color: DARK }}>{form.storeName}</strong> intends to participate in the Mykei Securities ADN Independent Retail Pilot. {commercialTerms.displayLine}. No obligation after the pilot.
               </div>
-              <div style={{ border: `2px dashed ${signed ? GOLD : SAND}`, borderRadius: "10px", overflow: "hidden", marginBottom: "8px", position: "relative", background: "#FFFDF9", transition: "border-color 0.2s" }}>
+              <div style={{ border: `2px dashed ${signed ? GOLD : SAND}`, borderRadius: "10px", overflow: "hidden", marginBottom: "8px", position: "relative", background: "#FFFFFF", transition: "border-color 0.2s" }}>
                 <canvas ref={canvasRef} width={460} height={120}
                   style={{ display: "block", width: "100%", height: "120px", cursor: "crosshair", touchAction: "none" }}
                   onMouseDown={startDraw} onMouseMove={draw} onMouseUp={endDraw} onMouseLeave={endDraw}
