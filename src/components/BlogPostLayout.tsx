@@ -4,7 +4,7 @@ import { BlogPostMeta } from "@/data/blogPosts";
 
 const DARK = "#1E1E1E";
 const GOLD = "#D4AF37";
-const CREAM = "#F8F3ED";
+const CREAM = "#FFFFFF";
 const MUTED = "#8A7560";
 
 function formatDate(iso: string): string {

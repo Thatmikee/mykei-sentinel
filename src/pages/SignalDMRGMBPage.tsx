@@ -9,7 +9,7 @@ import SignalRunningHead from "@/components/SignalRunningHead";
 const GOLD = "#D8001F";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
-const WARM = "#F5F1EB";
+const WARM = "#F4F6F8";
 const RULE = "#DDD5C4";
 
 function useReveal() {
@@ -135,7 +135,7 @@ export default function SignalDMRGMBPage() {
           </Reveal>
 
           <Reveal>
-            <div style={{ background: INK, color: "#F5F1EB", padding: "32px 36px", borderRadius: 10, marginBottom: 36, position: "relative" }}>
+            <div style={{ background: INK, color: "#F7F8FA", padding: "32px 36px", borderRadius: 10, marginBottom: 36, position: "relative" }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "2.5px", textTransform: "uppercase", color: GOLD, marginBottom: 18 }}>The Theatre Diagnosis</div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
                 {[

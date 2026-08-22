@@ -6,7 +6,7 @@
  * locally per page. That is why the site read as inconsistent. One accent, one
  * source of truth, imported everywhere.
  *
- * Contrast, measured (not estimated) against PAPER (#FAFAF6):
+ * Contrast, measured (not estimated) against PAPER (#FFFFFF):
  *   ACCENT       #8A6D1F   4.68:1  passes AA for body text
  *   ACCENT_LIGHT #A8861E   3.29:1  passes AA for large text, rules, borders
  *   INK          #0F0C08  18.65:1
@@ -22,8 +22,9 @@
  */
 
 export const SIGNAL = {
-  /** Page ground. Warm off-white so long-form reading is not glare. */
-  PAPER: "#FAFAF6",
+  /** Page ground. White. The warm off-white was one of six competing
+   * creams across the codebase and read as unresolved rather than warm. */
+  PAPER: "#FFFFFF",
   /** Cards, mastheads and anything that should lift off the ground. */
   SURFACE: "#FFFFFF",
 

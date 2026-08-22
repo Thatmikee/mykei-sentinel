@@ -320,7 +320,7 @@ export default function FounderPage() {
       </section>
 
       {/* WHY WE EXIST */}
-      <section style={{ background: "#FAFAF8", padding: "80px 52px", borderTop: "1px solid #E8E8E8" }}>
+      <section style={{ background: "#F4F6F8", padding: "80px 52px", borderTop: "1px solid #E8E8E8" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
             <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9.5, letterSpacing: 2.5, textTransform: "uppercase", color: "#765C14", display: "block", marginBottom: 20 }}>Why We Exist</span>

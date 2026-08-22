@@ -22,6 +22,21 @@ export const RED_EDITION = {
   INK_3:  "#767D88",
   RULE:   "#D8DBE0",
   RULE_2: "#EDEFF2",
+  /**
+   * Panel fill. Pull quotes, key-takeaway boxes, source panels.
+   *
+   * This token exists because the ground went white. The legacy pages filled
+   * those panels with cream (#F5F1EB), which was doing two jobs at once: it
+   * was the page ground AND the panel tint, so the panel only read as a panel
+   * because it happened to match the paper. On white, setting those fills to
+   * white would not make them white, it would make them vanish, and the pull
+   * quotes would lose their shape. So the tint is declared separately and
+   * pulled to the cool side to sit with INK and RULE rather than fight them.
+   *
+   * 1.03:1 against GROUND. That is deliberate and is not a contrast failure:
+   * it is a surface, never a text colour. Text on it uses INK (17.4:1).
+   */
+  TINT:   "#F4F6F8",
   RED:    "#D8001F",
 } as const;
 

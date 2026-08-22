@@ -361,7 +361,7 @@ export default function Index() {
 
         /* ── WHY NOW ── */
         .mk-why-now {
-          background: #FAFAF8; padding: 72px 52px;
+          background: #F4F6F8; padding: 72px 52px;
         }
         .mk-why-now-inner { max-width: 1100px; margin: 0 auto; }
         .mk-why-now-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
@@ -398,7 +398,7 @@ export default function Index() {
         /* ── TECH ── */
         .mk-tech {
           padding: 96px 52px;
-          background: #FAFAF8;
+          background: #F4F6F8;
           position: relative;
         }
         .mk-tech-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }

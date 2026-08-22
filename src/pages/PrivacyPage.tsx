@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 const GOLD = "#C9A84C";
 const INK = "#1A1A18";
-const PAPER = "#FAFAF8";
+const PAPER = "#FFFFFF";
 const MUTED = "#6B6B65";
 const RULE = "#E8E8E4";
 

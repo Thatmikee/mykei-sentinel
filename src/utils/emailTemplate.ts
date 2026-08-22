@@ -187,7 +187,7 @@ export function generateRetailerEmail(data: LOIData): string {
     /* ── Hero Band ───────────────────────────────────────── */
 
     .hero {
-      background: #f8f3ed;
+      background: #f4f6f8;
       border-bottom: 1px solid #e0d9d0;
       padding: 36px 48px 32px;
       animation: fadeInUp 0.7s ease 0.3s both;
@@ -365,7 +365,7 @@ export function generateRetailerEmail(data: LOIData): string {
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 12px;
-      background: #f8f3ed;
+      background: #f4f6f8;
       border: 1px solid #e8e0d6;
       border-radius: 4px;
       overflow: hidden;

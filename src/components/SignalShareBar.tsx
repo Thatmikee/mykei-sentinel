@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const GOLD = "#D4AF37";
 const INK = "#1E1E1E";
-const PAPER = "#FAF8F3";
+const PAPER = "#F4F6F8";
 const RULE = "#E2D9C8";
 
 interface SignalShareBarProps {

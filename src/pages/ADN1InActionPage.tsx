@@ -827,7 +827,7 @@ export default function ADN1InActionPage() {
         }
 
         /* SPLIT SCROLL */
-        .adn-split { display: flex; align-items: flex-start; background: #FAFAF8; }
+        .adn-split { display: flex; align-items: flex-start; background: #F4F6F8; }
         .adn-split-left { flex: 0 0 48%; padding: 8vh 48px 20vh 80px; }
         .adn-split-right {
           flex: 0 0 52%;

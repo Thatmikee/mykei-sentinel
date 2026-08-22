@@ -73,7 +73,7 @@ function PostNotFound() {
     <SignalRunningHead />
     <div style={{
       minHeight: "100vh",
-      backgroundColor: "#F8F3ED",
+      backgroundColor: "#FFFFFF",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",

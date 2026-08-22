@@ -389,7 +389,7 @@ export default function EconomicSterilisationPage() {
       </section>
 
       {/* WHY NOW */}
-      <section style={{ background: "#FAFAF8", padding: "72px clamp(24px,5vw,80px)" }}>
+      <section style={{ background: "#F4F6F8", padding: "72px clamp(24px,5vw,80px)" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Reveal>
             <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "#D4AF37", marginBottom: 16 }}>Why now</div>

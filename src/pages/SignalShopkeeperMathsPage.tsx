@@ -9,7 +9,7 @@ import SignalRunningHead from "@/components/SignalRunningHead";
 const GOLD = "#D8001F";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
-const WARM = "#F5F1EB";
+const WARM = "#F4F6F8";
 const RULE = "#DDD5C4";
 
 function useReveal() {
@@ -124,7 +124,7 @@ export default function SignalShopkeeperMathsPage() {
           </Reveal>
 
           <Reveal>
-            <div style={{ background: INK, color: "#F5F1EB", padding: "36px 40px", borderRadius: 10, marginBottom: 40 }}>
+            <div style={{ background: INK, color: "#F7F8FA", padding: "36px 40px", borderRadius: 10, marginBottom: 40 }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "2.5px", textTransform: "uppercase", color: GOLD, marginBottom: 24 }}>ADN Pricing: Scoped Per Pilot</div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "rgba(255,255,255,0.07)", borderRadius: 8, overflow: "hidden", marginBottom: 24 }}>
                 {[

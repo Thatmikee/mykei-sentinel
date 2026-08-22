@@ -9,7 +9,7 @@ import SignalRunningHead from "@/components/SignalRunningHead";
 const GOLD = "#D8001F";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
-const WARM = "#F5F1EB";
+const WARM = "#F4F6F8";
 const RULE = "#DDD5C4";
 
 function useReveal() {
@@ -126,7 +126,7 @@ export default function SignalSaferGemsPage() {
 
           {/* Opening stat block */}
           <Reveal>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 44 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 16, marginBottom: 44 /* was repeat(3,1fr). At 375px that forced each cell to 118px, narrower than the figures inside it, and the third card overflowed the viewport by 62px in every browser. auto-fit lets it drop to two columns, then one. */ }}>
               {[
                 { n: "10×", label: "increase in armed jewellery robberies, Q1 2025 to Q1 2026", src: "SaferGems Q1 2026" },
                 { n: "£3.2M", label: "stolen in Q1 2026 alone, up from £60K in the whole of 2025", src: "SaferGems Q1 2026" },
@@ -177,7 +177,7 @@ export default function SignalSaferGemsPage() {
 
           {/* Timeline panel */}
           <Reveal>
-            <div style={{ background: INK, color: "#F5F1EB", padding: "32px 36px", borderRadius: 10, marginBottom: 36 }}>
+            <div style={{ background: INK, color: "#F7F8FA", padding: "32px 36px", borderRadius: 10, marginBottom: 36 }}>
               <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "2.5px", textTransform: "uppercase", color: GOLD, marginBottom: 20 }}>SaferGems · Q1 2026 at a Glance</div>
               <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                 {[

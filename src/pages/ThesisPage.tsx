@@ -4,7 +4,9 @@ import PageSEO from "@/components/PageSEO";
 
 const DARK = "#1E1E1E";
 const GOLD = "#C8A96E";
-const CREAM = "#F8F3ED";
+const CREAM   = "#FFFFFF";   // page ground
+const ONDARK  = "#F7F8FA";   // light type on ink blocks
+const PANEL   = "#F4F6F8";   // boxed fills that must read on white
 const MUTED = "#8A7560";
 
 const schemaData = {
@@ -164,7 +166,7 @@ export default function ThesisPage() {
           style={{
             fontFamily: "'Playfair Display', Georgia, serif",
             fontSize: "clamp(2.4rem, 6vw, 4rem)",
-            color: CREAM,
+            color: ONDARK,
             fontWeight: 700,
             lineHeight: 1.15,
             margin: "0 auto 28px",
@@ -419,7 +421,7 @@ export default function ThesisPage() {
         <h2
           style={{
             fontFamily: "'Playfair Display', Georgia, serif",
-            color: CREAM,
+            color: ONDARK,
             fontSize: "clamp(1.6rem, 4vw, 2.4rem)",
             fontWeight: 700,
             marginBottom: 16,
@@ -502,7 +504,7 @@ const bodyText: React.CSSProperties = {
 };
 
 const thStyle: React.CSSProperties = {
-  color: CREAM,
+  color: ONDARK,
   fontFamily: "'Arial', sans-serif",
   fontSize: 12,
   letterSpacing: "0.08em",

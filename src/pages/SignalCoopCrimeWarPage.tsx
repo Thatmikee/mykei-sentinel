@@ -12,7 +12,7 @@ const GOLD = "#D8001F";
 const GOLD_DARK = "#A80018";
 const INK = "#0F0C08";
 const MID = "#5c4a32";
-const WARM = "#F5F1EB";
+const WARM = "#F4F6F8";
 const RULE = "#DDD5C4";
 const PALE = "#FAFAF7";
 

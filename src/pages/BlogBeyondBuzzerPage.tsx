@@ -33,7 +33,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 const GOLD = "#c9a84c";
 const INK = "#1E1E1E";
 const MID = "#5c4a32";
-const FAINT = "#f5f1eb";
+const FAINT = "#F4F6F8";
 
 const EVIDENCE = [
   {
