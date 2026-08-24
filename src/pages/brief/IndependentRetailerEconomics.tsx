@@ -64,7 +64,7 @@ export default function IndependentRetailerEconomics() {
         setup covering the unit, installation, and Mykei Registry onboarding, followed by a
         monthly subscription for continued service, event logging, registry access, and support.
         No fixed pricing is published. Terms would be agreed directly with Mykei for any store
-        considering participation; visit mykei.io/pilot to start that conversation.
+        considering participation. Pilot applications are closed while ADN is in prototype; write to protocol@mykei.io to hear when that changes.
       </p>
       <p>
         The HaaS model matters for independent retailers because it eliminates capital expenditure.
@@ -105,7 +105,7 @@ export default function IndependentRetailerEconomics() {
       <p>
         For a retailer losing GBP 4,600 per year to theft, the break-even calculation is
         straightforward once the monthly subscription figure is known. For pricing details and
-        to apply for the pilot, visit mykei.io/pilot.
+        to hear when pilot applications reopen, write to protocol@mykei.io.
       </p>
     </article>
   );

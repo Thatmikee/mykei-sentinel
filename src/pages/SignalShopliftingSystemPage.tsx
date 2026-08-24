@@ -263,7 +263,7 @@ export default function SignalShopliftingSystemPage() {
               <p style={{ fontFamily: "'Georgia',serif", fontSize: 15, color: "#555", lineHeight: 1.7, marginBottom: 24 }}>
                 Independent retailers in Manchester can apply for an upcoming pilot cohort. No obligation after pilot. Commercial terms agreed directly with Mykei.
               </p>
-              <a href="/pilot" style={{ display: "inline-block", background: GOLD, color: INK, fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", padding: "14px 32px", borderRadius: 4, textDecoration: "none" }}>
+              <a href="/contact" style={{ display: "inline-block", background: GOLD, color: INK, fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", padding: "14px 32px", borderRadius: 4, textDecoration: "none" }}>
                 Apply for the Pilot
               </a>
             </div>
@@ -297,7 +297,7 @@ export default function SignalShopliftingSystemPage() {
           <div style={{ display: "flex", gap: 24 }}>
             <a href="/signal" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", textDecoration: "none" }}>All articles</a>
             <a href="/economic-sterilisation" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", textDecoration: "none" }}>Economic Sterilisation</a>
-            <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", textDecoration: "none" }}>Join the Pilot</a>
+            <a href="/contact" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#999", textDecoration: "none" }}>Join the Pilot</a>
           </div>
         </footer>
 

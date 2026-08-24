@@ -147,7 +147,7 @@ export default function FounderPage() {
           <span style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 700, color: "#1E1E1E", letterSpacing: 0.5 }}>MYKEI SECURITIES LTD</span>
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: 2.5, textTransform: "uppercase", color: "#767D88" }}>Back to site</span>
         </a>
-        <a href="/pilot" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D8001F", padding: "8px 20px", borderRadius: 8 }}>Join the Pilot</a>
+        <a href="/contact" style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D8001F", padding: "8px 20px", borderRadius: 8 }}>Join the Pilot</a>
       </nav>
 
       {/* HERO */}
@@ -381,7 +381,7 @@ export default function FounderPage() {
           </h2>
           <p style={{ fontSize: 15, color: "#666", marginBottom: 36 }}>Greater Manchester, 2026, commercial terms agreed directly with Mykei</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/pilot" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D8001F", padding: "14px 32px", borderRadius: 8 }}>Join the Pilot</a>
+            <a href="/contact" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D8001F", padding: "14px 32px", borderRadius: 8 }}>Join the Pilot</a>
             <a href="https://michaelesema.com" target="_blank" rel="noreferrer" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "14px 32px", borderRadius: 8 }}>Visit michaelesema.com</a>
           </div>
         </Reveal>

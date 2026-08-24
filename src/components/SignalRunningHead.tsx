@@ -74,7 +74,7 @@ export default function SignalRunningHead() {
         {/* The pilot call to action was on the legacy per-article nav that this
             component replaces. Carried over rather than dropped: removing a
             public call to action is an editorial decision, not a refactor. */}
-        <Link to="/pilot" className="srh-a srh-cta" style={{ flexShrink: 0 }}>
+        <Link to="/contact" className="srh-a srh-cta" style={{ flexShrink: 0 }}>
           <span style={{
             fontFamily: MONO, fontSize: 10.5, letterSpacing: "0.09em",
             textTransform: "uppercase", color: INK,

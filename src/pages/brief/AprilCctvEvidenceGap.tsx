@@ -74,7 +74,7 @@ export default function AprilCctvEvidenceGap() {
 
       <p>
         Read <a href="/howitworks">how ADN works</a>, then see the <a href="/adn">ADN system page</a>.
-        If your store has a shelf that keeps getting hit, request a <a href="/pilot">pilot fit check</a>.
+        If your store has a shelf that keeps getting hit, request a <a href="/contact">pilot fit check</a>.
       </p>
 
       <h2>Sources</h2>

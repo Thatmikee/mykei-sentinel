@@ -105,7 +105,7 @@ export default function TermsPage() {
 
             <h2 style={h2}>4. Independent Retail Pilot</h2>
             <p style={p}>
-              Submission of a Letter of Intent via the pilot form at mykei.io/pilot does not constitute a binding contract. It expresses an intention to discuss participation in the Independent Retail Pilot programme and initiates a conversation with Michael Esema, Founder.
+              The Independent Retail Pilot is not open for applications and Mykei is not accepting Letters of Intent. Letters of Intent submitted previously did not constitute a binding contract; they expressed an intention to discuss participation and nothing more.
             </p>
             <p style={p}>
               Pilot pricing is scoped per pilot and confirmed in writing before device installation. No lock-in applies after the initial pilot term.

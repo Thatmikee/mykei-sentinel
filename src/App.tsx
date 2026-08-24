@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
-const Pilot                    = lazy(() => import("./pages/Pilot"));
 const HowItWorks               = lazy(() => import("./pages/HowItWorksPage"));
 const Roadmap                  = lazy(() => import("./pages/Roadmap"));
 const ADN1Detail               = lazy(() => import("./pages/ADN1DetailPage"));
@@ -79,7 +78,7 @@ const App = () => (
         <Suspense fallback={<div style={{ height: "100vh", background: "#FFFFFF" }} />}>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/pilot" element={<Pilot />} />
+            <Route path="/contact" element={<Navigate to="/contact" replace />} />
             <Route path="/howitworks" element={<HowItWorks />} />
             <Route path="/how-it-works" element={<Navigate to="/howitworks" replace />} />
             <Route path="/roadmap" element={<Roadmap />} />
@@ -135,7 +134,7 @@ const App = () => (
             <Route path="/brief" element={<Navigate to="/signal" replace />} />
             <Route path="/brief/newsletter" element={<Navigate to="/signal" replace />} />
             <Route path="/brief/:slug" element={<BlogPostPage />} />
-            <Route path="/subscribe" element={<Navigate to="/pilot" replace />} />
+            <Route path="/subscribe" element={<Navigate to="/contact" replace />} />
             <Route path="/protocol" element={<ProtocolPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

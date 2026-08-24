@@ -26,7 +26,7 @@ function SimpleNav() {
       <a href="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: INK, textDecoration: "none" }}>
         Mykei Securities
       </a>
-      <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
+      <a href="/contact" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
         Apply for Pilot
       </a>
     </nav>
@@ -164,7 +164,7 @@ export default function StateOfTheftPage() {
               If you are a retailer and want early access to the data and the ADN pilot, request a place in the Manchester cohort.
             </p>
             <a
-              href="/pilot"
+              href="/contact"
               style={{ display: "inline-block", padding: "12px 24px", background: INK, color: "#fff", borderRadius: 4, fontFamily: "'JetBrains Mono', monospace", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}
             >
               Apply for ADN pilot

@@ -110,8 +110,8 @@ export default function EconomicSterilisationExplained() {
 
       <p style={{ marginTop: "2rem", fontStyle: "italic" }}>
         Commercial terms are agreed directly with Mykei for retailers in the Manchester pilot. See{" "}
-        <a href="/pilot" style={{ textDecoration: "underline" }}>
-          mykei.io/pilot
+        <a href="/contact" style={{ textDecoration: "underline" }}>
+          protocol@mykei.io
         </a>
         .
       </p>

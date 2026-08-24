@@ -63,7 +63,7 @@ export default function JanuaryRetailTheftStoppedLookingRandom() {
 
       <p>
         See <a href="/howitworks">how ADN works</a> and the <a href="/adn">ADN product page</a>.
-        For retailers with repeat shelf theft, start with a <a href="/pilot">store fit check</a>.
+        For retailers with repeat shelf theft, start with a <a href="/contact">store fit check</a>.
       </p>
 
       <h2>Source</h2>

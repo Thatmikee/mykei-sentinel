@@ -1075,7 +1075,7 @@ export default function ADN1InActionPage() {
           <p className="adn-cta-sub">
             Apply for the Independent Retail Pilot. Prototype-stage registry-linked marker workflow, direct access to the founder. Sign a Letter of Intent to secure your place.
           </p>
-          <a href="/pilot" className="adn-cta-btn">Join the Pilot</a>
+          <a href="/contact" className="adn-cta-btn">Join the Pilot</a>
         </section>
 
         {/* FOOTER */}

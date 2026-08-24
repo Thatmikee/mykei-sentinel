@@ -89,7 +89,7 @@ export default function ProtectedByMykei() {
         and the cloud logging are the architecture beneath it.
       </p>
       <p>
-        Commercial terms are agreed directly with Mykei for retailers joining the pilot. Apply at mykei.io/pilot.
+        Pilot applications are closed while ADN is in prototype. Retailers who want to hear when that changes can write to protocol@mykei.io.
       </p>
     </article>
   );

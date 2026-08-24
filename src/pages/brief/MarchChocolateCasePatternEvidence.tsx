@@ -73,7 +73,7 @@ export default function MarchChocolateCasePatternEvidence() {
 
       <p>
         See <a href="/howitworks">how ADN turns a shelf event into a record</a>, then review the
-        <a href="/adn"> ADN system details</a>. Retailers can start with a <a href="/pilot">store fit check</a>.
+        <a href="/adn"> ADN system details</a>. Retailers can start with a <a href="/contact">store fit check</a>.
       </p>
 
       <h2>Source</h2>

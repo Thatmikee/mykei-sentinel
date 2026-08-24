@@ -237,7 +237,7 @@ export default function SignalPoliceThresholdPage() {
               <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, letterSpacing: "2px", textTransform: "uppercase", color: GOLD, marginBottom: 12 }}>Independent Retail Pilot, 2026</p>
               <p style={{ fontSize: 18, fontWeight: 600, marginBottom: 8, color: INK }}>Five places remaining for independent retailers.</p>
               <p style={{ fontSize: 15, color: MID, marginBottom: 24 }}>No cameras. No confrontation. No reliance on police response times.</p>
-              <a href="/pilot" style={{ background: GOLD, color: INK, padding: "14px 32px", fontFamily: "'JetBrains Mono',monospace", fontSize: 12, letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none", fontWeight: 700, display: "inline-block" }}>Apply for a Pilot Place</a>
+              <a href="/contact" style={{ background: GOLD, color: INK, padding: "14px 32px", fontFamily: "'JetBrains Mono',monospace", fontSize: 12, letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none", fontWeight: 700, display: "inline-block" }}>Apply for a Pilot Place</a>
             </div>
           </Reveal>
 

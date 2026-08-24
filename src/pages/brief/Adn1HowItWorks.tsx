@@ -103,8 +103,8 @@ export default function Adn1HowItWorks() {
 
       <p style={{ marginTop: "2rem", fontStyle: "italic" }}>
         Commercial terms are agreed directly with Mykei for pilot retailers. See{" "}
-        <a href="/pilot" style={{ textDecoration: "underline" }}>
-          mykei.io/pilot
+        <a href="/contact" style={{ textDecoration: "underline" }}>
+          protocol@mykei.io
         </a>
         .
       </p>

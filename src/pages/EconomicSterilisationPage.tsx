@@ -200,7 +200,7 @@ export default function EconomicSterilisationPage() {
           <span style={{ fontSize: 13, fontWeight: 700, color: "#111318", letterSpacing: 0.5 }}>MYKEI SECURITIES LTD</span>
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 8, letterSpacing: 2.5, textTransform: "uppercase", color: "#D8001F" }}>← Back to site</span>
         </a>
-        <a href="/pilot" style={{ fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D8001F", padding: "8px 20px", borderRadius: 6 }}>Register Interest →</a>
+        <a href="/contact" style={{ fontSize: 13, fontWeight: 600, color: "#1E1E1E", background: "#D8001F", padding: "8px 20px", borderRadius: 6 }}>Register Interest →</a>
       </nav>
 
       {/* HERO */}
@@ -453,7 +453,7 @@ export default function EconomicSterilisationPage() {
             Apply for the Independent Retail Pilot and evaluate Economic Sterilisation in Greater Manchester retail conditions.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="/pilot" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D8001F", padding: "14px 32px", borderRadius: 8 }}>Register Interest →</a>
+            <a href="/contact" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 700, color: "#1E1E1E", background: "#D8001F", padding: "14px 32px", borderRadius: 8 }}>Register Interest →</a>
             <a href="/adn" style={{ fontFamily: "'Sora',sans-serif", fontSize: 14, fontWeight: 500, color: "#555", border: "1px solid #E8E8E8", padding: "14px 32px", borderRadius: 8 }}>View ADN Specs</a>
           </div>
         </Reveal>

@@ -91,7 +91,7 @@ export default function MarketplaceFlagging() {
       <p>
         The "Protected by Mykei Securities" decal communicates the doctrine at the point of entry.
         The Registry is the infrastructure intended to make that communication credible, once it
-        is built and tested. See mykei.io/pilot for pilot details.
+        is built and tested. Pilot applications are closed until it is.
       </p>
     </article>
   );

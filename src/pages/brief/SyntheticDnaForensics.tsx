@@ -112,8 +112,8 @@ export default function SyntheticDnaForensics() {
 
       <p style={{ marginTop: "2rem", fontStyle: "italic" }}>
         Commercial terms are agreed directly with Mykei. See{" "}
-        <a href="/pilot" style={{ textDecoration: "underline" }}>
-          mykei.io/pilot
+        <a href="/contact" style={{ textDecoration: "underline" }}>
+          protocol@mykei.io
         </a>
         .
       </p>

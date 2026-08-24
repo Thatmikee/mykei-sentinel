@@ -412,7 +412,7 @@ export default function SignalCoopCrimeWarPage() {
               <p style={{ fontSize: 15, color: MID, lineHeight: 1.75, marginBottom: 28, maxWidth: 520 }}>
                 Independent retailers, pharmacies, and convenience stores in Greater Manchester. No cameras. No confrontation. Forensic marking begins on day one of deployment.
               </p>
-              <a href="/pilot" className="signal-nav-cta" style={{ display: "inline-block", background: INK, color: "#fff", fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", padding: "14px 32px", borderRadius: 2, textDecoration: "none", fontWeight: 700 }}>
+              <a href="/contact" className="signal-nav-cta" style={{ display: "inline-block", background: INK, color: "#fff", fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", padding: "14px 32px", borderRadius: 2, textDecoration: "none", fontWeight: 700 }}>
                 Apply for the Pilot
               </a>
             </div>

@@ -236,7 +236,7 @@ export default function BlogPostLayout({ meta, children }: BlogPostLayoutProps) 
           Commercial terms agreed directly with Mykei. Join the Manchester pilot.
         </p>
         <a
-          href="/pilot"
+          href="/contact"
           style={{
             display: "inline-block",
             backgroundColor: GOLD,

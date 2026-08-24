@@ -20,7 +20,7 @@ function SimpleNav() {
       <a href="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: INK, textDecoration: "none" }}>
         Mykei Securities
       </a>
-      <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
+      <a href="mailto:protocol@mykei.io" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
         Apply for Pilot
       </a>
     </nav>
@@ -42,11 +42,11 @@ export default function ContactPage() {
 
   const contacts = [
     {
-      label: "Pilot enquiries",
-      desc: "Independent retailers interested in the Mykei Independent Retail Pilot.",
-      cta: "Apply via the pilot form",
-      href: "/pilot",
-      external: false,
+      label: "Retailer enquiries",
+      desc: "Pilot applications are closed. Independent retailers who want to hear when ADN reaches deployment can write to us.",
+      cta: "protocol@mykei.io",
+      href: "mailto:protocol@mykei.io",
+      external: true,
     },
     {
       label: "General & press",

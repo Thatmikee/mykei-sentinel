@@ -103,7 +103,7 @@ export default function Roadmap() {
   const navLinks = [
     ["Home",         "/"],
     ["How It Works", "/howitworks"],
-    ["Pilot",        "/pilot"],
+    ["Pilot",        "/contact"],
     ["Roadmap",      "/roadmap"],
   ];
 
@@ -274,7 +274,7 @@ export default function Roadmap() {
           ))}
           <li><a href="https://michaelesema.com" target="_blank" rel="noreferrer">Founder</a></li>
         </ul>
-        <a href="/pilot" className="rm-nav-cta">Join the Pilot →</a>
+        <a href="/contact" className="rm-nav-cta">Join the Pilot →</a>
         <button className="rm-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <span /><span /><span />
         </button>
@@ -286,7 +286,7 @@ export default function Roadmap() {
             <a key={label} href={href} className="rm-mobile-link" onClick={() => setMenuOpen(false)}>{label}</a>
           ))}
           <a href="https://michaelesema.com" target="_blank" rel="noreferrer" className="rm-mobile-link" onClick={() => setMenuOpen(false)}>Founder</a>
-          <a href="/pilot" className="rm-mobile-cta" onClick={() => setMenuOpen(false)}>Join the Pilot →</a>
+          <a href="/contact" className="rm-mobile-cta" onClick={() => setMenuOpen(false)}>Join the Pilot →</a>
         </div>
       )}
 

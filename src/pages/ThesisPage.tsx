@@ -433,7 +433,7 @@ export default function ThesisPage() {
           Join the Independent Retail Pilot and be among the first retailers to deploy Economic Sterilisation in Greater Manchester.
         </p>
         <Link
-          to="/pilot"
+          to="/contact"
           style={{
             display: "inline-block",
             background: GOLD,
@@ -467,7 +467,7 @@ export default function ThesisPage() {
           {" · "}
           <Link to="/signal" style={{ color: MUTED, textDecoration: "underline" }}>The Brief</Link>
           {" · "}
-          <Link to="/pilot" style={{ color: MUTED, textDecoration: "underline" }}>Pilot</Link>
+          <Link to="/contact" style={{ color: MUTED, textDecoration: "underline" }}>Pilot</Link>
         </p>
       </footer>
     </div>

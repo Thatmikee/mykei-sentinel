@@ -146,7 +146,7 @@ export default function EvidencePage() {
           <img src="/mykei-logo.png" alt="Mykei Securities" style={{ height: 28, width: "auto" }} />
           <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase", color: "#111318" }}>MYKEI SECURITIES</span>
         </a>
-        <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase", background: "#D8001F", color: "#1E1E1E", padding: "8px 20px", borderRadius: 6 }}>
+        <a href="/contact" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase", background: "#D8001F", color: "#1E1E1E", padding: "8px 20px", borderRadius: 6 }}>
           Request Pilot Evaluation
         </a>
       </nav>
@@ -421,7 +421,7 @@ export default function EvidencePage() {
               Independent Retail Pilot places are limited. Request a pilot evaluation or view the full system specification.
             </p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" as const }}>
-              <a href="/pilot" style={{ background: "#D8001F", color: "#1E1E1E", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6 }}>
+              <a href="/contact" style={{ background: "#D8001F", color: "#1E1E1E", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6 }}>
                 Request Pilot Evaluation
               </a>
               <a href="/adn" style={{ background: "transparent", color: "#111318", fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: "1.5px", textTransform: "uppercase" as const, padding: "14px 28px", borderRadius: 6, border: "1px solid #E8E8E8" }}>

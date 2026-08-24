@@ -397,7 +397,7 @@ export default function HowItWorksPage() {
             <h1 className="hiw-h1">Theft is one event. <span>Resale is the system.</span></h1>
             <p className="hiw-lead">ADN is built for the moment a shelf loss becomes more than missing stock. It detects a defined theft pattern, deploys a controlled marker, and creates a Mykei Registry record that can support verification later.</p>
             <div className="hiw-actions">
-              <a className="hiw-btn primary" href="/pilot">Check store fit</a>
+              <a className="hiw-btn primary" href="/contact">Check store fit</a>
               <a className="hiw-btn secondary" href="/adn">View ADN details</a>
             </div>
           </div>
@@ -546,7 +546,7 @@ export default function HowItWorksPage() {
                 <p>Start with a pilot fit check. Mykei reviews store type, product category, theft pattern, staff risk, and deployment suitability before any pilot is discussed.</p>
               </div>
               <div className="hiw-cta-actions">
-                <a className="hiw-btn primary" href="/pilot">Check store fit</a>
+                <a className="hiw-btn primary" href="/contact">Check store fit</a>
                 <a className="hiw-btn secondary" href="/enterprise">Strategic review</a>
               </div>
             </div>

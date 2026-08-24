@@ -524,7 +524,7 @@ export default function Index() {
             <li key={label}><a href={href}>{label}</a></li>
           ))}
         </ul>
-        <a href="/pilot" className="mk-nav-cta">Register Interest</a>
+        <a href="/contact" className="mk-nav-cta">Contact</a>
         <div className="mk-more-wrap">
           <button className="mk-more-btn" onClick={() => setMoreOpen(v => !v)} aria-label="More pages">
             More <span style={{ fontSize: 10, lineHeight: 1 }}>▾</span>
@@ -552,7 +552,7 @@ export default function Index() {
           <a href="/signal" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Signal</a>
           <a href="/certification" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Certification</a>
           <a href="/contact" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Contact</a>
-          <a href="/pilot" className="mk-mobile-cta" onClick={() => setMenuOpen(false)}>Register Interest</a>
+          <a href="/contact" className="mk-mobile-cta" onClick={() => setMenuOpen(false)}>Contact</a>
         </div>
       )}
 
@@ -588,7 +588,7 @@ export default function Index() {
             </p>
 
             <div className="mk-hero-actions">
-              <a href="/pilot" className="mk-btn-primary">Check Store Fit</a>
+              <a href="/contact" className="mk-btn-primary">Contact us</a>
             </div>
 
             <div className="mk-hero-proof">
@@ -705,11 +705,11 @@ export default function Index() {
       <section id="pilot-survey" className="mk-survey">
         <div className="mk-survey-inner" style={{ textAlign: "center" }}>
           <Reveal>
-            <div className="mk-section-eyebrow">Independent retail. Pilot conversations open.</div>
-            <h2 className="mk-h2-dark">Come talk to us early.</h2>
-            <p className="mk-sub-dark" style={{ marginBottom: 36 }}>We are talking to independent retailers across Greater Manchester about whether ADN would fit their store. Registering interest is not a commitment and does not create a contract.</p>
-            <a href="/pilot" className="mk-submit-btn" style={{ display: "inline-block", textDecoration: "none" }}>Register Interest</a>
-            <p className="mk-form-note" style={{ marginTop: 20 }}>No obligation.</p>
+            <div className="mk-section-eyebrow">Independent retail. Pilot applications closed.</div>
+            <h2 className="mk-h2-dark">We are not taking pilot applications.</h2>
+            <p className="mk-sub-dark" style={{ marginBottom: 36 }}>ADN is a prototype and Mykei is not running store deployments at present. If you want to follow the work, or you are a retailer who would like to hear when that changes, write to us and we will keep you posted.</p>
+            <a href="/contact" className="mk-submit-btn" style={{ display: "inline-block", textDecoration: "none" }}>Contact us</a>
+            <p className="mk-form-note" style={{ marginTop: 20 }}>No obligation, and no commitment either way.</p>
           </Reveal>
         </div>
       </section>

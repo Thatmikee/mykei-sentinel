@@ -123,7 +123,7 @@ export default function StopCallingItShopliftingLostStock() {
       <p>
         Read <a href="/howitworks">how ADN works</a>, then see the{" "}
         <a href="/technology/ats">registry layer</a>. Retailers can request a{" "}
-        <a href="/pilot">pilot fit check</a>.
+        <a href="/contact">pilot fit check</a>.
       </p>
 
       <h2>Sources</h2>

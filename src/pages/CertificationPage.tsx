@@ -27,7 +27,7 @@ function SimpleNav() {
       <a href="/" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 500, letterSpacing: "0.15em", textTransform: "uppercase", color: INK, textDecoration: "none" }}>
         Mykei Securities
       </a>
-      <a href="/pilot" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
+      <a href="/contact" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
         Apply for ADN
       </a>
     </nav>
@@ -209,7 +209,7 @@ export default function CertificationPage() {
               Certification follows deployment.
             </h2>
             {[
-              { step: "01", text: "Apply for the ADN pilot at mykei.io/pilot." },
+              { step: "01", text: "Write to protocol@mykei.io. Pilot applications are closed while ADN is in prototype." },
               { step: "02", text: "Complete the seven-day Net 7 evaluation. Active ADN units are automatically enrolled in the Mykei Registry for cartridge-linked event registration." },
               { step: "03", text: "Receive your Mykei Protected badge, shelf signage, and digital verification credentials at the end of the pilot window." },
             ].map(({ step, text }) => (
@@ -219,7 +219,7 @@ export default function CertificationPage() {
               </div>
             ))}
             <a
-              href="/pilot"
+              href="/contact"
               style={{ display: "inline-block", marginTop: 12, background: GOLD, color: INK, padding: "13px 28px", borderRadius: 4, fontFamily: "'JetBrains Mono', monospace", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none" }}
             >
               Apply for the Pilot

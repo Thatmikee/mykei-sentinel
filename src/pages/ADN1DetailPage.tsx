@@ -446,7 +446,7 @@ export default function ADN1DetailPage() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <button
-                onClick={() => navigate("/pilot")}
+                onClick={() => navigate("/contact")}
                 className="px-8 py-4 bg-primary text-primary-foreground font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors rounded"
               >
                 Request Pilot Access →
