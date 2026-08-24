@@ -588,7 +588,7 @@ export default function Index() {
             </p>
 
             <div className="mk-hero-actions">
-              <a href="/contact" className="mk-btn-primary">Contact us</a>
+              <a href="/signal" className="mk-btn-primary">Read The Signal</a>
             </div>
 
             <div className="mk-hero-proof">
@@ -648,7 +648,7 @@ export default function Index() {
       <section id="why" style={{ background: "#FFFFFF", padding: "72px 52px", position: "relative" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <Reveal>
-            <div className="mk-section-eyebrow">Why your shop needs this</div>
+            <div className="mk-section-eyebrow">The problem we are working on</div>
             <h2 className="mk-h2-dark" style={{ marginBottom: 40 }}>Cameras record theft. Mykei is trying something different.</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 24, marginBottom: 40 }}>
               {[
@@ -701,15 +701,15 @@ export default function Index() {
         </div>
       </section>
 
-      {/* PILOT CTA */}
+      {/* CLOSING: the work that is actually running */}
+      {/* id retained: existing links and analytics point at #pilot-survey. */}
       <section id="pilot-survey" className="mk-survey">
         <div className="mk-survey-inner" style={{ textAlign: "center" }}>
           <Reveal>
-            <div className="mk-section-eyebrow">Independent retail. Pilot applications closed.</div>
-            <h2 className="mk-h2-dark">We are not taking pilot applications.</h2>
-            <p className="mk-sub-dark" style={{ marginBottom: 36 }}>ADN is a prototype and Mykei is not running store deployments at present. If you want to follow the work, or you are a retailer who would like to hear when that changes, write to us and we will keep you posted.</p>
-            <a href="/contact" className="mk-submit-btn" style={{ display: "inline-block", textDecoration: "none" }}>Contact us</a>
-            <p className="mk-form-note" style={{ marginTop: 20 }}>No obligation, and no commitment either way.</p>
+            <h2 className="mk-h2-dark">The device is not for sale. The research is free.</h2>
+            <p className="mk-sub-dark" style={{ marginBottom: 36 }}>ADN is a prototype and we are not running store deployments. What we do run is The Signal: retail crime reporting, published twice a week, every figure sourced and every correction kept on the record.</p>
+            <a href="/signal" className="mk-submit-btn" style={{ display: "inline-block", textDecoration: "none" }}>Read The Signal</a>
+            <p className="mk-form-note" style={{ marginTop: 20 }}>Free to read. No sign up.</p>
           </Reveal>
         </div>
       </section>
