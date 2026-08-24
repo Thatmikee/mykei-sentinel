@@ -1,0 +1,87 @@
+<!doctype html><meta charset="utf-8">
+<style>
+  /* Tokens mirror src/styles/signalRed.ts. Do not declare colours locally. */
+  :root{--ground:#FFFFFF;--ink:#111318;--ink2:#4A4F58;--ink3:#767D88;--rule:#D8DBE0;--tint:#F4F6F8;--red:#D8001F}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#555}
+  .slide{width:1080px;height:1350px;background:var(--ground);color:var(--ink);
+    font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    padding:96px 88px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .mark{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:19px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .mark b{font-weight:700}
+  .mark .n{color:var(--ink3);font-weight:400}
+  .rule{height:3px;background:var(--red);margin:26px 0 0}
+  .body{flex:1;display:flex;flex-direction:column;justify-content:center}
+  h1{font-family:Georgia,"Playfair Display",serif;font-weight:700;font-size:104px;line-height:1.04;letter-spacing:-.02em}
+  h2{font-family:Georgia,"Playfair Display",serif;font-weight:700;font-size:74px;line-height:1.1;letter-spacing:-.015em}
+  .sub{font-size:36px;line-height:1.45;color:var(--ink2);margin-top:36px;max-width:28ch}
+  .fig{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-weight:700;
+    font-size:250px;line-height:.9;color:var(--red);letter-spacing:-.04em}
+  .figsub{font-size:40px;line-height:1.4;color:var(--ink);margin-top:38px;max-width:20ch;font-weight:600}
+  .pair{display:flex;gap:64px;margin-top:56px;align-items:flex-start}
+  .pair>div{flex:1}
+  .pair>div+div{border-left:3px solid var(--rule);padding-left:56px}
+  .pair .fig{font-size:96px;white-space:nowrap;letter-spacing:-.02em}
+  .pair .lab{font-size:31px;color:var(--ink2);margin-top:24px;line-height:1.4}
+  .foot{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:21px;letter-spacing:.05em;
+    color:var(--ink3);display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+  .foot .src{max-width:34ch;line-height:1.6}
+  .swipe{color:var(--red);white-space:nowrap;font-weight:700}
+  .panel{background:var(--tint);padding:56px 52px;margin-top:44px}
+  .panel p{font-size:33px;line-height:1.55;color:var(--ink)}
+  .cta{display:inline-block;background:var(--red);color:#fff;font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;
+    font-size:27px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:26px 46px;margin-top:52px}
+</style>
+<body>
+
+<div class="slide" id="s1">
+  <div class="mark"><b>The Signal</b><span class="n">01 / 05</span></div><div class="rule"></div>
+  <div class="body">
+    <h1>Police will not come for £30 of stolen stock.</h1>
+    <p class="sub">That is not an accident. It is a threshold.</p>
+  </div>
+  <div class="foot"><span class="src">mykei.io/signal</span><span class="swipe">Swipe &rarr;</span></div>
+</div>
+
+<div class="slide" id="s2">
+  <div class="mark"><b>The Signal</b><span class="n">02 / 05</span></div><div class="rule"></div>
+  <div class="body">
+    <div class="fig">133%</div>
+    <p class="figsub">Rise in shoplifting cases over five years.</p>
+  </div>
+  <div class="foot"><span class="src">Liberal Democrats data via ITV1 Good Morning Britain, 2026.</span><span class="swipe">Swipe &rarr;</span></div>
+</div>
+
+<div class="slide" id="s3">
+  <div class="mark"><b>The Signal</b><span class="n">03 / 05</span></div><div class="rule"></div>
+  <div class="body">
+    <h2>How many end in a charge.</h2>
+    <div class="pair">
+      <div><div class="fig">1 in 5</div><p class="lab">Nationally</p></div>
+      <div><div class="fig">1 in 14</div><p class="lab">In London</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="src">Liberal Democrats data via ITV1 Good Morning Britain, 2026.</span><span class="swipe">Swipe &rarr;</span></div>
+</div>
+
+<div class="slide" id="s4">
+  <div class="mark"><b>The Signal</b><span class="n">04 / 05</span></div><div class="rule"></div>
+  <div class="body">
+    <h2>The £200 floor nobody legislated.</h2>
+    <div class="panel"><p>Most retail theft below it is absorbed, logged, and forgotten. Every independent retailer already knows the number. The prevention guidance does not mention it.</p></div>
+  </div>
+  <div class="foot"><span class="src">mykei.io/signal</span><span class="swipe">Swipe &rarr;</span></div>
+</div>
+
+<div class="slide" id="s5">
+  <div class="mark"><b>The Signal</b><span class="n">05 / 05</span></div><div class="rule"></div>
+  <div class="body">
+    <h2>Retail crime reporting. Twice a week.</h2>
+    <p class="sub">Every figure sourced. Every correction kept on the record. Free to read, no sign up.</p>
+    <div><span class="cta">mykei.io/signal</span></div>
+  </div>
+  <div class="foot"><span class="src">Mykei Securities Ltd, Manchester. Company 16984969.</span><span></span></div>
+</div>
+
+</body>
