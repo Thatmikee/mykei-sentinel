@@ -1067,7 +1067,7 @@ export default function ADN1InActionPage() {
 
         {/* CTA */}
         <section className="adn-cta">
-          <div className="adn-cta-overline">Independent Retail Pilot · 2026</div>
+          <div className="adn-cta-overline">The Signal</div>
           <h2 className="adn-cta-h2">
             You have seen what it does.<br />
             <em>Your shop deserves this.</em>

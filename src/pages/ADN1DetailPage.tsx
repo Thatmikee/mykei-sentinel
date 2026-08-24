@@ -441,7 +441,7 @@ export default function ADN1DetailPage() {
           <motion.div {...fade(0)}>
             <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Deploy the ADN at your store</h2>
             <p className="text-muted-foreground mb-8">
-              Alpha pilot places are open to independent retailers in Greater Manchester.
+              Alpha pilot applications are closed while ADN remains a prototype.
               Commercial terms agreed directly with Mykei. A 3-month minimum term is proposed, not yet finalised.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">

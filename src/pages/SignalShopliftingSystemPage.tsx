@@ -261,10 +261,10 @@ export default function SignalShopliftingSystemPage() {
             <div style={{ background: "#fff", border: `2px solid ${GOLD}`, borderRadius: 6, padding: "36px 40px", marginBottom: 48, textAlign: "center" }}>
               <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 22, color: INK, marginBottom: 10 }}>The Independent Retail Pilot is open for expressions of interest.</div>
               <p style={{ fontFamily: "'Georgia',serif", fontSize: 15, color: "#555", lineHeight: 1.7, marginBottom: 24 }}>
-                Independent retailers in Manchester can apply for an upcoming pilot cohort. No obligation after pilot. Commercial terms agreed directly with Mykei.
+                ADN is a prototype and pilot applications are closed. The Signal publishes twice a week, sourced, and keeps its corrections on the record.
               </p>
-              <a href="/contact" style={{ display: "inline-block", background: GOLD, color: INK, fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", padding: "14px 32px", borderRadius: 4, textDecoration: "none" }}>
-                Apply for the Pilot
+              <a href="/signal" style={{ display: "inline-block", background: GOLD, color: INK, fontFamily: "'JetBrains Mono',monospace", fontSize: 11, fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", padding: "14px 32px", borderRadius: 4, textDecoration: "none" }}>
+                Read The Signal
               </a>
             </div>
           </Reveal>

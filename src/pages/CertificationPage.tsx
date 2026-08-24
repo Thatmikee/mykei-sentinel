@@ -219,10 +219,10 @@ export default function CertificationPage() {
               </div>
             ))}
             <a
-              href="/contact"
+              href="/signal"
               style={{ display: "inline-block", marginTop: 12, background: GOLD, color: INK, padding: "13px 28px", borderRadius: 4, fontFamily: "'JetBrains Mono', monospace", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none" }}
             >
-              Apply for the Pilot
+              Read The Signal
             </a>
           </div>
         </section>

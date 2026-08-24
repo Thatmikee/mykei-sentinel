@@ -410,10 +410,10 @@ export default function SignalCoopCrimeWarPage() {
                 The first cohort is limited. Applications are reviewed directly by the founder.
               </p>
               <p style={{ fontSize: 15, color: MID, lineHeight: 1.75, marginBottom: 28, maxWidth: 520 }}>
-                Independent retailers, pharmacies, and convenience stores in Greater Manchester. No cameras. No confrontation. Forensic marking begins on day one of deployment.
+                ADN is a prototype and pilot applications are closed. The Signal publishes twice a week, sourced, and keeps its corrections on the record.
               </p>
-              <a href="/contact" className="signal-nav-cta" style={{ display: "inline-block", background: INK, color: "#fff", fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", padding: "14px 32px", borderRadius: 2, textDecoration: "none", fontWeight: 700 }}>
-                Apply for the Pilot
+              <a href="/signal" className="signal-nav-cta" style={{ display: "inline-block", background: INK, color: "#fff", fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", padding: "14px 32px", borderRadius: 2, textDecoration: "none", fontWeight: 700 }}>
+                Read The Signal
               </a>
             </div>
           </Reveal>

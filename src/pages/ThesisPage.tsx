@@ -415,7 +415,7 @@ export default function ThesisPage() {
             fontFamily: "'Arial', sans-serif",
           }}
         >
-          Independent Retail Pilot, 2026
+          The Signal
         </p>
         <h2
           style={{
@@ -427,13 +427,13 @@ export default function ThesisPage() {
             lineHeight: 1.3,
           }}
         >
-          Commercial terms agreed directly with Mykei.
+          The reporting continues while the device does not.
         </h2>
         <p style={{ color: "#C9BFB4", fontSize: 16, marginBottom: 36, lineHeight: 1.7 }}>
-          Join the Independent Retail Pilot and be among the first retailers to deploy Economic Sterilisation in Greater Manchester.
+          ADN is a prototype and pilot applications are closed. The Signal publishes retail crime reporting twice a week, sourced and corrected on the record.
         </p>
         <Link
-          to="/contact"
+          to="/signal"
           style={{
             display: "inline-block",
             background: GOLD,
@@ -446,7 +446,7 @@ export default function ThesisPage() {
             fontFamily: "'Arial', sans-serif",
           }}
         >
-          Apply for the Pilot
+          Read The Signal
         </Link>
       </section>
 
