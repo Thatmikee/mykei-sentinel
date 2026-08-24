@@ -160,7 +160,7 @@ export default function Index() {
       <style>{`
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Sora', system-ui, sans-serif; background: #fff; color: #1A1A1A; }
+        body { font-family: 'IBM Plex Sans', system-ui, sans-serif; background: #FFFFFF; color: #111318; }
         a { text-decoration: none; }
 
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
@@ -173,7 +173,7 @@ export default function Index() {
         }
         .mk-nav.scrolled {
           background: #FFFFFF;
-          border-bottom: 1px solid #E8E8E8;
+          border-bottom: 1px solid #D8DBE0;
         }
         .mk-nav-brand { display: flex; flex-direction: row; align-items: center; gap: 10px; }
         .mk-nav-brand-texts { display: flex; flex-direction: column; gap: 2px; }
@@ -185,12 +185,12 @@ export default function Index() {
         .mk-nav-cta { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: #111318; padding: 9px 20px; border: 1px solid #111318; transition: background 0.2s, color 0.2s; }
         .mk-nav-cta:hover { background: #D8001F; border-color: #D8001F; color: #111318; }
         .mk-more-wrap { position: relative; display: inline-flex; align-items: center; margin-left: 8px; }
-        .mk-more-btn { background: none; border: 1px solid #E8E8E8; border-radius: 6px; cursor: pointer; padding: 6px 14px; display: inline-flex; align-items: center; gap: 5px; transition: border-color 0.15s; font-family: 'Sora', system-ui, sans-serif; font-size: 13px; font-weight: 500; color: #1A1A1A; }
+        .mk-more-btn { background: none; border: 1px solid #D8DBE0; border-radius: 6px; cursor: pointer; padding: 6px 14px; display: inline-flex; align-items: center; gap: 5px; transition: border-color 0.15s; font-family: 'Sora', system-ui, sans-serif; font-size: 13px; font-weight: 500; color: #111318; }
         .mk-more-btn:hover { border-color: #D8001F; color: #D8001F; }
-        .mk-more-menu { position: absolute; top: calc(100% + 8px); right: 0; min-width: 220px; background: #FFFFFF; border: 1px solid #E8E8E8; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 200; padding: 8px 0; }
+        .mk-more-menu { position: absolute; top: calc(100% + 8px); right: 0; min-width: 220px; background: #FFFFFF; border: 1px solid #D8DBE0; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 200; padding: 8px 0; }
         .mk-more-menu a { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #111318; text-decoration: none; padding: 9px 18px; transition: background 0.12s; }
         .mk-more-menu a:hover { background: #FFFFFF; color: #D8001F; }
-        .mk-more-divider { height: 1px; background: #E8E8E8; margin: 6px 0; }
+        .mk-more-divider { height: 1px; background: #D8DBE0; margin: 6px 0; }
         .mk-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
         .mk-hamburger span { display: block; width: 22px; height: 1.5px; background: #111318; }
 
@@ -215,30 +215,30 @@ export default function Index() {
         /* Company badge */
         .mk-company-badge {
           display: inline-flex; align-items: center; gap: 10px;
-          background: #FFFFFF; border: 1px solid #E8E8E8; border-radius: 6px; padding: 7px 14px;
+          background: #FFFFFF; border: 1px solid #D8DBE0; border-radius: 6px; padding: 7px 14px;
           margin-bottom: 32px;
         }
-        .mk-badge-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 500; color: #555555; letter-spacing: 1.2px; text-transform: uppercase; }
+        .mk-badge-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 500; color: #4A4F58; letter-spacing: 1.2px; text-transform: uppercase; }
         .mk-badge-sep { width: 1px; height: 12px; background: rgba(216,0,31,0.5); }
-        .mk-badge-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #555555; letter-spacing: 0.8px; display: flex; align-items: center; gap: 5px; }
+        .mk-badge-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #4A4F58; letter-spacing: 0.8px; display: flex; align-items: center; gap: 5px; }
         .mk-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #D8001F; }
 
         /* Identity headline */
         .mk-hero-identity {
           font-family: 'Playfair Display', Georgia, serif;
           font-size: clamp(38px, 5vw, 64px);
-          font-weight: 700; line-height: 1.08; letter-spacing: -1px; color: #111318; margin-bottom: 10px;
+          font-weight: 500; line-height: 1.06; letter-spacing: -1.5px; color: #111318; margin-bottom: 10px;
         }
         .mk-identity-accent { color: #D8001F; }
         .mk-identity-rule { display: block; width: 44px; height: 3px; background: #D8001F; border-radius: 2px; margin: 20px 0 22px; }
 
         .mk-hero-descriptor {
           font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 1.5px;
-          text-transform: uppercase; color: #475569; margin-bottom: 28px;
+          text-transform: uppercase; color: #4A4F58; margin-bottom: 28px;
         }
 
         .mk-hero-body {
-          font-size: 17px; line-height: 1.8; color: #475569; max-width: 650px; margin-bottom: 34px;
+          font-size: 17px; line-height: 1.8; color: #4A4F58; max-width: 650px; margin-bottom: 34px;
         }
         .mk-hero-body strong { color: #111318; font-weight: 600; }
 
@@ -246,26 +246,26 @@ export default function Index() {
           display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
         }
         .mk-btn-primary {
-          font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600;
+          font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 600;
           color: #fff; background: #111318; padding: 13px 28px; border-radius: 7px;
           display: inline-flex; align-items: center; gap: 8px; transition: all 0.22s;
         }
         .mk-btn-primary:hover { background: #D8001F; }
         .mk-btn-secondary {
-          font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 500;
-          color: #111318; border: 1.5px solid #dde4ef; padding: 12px 28px; border-radius: 7px; transition: all 0.2s;
+          font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 500;
+          color: #111318; border: 1.5px solid #D8DBE0; padding: 12px 28px; border-radius: 7px; transition: all 0.2s;
         }
-        .mk-btn-secondary:hover { border-color: #111318; background: #f8f9fc; }
+        .mk-btn-secondary:hover { border-color: #111318; background: #F4F6F8; }
 
         .mk-hero-proof {
           display: flex; align-items: center; gap: 18px; margin-top: 24px; flex-wrap: wrap;
         }
-        .mk-proof-item { display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #475569; }
-        .mk-proof-check { width: 15px; height: 15px; border-radius: 50%; background: #f0faf4; border: 1px solid #86efac; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #16a34a; flex-shrink: 0; }
+        .mk-proof-item { display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #4A4F58; }
+        .mk-proof-check { width: 15px; height: 15px; border-radius: 50%; background: #F4F6F8; border: 1px solid #D8DBE0; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #D8001F; flex-shrink: 0; }
 
         /* ── PROOF BAR ── */
         .mk-proof-bar {
-          background: #F8F8F8;
+          background: #F4F6F8;
           padding: 0 52px;
         }
         .mk-proof-bar-inner {
@@ -275,12 +275,12 @@ export default function Index() {
         }
         .mk-proof-bar-label {
           display: flex; align-items: center;
-          padding: 0 32px 0 0; border-right: 1px solid #E8E8E8;
+          padding: 0 32px 0 0; border-right: 1px solid #D8DBE0;
           gap: 10px; min-width: 160px;
         }
         .mk-proof-bar-dot { width: 7px; height: 7px; border-radius: 50%; background: #D8001F; flex-shrink: 0; }
         .mk-proof-bar-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #2D7D46; }
-        .mk-proof-bar-sub { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1px; color: #555555; margin-top: 3px; }
+        .mk-proof-bar-sub { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1px; color: #4A4F58; margin-top: 3px; }
         .mk-proof-bar-items {
           display: flex; align-items: center; flex-wrap: wrap;
           padding: 20px 0 20px 32px; gap: 0;
@@ -288,7 +288,7 @@ export default function Index() {
         .mk-proof-bar-item {
           display: flex; align-items: center; gap: 10px;
           padding: 4px 28px 4px 0;
-          border-right: 1px solid #E8E8E8;
+          border-right: 1px solid #D8DBE0;
           margin-right: 28px;
         }
         .mk-proof-bar-item:last-child { border-right: none; margin-right: 0; }
@@ -325,7 +325,7 @@ export default function Index() {
         }
         .mk-reality-placeholder { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #D8001F; text-align: center; position: relative; z-index: 1; }
         .mk-reality-placeholder-icon { font-size: 32px; opacity: 0.3; margin-bottom: 4px; }
-        .mk-reality-caption { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.5px; color: #555555; text-align: center; margin-top: 10px; font-style: italic; }
+        .mk-reality-caption { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.5px; color: #4A4F58; text-align: center; margin-top: 10px; font-style: italic; }
 
         /* ── COMMERCIAL READINESS ── */
         .mk-commercial {
@@ -336,7 +336,7 @@ export default function Index() {
           display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 40px;
         }
         .mk-commercial-item {
-          border: 1px solid #E8E8E8; border-radius: 8px; padding: 24px 20px;
+          border: 1px solid #D8DBE0; border-radius: 8px; padding: 24px 20px;
           text-align: center; background: #FFFFFF;
         }
         .mk-commercial-icon {
@@ -347,7 +347,7 @@ export default function Index() {
           color: #D8001F; background: #FFFFFF;
         }
         .mk-commercial-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.8px; text-transform: uppercase; color: #111318; font-weight: 600; margin-bottom: 4px; }
-        .mk-commercial-sub { font-size: 11.5px; color: #64748b; line-height: 1.5; }
+        .mk-commercial-sub { font-size: 11.5px; color: #767D88; line-height: 1.5; }
 
         /* ── DESIGNED FOR ── */
         .mk-designed { background: #FFFFFF; padding: 72px 52px; }
@@ -358,7 +358,7 @@ export default function Index() {
           padding: 20px 24px; background: rgba(255,255,255,0.6);
           border: 1px solid rgba(216,0,31,0.2); border-radius: 8px;
         }
-        .mk-designed-check { width: 20px; height: 20px; border-radius: "50%"; background: rgba(216,0,31,0.15); border: 1px solid rgba(216,0,31,0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; color: #555555; flex-shrink: 0; margin-top: 2px; }
+        .mk-designed-check { width: 20px; height: 20px; border-radius: "50%"; background: rgba(216,0,31,0.15); border: 1px solid rgba(216,0,31,0.4); display: flex; align-items: center; justify-content: center; font-size: 10px; color: #4A4F58; flex-shrink: 0; margin-top: 2px; }
         .mk-designed-text { font-size: 14px; color: #111318; line-height: 1.6; font-weight: 500; }
 
         /* ── WHY NOW ── */
@@ -389,65 +389,72 @@ export default function Index() {
         .mk-stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 48px; }
         .mk-stat-card {
           background: #FFFFFF;
-          border: 1px solid #E8E8E8; border-radius: 8px; padding: 32px 24px;
+          border: 1px solid #D8DBE0; border-radius: 8px; padding: 32px 24px;
         }
         .mk-stat-card:hover { border-color: #D8001F; }
         .mk-stat-num { font-size: 38px; font-weight: 800; color: #D8001F; letter-spacing: -1px; line-height: 1; }
-        .mk-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; color: #64748b; margin-top: 10px; line-height: 1.6; }
-        .mk-market-note { background: #F8F8F8; border: 1px solid #E8E8E8; border-left: 4px solid #D8001F; padding: 20px 24px; border-radius: 8px; font-size: 15px; color: #374151; line-height: 1.75; max-width: 760px; }
-        .mk-market-note strong { color: #1A1A1A; font-weight: 700; }
+        .mk-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; color: #767D88; margin-top: 10px; line-height: 1.6; }
+        .mk-market-note { background: #F4F6F8; border: 1px solid #D8DBE0; border-left: 4px solid #D8001F; padding: 20px 24px; border-radius: 8px; font-size: 15px; color: #4A4F58; line-height: 1.75; max-width: 760px; }
+        .mk-market-note strong { color: #111318; font-weight: 700; }
 
         /* ── TECH ── */
         .mk-tech {
           padding: 96px 52px;
-          background: #F4F6F8;
+          background: #111318;
           position: relative;
         }
         .mk-tech-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+        .mk-steps { margin-top: 56px; }
+        .mk-step {
+          display: grid; grid-template-columns: 72px 200px 1fr; gap: 28px; align-items: baseline;
+          padding: 26px 0; border-top: 1px solid rgba(255,255,255,0.14);
+        }
+        .mk-step-n { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #D8001F; letter-spacing: 1px; }
+        .mk-step-term { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 500; color: #FFFFFF; letter-spacing: -0.5px; }
+        .mk-step-desc { font-size: 15px; line-height: 1.7; color: #A8AEB8; max-width: 60ch; }
         .mk-tech-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 28px; }
         .mk-tech-card {
-          border: 1px solid #E8E8E8; border-radius: 8px; padding: 28px;
-          background: #FFFFFF;
+          border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 28px;
+          background: transparent;
           transition: border-color 0.2s ease;
         }
         .mk-tech-card:hover { border-color: #D8001F; }
         .mk-tech-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; color: #D8001F; border: 1px solid rgba(216,0,31,0.4); padding: 3px 10px; border-radius: 100px; margin-bottom: 16px; }
-        .mk-tech-title { font-size: 15px; font-weight: 700; color: #111318; margin-bottom: 10px; }
-        .mk-tech-desc { font-size: 13px; color: #64748b; line-height: 1.65; margin-bottom: 20px; }
-        .mk-tech-specs { border-top: 1px solid #E8E8E8; padding-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .mk-spec-key { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.8px; text-transform: uppercase; color: #475569; }
-        .mk-spec-val { font-size: 12px; font-weight: 700; color: #1A1A1A; margin-top: 1px; }
-        .mk-tech-note { background: rgba(216,0,31,0.08); border: 1px solid rgba(216,0,31,0.25); border-left: 3px solid #D8001F; padding: 14px 18px; border-radius: 4px; font-size: 14px; color: #374151; line-height: 1.6; }
-        .mk-tech-note strong { color: #111318; }
-        .mk-h2-dark  { font-family: 'Sora', system-ui, sans-serif; font-size: clamp(30px,3.8vw,50px); font-weight: 700; color: #1E1E1E; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.08; }
-        .mk-sub-dark  { font-size: 16px; color: #64748b; max-width: 520px; line-height: 1.7; margin-bottom: 52px; }
+        .mk-tech-title { font-size: 15px; font-weight: 600; color: #FFFFFF; margin-bottom: 10px; }
+        .mk-tech-desc { font-size: 13px; color: #A8AEB8; line-height: 1.65; margin-bottom: 20px; }
+        .mk-tech-specs { border-top: 1px solid rgba(255,255,255,0.14); padding-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .mk-spec-key { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.8px; text-transform: uppercase; color: #A8AEB8; }
+        .mk-spec-val { font-size: 12px; font-weight: 700; color: #FFFFFF; margin-top: 1px; }
+        .mk-tech-note { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-left: 3px solid #D8001F; padding: 14px 18px; border-radius: 4px; font-size: 14px; color: #A8AEB8; line-height: 1.6; }
+        .mk-tech-note strong { color: #FFFFFF; }
+        /* Band-scoped: the same heading class sits on light and dark grounds. */
+        .mk-tech .mk-h2-dark, .mk-survey .mk-h2-dark { color: #FFFFFF; }
+        .mk-tech .mk-sub-dark { color: #A8AEB8; }
+        .mk-tech .mk-section-eyebrow { color: #FFFFFF; }
+        .mk-h2-dark  { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px,3.8vw,50px); font-weight: 500; color: #111318; letter-spacing: -1.2px; margin-bottom: 14px; line-height: 1.1; }
+        .mk-sub-dark  { font-size: 16px; color: #767D88; max-width: 520px; line-height: 1.7; margin-bottom: 52px; }
 
         /* ── SURVEY ── */
         .mk-survey {
           padding: 96px 52px;
-          background: #fff;
+          background: #D8001F;
           position: relative; overflow: hidden;
         }
-        .mk-survey::before {
-          content: ''; position: absolute; inset: 0; pointer-events: none;
-          background:
-            radial-gradient(ellipse 50% 60% at 50% 0%, rgba(216,0,31,0.12) 0%, transparent 60%),
-            radial-gradient(ellipse 30% 30% at 10% 100%, rgba(74,32,8,0.06) 0%, transparent 50%);
-        }
         .mk-survey-inner { max-width: 600px; margin: 0 auto; }
-        .mk-submit-btn { background: #111318; color: #fff; border: none; padding: 14px 32px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 6px; font-family: 'Sora', sans-serif; transition: all 0.2s; }
-        .mk-submit-btn:hover { background: #D8001F; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(216,0,31,0.28); }
-        .mk-form-note { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #475569; text-align: center; letter-spacing: 0.5px; }
+        .mk-survey .mk-sub-dark { color: rgba(255,255,255,0.88); }
+        .mk-submit-btn { background: #FFFFFF; color: #111318; border: none; padding: 14px 32px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 6px; font-family: 'IBM Plex Sans', sans-serif; transition: background 0.2s; }
+        .mk-submit-btn:hover { background: #111318; color: #FFFFFF; }
+        .mk-form-note { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.75); text-align: center; letter-spacing: 0.5px; }
 
         /* ── FOOTER ── */
-        .mk-footer { padding: 28px 52px; background: #fff; border-top: 1px solid #E8E8E8; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-        .mk-footer-name { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; color: #111318; }
-        .mk-footer-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #555555; letter-spacing: 0.5px; margin-top: 2px; }
-        .mk-footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #475569; letter-spacing: 0.5px; }
+        .mk-footer { padding: 28px 52px; background: #111318; border-top: none; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .mk-footer-name { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; color: #FFFFFF; }
+        .mk-footer-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #A8AEB8; letter-spacing: 0.5px; margin-top: 2px; }
+        .mk-footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #A8AEB8; letter-spacing: 0.5px; }
 
         /* ── MOBILE ── */
         .mk-mobile-menu { background: #fff; border-bottom: 1px solid #e2e8f3; padding: 16px 24px; display: flex; flex-direction: column; gap: 4px; }
-        .mk-mobile-link { font-size: 15px; font-weight: 500; color: #111318; padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
+        .mk-mobile-link { font-size: 15px; font-weight: 500; color: #111318; padding: 10px 0; border-bottom: 1px solid #EDEFF2; }
         .mk-mobile-cta { font-size: 14px; font-weight: 700; color: #fff; background: #111318; padding: 12px; border-radius: 6px; text-align: center; margin-top: 8px; }
 
         @media (max-width: 1024px) {
@@ -463,14 +470,14 @@ export default function Index() {
         }
         .mk-tablet-stat {
           background: #FFFFFF;
-          border: 1px solid #E8E8E8;
+          border: 1px solid #D8DBE0;
           border-radius: 8px;
           padding: 14px 20px;
           flex: 1;
           min-width: 140px;
         }
         .mk-tablet-stat-num {
-          font-family: 'Sora', sans-serif;
+          font-family: 'IBM Plex Sans', sans-serif;
           font-size: 26px;
           font-weight: 800;
           color: #D8001F;
@@ -482,7 +489,7 @@ export default function Index() {
           font-size: 8.5px;
           letter-spacing: 0.8px;
           text-transform: uppercase;
-          color: #64748b;
+          color: #767D88;
           line-height: 1.5;
         }
         @media (max-width: 1024px) {
@@ -502,6 +509,8 @@ export default function Index() {
           .mk-hero { min-height: auto; padding: 88px 24px 48px; }
           .mk-hero-identity { font-size: clamp(33px, 8.7vw, 38px); letter-spacing: -1.2px; }
           .mk-market, .mk-tech, .mk-survey { padding: 64px 24px; }
+          .mk-step { grid-template-columns: 44px 1fr; gap: 8px 16px; padding: 20px 0; }
+          .mk-step-desc { grid-column: 2; }
           .mk-reality, .mk-commercial, .mk-designed, .mk-why-now { padding: 48px 24px; }
           .mk-proof-bar { padding: 0 24px; }
           .mk-footer { padding: 12px 24px; }
@@ -547,7 +556,7 @@ export default function Index() {
           <a href="/adn" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>ADN Device</a>
           <a href="/howitworks" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>How It Works</a>
           <a href="/economic-sterilisation" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Economic Sterilisation</a>
-          <div style={{ height: 1, background: "#E8E8E8", margin: "6px 0" }} />
+          <div style={{ height: 1, background: "#D8DBE0", margin: "6px 0" }} />
           <a href="/enterprise" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Enterprise</a>
           <a href="/signal" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Signal</a>
           <a href="/certification" className="mk-mobile-link" onClick={() => setMenuOpen(false)}>Certification</a>
@@ -660,7 +669,7 @@ export default function Index() {
                   <span style={{ fontFamily: "'JetBrains Mono',monospace", color: "#D8001F", fontSize: 13, flexShrink: 0, marginTop: 2 }}>{icon}</span>
                   <div>
                     <div style={{ fontFamily: "'Sora',sans-serif", fontWeight: 600, fontSize: 14, color: "#111318", marginBottom: 6 }}>{point}</div>
-                    <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, color: "#64748b", lineHeight: 1.65 }}>{sub}</div>
+                    <div style={{ fontFamily: "'Sora',sans-serif", fontSize: 13, color: "#767D88", lineHeight: 1.65 }}>{sub}</div>
                   </div>
                 </div>
               ))}
@@ -682,20 +691,41 @@ export default function Index() {
           <Reveal>
             <div className="mk-section-eyebrow">How It Works</div>
             <h2 className="mk-h2-dark">Three parts, working together.</h2>
-            <p className="mk-sub-dark" style={{ marginBottom: 0 }}>Detect the shelf event. Mark the goods. Create the record. Reduce resale confidence without staff confrontation. Full technical detail, specs, and commercial model are on the ADN and How It Works pages.</p>
+            <p className="mk-sub-dark" style={{ marginBottom: 0 }}>Reduce resale confidence without staff confrontation. Full technical detail, specs and commercial model are on the ADN and How It Works pages.</p>
+          </Reveal>
+
+          {/* The three parts, as a sequence rather than three identical cards.
+              Every line restates a claim already published elsewhere on the
+              site, in the same hedged form. Nothing new is asserted here. */}
+          <div className="mk-steps">
+            {[
+              ["01", "Detect", "A shelf level sensor is intended to register a bulk removal event. No cameras, no facial recognition, no biometric data."],
+              ["02", "Mark", "The event is designed to trigger a controlled marker deployment onto the goods as they leave the shelf."],
+              ["03", "Record", "The event is written to the Mykei Registry as a timestamped record, so the item can be checked against it later."],
+            ].map(([n, term, desc]) => (
+              <Reveal key={n}>
+                <div className="mk-step">
+                  <div className="mk-step-n">{n}</div>
+                  <div className="mk-step-term">{term}</div>
+                  <div className="mk-step-desc">{desc}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal>
           </Reveal>
           <div style={{ display: "flex", gap: 14, marginTop: 32, flexWrap: "wrap" as const }}>
             <a href="/adn" style={{
               display: "inline-flex", alignItems: "center",
               fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: 1.5,
               color: "#D8001F", textDecoration: "none",
-              borderBottom: "1px solid rgba(212,168,67,0.3)", paddingBottom: 2,
+              borderBottom: "1px solid rgba(216,0,31,0.4)", paddingBottom: 2,
             }}>View ADN in detail →</a>
             <a href="/howitworks" style={{
               display: "inline-flex", alignItems: "center",
               fontFamily: "'JetBrains Mono',monospace", fontSize: 11, letterSpacing: 1.5,
               color: "#D8001F", textDecoration: "none",
-              borderBottom: "1px solid rgba(212,168,67,0.3)", paddingBottom: 2,
+              borderBottom: "1px solid rgba(216,0,31,0.4)", paddingBottom: 2,
             }}>See How It Works →</a>
           </div>
         </div>
@@ -738,7 +768,7 @@ export default function Index() {
               <a
                 key={href}
                 href={href}
-                style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: "#555555", letterSpacing: "0.5px", textTransform: "uppercase", textDecoration: "none" }}
+                style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: "#4A4F58", letterSpacing: "0.5px", textTransform: "uppercase", textDecoration: "none" }}
               >
                 {label}
               </a>

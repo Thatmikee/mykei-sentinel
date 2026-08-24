@@ -37,14 +37,12 @@
         font-display: swap;
         src: url('/fonts/jetbrainsmono-latin.woff2') format('woff2');
       }
-      /* Sora is referenced by legacy pages but never self-hosted. Map it to the
-         system UI stack rather than Arial so those pages at least look native. */
-      @font-face {
-        font-family: 'Sora';
-        font-style: normal;
-        font-weight: 100 900;
-        src: local('system-ui'), local('-apple-system'), local('Helvetica Neue'), local('Arial');
-      }
+      /* No Sora shim. Aliasing a face we do not ship to the system UI stack
+         meant every marketing headline rendered as Helvetica while /signal
+         rendered as Playfair, so one domain carried two type systems and the
+         homepage had no display face at all. Per the note above, the fix is to
+         self-host, not to alias the problem away. Display is Playfair, body is
+         IBM Plex Sans, both loaded above. Do not re-add an alias. */
     </style>
 
     <!-- Inline critical CSS: palette vars + above-the-fold defaults -->
