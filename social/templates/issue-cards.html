@@ -1,0 +1,78 @@
+<!doctype html><meta charset="utf-8">
+<title>Signal issue cards</title>
+<style>
+  :root{--ground:#FFFFFF;--ink:#111318;--ink2:#4A4F58;--ink3:#767D88;--rule:#D8DBE0;--tint:#F4F6F8;--red:#D8001F}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;padding:64px 52px}
+  .grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:44px 28px}
+  .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;
+    font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em}
+  .pill{border:1px solid var(--rule);border-radius:999px;padding:3px 10px;color:var(--ink)}
+  .date{color:var(--ink3);text-transform:uppercase}
+  /* The card image is the issue's own figure, drawn from its sourced numbers. */
+  .fig{aspect-ratio:4/3;padding:26px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+  .fig.a{background:var(--tint)} .fig.b{background:var(--ink)} .fig.c{background:var(--red)}
+  h3{font-family:Georgia,"Playfair Display",serif;font-weight:500;font-size:25px;line-height:1.15;letter-spacing:-.4px;margin-top:14px}
+  .dek{font-size:14px;line-height:1.55;color:var(--ink2);margin-top:8px}
+  .src{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:10px;color:var(--ink3);margin-top:10px;line-height:1.5}
+  /* bar chart */
+  .bars{display:flex;align-items:flex-end;gap:22px;height:100%;padding:0 18px}
+  .bar-wrap{flex:1;display:flex;justify-content:center;align-items:flex-end;height:100%}
+  .bar{width:56px;background:var(--red);position:relative}
+  .bar span{position:absolute;top:-19px;left:0;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink)}
+  /* dot ratio */
+  .dots{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}
+  .dots.five{grid-template-columns:repeat(5,1fr);gap:12px;padding:0 22px}
+  .dot{aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.22)}
+  .dot.on{background:#FFFFFF}
+  .lab{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em}
+  .lab.on-dark{color:#A8AEB8} .lab.on-red{color:rgba(255,255,255,.85)}
+  .huge{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:62px;line-height:.9;color:#FFFFFF;letter-spacing:-2px;margin-bottom:6px}
+</style>
+<body>
+<div class="grid">
+
+  <article>
+    <div class="meta"><span class="pill">No. 41</span><span class="date">Aug 2026</span></div>
+    <div class="fig a">
+      <div class="bars">
+        <div class="bar-wrap"><div class="bar" style="height:34%"><span>100</span></div></div>
+        <div class="bar-wrap"><div class="bar" style="height:79%"><span>233</span></div></div>
+      </div>
+      <div class="lab" style="color:var(--ink2)">2021 &nbsp;&rarr;&nbsp; 2026, indexed</div>
+    </div>
+    <h3>Shoplifting cases rose 133% in five years.</h3>
+    <p class="dek">The rise is not disputed. What happens next is where the system stops.</p>
+    <p class="src">Liberal Democrats data via ITV1 Good Morning Britain, 2026.</p>
+  </article>
+
+  <article>
+    <div class="meta"><span class="pill">No. 42</span><span class="date">Aug 2026</span></div>
+    <div class="fig b">
+      <div class="dots five">
+        <div class="dot on"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="lab on-dark">Nationally. Filled = charged.</div>
+    </div>
+    <h3>Four in five go uncharged.</h3>
+    <p class="dek">Nationally. In London it is thirteen in fourteen.</p>
+    <p class="src">Liberal Democrats data via ITV1 Good Morning Britain, 2026.</p>
+  </article>
+
+  <article>
+    <div class="meta"><span class="pill">No. 43</span><span class="date">Aug 2026</span></div>
+    <div class="fig c">
+      <div class="huge">£200</div>
+      <div class="lab on-red">The floor nobody legislated. Below it, theft is absorbed and logged.</div>
+    </div>
+    <h3>The £200 floor nobody legislated.</h3>
+    <p class="dek">Every independent retailer already knows the number. The prevention guidance does not mention it.</p>
+    <p class="src">Reported threshold behaviour. Not a statutory limit.</p>
+  </article>
+
+</div>
+</body>
