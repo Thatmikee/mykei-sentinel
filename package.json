@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "smoke": "node scripts/route-smoke.mjs"
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^5.2.8",
