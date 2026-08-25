@@ -78,7 +78,7 @@ const App = () => (
         <Suspense fallback={<div style={{ height: "100vh", background: "#FFFFFF" }} />}>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/contact" element={<Navigate to="/contact" replace />} />
+            <Route path="/pilot" element={<Navigate to="/contact" replace />} />
             <Route path="/howitworks" element={<HowItWorks />} />
             <Route path="/how-it-works" element={<Navigate to="/howitworks" replace />} />
             <Route path="/roadmap" element={<Roadmap />} />

@@ -27,7 +27,7 @@ function SimpleNav() {
         Mykei Securities
       </a>
       <a href="/contact" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, border: `1px solid ${GOLD}`, padding: "7px 14px", textDecoration: "none" }}>
-        Apply for Pilot
+        Contact
       </a>
     </nav>
   );
