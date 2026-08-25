@@ -180,7 +180,7 @@ export default function Index() {
         .mk-nav-brand-name { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #111318; line-height: 1; }
         .mk-nav-brand-sub { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: #D8001F; }
         .mk-nav-links { display: flex; align-items: center; list-style: none; margin: 0; padding: 0; }
-        .mk-nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #5C4639; padding: 4px 16px; transition: color 0.15s; }
+        .mk-nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #4A4F58; padding: 4px 16px; transition: color 0.15s; }
         .mk-nav-links a:hover { color: #111318; }
         .mk-nav-cta { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: #111318; padding: 9px 20px; border: 1px solid #111318; transition: background 0.2s, color 0.2s; }
         .mk-nav-cta:hover { background: #D8001F; border-color: #D8001F; color: #111318; }
@@ -196,7 +196,7 @@ export default function Index() {
 
         /* ── HERO ── */
         .mk-hero {
-          min-height: 78svh; display: flex; align-items: center;
+          min-height: 62svh; display: flex; align-items: center;
           padding: 96px 52px 56px; position: relative; overflow: hidden; background: #fff;
         }
         .mk-hero::before {
@@ -208,7 +208,7 @@ export default function Index() {
         }
         .mk-hero::after { display: none; }
         .mk-hero-inner {
-          position: relative; z-index: 2; max-width: 900px; margin: 0 auto; width: 100%;
+          position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; width: 100%;
           display: grid; grid-template-columns: 1fr; gap: 0; align-items: center;
         }
 
@@ -226,7 +226,7 @@ export default function Index() {
         /* Identity headline */
         .mk-hero-identity {
           font-family: 'Playfair Display', Georgia, serif;
-          font-size: clamp(38px, 5vw, 64px);
+          font-size: clamp(33px, 4.1vw, 54px);
           font-weight: 500; line-height: 1.06; letter-spacing: -1.5px; color: #111318; margin-bottom: 10px;
         }
         .mk-identity-accent { color: #D8001F; }
@@ -237,9 +237,12 @@ export default function Index() {
           text-transform: uppercase; color: #4A4F58; margin-bottom: 28px;
         }
 
-        .mk-hero-body {
-          font-size: 17px; line-height: 1.8; color: #4A4F58; max-width: 650px; margin-bottom: 34px;
+        .mk-hero-sub {
+          font-size: 19px; line-height: 1.7; color: #4A4F58; max-width: 34ch; margin-bottom: 34px;
         }
+        .mk-standfirst { max-width: 1100px; margin: 0 auto; padding: 44px 0 8px; }
+        .mk-standfirst-body { font-size: 17px; line-height: 1.8; color: #4A4F58; max-width: 68ch; margin-bottom: 22px; }
+        .mk-standfirst-stat { font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.7; color: #4A4F58; margin-top: 20px; }
         .mk-hero-body strong { color: #111318; font-weight: 600; }
 
         .mk-hero-actions {
@@ -279,7 +282,7 @@ export default function Index() {
           gap: 10px; min-width: 160px;
         }
         .mk-proof-bar-dot { width: 7px; height: 7px; border-radius: 50%; background: #D8001F; flex-shrink: 0; }
-        .mk-proof-bar-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #2D7D46; }
+        .mk-proof-bar-status { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #4A4F58; }
         .mk-proof-bar-sub { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1px; color: #4A4F58; margin-top: 3px; }
         .mk-proof-bar-items {
           display: flex; align-items: center; flex-wrap: wrap;
@@ -453,7 +456,7 @@ export default function Index() {
         .mk-footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #A8AEB8; letter-spacing: 0.5px; }
 
         /* ── MOBILE ── */
-        .mk-mobile-menu { background: #fff; border-bottom: 1px solid #e2e8f3; padding: 16px 24px; display: flex; flex-direction: column; gap: 4px; }
+        .mk-mobile-menu { background: #fff; border-bottom: 1px solid #D8DBE0; padding: 16px 24px; display: flex; flex-direction: column; gap: 4px; }
         .mk-mobile-link { font-size: 15px; font-weight: 500; color: #111318; padding: 10px 0; border-bottom: 1px solid #EDEFF2; }
         .mk-mobile-cta { font-size: 14px; font-weight: 700; color: #fff; background: #111318; padding: 12px; border-radius: 6px; text-align: center; margin-top: 8px; }
 
@@ -573,39 +576,22 @@ export default function Index() {
               <span className="mk-badge-label">Mykei Securities Ltd</span>
               <div className="mk-badge-sep" />
               <span className="mk-badge-status">
-                <div className="mk-badge-dot" />Prototype stage. Pilot conversations open.
+                <div className="mk-badge-dot" />Prototype stage. Not deployed in stores.
               </span>
             </div>
 
             <h1 className="mk-hero-identity">
-              The problem is not<br />
-              the theft.<br />
+              The problem is not the theft.<br />
               <span className="mk-identity-accent">It is the resale.</span>
               <span className="mk-identity-rule" />
             </h1>
 
-            <div className="mk-hero-descriptor">
+            <p className="mk-hero-sub">
               Shelf level retail defence for stores hit by repeat theft.
-            </div>
-
-            <p className="mk-hero-body">
-              Mykei is developing ADN, a shelf level device designed to turn a theft event into a marker and a registry record. No cameras. No biometric data. The aim is to make stolen stock harder to move. ADN is a working prototype and is not yet deployed in stores.
-            </p>
-
-            <p ref={statsReveal.ref} style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 13, color: "#4A4F58", marginBottom: 28 }}>
-              £{(b42/10).toFixed(1)}B lost to retail theft annually in the UK, reported industry figure, not independently verified by Mykei.
             </p>
 
             <div className="mk-hero-actions">
               <a href="/signal" className="mk-btn-primary">Read The Signal</a>
-            </div>
-
-            <div className="mk-hero-proof">
-              {["No cameras", "Non-confrontational by design", "No biometric data"].map(p => (
-                <div className="mk-proof-item" key={p}>
-                  <div className="mk-proof-check">✓</div>{p}
-                </div>
-              ))}
             </div>
 
             {/* Compact stats retained for narrow fallback layouts */}
@@ -629,12 +615,27 @@ export default function Index() {
 
       {/* PROOF BAR */}
       <div className="mk-proof-bar">
+        <div className="mk-standfirst">
+          <p className="mk-standfirst-body">
+            Mykei is developing ADN, a shelf level device designed to turn a theft event into a marker and a registry record. No cameras. No biometric data. The aim is to make stolen stock harder to move. ADN is a working prototype and is not yet deployed in stores.
+          </p>
+          <div className="mk-hero-proof">
+            {["No cameras", "Non-confrontational by design", "No biometric data"].map(p => (
+              <div className="mk-proof-item" key={p}>
+                <div className="mk-proof-check">✓</div>{p}
+              </div>
+            ))}
+          </div>
+          <p ref={statsReveal.ref} className="mk-standfirst-stat">
+            £{(b42/10).toFixed(1)}B lost to retail theft annually in the UK, reported industry figure, not independently verified by Mykei.
+          </p>
+        </div>
         <div className="mk-proof-bar-inner">
           <div className="mk-proof-bar-label">
             <div className="mk-proof-bar-dot" />
             <div>
-              <div className="mk-proof-bar-status">Pilot Conversations Open</div>
-              <div className="mk-proof-bar-sub">Pre-pilot. Greater Manchester.</div>
+              <div className="mk-proof-bar-status">Prototype Stage</div>
+              <div className="mk-proof-bar-sub">Not deployed in stores. Greater Manchester.</div>
             </div>
           </div>
           <div className="mk-proof-bar-items">

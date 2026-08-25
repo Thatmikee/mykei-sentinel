@@ -165,7 +165,7 @@ export default function EvidencePage() {
             <div style={{ display: "flex", gap: 24, flexWrap: "wrap" as const }}>
               {[
                 { label: "Pilot Status", value: "Letters of interest signed, not yet active" },
-                { label: "Retail Partners", value: "Pilot conversations open" },
+                { label: "Retail Partners", value: "Pilot applications closed" },
                 { label: "Patent", value: "No. 2606630.8 (UK)" },
                 { label: "Company", value: "No. 16984969 E&W" },
               ].map(({ label, value }) => (
