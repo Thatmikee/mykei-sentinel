@@ -37,6 +37,17 @@ const ROUTE_META = {
     twitterTitle: 'Asset-Proof Nigeria | Mykei Protocol',
     twitterDescription: 'Registry-first asset protection for Nigerian solar, estate, school, warehouse, and SME assets.',
   },
+  '/sabishield': {
+    title: 'SabiShield field questionnaire | Mykei Securities',
+    description: 'Three minutes, no name needed. Tell us what you need from SabiShield, an app idea to keep evidence of police abuse and street crime in Nigeria safe.',
+    canonical: 'https://mykei.io/sabishield',
+    ogTitle: 'Help build SabiShield: the app that keeps your evidence safe',
+    ogDescription: 'Three minutes, no name needed. Your answers decide what SabiShield becomes.',
+    ogUrl: 'https://mykei.io/sabishield',
+    ogImage: 'https://mykei.io/social-share.png',
+    twitterTitle: 'Help build SabiShield: the app that keeps your evidence safe',
+    twitterDescription: 'Three minutes, no name needed. Your answers decide what SabiShield becomes.',
+  },
   '/founder': {
     title: 'Michael Esema, Founder & CEO, Mykei Securities Ltd | Manchester',
     description: 'Michael Esema is the founder of Mykei Securities Ltd, inventor of ADN, and originator of Economic Sterilisation. Manchester-based, Nigerian-born, MBA, MSc.',
