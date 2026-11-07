@@ -114,23 +114,29 @@ const QUESTIONS: Question[] = [
 
 type Answers = Record<string, string | string[]>;
 type Draft = { state: string; answers: Answers; story: string; follow: boolean; contact: string; adult: boolean };
-type Pending = { ref: string; phone: string; message: string };
+type Pending = { ref: string; phone: string; message: string; savedAt: number };
 
 const EMPTY: Draft = { state: "", answers: {}, story: "", follow: false, contact: "", adult: false };
 
+// Phones get searched and seized at checkpoints, which is the very problem this
+// page asks about. So nothing is kept beyond the open tab: sessionStorage is
+// erased when the tab closes, the draft never stores the free-text story or the
+// contact number, and an unsent submission expires after an hour.
+const PENDING_TTL_MS = 60 * 60 * 1000;
+
 function load<V>(key: string): V | null {
   try {
-    const raw = window.localStorage.getItem(key);
+    const raw = window.sessionStorage.getItem(key);
     return raw ? (JSON.parse(raw) as V) : null;
   } catch {
     return null;
   }
 }
 function save(key: string, value: unknown) {
-  try { window.localStorage.setItem(key, JSON.stringify(value)); } catch { /* private mode or full */ }
+  try { window.sessionStorage.setItem(key, JSON.stringify(value)); } catch { /* private mode or full */ }
 }
 function drop(key: string) {
-  try { window.localStorage.removeItem(key); } catch { /* ignore */ }
+  try { window.sessionStorage.removeItem(key); } catch { /* ignore */ }
 }
 
 function makeRef(): string {
@@ -178,14 +184,24 @@ export default function SabiShieldVoicesPage() {
     if (canonical) canonical.href = PAGE_URL;
 
     const draft = load<Draft>(DRAFT_KEY);
-    if (draft) setD({ ...EMPTY, ...draft });
+    if (draft) setD({ ...EMPTY, ...draft, story: "", contact: "" });
     const p = load<Pending>(PENDING_KEY);
-    if (p) setPending(p);
+    if (p && Date.now() - p.savedAt < PENDING_TTL_MS) setPending(p);
+    else drop(PENDING_KEY);
   }, []);
 
   function update(next: Draft) {
     setD(next);
-    save(DRAFT_KEY, next);
+    save(DRAFT_KEY, { ...next, story: "", contact: "" });
+  }
+
+  function clearAll() {
+    drop(DRAFT_KEY);
+    drop(PENDING_KEY);
+    setPending(null);
+    setD(EMPTY);
+    setMissing([]);
+    setError("");
   }
 
   function pick(q: Question, option: string) {
@@ -256,7 +272,7 @@ export default function SabiShieldVoicesPage() {
       return;
     }
     const ref = pending?.ref ?? makeRef();
-    const p: Pending = { ref, phone: d.follow ? d.contact.trim() : "", message: buildMessage(ref, d) };
+    const p: Pending = { ref, phone: d.follow ? d.contact.trim() : "", message: buildMessage(ref, d), savedAt: Date.now() };
     void send(p);
   }
 
@@ -452,7 +468,7 @@ export default function SabiShieldVoicesPage() {
           </div>
 
           <div style={{ background: C.TINT, borderRadius: 12, padding: 20, fontFamily: T.SANS, fontSize: 14, color: C.INK_2, lineHeight: 1.65, marginBottom: 24 }}>
-            <strong style={{ color: C.INK }}>How we handle your answers.</strong> No name or email is needed. Your answers are emailed to the Mykei Securities team and used only to design SabiShield. We report results only as totals, never one person's answers. To have yours deleted, email protocol@mykei.io with the reference you get after sending.
+            <strong style={{ color: C.INK }}>How we handle your answers.</strong> No name or email is needed. Your answers are emailed to the Mykei Securities team and used only to design SabiShield. We report results only as totals, never one person's answers. To have yours deleted, email protocol@mykei.io with the reference you get after sending. Unsent answers stay only in this browser tab and are erased when you close it; your story and number are never saved on the phone.
           </div>
 
           <div id="ts-voices-container" />
@@ -464,6 +480,12 @@ export default function SabiShieldVoicesPage() {
             style={{ width: "100%", minHeight: 56, background: C.INK, color: C.GROUND, border: "none", borderRadius: 12, fontFamily: T.SANS, fontSize: 18, fontWeight: 500, cursor: sending ? "wait" : "pointer", opacity: sending ? 0.7 : 1 }}
           >
             {sending ? "Sending..." : "Send my answers"}
+          </button>
+          <button
+            type="button" onClick={clearAll}
+            style={{ display: "block", margin: "16px auto 0", minHeight: 44, padding: "0 16px", background: "none", border: "none", color: C.INK_2, textDecoration: "underline", fontFamily: T.SANS, fontSize: 15, cursor: "pointer" }}
+          >
+            Clear my answers
           </button>
         </form>
       </main>
