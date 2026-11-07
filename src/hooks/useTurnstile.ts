@@ -45,6 +45,11 @@ export function useTurnstile(containerId: string, action: string) {
       s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
       s.async = true;
       s.defer = true;
+      // Turnstile does not announce that it has loaded, and nothing else on the
+      // site dispatches this event. Without it the listener below never fires,
+      // the widget never renders, no token is issued, and every form using this
+      // hook stays on "Verification is still loading".
+      s.onload = () => window.dispatchEvent(new Event("cf-turnstile-loaded"));
       document.head.appendChild(s);
     }
 

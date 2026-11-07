@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Footer from "@/components/Footer";
 import { RED_EDITION as C, RED_TYPE as T } from "@/styles/signalRed";
 import { useTurnstile, ENQUIRY_ENDPOINT } from "@/hooks/useTurnstile";
@@ -114,15 +114,15 @@ const QUESTIONS: Question[] = [
 
 type Answers = Record<string, string | string[]>;
 type Draft = { state: string; answers: Answers; story: string; follow: boolean; contact: string; adult: boolean };
-type Pending = { ref: string; phone: string; message: string; savedAt: number };
+type Pending = { ref: string; phone: string; message: string };
 
 const EMPTY: Draft = { state: "", answers: {}, story: "", follow: false, contact: "", adult: false };
 
 // Phones get searched and seized at checkpoints, which is the very problem this
-// page asks about. So nothing is kept beyond the open tab: sessionStorage is
-// erased when the tab closes, the draft never stores the free-text story or the
-// contact number, and an unsent submission expires after an hour.
-const PENDING_TTL_MS = 60 * 60 * 1000;
+// page asks about. So nothing sensitive is kept on the device: only the tapped
+// answers are saved, in sessionStorage (erased when the tab closes); the story
+// and contact number are never saved; and an unsent submission is held in
+// memory only, so it is gone as soon as the page is closed.
 
 function load<V>(key: string): V | null {
   try {
@@ -137,6 +137,13 @@ function save(key: string, value: unknown) {
 }
 function drop(key: string) {
   try { window.sessionStorage.removeItem(key); } catch { /* ignore */ }
+}
+/** The first preview build used localStorage; remove anything it left behind. */
+function purgeLegacy() {
+  for (const key of [DRAFT_KEY, PENDING_KEY]) {
+    try { window.localStorage.removeItem(key); } catch { /* ignore */ }
+  }
+  drop(PENDING_KEY);
 }
 
 function makeRef(): string {
@@ -175,6 +182,7 @@ export default function SabiShieldVoicesPage() {
   const [doneRef, setDoneRef] = useState("");
   const [pending, setPending] = useState<Pending | null>(null);
   const [copied, setCopied] = useState(false);
+  const generation = useRef(0);
 
   useEffect(() => {
     document.title = "SabiShield field questionnaire | Mykei Securities";
@@ -183,11 +191,9 @@ export default function SabiShieldVoicesPage() {
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.href = PAGE_URL;
 
+    purgeLegacy();
     const draft = load<Draft>(DRAFT_KEY);
     if (draft) setD({ ...EMPTY, ...draft, story: "", contact: "" });
-    const p = load<Pending>(PENDING_KEY);
-    if (p && Date.now() - p.savedAt < PENDING_TTL_MS) setPending(p);
-    else drop(PENDING_KEY);
   }, []);
 
   function update(next: Draft) {
@@ -196,8 +202,9 @@ export default function SabiShieldVoicesPage() {
   }
 
   function clearAll() {
+    generation.current += 1;
     drop(DRAFT_KEY);
-    drop(PENDING_KEY);
+    purgeLegacy();
     setPending(null);
     setD(EMPTY);
     setMissing([]);
@@ -232,6 +239,7 @@ export default function SabiShieldVoicesPage() {
       setError("Still checking the connection. Wait a few seconds, then tap Send again.");
       return;
     }
+    const gen = generation.current;
     setSending(true);
     setError("");
     const body = new FormData();
@@ -247,16 +255,16 @@ export default function SabiShieldVoicesPage() {
       const res = await fetch(ENQUIRY_ENDPOINT, { method: "POST", body });
       const result = await res.json().catch(() => ({ success: false }));
       if (!res.ok || !result.success) throw new Error(String(res.status));
-      drop(PENDING_KEY);
       drop(DRAFT_KEY);
       setPending(null);
       setDoneRef(p.ref);
       window.scrollTo({ top: 0 });
     } catch {
-      save(PENDING_KEY, p);
-      setPending(p);
       reset();
-      setError("Your answers did not send. They are saved on this phone. Wait a moment, then tap Send again.");
+      // Cleared while this request was in flight: do not bring the answers back.
+      if (gen !== generation.current) return;
+      setPending(p);
+      setError("Your answers did not send. Keep this page open, wait a moment, then tap Send again.");
     } finally {
       setSending(false);
     }
@@ -272,7 +280,7 @@ export default function SabiShieldVoicesPage() {
       return;
     }
     const ref = pending?.ref ?? makeRef();
-    const p: Pending = { ref, phone: d.follow ? d.contact.trim() : "", message: buildMessage(ref, d), savedAt: Date.now() };
+    const p: Pending = { ref, phone: d.follow ? d.contact.trim() : "", message: buildMessage(ref, d) };
     void send(p);
   }
 
@@ -353,7 +361,7 @@ export default function SabiShieldVoicesPage() {
         <section className="sv-wrap" style={{ maxWidth: 720, margin: "0 auto", padding: "0 40px 8px" }}>
           <div style={{ background: C.TINT, borderRadius: 12, padding: "24px 24px 20px" }}>
             <h2 style={{ fontFamily: T.SANS, fontSize: 18, fontWeight: 600, color: C.INK, marginBottom: 14 }}>What SabiShield would do</h2>
-            <ol style={{ fontFamily: T.SANS, fontSize: 16, color: C.INK, lineHeight: 1.6, paddingLeft: 20, display: "grid", gap: 10 }}>
+            <ol style={{ fontFamily: T.SANS, fontSize: 16, color: C.INK, lineHeight: 1.6, paddingLeft: 20, listStyle: "decimal", display: "grid", gap: 10 }}>
               <li>One button. You press record and do nothing else.</li>
               <li>Every 3 seconds the recording leaves your phone, locked so only you and the people you choose can open it. If your phone is taken, the evidence is already safe.</li>
               <li>It goes to a lawyer or to the body that must answer. It is never posted publicly, and no one is named.</li>
@@ -367,7 +375,7 @@ export default function SabiShieldVoicesPage() {
         {pending && (
           <section className="sv-wrap" style={{ maxWidth: 720, margin: "0 auto", padding: "24px 40px 0" }}>
             <div role="status" style={{ border: `1px solid ${C.INK}`, borderRadius: 12, padding: 18, fontFamily: T.SANS, fontSize: 15, color: C.INK, lineHeight: 1.6 }}>
-              You have answers saved on this phone that did not send yet.{" "}
+              Your answers did not send yet.{" "}
               <button type="button" onClick={() => void send(pending)} disabled={sending} style={{ background: "none", border: "none", padding: 0, color: C.INK, textDecoration: "underline", fontFamily: T.SANS, fontSize: 15, cursor: "pointer" }}>
                 {sending ? "Sending..." : "Send them now"}
               </button>
@@ -468,7 +476,7 @@ export default function SabiShieldVoicesPage() {
           </div>
 
           <div style={{ background: C.TINT, borderRadius: 12, padding: 20, fontFamily: T.SANS, fontSize: 14, color: C.INK_2, lineHeight: 1.65, marginBottom: 24 }}>
-            <strong style={{ color: C.INK }}>How we handle your answers.</strong> No name or email is needed. Your answers are emailed to the Mykei Securities team and used only to design SabiShield. We report results only as totals, never one person's answers. To have yours deleted, email protocol@mykei.io with the reference you get after sending. Unsent answers stay only in this browser tab and are erased when you close it; your story and number are never saved on the phone.
+            <strong style={{ color: C.INK }}>How we handle your answers.</strong> No name or email is needed. Your answers are emailed to the Mykei Securities team and used only to design SabiShield. We report results only as totals, never one person's answers. To have yours deleted, email protocol@mykei.io with the reference you get after sending. Until you send, your tapped answers stay only in this browser tab and are erased when you close it. Your story and number are never saved on the phone.
           </div>
 
           <div id="ts-voices-container" />
@@ -482,7 +490,7 @@ export default function SabiShieldVoicesPage() {
             {sending ? "Sending..." : "Send my answers"}
           </button>
           <button
-            type="button" onClick={clearAll}
+            type="button" onClick={clearAll} disabled={sending}
             style={{ display: "block", margin: "16px auto 0", minHeight: 44, padding: "0 16px", background: "none", border: "none", color: C.INK_2, textDecoration: "underline", fontFamily: T.SANS, fontSize: 15, cursor: "pointer" }}
           >
             Clear my answers
