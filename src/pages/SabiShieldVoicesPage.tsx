@@ -453,7 +453,7 @@ export default function SabiShieldVoicesPage() {
           </div>
 
           <div style={{ background: C.TINT, borderRadius: 12, padding: 20, fontFamily: T.SANS, fontSize: 14, color: C.INK_2, lineHeight: 1.65, marginBottom: 24 }}>
-            <strong style={{ color: C.INK }}>How we handle your answers.</strong> No name or email is needed. Your answers are emailed to the Mykei Securities team and used only to design SabiShield. We report results only as totals, never one person's answers. To have yours deleted, email protocol@mykei.io with the reference you get after sending. Nothing you enter is saved on this phone. If sending fails, your answers stay on this page only until you close it.
+            <strong style={{ color: C.INK }}>How we handle your answers.</strong> No name or email is needed. Your answers are emailed to the Mykei Securities team and used only to design SabiShield. We report results only as totals, never one person's answers. To have yours deleted, email protocol@mykei.io with the reference you get after sending. Nothing you enter is saved on this phone. If sending fails, your answers stay on this page only until you close it. Like the rest of mykei.io, this page uses Google Analytics according to the cookie choice you make on this site.
           </div>
 
           <div id="ts-voices-container" />
