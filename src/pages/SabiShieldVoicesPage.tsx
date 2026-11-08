@@ -191,14 +191,13 @@ export default function SabiShieldVoicesPage() {
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.href = PAGE_URL;
 
+    // Nothing is saved on the phone any more; clear what earlier builds may have left.
     purgeLegacy();
-    const draft = load<Draft>(DRAFT_KEY);
-    if (draft) setD({ ...EMPTY, ...draft, story: "", contact: "" });
+    drop(DRAFT_KEY);
   }, []);
 
   function update(next: Draft) {
     setD(next);
-    save(DRAFT_KEY, { ...next, story: "", contact: "" });
   }
 
   function clearAll() {
@@ -229,7 +228,6 @@ export default function SabiShieldVoicesPage() {
     const m: string[] = [];
     if (!d.state) m.push("state");
     for (const q of QUESTIONS) if (q.required && asList(d.answers[q.id]).length === 0) m.push(q.id);
-    if (d.follow && !/^[+\d][\d\s-]{6,19}$/.test(d.contact.trim())) m.push("contact");
     if (!d.adult) m.push("adult");
     return m;
   }
@@ -438,29 +436,8 @@ export default function SabiShieldVoicesPage() {
             <div style={{ fontFamily: T.MONO, fontSize: 12, color: C.INK_3, marginTop: 6 }}>{d.story.length} / 600</div>
           </div>
 
-          <div id="q-contact" style={{ padding: "28px 0", borderBottom: `1px solid ${C.RULE_2}` }}>
-            <label style={{ ...chip(d.follow), maxWidth: "100%" }}>
-              <input
-                type="checkbox" checked={d.follow}
-                onChange={e => update({ ...d, follow: e.target.checked })}
-                style={{ width: 20, height: 20, accentColor: C.INK, flex: "0 0 auto" }}
-              />
-              <span>You can contact me for a 15-minute chat about this. (optional)</span>
-            </label>
-            {d.follow && (
-              <div style={{ marginTop: 14 }}>
-                <label htmlFor="sv-contact" style={{ fontFamily: T.SANS, fontSize: 15, color: C.INK, display: "block", marginBottom: 6 }}>WhatsApp or phone number, with country code</label>
-                <input
-                  id="sv-contact" type="tel" inputMode="tel" autoComplete="tel" value={d.contact}
-                  onChange={e => update({ ...d, contact: e.target.value })}
-                  aria-invalid={missing.includes("contact")}
-                  placeholder="+234 801 234 5678"
-                  style={{ width: "100%", minHeight: 48, padding: "0 12px", border: `1px solid ${missing.includes("contact") ? C.RED : C.INK_3}`, borderRadius: 10, fontFamily: T.SANS, fontSize: 16, color: C.INK }}
-                />
-                <div style={helpText}>We use it only for this chat and delete it afterwards.</div>
-                {missing.includes("contact") && <div style={errText}>Please enter a number we can reach, or untick the box.</div>}
-              </div>
-            )}
+          <div style={{ padding: "20px 0", borderBottom: `1px solid ${C.RULE_2}`, fontFamily: T.SANS, fontSize: 15, color: C.INK_2, lineHeight: 1.6 }}>
+            Want to tell us more in a short call? Email protocol@mykei.io. We keep contact details apart from these answers, so your answers stay anonymous.
           </div>
 
           <div id="q-adult" style={{ padding: "28px 0" }}>
@@ -476,7 +453,7 @@ export default function SabiShieldVoicesPage() {
           </div>
 
           <div style={{ background: C.TINT, borderRadius: 12, padding: 20, fontFamily: T.SANS, fontSize: 14, color: C.INK_2, lineHeight: 1.65, marginBottom: 24 }}>
-            <strong style={{ color: C.INK }}>How we handle your answers.</strong> No name or email is needed. Your answers are emailed to the Mykei Securities team and used only to design SabiShield. We report results only as totals, never one person's answers. To have yours deleted, email protocol@mykei.io with the reference you get after sending. Until you send, your tapped answers stay only in this browser tab and are erased when you close it. Your story and number are never saved on the phone.
+            <strong style={{ color: C.INK }}>How we handle your answers.</strong> No name or email is needed. Your answers are emailed to the Mykei Securities team and used only to design SabiShield. We report results only as totals, never one person's answers. To have yours deleted, email protocol@mykei.io with the reference you get after sending. Nothing you enter is saved on this phone. If sending fails, your answers stay on this page only until you close it.
           </div>
 
           <div id="ts-voices-container" />
