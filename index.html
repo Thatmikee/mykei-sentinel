@@ -292,17 +292,24 @@
       }
     }
     </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GCJY8N89S"></script>
+  <!-- Google tag (gtag.js). Never loaded on /sabishield*: visitors there may be
+       reporting police conduct, and even consent-denied pings reach Google with
+       an IP address. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('consent', 'default', {
-      analytics_storage: 'denied',
-      ad_storage: 'denied'
-    });
-    gtag('config', 'G-7GCJY8N89S');
+    if (!location.pathname.startsWith('/sabishield')) {
+      var gts = document.createElement('script');
+      gts.async = true;
+      gts.src = 'https://www.googletagmanager.com/gtag/js?id=G-7GCJY8N89S';
+      document.head.appendChild(gts);
+      gtag('js', new Date());
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied'
+      });
+      gtag('config', 'G-7GCJY8N89S');
+    }
   </script>
   <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/3827feeaf5b6081f66aa049a/script.js"></script>
   </head>

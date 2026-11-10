@@ -30,10 +30,10 @@ const STATES = [
 
 const WORKING: Array<[string, string]> = [
   ["One button, no sign-up", "The app opens to a record button. No account, no name, no number."],
-  ["Evidence leaves the phone every 3 seconds", "Encrypted pieces upload while you record. If the phone is taken mid-recording, what was already sent is safe."],
-  ["We cannot watch your recordings", "They are encrypted on your phone before they leave it. The keys never reach our server."],
+  ["Evidence leaves the phone every 3 seconds", "Encrypted pieces upload while you record, as fast as the network allows. Pieces that have not yet uploaded when a phone is lost are lost with it; that is why they leave every few seconds."],
+  ["Built so we cannot watch your recordings", "They are encrypted on your phone before they leave it, and the keys never reach our server. That is the design, and our tests check it; an independent audit has not happened yet."],
   ["A seal that shows tampering", "Every piece gets a signed receipt in a hash chain, and the sealed record is anchored with OpenTimestamps. Anyone can check the seal without seeing the video."],
-  ["A seized phone cannot delete evidence", "Deleting a recording is locked for 30 days, even for the person holding the phone."],
+  ["A seized phone cannot delete what it already sent", "Deleting an uploaded recording is locked for 30 days, even for the person holding the phone."],
   ["Guardian", "One person you trust gets the only key to your recordings, once, through a link. After that, your own phone cannot open what it recorded."],
   ["Share one recording with a lawyer", "One link opens one recording, nothing else."],
   ["Audio-only mode", "For moments when raising a phone is dangerous."],
@@ -128,7 +128,12 @@ async function submitSignup(
   const id = newSignupId();
   const clean: Record<string, string> = {};
   for (const [k, v] of Object.entries(fields)) if (v.trim()) clean[k] = v.trim();
-  const sealed = await seal(id, contact);
+  let sealed = "";
+  try {
+    sealed = await seal(id, contact);
+  } catch {
+    return { ok: false, ref: "", message: "This browser could not encrypt your details, so nothing was sent. Please try a newer browser such as Chrome or Firefox." };
+  }
   try {
     const res = await fetch(SIGNUP_ENDPOINT, {
       method: "POST",
@@ -137,9 +142,9 @@ async function submitSignup(
     });
     if (res.status === 201 || res.status === 409) return { ok: true, ref: id, message: "" };
     if (res.status === 429) return { ok: false, ref: "", message: "Too many sign-ups from your network right now. Please try again in an hour." };
-    return { ok: false, ref: "", message: "That did not work. Please try again in a moment." };
+    return { ok: false, ref: "", message: "That did not work on our side. Nothing you typed was lost; please try again in a moment." };
   } catch {
-    return { ok: false, ref: "", message: "Could not reach the sign-up service. Check your connection and try again." };
+    return { ok: false, ref: "", message: "We could not reach the sign-up service. That is likely a problem on our side, not your connection. Nothing you typed was lost; please try again later." };
   }
 }
 
@@ -149,7 +154,7 @@ function Honeypot({ value, onChange }: { value: string; onChange: (v: string) =>
     <div aria-hidden="true" style={{ position: "absolute", left: -9999, width: 1, height: 1, overflow: "hidden" }}>
       <label>
         Leave this field empty
-        <input type="text" name="website" value={value} onChange={e => onChange(e.target.value)} tabIndex={-1} autoComplete="off" />
+        <input type="text" name="sh_extra" value={value} onChange={e => onChange(e.target.value)} tabIndex={-1} autoComplete="off" />
       </label>
     </div>
   );
@@ -160,11 +165,13 @@ function PrivacyNote() {
     <div style={{ background: C.TINT, borderRadius: 12, padding: 18, fontFamily: T.SANS, fontSize: 14, color: C.INK_2, lineHeight: 1.65, margin: "18px 0" }}>
       <strong style={{ color: C.INK }}>How your details are handled.</strong>{" "}
       Your name and contact details are encrypted on this page, in your browser, before they are sent.
-      The key that opens them is held offline by one person at Mykei Securities Ltd and is not on any server,
-      so a database leak reveals no one. The other answers (state, phone type and so on) are stored so they
-      can be counted. You will get a reference code. To be removed from the list, email protocol@mykei.io
-      with that code. Like the rest of mykei.io, this page uses Google Analytics according to the cookie
-      choice you make on this site.
+      The key that opens them is held offline by one person at Mykei Securities Ltd and is not on any
+      server, so a stolen copy of the list would reveal no name and no contact detail. The other answers
+      (state, phone type, role and so on) are stored readably so they can be counted; please keep names
+      and numbers out of those. You will get a reference code. To be removed from the list, email
+      protocol@mykei.io with that code; note that emailing us links your email address to that code.
+      No analytics load when you open this page directly. If you arrive from another mykei.io page,
+      the site's analytics follow the cookie choice you made there.
     </div>
   );
 }
@@ -238,6 +245,11 @@ function TesterForm() {
         <label htmlFor="t-reach" style={fieldLabel}>How do we reach you? WhatsApp number or email</label>
         <input id="t-reach" value={reach} onChange={e => setReach(e.target.value)} maxLength={120} inputMode="email" style={inputStyle} />
       </div>
+      {reach.trim() && (
+        <p style={{ fontFamily: T.SANS, fontSize: 14, color: C.INK_2, marginBottom: 12 }}>
+          We will contact you at: <strong style={{ color: C.INK }}>{reach.trim()}</strong>. Please check it, we cannot see it later to correct a mistake.
+        </p>
+      )}
       {error && <div role="alert" style={{ fontFamily: T.SANS, fontSize: 14, color: C.RED, marginBottom: 12 }}>{error}</div>}
       <button type="submit" disabled={status === "sending"}
         style={{ width: "100%", minHeight: 52, background: C.INK, color: C.GROUND, border: "none", borderRadius: 12, fontFamily: T.SANS, fontSize: 17, fontWeight: 500, cursor: status === "sending" ? "wait" : "pointer", opacity: status === "sending" ? 0.7 : 1 }}>
@@ -289,7 +301,7 @@ function PartnerForm() {
         </select>
       </div>
       <div style={fieldWrap}>
-        <label htmlFor="p-help" style={fieldLabel}>How would you like to help? (optional, one line)</label>
+        <label htmlFor="p-help" style={fieldLabel}>How would you like to help? (optional, one line, stored readably: no names or numbers here please)</label>
         <input id="p-help" value={help} onChange={e => setHelp(e.target.value)} maxLength={120} style={inputStyle} />
       </div>
       <div style={fieldWrap}>
@@ -304,6 +316,11 @@ function PartnerForm() {
         <label htmlFor="p-reach" style={fieldLabel}>Email or phone</label>
         <input id="p-reach" value={reach} onChange={e => setReach(e.target.value)} maxLength={120} inputMode="email" style={inputStyle} />
       </div>
+      {reach.trim() && (
+        <p style={{ fontFamily: T.SANS, fontSize: 14, color: C.INK_2, marginBottom: 12 }}>
+          We will contact you at: <strong style={{ color: C.INK }}>{reach.trim()}</strong>. Please check it, we cannot see it later to correct a mistake.
+        </p>
+      )}
       {error && <div role="alert" style={{ fontFamily: T.SANS, fontSize: 14, color: C.RED, marginBottom: 12 }}>{error}</div>}
       <button type="submit" disabled={status === "sending"}
         style={{ width: "100%", minHeight: 52, background: C.INK, color: C.GROUND, border: "none", borderRadius: 12, fontFamily: T.SANS, fontSize: 17, fontWeight: 500, cursor: status === "sending" ? "wait" : "pointer", opacity: status === "sending" ? 0.7 : 1 }}>
@@ -346,13 +363,14 @@ export default function SabiShieldHubPage() {
         <section style={{ ...section, paddingTop: 48 }}>
           <div style={{ ...label, marginBottom: 18 }}>SabiShield, in testing</div>
           <h1 style={{ fontFamily: T.SANS, fontSize: "clamp(32px, 5.5vw, 52px)", fontWeight: 500, lineHeight: 1.1, color: C.INK, margin: "0 0 20px" }}>
-            They can take your phone. They can't take the video.
+            They can take your phone. They can't take what it already sent.
           </h1>
           <p style={{ ...body, fontSize: 18, marginBottom: 14 }}>
             SabiShield is a free web app being built for Nigeria. One button records a police stop
-            or a street crime. Every 3 seconds, the recording leaves your phone, encrypted so that
-            only the person you chose in advance can ever open it. Each piece gets a signed,
-            time-stamped receipt, so anyone can later check that nothing was altered.
+            or a street crime. Every 3 seconds, as the network allows, the recording leaves your
+            phone, encrypted so that only the person you chose in advance can ever open it. Each
+            piece gets a signed, time-stamped receipt, so anyone can later check that nothing was
+            altered.
           </p>
           <p style={{ ...body, fontSize: 18, marginBottom: 14 }}>
             SabiShield is a witness, never an accuser. It never posts anything publicly and never
@@ -422,7 +440,9 @@ export default function SabiShieldHubPage() {
               </button>
             ))}
           </div>
-          {tab === "tester" ? <TesterForm /> : <PartnerForm />}
+          {/* Both forms stay mounted so switching tabs never wipes typed answers. */}
+          <div style={{ display: tab === "tester" ? "block" : "none" }}><TesterForm /></div>
+          <div style={{ display: tab === "partner" ? "block" : "none" }}><PartnerForm /></div>
         </section>
       </main>
 

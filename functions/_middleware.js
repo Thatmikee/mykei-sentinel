@@ -41,11 +41,11 @@ const ROUTE_META = {
     title: 'SabiShield | Mykei Securities',
     description: 'SabiShield is a free web app being built for Nigeria. One button records a police stop or street crime, and the evidence leaves the phone, sealed, within seconds. See what works today and join the beta.',
     canonical: 'https://mykei.io/sabishield',
-    ogTitle: 'SabiShield: they can take your phone, not the video',
+    ogTitle: 'SabiShield: they can take the phone, not what it already sent',
     ogDescription: 'A free evidence app being built for Nigeria. See what works today, what is planned, and join the beta.',
     ogUrl: 'https://mykei.io/sabishield',
     ogImage: 'https://mykei.io/social-share.png',
-    twitterTitle: 'SabiShield: they can take your phone, not the video',
+    twitterTitle: 'SabiShield: they can take the phone, not what it already sent',
     twitterDescription: 'A free evidence app being built for Nigeria. See what works today and join the beta.',
   },
   '/sabishield/survey': {
