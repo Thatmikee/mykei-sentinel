@@ -74,7 +74,19 @@ function logError(message, fields) {
   console.error(JSON.stringify({ message, ...fields }));
 }
 
-const EXPECTED_TURNSTILE_ACTION = "pilot-loi";
+// "pilot-loi" is the original LOI flow (and the SabiShield questionnaire); "loi-enquiry"
+// is what LOILeadCaptureForm sends. Both are our own forms on our own hostnames.
+const EXPECTED_TURNSTILE_ACTIONS = new Set(["pilot-loi", "loi-enquiry"]);
+const MAX_ENQUIRY_BYTES = 64 * 1024;
+const FIELD_LIMITS = { fullName: 200, company: 200, storeName: 200, email: 254, phone: 40, source: 60, message: 10000 };
+
+/** Returns the trimmed field, or null if it is longer than its limit. */
+function field(formData, name, fallback = "") {
+  const v = formData.get(name);
+  const s = typeof v === "string" ? v.trim() : "";
+  if (s.length > (FIELD_LIMITS[name] ?? 500)) return null;
+  return s || fallback;
+}
 
 async function verifyTurnstile(token, secretKey, remoteIp) {
   if (typeof token !== "string" || token.length === 0 || token.length > 2048) return false;
@@ -99,7 +111,7 @@ async function verifyTurnstile(token, secretKey, remoteIp) {
   }
 
   if (!data.success) return false;
-  if (data.action !== EXPECTED_TURNSTILE_ACTION) return false;
+  if (!EXPECTED_TURNSTILE_ACTIONS.has(data.action)) return false;
   // Defense in depth: the verified token should have been issued for one of
   // our own hostnames, not replayed from somewhere else.
   if (data.hostname && !(data.hostname === "mykei.io" || data.hostname === "www.mykei.io" || data.hostname.endsWith(".mykei-sentinel.pages.dev"))) {
@@ -123,7 +135,13 @@ export default {
     // Reject clearly-oversized requests from Content-Length BEFORE parsing
     // the body at all, so we never buffer an attacker-controlled multipart
     // payload into memory just to find out it's too big.
-    const contentLength = Number(request.headers.get("Content-Length") || 0);
+    const contentLength = Number(request.headers.get("Content-Length"));
+    if (!Number.isFinite(contentLength) || contentLength <= 0) {
+      return new Response(JSON.stringify({ success: false, error: "Length required" }), {
+        status: 411,
+        headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
+      });
+    }
     if (contentLength > MAX_BODY_BYTES) {
       return new Response(JSON.stringify({ success: false, error: "Request too large" }), {
         status: 413,
@@ -133,7 +151,16 @@ export default {
 
     const clientIp = request.headers.get("CF-Connecting-IP") || "unknown";
 
-    if (env.RATE_LIMITER) {
+    // Fail closed: without the limiter binding this endpoint would be an open
+    // relay for the Resend quota, so refuse rather than send unthrottled.
+    if (!env.RATE_LIMITER) {
+      logError("Rate limiter binding missing", {});
+      return new Response(JSON.stringify({ success: false, error: "Temporarily unavailable" }), {
+        status: 503,
+        headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
+      });
+    }
+    {
       const { success } = await env.RATE_LIMITER.limit({ key: clientIp });
       if (!success) {
         return new Response(
@@ -177,9 +204,16 @@ export default {
       // (rate limit, body size cap, Turnstile) has already run.
       const formType = formData.get("formType");
       if (formType === "enquiry") {
-        const company = formData.get("company") || "";
-        const message = formData.get("message") || "";
-        const source  = formData.get("source") || "website";
+        const company = field(formData, "company");
+        const message = field(formData, "message");
+        const source  = field(formData, "source", "website");
+        const capped = [field(formData, "fullName"), field(formData, "email"), field(formData, "phone"), company, message, source];
+        if (contentLength > MAX_ENQUIRY_BYTES || capped.includes(null)) {
+          return new Response(JSON.stringify({ success: false, error: "Submission too long" }), {
+            status: 413,
+            headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
+          });
+        }
 
         const safeCompany = escapeHtml(company);
         const safeMessage = escapeHtml(message);

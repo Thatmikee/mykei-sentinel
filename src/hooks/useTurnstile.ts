@@ -45,6 +45,11 @@ export function useTurnstile(containerId: string, action: string) {
       s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
       s.async = true;
       s.defer = true;
+      // Turnstile does not announce that it has loaded, and nothing else on the
+      // site dispatches this event. Without it the listener below never fires,
+      // the widget never renders, no token is issued, and every form using this
+      // hook stays on "Verification is still loading".
+      s.onload = () => window.dispatchEvent(new Event("cf-turnstile-loaded"));
       document.head.appendChild(s);
     }
 
@@ -52,7 +57,13 @@ export function useTurnstile(containerId: string, action: string) {
       if (window.turnstile && !widgetId.current) {
         widgetId.current = window.turnstile.render("#" + containerId, {
           sitekey: SITE_KEY,
-          size: "invisible",
+          // "invisible" is not a valid size: Turnstile throws on it, renders
+          // nothing and never issues a token. Whether a widget is invisible is
+          // set on the sitekey in the Cloudflare dashboard. Here we only ask it
+          // to stay hidden unless a person genuinely has to interact, and to
+          // fit the column width if it does appear.
+          size: "flexible",
+          appearance: "interaction-only",
           action,
           callback: onSuccess,
         });
