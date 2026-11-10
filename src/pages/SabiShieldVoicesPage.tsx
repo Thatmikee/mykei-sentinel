@@ -19,7 +19,7 @@ import { useTurnstile, ENQUIRY_ENDPOINT } from "@/hooks/useTurnstile";
  * share one carrier IP, which can trip the per-IP rate limit.
  */
 
-const PAGE_URL = "https://mykei.io/sabishield";
+const PAGE_URL = "https://mykei.io/sabishield/survey";
 const DRAFT_KEY = "sabishield-voices-draft-v1";
 const PENDING_KEY = "sabishield-voices-pending-v1";
 

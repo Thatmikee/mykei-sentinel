@@ -45,6 +45,7 @@ const BlogPostPage             = lazy(() => import("./pages/BlogPostPage"));
 const ThesisPage               = lazy(() => import("./pages/ThesisPage"));
 const ProtocolPage             = lazy(() => import("./pages/ProtocolPage"));
 const SabiShieldVoicesPage     = lazy(() => import("./pages/SabiShieldVoicesPage"));
+const SabiShieldHubPage        = lazy(() => import("./pages/SabiShieldHubPage"));
 
 const queryClient = new QueryClient();
 
@@ -137,7 +138,8 @@ const App = () => (
             <Route path="/brief/:slug" element={<BlogPostPage />} />
             <Route path="/subscribe" element={<Navigate to="/contact" replace />} />
             <Route path="/protocol" element={<ProtocolPage />} />
-            <Route path="/sabishield" element={<SabiShieldVoicesPage />} />
+            <Route path="/sabishield" element={<SabiShieldHubPage />} />
+            <Route path="/sabishield/survey" element={<SabiShieldVoicesPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
